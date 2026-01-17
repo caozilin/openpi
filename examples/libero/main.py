@@ -15,7 +15,7 @@ import tqdm
 import tyro
 
 LIBERO_DUMMY_ACTION = [0.0] * 6 + [-1.0]
-LIBERO_ENV_RESOLUTION = 256  # resolution used to render training data
+LIBERO_ENV_RESOLUTION = 2048  # resolution used to render training data
 
 
 @dataclasses.dataclass
@@ -32,7 +32,7 @@ class Args:
     # LIBERO environment-specific parameters
     #################################################################################################################
     task_suite_name: str = (
-        "libero_10"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+        "libero_spatial"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
     )
     num_steps_wait: int = 10  # Number of steps to wait for objects to stabilize i n sim
     num_trials_per_task: int = 1  # Number of rollouts per task
@@ -112,17 +112,19 @@ def eval_libero(args: Args) -> None:
 
                     # Get preprocessed image
                     # IMPORTANT: rotate 180 degrees to match train preprocessing
-                    img = np.ascontiguousarray(obs["agentview_image"][::-1, ::-1])
-                    wrist_img = np.ascontiguousarray(obs["robot0_eye_in_hand_image"][::-1, ::-1])
+                    img_raw = np.ascontiguousarray(obs["agentview_image"][::-1, ::-1])
+                    wrist_img_raw = np.ascontiguousarray(obs["robot0_eye_in_hand_image"][::-1, ::-1])
+                    
+                    # Save original resolution image for replay video
+                    replay_images.append(image_tools.convert_to_uint8(img_raw))
+                    
+                    # Resize for model inference
                     img = image_tools.convert_to_uint8(
-                        image_tools.resize_with_pad(img, args.resize_size, args.resize_size)
+                        image_tools.resize_with_pad(img_raw, args.resize_size, args.resize_size)
                     )
                     wrist_img = image_tools.convert_to_uint8(
-                        image_tools.resize_with_pad(wrist_img, args.resize_size, args.resize_size)
+                        image_tools.resize_with_pad(wrist_img_raw, args.resize_size, args.resize_size)
                     )
-
-                    # Save preprocessed image for replay video
-                    replay_images.append(img)
 
                     if not action_plan:
                         # Finished executing previous action chunk -- compute new chunk
@@ -155,7 +157,7 @@ def eval_libero(args: Args) -> None:
                         task_successes += 1
                         total_successes += 1
                         break
-                    t += 1
+                    t += 1 
 
                 except Exception as e:
                     logging.error(f"Caught exception: {e}")
@@ -167,8 +169,10 @@ def eval_libero(args: Args) -> None:
             # Save a replay video of the episode
             suffix = "success" if done else "failure"
             task_segment = task_description.replace(" ", "_")
+            video_dir = pathlib.Path(args.video_out_path) / args.task_suite_name
+            video_dir.mkdir(parents=True, exist_ok=True)
             imageio.mimwrite(
-                pathlib.Path(args.video_out_path) / f"rollout_{task_segment}_{suffix}.mp4",
+                video_dir / f"rollout_{task_segment}_{suffix}.mp4",
                 [np.asarray(x) for x in replay_images],
                 fps=10,
             )
