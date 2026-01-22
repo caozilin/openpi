@@ -71,6 +71,13 @@ def eval_libero(args: Args) -> None:
         raise ValueError(f"Unknown task suite: {args.task_suite_name}")
 
     client = _websocket_client_policy.WebsocketClientPolicy(args.host, args.port)
+    
+    # Get model name from server metadata
+    server_metadata = client.get_server_metadata()
+    model_name = server_metadata.get("config_name", server_metadata.get("model_name", "unknown_model"))
+    # Extract model name from config_name if it contains model info (e.g., "pi05_libero" -> "pi05")
+    if "_" in model_name:
+        model_name = model_name.split("_")[0]  # Extract model prefix (e.g., "pi05", "pi0")
 
     # Start evaluation
     total_episodes, total_successes = 0, 0
@@ -169,7 +176,8 @@ def eval_libero(args: Args) -> None:
             # Save a replay video of the episode
             suffix = "success" if done else "failure"
             task_segment = task_description.replace(" ", "_")
-            video_dir = pathlib.Path(args.video_out_path) / args.task_suite_name
+            # Use task_suite_name_model format for video directory
+            video_dir = pathlib.Path(args.video_out_path) / f"{args.task_suite_name}_{model_name}"
             video_dir.mkdir(parents=True, exist_ok=True)
             imageio.mimwrite(
                 video_dir / f"rollout_{task_segment}_{suffix}.mp4",
