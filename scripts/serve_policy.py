@@ -40,7 +40,7 @@ class Args:
     """Arguments for the serve_policy script."""
 
     # Environment to serve the policy for. This is only used when serving default policies.
-    env: EnvMode = EnvMode.ALOHA_SIM
+    env: EnvMode = EnvMode.LIBERO
 
     # If provided, will be used in case the "prompt" key is not present in the data, or if the model doesn't have a default
     # prompt.
@@ -70,8 +70,8 @@ DEFAULT_CHECKPOINT: dict[EnvMode, Checkpoint] = {
         dir="gs://openpi-assets/checkpoints/pi05_droid",
     ),
     EnvMode.LIBERO: Checkpoint(
-        config="pi05_libero",
-        dir="gs://openpi-assets/checkpoints/pi05_libero",
+        config="pi0_libero",
+        dir="gs://openpi-assets/checkpoints/pi0_libero",
     ),
 }
 
@@ -108,6 +108,7 @@ def main(args: Args) -> None:
     local_ip = socket.gethostbyname(hostname)
     logging.info("Creating server (host: %s, ip: %s)", hostname, local_ip)
 
+    policy_metadata[]
     server = websocket_policy_server.WebsocketPolicyServer(
         policy=policy,
         host="0.0.0.0",
