@@ -70,8 +70,8 @@ DEFAULT_CHECKPOINT: dict[EnvMode, Checkpoint] = {
         dir="gs://openpi-assets/checkpoints/pi05_droid",
     ),
     EnvMode.LIBERO: Checkpoint(
-        config="pi0_libero",
-        dir="gs://openpi-assets/checkpoints/pi0_libero",
+        config="pi05_libero",
+        dir="gs://openpi-assets/checkpoints/pi05_libero",
     ),
 }
 
@@ -83,6 +83,22 @@ def create_default_policy(env: EnvMode, *, default_prompt: str | None = None) ->
             _config.get_config(checkpoint.config), checkpoint.dir, default_prompt=default_prompt
         )
     raise ValueError(f"Unsupported environment mode: {env}")
+
+
+def extract_model_name_from_path(checkpoint_dir: str) -> str:
+    """Extract model name from checkpoint directory path.
+    
+    从检查点目录路径中提取模型名称。
+    
+    Args:
+        checkpoint_dir: Checkpoint directory path (e.g., "gs://openpi-assets/checkpoints/pi0_libero").
+                        检查点目录路径（例如，"gs://openpi-assets/checkpoints/pi0_libero"）。
+    
+    Returns:
+        Model name extracted from the last component of the path.
+        从路径最后一个组件提取的模型名称。
+    """
+    return checkpoint_dir.rstrip("/").split("/")[-1]
 
 
 def create_policy(args: Args) -> _policy.Policy:
@@ -108,7 +124,26 @@ def main(args: Args) -> None:
     local_ip = socket.gethostbyname(hostname)
     logging.info("Creating server (host: %s, ip: %s)", hostname, local_ip)
 
-    policy_metadata[]
+    # Extract model name from checkpoint directory path
+    # 从检查点目录路径中提取模型名称
+    checkpoint_dir = None
+    match args.policy:
+        case Checkpoint():
+            checkpoint_dir = args.policy.dir
+        case Default():
+            if default_checkpoint := DEFAULT_CHECKPOINT.get(args.env):
+                checkpoint_dir = default_checkpoint.dir
+    
+    if checkpoint_dir:
+        policy_metadata['model_name'] = extract_model_name_from_path(checkpoint_dir)
+    else:
+        # Fallback to config name if checkpoint_dir is not available
+        # 如果 checkpoint_dir 不可用，回退到配置名称
+        if default_checkpoint := DEFAULT_CHECKPOINT.get(args.env):
+            policy_metadata['model_name'] = default_checkpoint.config
+        else:
+            policy_metadata['model_name'] = "unknown"
+    
     server = websocket_policy_server.WebsocketPolicyServer(
         policy=policy,
         host="0.0.0.0",

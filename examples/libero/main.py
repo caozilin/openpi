@@ -32,7 +32,7 @@ class Args:
     # LIBERO environment-specific parameters
     #################################################################################################################
     task_suite_name: str = (
-        "libero_goal"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
+        "libero_10"  # Task suite. Options: libero_spatial, libero_object, libero_goal, libero_10, libero_90
     )
     num_steps_wait: int = 10  # Number of steps to wait for objects to stabilize i n sim
     num_trials_per_task: int = 1  # Number of rollouts per task
@@ -75,9 +75,6 @@ def eval_libero(args: Args) -> None:
     # Get model name from server metadata
     server_metadata = client.get_server_metadata()
     model_name = server_metadata.get("config_name", server_metadata.get("model_name", "unknown_model"))
-    # Extract model name from config_name if it contains model info (e.g., "pi05_libero" -> "pi05")
-    if "_" in model_name:
-        model_name = model_name.split("_")[0]  # Extract model prefix (e.g., "pi05", "pi0")
 
     # Start evaluation
     total_episodes, total_successes = 0, 0

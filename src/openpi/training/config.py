@@ -237,7 +237,7 @@ class DataConfigFactory(abc.ABC):
         repo_id = self.repo_id if self.repo_id is not tyro.MISSING else None
         asset_id = self.assets.asset_id or repo_id
         return dataclasses.replace(
-            self.base_config or DataConfig(),
+            self.base_config or DataConfig(), 
             repo_id=repo_id,
             asset_id=asset_id,
             norm_stats=self._load_norm_stats(epath.Path(self.assets.assets_dir or assets_dirs), asset_id),
