@@ -1,5 +1,6 @@
 import collections
 import dataclasses
+import json
 import logging
 import math
 import pathlib
@@ -15,7 +16,7 @@ import tqdm
 import tyro
 
 LIBERO_DUMMY_ACTION = [0.0] * 6 + [-1.0]
-LIBERO_ENV_RESOLUTION = 3072  # resolution used to render training data
+LIBERO_ENV_RESOLUTION = 224  # resolution used to render training data
 
 
 @dataclasses.dataclass
@@ -103,6 +104,8 @@ def eval_libero(args: Args) -> None:
             # Setup
             t = 0
             replay_images = []
+            trajectory_states = []
+            trajectory_actions = []
 
             logging.info(f"Starting episode {task_episodes+1}...")
             while t < max_steps + args.num_steps_wait:
@@ -133,16 +136,17 @@ def eval_libero(args: Args) -> None:
                     if not action_plan:
                         # Finished executing previous action chunk -- compute new chunk
                         # Prepare observations dict
+                        state = np.concatenate(
+                            (
+                                obs["robot0_eef_pos"],
+                                _quat2axisangle(obs["robot0_eef_quat"]),
+                                obs["robot0_gripper_qpos"],
+                            )
+                        )
                         element = {
                             "observation/image": img,
                             "observation/wrist_image": wrist_img,
-                            "observation/state": np.concatenate(
-                                (
-                                    obs["robot0_eef_pos"],
-                                    _quat2axisangle(obs["robot0_eef_quat"]),
-                                    obs["robot0_gripper_qpos"],
-                                )
-                            ),
+                            "observation/state": state,
                             "prompt": str(task_description),
                         }
 
@@ -153,7 +157,20 @@ def eval_libero(args: Args) -> None:
                         ), f"We want to replan every {args.replan_steps} steps, but policy only predicts {len(action_chunk)} steps."
                         action_plan.extend(action_chunk[: args.replan_steps])
 
+                    # Get current state for trajectory recording (every step)
+                    current_state = np.concatenate(
+                        (
+                            obs["robot0_eef_pos"],
+                            _quat2axisangle(obs["robot0_eef_quat"]),
+                            obs["robot0_gripper_qpos"],
+                        )
+                    )
+                    
                     action = action_plan.popleft()
+                    
+                    # Record state and action for trajectory saving
+                    trajectory_states.append(current_state.tolist())
+                    trajectory_actions.append(action.tolist())
 
                     # Execute action in environment
                     obs, reward, done, info = env.step(action.tolist())
@@ -181,6 +198,19 @@ def eval_libero(args: Args) -> None:
                 [np.asarray(x) for x in replay_images],
                 fps=10,
             )
+
+            # Save trajectory states and actions to txt file
+            trajectory_data = {
+                "trajectory": [
+                    {"state": s, "action": a}
+                    for s, a in zip(trajectory_states, trajectory_actions)
+                ],
+                "task_description": task_description,
+                "success": done,
+                "num_steps": len(trajectory_states),
+            }
+            with open(video_dir / f"rollout_{task_segment}_{suffix}.txt", "w") as f:
+                json.dump(trajectory_data, f, indent=2)
 
             # Log current results
             logging.info(f"Success: {done}")
