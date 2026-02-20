@@ -33,7 +33,7 @@ class Args:
     # LIBERO environment-specific parameters
     #################################################################################################################
     task_suite_name: str = (
-        "libero_pi"  # Task suite. Options: libero_pi, libero_spatial, libero_object, libero_goal, libero_10, libero_90
+        "libero_object"  # Task suite. Options: libero_pi, libero_spatial, libero_object, libero_goal, libero_10, libero_90
     )
     num_steps_wait: int = 10  # Number of steps to wait for objects to stabilize i n sim
     num_trials_per_task: int = 1  # Number of rollouts per task
@@ -208,7 +208,7 @@ def eval_libero(args: Args) -> None:
                     for s, a in zip(trajectory_states, trajectory_actions)
                 ],
                 "task_description": task_description,
-                "success": done,
+                "success": bool(done),
                 "num_steps": len(trajectory_states),
             }
             with open(video_dir / f"rollout_{task_segment}_{suffix}.txt", "w") as f:
