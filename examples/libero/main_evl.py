@@ -29,7 +29,7 @@ DEFAULT_TASK_CONFIGS = [
 ]
 
 MAX_STEPS_MAP = {
-    "libero_pi": 300,
+    "libero_origin": 300,
     "libero_spatial": 220,
     "libero_object": 280,
     "libero_goal": 300,

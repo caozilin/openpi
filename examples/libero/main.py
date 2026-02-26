@@ -36,7 +36,7 @@ class Args:
         "libero_organize"  # Task suite. Options: libero_organize, libero_spatial, libero_object, libero_goal, libero_10, libero_90
     )
     num_steps_wait: int = 10  # Number of steps to wait for objects to stabilize i n sim
-    num_trials_per_task: int = 3  # Number of rollouts per task
+    num_trials_per_task: int = 1  # Number of rollouts per task
 
     #################################################################################################################
     # Utils
@@ -59,7 +59,7 @@ def eval_libero(args: Args) -> None:
     pathlib.Path(args.video_out_path).mkdir(parents=True, exist_ok=True)
 
     if args.task_suite_name == "libero_organize":
-        max_steps = 300  # custom task suite
+        max_steps = 400  # custom task suite
     elif args.task_suite_name == "libero_spatial":
         max_steps = 220  # longest training demo has 193 steps
     elif args.task_suite_name == "libero_object":

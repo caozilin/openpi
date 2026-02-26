@@ -14,12 +14,13 @@ from openpi_client import image_tools
 from openpi_client import websocket_client_policy as _websocket_client_policy
 import tqdm
 import tyro
+from typing import Tuple
 
 LIBERO_DUMMY_ACTION = [0.0] * 6 + [-1.0]
 LIBERO_ENV_RESOLUTION = 3072  # resolution used to render training data
 
 SUITE_MAX_STEPS = {
-    "libero_pi": 300,
+    "libero_organize": 400,
     "libero_spatial": 220,
     "libero_object": 280,
     "libero_goal": 300,
@@ -36,7 +37,7 @@ class Args:
     replan_steps: int = 5
     num_steps_wait: int = 10
     num_trials_per_task: int = 1
-    num_tasks_per_suite: int = 3
+    num_tasks_per_suite: int = 6
     video_out_path: str = "data/libero/videos"
     seed: int = 7
 
@@ -46,7 +47,7 @@ def run_single_suite(
     client: _websocket_client_policy.WebsocketClientPolicy,
     model_name: str,
     args: Args,
-) -> tuple[int, int]:
+) -> Tuple[int, int]:
     benchmark_dict = benchmark.get_benchmark_dict()
     task_suite = benchmark_dict[task_suite_name]()
     num_tasks_in_suite = task_suite.n_tasks
