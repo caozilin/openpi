@@ -124,25 +124,20 @@ def main(args: Args) -> None:
     local_ip = socket.gethostbyname(hostname)
     logging.info("Creating server (host: %s, ip: %s)", hostname, local_ip)
 
-    # Extract model name from checkpoint directory path
-    # 从检查点目录路径中提取模型名称
-    checkpoint_dir = None
+    # Build model_name as "{config}/{step}" so clients can identify both
+    # the training config and the checkpoint step without extra arguments.
+    # 构建 model_name 为 "{config}/{step}"，客户端可直接识别训练配置和步骤号。
     match args.policy:
         case Checkpoint():
-            checkpoint_dir = args.policy.dir
+            step = extract_model_name_from_path(args.policy.dir)
+            policy_metadata['model_name'] = f"{args.policy.config}/{step}"
         case Default():
             if default_checkpoint := DEFAULT_CHECKPOINT.get(args.env):
-                checkpoint_dir = default_checkpoint.dir
-    
-    if checkpoint_dir:
-        policy_metadata['model_name'] = extract_model_name_from_path(checkpoint_dir)
-    else:
-        # Fallback to config name if checkpoint_dir is not available
-        # 如果 checkpoint_dir 不可用，回退到配置名称
-        if default_checkpoint := DEFAULT_CHECKPOINT.get(args.env):
-            policy_metadata['model_name'] = default_checkpoint.config
-        else:
-            policy_metadata['model_name'] = "unknown"
+                step = extract_model_name_from_path(default_checkpoint.dir)
+                policy_metadata['model_name'] = f"{default_checkpoint.config}/{step}"
+            else:
+                policy_metadata['model_name'] = "unknown"
+    logging.info("Model name set to: %s", policy_metadata['model_name'])
     
     server = websocket_policy_server.WebsocketPolicyServer(
         policy=policy,
