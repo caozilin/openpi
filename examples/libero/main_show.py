@@ -26,6 +26,9 @@ SUITE_MAX_STEPS = {
     "libero_goal": 300,
     "libero_10": 520,
     "libero_90": 400,
+    "organize_sim": 400,
+    "organize_med": 400,
+    "organize_hard": 400,
 }
 
 

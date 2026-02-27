@@ -18,6 +18,18 @@ import tyro
 LIBERO_DUMMY_ACTION = [0.0] * 6 + [-1.0]
 LIBERO_ENV_RESOLUTION = 224  # resolution used to render training data
 
+SUITE_MAX_STEPS = {
+    "libero_organize": 400,
+    "libero_spatial": 220,
+    "libero_object": 280,
+    "libero_goal": 300,
+    "libero_10": 520,
+    "libero_90": 400,
+    "organize_sim": 400,
+    "organize_med": 400,
+    "organize_hard": 400,
+}
+
 
 @dataclasses.dataclass
 class Args:
@@ -33,7 +45,7 @@ class Args:
     # LIBERO environment-specific parameters
     #################################################################################################################
     task_suite_name: str = (
-        "libero_organize"  # Task suite. Options: libero_organize, libero_spatial, libero_object, libero_goal, libero_10, libero_90
+        "libero_organize"  # Task suite. Options: libero_organize, libero_spatial, libero_object, libero_goal, libero_10, libero_90, organize_sim, organize_med, organize_hard
     )
     num_steps_wait: int = 10  # Number of steps to wait for objects to stabilize i n sim
     num_trials_per_task: int = 1  # Number of rollouts per task
@@ -42,6 +54,7 @@ class Args:
     # Utils
     #################################################################################################################
     video_out_path: str = "data/libero/videos"  # Path to save videos
+    save_trajectory: bool = False  # Whether to save trajectory states and actions to txt file
 
     seed: int = 7  # Random Seed (for reproducibility)
 
@@ -58,19 +71,8 @@ def eval_libero(args: Args) -> None:
 
     pathlib.Path(args.video_out_path).mkdir(parents=True, exist_ok=True)
 
-    if args.task_suite_name == "libero_organize":
-        max_steps = 400  # custom task suite
-    elif args.task_suite_name == "libero_spatial":
-        max_steps = 220  # longest training demo has 193 steps
-    elif args.task_suite_name == "libero_object":
-        max_steps = 280  # longest training demo has 254 steps
-    elif args.task_suite_name == "libero_goal":
-        max_steps = 300  # longest training demo has 270 steps
-    elif args.task_suite_name == "libero_10":
-        max_steps = 520  # longest training demo has 505 steps
-    elif args.task_suite_name == "libero_90":
-        max_steps = 400  # longest training demo has 373 steps
-    else:
+    max_steps = SUITE_MAX_STEPS.get(args.task_suite_name)
+    if max_steps is None:
         raise ValueError(f"Unknown task suite: {args.task_suite_name}")
 
     client = _websocket_client_policy.WebsocketClientPolicy(args.host, args.port)
@@ -202,17 +204,18 @@ def eval_libero(args: Args) -> None:
             )
 
             # Save trajectory states and actions to txt file
-            trajectory_data = {
-                "trajectory": [
-                    {"state": s, "action": a}
-                    for s, a in zip(trajectory_states, trajectory_actions)
-                ],
-                "task_description": task_description,
-                "success": bool(done),
-                "num_steps": len(trajectory_states),
-            }
-            with open(video_dir / f"rollout_{task_segment}_{suffix}.txt", "w") as f:
-                json.dump(trajectory_data, f, indent=2)
+            if args.save_trajectory:
+                trajectory_data = {
+                    "trajectory": [
+                        {"state": s, "action": a}
+                        for s, a in zip(trajectory_states, trajectory_actions)
+                    ],
+                    "task_description": task_description,
+                    "success": bool(done),
+                    "num_steps": len(trajectory_states),
+                }
+                with open(video_dir / f"rollout_{task_segment}_{suffix}.txt", "w") as f:
+                    json.dump(trajectory_data, f, indent=2)
 
             # Log current results
             logging.info(f"Success: {done}")
