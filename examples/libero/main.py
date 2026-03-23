@@ -138,8 +138,10 @@ def eval_libero(args: Args) -> None:
                     
                     # Render and display during inference if enabled
                     if args.render_during_inference:
-                        display_img = cv2.cvtColor(image_tools.convert_to_uint8(img_raw), cv2.COLOR_RGB2BGR)
-                        cv2.imshow("LIBERO Inference", display_img)
+                        main_display = cv2.cvtColor(image_tools.convert_to_uint8(img_raw), cv2.COLOR_RGB2BGR)
+                        wrist_display = cv2.cvtColor(image_tools.convert_to_uint8(wrist_img_raw), cv2.COLOR_RGB2BGR)
+                        combined_display = np.hstack([main_display, wrist_display])
+                        cv2.imshow("LIBERO Inference", combined_display)
                         cv2.waitKey(1)
                     
                     # Resize for model inference
