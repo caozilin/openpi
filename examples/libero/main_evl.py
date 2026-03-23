@@ -21,11 +21,13 @@ LIBERO_DUMMY_ACTION = [0.0] * 6 + [-1.0]
 LIBERO_ENV_RESOLUTION = 224
 
 DEFAULT_TASK_CONFIGS = [
-    ("libero_spatial", 5),
-    ("libero_object", 5),
-    ("libero_goal", 5),
-    ("libero_10", 5),
-    ("libero_90", 3),
+    ("libero_spatial", 10),
+    ("libero_object", 10),
+    ("libero_goal", 10),
+    ("libero_10", 10),
+    ("organize_sim", 10),
+    ("organize_med", 10),
+    ("organize_hard", 10),
 ]
 
 MAX_STEPS_MAP = {

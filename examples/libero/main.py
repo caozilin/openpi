@@ -5,6 +5,7 @@ import logging
 import math
 import pathlib
 
+import cv2
 import imageio
 from libero.libero import benchmark
 from libero.libero import get_libero_path
@@ -16,7 +17,7 @@ import tqdm
 import tyro
 
 LIBERO_DUMMY_ACTION = [0.0] * 6 + [-1.0]
-LIBERO_ENV_RESOLUTION = 224  # resolution used to render training data
+LIBERO_ENV_RESOLUTION = 448  # resolution used to render training data
 
 SUITE_MAX_STEPS = {
     "libero_organize": 400,
@@ -28,6 +29,7 @@ SUITE_MAX_STEPS = {
     "organize_sim": 400,
     "organize_med": 400,
     "organize_hard": 400,
+    "organize_test": 400,
 }
 
 
@@ -45,10 +47,15 @@ class Args:
     # LIBERO environment-specific parameters
     #################################################################################################################
     task_suite_name: str = (
-        "libero_organize"  # Task suite. Options: libero_organize, libero_spatial, libero_object, libero_goal, libero_10, libero_90, organize_sim, organize_med, organize_hard
+        "organize_med"  # Task suite. Options: organize_test,libero_organize, libero_spatial, libero_object, libero_goal, libero_10, libero_90, organize_sim, organize_med, organize_hard
     )
     num_steps_wait: int = 10  # Number of steps to wait for objects to stabilize i n sim
     num_trials_per_task: int = 1  # Number of rollouts per task
+
+    #################################################################################################################
+    # Visualization
+    #################################################################################################################
+    render_during_inference: bool = False  # Whether to render and display during inference
 
     #################################################################################################################
     # Utils
@@ -118,7 +125,7 @@ def eval_libero(args: Args) -> None:
                     # and we need to wait for them to fall
                     if t < args.num_steps_wait:
                         obs, reward, done, info = env.step(LIBERO_DUMMY_ACTION)
-                        t += 1
+                        t += 1                        
                         continue
 
                     # Get preprocessed image
@@ -128,6 +135,12 @@ def eval_libero(args: Args) -> None:
                     
                     # Save original resolution image for replay video
                     replay_images.append(image_tools.convert_to_uint8(img_raw))
+                    
+                    # Render and display during inference if enabled
+                    if args.render_during_inference:
+                        display_img = cv2.cvtColor(image_tools.convert_to_uint8(img_raw), cv2.COLOR_RGB2BGR)
+                        cv2.imshow("LIBERO Inference", display_img)
+                        cv2.waitKey(1)
                     
                     # Resize for model inference
                     img = image_tools.convert_to_uint8(
@@ -228,6 +241,10 @@ def eval_libero(args: Args) -> None:
 
     logging.info(f"Total success rate: {float(total_successes) / float(total_episodes)}")
     logging.info(f"Total episodes: {total_episodes}")
+    
+    # Close all OpenCV windows
+    if args.render_during_inference:
+        cv2.destroyAllWindows()
 
 
 def _get_libero_env(task, resolution, seed):
@@ -260,4 +277,5 @@ def _quat2axisangle(quat):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    tyro.cli(eval_libero)
+    args = tyro.cli(Args)
+    eval_libero(args)
