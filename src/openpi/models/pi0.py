@@ -9,6 +9,7 @@ from typing_extensions import override
 
 from openpi.models import model as _model
 from openpi.models import pi0_config
+from openpi.models import rtc as _rtc
 import openpi.models.gemma as _gemma
 import openpi.models.siglip as _siglip
 from openpi.shared import array_typing as at
@@ -221,6 +222,13 @@ class Pi0(_model.BaseModel):
         *,
         num_steps: int | at.Int[at.Array, ""] = 10,
         noise: at.Float[at.Array, "b ah ad"] | None = None,
+        rtc_active: at.Bool[at.Array, ""] | None = None,
+        rtc_prev_chunk_left_over: at.Float[at.Array, "b ah ad"] | None = None,
+        rtc_inference_delay: at.Int[at.Array, ""] | None = None,
+        rtc_execution_horizon: at.Int[at.Array, ""] | None = None,
+        rtc_max_guidance_weight: at.Float[at.Array, ""] | None = None,
+        rtc_prefix_attention_schedule: at.Int[at.Array, ""] | None = None,
+        rtc_guidance_mask: at.Float[at.Array, " action_dim"] | None = None,
     ) -> _model.Actions:
         observation = _model.preprocess_observation(None, observation, train=False)
         # note that we use the convention more common in diffusion literature, where t=1 is noise and t=0 is the target
@@ -236,8 +244,7 @@ class Pi0(_model.BaseModel):
         positions = jnp.cumsum(prefix_mask, axis=1) - 1
         _, kv_cache = self.PaliGemma.llm([prefix_tokens, None], mask=prefix_attn_mask, positions=positions)
 
-        def step(carry):
-            x_t, time = carry
+        def denoise_step(x_t, time):
             suffix_tokens, suffix_mask, suffix_ar_mask, adarms_cond = self.embed_suffix(
                 observation, x_t, jnp.broadcast_to(time, batch_size)
             )
@@ -266,7 +273,51 @@ class Pi0(_model.BaseModel):
                 adarms_cond=[None, adarms_cond],
             )
             assert prefix_out is None
-            v_t = self.action_out_proj(suffix_out[:, -self.action_horizon :])
+            return self.action_out_proj(suffix_out[:, -self.action_horizon :])
+
+        rtc_can_run = rtc_prev_chunk_left_over is not None
+        if rtc_can_run:
+            rtc_active = jnp.asarray(True if rtc_active is None else rtc_active)
+            rtc_inference_delay = jnp.asarray(0 if rtc_inference_delay is None else rtc_inference_delay)
+            rtc_execution_horizon = jnp.asarray(
+                self.action_horizon if rtc_execution_horizon is None else rtc_execution_horizon
+            )
+            rtc_max_guidance_weight = jnp.asarray(
+                10.0 if rtc_max_guidance_weight is None else rtc_max_guidance_weight,
+                dtype=jnp.float32,
+            )
+            rtc_prefix_attention_schedule = jnp.asarray(
+                _rtc.RTCAttentionSchedule.LINEAR
+                if rtc_prefix_attention_schedule is None
+                else rtc_prefix_attention_schedule
+            )
+            rtc_guidance_mask = (
+                jnp.ones((self.action_dim,), dtype=jnp.float32)
+                if rtc_guidance_mask is None
+                else rtc_guidance_mask.astype(jnp.float32)
+            )
+
+        def step(carry):
+            x_t, time = carry
+            if rtc_can_run:
+                v_t = jax.lax.cond(
+                    rtc_active,
+                    lambda _: _rtc.guided_denoise_step(
+                        x_t,
+                        time=time,
+                        prev_chunk_left_over=rtc_prev_chunk_left_over,
+                        inference_delay=rtc_inference_delay,
+                        execution_horizon=rtc_execution_horizon,
+                        max_guidance_weight=rtc_max_guidance_weight,
+                        prefix_attention_schedule=rtc_prefix_attention_schedule,
+                        guidance_mask=rtc_guidance_mask,
+                        denoise_fn=lambda guided_x_t: denoise_step(guided_x_t, time),
+                    ),
+                    lambda _: denoise_step(x_t, time),
+                    operand=None,
+                )
+            else:
+                v_t = denoise_step(x_t, time)
 
             return x_t + dt * v_t, time + dt
 

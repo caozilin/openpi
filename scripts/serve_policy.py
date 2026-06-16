@@ -5,6 +5,7 @@ import socket
 
 import tyro
 
+from openpi.models import rtc as _rtc
 from openpi.policies import policy as _policy
 from openpi.policies import policy_config as _policy_config
 from openpi.serving import websocket_policy_server
@@ -51,6 +52,14 @@ class Args:
     # Record the policy's behavior for debugging.
     record: bool = False
 
+    # Enable server-side Real-Time Chunking for JAX pi0/pi0.5 flow policies.
+    rtc_enabled: bool = False
+    rtc_execution_horizon: int = 5
+    rtc_max_guidance_weight: float = 3.0
+    rtc_prefix_attention_schedule: str = "linear"
+    # Number of model-action dimensions guided by RTC. For Franka delta pose, keep this at 6 to exclude gripper sign.
+    rtc_guidance_dims: int = 6
+
     # Specifies how to load the policy. If not provided, the default policy for the environment will be used.
     policy: Checkpoint | Default = dataclasses.field(default_factory=Default)
 
@@ -76,24 +85,29 @@ DEFAULT_CHECKPOINT: dict[EnvMode, Checkpoint] = {
 }
 
 
-def create_default_policy(env: EnvMode, *, default_prompt: str | None = None) -> _policy.Policy:
+def create_default_policy(
+    env: EnvMode, *, default_prompt: str | None = None, rtc_config: dict | None = None
+) -> _policy.Policy:
     """Create a default policy for the given environment."""
     if checkpoint := DEFAULT_CHECKPOINT.get(env):
         return _policy_config.create_trained_policy(
-            _config.get_config(checkpoint.config), checkpoint.dir, default_prompt=default_prompt
+            _config.get_config(checkpoint.config),
+            checkpoint.dir,
+            default_prompt=default_prompt,
+            rtc_config=rtc_config,
         )
     raise ValueError(f"Unsupported environment mode: {env}")
 
 
 def extract_model_name_from_path(checkpoint_dir: str) -> str:
     """Extract model name from checkpoint directory path.
-    
+
     从检查点目录路径中提取模型名称。
-    
+
     Args:
         checkpoint_dir: Checkpoint directory path (e.g., "gs://openpi-assets/checkpoints/pi0_libero").
-                        检查点目录路径（例如，"gs://openpi-assets/checkpoints/pi0_libero"）。
-    
+                        检查点目录路径(例如, "gs://openpi-assets/checkpoints/pi0_libero")。
+
     Returns:
         Model name extracted from the last component of the path.
         从路径最后一个组件提取的模型名称。
@@ -103,13 +117,23 @@ def extract_model_name_from_path(checkpoint_dir: str) -> str:
 
 def create_policy(args: Args) -> _policy.Policy:
     """Create a policy from the given arguments."""
+    rtc_config = {
+        "enabled": args.rtc_enabled,
+        "execution_horizon": args.rtc_execution_horizon,
+        "max_guidance_weight": args.rtc_max_guidance_weight,
+        "prefix_attention_schedule": int(_rtc.schedule_from_string(args.rtc_prefix_attention_schedule)),
+        "guidance_dims": args.rtc_guidance_dims,
+    }
     match args.policy:
         case Checkpoint():
             return _policy_config.create_trained_policy(
-                _config.get_config(args.policy.config), args.policy.dir, default_prompt=args.default_prompt
+                _config.get_config(args.policy.config),
+                args.policy.dir,
+                default_prompt=args.default_prompt,
+                rtc_config=rtc_config,
             )
         case Default():
-            return create_default_policy(args.env, default_prompt=args.default_prompt)
+            return create_default_policy(args.env, default_prompt=args.default_prompt, rtc_config=rtc_config)
 
 
 def main(args: Args) -> None:
@@ -126,19 +150,26 @@ def main(args: Args) -> None:
 
     # Build model_name as "{config}/{step}" so clients can identify both
     # the training config and the checkpoint step without extra arguments.
-    # 构建 model_name 为 "{config}/{step}"，客户端可直接识别训练配置和步骤号。
+    # 构建 model_name 为 "{config}/{step}", 客户端可直接识别训练配置和步骤号。
     match args.policy:
         case Checkpoint():
             step = extract_model_name_from_path(args.policy.dir)
-            policy_metadata['model_name'] = f"{args.policy.config}/{step}"
+            policy_metadata["model_name"] = f"{args.policy.config}/{step}"
         case Default():
             if default_checkpoint := DEFAULT_CHECKPOINT.get(args.env):
                 step = extract_model_name_from_path(default_checkpoint.dir)
-                policy_metadata['model_name'] = f"{default_checkpoint.config}/{step}"
+                policy_metadata["model_name"] = f"{default_checkpoint.config}/{step}"
             else:
-                policy_metadata['model_name'] = "unknown"
-    logging.info("Model name set to: %s", policy_metadata['model_name'])
-    
+                policy_metadata["model_name"] = "unknown"
+    logging.info("Model name set to: %s", policy_metadata["model_name"])
+    policy_metadata["rtc"] = {
+        "enabled": args.rtc_enabled,
+        "execution_horizon": args.rtc_execution_horizon,
+        "max_guidance_weight": args.rtc_max_guidance_weight,
+        "prefix_attention_schedule": args.rtc_prefix_attention_schedule,
+        "guidance_dims": args.rtc_guidance_dims,
+    }
+
     server = websocket_policy_server.WebsocketPolicyServer(
         policy=policy,
         host="0.0.0.0",
