@@ -159,7 +159,10 @@ class Policy(BasePolicy):
         return {
             "rtc_active": jnp.ones((), dtype=jnp.bool_),
             "rtc_prev_chunk_left_over": jnp.asarray(normalized),
-            "rtc_inference_delay": jnp.asarray(int(rtc_request.get("inference_delay", 0)), dtype=jnp.int32),
+            "rtc_inference_delay": jnp.asarray(
+                int(rtc_request.get("inference_delay", self._rtc_config.get("inference_delay", 0))),
+                dtype=jnp.int32,
+            ),
             "rtc_execution_horizon": jnp.asarray(
                 int(rtc_request.get("execution_horizon", self._rtc_config.get("execution_horizon", action_horizon))),
                 dtype=jnp.int32,

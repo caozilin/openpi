@@ -55,6 +55,7 @@ class Args:
     # Enable server-side Real-Time Chunking for JAX pi0/pi0.5 flow policies.
     rtc_enabled: bool = False
     rtc_execution_horizon: int = 5
+    rtc_inference_delay: int = 0
     rtc_max_guidance_weight: float = 3.0
     rtc_prefix_attention_schedule: str = "linear"
     # Number of model-action dimensions guided by RTC. For Franka delta pose, keep this at 6 to exclude gripper sign.
@@ -120,6 +121,7 @@ def create_policy(args: Args) -> _policy.Policy:
     rtc_config = {
         "enabled": args.rtc_enabled,
         "execution_horizon": args.rtc_execution_horizon,
+        "inference_delay": args.rtc_inference_delay,
         "max_guidance_weight": args.rtc_max_guidance_weight,
         "prefix_attention_schedule": int(_rtc.schedule_from_string(args.rtc_prefix_attention_schedule)),
         "guidance_dims": args.rtc_guidance_dims,
@@ -165,6 +167,7 @@ def main(args: Args) -> None:
     policy_metadata["rtc"] = {
         "enabled": args.rtc_enabled,
         "execution_horizon": args.rtc_execution_horizon,
+        "inference_delay": args.rtc_inference_delay,
         "max_guidance_weight": args.rtc_max_guidance_weight,
         "prefix_attention_schedule": args.rtc_prefix_attention_schedule,
         "guidance_dims": args.rtc_guidance_dims,

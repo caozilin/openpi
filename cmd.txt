@@ -14,15 +14,38 @@ source .venv/bin/activate
 uv run scripts/serve_policy.py --env LIBERO policy:checkpoint --policy.config pi05_libero_lora --policy.dir ./checkpoints/pi05_libero_lora/pi05_libero_lora/29999
 
 uv run scripts/serve_policy.py --env LIBERO policy:checkpoint --policy.config pi05_libero_lora_discrete --policy.dir ./checkpoints/pi05_libero_lora_discrete/pi05_libero_lora_discrete/29999
+
+uv run scripts/serve_policy.py \
+    --env LIBERO \
+    --rtc-enabled \
+    --rtc-execution-horizon 5 \
+    --rtc-max-guidance-weight 3.0 \
+    --rtc-prefix-attention-schedule linear \
+    policy:checkpoint \
+    --policy.config pi05_libero \
+    --policy.dir ./checkpoints/pi05_libero/pi05_libero
+
 --------------libero客户端
 source examples/libero/.venv/bin/activate
 export PYTHONPATH=$PYTHONPATH:$PWD/third_party/libero
 python examples/libero/main.py --render-during-inference
-python examples/libero/main.py 
-python examples/libero/main_evl.py 
+python examples/libero/main.py
+python examples/libero/main_evl.py
+python examples/libero/rtc_rollout_spatial.py --host 127.0.0.1 --port 8000 --task-id 0 --init-state-id 0 --executed-steps 5
 --------------franka真机服务端
 source .venv/bin/activate
-uv run scripts/serve_policy.py --env LIBERO policy:checkpoint --policy.config pi05_franka_lora --policy.dir ./checkpoints/pi05_franka_lora/pi05_franka_lora/v2_20000
+uv run scripts/serve_policy.py --env LIBERO policy:checkpoint --policy.config pi05_franka_lora --policy.dir ./checkpoints/pi05_franka_lora/franka_lora_v2/20000
+uv run scripts/serve_policy.py --env LIBERO \
+    --rtc-enabled \
+    --rtc-execution-horizon 5 \
+    --rtc-inference-delay 3 \
+    --rtc-max-guidance-weight 3.0 \
+    --rtc-prefix-attention-schedule linear \
+    policy:checkpoint \
+    --policy.config pi05_franka_lora \
+    --policy.dir ./checkpoints/pi05_franka_lora/franka_lora_v2/20000
+
+
 -------------
 source .venv/bin/activate
 python scripts/visualize.py
