@@ -20,6 +20,9 @@ export PYTHONPATH=$PYTHONPATH:$PWD/third_party/libero
 python examples/libero/main.py --render-during-inference
 python examples/libero/main.py 
 python examples/libero/main_evl.py 
+--------------franka真机服务端
+source .venv/bin/activate
+uv run scripts/serve_policy.py --env LIBERO policy:checkpoint --policy.config pi05_franka_lora --policy.dir ./checkpoints/pi05_franka_lora/pi05_franka_lora/v2_20000
 -------------
 source .venv/bin/activate
 python scripts/visualize.py
