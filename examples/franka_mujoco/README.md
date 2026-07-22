@@ -1,9 +1,24 @@
 # Franka MuJoCo dataset conversion
 
-This example converts TaskTol-VLA schema 4.0 episodes to the LeRobot layout used
-by the `pi05_franka_mujoco` training config. The initial integration intentionally
-excludes phase, stage-target, tolerance, privileged success, collision, and
-optimizer fields.
+This example converts TaskTol-VLA schema 5.0 / dataset release 2.0 episodes to
+the LeRobot layout used by the `pi05_franka_mujoco` training config. It only
+accepts the current four-stage format; legacy schema 4.0 integer phases are not
+supported.
+
+Each converted frame preserves its canonical phase as a one-element `int64`
+feature:
+
+```text
+0 = pregrasp, 1 = grasp, 2 = postgrasp, 3 = release
+```
+
+The current `pi05_franka_mujoco` transforms intentionally consume only images,
+state, action, and instruction. The preserved `phase` is therefore neither a
+model input nor a prediction target. Stage-target poses, tolerance frames,
+tolerance values, privileged success, collision, and optimizer diagnostics are
+not interpreted, validated, or materialized as training tensors yet. The
+converter only translates the fields required by the conventional pi0.5
+training pipeline.
 
 The seven-dimensional state is:
 
@@ -12,7 +27,7 @@ The seven-dimensional state is:
 ```
 
 The gripper state is half the recorded aperture, equivalently the mean of the two
-finger slide positions. Actions retain the raw schema 4.0 convention:
+finger slide positions. Actions retain the raw schema 5.0 convention:
 
 ```text
 [dx_base, dy_base, dz_base, dRx_tool, dRy_tool, dRz_tool, gripper_command]

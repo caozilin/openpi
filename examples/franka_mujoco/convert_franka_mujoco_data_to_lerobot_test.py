@@ -28,3 +28,31 @@ def test_require_vector_rejects_wrong_action_dimension() -> None:
         assert "shape (7,)" in str(error)
     else:
         raise AssertionError("Expected an invalid action dimension to fail")
+
+
+def test_phase_from_frame_uses_schema_5_four_stage_ids() -> None:
+    cases = (
+        ("pregrasp", 0),
+        ("grasp", 1),
+        ("postgrasp", 2),
+        ("release", 3),
+    )
+    for phase, expected in cases:
+        value = converter.phase_from_frame(
+            {"phase": phase},
+            source=Path("trajectory.json"),
+        )
+        np.testing.assert_array_equal(value, [expected])
+        assert value.dtype == np.int64
+
+
+def test_phase_from_frame_rejects_legacy_integer_phase() -> None:
+    try:
+        converter.phase_from_frame(
+            {"phase": 0},
+            source=Path("trajectory.json"),
+        )
+    except ValueError as error:
+        assert "phase must be one of" in str(error)
+    else:
+        raise AssertionError("Expected a legacy integer phase to fail")

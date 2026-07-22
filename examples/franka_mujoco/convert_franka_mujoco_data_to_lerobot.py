@@ -1,4 +1,4 @@
-"""Convert TaskTol-VLA Franka MuJoCo schema 4.0 data to LeRobot format.
+"""Convert TaskTol-VLA Franka MuJoCo schema 5.0 data to LeRobot format.
 
 Example:
 uv run examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
@@ -21,10 +21,19 @@ if TYPE_CHECKING:
     from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
 
 
-SCHEMA_VERSION = "4.0"
+SCHEMA_VERSION = "5.0"
+DATASET_RELEASE_VERSION = "2.0"
 FPS = 10
 STATE_DIM = 7
 ACTION_DIM = 7
+PHASE_DIM = 1
+PHASE_LABELS = {
+    "pregrasp": "Pre-grasp",
+    "grasp": "Grasp",
+    "postgrasp": "Post-grasp",
+    "release": "Release",
+}
+PHASE_TO_ID = {phase: index for index, phase in enumerate(PHASE_LABELS)}
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -64,6 +73,20 @@ def state_from_frame(frame: dict[str, Any], *, source: Path) -> np.ndarray:
     return np.concatenate((position, rotation, symmetric_finger_position), dtype=np.float32)
 
 
+def phase_from_frame(
+    frame: dict[str, Any],
+    *,
+    source: Path,
+) -> np.ndarray:
+    """Return the canonical four-stage phase ID."""
+    phase = frame.get("phase")
+    if phase not in PHASE_TO_ID:
+        raise ValueError(
+            f"{source}: phase must be one of {tuple(PHASE_TO_ID)}, got {phase!r}"
+        )
+    return np.asarray([PHASE_TO_ID[phase]], dtype=np.int64)
+
+
 def _task_directories(raw_dir: Path) -> list[Path]:
     task_dirs = sorted(path.parent for path in raw_dir.glob("*/manifest.json"))
     if not task_dirs:
@@ -81,8 +104,18 @@ def _validate_task(task_dir: Path) -> tuple[dict[str, Any], dict[str, Any], int,
         if str(document.get("schema_version")) != SCHEMA_VERSION:
             actual_version = document.get("schema_version")
             raise ValueError(f"{source}: expected schema_version {SCHEMA_VERSION}, got {actual_version}")
+    if str(metadata.get("dataset_release_version")) != DATASET_RELEASE_VERSION:
+        raise ValueError(
+            f"{metadata_path}: expected dataset_release_version {DATASET_RELEASE_VERSION}, "
+            f"got {metadata.get('dataset_release_version')}"
+        )
     if float(metadata.get("frequency_hz", -1)) != FPS:
         raise ValueError(f"{metadata_path}: expected frequency_hz {FPS}")
+    action_format = metadata.get("action_format")
+    if not isinstance(action_format, dict) or int(action_format.get("dimension", -1)) != ACTION_DIM:
+        raise ValueError(f"{metadata_path}: action_format.dimension must be {ACTION_DIM}")
+    if metadata.get("phase_labels") != PHASE_LABELS:
+        raise ValueError(f"{metadata_path}: phase_labels must define the canonical four schema 5.0 phases")
 
     video = metadata.get("video", {})
     resolution = video.get("resolution")
@@ -128,6 +161,7 @@ def _convert_episode(
     episode_dir: Path,
     manifest_entry: dict[str, Any],
     *,
+    metadata: dict[str, Any],
     width: int,
     height: int,
 ) -> None:
@@ -139,7 +173,6 @@ def _convert_episode(
         raise ValueError(f"{trajectory_path}: expected episode object and trajectory list")
     if episode.get("result", {}).get("success") is not True:
         raise ValueError(f"{trajectory_path}: episode is not successful")
-
     frame_count = int(episode.get("frame_count", -1))
     if frame_count != len(trajectory) or frame_count != int(manifest_entry.get("frames", -1)):
         raise ValueError(f"{trajectory_path}: inconsistent trajectory, episode, or manifest frame count")
@@ -148,6 +181,8 @@ def _convert_episode(
         raise ValueError(f"{trajectory_path}: episode instruction must be non-empty")
     if instruction != manifest_entry.get("instruction"):
         raise ValueError(f"{trajectory_path}: instruction does not match the manifest")
+    if not all(isinstance(frame, dict) for frame in trajectory):
+        raise ValueError(f"{trajectory_path}: every trajectory frame must be an object")
 
     main_path = episode_dir / "main_rgb.mp4"
     wrist_path = episode_dir / "wrist_rgb.mp4"
@@ -164,6 +199,7 @@ def _convert_episode(
                     "wrist_image": _read_rgb(wrist_capture, path=wrist_path, index=index),
                     "state": state_from_frame(frame, source=trajectory_path),
                     "actions": action,
+                    "phase": phase_from_frame(frame, source=trajectory_path),
                     "task": instruction,
                 }
             )
@@ -240,6 +276,11 @@ def main(
                 "shape": (ACTION_DIM,),
                 "names": ["actions"],
             },
+            "phase": {
+                "dtype": "int64",
+                "shape": (PHASE_DIM,),
+                "names": ["phase"],
+            },
         },
         image_writer_threads=image_writer_threads,
         image_writer_processes=image_writer_processes,
@@ -251,14 +292,16 @@ def main(
         total = min(total, max_episodes)
     progress = tqdm.tqdm(total=total, desc="Converting episodes")
     try:
-        for task_dir, _, manifest in task_specs:
+        for task_dir, metadata, manifest in task_specs:
             for entry in _episode_entries(task_dir, manifest):
                 if max_episodes is not None and converted >= max_episodes:
                     break
                 episode_dir = task_dir / str(entry["path"])
                 if not episode_dir.is_dir():
                     raise ValueError(f"Episode directory does not exist: {episode_dir}")
-                _convert_episode(dataset, episode_dir, entry, width=width, height=height)
+                _convert_episode(
+                    dataset, episode_dir, entry, metadata=metadata, width=width, height=height
+                )
                 converted += 1
                 progress.update()
             if max_episodes is not None and converted >= max_episodes:
