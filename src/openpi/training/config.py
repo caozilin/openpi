@@ -360,6 +360,13 @@ class LeRobotLiberoDataConfig(DataConfigFactory):
 class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
     """Transforms for TaskTol-VLA Franka MuJoCo data converted to LeRobot."""
 
+    sequence_keys: Sequence[str] = (
+        "actions",
+        "stage_target_pose",
+        "tolerance_frame",
+        "rotation_tolerance",
+    )
+
     @override
     def create(self, assets_dirs: pathlib.Path, model_config: _model.BaseModelConfig) -> DataConfig:
         repack_transform = _transforms.Group(
@@ -384,6 +391,7 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
             repack_transforms=repack_transform,
             data_transforms=data_transforms,
             model_transforms=ModelTransformFactory()(model_config),
+            action_sequence_keys=self.sequence_keys,
         )
 
 

@@ -56,3 +56,28 @@ def test_phase_from_frame_rejects_legacy_integer_phase() -> None:
         assert "phase must be one of" in str(error)
     else:
         raise AssertionError("Expected a legacy integer phase to fail")
+
+
+def test_tolerance_targets_follow_the_frame_annotation_reference() -> None:
+    targets = converter.tolerance_targets_from_frame(
+        {"phase": "grasp", "stage_annotation_id": 7},
+        annotations={
+            7: {
+                "id": 7,
+                "stage_target_pose": {
+                    "position_m": [0.4, 0.1, 0.5],
+                    "rotation_vector_base_rad": [3.1, 0.2, -0.1],
+                },
+                "tolerance_frame_rotation_vector_base_rad": [3.14, 0.0, 0.3],
+                "rotation_tolerance_profile": "pregrasp",
+            }
+        },
+        tolerance_profiles={"pregrasp": [0.0, 0.5, 0.0]},
+        source=Path("trajectory.json"),
+    )
+
+    assert set(targets) == {"stage_target_pose", "tolerance_frame", "rotation_tolerance"}
+    np.testing.assert_allclose(targets["stage_target_pose"], [3.1, 0.2, -0.1])
+    np.testing.assert_allclose(targets["tolerance_frame"], [3.14, 0.0, 0.3])
+    np.testing.assert_allclose(targets["rotation_tolerance"], [0.0, 0.5, 0.0])
+    assert all(value.dtype == np.float32 for value in targets.values())

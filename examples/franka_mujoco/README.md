@@ -14,11 +14,21 @@ feature:
 
 The current `pi05_franka_mujoco` transforms intentionally consume only images,
 state, action, and instruction. The preserved `phase` is therefore neither a
-model input nor a prediction target. Stage-target poses, tolerance frames,
-tolerance values, privileged success, collision, and optimizer diagnostics are
-not interpreted, validated, or materialized as training tensors yet. The
-converter only translates the fields required by the conventional pi0.5
-training pipeline.
+model input nor a prediction target. The converter additionally resolves each
+frame's `stage_annotation_id` and stores these future tolerance-head targets:
+
+```text
+stage_target_pose   [Rx_base, Ry_base, Rz_base]
+tolerance_frame     [Rx_base, Ry_base, Rz_base]
+rotation_tolerance  [tol_x, tol_y, tol_z]
+```
+
+Despite its retained dataset key, `stage_target_pose` contains only the
+three-dimensional target orientation and no XYZ position. The converter copies
+the annotation selected by each frame without applying phase-specific rules.
+The data loader sequences all three targets over the same 16-step horizon as
+`actions`; the conventional pi0.5 transforms currently discard them until the
+tolerance head is introduced.
 
 The seven-dimensional state is:
 

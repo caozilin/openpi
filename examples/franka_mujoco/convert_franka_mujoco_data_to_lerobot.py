@@ -27,6 +27,9 @@ FPS = 10
 STATE_DIM = 7
 ACTION_DIM = 7
 PHASE_DIM = 1
+STAGE_TARGET_POSE_DIM = 3
+TOLERANCE_FRAME_DIM = 3
+ROTATION_TOLERANCE_DIM = 3
 PHASE_LABELS = {
     "pregrasp": "Pre-grasp",
     "grasp": "Grasp",
@@ -85,6 +88,66 @@ def phase_from_frame(
             f"{source}: phase must be one of {tuple(PHASE_TO_ID)}, got {phase!r}"
         )
     return np.asarray([PHASE_TO_ID[phase]], dtype=np.int64)
+
+
+def _stage_annotation_lookup(document: dict[str, Any], *, source: Path) -> dict[int, dict[str, Any]]:
+    values = document.get("stage_annotations")
+    if not isinstance(values, list):
+        raise ValueError(f"{source}: stage_annotations must be a list")
+    annotations: dict[int, dict[str, Any]] = {}
+    for value in values:
+        if not isinstance(value, dict):
+            raise ValueError(f"{source}: every stage annotation must be an object")
+        annotation_id = value.get("id")
+        if not isinstance(annotation_id, int) or isinstance(annotation_id, bool):
+            raise ValueError(f"{source}: every stage annotation must have an integer id")
+        annotations[annotation_id] = value
+    return annotations
+
+
+def tolerance_targets_from_frame(
+    frame: dict[str, Any],
+    *,
+    annotations: dict[int, dict[str, Any]],
+    tolerance_profiles: dict[str, Any],
+    source: Path,
+) -> dict[str, np.ndarray]:
+    """Resolve the annotation referenced by a frame without inferring phase semantics."""
+    annotation_id = frame.get("stage_annotation_id")
+    try:
+        annotation = annotations[annotation_id]
+    except (KeyError, TypeError) as error:
+        raise ValueError(f"{source}: unknown stage_annotation_id {annotation_id!r}") from error
+
+    target_pose = annotation.get("stage_target_pose")
+    if not isinstance(target_pose, dict):
+        raise ValueError(f"{source}: annotation {annotation_id} is missing stage_target_pose")
+    profile = annotation.get("rotation_tolerance_profile")
+    try:
+        tolerance = tolerance_profiles[profile]
+    except (KeyError, TypeError) as error:
+        raise ValueError(f"{source}: unknown rotation tolerance profile {profile!r}") from error
+
+    return {
+        "stage_target_pose": _require_vector(
+            target_pose.get("rotation_vector_base_rad"),
+            STAGE_TARGET_POSE_DIM,
+            field="stage_target_pose.rotation_vector_base_rad",
+            source=source,
+        ),
+        "tolerance_frame": _require_vector(
+            annotation.get("tolerance_frame_rotation_vector_base_rad"),
+            TOLERANCE_FRAME_DIM,
+            field="tolerance_frame_rotation_vector_base_rad",
+            source=source,
+        ),
+        "rotation_tolerance": _require_vector(
+            tolerance,
+            ROTATION_TOLERANCE_DIM,
+            field=f"rotation_tolerance_profiles_rad.{profile}",
+            source=source,
+        ),
+    }
 
 
 def _task_directories(raw_dir: Path) -> list[Path]:
@@ -183,6 +246,15 @@ def _convert_episode(
         raise ValueError(f"{trajectory_path}: instruction does not match the manifest")
     if not all(isinstance(frame, dict) for frame in trajectory):
         raise ValueError(f"{trajectory_path}: every trajectory frame must be an object")
+    annotations = _stage_annotation_lookup(document, source=trajectory_path)
+    annotation_metadata = metadata.get("annotation")
+    tolerance_profiles = (
+        annotation_metadata.get("rotation_tolerance_profiles_rad")
+        if isinstance(annotation_metadata, dict)
+        else None
+    )
+    if not isinstance(tolerance_profiles, dict):
+        raise ValueError(f"{episode_dir.parent / 'task_metadata.json'}: missing rotation tolerance profiles")
 
     main_path = episode_dir / "main_rgb.mp4"
     wrist_path = episode_dir / "wrist_rgb.mp4"
@@ -193,6 +265,12 @@ def _convert_episode(
             if frame.get("index") != index or frame.get("video_frame_index") != index:
                 raise ValueError(f"{trajectory_path}: invalid index alignment at frame {index}")
             action = _require_vector(frame.get("action"), ACTION_DIM, field="action", source=trajectory_path)
+            tolerance_targets = tolerance_targets_from_frame(
+                frame,
+                annotations=annotations,
+                tolerance_profiles=tolerance_profiles,
+                source=trajectory_path,
+            )
             dataset.add_frame(
                 {
                     "image": _read_rgb(main_capture, path=main_path, index=index),
@@ -200,6 +278,7 @@ def _convert_episode(
                     "state": state_from_frame(frame, source=trajectory_path),
                     "actions": action,
                     "phase": phase_from_frame(frame, source=trajectory_path),
+                    **tolerance_targets,
                     "task": instruction,
                 }
             )
@@ -280,6 +359,21 @@ def main(
                 "dtype": "int64",
                 "shape": (PHASE_DIM,),
                 "names": ["phase"],
+            },
+            "stage_target_pose": {
+                "dtype": "float32",
+                "shape": (STAGE_TARGET_POSE_DIM,),
+                "names": ["rotation_vector_base_rad"],
+            },
+            "tolerance_frame": {
+                "dtype": "float32",
+                "shape": (TOLERANCE_FRAME_DIM,),
+                "names": ["rotation_vector_base_rad"],
+            },
+            "rotation_tolerance": {
+                "dtype": "float32",
+                "shape": (ROTATION_TOLERANCE_DIM,),
+                "names": ["x", "y", "z"],
             },
         },
         image_writer_threads=image_writer_threads,
