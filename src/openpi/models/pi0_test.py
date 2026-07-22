@@ -1,6 +1,8 @@
 import flax.nnx as nnx
 import jax
+import pytest
 
+import openpi.models.pi0 as _pi0
 import openpi.models.pi0_config as _pi0_config
 
 
@@ -44,3 +46,30 @@ def test_pi0_all_lora():
     assert len(state) == 17
     assert all("lora" not in p for p in state)
     assert all("llm" in p for p in state)
+
+
+def test_action_loss_groups_validate_ranges_and_overlap():
+    config = _pi0_config.Pi0Config(action_loss_groups=(("action", 0, 7, 1.0), ("tolerance", 7, 10, 0.25)))
+    assert config.action_loss_groups == (("action", 0, 7, 1.0), ("tolerance", 7, 10, 0.25))
+
+    with pytest.raises(ValueError, match="must not overlap"):
+        _pi0_config.Pi0Config(action_loss_groups=(("action", 0, 7, 1.0), ("tolerance", 6, 10, 0.25)))
+    with pytest.raises(ValueError, match="non-empty and unique"):
+        _pi0_config.Pi0Config(action_loss_groups=(("action", 0, 7, 1.0), ("action", 7, 10, 0.25)))
+    with pytest.raises(ValueError, match="non-empty"):
+        _pi0_config.Pi0Config(action_loss_groups=())
+
+
+def test_grouped_action_loss_applies_each_weight_and_ignores_other_dimensions():
+    squared_error = jax.numpy.asarray([[[1.0, 4.0, 9.0, 16.0, 1000.0]]])
+    loss, breakdown = _pi0._grouped_action_loss_with_breakdown(
+        squared_error, (("action", 0, 2, 1.0), ("tolerance", 2, 4, 0.5))
+    )
+
+    assert loss.shape == (1, 1)
+    assert float(loss[0, 0]) == pytest.approx(8.75)
+    assert float(breakdown["loss/action"][0, 0]) == pytest.approx(2.5)
+    assert float(breakdown["loss/tolerance"][0, 0]) == pytest.approx(12.5)
+    assert float(breakdown["loss_weighted/action"][0, 0]) == pytest.approx(2.5)
+    assert float(breakdown["loss_weighted/tolerance"][0, 0]) == pytest.approx(6.25)
+    assert float(breakdown["loss/total"][0, 0]) == pytest.approx(8.75)

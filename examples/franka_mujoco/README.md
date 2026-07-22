@@ -30,6 +30,13 @@ The data loader sequences all three targets over the same 16-step horizon as
 `actions`; the conventional pi0.5 transforms currently discard them until the
 tolerance head is introduced.
 
+The `pi05_franka_mujoco_joint16` config uses the existing 32-dimensional pi0.5
+action interface without adding model modules. It concatenates the seven
+physical actions and the three three-dimensional tolerance targets into the
+first 16 channels. Its grouped flow-matching loss weights physical actions by
+1.0 and each tolerance group by 0.25; padded channels 16 through 31 are excluded
+from the loss. The original `pi05_franka_mujoco` config remains action-only.
+
 The seven-dimensional state is:
 
 ```text
@@ -63,6 +70,35 @@ uv run scripts/compute_norm_stats.py --config-name pi05_franka_mujoco
 CUDA_VISIBLE_DEVICES=0 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
 uv run scripts/train.py pi05_franka_mujoco --exp-name=franka_mujoco_lora
 ```
+
+For joint 16-dimensional training, normalization statistics must be recomputed
+because its packed action statistics have shape 16 rather than 7:
+
+```bash
+uv run scripts/compute_norm_stats.py --config-name pi05_franka_mujoco_joint16
+
+CUDA_VISIBLE_DEVICES=0 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
+uv run scripts/train.py pi05_franka_mujoco_joint16 --exp-name=franka_mujoco_joint16_lora
+```
+
+Joint training logs the backward-compatible `loss` metric plus the following
+W&B metrics:
+
+```text
+loss/total
+loss/action
+loss/stage_target_pose
+loss/tolerance_frame
+loss/rotation_tolerance
+loss_weighted/action
+loss_weighted/stage_target_pose
+loss_weighted/tolerance_frame
+loss_weighted/rotation_tolerance
+```
+
+The four `loss/*` components are unweighted MSE values. The corresponding
+`loss_weighted/*` values include their configured lambda, and `loss/total` is
+their weighted sum.
 
 `fsdp_devices=1` disables parameter sharding. `CUDA_VISIBLE_DEVICES=0` is what
 restricts JAX to one GPU when the host exposes multiple GPUs.

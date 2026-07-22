@@ -360,6 +360,7 @@ class LeRobotLiberoDataConfig(DataConfigFactory):
 class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
     """Transforms for TaskTol-VLA Franka MuJoCo data converted to LeRobot."""
 
+    joint_task_tolerance: bool = False
     sequence_keys: Sequence[str] = (
         "actions",
         "stage_target_pose",
@@ -369,22 +370,36 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
 
     @override
     def create(self, assets_dirs: pathlib.Path, model_config: _model.BaseModelConfig) -> DataConfig:
+        repack_structure = {
+            "observation/image": "image",
+            "observation/wrist_image": "wrist_image",
+            "observation/state": "state",
+            "actions": "actions",
+            "prompt": "prompt",
+        }
+        if self.joint_task_tolerance:
+            repack_structure.update(
+                {
+                    "stage_target_pose": "stage_target_pose",
+                    "tolerance_frame": "tolerance_frame",
+                    "rotation_tolerance": "rotation_tolerance",
+                }
+            )
         repack_transform = _transforms.Group(
             inputs=[
-                _transforms.RepackTransform(
-                    {
-                        "observation/image": "image",
-                        "observation/wrist_image": "wrist_image",
-                        "observation/state": "state",
-                        "actions": "actions",
-                        "prompt": "prompt",
-                    }
-                )
+                _transforms.RepackTransform(repack_structure)
             ]
         )
         data_transforms = _transforms.Group(
-            inputs=[franka_mujoco_policy.FrankaMujocoInputs(model_type=model_config.model_type)],
-            outputs=[franka_mujoco_policy.FrankaMujocoOutputs()],
+            inputs=[
+                franka_mujoco_policy.FrankaMujocoInputs(
+                    model_type=model_config.model_type,
+                    joint_task_tolerance=self.joint_task_tolerance,
+                )
+            ],
+            outputs=[
+                franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=self.joint_task_tolerance)
+            ],
         )
         return dataclasses.replace(
             self.create_base_config(assets_dirs, model_config),
@@ -814,6 +829,50 @@ _CONFIGS = [
         data=LeRobotFrankaMujocoDataConfig(
             repo_id="caozilin/franka_mujoco",
             base_config=DataConfig(prompt_from_task=True),
+        ),
+        batch_size=24,
+        lr_schedule=_optimizer.CosineDecaySchedule(
+            warmup_steps=300,
+            peak_lr=5e-5,
+            decay_steps=3_000,
+            decay_lr=5e-6,
+        ),
+        optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
+        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
+        freeze_filter=pi0_config.Pi0Config(
+            pi05=True,
+            action_horizon=16,
+            discrete_state_input=False,
+            max_token_len=48,
+            paligemma_variant="gemma_2b_lora",
+            action_expert_variant="gemma_300m_lora",
+        ).get_freeze_filter(),
+        ema_decay=None,
+        num_train_steps=5_000,
+        save_interval=1_000,
+        keep_period=None,
+        fsdp_devices=1,
+    ),
+    TrainConfig(
+        name="pi05_franka_mujoco_joint16",
+        model=pi0_config.Pi0Config(
+            pi05=True,
+            action_horizon=16,
+            discrete_state_input=False,
+            max_token_len=48,
+            paligemma_variant="gemma_2b_lora",
+            action_expert_variant="gemma_300m_lora",
+            action_loss_groups=(
+                ("action", 0, 7, 1.0),
+                ("stage_target_pose", 7, 10, 0.25),
+                ("tolerance_frame", 10, 13, 0.25),
+                ("rotation_tolerance", 13, 16, 0.25),
+            ),
+        ),
+        data=LeRobotFrankaMujocoDataConfig(
+            repo_id="caozilin/franka_mujoco",
+            base_config=DataConfig(prompt_from_task=True),
+            joint_task_tolerance=True,
         ),
         batch_size=24,
         lr_schedule=_optimizer.CosineDecaySchedule(

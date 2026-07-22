@@ -9,6 +9,11 @@ from openpi.models import model as _model
 
 STATE_DIM = 7
 ACTION_DIM = 7
+TASK_TOLERANCE_DIM = 3
+JOINT_ACTION_DIM = ACTION_DIM + 3 * TASK_TOLERANCE_DIM
+TARGET_ROTATION_SLICE = slice(ACTION_DIM, ACTION_DIM + TASK_TOLERANCE_DIM)
+TOLERANCE_FRAME_SLICE = slice(TARGET_ROTATION_SLICE.stop, TARGET_ROTATION_SLICE.stop + TASK_TOLERANCE_DIM)
+ROTATION_TOLERANCE_SLICE = slice(TOLERANCE_FRAME_SLICE.stop, JOINT_ACTION_DIM)
 
 
 def make_franka_mujoco_example() -> dict:
@@ -39,6 +44,7 @@ class FrankaMujocoInputs(transforms.DataTransformFn):
     """Convert Franka MuJoCo observations to the common Pi model input format."""
 
     model_type: _model.ModelType
+    joint_task_tolerance: bool = False
 
     def __call__(self, data: dict) -> dict:
         base_image = _parse_image(data["observation/image"])
@@ -65,6 +71,16 @@ class FrankaMujocoInputs(transforms.DataTransformFn):
             actions = np.asarray(data["actions"], dtype=np.float32)
             if actions.shape[-1] != ACTION_DIM:
                 raise ValueError(f"Expected {ACTION_DIM}-D Franka actions, got shape {actions.shape}")
+            if self.joint_task_tolerance:
+                targets = []
+                for key in ("stage_target_pose", "tolerance_frame", "rotation_tolerance"):
+                    value = np.asarray(data[key], dtype=np.float32)
+                    if value.shape[:-1] != actions.shape[:-1] or value.shape[-1] != TASK_TOLERANCE_DIM:
+                        raise ValueError(
+                            f"Expected {key} shape {(*actions.shape[:-1], TASK_TOLERANCE_DIM)}, got {value.shape}"
+                        )
+                    targets.append(value)
+                actions = np.concatenate((actions, *targets), axis=-1)
             inputs["actions"] = actions
         if "prompt" in data:
             inputs["prompt"] = data["prompt"]
@@ -73,7 +89,21 @@ class FrankaMujocoInputs(transforms.DataTransformFn):
 
 @dataclasses.dataclass(frozen=True)
 class FrankaMujocoOutputs(transforms.DataTransformFn):
-    """Return only the seven physical Franka action dimensions."""
+    """Unpack physical Franka actions and optional joint tolerance targets."""
+
+    joint_task_tolerance: bool = False
 
     def __call__(self, data: dict) -> dict:
-        return {"actions": np.asarray(data["actions"][:, :ACTION_DIM])}
+        predictions = np.asarray(data["actions"])
+        outputs = {"actions": predictions[:, :ACTION_DIM]}
+        if self.joint_task_tolerance:
+            if predictions.shape[-1] < JOINT_ACTION_DIM:
+                raise ValueError(f"Expected at least {JOINT_ACTION_DIM} joint output dimensions, got {predictions.shape}")
+            outputs.update(
+                {
+                    "stage_target_pose": predictions[:, TARGET_ROTATION_SLICE],
+                    "tolerance_frame": predictions[:, TOLERANCE_FRAME_SLICE],
+                    "rotation_tolerance": predictions[:, ROTATION_TOLERANCE_SLICE],
+                }
+            )
+        return outputs

@@ -31,12 +31,34 @@ class Pi0Config(_model.BaseModelConfig):
     pi05: bool = False
     # This config option is not used directly by the model, but it is read by the ModelTransformFactory.
     discrete_state_input: bool = None  # type: ignore
+    # Optional weighted groups over the action dimension. Each entry is
+    # (name, start, end, weight); dimensions outside all groups do not
+    # contribute to the flow-matching loss. This changes supervision only, not
+    # model shapes. Names are also used for per-group training metrics.
+    action_loss_groups: tuple[tuple[str, int, int, float], ...] | None = None
 
     def __post_init__(self):
         if self.max_token_len is None:
             object.__setattr__(self, "max_token_len", 200 if self.pi05 else 48)
         if self.discrete_state_input is None:
             object.__setattr__(self, "discrete_state_input", self.pi05)
+        if self.action_loss_groups is not None:
+            if not self.action_loss_groups:
+                raise ValueError("action_loss_groups must be non-empty when provided")
+            covered: set[int] = set()
+            names: set[str] = set()
+            for name, start, end, weight in self.action_loss_groups:
+                if not name or name in names:
+                    raise ValueError("Action loss group names must be non-empty and unique")
+                names.add(name)
+                if not 0 <= start < end <= self.action_dim:
+                    raise ValueError(f"Invalid action loss group [{start}, {end}) for action_dim={self.action_dim}")
+                if weight < 0:
+                    raise ValueError("Action loss group weights must be non-negative")
+                indices = set(range(start, end))
+                if covered & indices:
+                    raise ValueError("Action loss groups must not overlap")
+                covered |= indices
 
     @property
     @override

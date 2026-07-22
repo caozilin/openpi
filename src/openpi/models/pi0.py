@@ -16,6 +16,36 @@ from openpi.shared import array_typing as at
 logger = logging.getLogger("openpi")
 
 
+def _grouped_action_loss(
+    squared_error: jax.Array,
+    groups: tuple[tuple[str, int, int, float], ...] | None,
+) -> jax.Array:
+    total, _ = _grouped_action_loss_with_breakdown(squared_error, groups)
+    return total
+
+
+def _grouped_action_loss_with_breakdown(
+    squared_error: jax.Array,
+    groups: tuple[tuple[str, int, int, float], ...] | None,
+) -> tuple[jax.Array, dict[str, jax.Array]]:
+    if groups is None:
+        return jnp.mean(squared_error, axis=-1), {}
+
+    raw_losses = {
+        name: jnp.mean(squared_error[..., start:end], axis=-1) for name, start, end, _ in groups
+    }
+    weighted_losses = {
+        name: weight * raw_losses[name] for name, _, _, weight in groups
+    }
+    total = sum(weighted_losses.values())
+    breakdown = {
+        **{f"loss/{name}": value for name, value in raw_losses.items()},
+        **{f"loss_weighted/{name}": value for name, value in weighted_losses.items()},
+        "loss/total": total,
+    }
+    return total, breakdown
+
+
 def make_attn_mask(input_mask, mask_ar):
     """Adapted from big_vision.
 
@@ -67,6 +97,7 @@ class Pi0(_model.BaseModel):
     def __init__(self, config: pi0_config.Pi0Config, rngs: nnx.Rngs):
         super().__init__(config.action_dim, config.action_horizon, config.max_token_len)
         self.pi05 = config.pi05
+        self.action_loss_groups = config.action_loss_groups
         paligemma_config = _gemma.get_config(config.paligemma_variant)
         action_expert_config = _gemma.get_config(config.action_expert_variant)
         # TODO: rewrite gemma in NNX. For now, use bridge.
@@ -189,6 +220,12 @@ class Pi0(_model.BaseModel):
     def compute_loss(
         self, rng: at.KeyArrayLike, observation: _model.Observation, actions: _model.Actions, *, train: bool = False
     ) -> at.Float[at.Array, "*b ah"]:
+        loss, _ = self.compute_loss_with_breakdown(rng, observation, actions, train=train)
+        return loss
+
+    def compute_loss_with_breakdown(
+        self, rng: at.KeyArrayLike, observation: _model.Observation, actions: _model.Actions, *, train: bool = False
+    ) -> tuple[at.Float[at.Array, "*b ah"], dict[str, at.Array]]:
         preprocess_rng, noise_rng, time_rng = jax.random.split(rng, 3)
         observation = _model.preprocess_observation(preprocess_rng, observation, train=train)
 
@@ -211,7 +248,8 @@ class Pi0(_model.BaseModel):
         )
         v_t = self.action_out_proj(suffix_out[:, -self.action_horizon :])
 
-        return jnp.mean(jnp.square(v_t - u_t), axis=-1)
+        squared_error = jnp.square(v_t - u_t)
+        return _grouped_action_loss_with_breakdown(squared_error, self.action_loss_groups)
 
     @override
     def sample_actions(
