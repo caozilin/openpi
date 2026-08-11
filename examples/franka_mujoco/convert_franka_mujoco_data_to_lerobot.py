@@ -363,10 +363,13 @@ def tolerance_targets_from_frame(
 
 
 def _task_directories(raw_dir: Path) -> list[Path]:
+    _EXCLUDED_PARENTS = {"failed_episodes", "single_axis_failure_videos"}
+
     task_dirs = sorted(
         path.parent
         for path in raw_dir.rglob("manifest.json")
-        if path.parent.name != "failed_episodes"
+        if path.parent.name not in _EXCLUDED_PARENTS
+        and not any(part in _EXCLUDED_PARENTS for part in path.parent.parts)
     )
     if not task_dirs:
         raise ValueError(f"No task directories containing manifest.json found under {raw_dir}")
