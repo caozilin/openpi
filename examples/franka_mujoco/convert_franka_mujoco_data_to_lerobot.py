@@ -535,6 +535,8 @@ def _convert_episode(
     main_capture = _open_video(main_path, expected_width=width, expected_height=height)
     wrist_capture = _open_video(wrist_path, expected_width=width, expected_height=height)
     try:
+        # 1. Read all frames first (parallel-safe, no lock needed)
+        frame_data_list: list[dict[str, Any]] = []
         for index, frame in enumerate(trajectory):
             if frame.get("index") != index or frame.get("video_frame_index") != index:
                 raise ValueError(f"{trajectory_path}: invalid index alignment at frame {index}")
@@ -550,7 +552,7 @@ def _convert_episode(
                 tolerance_profiles=tolerance_profiles,
                 source=trajectory_path,
             )
-            frame_data = {
+            frame_data_list.append({
                 "image": _read_rgb(main_capture, path=main_path, index=index),
                 "wrist_image": _read_rgb(wrist_capture, path=wrist_path, index=index),
                 "state": state_from_frame(frame, source=trajectory_path),
@@ -559,12 +561,7 @@ def _convert_episode(
                 "phase": phase_from_frame(frame, source=trajectory_path),
                 **tolerance_targets,
                 "task": instruction,
-            }
-            if dataset_lock is not None:
-                with dataset_lock:
-                    dataset.add_frame(frame_data)
-            else:
-                dataset.add_frame(frame_data)
+            })
 
         main_extra, _ = main_capture.read()
         wrist_extra, _ = wrist_capture.read()
@@ -574,10 +571,15 @@ def _convert_episode(
         main_capture.release()
         wrist_capture.release()
 
+    # 2. Write all frames atomically under lock
     if dataset_lock is not None:
         with dataset_lock:
+            for frame_data in frame_data_list:
+                dataset.add_frame(frame_data)
             dataset.save_episode()
     else:
+        for frame_data in frame_data_list:
+            dataset.add_frame(frame_data)
         dataset.save_episode()
 
 
