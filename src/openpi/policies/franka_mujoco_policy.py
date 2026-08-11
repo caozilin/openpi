@@ -9,11 +9,15 @@ from openpi.models import model as _model
 
 STATE_DIM = 7
 ACTION_DIM = 7
-TASK_TOLERANCE_DIM = 3
-JOINT_ACTION_DIM = ACTION_DIM + 3 * TASK_TOLERANCE_DIM
-TARGET_ROTATION_SLICE = slice(ACTION_DIM, ACTION_DIM + TASK_TOLERANCE_DIM)
-TOLERANCE_FRAME_SLICE = slice(TARGET_ROTATION_SLICE.stop, TARGET_ROTATION_SLICE.stop + TASK_TOLERANCE_DIM)
-ROTATION_TOLERANCE_SLICE = slice(TOLERANCE_FRAME_SLICE.stop, JOINT_ACTION_DIM)
+ROTATION_6D_DIM = 6
+ROTATION_TOLERANCE_DIM = 6
+JOINT_ACTION_DIM = ACTION_DIM + ROTATION_6D_DIM + ROTATION_TOLERANCE_DIM
+TARGET_ROTATION_SLICE = slice(ACTION_DIM, ACTION_DIM + ROTATION_6D_DIM)
+ROTATION_TOLERANCE_SLICE = slice(TARGET_ROTATION_SLICE.stop, JOINT_ACTION_DIM)
+TASK_TOLERANCE_DIMS = {
+    "stage_target_pose": ROTATION_6D_DIM,
+    "rotation_tolerance": ROTATION_TOLERANCE_DIM,
+}
 
 
 def make_franka_mujoco_example() -> dict:
@@ -73,11 +77,11 @@ class FrankaMujocoInputs(transforms.DataTransformFn):
                 raise ValueError(f"Expected {ACTION_DIM}-D Franka actions, got shape {actions.shape}")
             if self.joint_task_tolerance:
                 targets = []
-                for key in ("stage_target_pose", "tolerance_frame", "rotation_tolerance"):
+                for key, dimension in TASK_TOLERANCE_DIMS.items():
                     value = np.asarray(data[key], dtype=np.float32)
-                    if value.shape[:-1] != actions.shape[:-1] or value.shape[-1] != TASK_TOLERANCE_DIM:
+                    if value.shape[:-1] != actions.shape[:-1] or value.shape[-1] != dimension:
                         raise ValueError(
-                            f"Expected {key} shape {(*actions.shape[:-1], TASK_TOLERANCE_DIM)}, got {value.shape}"
+                            f"Expected {key} shape {(*actions.shape[:-1], dimension)}, got {value.shape}"
                         )
                     targets.append(value)
                 actions = np.concatenate((actions, *targets), axis=-1)
@@ -102,7 +106,6 @@ class FrankaMujocoOutputs(transforms.DataTransformFn):
             outputs.update(
                 {
                     "stage_target_pose": predictions[:, TARGET_ROTATION_SLICE],
-                    "tolerance_frame": predictions[:, TOLERANCE_FRAME_SLICE],
                     "rotation_tolerance": predictions[:, ROTATION_TOLERANCE_SLICE],
                 }
             )

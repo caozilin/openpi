@@ -364,7 +364,6 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
     sequence_keys: Sequence[str] = (
         "actions",
         "stage_target_pose",
-        "tolerance_frame",
         "rotation_tolerance",
     )
 
@@ -381,7 +380,6 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
             repack_structure.update(
                 {
                     "stage_target_pose": "stage_target_pose",
-                    "tolerance_frame": "tolerance_frame",
                     "rotation_tolerance": "rotation_tolerance",
                 }
             )
@@ -854,7 +852,7 @@ _CONFIGS = [
         fsdp_devices=1,
     ),
     TrainConfig(
-        name="pi05_franka_mujoco_joint16",
+        name="pi05_franka_mujoco_joint19",
         model=pi0_config.Pi0Config(
             pi05=True,
             action_horizon=16,
@@ -864,9 +862,8 @@ _CONFIGS = [
             action_expert_variant="gemma_300m_lora",
             action_loss_groups=(
                 ("action", 0, 7, 1.0),
-                ("stage_target_pose", 7, 10, 0.25),
-                ("tolerance_frame", 10, 13, 0.25),
-                ("rotation_tolerance", 13, 16, 0.25),
+                ("stage_target_pose", 7, 13, 0.5),
+                ("rotation_tolerance", 13, 19, 0.5),
             ),
         ),
         data=LeRobotFrankaMujocoDataConfig(

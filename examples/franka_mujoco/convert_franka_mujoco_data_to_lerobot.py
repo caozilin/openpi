@@ -1,4 +1,15 @@
-"""Convert TaskTol-VLA Franka MuJoCo schema 5.0 data to LeRobot format.
+# /// script
+# requires-python = ">=3.11,<3.12"
+# dependencies = [
+#     "lerobot @ git+https://github.com/huggingface/lerobot@0cf864870cf29f4738d3ade893e6fd13fbd7cdb5",
+#     "numpy>=1.22.4,<2.0.0",
+#     "opencv-python-headless>=4.10.0.84",
+#     "tqdm>=4.66.0",
+#     "tyro>=0.9.5",
+# ]
+# ///
+
+"""Convert TaskTol-VLA multi-robot MuJoCo schema 7.0 data to LeRobot format.
 
 Example:
 uv run examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
@@ -21,15 +32,19 @@ if TYPE_CHECKING:
     from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
 
 
-SCHEMA_VERSION = "5.0"
-DATASET_RELEASE_VERSION = "2.0"
+SCHEMA_VERSION = "7.0"
+DATASET_RELEASE_VERSION = "4.2"
 FPS = 10
+IMAGE_HEIGHT = 224
+IMAGE_WIDTH = 224
 STATE_DIM = 7
 ACTION_DIM = 7
+JOINT_STATE_DIM = 7
+ROBOT_ID_DIM = 1
 PHASE_DIM = 1
-STAGE_TARGET_POSE_DIM = 3
-TOLERANCE_FRAME_DIM = 3
-ROTATION_TOLERANCE_DIM = 3
+ROTATION_6D_DIM = 6
+STAGE_TARGET_POSE_DIM = ROTATION_6D_DIM
+ROTATION_TOLERANCE_DIM = 6
 PHASE_LABELS = {
     "pregrasp": "Pre-grasp",
     "grasp": "Grasp",
@@ -37,6 +52,30 @@ PHASE_LABELS = {
     "release": "Release",
 }
 PHASE_TO_ID = {phase: index for index, phase in enumerate(PHASE_LABELS)}
+ROBOT_SPECS = {
+    "panda": {"id": 0, "arm_dof": 7},
+    "xarm7": {"id": 1, "arm_dof": 7},
+    "ur5e": {"id": 2, "arm_dof": 6},
+}
+ROTATION_TOLERANCE_PROFILE_ORDER = (
+    "rx_negative",
+    "rx_positive",
+    "ry_negative",
+    "ry_positive",
+    "rz_negative",
+    "rz_positive",
+)
+DEFAULT_ROTATION_TOLERANCE_PROFILES_RAD = {
+    "pregrasp": [0.0, 0.0, np.pi / 6, np.pi / 6, 0.0, 0.0],
+    "grasp": [0.0] * ROTATION_TOLERANCE_DIM,
+    "postgrasp": [0.0, 0.0, 0.0, 0.0, np.pi / 4, np.pi / 4],
+    "release": [0.0] * ROTATION_TOLERANCE_DIM,
+}
+SINGLE_AXIS_TO_INDICES = {
+    "x": (0, 1),  # rx_negative, rx_positive
+    "y": (2, 3),  # ry_negative, ry_positive
+    "z": (4, 5),  # rz_negative, rz_positive
+}
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -57,6 +96,159 @@ def _require_vector(value: Any, size: int, *, field: str, source: Path) -> np.nd
     return array
 
 
+def rotation_vector_to_6d(value: Any, *, field: str, source: Path) -> np.ndarray:
+    """Encode an axis-angle rotation as the first two rotation-matrix columns."""
+    rotation_vector = _require_vector(value, 3, field=field, source=source)
+    rotation_matrix, _ = cv2.Rodrigues(rotation_vector.astype(np.float64))
+    return np.concatenate((rotation_matrix[:, 0], rotation_matrix[:, 1])).astype(np.float32)
+
+
+def _default_tolerance_profiles() -> dict[str, list[float]]:
+    return {name: list(values) for name, values in DEFAULT_ROTATION_TOLERANCE_PROFILES_RAD.items()}
+
+
+def _tolerance_profiles_from_metadata(metadata: dict[str, Any], *, source: Path) -> dict[str, list[float]]:
+    annotation = metadata.get("annotation")
+    profiles = annotation.get("rotation_tolerance_profiles_rad") if isinstance(annotation, dict) else None
+    if not isinstance(profiles, dict):
+        print(
+            f"WARNING: {source} has no annotation.rotation_tolerance_profiles_rad; "
+            "using the original default task tolerance profiles.",
+        )
+        return _default_tolerance_profiles()
+
+    order = annotation.get("rotation_tolerance_profile_order")
+    if order is not None and tuple(order) != ROTATION_TOLERANCE_PROFILE_ORDER:
+        raise ValueError(
+            f"{source}: rotation_tolerance_profile_order must be {ROTATION_TOLERANCE_PROFILE_ORDER}, got {order}"
+        )
+    validated = {}
+    for phase in PHASE_LABELS:
+        value = _require_vector(
+            profiles.get(phase),
+            ROTATION_TOLERANCE_DIM,
+            field=f"annotation.rotation_tolerance_profiles_rad.{phase}",
+            source=source,
+        )
+        if np.any(value < 0.0):
+            raise ValueError(f"{source}: rotation tolerance profile {phase!r} must contain non-negative magnitudes")
+        validated[phase] = value.tolist()
+    return validated
+
+
+def _load_tolerance_annotation(
+    task_dir: Path,
+    task_profiles: dict[str, list[float]],
+) -> dict[str, list[float]]:
+    """Load one optimized task-level tolerance profile shared by all episodes."""
+    annotation_path = task_dir / "tolerance_annotation.json"
+    profiles = {name: list(values) for name, values in task_profiles.items()}
+    if annotation_path.is_file():
+        document = _load_json(annotation_path)
+        order = document.get("rotation_tolerance_bounds_order")
+        if order is not None and tuple(order) != ROTATION_TOLERANCE_PROFILE_ORDER:
+            raise ValueError(
+                f"{annotation_path}: rotation_tolerance_bounds_order must be "
+                f"{ROTATION_TOLERANCE_PROFILE_ORDER}, got {order}"
+            )
+
+        task_bounds = document.get("rotation_tolerance_bounds_rad")
+        if not isinstance(task_bounds, dict):
+            raise ValueError(f"{annotation_path}: rotation_tolerance_bounds_rad must be an object")
+        for phase, value in task_bounds.items():
+            if phase not in PHASE_LABELS:
+                raise ValueError(f"{annotation_path}: unknown task-level tolerance phase {phase!r}")
+            bounds = _require_vector(
+                value,
+                ROTATION_TOLERANCE_DIM,
+                field=f"rotation_tolerance_bounds_rad.{phase}",
+                source=annotation_path,
+            )
+            if np.any(bounds < 0.0):
+                raise ValueError(f"{annotation_path}: task-level tolerance phase {phase!r} must be non-negative")
+            profiles[phase] = bounds.tolist()
+
+        # Per-episode `episode_refinements` are deliberately not applied. The
+        # converted dataset uses one counterfactual-search result for every episode
+        # of the task so the labels do not depend on episode-specific optimization.
+        refinements = document.get("episode_refinements")
+        refinement_count = len(refinements) if isinstance(refinements, list) else 0
+        print(
+            f"Loaded {annotation_path}: using optimized task-level tolerances for all episodes; "
+            f"ignored {refinement_count} per-episode refinements."
+        )
+
+    profiles = _load_single_axis_searches(task_dir, profiles)
+    return profiles
+
+
+def _load_single_axis_searches(
+    task_dir: Path,
+    profiles: dict[str, list[float]],
+) -> dict[str, list[float]]:
+    """Merge single-axis search results into tolerance profiles.
+
+    Scans ``task_dir`` for ``single_axis_*.json`` files.  For each file the
+    ``single_axis_only`` field determines which rotation axes were searched and
+    ``rotation_tolerance_bounds_rad`` supplies the optimized per-phase values.
+    Only the searched axes override the existing profiles; unsearched axes are
+    left unchanged.
+    """
+    merged = {name: list(values) for name, values in profiles.items()}
+    for search_path in sorted(task_dir.glob("single_axis_*.json")):
+        document = _load_json(search_path)
+        if document.get("method") != "single_axis_only_search":
+            continue
+
+        searched_axes = document.get("single_axis_only")
+        if not isinstance(searched_axes, list):
+            raise ValueError(f"{search_path}: single_axis_only must be a list")
+
+        bounds_rad = document.get("rotation_tolerance_bounds_rad")
+        if not isinstance(bounds_rad, dict):
+            raise ValueError(f"{search_path}: rotation_tolerance_bounds_rad must be an object")
+
+        axis_indices: list[int] = []
+        for axis in searched_axes:
+            try:
+                indices = SINGLE_AXIS_TO_INDICES[axis]
+            except KeyError as error:
+                raise ValueError(
+                    f"{search_path}: unknown single_axis_only value {axis!r}; "
+                    f"expected one of {tuple(SINGLE_AXIS_TO_INDICES)}"
+                ) from error
+            axis_indices.extend(indices)
+
+        for phase in PHASE_LABELS:
+            phase_bounds = bounds_rad.get(phase)
+            if phase_bounds is None:
+                continue
+            bounds = _require_vector(
+                phase_bounds,
+                ROTATION_TOLERANCE_DIM,
+                field=f"rotation_tolerance_bounds_rad.{phase}",
+                source=search_path,
+            )
+            for idx in axis_indices:
+                merged[phase][idx] = float(bounds[idx])
+
+        print(
+            f"Loaded {search_path.name}: single-axis search for axes {searched_axes}; "
+            f"merged into tolerance profiles."
+        )
+    return merged
+
+
+def _episode_key(entry: dict[str, Any], *, source: Path) -> tuple[int, int]:
+    episode_index = entry.get("episode_index")
+    seed = entry.get("seed")
+    if not isinstance(episode_index, int) or isinstance(episode_index, bool):
+        raise ValueError(f"{source}: episode_index must be an integer")
+    if not isinstance(seed, int) or isinstance(seed, bool):
+        raise ValueError(f"{source}: seed must be an integer")
+    return episode_index, seed
+
+
 def state_from_frame(frame: dict[str, Any], *, source: Path) -> np.ndarray:
     """Return XYZ + base-frame rotation vector + one symmetric finger position."""
     position = _require_vector(frame["ee_state"]["position_m"], 3, field="ee_state.position_m", source=source)
@@ -74,6 +266,33 @@ def state_from_frame(frame: dict[str, Any], *, source: Path) -> np.ndarray:
     )
     symmetric_finger_position = np.asarray([0.5 * float(np.sum(fingers))], dtype=np.float32)
     return np.concatenate((position, rotation, symmetric_finger_position), dtype=np.float32)
+
+
+def joint_state_from_frame(
+    frame: dict[str, Any],
+    *,
+    robot_uid: str,
+    source: Path,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Return the schema's fixed-width joint position and velocity vectors."""
+    joint_state = frame.get("joint_state")
+    if not isinstance(joint_state, dict):
+        raise ValueError(f"{source}: joint_state must be an object")
+    position = _require_vector(
+        joint_state.get("position_rad"),
+        JOINT_STATE_DIM,
+        field="joint_state.position_rad",
+        source=source,
+    )
+    velocity = _require_vector(
+        joint_state.get("velocity_rad_s"),
+        JOINT_STATE_DIM,
+        field="joint_state.velocity_rad_s",
+        source=source,
+    )
+    if robot_uid == "ur5e" and (position[-1] != 0.0 or velocity[-1] != 0.0):
+        raise ValueError(f"{source}: UR5e joint state dimension 7 must be the zero padding value")
+    return position, velocity
 
 
 def phase_from_frame(
@@ -129,16 +348,9 @@ def tolerance_targets_from_frame(
         raise ValueError(f"{source}: unknown rotation tolerance profile {profile!r}") from error
 
     return {
-        "stage_target_pose": _require_vector(
+        "stage_target_pose": rotation_vector_to_6d(
             target_pose.get("rotation_vector_base_rad"),
-            STAGE_TARGET_POSE_DIM,
             field="stage_target_pose.rotation_vector_base_rad",
-            source=source,
-        ),
-        "tolerance_frame": _require_vector(
-            annotation.get("tolerance_frame_rotation_vector_base_rad"),
-            TOLERANCE_FRAME_DIM,
-            field="tolerance_frame_rotation_vector_base_rad",
             source=source,
         ),
         "rotation_tolerance": _require_vector(
@@ -151,22 +363,67 @@ def tolerance_targets_from_frame(
 
 
 def _task_directories(raw_dir: Path) -> list[Path]:
-    task_dirs = sorted(path.parent for path in raw_dir.glob("*/manifest.json"))
+    task_dirs = sorted(
+        path.parent
+        for path in raw_dir.rglob("manifest.json")
+        if path.parent.name != "failed_episodes"
+    )
     if not task_dirs:
         raise ValueError(f"No task directories containing manifest.json found under {raw_dir}")
     return task_dirs
 
 
-def _validate_task(task_dir: Path) -> tuple[dict[str, Any], dict[str, Any], int, int]:
+def _infer_robot_uid(task_dir: Path) -> str:
+    for part in reversed(task_dir.parts):
+        if part.lower() in ROBOT_SPECS:
+            return part.lower()
+    raise ValueError(f"{task_dir}: cannot infer robot UID from the directory hierarchy")
+
+
+def _validate_robot(metadata: dict[str, Any], *, source: Path) -> str:
+    robot = metadata.get("robot")
+    if not isinstance(robot, dict):
+        raise ValueError(f"{source}: robot must be an object")
+    robot_uid = robot.get("uid")
+    try:
+        spec = ROBOT_SPECS[robot_uid]
+    except (KeyError, TypeError) as error:
+        raise ValueError(f"{source}: robot.uid must be one of {tuple(ROBOT_SPECS)}, got {robot_uid!r}") from error
+
+    arm_dof = robot.get("arm_dof")
+    joint_names = robot.get("joint_names")
+    if arm_dof != spec["arm_dof"]:
+        raise ValueError(f"{source}: robot.arm_dof must be {spec['arm_dof']} for {robot_uid}")
+    if not isinstance(joint_names, list) or len(joint_names) != arm_dof:
+        raise ValueError(f"{source}: robot.joint_names must contain {arm_dof} physical joints")
+    if robot.get("joint_state_dimension") != JOINT_STATE_DIM:
+        raise ValueError(f"{source}: robot.joint_state_dimension must be {JOINT_STATE_DIM}")
+    return robot_uid
+
+
+def _validate_task(task_dir: Path) -> tuple[dict[str, Any], dict[str, Any], str, int, int]:
     metadata_path = task_dir / "task_metadata.json"
     manifest_path = task_dir / "manifest.json"
-    metadata = _load_json(metadata_path)
     manifest = _load_json(manifest_path)
 
-    for source, document in ((metadata_path, metadata), (manifest_path, manifest)):
-        if str(document.get("schema_version")) != SCHEMA_VERSION:
-            actual_version = document.get("schema_version")
-            raise ValueError(f"{source}: expected schema_version {SCHEMA_VERSION}, got {actual_version}")
+    if str(manifest.get("schema_version")) != SCHEMA_VERSION:
+        raise ValueError(
+            f"{manifest_path}: expected schema_version {SCHEMA_VERSION}, got {manifest.get('schema_version')}"
+        )
+    if not metadata_path.is_file():
+        robot_uid = _infer_robot_uid(task_dir)
+        print(
+            f"WARNING: {metadata_path} is missing; assuming {FPS} Hz, {IMAGE_WIDTH}x{IMAGE_HEIGHT} videos, "
+            f"robot={robot_uid}, and the original default task tolerance profiles."
+        )
+        metadata = {"annotation": {"rotation_tolerance_profiles_rad": _default_tolerance_profiles()}}
+        return metadata, manifest, robot_uid, IMAGE_WIDTH, IMAGE_HEIGHT
+
+    metadata = _load_json(metadata_path)
+    if str(metadata.get("schema_version")) != SCHEMA_VERSION:
+        raise ValueError(
+            f"{metadata_path}: expected schema_version {SCHEMA_VERSION}, got {metadata.get('schema_version')}"
+        )
     if str(metadata.get("dataset_release_version")) != DATASET_RELEASE_VERSION:
         raise ValueError(
             f"{metadata_path}: expected dataset_release_version {DATASET_RELEASE_VERSION}, "
@@ -174,20 +431,31 @@ def _validate_task(task_dir: Path) -> tuple[dict[str, Any], dict[str, Any], int,
         )
     if float(metadata.get("frequency_hz", -1)) != FPS:
         raise ValueError(f"{metadata_path}: expected frequency_hz {FPS}")
+    robot_uid = _validate_robot(metadata, source=metadata_path)
     action_format = metadata.get("action_format")
     if not isinstance(action_format, dict) or int(action_format.get("dimension", -1)) != ACTION_DIM:
         raise ValueError(f"{metadata_path}: action_format.dimension must be {ACTION_DIM}")
     if metadata.get("phase_labels") != PHASE_LABELS:
-        raise ValueError(f"{metadata_path}: phase_labels must define the canonical four schema 5.0 phases")
+        raise ValueError(f"{metadata_path}: phase_labels must define the canonical four schema 7.0 phases")
+
+    tolerance_profiles = _tolerance_profiles_from_metadata(metadata, source=metadata_path)
+    annotation = dict(metadata.get("annotation") or {})
+    annotation["rotation_tolerance_profiles_rad"] = tolerance_profiles
+    metadata = {**metadata, "annotation": annotation}
 
     video = metadata.get("video", {})
     resolution = video.get("resolution")
     if not isinstance(resolution, list) or len(resolution) != 2:
         raise ValueError(f"{metadata_path}: video.resolution must be [width, height]")
     width, height = (int(resolution[0]), int(resolution[1]))
-    if width <= 0 or height <= 0 or float(video.get("fps", -1)) != FPS:
+    if (width, height) != (IMAGE_WIDTH, IMAGE_HEIGHT):
+        raise ValueError(
+            f"{metadata_path}: videos must already be resize-with-pad processed to "
+            f"{IMAGE_WIDTH}x{IMAGE_HEIGHT}, got {width}x{height}"
+        )
+    if float(video.get("fps", -1)) != FPS:
         raise ValueError(f"{metadata_path}: invalid video resolution or fps")
-    return metadata, manifest, width, height
+    return metadata, manifest, robot_uid, width, height
 
 
 def _episode_entries(task_dir: Path, manifest: dict[str, Any]) -> Iterator[dict[str, Any]]:
@@ -224,7 +492,8 @@ def _convert_episode(
     episode_dir: Path,
     manifest_entry: dict[str, Any],
     *,
-    metadata: dict[str, Any],
+    tolerance_profiles: dict[str, list[float]],
+    robot_uid: str,
     width: int,
     height: int,
 ) -> None:
@@ -236,6 +505,10 @@ def _convert_episode(
         raise ValueError(f"{trajectory_path}: expected episode object and trajectory list")
     if episode.get("result", {}).get("success") is not True:
         raise ValueError(f"{trajectory_path}: episode is not successful")
+    if _episode_key(episode, source=trajectory_path) != _episode_key(
+        manifest_entry, source=episode_dir.parent / "manifest.json"
+    ):
+        raise ValueError(f"{trajectory_path}: episode index or seed does not match the manifest")
     frame_count = int(episode.get("frame_count", -1))
     if frame_count != len(trajectory) or frame_count != int(manifest_entry.get("frames", -1)):
         raise ValueError(f"{trajectory_path}: inconsistent trajectory, episode, or manifest frame count")
@@ -247,14 +520,6 @@ def _convert_episode(
     if not all(isinstance(frame, dict) for frame in trajectory):
         raise ValueError(f"{trajectory_path}: every trajectory frame must be an object")
     annotations = _stage_annotation_lookup(document, source=trajectory_path)
-    annotation_metadata = metadata.get("annotation")
-    tolerance_profiles = (
-        annotation_metadata.get("rotation_tolerance_profiles_rad")
-        if isinstance(annotation_metadata, dict)
-        else None
-    )
-    if not isinstance(tolerance_profiles, dict):
-        raise ValueError(f"{episode_dir.parent / 'task_metadata.json'}: missing rotation tolerance profiles")
 
     main_path = episode_dir / "main_rgb.mp4"
     wrist_path = episode_dir / "wrist_rgb.mp4"
@@ -265,6 +530,11 @@ def _convert_episode(
             if frame.get("index") != index or frame.get("video_frame_index") != index:
                 raise ValueError(f"{trajectory_path}: invalid index alignment at frame {index}")
             action = _require_vector(frame.get("action"), ACTION_DIM, field="action", source=trajectory_path)
+            joint_state_from_frame(
+                frame,
+                robot_uid=robot_uid,
+                source=trajectory_path,
+            )
             tolerance_targets = tolerance_targets_from_frame(
                 frame,
                 annotations=annotations,
@@ -276,6 +546,7 @@ def _convert_episode(
                     "image": _read_rgb(main_capture, path=main_path, index=index),
                     "wrist_image": _read_rgb(wrist_capture, path=wrist_path, index=index),
                     "state": state_from_frame(frame, source=trajectory_path),
+                    "robot_id": np.asarray([ROBOT_SPECS[robot_uid]["id"]], dtype=np.int64),
                     "actions": action,
                     "phase": phase_from_frame(frame, source=trajectory_path),
                     **tolerance_targets,
@@ -317,16 +588,13 @@ def main(
         raise ValueError("max_episodes must be positive")
 
     task_specs = []
-    common_size = None
     for task_dir in _task_directories(raw_dir):
-        metadata, manifest, width, height = _validate_task(task_dir)
-        if common_size is None:
-            common_size = (width, height)
-        elif common_size != (width, height):
-            raise ValueError(f"All tasks must use one video resolution; got {common_size} and {(width, height)}")
-        task_specs.append((task_dir, metadata, manifest))
-    assert common_size is not None
-    width, height = common_size
+        metadata, manifest, robot_uid, width, height = _validate_task(task_dir)
+        task_profiles = _load_tolerance_annotation(
+            task_dir,
+            metadata["annotation"]["rotation_tolerance_profiles_rad"],
+        )
+        task_specs.append((task_dir, manifest, robot_uid, width, height, task_profiles))
 
     output_path = HF_LEROBOT_HOME / repo_id
     if output_path.exists():
@@ -336,19 +604,28 @@ def main(
 
     dataset = LeRobotDataset.create(
         repo_id=repo_id,
-        robot_type="franka_panda_mujoco",
+        robot_type="tasktol_mujoco",
         fps=FPS,
         features={
-            "image": {"dtype": "image", "shape": (height, width, 3), "names": ["height", "width", "channel"]},
+            "image": {
+                "dtype": "image",
+                "shape": (IMAGE_HEIGHT, IMAGE_WIDTH, 3),
+                "names": ["height", "width", "channel"],
+            },
             "wrist_image": {
                 "dtype": "image",
-                "shape": (height, width, 3),
+                "shape": (IMAGE_HEIGHT, IMAGE_WIDTH, 3),
                 "names": ["height", "width", "channel"],
             },
             "state": {
                 "dtype": "float32",
                 "shape": (STATE_DIM,),
                 "names": ["state"],
+            },
+            "robot_id": {
+                "dtype": "int64",
+                "shape": (ROBOT_ID_DIM,),
+                "names": ["robot_id"],
             },
             "actions": {
                 "dtype": "float32",
@@ -363,17 +640,12 @@ def main(
             "stage_target_pose": {
                 "dtype": "float32",
                 "shape": (STAGE_TARGET_POSE_DIM,),
-                "names": ["rotation_vector_base_rad"],
-            },
-            "tolerance_frame": {
-                "dtype": "float32",
-                "shape": (TOLERANCE_FRAME_DIM,),
-                "names": ["rotation_vector_base_rad"],
+                "names": ["r1x", "r1y", "r1z", "r2x", "r2y", "r2z"],
             },
             "rotation_tolerance": {
                 "dtype": "float32",
                 "shape": (ROTATION_TOLERANCE_DIM,),
-                "names": ["x", "y", "z"],
+                "names": list(ROTATION_TOLERANCE_PROFILE_ORDER),
             },
         },
         image_writer_threads=image_writer_threads,
@@ -381,12 +653,15 @@ def main(
     )
 
     converted = 0
-    total = sum(len(list(_episode_entries(task_dir, manifest))) for task_dir, _, manifest in task_specs)
+    total = sum(
+        len(list(_episode_entries(task_dir, manifest)))
+        for task_dir, manifest, _, _, _, _ in task_specs
+    )
     if max_episodes is not None:
         total = min(total, max_episodes)
     progress = tqdm.tqdm(total=total, desc="Converting episodes")
     try:
-        for task_dir, metadata, manifest in task_specs:
+        for task_dir, manifest, robot_uid, width, height, task_profiles in task_specs:
             for entry in _episode_entries(task_dir, manifest):
                 if max_episodes is not None and converted >= max_episodes:
                     break
@@ -394,7 +669,13 @@ def main(
                 if not episode_dir.is_dir():
                     raise ValueError(f"Episode directory does not exist: {episode_dir}")
                 _convert_episode(
-                    dataset, episode_dir, entry, metadata=metadata, width=width, height=height
+                    dataset,
+                    episode_dir,
+                    entry,
+                    tolerance_profiles=task_profiles,
+                    robot_uid=robot_uid,
+                    width=width,
+                    height=height,
                 )
                 converted += 1
                 progress.update()
@@ -407,7 +688,7 @@ def main(
         raise ValueError("No episodes were converted")
     if push_to_hub:
         dataset.push_to_hub(
-            tags=["franka", "panda", "mujoco", "tasktol-vla"],
+            tags=["panda", "xarm7", "ur5e", "mujoco", "tasktol-vla"],
             private=private,
             push_videos=True,
             license="apache-2.0",
