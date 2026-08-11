@@ -1,20 +1,17 @@
 # ============================================================
-# Windows PowerShell：将本地原始数据集转换为 LeRobot 格式
-# 转换脚本使用独立的 uv 环境，不安装 JAX 和 OpenPI。
-# 转换完成后，手动将数据集复制到云服务器的 LeRobot 数据目录。
-# Windows 默认输出：$env:USERPROFILE\.cache\huggingface\lerobot\caozilin\franka_mujoco
-# 云服务器目标：/root/.cache/huggingface/lerobot/caozilin/franka_mujoco
+# Linux：将本地原始数据集转换为 LeRobot 格式
+# 默认输出：~/.cache/huggingface/lerobot/caozilin/franka_mujoco
 # ============================================================
-cd G:\Code\openpi
+cd /root/openpi
 
-uv run --script examples\franka_mujoco\convert_franka_mujoco_data_to_lerobot.py `
-  --raw-dir G:\Code\franka_mujoco\datasets\v1 `
-  --repo-id caozilin/franka_mujoco `
+uv run --script examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
+  --raw-dir /root/franka_mujoco/datasets/v1 \
+  --repo-id caozilin/franka_mujoco \
   --image-writer-processes 0
 
 
 # ============================================================
-# Linux 云服务器：安装完整的 OpenPI 环境
+# Linux：安装完整的 OpenPI 环境
 # ============================================================
 cd /root/openpi
 
@@ -22,7 +19,7 @@ uv sync
 
 
 # ============================================================
-# Linux 云服务器：为两个配置分别生成归一化参数
+# Linux：为两个配置分别生成归一化参数
 # 两个配置读取同一个 caozilin/franka_mujoco 数据集。
 # 原始 pi0.5 只统计 7 维动作；TaskTol19 统计 19 维联合目标。
 # ============================================================
@@ -34,7 +31,7 @@ uv run scripts/compute_norm_stats.py \
 
 
 # ============================================================
-# Linux 云服务器：训练原始 pi0.5（只训练 7 维动作）
+# Linux：训练原始 pi0.5（只训练 7 维动作）
 # ============================================================
 CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
@@ -43,7 +40,7 @@ uv run scripts/train.py pi05_franka_mujoco \
 
 
 # ============================================================
-# Linux 云服务器：训练 TaskTol19
+# Linux：训练 TaskTol19
 # 联合训练 7 维动作、6 维目标旋转和 6 维双侧容差。
 # ============================================================
 CUDA_VISIBLE_DEVICES=0 \
