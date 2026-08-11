@@ -1,21 +1,27 @@
 # ============================================================
-# Linux：将本地原始数据集转换为 LeRobot 格式
-# 默认输出：~/.cache/huggingface/lerobot/caozilin/franka_mujoco
-# ============================================================
-cd /root/openpi
-
-uv run --script examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
-  --raw-dir /root/franka_mujoco/datasets/v1 \
-  --repo-id caozilin/franka_mujoco \
-  --image-writer-processes 0
-
-
-# ============================================================
-# Linux：安装完整的 OpenPI 环境
+# Linux：安装完整且版本锁定的 OpenPI 环境
 # ============================================================
 cd /root/openpi
 
 uv sync
+
+
+# ============================================================
+# Linux：将原始数据集转换为 LeRobot 格式
+# 输出到 /root/gpufree-data/lerobot_cache/caozilin/franka_mujoco
+# 转换与训练共用根项目环境，禁止手工修改 Parquet schema metadata。
+# ============================================================
+cd /root/openpi
+
+export HF_LEROBOT_HOME=/root/gpufree-data/lerobot_cache
+
+uv run python examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
+  --raw-dir /root/gpufree-data/v1 \
+  --repo-id caozilin/franka_mujoco \
+  --workers 12 \
+  --image-writer-processes 0 \
+  --image-writer-threads 2 \
+  --progress-interval-seconds 5
 
 
 # ============================================================

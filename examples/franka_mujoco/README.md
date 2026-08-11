@@ -77,24 +77,30 @@ original defaults: Pre-grasp allows +/-30 degrees around tolerance-frame Y,
 Post-grasp allows +/-45 degrees around tolerance-frame Z, and Grasp/Release are
 strict.
 
-Convert locally on Windows with the converter's dedicated uv environment. The
-script metadata and adjacent lock file isolate this command from the root
-OpenPI environment, so it does not install JAX, Flax, CUDA packages, or OpenPI:
+Install the locked OpenPI environment and run conversion on Linux. Conversion,
+normalization-statistics generation, and training deliberately share the root
+project environment so that LeRobot, Hugging Face Datasets, and PyArrow use the
+same schema versions throughout the pipeline:
 
-```powershell
-uv run --script examples\franka_mujoco\convert_franka_mujoco_data_to_lerobot.py `
-  --raw-dir G:\Code\franka_mujoco\datasets\v1 `
-  --repo-id caozilin/franka_mujoco `
-  --image-writer-processes 0
+```bash
+uv sync
+
+uv run python examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
+  --raw-dir /path/to/franka_mujoco/datasets/v1 \
+  --repo-id caozilin/franka_mujoco \
+  --workers 12 \
+  --image-writer-processes 0 \
+  --image-writer-threads 2 \
+  --progress-interval-seconds 5
 ```
 
-Use `--overwrite` to replace an existing local conversion. After logging in to
-Hugging Face, `--push-to-hub` publishes a private dataset by default; add
-`--no-private` only when a public dataset is intended.
+The converter displays one global frame-based progress bar with throughput and
+ETA. Hugging Face's per-episode map/parquet bars are disabled. Increase
+`--progress-interval-seconds` for less frequent terminal updates.
 
-Do not run normalization-statistics generation in this Windows-only converter
-environment. On the Linux GPU cloud server, use the complete OpenPI environment
-to compute normalization statistics and train:
+Use `--overwrite` to replace an existing conversion.
+
+In the same Linux environment, compute normalization statistics and train:
 
 ```bash
 uv run scripts/compute_norm_stats.py --config-name pi05_franka_mujoco

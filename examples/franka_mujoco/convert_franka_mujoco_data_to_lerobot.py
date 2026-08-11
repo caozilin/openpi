@@ -1,18 +1,7 @@
-# /// script
-# requires-python = ">=3.11,<3.12"
-# dependencies = [
-#     "lerobot @ git+https://github.com/huggingface/lerobot@0cf864870cf29f4738d3ade893e6fd13fbd7cdb5",
-#     "numpy>=1.22.4,<2.0.0",
-#     "opencv-python-headless>=4.10.0.84",
-#     "tqdm>=4.66.0",
-#     "tyro>=0.9.5",
-# ]
-# ///
-
 """Convert TaskTol-VLA multi-robot MuJoCo schema 7.0 data to LeRobot format.
 
 Example:
-uv run examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
+uv run python examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
     --raw-dir /path/to/franka_mujoco/datasets \
     --repo-id caozilin/franka_mujoco
 """
@@ -24,7 +13,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 from pathlib import Path
 import shutil
-import threading
 from typing import TYPE_CHECKING, Any
 
 import cv2
@@ -495,8 +483,7 @@ def _read_rgb(capture: cv2.VideoCapture, *, path: Path, index: int) -> np.ndarra
     return cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
 
-def _convert_episode(
-    dataset: LeRobotDataset,
+def _prepare_episode(
     episode_dir: Path,
     manifest_entry: dict[str, Any],
     *,
@@ -504,8 +491,7 @@ def _convert_episode(
     robot_uid: str,
     width: int,
     height: int,
-    dataset_lock: threading.Lock | None = None,
-) -> None:
+) -> list[dict[str, Any]]:
     trajectory_path = episode_dir / "trajectory.json"
     document = _load_json(trajectory_path)
     episode = document.get("episode")
@@ -571,16 +557,21 @@ def _convert_episode(
         main_capture.release()
         wrist_capture.release()
 
-    # 2. Write all frames atomically under lock
-    if dataset_lock is not None:
-        with dataset_lock:
-            for frame_data in frame_data_list:
-                dataset.add_frame(frame_data)
-            dataset.save_episode()
-    else:
-        for frame_data in frame_data_list:
-            dataset.add_frame(frame_data)
-        dataset.save_episode()
+    if not frame_data_list:
+        raise ValueError(f"{trajectory_path}: successful episode must contain at least one frame")
+    return frame_data_list
+
+
+def _write_episode(dataset: LeRobotDataset, frame_data_list: list[dict[str, Any]]) -> None:
+    """Write one prepared episode from the main thread.
+
+    LeRobotDataset owns a single mutable episode buffer, so add_frame and
+    save_episode must never be called concurrently or interleaved across
+    episodes.
+    """
+    for frame_data in frame_data_list:
+        dataset.add_frame(frame_data)
+    dataset.save_episode()
 
 
 def main(
@@ -594,8 +585,10 @@ def main(
     image_writer_threads: int = 10,
     image_writer_processes: int = 5,
     workers: int = 1,
+    progress_interval_seconds: float = 5.0,
 ) -> None:
     """Convert all successful episodes under raw_dir into one LeRobot dataset."""
+    import datasets
     from lerobot.common.datasets.lerobot_dataset import HF_LEROBOT_HOME
     from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
     import tqdm
@@ -605,6 +598,14 @@ def main(
         raise ValueError(f"Raw dataset directory does not exist: {raw_dir}")
     if max_episodes is not None and max_episodes <= 0:
         raise ValueError("max_episodes must be positive")
+    if workers <= 0:
+        raise ValueError("workers must be positive")
+    if progress_interval_seconds <= 0:
+        raise ValueError("progress_interval_seconds must be positive")
+
+    # LeRobot invokes Hugging Face Dataset.map/to_parquet for every episode.
+    # Suppress those nested bars so the terminal shows one stable global ETA.
+    datasets.disable_progress_bars()
 
     task_specs = []
     for task_dir in _task_directories(raw_dir):
@@ -674,58 +675,91 @@ def main(
     converted = 0
     # Collect all episode specs first
     episode_specs: list[tuple[Path, dict[str, Any], dict[str, list[float]], str, int, int]] = []
+    missing_trajectories: list[Path] = []
     for task_dir, manifest, robot_uid, width, height, task_profiles in task_specs:
         for entry in _episode_entries(task_dir, manifest):
             episode_dir = task_dir / str(entry["path"])
             if not episode_dir.is_dir():
                 raise ValueError(f"Episode directory does not exist: {episode_dir}")
             if not (episode_dir / "trajectory.json").is_file():
-                print(f"Warning: Skipping {episode_dir} (trajectory.json missing)")
+                missing_trajectories.append(episode_dir)
                 continue
             episode_specs.append((episode_dir, entry, task_profiles, robot_uid, width, height))
 
-    total = len(episode_specs)
     if max_episodes is not None:
-        total = min(total, max_episodes)
         episode_specs = episode_specs[:max_episodes]
 
-    progress = tqdm.tqdm(total=total, desc="Converting episodes")
-    dataset_lock = threading.Lock()
+    if missing_trajectories:
+        examples = ", ".join(str(path) for path in missing_trajectories[:3])
+        suffix = "" if len(missing_trajectories) <= 3 else ", ..."
+        print(
+            f"Warning: skipping {len(missing_trajectories)} manifest entries whose trajectory.json is missing. "
+            f"Examples: {examples}{suffix}"
+        )
 
+    total_episodes = len(episode_specs)
+    total_frames = sum(int(entry.get("frames", 0)) for _, entry, _, _, _, _ in episode_specs)
+    print(f"Planned conversion: {total_episodes} episodes, {total_frames} frames, workers={workers}")
+    progress = tqdm.tqdm(
+        total=total_frames,
+        desc="Converting",
+        unit="frame",
+        mininterval=progress_interval_seconds,
+        maxinterval=max(10.0, progress_interval_seconds * 2),
+        dynamic_ncols=True,
+    )
+    progress.set_postfix_str(f"episodes=0/{total_episodes}", refresh=False)
     if workers > 1:
         with ThreadPoolExecutor(max_workers=workers) as executor:
-            futures = {
-                executor.submit(
-                    _convert_episode,
-                    dataset,
+            episode_iter = iter(episode_specs)
+            futures = {}
+
+            def submit_next() -> bool:
+                try:
+                    episode_dir, entry, task_profiles, robot_uid, width, height = next(episode_iter)
+                except StopIteration:
+                    return False
+                future = executor.submit(
+                    _prepare_episode,
                     episode_dir,
                     entry,
                     tolerance_profiles=task_profiles,
                     robot_uid=robot_uid,
                     width=width,
                     height=height,
-                    dataset_lock=dataset_lock,
-                ): episode_dir
-                for episode_dir, entry, task_profiles, robot_uid, width, height in episode_specs
-            }
-            for future in as_completed(futures):
-                future.result()  # raise any exception
+                )
+                futures[future] = episode_dir
+                return True
+
+            for _ in range(min(workers, total_episodes)):
+                submit_next()
+
+            while futures:
+                future = next(as_completed(futures))
+                episode_dir = futures.pop(future)
+                try:
+                    frame_data_list = future.result()
+                except Exception as error:
+                    raise RuntimeError(f"Failed to prepare episode {episode_dir}") from error
+                _write_episode(dataset, frame_data_list)
                 converted += 1
-                progress.update()
+                progress.set_postfix_str(f"episodes={converted}/{total_episodes}", refresh=False)
+                progress.update(len(frame_data_list))
+                submit_next()
     else:
         for episode_dir, entry, task_profiles, robot_uid, width, height in episode_specs:
-            _convert_episode(
-                dataset,
+            frame_data_list = _prepare_episode(
                 episode_dir,
                 entry,
                 tolerance_profiles=task_profiles,
                 robot_uid=robot_uid,
                 width=width,
                 height=height,
-                dataset_lock=None,
             )
+            _write_episode(dataset, frame_data_list)
             converted += 1
-            progress.update()
+            progress.set_postfix_str(f"episodes={converted}/{total_episodes}", refresh=False)
+            progress.update(len(frame_data_list))
 
     progress.close()
 
