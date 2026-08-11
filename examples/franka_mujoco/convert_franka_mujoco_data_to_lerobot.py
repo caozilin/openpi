@@ -20,9 +20,11 @@ uv run examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
 from __future__ import annotations
 
 from collections.abc import Iterator
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 from pathlib import Path
 import shutil
+import threading
 from typing import TYPE_CHECKING, Any
 
 import cv2
@@ -502,6 +504,7 @@ def _convert_episode(
     robot_uid: str,
     width: int,
     height: int,
+    dataset_lock: threading.Lock | None = None,
 ) -> None:
     trajectory_path = episode_dir / "trajectory.json"
     document = _load_json(trajectory_path)
@@ -547,18 +550,21 @@ def _convert_episode(
                 tolerance_profiles=tolerance_profiles,
                 source=trajectory_path,
             )
-            dataset.add_frame(
-                {
-                    "image": _read_rgb(main_capture, path=main_path, index=index),
-                    "wrist_image": _read_rgb(wrist_capture, path=wrist_path, index=index),
-                    "state": state_from_frame(frame, source=trajectory_path),
-                    "robot_id": np.asarray([ROBOT_SPECS[robot_uid]["id"]], dtype=np.int64),
-                    "actions": action,
-                    "phase": phase_from_frame(frame, source=trajectory_path),
-                    **tolerance_targets,
-                    "task": instruction,
-                }
-            )
+            frame_data = {
+                "image": _read_rgb(main_capture, path=main_path, index=index),
+                "wrist_image": _read_rgb(wrist_capture, path=wrist_path, index=index),
+                "state": state_from_frame(frame, source=trajectory_path),
+                "robot_id": np.asarray([ROBOT_SPECS[robot_uid]["id"]], dtype=np.int64),
+                "actions": action,
+                "phase": phase_from_frame(frame, source=trajectory_path),
+                **tolerance_targets,
+                "task": instruction,
+            }
+            if dataset_lock is not None:
+                with dataset_lock:
+                    dataset.add_frame(frame_data)
+            else:
+                dataset.add_frame(frame_data)
 
         main_extra, _ = main_capture.read()
         wrist_extra, _ = wrist_capture.read()
@@ -568,7 +574,11 @@ def _convert_episode(
         main_capture.release()
         wrist_capture.release()
 
-    dataset.save_episode()
+    if dataset_lock is not None:
+        with dataset_lock:
+            dataset.save_episode()
+    else:
+        dataset.save_episode()
 
 
 def main(
@@ -581,6 +591,7 @@ def main(
     max_episodes: int | None = None,
     image_writer_threads: int = 10,
     image_writer_processes: int = 5,
+    workers: int = 1,
 ) -> None:
     """Convert all successful episodes under raw_dir into one LeRobot dataset."""
     from lerobot.common.datasets.lerobot_dataset import HF_LEROBOT_HOME
@@ -659,25 +670,31 @@ def main(
     )
 
     converted = 0
-    total = sum(
-        len(list(_episode_entries(task_dir, manifest)))
-        for task_dir, manifest, _, _, _, _ in task_specs
-    )
+    # Collect all episode specs first
+    episode_specs: list[tuple[Path, dict[str, Any], dict[str, list[float]], str, int, int]] = []
+    for task_dir, manifest, robot_uid, width, height, task_profiles in task_specs:
+        for entry in _episode_entries(task_dir, manifest):
+            episode_dir = task_dir / str(entry["path"])
+            if not episode_dir.is_dir():
+                raise ValueError(f"Episode directory does not exist: {episode_dir}")
+            if not (episode_dir / "trajectory.json").is_file():
+                print(f"Warning: Skipping {episode_dir} (trajectory.json missing)")
+                continue
+            episode_specs.append((episode_dir, entry, task_profiles, robot_uid, width, height))
+
+    total = len(episode_specs)
     if max_episodes is not None:
         total = min(total, max_episodes)
+        episode_specs = episode_specs[:max_episodes]
+
     progress = tqdm.tqdm(total=total, desc="Converting episodes")
-    try:
-        for task_dir, manifest, robot_uid, width, height, task_profiles in task_specs:
-            for entry in _episode_entries(task_dir, manifest):
-                if max_episodes is not None and converted >= max_episodes:
-                    break
-                episode_dir = task_dir / str(entry["path"])
-                if not episode_dir.is_dir():
-                    raise ValueError(f"Episode directory does not exist: {episode_dir}")
-                if not (episode_dir / "trajectory.json").is_file():
-                    print(f"Warning: Skipping {episode_dir} (trajectory.json missing)")
-                    continue
-                _convert_episode(
+    dataset_lock = threading.Lock()
+
+    if workers > 1:
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {
+                executor.submit(
+                    _convert_episode,
                     dataset,
                     episode_dir,
                     entry,
@@ -685,13 +702,30 @@ def main(
                     robot_uid=robot_uid,
                     width=width,
                     height=height,
-                )
+                    dataset_lock=dataset_lock,
+                ): episode_dir
+                for episode_dir, entry, task_profiles, robot_uid, width, height in episode_specs
+            }
+            for future in as_completed(futures):
+                future.result()  # raise any exception
                 converted += 1
                 progress.update()
-            if max_episodes is not None and converted >= max_episodes:
-                break
-    finally:
-        progress.close()
+    else:
+        for episode_dir, entry, task_profiles, robot_uid, width, height in episode_specs:
+            _convert_episode(
+                dataset,
+                episode_dir,
+                entry,
+                tolerance_profiles=task_profiles,
+                robot_uid=robot_uid,
+                width=width,
+                height=height,
+                dataset_lock=None,
+            )
+            converted += 1
+            progress.update()
+
+    progress.close()
 
     if converted == 0:
         raise ValueError("No episodes were converted")
