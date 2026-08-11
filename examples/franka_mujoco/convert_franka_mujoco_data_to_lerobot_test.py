@@ -267,7 +267,9 @@ def test_load_single_axis_searches_overrides_corresponding_axes(tmp_path: Path) 
         json.dumps(
             {
                 "method": "single_axis_only_search",
-                "single_axis_only": ["x"],
+                "search": {
+                    "single_axis_only": ["x"],
+                },
                 "rotation_tolerance_bounds_rad": {
                     "pregrasp": [0.1745, 0.1745, 0.0, 0.0, 0.0, 0.0],
                     "postgrasp": [0.5236, 0.5236, 0.5236, 0.5236, 0.7854, 0.7854],
@@ -293,7 +295,9 @@ def test_load_single_axis_searches_merges_multiple_axes(tmp_path: Path) -> None:
         json.dumps(
             {
                 "method": "single_axis_only_search",
-                "single_axis_only": ["x"],
+                "search": {
+                    "single_axis_only": ["x"],
+                },
                 "rotation_tolerance_bounds_rad": {
                     "pregrasp": [10.0, 10.0, 0.0, 0.0, 0.0, 0.0],
                 },
@@ -305,7 +309,9 @@ def test_load_single_axis_searches_merges_multiple_axes(tmp_path: Path) -> None:
         json.dumps(
             {
                 "method": "single_axis_only_search",
-                "single_axis_only": ["y"],
+                "search": {
+                    "single_axis_only": ["y"],
+                },
                 "rotation_tolerance_bounds_rad": {
                     "pregrasp": [0.0, 0.0, 5.0, 5.0, 0.0, 0.0],
                 },
@@ -342,7 +348,9 @@ def test_load_tolerance_annotation_with_single_axis_search(tmp_path: Path) -> No
         json.dumps(
             {
                 "method": "single_axis_only_search",
-                "single_axis_only": ["x"],
+                "search": {
+                    "single_axis_only": ["x"],
+                },
                 "rotation_tolerance_bounds_rad": {
                     "pregrasp": [0.3, 0.3, 0.0, 0.0, 0.0, 0.0],
                 },

@@ -200,9 +200,12 @@ def _load_single_axis_searches(
         if document.get("method") != "single_axis_only_search":
             continue
 
-        searched_axes = document.get("single_axis_only")
+        search_config = document.get("search")
+        if not isinstance(search_config, dict):
+            raise ValueError(f"{search_path}: search must be an object")
+        searched_axes = search_config.get("single_axis_only")
         if not isinstance(searched_axes, list):
-            raise ValueError(f"{search_path}: single_axis_only must be a list")
+            raise ValueError(f"{search_path}: search.single_axis_only must be a list")
 
         bounds_rad = document.get("rotation_tolerance_bounds_rad")
         if not isinstance(bounds_rad, dict):
