@@ -674,6 +674,9 @@ def main(
                 episode_dir = task_dir / str(entry["path"])
                 if not episode_dir.is_dir():
                     raise ValueError(f"Episode directory does not exist: {episode_dir}")
+                if not (episode_dir / "trajectory.json").is_file():
+                    print(f"Warning: Skipping {episode_dir} (trajectory.json missing)")
+                    continue
                 _convert_episode(
                     dataset,
                     episode_dir,
