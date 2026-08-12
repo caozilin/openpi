@@ -38,12 +38,16 @@ uv run scripts/compute_franka_mujoco_norm_stats.py \
 # ============================================================
 # Linux：训练原始 pi0.5（只训练 7 维动作）
 # ============================================================
+cd /root/openpi
+mkdir -p /root/gpufree-share/checkpoints
+
 CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
 uv run scripts/train.py pi05_franka_mujoco \
-    --exp-name=franka_mujoco_lora \
-    --data.lerobot-dataset-root=/root/gpufree-data/lerobot_cache/caozilin/franka_mujoco \
-    --data.hf-datasets-cache-dir=/root/gpufree-share/openpi_hf_cache
+  --exp-name=franka_mujoco_lora \
+  --checkpoint-base-dir=/root/gpufree-share/checkpoints \
+  --data.lerobot-dataset-root=/root/gpufree-data/lerobot_cache/caozilin/franka_mujoco \
+  --data.hf-datasets-cache-dir=/root/gpufree-share/openpi_hf_cache
 
 
 # ============================================================
@@ -53,9 +57,10 @@ uv run scripts/train.py pi05_franka_mujoco \
 CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
 uv run scripts/train.py pi05_franka_mujoco_joint19 \
-    --exp-name=franka_mujoco_joint19_lora \
-    --data.lerobot-dataset-root=/root/gpufree-data/lerobot_cache/caozilin/franka_mujoco \
-    --data.hf-datasets-cache-dir=/root/gpufree-share/openpi_hf_cache
+  --exp-name=franka_mujoco_joint19_lora \
+  --checkpoint-base-dir=/root/gpufree-share/checkpoints \
+  --data.lerobot-dataset-root=/root/gpufree-data/lerobot_cache/caozilin/franka_mujoco \
+  --data.hf-datasets-cache-dir=/root/gpufree-share/openpi_hf_cache
 
 
 # ============================================================
