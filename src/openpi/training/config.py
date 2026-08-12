@@ -66,6 +66,12 @@ class AssetsConfig:
 class DataConfig:
     # LeRobot repo id. If None, fake data will be created.
     repo_id: str | None = None
+    # Full path to an existing local LeRobot dataset. If provided, the loader reads
+    # this directory directly instead of resolving the dataset under HF_LEROBOT_HOME.
+    lerobot_dataset_root: str | None = None
+    # Existing Hugging Face datasets cache to reuse for the Parquet-to-Arrow view.
+    # Keeping this explicit prevents training from creating another cache on the root disk.
+    hf_datasets_cache_dir: str | None = None
     # Directory within the assets directory containing the data assets.
     asset_id: str | None = None
     # Contains precomputed normalization stats. If None, normalization will not be performed.
@@ -168,6 +174,10 @@ class ModelTransformFactory(GroupFactory):
 class DataConfigFactory(abc.ABC):
     # The LeRobot repo id.
     repo_id: str = tyro.MISSING
+    # Optional full path to an existing local LeRobot dataset.
+    lerobot_dataset_root: str | None = None
+    # Optional Hugging Face datasets cache directory shared by normalization and training.
+    hf_datasets_cache_dir: str | None = None
     # Determines how the assets will be loaded.
     assets: AssetsConfig = dataclasses.field(default_factory=AssetsConfig)
     # Base config that will be updated by the factory.
@@ -183,6 +193,8 @@ class DataConfigFactory(abc.ABC):
         return dataclasses.replace(
             self.base_config or DataConfig(),
             repo_id=repo_id,
+            lerobot_dataset_root=self.lerobot_dataset_root,
+            hf_datasets_cache_dir=self.hf_datasets_cache_dir,
             asset_id=asset_id,
             norm_stats=self._load_norm_stats(epath.Path(self.assets.assets_dir or assets_dirs), asset_id),
             use_quantile_norm=model_config.model_type != ModelType.PI0,
@@ -830,9 +842,9 @@ _CONFIGS = [
         ),
         batch_size=24,
         lr_schedule=_optimizer.CosineDecaySchedule(
-            warmup_steps=300,
+            warmup_steps=1_000,
             peak_lr=5e-5,
-            decay_steps=3_000,
+            decay_steps=30_000,
             decay_lr=5e-6,
         ),
         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
@@ -846,9 +858,9 @@ _CONFIGS = [
             action_expert_variant="gemma_300m_lora",
         ).get_freeze_filter(),
         ema_decay=None,
-        num_train_steps=5_000,
+        num_train_steps=50_000,
         save_interval=1_000,
-        keep_period=None,
+        keep_period=5_000,
         fsdp_devices=1,
     ),
     TrainConfig(
@@ -873,9 +885,9 @@ _CONFIGS = [
         ),
         batch_size=24,
         lr_schedule=_optimizer.CosineDecaySchedule(
-            warmup_steps=300,
+            warmup_steps=1_000,
             peak_lr=5e-5,
-            decay_steps=3_000,
+            decay_steps=30_000,
             decay_lr=5e-6,
         ),
         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
@@ -889,9 +901,9 @@ _CONFIGS = [
             action_expert_variant="gemma_300m_lora",
         ).get_freeze_filter(),
         ema_decay=None,
-        num_train_steps=5_000,
+        num_train_steps=50_000,
         save_interval=1_000,
-        keep_period=None,
+        keep_period=5_000,
         fsdp_devices=1,
     ),
     #

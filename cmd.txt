@@ -29,11 +29,10 @@ uv run python examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
 # 两个配置读取同一个 caozilin/franka_mujoco 数据集。
 # 原始 pi0.5 只统计 7 维动作；TaskTol19 统计 19 维联合目标。
 # ============================================================
-uv run scripts/compute_norm_stats.py \
-  --config-name pi05_franka_mujoco
+cd /root/openpi
 
-uv run scripts/compute_norm_stats.py \
-  --config-name pi05_franka_mujoco_joint19
+uv run scripts/compute_franka_mujoco_norm_stats.py \
+  --dataset-root /root/gpufree-data/lerobot_cache/caozilin/franka_mujoco
 
 
 # ============================================================
@@ -42,7 +41,9 @@ uv run scripts/compute_norm_stats.py \
 CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
 uv run scripts/train.py pi05_franka_mujoco \
-  --exp-name=franka_mujoco_lora
+    --exp-name=franka_mujoco_lora \
+    --data.lerobot-dataset-root=/root/gpufree-data/lerobot_cache/caozilin/franka_mujoco \
+    --data.hf-datasets-cache-dir=/root/gpufree-share/openpi_hf_cache
 
 
 # ============================================================
@@ -52,7 +53,9 @@ uv run scripts/train.py pi05_franka_mujoco \
 CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
 uv run scripts/train.py pi05_franka_mujoco_joint19 \
-  --exp-name=franka_mujoco_joint19_lora
+    --exp-name=franka_mujoco_joint19_lora \
+    --data.lerobot-dataset-root=/root/gpufree-data/lerobot_cache/caozilin/franka_mujoco \
+    --data.hf-datasets-cache-dir=/root/gpufree-share/openpi_hf_cache
 
 
 # ============================================================

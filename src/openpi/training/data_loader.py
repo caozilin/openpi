@@ -2,9 +2,11 @@ from collections.abc import Iterator, Sequence
 import logging
 import multiprocessing
 import os
+import pathlib
 import typing
 from typing import Literal, Protocol, SupportsIndex, TypeVar
 
+import datasets
 import jax
 import jax.numpy as jnp
 import lerobot.common.datasets.lerobot_dataset as lerobot_dataset
@@ -137,9 +139,33 @@ def create_torch_dataset(
     if repo_id == "fake":
         return FakeDataset(model_config, num_samples=1024)
 
-    dataset_meta = lerobot_dataset.LeRobotDatasetMetadata(repo_id)
+    dataset_root = None
+    if data_config.lerobot_dataset_root is not None:
+        dataset_root = pathlib.Path(data_config.lerobot_dataset_root).expanduser().resolve()
+        if not dataset_root.is_dir():
+            raise FileNotFoundError(f"LeRobot dataset directory does not exist: {dataset_root}")
+
+    if data_config.hf_datasets_cache_dir is not None:
+        cache_dir = pathlib.Path(data_config.hf_datasets_cache_dir).expanduser().resolve()
+        if not cache_dir.is_dir():
+            raise FileNotFoundError(f"Hugging Face datasets cache directory does not exist: {cache_dir}")
+        # `datasets.load_dataset(cache_dir=None)` reads this module-level setting.
+        # Updating both values also keeps child data-loader processes consistent.
+        datasets.config.HF_DATASETS_CACHE = str(cache_dir)
+        os.environ["HF_DATASETS_CACHE"] = str(cache_dir)
+    else:
+        cache_dir = pathlib.Path(datasets.config.HF_DATASETS_CACHE)
+
+    logging.info(
+        "Loading LeRobot dataset %s from %s (Hugging Face datasets cache: %s)",
+        repo_id,
+        dataset_root or "the configured LeRobot home",
+        cache_dir,
+    )
+    dataset_meta = lerobot_dataset.LeRobotDatasetMetadata(repo_id, root=dataset_root)
     dataset = lerobot_dataset.LeRobotDataset(
         data_config.repo_id,
+        root=dataset_root,
         delta_timestamps={
             key: [t / dataset_meta.fps for t in range(action_horizon)] for key in data_config.action_sequence_keys
         },

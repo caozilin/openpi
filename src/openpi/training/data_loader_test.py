@@ -1,5 +1,6 @@
 import dataclasses
 
+import datasets
 import jax
 
 from openpi.models import pi0_config
@@ -60,6 +61,48 @@ def test_with_fake_dataset():
 
     for _, actions in batches:
         assert actions.shape == (config.batch_size, config.model.action_horizon, config.model.action_dim)
+
+
+def test_create_torch_dataset_uses_explicit_dataset_and_cache_paths(monkeypatch, tmp_path):
+    dataset_root = tmp_path / "lerobot" / "owner" / "dataset"
+    dataset_root.mkdir(parents=True)
+    cache_dir = tmp_path / "datasets_cache"
+    cache_dir.mkdir()
+    calls = {}
+
+    class FakeMetadata:
+        fps = 20
+
+        def __init__(self, repo_id, *, root=None):
+            calls["metadata"] = (repo_id, root)
+
+    class FakeLeRobotDataset:
+        def __init__(self, repo_id, *, root=None, delta_timestamps=None):
+            calls["dataset"] = (repo_id, root, delta_timestamps)
+
+    monkeypatch.setattr(_data_loader.lerobot_dataset, "LeRobotDatasetMetadata", FakeMetadata)
+    monkeypatch.setattr(_data_loader.lerobot_dataset, "LeRobotDataset", FakeLeRobotDataset)
+    monkeypatch.setattr(datasets.config, "HF_DATASETS_CACHE", datasets.config.HF_DATASETS_CACHE)
+    monkeypatch.setenv("HF_DATASETS_CACHE", str(datasets.config.HF_DATASETS_CACHE))
+
+    data_config = _config.DataConfig(
+        repo_id="owner/dataset",
+        lerobot_dataset_root=str(dataset_root),
+        hf_datasets_cache_dir=str(cache_dir),
+        action_sequence_keys=("actions",),
+    )
+    model_config = pi0_config.Pi0Config(action_dim=7, action_horizon=3, max_token_len=48)
+    _data_loader.create_torch_dataset(data_config, action_horizon=3, model_config=model_config)
+
+    resolved_root = dataset_root.resolve()
+    assert calls["metadata"] == ("owner/dataset", resolved_root)
+    assert calls["dataset"] == (
+        "owner/dataset",
+        resolved_root,
+        {"actions": [0.0, 0.05, 0.1]},
+    )
+    assert str(cache_dir.resolve()) == datasets.config.HF_DATASETS_CACHE
+    assert cache_dir.is_dir()
 
 
 def test_with_real_dataset():
