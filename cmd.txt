@@ -46,8 +46,9 @@ XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
 uv run scripts/train.py pi05_franka_mujoco \
   --exp-name=franka_mujoco_lora \
   --checkpoint-base-dir=/root/gpufree-share/checkpoints \
-  --data.lerobot-dataset-root=/root/gpufree-data/lerobot_cache/caozilin/franka_mujoco \
-  --data.hf-datasets-cache-dir=/root/gpufree-share/openpi_hf_cache
+  --data.lerobot-dataset-root=/root/gpufree-share/datasets/caozilin/franka_mujoco \
+  --data.hf-datasets-cache-dir=/root/gpufree-data/openpi_hf_cache \
+  --data.lerobot-arrow-cache-dir=/root/gpufree-data/openpi_hf_cache
 
 
 # ============================================================
@@ -59,8 +60,9 @@ XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
 uv run scripts/train.py pi05_franka_mujoco_joint19 \
   --exp-name=franka_mujoco_joint19_lora \
   --checkpoint-base-dir=/root/gpufree-share/checkpoints \
-  --data.lerobot-dataset-root=/root/gpufree-data/lerobot_cache/caozilin/franka_mujoco \
-  --data.hf-datasets-cache-dir=/root/gpufree-share/openpi_hf_cache
+  --data.lerobot-dataset-root=/root/gpufree-share/datasets/caozilin/franka_mujoco \
+  --data.hf-datasets-cache-dir=/root/gpufree-data/openpi_hf_cache \
+  --data.lerobot-arrow-cache-dir=/root/gpufree-data/openpi_hf_cache
 
 
 # ============================================================
@@ -68,10 +70,11 @@ uv run scripts/train.py pi05_franka_mujoco_joint19 \
 # ============================================================
 cd /root/openpi
 
-CKPT_ROOT=/root/openpi/checkpoints/pi05_franka_mujoco/franka_mujoco_lora
+CKPT_ROOT=/root/gpufree-share/checkpoints/pi05_franka_mujoco/franka_mujoco_lora
+CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
-uv run scripts/serve_policy.py \
+uv run --no-sync scripts/serve_policy.py \
   --port=8000 \
   policy:checkpoint \
   --policy.config=pi05_franka_mujoco \
-  --policy.dir=/root/gpufree-data/checkpoints/pi05_franka_mujoco/franka_mujoco_lora/2000
+  --policy.dir="$CKPT_ROOT/10000"

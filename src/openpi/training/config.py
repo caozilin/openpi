@@ -72,6 +72,9 @@ class DataConfig:
     # Existing Hugging Face datasets cache to reuse for the Parquet-to-Arrow view.
     # Keeping this explicit prevents training from creating another cache on the root disk.
     hf_datasets_cache_dir: str | None = None
+    # Optional Hugging Face datasets cache (or a specific completed cache entry) to load directly from Arrow.
+    # This permits training with only the LeRobot metadata and the generated Arrow files.
+    lerobot_arrow_cache_dir: str | None = None
     # Directory within the assets directory containing the data assets.
     asset_id: str | None = None
     # Contains precomputed normalization stats. If None, normalization will not be performed.
@@ -178,6 +181,8 @@ class DataConfigFactory(abc.ABC):
     lerobot_dataset_root: str | None = None
     # Optional Hugging Face datasets cache directory shared by normalization and training.
     hf_datasets_cache_dir: str | None = None
+    # Optional cache-only input. May point at HF_DATASETS_CACHE or directly at a completed cache entry.
+    lerobot_arrow_cache_dir: str | None = None
     # Determines how the assets will be loaded.
     assets: AssetsConfig = dataclasses.field(default_factory=AssetsConfig)
     # Base config that will be updated by the factory.
@@ -195,6 +200,7 @@ class DataConfigFactory(abc.ABC):
             repo_id=repo_id,
             lerobot_dataset_root=self.lerobot_dataset_root,
             hf_datasets_cache_dir=self.hf_datasets_cache_dir,
+            lerobot_arrow_cache_dir=self.lerobot_arrow_cache_dir,
             asset_id=asset_id,
             norm_stats=self._load_norm_stats(epath.Path(self.assets.assets_dir or assets_dirs), asset_id),
             use_quantile_norm=model_config.model_type != ModelType.PI0,

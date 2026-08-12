@@ -1,8 +1,10 @@
 from collections.abc import Iterator, Sequence
+import json
 import logging
 import multiprocessing
 import os
 import pathlib
+import re
 import typing
 from typing import Literal, Protocol, SupportsIndex, TypeVar
 
@@ -50,6 +52,110 @@ class DataLoader(Protocol[T_co]):
 
     def __iter__(self) -> Iterator[T_co]:
         raise NotImplementedError("Subclasses of DataLoader should implement __iter__.")
+
+
+def _find_arrow_cache_entry(cache_root: pathlib.Path, expected_num_rows: int) -> tuple[pathlib.Path, list[pathlib.Path]]:
+    """Find one complete HF parquet cache entry without reading source Parquet files."""
+    info_paths = [cache_root / "dataset_info.json"] if (cache_root / "dataset_info.json").is_file() else []
+    if not info_paths:
+        info_paths = sorted(cache_root.rglob("dataset_info.json"))
+
+    matches: list[tuple[pathlib.Path, list[pathlib.Path]]] = []
+    for info_path in info_paths:
+        try:
+            info = json.loads(info_path.read_text(encoding="utf-8"))
+            train_split = info.get("splits", {}).get("train", {})
+            num_rows = train_split.get("num_examples")
+            if num_rows is None and train_split.get("shard_lengths") is not None:
+                num_rows = sum(train_split["shard_lengths"])
+        except (OSError, TypeError, ValueError):
+            continue
+
+        arrow_files = sorted(
+            (
+                path
+                for path in info_path.parent.glob("*.arrow")
+                if re.fullmatch(r"parquet-train-\d+-of-\d+\.arrow", path.name)
+            ),
+            key=lambda path: int(path.name.split("-")[2]),
+        )
+        expected_shards = train_split.get("num_shards")
+        if expected_shards is None and train_split.get("shard_lengths") is not None:
+            expected_shards = len(train_split["shard_lengths"])
+        has_all_shards = expected_shards is None or len(arrow_files) == expected_shards
+        if num_rows == expected_num_rows and arrow_files and has_all_shards:
+            matches.append((info_path.parent, arrow_files))
+
+    if not matches:
+        raise FileNotFoundError(
+            f"No complete Arrow cache with {expected_num_rows} rows was found under {cache_root}. "
+            "Keep the completed HF datasets cache, or pass its exact cache-entry directory."
+        )
+    if len(matches) > 1:
+        locations = "\n".join(f"  - {entry}" for entry, _ in matches)
+        raise RuntimeError(
+            "Multiple matching Arrow cache entries were found. Pass one exact directory containing "
+            f"dataset_info.json:\n{locations}"
+        )
+    return matches[0]
+
+
+class ArrowCachedLeRobotDataset(lerobot_dataset.LeRobotDataset):
+    """Read-only LeRobot dataset backed directly by a completed HF Arrow cache."""
+
+    def __init__(
+        self,
+        repo_id: str,
+        dataset_root: pathlib.Path,
+        arrow_cache_root: pathlib.Path,
+        delta_timestamps: dict[str, list[float]],
+        dataset_meta,
+    ):
+        torch.utils.data.Dataset.__init__(self)
+        if dataset_meta.video_keys:
+            raise ValueError("Arrow-only loading supports embedded images, but not LeRobot video features.")
+
+        cache_entry, arrow_files = _find_arrow_cache_entry(arrow_cache_root, dataset_meta.total_frames)
+        logging.info("Loading %d memory-mapped Arrow shards directly from %s", len(arrow_files), cache_entry)
+        shards = [datasets.Dataset.from_file(str(path)) for path in arrow_files]
+        hf_dataset = datasets.concatenate_datasets(shards) if len(shards) > 1 else shards[0]
+        if len(hf_dataset) != dataset_meta.total_frames:
+            raise RuntimeError(
+                f"Arrow cache row count mismatch: expected {dataset_meta.total_frames}, found {len(hf_dataset)}"
+            )
+        hf_dataset.set_transform(lerobot_dataset.hf_transform_to_torch)
+
+        self.repo_id = repo_id
+        self.root = dataset_root
+        self.image_transforms = None
+        self.delta_timestamps = delta_timestamps
+        self.episodes = None
+        self.tolerance_s = 1e-4
+        self.revision = lerobot_dataset.CODEBASE_VERSION
+        self.video_backend = None
+        self.delta_indices = None
+        self.image_writer = None
+        self.episode_buffer = None
+        self.meta = dataset_meta
+        self.stats = dataset_meta.stats
+        self.hf_dataset = hf_dataset
+        self.episode_data_index = lerobot_dataset.get_episode_data_index(dataset_meta.episodes, None)
+
+        # The cache was produced by the normal LeRobot constructor, which already validated all timestamps. Avoid
+        # scanning the full memory-mapped dataset again here so cache-only startup remains lightweight.
+        lerobot_dataset.check_delta_timestamps(delta_timestamps, self.fps, self.tolerance_s)
+        self.delta_indices = lerobot_dataset.get_delta_indices(delta_timestamps, self.fps)
+
+
+def _create_arrow_cached_lerobot_dataset(
+    repo_id: str,
+    dataset_root: pathlib.Path,
+    arrow_cache_root: pathlib.Path,
+    delta_timestamps: dict[str, list[float]],
+    dataset_meta,
+):
+    """Construct LeRobot's read path from memory-mapped Arrow shards and local metadata only."""
+    return ArrowCachedLeRobotDataset(repo_id, dataset_root, arrow_cache_root, delta_timestamps, dataset_meta)
 
 
 class TransformedDataset(Dataset[T_co]):
@@ -163,13 +269,24 @@ def create_torch_dataset(
         cache_dir,
     )
     dataset_meta = lerobot_dataset.LeRobotDatasetMetadata(repo_id, root=dataset_root)
-    dataset = lerobot_dataset.LeRobotDataset(
-        data_config.repo_id,
-        root=dataset_root,
-        delta_timestamps={
-            key: [t / dataset_meta.fps for t in range(action_horizon)] for key in data_config.action_sequence_keys
-        },
-    )
+    delta_timestamps = {
+        key: [t / dataset_meta.fps for t in range(action_horizon)] for key in data_config.action_sequence_keys
+    }
+    if data_config.lerobot_arrow_cache_dir is not None:
+        if dataset_root is None:
+            raise ValueError("lerobot_dataset_root is required when loading directly from an Arrow cache")
+        arrow_cache_root = pathlib.Path(data_config.lerobot_arrow_cache_dir).expanduser().resolve()
+        if not arrow_cache_root.is_dir():
+            raise FileNotFoundError(f"LeRobot Arrow cache directory does not exist: {arrow_cache_root}")
+        dataset = _create_arrow_cached_lerobot_dataset(
+            repo_id, dataset_root, arrow_cache_root, delta_timestamps, dataset_meta
+        )
+    else:
+        dataset = lerobot_dataset.LeRobotDataset(
+            data_config.repo_id,
+            root=dataset_root,
+            delta_timestamps=delta_timestamps,
+        )
 
     if data_config.prompt_from_task:
         dataset = TransformedDataset(dataset, [_transforms.PromptFromLeRobotTask(dataset_meta.tasks)])
