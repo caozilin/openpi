@@ -41,11 +41,14 @@ uv run scripts/compute_franka_mujoco_norm_stats.py \
 cd /root/openpi
 mkdir -p /root/gpufree-share/checkpoints
 
+HF_HUB_OFFLINE=1 \
+HF_DATASETS_OFFLINE=1 \
 CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
-uv run scripts/train.py pi05_franka_mujoco \
-  --exp-name=franka_mujoco_lora \
+uv run --no-sync scripts/train.py pi05_franka_mujoco_joint19 \
+  --exp-name=franka_mujoco_joint19_lora \
   --checkpoint-base-dir=/root/gpufree-share/checkpoints \
+  --resume \
   --data.lerobot-dataset-root=/root/gpufree-share/datasets/caozilin/franka_mujoco \
   --data.hf-datasets-cache-dir=/root/gpufree-data/openpi_hf_cache \
   --data.lerobot-arrow-cache-dir=/root/gpufree-data/openpi_hf_cache
@@ -55,11 +58,14 @@ uv run scripts/train.py pi05_franka_mujoco \
 # Linux：训练 TaskTol19
 # 联合训练 7 维动作、6 维目标旋转和 6 维双侧容差。
 # ============================================================
+HF_HUB_OFFLINE=1 \
+HF_DATASETS_OFFLINE=1 \
 CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
-uv run scripts/train.py pi05_franka_mujoco_joint19 \
-  --exp-name=franka_mujoco_joint19_lora \
+uv run --no-sync scripts/train.py pi05_franka_mujoco \
+  --exp-name=franka_mujoco_lora \
   --checkpoint-base-dir=/root/gpufree-share/checkpoints \
+  --resume \
   --data.lerobot-dataset-root=/root/gpufree-share/datasets/caozilin/franka_mujoco \
   --data.hf-datasets-cache-dir=/root/gpufree-data/openpi_hf_cache \
   --data.lerobot-arrow-cache-dir=/root/gpufree-data/openpi_hf_cache
@@ -78,3 +84,17 @@ uv run --no-sync scripts/serve_policy.py \
   policy:checkpoint \
   --policy.config=pi05_franka_mujoco \
   --policy.dir="$CKPT_ROOT/10000"
+
+# ============================================================
+# TaskTol19 模型服务命令
+# ============================================================
+cd /root/openpi
+CKPT_ROOT=/root/gpufree-share/checkpoints/pi05_franka_mujoco_joint19/franka_mujoco_joint19_lora
+
+CUDA_VISIBLE_DEVICES=0 \
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
+uv run --no-sync scripts/serve_policy.py \
+  --port=8000 \
+  policy:checkpoint \
+  --policy.config=pi05_franka_mujoco_joint19 \
+  --policy.dir="$CKPT_ROOT/25000"
