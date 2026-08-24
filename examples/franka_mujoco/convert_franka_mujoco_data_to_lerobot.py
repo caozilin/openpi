@@ -9,8 +9,11 @@ uv run python examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
 from __future__ import annotations
 
 from collections.abc import Iterator
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
+import csv
+import hashlib
 import json
+import math
 from pathlib import Path
 import shutil
 from typing import TYPE_CHECKING, Any
@@ -66,6 +69,16 @@ SINGLE_AXIS_TO_INDICES = {
     "y": (2, 3),  # ry_negative, ry_positive
     "z": (4, 5),  # rz_negative, rz_positive
 }
+CONVERSION_STATE_PATH = Path("meta/conversion_state.jsonl")
+
+EpisodeSpec = tuple[Path, dict[str, Any], dict[str, list[float]], str, int, int]
+
+TOLERANCE_SUMMARY_COLUMNS = tuple(
+    f"{stage}_r{axis}_{side}"
+    for stage in ("pre", "post")
+    for axis in "xyz"
+    for side in ("neg", "pos")
+)
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -95,6 +108,54 @@ def rotation_vector_to_6d(value: Any, *, field: str, source: Path) -> np.ndarray
 
 def _default_tolerance_profiles() -> dict[str, list[float]]:
     return {name: list(values) for name, values in DEFAULT_ROTATION_TOLERANCE_PROFILES_RAD.items()}
+
+
+def _load_tolerance_summary(path: Path) -> dict[tuple[str, str, str], dict[str, list[float]]]:
+    """Load authoritative task-level directional bounds from a summary CSV.
+
+    CSV bounds are expressed in degrees and converted to non-negative radian
+    magnitudes in the LeRobot feature order.
+    """
+    try:
+        with path.open("r", encoding="utf-8-sig", newline="") as file:
+            reader = csv.DictReader(file)
+            fieldnames = set(reader.fieldnames or ())
+            required = {"robot_uid", "training_scene_id", "training_task_id", *TOLERANCE_SUMMARY_COLUMNS}
+            missing = sorted(required - fieldnames)
+            if missing:
+                raise ValueError(f"{path}: missing required columns {missing}")
+            rows = list(reader)
+    except OSError as error:
+        raise ValueError(f"Failed to read tolerance summary {path}: {error}") from error
+    if not rows:
+        raise ValueError(f"Tolerance summary is empty: {path}")
+
+    result: dict[tuple[str, str, str], dict[str, list[float]]] = {}
+    for row_number, row in enumerate(rows, start=2):
+        key = (row["robot_uid"], row["training_scene_id"], row["training_task_id"])
+        if not all(key):
+            raise ValueError(f"{path}:{row_number}: empty robot or task identity")
+        if key in result:
+            raise ValueError(f"{path}:{row_number}: duplicate tolerance row {key}")
+
+        profiles = _default_tolerance_profiles()
+        for stage, phase in (("pre", "pregrasp"), ("post", "postgrasp")):
+            values = []
+            for axis in "xyz":
+                for side in ("neg", "pos"):
+                    column = f"{stage}_r{axis}_{side}"
+                    try:
+                        degrees = float(row[column])
+                    except (TypeError, ValueError) as error:
+                        raise ValueError(f"{path}:{row_number}: invalid {column} value {row[column]!r}") from error
+                    if not math.isfinite(degrees) or degrees < 0.0:
+                        raise ValueError(f"{path}:{row_number}: {column} must be a finite non-negative value")
+                    values.append(math.radians(degrees))
+            profiles[phase] = values
+        profiles["grasp"] = [0.0] * ROTATION_TOLERANCE_DIM
+        profiles["release"] = [0.0] * ROTATION_TOLERANCE_DIM
+        result[key] = profiles
+    return result
 
 
 def _tolerance_profiles_from_metadata(metadata: dict[str, Any], *, source: Path) -> dict[str, list[float]]:
@@ -569,18 +630,307 @@ def _write_episode(dataset: LeRobotDataset, frame_data_list: list[dict[str, Any]
     save_episode must never be called concurrently or interleaved across
     episodes.
     """
+    # LeRobot normally concatenates every newly embedded episode onto
+    # ``hf_dataset``.  The converter already persists one parquet per episode
+    # and never reads the in-memory aggregate, so retaining the full history
+    # only causes memory to grow with the dataset (including all image bytes).
+    dataset.hf_dataset = dataset.create_hf_dataset()
     for frame_data in frame_data_list:
         dataset.add_frame(frame_data)
     dataset.save_episode()
+
+
+def _dataset_features() -> dict[str, dict[str, Any]]:
+    return {
+        "image": {
+            "dtype": "image",
+            "shape": (IMAGE_HEIGHT, IMAGE_WIDTH, 3),
+            "names": ["height", "width", "channel"],
+        },
+        "wrist_image": {
+            "dtype": "image",
+            "shape": (IMAGE_HEIGHT, IMAGE_WIDTH, 3),
+            "names": ["height", "width", "channel"],
+        },
+        "state": {"dtype": "float32", "shape": (STATE_DIM,), "names": ["state"]},
+        "robot_id": {"dtype": "int64", "shape": (ROBOT_ID_DIM,), "names": ["robot_id"]},
+        "actions": {"dtype": "float32", "shape": (ACTION_DIM,), "names": ["actions"]},
+        "phase": {"dtype": "int64", "shape": (PHASE_DIM,), "names": ["phase"]},
+        "stage_target_pose": {
+            "dtype": "float32",
+            "shape": (STAGE_TARGET_POSE_DIM,),
+            "names": ["r1x", "r1y", "r1z", "r2x", "r2y", "r2z"],
+        },
+        "rotation_tolerance": {
+            "dtype": "float32",
+            "shape": (ROTATION_TOLERANCE_DIM,),
+            "names": list(ROTATION_TOLERANCE_PROFILE_ORDER),
+        },
+    }
+
+
+def _open_dataset_for_append(
+    repo_id: str,
+    output_path: Path,
+    *,
+    image_writer_threads: int,
+    image_writer_processes: int,
+) -> LeRobotDataset:
+    """Open an existing LeRobot dataset without loading its parquet history."""
+    from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
+    from lerobot.common.datasets.lerobot_dataset import LeRobotDatasetMetadata
+
+    dataset = LeRobotDataset.__new__(LeRobotDataset)
+    dataset.meta = LeRobotDatasetMetadata(repo_id=repo_id, root=output_path)
+    dataset.repo_id = dataset.meta.repo_id
+    dataset.root = dataset.meta.root
+    dataset.revision = None
+    dataset.tolerance_s = 1e-4
+    dataset.image_writer = None
+    dataset.episodes = None
+    dataset.hf_dataset = dataset.create_hf_dataset()
+    dataset.image_transforms = None
+    dataset.delta_timestamps = None
+    dataset.delta_indices = None
+    dataset.episode_data_index = None
+    dataset.video_backend = None
+    if image_writer_processes or image_writer_threads:
+        dataset.start_image_writer(image_writer_processes, image_writer_threads)
+    dataset.episode_buffer = dataset.create_episode_buffer()
+    return dataset
+
+
+def _read_jsonlines(path: Path) -> list[dict[str, Any]]:
+    if not path.is_file():
+        return []
+    rows = []
+    with path.open("r", encoding="utf-8") as file:
+        for line_number, line in enumerate(file, start=1):
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError as error:
+                raise ValueError(f"Invalid JSON line {line_number} in {path}: {error}") from error
+            if not isinstance(row, dict):
+                raise ValueError(f"Expected a JSON object on line {line_number} in {path}")
+            rows.append(row)
+    return rows
+
+
+def _write_jsonlines_atomic(path: Path, rows: list[dict[str, Any]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.tmp")
+    with temporary.open("w", encoding="utf-8") as file:
+        for row in rows:
+            file.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
+        file.flush()
+    temporary.replace(path)
+
+
+def _contiguous_rows(rows: list[dict[str, Any]], *, field: str) -> int:
+    count = 0
+    for row in rows:
+        if row.get(field) != count:
+            break
+        count += 1
+    return count
+
+
+def _contiguous_parquet_count(output_path: Path, info: dict[str, Any]) -> int:
+    pattern = info.get("data_path")
+    chunk_size = int(info.get("chunks_size", 1000))
+    if not isinstance(pattern, str) or chunk_size <= 0:
+        raise ValueError(f"Invalid LeRobot data_path or chunks_size in {output_path / 'meta/info.json'}")
+    count = 0
+    while True:
+        relative_path = pattern.format(episode_chunk=count // chunk_size, episode_index=count)
+        if not (output_path / relative_path).is_file():
+            return count
+        count += 1
+
+
+def _episode_index_from_name(path: Path) -> int | None:
+    stem = path.stem
+    if not stem.startswith("episode_"):
+        return None
+    try:
+        return int(stem.removeprefix("episode_"))
+    except ValueError:
+        return None
+
+
+def _repair_partial_dataset(output_path: Path) -> int:
+    """Roll back files written after the last fully committed LeRobot episode."""
+    info_path = output_path / "meta/info.json"
+    info = _load_json(info_path)
+    episode_path = output_path / "meta/episodes.jsonl"
+    stats_path = output_path / "meta/episodes_stats.jsonl"
+    episode_rows = _read_jsonlines(episode_path)
+    stats_rows = _read_jsonlines(stats_path)
+    committed = min(
+        _contiguous_rows(episode_rows, field="episode_index"),
+        _contiguous_rows(stats_rows, field="episode_index"),
+        _contiguous_parquet_count(output_path, info),
+    )
+
+    _write_jsonlines_atomic(episode_path, episode_rows[:committed])
+    _write_jsonlines_atomic(stats_path, stats_rows[:committed])
+    for parquet_path in output_path.glob("data/chunk-*/episode_*.parquet"):
+        episode_index = _episode_index_from_name(parquet_path)
+        if episode_index is not None and episode_index >= committed:
+            parquet_path.unlink()
+    images_path = output_path / "images"
+    if images_path.exists():
+        shutil.rmtree(images_path)
+
+    task_rows = _read_jsonlines(output_path / "meta/tasks.jsonl")
+    total_frames = sum(int(row["length"]) for row in episode_rows[:committed])
+    chunk_size = int(info["chunks_size"])
+    video_keys = [feature for feature in info["features"].values() if feature["dtype"] == "video"]
+    info.update({
+        "total_episodes": committed,
+        "total_frames": total_frames,
+        "total_tasks": len(task_rows),
+        "total_videos": committed * len(video_keys),
+        "total_chunks": math.ceil(committed / chunk_size),
+        "splits": {"train": f"0:{committed}"},
+    })
+    temporary_info = info_path.with_name(".info.json.tmp")
+    temporary_info.write_text(json.dumps(info, indent=2) + "\n", encoding="utf-8")
+    temporary_info.replace(info_path)
+    return committed
+
+
+def _source_id(raw_dir: Path, spec: EpisodeSpec) -> str:
+    episode_dir, entry, _, robot_uid, _, _ = spec
+    relative_path = episode_dir.resolve().relative_to(raw_dir)
+    return f"{robot_uid}:{relative_path.as_posix()}:{entry['episode_index']}:{entry['seed']}"
+
+
+def _fingerprint_arrays(states: np.ndarray, actions: np.ndarray, robot_ids: np.ndarray) -> str:
+    digest = hashlib.sha256()
+    for array, dtype in ((states, "<f4"), (actions, "<f4"), (robot_ids, "<i8")):
+        normalized = np.ascontiguousarray(array, dtype=dtype).reshape(len(array), -1)
+        digest.update(np.asarray(normalized.shape, dtype="<i8").tobytes())
+        digest.update(normalized.tobytes())
+    return digest.hexdigest()
+
+
+def _raw_episode_fingerprint(spec: EpisodeSpec) -> str:
+    episode_dir, _, _, robot_uid, _, _ = spec
+    trajectory_path = episode_dir / "trajectory.json"
+    document = _load_json(trajectory_path)
+    trajectory = document.get("trajectory")
+    if not isinstance(trajectory, list) or not trajectory:
+        raise ValueError(f"{trajectory_path}: expected a non-empty trajectory list")
+    states = np.stack([state_from_frame(frame, source=trajectory_path) for frame in trajectory])
+    actions = np.stack([
+        _require_vector(frame.get("action"), ACTION_DIM, field="action", source=trajectory_path)
+        for frame in trajectory
+    ])
+    robot_ids = np.full((len(trajectory), ROBOT_ID_DIM), ROBOT_SPECS[robot_uid]["id"], dtype=np.int64)
+    return _fingerprint_arrays(states, actions, robot_ids)
+
+
+def _parquet_episode_fingerprint(path: Path) -> str:
+    import pyarrow.parquet as parquet
+
+    table = parquet.read_table(path, columns=["state", "actions", "robot_id"])
+    return _fingerprint_arrays(
+        np.asarray(table["state"].to_pylist(), dtype=np.float32),
+        np.asarray(table["actions"].to_pylist(), dtype=np.float32),
+        np.asarray(table["robot_id"].to_pylist(), dtype=np.int64),
+    )
+
+
+def _load_or_rebuild_conversion_state(
+    output_path: Path,
+    raw_dir: Path,
+    episode_specs: list[EpisodeSpec],
+    committed: int,
+    *,
+    workers: int,
+) -> list[dict[str, Any]]:
+    state_path = output_path / CONVERSION_STATE_PATH
+    rows = _read_jsonlines(state_path)
+    if len(rows) > committed:
+        rows = rows[:committed]
+    planned_by_id = {_source_id(raw_dir, spec): spec for spec in episode_specs}
+    if len(planned_by_id) != len(episode_specs):
+        raise ValueError("Raw dataset contains duplicate episode identities")
+    completed_ids = []
+    for expected_index, row in enumerate(rows):
+        source_id = row.get("source_id")
+        if row.get("episode_index") != expected_index or source_id not in planned_by_id:
+            raise ValueError(f"Invalid or stale resume state in {state_path} at episode {expected_index}")
+        completed_ids.append(source_id)
+    if len(set(completed_ids)) != len(completed_ids):
+        raise ValueError(f"Duplicate source episode in {state_path}")
+
+    if len(rows) < committed:
+        print(
+            f"Rebuilding resume index for {committed - len(rows)} existing episodes "
+            "from trajectory fingerprints (one-time operation)..."
+        )
+        info = _load_json(output_path / "meta/info.json")
+        chunk_size = int(info["chunks_size"])
+        pattern = str(info["data_path"])
+        missing_output_fingerprints: dict[str, list[int]] = {}
+        for episode_index in range(len(rows), committed):
+            parquet_path = output_path / pattern.format(
+                episode_chunk=episode_index // chunk_size,
+                episode_index=episode_index,
+            )
+            fingerprint = _parquet_episode_fingerprint(parquet_path)
+            missing_output_fingerprints.setdefault(fingerprint, []).append(episode_index)
+
+        unmatched_specs = [spec for spec in episode_specs if _source_id(raw_dir, spec) not in completed_ids]
+        fingerprint_to_ids: dict[str, list[str]] = {}
+        if workers > 1:
+            with ThreadPoolExecutor(max_workers=workers) as executor:
+                fingerprints = executor.map(_raw_episode_fingerprint, unmatched_specs)
+                for spec, fingerprint in zip(unmatched_specs, fingerprints, strict=True):
+                    if fingerprint in missing_output_fingerprints:
+                        fingerprint_to_ids.setdefault(fingerprint, []).append(_source_id(raw_dir, spec))
+        else:
+            for spec in unmatched_specs:
+                fingerprint = _raw_episode_fingerprint(spec)
+                if fingerprint in missing_output_fingerprints:
+                    fingerprint_to_ids.setdefault(fingerprint, []).append(_source_id(raw_dir, spec))
+
+        recovered: dict[int, str] = {}
+        for fingerprint, output_indices in missing_output_fingerprints.items():
+            source_ids = sorted(fingerprint_to_ids.get(fingerprint, []))
+            if len(source_ids) < len(output_indices):
+                raise ValueError(
+                    "Could not match every existing LeRobot episode to a raw trajectory; "
+                    "the raw dataset may have changed."
+                )
+            recovered.update(dict(zip(output_indices, source_ids, strict=False)))
+        for episode_index in range(len(rows), committed):
+            rows.append({"episode_index": episode_index, "source_id": recovered[episode_index]})
+        _write_jsonlines_atomic(state_path, rows)
+        print(f"Resume index rebuilt: {len(rows)} completed raw trajectories identified.")
+    return rows
+
+
+def _append_conversion_state(output_path: Path, episode_index: int, source_id: str) -> None:
+    state_path = output_path / CONVERSION_STATE_PATH
+    with state_path.open("a", encoding="utf-8") as file:
+        file.write(json.dumps({"episode_index": episode_index, "source_id": source_id}) + "\n")
+        file.flush()
 
 
 def main(
     raw_dir: Path,
     repo_id: str,
     *,
+    tolerance_summary: Path | None = None,
     push_to_hub: bool = False,
     private: bool = True,
     overwrite: bool = False,
+    resume: bool = False,
     max_episodes: int | None = None,
     image_writer_threads: int = 10,
     image_writer_processes: int = 5,
@@ -602,79 +952,53 @@ def main(
         raise ValueError("workers must be positive")
     if progress_interval_seconds <= 0:
         raise ValueError("progress_interval_seconds must be positive")
+    if overwrite and resume:
+        raise ValueError("--overwrite and --resume are mutually exclusive")
 
     # LeRobot invokes Hugging Face Dataset.map/to_parquet for every episode.
     # Suppress those nested bars so the terminal shows one stable global ETA.
     datasets.disable_progress_bars()
 
+    if tolerance_summary is None:
+        candidate = raw_dir / "tolerance_summary.csv"
+        tolerance_summary = candidate if candidate.is_file() else None
+    else:
+        tolerance_summary = tolerance_summary.expanduser().resolve()
+        if not tolerance_summary.is_file():
+            raise ValueError(f"Tolerance summary does not exist: {tolerance_summary}")
+    summary_profiles = _load_tolerance_summary(tolerance_summary) if tolerance_summary is not None else {}
+    used_summary_keys: set[tuple[str, str, str]] = set()
+    if tolerance_summary is not None:
+        print(f"Loaded authoritative task tolerances from {tolerance_summary} ({len(summary_profiles)} rows).")
+
     task_specs = []
     for task_dir in _task_directories(raw_dir):
         metadata, manifest, robot_uid, width, height = _validate_task(task_dir)
-        task_profiles = _load_tolerance_annotation(
-            task_dir,
-            metadata["annotation"]["rotation_tolerance_profiles_rad"],
-        )
+        if summary_profiles:
+            relative_parts = task_dir.relative_to(raw_dir).parts
+            if len(relative_parts) != 3:
+                raise ValueError(
+                    f"{task_dir}: expected robot/scene/task hierarchy for tolerance-summary lookup"
+                )
+            summary_key = (robot_uid, relative_parts[1], relative_parts[2])
+            try:
+                task_profiles = summary_profiles[summary_key]
+            except KeyError as error:
+                raise ValueError(f"{tolerance_summary}: no tolerance row for task {summary_key}") from error
+            used_summary_keys.add(summary_key)
+        else:
+            task_profiles = _load_tolerance_annotation(
+                task_dir,
+                metadata["annotation"]["rotation_tolerance_profiles_rad"],
+            )
         task_specs.append((task_dir, manifest, robot_uid, width, height, task_profiles))
+    unused_summary_keys = set(summary_profiles) - used_summary_keys
+    if unused_summary_keys:
+        examples = sorted(unused_summary_keys)[:3]
+        raise ValueError(f"{tolerance_summary}: contains rows with no matching task, for example {examples}")
 
-    output_path = HF_LEROBOT_HOME / repo_id
-    if output_path.exists():
-        if not overwrite:
-            raise FileExistsError(f"Output dataset already exists: {output_path}. Pass --overwrite to replace it.")
-        shutil.rmtree(output_path)
-
-    dataset = LeRobotDataset.create(
-        repo_id=repo_id,
-        robot_type="tasktol_mujoco",
-        fps=FPS,
-        features={
-            "image": {
-                "dtype": "image",
-                "shape": (IMAGE_HEIGHT, IMAGE_WIDTH, 3),
-                "names": ["height", "width", "channel"],
-            },
-            "wrist_image": {
-                "dtype": "image",
-                "shape": (IMAGE_HEIGHT, IMAGE_WIDTH, 3),
-                "names": ["height", "width", "channel"],
-            },
-            "state": {
-                "dtype": "float32",
-                "shape": (STATE_DIM,),
-                "names": ["state"],
-            },
-            "robot_id": {
-                "dtype": "int64",
-                "shape": (ROBOT_ID_DIM,),
-                "names": ["robot_id"],
-            },
-            "actions": {
-                "dtype": "float32",
-                "shape": (ACTION_DIM,),
-                "names": ["actions"],
-            },
-            "phase": {
-                "dtype": "int64",
-                "shape": (PHASE_DIM,),
-                "names": ["phase"],
-            },
-            "stage_target_pose": {
-                "dtype": "float32",
-                "shape": (STAGE_TARGET_POSE_DIM,),
-                "names": ["r1x", "r1y", "r1z", "r2x", "r2y", "r2z"],
-            },
-            "rotation_tolerance": {
-                "dtype": "float32",
-                "shape": (ROTATION_TOLERANCE_DIM,),
-                "names": list(ROTATION_TOLERANCE_PROFILE_ORDER),
-            },
-        },
-        image_writer_threads=image_writer_threads,
-        image_writer_processes=image_writer_processes,
-    )
-
-    converted = 0
     # Collect all episode specs first
-    episode_specs: list[tuple[Path, dict[str, Any], dict[str, list[float]], str, int, int]] = []
+    episode_specs: list[EpisodeSpec] = []
     missing_trajectories: list[Path] = []
     for task_dir, manifest, robot_uid, width, height, task_profiles in task_specs:
         for entry in _episode_entries(task_dir, manifest):
@@ -697,28 +1021,86 @@ def main(
             f"Examples: {examples}{suffix}"
         )
 
+    output_path = HF_LEROBOT_HOME / repo_id
+    completed_rows: list[dict[str, Any]] = []
+    if output_path.exists():
+        if overwrite:
+            shutil.rmtree(output_path)
+        elif not resume:
+            raise FileExistsError(
+                f"Output dataset already exists: {output_path}. Pass --resume to continue or --overwrite to replace it."
+            )
+
+    if output_path.exists():
+        committed = _repair_partial_dataset(output_path)
+        print(f"Resume check: {committed} fully committed LeRobot episodes; rolled back any incomplete tail files.")
+        completed_rows = _load_or_rebuild_conversion_state(
+            output_path,
+            raw_dir,
+            episode_specs,
+            committed,
+            workers=workers,
+        )
+        dataset = _open_dataset_for_append(
+            repo_id,
+            output_path,
+            image_writer_threads=image_writer_threads,
+            image_writer_processes=image_writer_processes,
+        )
+        expected_features = _dataset_features()
+        for key, expected in expected_features.items():
+            actual = dataset.meta.features.get(key)
+            if actual != expected:
+                raise ValueError(f"Existing dataset feature {key!r} is incompatible: {actual!r} != {expected!r}")
+        if dataset.meta.robot_type != "tasktol_mujoco" or dataset.meta.fps != FPS:
+            raise ValueError("Existing dataset robot_type or fps is incompatible with this converter")
+    else:
+        dataset = LeRobotDataset.create(
+            repo_id=repo_id,
+            robot_type="tasktol_mujoco",
+            fps=FPS,
+            features=_dataset_features(),
+            image_writer_threads=image_writer_threads,
+            image_writer_processes=image_writer_processes,
+        )
+        _write_jsonlines_atomic(output_path / CONVERSION_STATE_PATH, [])
+
+    completed_ids = {str(row["source_id"]) for row in completed_rows}
+    remaining_specs = [spec for spec in episode_specs if _source_id(raw_dir, spec) not in completed_ids]
+    if len(completed_ids) + len(remaining_specs) != len(episode_specs):
+        raise ValueError("Resume state contains duplicate or unplanned raw episodes")
+
     total_episodes = len(episode_specs)
     total_frames = sum(int(entry.get("frames", 0)) for _, entry, _, _, _, _ in episode_specs)
-    print(f"Planned conversion: {total_episodes} episodes, {total_frames} frames, workers={workers}")
+    completed_frames = total_frames - sum(
+        int(entry.get("frames", 0)) for _, entry, _, _, _, _ in remaining_specs
+    )
+    print(
+        f"Planned conversion: {total_episodes} episodes, {total_frames} frames, workers={workers}; "
+        f"completed={len(completed_ids)}, remaining={len(remaining_specs)}"
+    )
     progress = tqdm.tqdm(
         total=total_frames,
+        initial=completed_frames,
         desc="Converting",
         unit="frame",
         mininterval=progress_interval_seconds,
         maxinterval=max(10.0, progress_interval_seconds * 2),
         dynamic_ncols=True,
     )
-    progress.set_postfix_str(f"episodes=0/{total_episodes}", refresh=False)
-    if workers > 1:
+    converted = len(completed_ids)
+    progress.set_postfix_str(f"episodes={converted}/{total_episodes}", refresh=False)
+    if workers > 1 and remaining_specs:
         with ThreadPoolExecutor(max_workers=workers) as executor:
-            episode_iter = iter(episode_specs)
-            futures = {}
+            episode_iter = iter(remaining_specs)
+            pending: list[tuple[EpisodeSpec, Any]] = []
 
             def submit_next() -> bool:
                 try:
-                    episode_dir, entry, task_profiles, robot_uid, width, height = next(episode_iter)
+                    spec = next(episode_iter)
                 except StopIteration:
                     return False
+                episode_dir, entry, task_profiles, robot_uid, width, height = spec
                 future = executor.submit(
                     _prepare_episode,
                     episode_dir,
@@ -728,26 +1110,29 @@ def main(
                     width=width,
                     height=height,
                 )
-                futures[future] = episode_dir
+                pending.append((spec, future))
                 return True
 
-            for _ in range(min(workers, total_episodes)):
+            for _ in range(min(workers, len(remaining_specs))):
                 submit_next()
 
-            while futures:
-                future = next(as_completed(futures))
-                episode_dir = futures.pop(future)
+            while pending:
+                spec, future = pending.pop(0)
+                episode_dir = spec[0]
                 try:
                     frame_data_list = future.result()
                 except Exception as error:
                     raise RuntimeError(f"Failed to prepare episode {episode_dir}") from error
+                episode_index = dataset.meta.total_episodes
                 _write_episode(dataset, frame_data_list)
                 converted += 1
+                _append_conversion_state(output_path, episode_index, _source_id(raw_dir, spec))
                 progress.set_postfix_str(f"episodes={converted}/{total_episodes}", refresh=False)
                 progress.update(len(frame_data_list))
                 submit_next()
     else:
-        for episode_dir, entry, task_profiles, robot_uid, width, height in episode_specs:
+        for spec in remaining_specs:
+            episode_dir, entry, task_profiles, robot_uid, width, height = spec
             frame_data_list = _prepare_episode(
                 episode_dir,
                 entry,
@@ -756,14 +1141,16 @@ def main(
                 width=width,
                 height=height,
             )
+            episode_index = dataset.meta.total_episodes
             _write_episode(dataset, frame_data_list)
             converted += 1
+            _append_conversion_state(output_path, episode_index, _source_id(raw_dir, spec))
             progress.set_postfix_str(f"episodes={converted}/{total_episodes}", refresh=False)
             progress.update(len(frame_data_list))
 
     progress.close()
 
-    if converted == 0:
+    if total_episodes == 0:
         raise ValueError("No episodes were converted")
     if push_to_hub:
         dataset.push_to_hub(
@@ -772,7 +1159,7 @@ def main(
             push_videos=True,
             license="apache-2.0",
         )
-    print(f"Converted {converted} episodes to {output_path}")
+    print(f"Dataset complete: {converted} episodes at {output_path}")
 
 
 if __name__ == "__main__":

@@ -98,7 +98,18 @@ def create_policy(args: Args) -> _policy.Policy:
 
 def main(args: Args) -> None:
     policy = create_policy(args)
-    policy_metadata = policy.metadata
+    policy_metadata = dict(policy.metadata or {})
+    checkpoint = (
+        args.policy
+        if isinstance(args.policy, Checkpoint)
+        else DEFAULT_CHECKPOINT[args.env]
+    )
+    # Advertise model identity during the websocket handshake so benchmark
+    # clients can name result directories without duplicating serve arguments.
+    policy_metadata.update({
+        "policy_config": checkpoint.config,
+        "checkpoint_path": checkpoint.dir,
+    })
 
     # Record the policy's behavior.
     if args.record:

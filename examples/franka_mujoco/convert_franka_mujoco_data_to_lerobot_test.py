@@ -262,6 +262,24 @@ def test_load_tolerance_annotation_falls_back_without_file(tmp_path: Path) -> No
     assert task_profiles == expected
 
 
+def test_load_tolerance_summary_converts_degrees_to_directional_radians(tmp_path: Path) -> None:
+    summary_path = tmp_path / "tolerance_summary.csv"
+    summary_path.write_text(
+        "robot_uid,training_scene_id,training_task_id,"
+        "pre_rx_neg,pre_rx_pos,pre_ry_neg,pre_ry_pos,pre_rz_neg,pre_rz_pos,"
+        "post_rx_neg,post_rx_pos,post_ry_neg,post_ry_pos,post_rz_neg,post_rz_pos\n"
+        "panda,scene,task,30,20,10,0,45,5,1,2,3,4,5,6\n",
+        encoding="utf-8-sig",
+    )
+
+    profiles = converter._load_tolerance_summary(summary_path)[("panda", "scene", "task")]
+
+    np.testing.assert_allclose(profiles["pregrasp"], np.deg2rad([30, 20, 10, 0, 45, 5]))
+    np.testing.assert_allclose(profiles["postgrasp"], np.deg2rad([1, 2, 3, 4, 5, 6]))
+    np.testing.assert_array_equal(profiles["grasp"], np.zeros(6))
+    np.testing.assert_array_equal(profiles["release"], np.zeros(6))
+
+
 def test_load_single_axis_searches_overrides_corresponding_axes(tmp_path: Path) -> None:
     (tmp_path / "single_axis_rx.json").write_text(
         json.dumps(
@@ -373,3 +391,93 @@ def test_load_tolerance_annotation_with_single_axis_search(tmp_path: Path) -> No
     # postgrasp unchanged
     np.testing.assert_allclose(task_profiles["postgrasp"][4], 0.7)
     np.testing.assert_allclose(task_profiles["postgrasp"][5], 0.8)
+
+
+def test_repair_partial_dataset_rolls_back_uncommitted_tail(tmp_path: Path) -> None:
+    output_path = tmp_path / "dataset"
+    meta_path = output_path / "meta"
+    data_path = output_path / "data/chunk-000"
+    image_path = output_path / "images/image/episode_000002"
+    meta_path.mkdir(parents=True)
+    data_path.mkdir(parents=True)
+    image_path.mkdir(parents=True)
+    (meta_path / "info.json").write_text(
+        json.dumps({
+            "total_episodes": 3,
+            "total_frames": 999,
+            "total_tasks": 1,
+            "total_videos": 0,
+            "total_chunks": 1,
+            "chunks_size": 1000,
+            "splits": {"train": "0:3"},
+            "data_path": "data/chunk-{episode_chunk:03d}/episode_{episode_index:06d}.parquet",
+            "features": {"state": {"dtype": "float32"}},
+        }),
+        encoding="utf-8",
+    )
+    (meta_path / "episodes.jsonl").write_text(
+        '\n'.join([
+            json.dumps({"episode_index": 0, "tasks": ["a"], "length": 5}),
+            json.dumps({"episode_index": 1, "tasks": ["a"], "length": 6}),
+        ]) + '\n',
+        encoding="utf-8",
+    )
+    (meta_path / "episodes_stats.jsonl").write_text(
+        '\n'.join([
+            json.dumps({"episode_index": 0, "stats": {}}),
+            json.dumps({"episode_index": 1, "stats": {}}),
+        ]) + '\n',
+        encoding="utf-8",
+    )
+    (meta_path / "tasks.jsonl").write_text(
+        json.dumps({"task_index": 0, "task": "a"}) + '\n', encoding="utf-8"
+    )
+    for episode_index in range(3):
+        (data_path / f"episode_{episode_index:06d}.parquet").write_bytes(b"parquet")
+    (image_path / "frame_000000.png").write_bytes(b"png")
+
+    committed = converter._repair_partial_dataset(output_path)
+
+    assert committed == 2
+    assert (data_path / "episode_000001.parquet").is_file()
+    assert not (data_path / "episode_000002.parquet").exists()
+    assert not (output_path / "images").exists()
+    repaired_info = json.loads((meta_path / "info.json").read_text(encoding="utf-8"))
+    assert repaired_info["total_episodes"] == 2
+    assert repaired_info["total_frames"] == 11
+    assert repaired_info["splits"] == {"train": "0:2"}
+
+
+def test_episode_fingerprint_is_stable_and_sensitive() -> None:
+    states = np.asarray([[1.0] * 7, [2.0] * 7], dtype=np.float32)
+    actions = np.asarray([[3.0] * 7, [4.0] * 7], dtype=np.float32)
+    robot_ids = np.asarray([[0], [0]], dtype=np.int64)
+
+    fingerprint = converter._fingerprint_arrays(states, actions, robot_ids)
+
+    assert fingerprint == converter._fingerprint_arrays(states.copy(), actions.copy(), robot_ids.copy())
+    changed_actions = actions.copy()
+    changed_actions[-1, -1] += 1.0
+    assert fingerprint != converter._fingerprint_arrays(states, changed_actions, robot_ids)
+
+
+def test_write_episode_discards_accumulated_hf_dataset_before_saving() -> None:
+    empty_dataset = object()
+
+    class FakeDataset:
+        hf_dataset = object()
+
+        def create_hf_dataset(self) -> object:
+            return empty_dataset
+
+        def add_frame(self, frame: dict) -> None:
+            assert self.hf_dataset is empty_dataset
+            assert frame == {"frame": 1}
+
+        def save_episode(self) -> None:
+            assert self.hf_dataset is empty_dataset
+
+    dataset = FakeDataset()
+    converter._write_episode(dataset, [{"frame": 1}])
+
+    assert dataset.hf_dataset is empty_dataset
