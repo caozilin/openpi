@@ -36,27 +36,69 @@ uv run scripts/compute_franka_mujoco_norm_stats.py \
 
 
 # ============================================================
-# Linux：训练原始 pi0.5（只训练 7 维动作）
-# ============================================================
-cd /root/openpi
-mkdir -p /root/gpufree-share/checkpoints
+#拉取share到本地
+LOCAL_CKPT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint19/franka_mujoco_v3_joint19_lora/25000
 
-HF_HUB_OFFLINE=1 \
-HF_DATASETS_OFFLINE=1 \
-CUDA_VISIBLE_DEVICES=0 \
-XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
-uv run --no-sync scripts/train.py pi05_franka_mujoco_joint19 \
-  --exp-name=franka_mujoco_joint19_lora \
-  --checkpoint-base-dir=/root/gpufree-share/checkpoints \
-  --resume \
-  --data.lerobot-dataset-root=/root/gpufree-share/datasets/caozilin/franka_mujoco \
-  --data.hf-datasets-cache-dir=/root/gpufree-data/openpi_hf_cache \
-  --data.lerobot-arrow-cache-dir=/root/gpufree-data/openpi_hf_cache
+mkdir -p "$LOCAL_CKPT"
 
+rsync -avP --partial --info=progress2 \
+  -e 'ssh -p 31283' \
+  root@183.147.142.40:/root/gpufree-share/checkpoints/pi05_franka_mujoco_joint19/franka_mujoco_v3_joint19_lora/25000/ \
+  "$LOCAL_CKPT"/
 
 # ============================================================
 # Linux：训练 TaskTol19
 # 联合训练 7 维动作、6 维目标旋转和 6 维双侧容差。
+# ============================================================
+cd /root/openpi
+mkdir -p /root/gpufree-share/checkpoints
+  
+HF_HUB_OFFLINE=1 \
+HF_DATASETS_OFFLINE=1 \
+HF_DATASETS_CACHE=/root/gpufree-data/openpi_hf_cache \
+OPENPI_DATA_HOME=/root/gpufree-share/cache/openpi \
+TMPDIR=/root/gpufree-data/openpi_tmp \
+CUDA_VISIBLE_DEVICES=0 \
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
+uv run --no-sync scripts/train.py pi05_franka_mujoco_joint19 \
+  --exp-name=franka_mujoco_v3_joint19_lora \
+  --checkpoint-base-dir=/root/gpufree-share/checkpoints \
+  --data.lerobot-dataset-root=/root/gpufree-share/datasets/caozilin/franka_mujoco_v3 \
+  --data.hf-datasets-cache-dir=/root/gpufree-data/openpi_hf_cache \
+  --data.lerobot-arrow-cache-dir=/root/gpufree-data/openpi_hf_cache \
+  --resume
+
+# Linux：训练使用 7 维末端 state 的 TaskTol19（新实验，不续训旧 checkpoint）
+HF_HUB_OFFLINE=1 \
+HF_DATASETS_OFFLINE=1 \
+HF_DATASETS_CACHE=/root/gpufree-data/openpi_hf_cache \
+OPENPI_DATA_HOME=/root/gpufree-share/cache/openpi \
+TMPDIR=/root/gpufree-data/openpi_tmp \
+CUDA_VISIBLE_DEVICES=0 \
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
+uv run --no-sync scripts/train.py pi05_franka_mujoco_joint19_state \
+  --exp-name=franka_mujoco_v3_joint19_state_lora \
+  --checkpoint-base-dir=/root/gpufree-share/checkpoints \
+  --data.lerobot-dataset-root=/root/gpufree-share/datasets/caozilin/franka_mujoco_v3 \
+  --data.hf-datasets-cache-dir=/root/gpufree-data/openpi_hf_cache \
+  --data.lerobot-arrow-cache-dir=/root/gpufree-data/openpi_hf_cache
+
+HF_HOME=/root/gpufree-share/cache/huggingface \
+HF_DATASETS_CACHE=/root/gpufree-data/cache/huggingface/datasets \
+HF_LEROBOT_HOME=/root/gpufree-share/lerobot \
+TMPDIR=/root/gpufree-data/openpi_tmp \
+OPENPI_DATA_HOME=/root/gpufree-share/cache/openpi \
+WANDB_DIR=/root/gpufree-share/wandb \
+CUDA_VISIBLE_DEVICES=0 \
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
+uv run scripts/train.py pi05_franka_mujoco_joint19 \
+  --exp-name=franka_mujoco_v2_joint19_lora \
+  --assets-base-dir=/root/gpufree-share/openpi-assets \
+  --checkpoint-base-dir=/root/gpufree-share/checkpoints \
+  --resume
+
+# ============================================================
+# Linux：训练原始 pi0.5（只训练 7 维动作）
 # ============================================================
 HF_HUB_OFFLINE=1 \
 HF_DATASETS_OFFLINE=1 \
@@ -98,3 +140,26 @@ uv run --no-sync scripts/serve_policy.py \
   policy:checkpoint \
   --policy.config=pi05_franka_mujoco_joint19 \
   --policy.dir="$CKPT_ROOT/25000"
+  
+cd /media/czl/sata/franka_my_code/openpi
+
+CKPT_ROOT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint19/franka_mujoco_v3_joint19_lora
+
+CUDA_VISIBLE_DEVICES=0 \
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.7 \
+uv run --no-sync scripts/serve_policy.py \
+  --port=8000 \
+  policy:checkpoint \
+  --policy.config=pi05_franka_mujoco_joint19 \
+  --policy.dir="$CKPT_ROOT/30000"
+  
+cd /media/czl/sata/franka_my_code/openpi
+CKPT_ROOT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco/franka_mujoco_lora
+
+CUDA_VISIBLE_DEVICES=0 \
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.7 \
+uv run --no-sync scripts/serve_policy.py \
+  --port=8000 \
+  policy:checkpoint \
+  --policy.config=pi05_franka_mujoco \
+  --policy.dir="$CKPT_ROOT/30000"

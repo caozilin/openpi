@@ -912,6 +912,52 @@ _CONFIGS = [
         keep_period=5_000,
         fsdp_devices=1,
     ),
+    TrainConfig(
+        name="pi05_franka_mujoco_joint19_state",
+        model=pi0_config.Pi0Config(
+            pi05=True,
+            action_horizon=16,
+            discrete_state_input=True,
+            max_token_len=64,
+            paligemma_variant="gemma_2b_lora",
+            action_expert_variant="gemma_300m_lora",
+            action_loss_groups=(
+                ("action", 0, 7, 1.0),
+                ("stage_target_pose", 7, 13, 0.5),
+                ("rotation_tolerance", 13, 19, 0.5),
+            ),
+        ),
+        data=LeRobotFrankaMujocoDataConfig(
+            repo_id="caozilin/franka_mujoco",
+            # Reuse the same 7-D state and 19-D action normalization stats as
+            # the action-only-input joint19 configuration.
+            assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_joint19"),
+            base_config=DataConfig(prompt_from_task=True),
+            joint_task_tolerance=True,
+        ),
+        batch_size=24,
+        lr_schedule=_optimizer.CosineDecaySchedule(
+            warmup_steps=1_000,
+            peak_lr=5e-5,
+            decay_steps=30_000,
+            decay_lr=5e-6,
+        ),
+        optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
+        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
+        freeze_filter=pi0_config.Pi0Config(
+            pi05=True,
+            action_horizon=16,
+            discrete_state_input=True,
+            max_token_len=64,
+            paligemma_variant="gemma_2b_lora",
+            action_expert_variant="gemma_300m_lora",
+        ).get_freeze_filter(),
+        ema_decay=None,
+        num_train_steps=50_000,
+        save_interval=1_000,
+        keep_period=5_000,
+        fsdp_devices=1,
+    ),
     #
     # Fine-tuning Aloha configs.
     #
