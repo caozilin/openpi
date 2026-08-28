@@ -49,6 +49,7 @@ class FrankaMujocoInputs(transforms.DataTransformFn):
 
     model_type: _model.ModelType
     joint_task_tolerance: bool = False
+    tolerance_trajectory_action_loss_weight: float = 4.0
 
     def __call__(self, data: dict) -> dict:
         base_image = _parse_image(data["observation/image"])
@@ -70,6 +71,18 @@ class FrankaMujocoInputs(transforms.DataTransformFn):
                 "right_wrist_0_rgb": np.True_ if self.model_type == _model.ModelType.PI0_FAST else np.False_,
             },
         }
+        trajectory_label = np.asarray(
+            data.get("trajectory_is_tolerance", [0]), dtype=np.int64
+        ).reshape(-1)
+        if trajectory_label.shape != (1,) or trajectory_label[0] not in (0, 1):
+            raise ValueError(
+                "trajectory_is_tolerance must contain exactly one binary value"
+            )
+        inputs["action_loss_weight"] = np.float32(
+            1.0
+            + float(trajectory_label[0])
+            * (self.tolerance_trajectory_action_loss_weight - 1.0)
+        )
 
         if "actions" in data:
             actions = np.asarray(data["actions"], dtype=np.float32)

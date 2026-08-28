@@ -22,6 +22,23 @@ def test_franka_mujoco_inputs() -> None:
     assert result["state"].shape == (7,)
     assert result["actions"].shape == (10, 7)
     assert result["prompt"] == "pick up the block"
+    assert result["action_loss_weight"] == 1.0
+
+
+def test_tolerance_trajectory_gets_four_x_action_loss_weight() -> None:
+    transform = franka_mujoco_policy.FrankaMujocoInputs(
+        model_type=_model.ModelType.PI05
+    )
+    result = transform(
+        {
+            "observation/image": np.zeros((20, 30, 3), dtype=np.uint8),
+            "observation/wrist_image": np.zeros((20, 30, 3), dtype=np.uint8),
+            "observation/state": np.arange(7, dtype=np.float32),
+            "trajectory_is_tolerance": np.asarray([1], dtype=np.int64),
+        }
+    )
+
+    assert result["action_loss_weight"] == 4.0
 
 
 def test_franka_mujoco_outputs_drop_padding() -> None:

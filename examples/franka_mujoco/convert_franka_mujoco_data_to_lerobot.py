@@ -38,6 +38,9 @@ PHASE_DIM = 1
 ROTATION_6D_DIM = 6
 STAGE_TARGET_POSE_DIM = ROTATION_6D_DIM
 ROTATION_TOLERANCE_DIM = 6
+TRAJECTORY_TYPE_DIM = 1
+NOMINAL_TRAJECTORY = "nominal"
+TOLERANCE_TRAJECTORY = "tolerance"
 PHASE_LABELS = {
     "pregrasp": "Pre-grasp",
     "grasp": "Grasp",
@@ -90,6 +93,58 @@ def _load_json(path: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise ValueError(f"Expected a JSON object in {path}")
     return value
+
+
+def trajectory_is_tolerance(
+    document: dict[str, Any],
+    manifest_entry: dict[str, Any],
+    *,
+    source: Path,
+) -> bool:
+    episode = document.get("episode")
+    trajectory = document.get("trajectory")
+    if not isinstance(episode, dict) or not isinstance(trajectory, list):
+        raise ValueError(f"{source}: expected episode object and trajectory list")
+
+    type_values = [
+        value
+        for value in (
+            manifest_entry.get("trajectory_type"),
+            episode.get("trajectory_type"),
+            *(frame.get("trajectory_type") for frame in trajectory if isinstance(frame, dict)),
+        )
+        if value is not None
+    ]
+    invalid_types = sorted({
+        str(value)
+        for value in type_values
+        if value not in (NOMINAL_TRAJECTORY, TOLERANCE_TRAJECTORY)
+    })
+    if invalid_types:
+        raise ValueError(f"{source}: invalid trajectory_type value(s) {invalid_types}")
+    if len(set(type_values)) > 1:
+        raise ValueError(f"{source}: inconsistent trajectory_type labels")
+
+    binary_values = [
+        value
+        for value in (
+            manifest_entry.get("trajectory_is_tolerance"),
+            episode.get("trajectory_is_tolerance"),
+            *(frame.get("trajectory_is_tolerance") for frame in trajectory if isinstance(frame, dict)),
+        )
+        if value is not None
+    ]
+    if any(type(value) is not bool for value in binary_values):
+        raise ValueError(f"{source}: trajectory_is_tolerance must be boolean")
+    if len(set(binary_values)) > 1:
+        raise ValueError(f"{source}: inconsistent trajectory_is_tolerance labels")
+
+    from_type = type_values[0] == TOLERANCE_TRAJECTORY if type_values else None
+    from_binary = binary_values[0] if binary_values else None
+    if from_type is not None and from_binary is not None and from_type != from_binary:
+        raise ValueError(f"{source}: trajectory type and binary label disagree")
+    # Legacy raw datasets predate this label and are nominal by definition.
+    return bool(from_type if from_type is not None else from_binary if from_binary is not None else False)
 
 
 def _require_vector(value: Any, size: int, *, field: str, source: Path) -> np.ndarray:
@@ -590,6 +645,7 @@ def _prepare_episode(
     if not all(isinstance(frame, dict) for frame in trajectory):
         raise ValueError(f"{trajectory_path}: every trajectory frame must be an object")
     annotations = _stage_annotation_lookup(document, source=trajectory_path)
+    is_tolerance = trajectory_is_tolerance(document, manifest_entry, source=trajectory_path)
 
     main_path = episode_dir / "main_rgb.mp4"
     wrist_path = episode_dir / "wrist_rgb.mp4"
@@ -620,6 +676,7 @@ def _prepare_episode(
                 "robot_id": np.asarray([ROBOT_SPECS[robot_uid]["id"]], dtype=np.int64),
                 "actions": action,
                 "phase": phase_from_frame(frame, source=trajectory_path),
+                "trajectory_is_tolerance": np.asarray([is_tolerance], dtype=np.int64),
                 **tolerance_targets,
                 "task": instruction,
             })
@@ -670,6 +727,11 @@ def _dataset_features() -> dict[str, dict[str, Any]]:
         "robot_id": {"dtype": "int64", "shape": (ROBOT_ID_DIM,), "names": ["robot_id"]},
         "actions": {"dtype": "float32", "shape": (ACTION_DIM,), "names": ["actions"]},
         "phase": {"dtype": "int64", "shape": (PHASE_DIM,), "names": ["phase"]},
+        "trajectory_is_tolerance": {
+            "dtype": "int64",
+            "shape": (TRAJECTORY_TYPE_DIM,),
+            "names": ["is_tolerance"],
+        },
         "stage_target_pose": {
             "dtype": "float32",
             "shape": (STAGE_TARGET_POSE_DIM,),
@@ -822,9 +884,23 @@ def _source_id(raw_dir: Path, spec: EpisodeSpec) -> str:
     return f"{robot_uid}:{relative_path.as_posix()}:{entry['episode_index']}:{entry['seed']}"
 
 
-def _fingerprint_arrays(states: np.ndarray, actions: np.ndarray, robot_ids: np.ndarray) -> str:
+def _fingerprint_arrays(
+    states: np.ndarray,
+    actions: np.ndarray,
+    robot_ids: np.ndarray,
+    trajectory_types: np.ndarray | None = None,
+) -> str:
+    if trajectory_types is None:
+        trajectory_types = np.zeros(
+            (len(states), TRAJECTORY_TYPE_DIM), dtype=np.int64
+        )
     digest = hashlib.sha256()
-    for array, dtype in ((states, "<f4"), (actions, "<f4"), (robot_ids, "<i8")):
+    for array, dtype in (
+        (states, "<f4"),
+        (actions, "<f4"),
+        (robot_ids, "<i8"),
+        (trajectory_types, "<i8"),
+    ):
         normalized = np.ascontiguousarray(array, dtype=dtype).reshape(len(array), -1)
         digest.update(np.asarray(normalized.shape, dtype="<i8").tobytes())
         digest.update(normalized.tobytes())
@@ -832,7 +908,7 @@ def _fingerprint_arrays(states: np.ndarray, actions: np.ndarray, robot_ids: np.n
 
 
 def _raw_episode_fingerprint(spec: EpisodeSpec) -> str:
-    episode_dir, _, _, robot_uid, _, _ = spec
+    episode_dir, entry, _, robot_uid, _, _ = spec
     trajectory_path = episode_dir / "trajectory.json"
     document = _load_json(trajectory_path)
     trajectory = document.get("trajectory")
@@ -844,17 +920,25 @@ def _raw_episode_fingerprint(spec: EpisodeSpec) -> str:
         for frame in trajectory
     ])
     robot_ids = np.full((len(trajectory), ROBOT_ID_DIM), ROBOT_SPECS[robot_uid]["id"], dtype=np.int64)
-    return _fingerprint_arrays(states, actions, robot_ids)
+    is_tolerance = trajectory_is_tolerance(document, entry, source=trajectory_path)
+    trajectory_types = np.full(
+        (len(trajectory), TRAJECTORY_TYPE_DIM), is_tolerance, dtype=np.int64
+    )
+    return _fingerprint_arrays(states, actions, robot_ids, trajectory_types)
 
 
 def _parquet_episode_fingerprint(path: Path) -> str:
     import pyarrow.parquet as parquet
 
-    table = parquet.read_table(path, columns=["state", "actions", "robot_id"])
+    table = parquet.read_table(
+        path,
+        columns=["state", "actions", "robot_id", "trajectory_is_tolerance"],
+    )
     return _fingerprint_arrays(
         np.asarray(table["state"].to_pylist(), dtype=np.float32),
         np.asarray(table["actions"].to_pylist(), dtype=np.float32),
         np.asarray(table["robot_id"].to_pylist(), dtype=np.int64),
+        np.asarray(table["trajectory_is_tolerance"].to_pylist(), dtype=np.int64),
     )
 
 

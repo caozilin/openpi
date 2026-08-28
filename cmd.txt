@@ -52,7 +52,7 @@ rsync -avP --partial --info=progress2 \
 # ============================================================
 cd /root/openpi
 mkdir -p /root/gpufree-share/checkpoints
-  
+
 HF_HUB_OFFLINE=1 \
 HF_DATASETS_OFFLINE=1 \
 HF_DATASETS_CACHE=/root/gpufree-data/openpi_hf_cache \
@@ -69,6 +69,8 @@ uv run --no-sync scripts/train.py pi05_franka_mujoco_joint19 \
   --resume
 
 # Linux：训练使用 7 维末端 state 的 TaskTol19（新实验，不续训旧 checkpoint）
+cd /root/openpi
+
 HF_HUB_OFFLINE=1 \
 HF_DATASETS_OFFLINE=1 \
 HF_DATASETS_CACHE=/root/gpufree-data/openpi_hf_cache \
@@ -79,7 +81,7 @@ XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
 uv run --no-sync scripts/train.py pi05_franka_mujoco_joint19_state \
   --exp-name=franka_mujoco_v3_joint19_state_lora \
   --checkpoint-base-dir=/root/gpufree-share/checkpoints \
-  --data.lerobot-dataset-root=/root/gpufree-share/datasets/caozilin/franka_mujoco_v3 \
+  --data.lerobot-dataset-root=/root/gpufree-data/franka_mujoco_v3_metadata \
   --data.hf-datasets-cache-dir=/root/gpufree-data/openpi_hf_cache \
   --data.lerobot-arrow-cache-dir=/root/gpufree-data/openpi_hf_cache
 
@@ -140,11 +142,9 @@ uv run --no-sync scripts/serve_policy.py \
   policy:checkpoint \
   --policy.config=pi05_franka_mujoco_joint19 \
   --policy.dir="$CKPT_ROOT/25000"
-  
+
 cd /media/czl/sata/franka_my_code/openpi
-
 CKPT_ROOT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint19/franka_mujoco_v3_joint19_lora
-
 CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.7 \
 uv run --no-sync scripts/serve_policy.py \
@@ -152,10 +152,19 @@ uv run --no-sync scripts/serve_policy.py \
   policy:checkpoint \
   --policy.config=pi05_franka_mujoco_joint19 \
   --policy.dir="$CKPT_ROOT/30000"
-  
+
+cd /media/czl/sata/franka_my_code/openpi
+CKPT_ROOT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint19_state/franka_mujoco_bell_norminal_joint19_state_lora
+CUDA_VISIBLE_DEVICES=0 \
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.7 \
+uv run --no-sync scripts/serve_policy.py \
+  --port=8000 \
+  policy:checkpoint \
+  --policy.config=pi05_franka_mujoco_joint19_state \
+  --policy.dir="$CKPT_ROOT/3000"
+
 cd /media/czl/sata/franka_my_code/openpi
 CKPT_ROOT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco/franka_mujoco_lora
-
 CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.7 \
 uv run --no-sync scripts/serve_policy.py \

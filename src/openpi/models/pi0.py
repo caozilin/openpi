@@ -19,17 +19,30 @@ logger = logging.getLogger("openpi")
 def _grouped_action_loss(
     squared_error: jax.Array,
     groups: tuple[tuple[str, int, int, float], ...] | None,
+    action_loss_weight: jax.Array | None = None,
 ) -> jax.Array:
-    total, _ = _grouped_action_loss_with_breakdown(squared_error, groups)
+    total, _ = _grouped_action_loss_with_breakdown(
+        squared_error, groups, action_loss_weight
+    )
     return total
 
 
 def _grouped_action_loss_with_breakdown(
     squared_error: jax.Array,
     groups: tuple[tuple[str, int, int, float], ...] | None,
+    action_loss_weight: jax.Array | None = None,
 ) -> tuple[jax.Array, dict[str, jax.Array]]:
+    def broadcast_weight(loss: jax.Array) -> jax.Array:
+        weight = jnp.asarray(action_loss_weight, dtype=loss.dtype)
+        while weight.ndim < loss.ndim:
+            weight = weight[..., None]
+        return weight
+
     if groups is None:
-        return jnp.mean(squared_error, axis=-1), {}
+        loss = jnp.mean(squared_error, axis=-1)
+        if action_loss_weight is not None:
+            loss = loss * broadcast_weight(loss)
+        return loss, {}
 
     raw_losses = {
         name: jnp.mean(squared_error[..., start:end], axis=-1) for name, start, end, _ in groups
@@ -37,6 +50,8 @@ def _grouped_action_loss_with_breakdown(
     weighted_losses = {
         name: weight * raw_losses[name] for name, _, _, weight in groups
     }
+    if action_loss_weight is not None and "action" in weighted_losses:
+        weighted_losses["action"] *= broadcast_weight(weighted_losses["action"])
     total = sum(weighted_losses.values())
     breakdown = {
         **{f"loss/{name}": value for name, value in raw_losses.items()},
@@ -249,7 +264,11 @@ class Pi0(_model.BaseModel):
         v_t = self.action_out_proj(suffix_out[:, -self.action_horizon :])
 
         squared_error = jnp.square(v_t - u_t)
-        return _grouped_action_loss_with_breakdown(squared_error, self.action_loss_groups)
+        return _grouped_action_loss_with_breakdown(
+            squared_error,
+            self.action_loss_groups,
+            observation.action_loss_weight,
+        )
 
     @override
     def sample_actions(

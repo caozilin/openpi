@@ -25,6 +25,35 @@ def test_state_from_frame_uses_ee_pose_and_symmetric_finger_position() -> None:
     assert state.dtype == np.float32
 
 
+def test_trajectory_type_binary_label_is_consistent_across_episode() -> None:
+    document = {
+        "episode": {
+            "trajectory_type": "tolerance",
+            "trajectory_is_tolerance": True,
+        },
+        "trajectory": [
+            {"trajectory_type": "tolerance", "trajectory_is_tolerance": True},
+            {"trajectory_type": "tolerance", "trajectory_is_tolerance": True},
+        ],
+    }
+    manifest_entry = {
+        "trajectory_type": "tolerance",
+        "trajectory_is_tolerance": True,
+    }
+
+    assert converter.trajectory_is_tolerance(
+        document, manifest_entry, source=Path("trajectory.json")
+    )
+
+
+def test_legacy_unlabeled_trajectory_defaults_to_nominal() -> None:
+    assert not converter.trajectory_is_tolerance(
+        {"episode": {}, "trajectory": [{}]},
+        {},
+        source=Path("trajectory.json"),
+    )
+
+
 def test_rotation_vector_to_6d_round_trips_through_gram_schmidt() -> None:
     rotation_vector = np.asarray([0.4, -0.3, 1.2], dtype=np.float32)
     encoded = converter.rotation_vector_to_6d(
@@ -476,6 +505,10 @@ def test_episode_fingerprint_is_stable_and_sensitive() -> None:
     changed_actions = actions.copy()
     changed_actions[-1, -1] += 1.0
     assert fingerprint != converter._fingerprint_arrays(states, changed_actions, robot_ids)
+    trajectory_types = np.asarray([[0], [1]], dtype=np.int64)
+    assert fingerprint != converter._fingerprint_arrays(
+        states, actions, robot_ids, trajectory_types
+    )
 
 
 def test_write_episode_discards_accumulated_hf_dataset_before_saving() -> None:

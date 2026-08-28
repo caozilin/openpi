@@ -73,3 +73,24 @@ def test_grouped_action_loss_applies_each_weight_and_ignores_other_dimensions():
     assert float(breakdown["loss_weighted/action"][0, 0]) == pytest.approx(2.5)
     assert float(breakdown["loss_weighted/tolerance"][0, 0]) == pytest.approx(6.25)
     assert float(breakdown["loss/total"][0, 0]) == pytest.approx(8.75)
+
+
+def test_tolerance_trajectory_weight_only_scales_physical_action_loss():
+    squared_error = jax.numpy.asarray(
+        [
+            [[1.0, 1.0, 4.0, 4.0]],
+            [[1.0, 1.0, 4.0, 4.0]],
+        ]
+    )
+    loss, breakdown = _pi0._grouped_action_loss_with_breakdown(
+        squared_error,
+        (("action", 0, 2, 1.0), ("tolerance", 2, 4, 0.5)),
+        jax.numpy.asarray([1.0, 4.0]),
+    )
+
+    assert float(breakdown["loss_weighted/action"][0, 0]) == pytest.approx(1.0)
+    assert float(breakdown["loss_weighted/action"][1, 0]) == pytest.approx(4.0)
+    assert float(breakdown["loss_weighted/tolerance"][0, 0]) == pytest.approx(2.0)
+    assert float(breakdown["loss_weighted/tolerance"][1, 0]) == pytest.approx(2.0)
+    assert float(loss[0, 0]) == pytest.approx(3.0)
+    assert float(loss[1, 0]) == pytest.approx(6.0)

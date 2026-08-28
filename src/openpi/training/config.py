@@ -393,6 +393,7 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
             "observation/state": "state",
             "actions": "actions",
             "prompt": "prompt",
+            "trajectory_is_tolerance": "trajectory_is_tolerance",
         }
         if self.joint_task_tolerance:
             repack_structure.update(
