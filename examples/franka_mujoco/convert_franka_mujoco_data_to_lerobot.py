@@ -158,6 +158,20 @@ def _load_tolerance_summary(path: Path) -> dict[tuple[str, str, str], dict[str, 
     return result
 
 
+def _report_unused_tolerance_summary_rows(
+    summary_profiles: dict[tuple[str, str, str], dict[str, list[float]]],
+    used_summary_keys: set[tuple[str, str, str]],
+    *,
+    raw_dir: Path,
+) -> None:
+    unused_summary_keys = set(summary_profiles) - used_summary_keys
+    if unused_summary_keys:
+        print(
+            f"Ignoring {len(unused_summary_keys)} tolerance row(s) for tasks "
+            f"not present under {raw_dir}."
+        )
+
+
 def _tolerance_profiles_from_metadata(metadata: dict[str, Any], *, source: Path) -> dict[str, list[float]]:
     annotation = metadata.get("annotation")
     profiles = annotation.get("rotation_tolerance_profiles_rad") if isinstance(annotation, dict) else None
@@ -992,10 +1006,7 @@ def main(
                 metadata["annotation"]["rotation_tolerance_profiles_rad"],
             )
         task_specs.append((task_dir, manifest, robot_uid, width, height, task_profiles))
-    unused_summary_keys = set(summary_profiles) - used_summary_keys
-    if unused_summary_keys:
-        examples = sorted(unused_summary_keys)[:3]
-        raise ValueError(f"{tolerance_summary}: contains rows with no matching task, for example {examples}")
+    _report_unused_tolerance_summary_rows(summary_profiles, used_summary_keys, raw_dir=raw_dir)
 
     # Collect all episode specs first
     episode_specs: list[EpisodeSpec] = []

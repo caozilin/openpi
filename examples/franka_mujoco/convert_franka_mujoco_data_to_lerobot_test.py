@@ -280,6 +280,23 @@ def test_load_tolerance_summary_converts_degrees_to_directional_radians(tmp_path
     np.testing.assert_array_equal(profiles["release"], np.zeros(6))
 
 
+def test_tolerance_summary_allows_rows_for_tasks_not_present_in_raw_data() -> None:
+    summary_profiles = {
+        ("panda", "bell", "click_bell"): converter._default_tolerance_profiles(),
+        ("panda", "blocks", "stack_blocks"): converter._default_tolerance_profiles(),
+    }
+    terminal = io.StringIO()
+
+    with redirect_stdout(terminal):
+        converter._report_unused_tolerance_summary_rows(
+            summary_profiles,
+            {("panda", "bell", "click_bell")},
+            raw_dir=Path("/raw"),
+        )
+
+    assert "Ignoring 1 tolerance row(s)" in terminal.getvalue()
+
+
 def test_load_single_axis_searches_overrides_corresponding_axes(tmp_path: Path) -> None:
     (tmp_path / "single_axis_rx.json").write_text(
         json.dumps(
