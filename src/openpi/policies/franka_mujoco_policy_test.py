@@ -27,7 +27,8 @@ def test_franka_mujoco_inputs() -> None:
 
 def test_tolerance_trajectory_gets_four_x_action_loss_weight() -> None:
     transform = franka_mujoco_policy.FrankaMujocoInputs(
-        model_type=_model.ModelType.PI05
+        model_type=_model.ModelType.PI05,
+        tolerance_trajectory_action_loss_weight=4.0,
     )
     result = transform(
         {

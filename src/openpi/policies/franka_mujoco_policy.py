@@ -49,9 +49,11 @@ class FrankaMujocoInputs(transforms.DataTransformFn):
 
     model_type: _model.ModelType
     joint_task_tolerance: bool = False
-    tolerance_trajectory_action_loss_weight: float = 4.0
+    tolerance_trajectory_action_loss_weight: float = 1.0
 
     def __call__(self, data: dict) -> dict:
+        if self.tolerance_trajectory_action_loss_weight < 0:
+            raise ValueError("tolerance_trajectory_action_loss_weight must be non-negative")
         base_image = _parse_image(data["observation/image"])
         wrist_image = _parse_image(data["observation/wrist_image"])
         state = np.asarray(data["observation/state"], dtype=np.float32)

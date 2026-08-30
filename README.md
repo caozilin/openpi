@@ -306,6 +306,273 @@ JAX and PyTorch implementations handle precision as follows:
 
 With torch.compile, inference speed is comparable between JAX and PyTorch.
 
+## Bell Tolerance20：data → share → Arrow → 训练
+
+本节记录 `bell_tolerance20` 数据集在 GPU 容器上的完整离线训练流程。路径约定如下：
+
+```text
+本地原始数据：
+/media/czl/sata/franka_my_code/franka_mujoco/datasets/bell_tolerance20
+
+服务器原始数据（data）：
+/root/gpufree-data/bell_tolerance20
+
+转换后的 LeRobot 数据（share）：
+/root/gpufree-share/datasets/caozilin/franka_mujoco_bell_tolerance20
+
+训练用 Arrow 缓存（data）：
+/root/gpufree-data/franka_mujoco_bell_tolerance20_arrow
+
+训练用轻量 metadata（data）：
+/root/gpufree-data/franka_mujoco_bell_tolerance20_metadata
+
+归一化统计（share）：
+/root/gpufree-share/openpi-assets/pi05_franka_mujoco_joint19_state/caozilin/franka_mujoco_bell_tolerance20/norm_stats.json
+
+训练 checkpoint（share）：
+/root/gpufree-share/checkpoints/pi05_franka_mujoco_joint19_state/franka_mujoco_bell_tolerance20_joint19_state_lora
+```
+
+### 1. 连接服务器并更新代码
+
+服务器入口：
+
+```bash
+ssh -p 31283 root@183.147.142.40
+```
+
+如果服务器访问 GitHub 需要使用本机 Clash/Mihomo，本机代理监听在 `127.0.0.1:7897`。在本机单独打开一个终端，并始终保持下面的反向隧道运行：
+
+```bash
+ssh -N \
+  -o ExitOnForwardFailure=yes \
+  -R 127.0.0.1:17890:127.0.0.1:7897 \
+  -p 31283 \
+  root@183.147.142.40
+```
+
+在服务器设置 Git HTTP 代理并拉取代码：
+
+```bash
+git config --global http.proxy http://127.0.0.1:17890
+git config --global https.proxy http://127.0.0.1:17890
+git config --global http.version HTTP/1.1
+
+cd /root/openpi
+git remote set-url origin https://github.com/caozilin/openpi.git
+git pull
+```
+
+### 2. 从本机上传原始数据到 data
+
+在本机执行。源路径末尾的 `/` 表示上传目录内容，而不是额外嵌套一层同名目录：
+
+```bash
+rsync -avP --partial --info=progress2 \
+  -e 'ssh -p 31283' \
+  /media/czl/sata/franka_my_code/franka_mujoco/datasets/bell_tolerance20/ \
+  root@183.147.142.40:/root/gpufree-data/bell_tolerance20/
+```
+
+### 3. 定义服务器路径并创建目录
+
+以下命令均在服务器执行：
+
+```bash
+cd /root/openpi
+
+RAW_ROOT=/root/gpufree-data/bell_tolerance20
+REPO_ID=caozilin/franka_mujoco_bell_tolerance20
+LEROBOT_HOME=/root/gpufree-share/datasets
+LEROBOT_ROOT=/root/gpufree-share/datasets/caozilin/franka_mujoco_bell_tolerance20
+ARROW_ROOT=/root/gpufree-data/franka_mujoco_bell_tolerance20_arrow
+META_ROOT=/root/gpufree-data/franka_mujoco_bell_tolerance20_metadata
+ASSETS_ROOT=/root/gpufree-share/openpi-assets/pi05_franka_mujoco_joint19_state
+TMP_ROOT=/root/gpufree-data/openpi_tmp
+
+mkdir -p \
+  "$LEROBOT_HOME" \
+  "$ARROW_ROOT" \
+  "$META_ROOT/meta" \
+  "$ASSETS_ROOT/caozilin/franka_mujoco_bell_tolerance20" \
+  "$TMP_ROOT" \
+  /root/gpufree-share/checkpoints
+```
+
+### 4. 将原始数据转换到 share
+
+转换器会自动读取原始数据根目录中的 `tolerance_summary.csv`。首次转换执行：
+
+```bash
+HF_LEROBOT_HOME="$LEROBOT_HOME" \
+TMPDIR="$TMP_ROOT" \
+uv run --no-sync python \
+  examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
+  --raw-dir "$RAW_ROOT" \
+  --repo-id "$REPO_ID" \
+  --workers 12 \
+  --image-writer-processes 0 \
+  --image-writer-threads 6 \
+  --progress-interval-seconds 10
+```
+
+若转换中断且输出目录已经存在，在相同命令末尾添加 `--resume`。只有明确需要删除并重建现有转换结果时才使用 `--overwrite`。
+
+### 5. 计算 Bell Tolerance20 的归一化统计
+
+必须针对当前数据集重新计算 state 和 joint19 action 的统计量，不能直接沿用 v3 全量数据集的统计：
+
+```bash
+cd /root/openpi
+
+uv run --no-sync scripts/compute_franka_mujoco_norm_stats.py \
+  --dataset-root "$LEROBOT_ROOT" \
+  --joint-output-dir \
+    "$ASSETS_ROOT/caozilin/franka_mujoco_bell_tolerance20" \
+  --pi05-output-dir \
+    /root/gpufree-share/openpi-assets/pi05_franka_mujoco_state/caozilin/franka_mujoco_bell_tolerance20
+```
+
+训练配置通过 `--data.assets.assets-dir="$ASSETS_ROOT"` 读取统计，并根据 `REPO_ID` 自动追加 `caozilin/franka_mujoco_bell_tolerance20`。
+
+### 6. 将 metadata 和 Arrow 缓存放到 data
+
+训练样本使用 Arrow 缓存，但 LeRobot 仍需要 metadata 提供 FPS、episode 边界和任务文本。只复制 `meta/`，无需复制 share 中的 parquet：
+
+```bash
+cp -a "$LEROBOT_ROOT/meta/." "$META_ROOT/meta/"
+```
+
+从 share 中的 LeRobot parquet 生成 data 中的 Arrow 缓存：
+
+```bash
+HF_HUB_OFFLINE=1 \
+HF_DATASETS_OFFLINE=1 \
+HF_DATASETS_CACHE="$ARROW_ROOT" \
+HF_LEROBOT_HOME="$LEROBOT_HOME" \
+TMPDIR="$TMP_ROOT" \
+uv run --no-sync python -c \
+"from lerobot.common.datasets.lerobot_dataset import LeRobotDataset; d=LeRobotDataset('$REPO_ID', root='$LEROBOT_ROOT'); print(f'Arrow cache generated: {len(d)} frames')"
+```
+
+完成后，训练只从 `ARROW_ROOT` 读取样本；`META_ROOT` 仅提供轻量元数据，转换后的完整 LeRobot 数据继续保存在 share。
+
+### 7. π₀.₅ base 在 share 中的位置
+
+`pi05_franka_mujoco_joint19_state` 配置的底模地址是：
+
+```text
+gs://openpi-assets/checkpoints/pi05_base/params
+```
+
+训练命令设置：
+
+```bash
+OPENPI_DATA_HOME=/root/gpufree-share/cache/openpi
+```
+
+因此 OpenPI 将上述 GCS 地址映射到下面的本地 share 缓存目录：
+
+```text
+/root/gpufree-share/cache/openpi/openpi-assets/checkpoints/pi05_base/params
+```
+
+离线训练前该目录必须已经存在。`HF_HUB_OFFLINE=1` 和 `HF_DATASETS_OFFLINE=1` 不会自动下载缺失的 π₀.₅ base。
+
+### 8. 使用 data 中的 Arrow 缓存训练
+
+```bash
+cd /root/openpi
+
+HF_HUB_OFFLINE=1 \
+HF_DATASETS_OFFLINE=1 \
+HF_DATASETS_CACHE=/root/gpufree-data/franka_mujoco_bell_tolerance20_arrow \
+OPENPI_DATA_HOME=/root/gpufree-share/cache/openpi \
+TMPDIR=/root/gpufree-data/openpi_tmp \
+CUDA_VISIBLE_DEVICES=0 \
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
+uv run --no-sync scripts/train.py pi05_franka_mujoco_joint19_state \
+  --exp-name=franka_mujoco_bell_tolerance20_joint19_state_lora \
+  --checkpoint-base-dir=/root/gpufree-share/checkpoints \
+  --data.repo-id=caozilin/franka_mujoco_bell_tolerance20 \
+  --data.tolerance-trajectory-action-loss-weight=4.0 \
+  --data.assets.assets-dir=/root/gpufree-share/openpi-assets/pi05_franka_mujoco_joint19_state \
+  --data.lerobot-dataset-root=/root/gpufree-data/franka_mujoco_bell_tolerance20_metadata \
+  --data.hf-datasets-cache-dir=/root/gpufree-data/franka_mujoco_bell_tolerance20_arrow \
+  --data.lerobot-arrow-cache-dir=/root/gpufree-data/franka_mujoco_bell_tolerance20_arrow
+```
+
+该配置使用 7 维末端 state、16 步 action chunk 和 19 维联合目标。CLI 参数 `--data.tolerance-trajectory-action-loss-weight` 默认为 `1.0`，因此不传参数时所有轨迹都保持原始 action 权重，而且兼容不含 `trajectory_is_tolerance` 列的旧 LeRobot 数据。只有将该参数设为非 `1.0` 时，数据集才必须提供这个标签。上面的 Bell 命令显式设置为 `4.0`：nominal 轨迹的 loss 为 `1.0 × action + 0.5 × target rotation + 0.5 × tolerance`；tolerance 轨迹只把物理 action 项提高到 `4.0`，另外两项仍为 `0.5`。
+
+### 9. 使用 tar + pv 拉取 10000 步 checkpoint
+
+以下命令在本机执行。远端先用 `tar` 将整个 checkpoint 合并为单一数据流，通过 SSH 传输；本机用 `pv` 显示实时速度、已传输大小和进度，再直接解包到对应实验目录。`train_state/` 会在远端打包阶段被排除，从而避免传输优化器状态。
+
+```bash
+REMOTE_PARENT=/root/gpufree-share/checkpoints/pi05_franka_mujoco_joint19_state/franka_mujoco_bell_tolerance20_joint19_state_lora
+LOCAL_PARENT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint19_state/franka_mujoco_bell_tolerance20_joint19_state_lora
+
+mkdir -p "$LOCAL_PARENT"
+
+ssh -p 31283 root@183.147.142.40 \
+  "tar -C '$REMOTE_PARENT' --exclude='10000/train_state' -cf - 10000" \
+  | pv \
+  | tar -C "$LOCAL_PARENT" -xf -
+```
+
+下载完成后的目录为：
+
+```text
+/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint19_state/franka_mujoco_bell_tolerance20_joint19_state_lora/10000
+```
+
+本地 checkpoint 保留以下推理文件：
+
+```text
+10000/params/
+10000/assets/
+10000/_CHECKPOINT_METADATA
+```
+
+不会下载：
+
+```text
+10000/train_state/
+```
+
+该精简 checkpoint 可以用于推理，但不能用于恢复训练。如果本机已经存在旧的 `10000/train_state/`，本次解包不会主动删除它；应使用一个不含旧训练状态的目标目录。
+
+### 10. 部署 Bell Tolerance20 的 10000 步 checkpoint
+
+训练时通过 `--data.repo-id=caozilin/franka_mujoco_bell_tolerance20` 覆盖了通用配置，因此 checkpoint 中的归一化统计位于：
+
+```text
+10000/assets/caozilin/franka_mujoco_bell_tolerance20/norm_stats.json
+```
+
+现有 `pi05_franka_mujoco_joint19_state` 配置默认查找 `assets/caozilin/franka_mujoco/`。部署前将 Bell 统计文件复制到该配置预期的位置即可，无需新增训练配置：
+
+```bash
+cd /media/czl/sata/franka_my_code/openpi
+
+CKPT_ROOT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint19_state/franka_mujoco_bell_tolerance20_joint19_state_lora
+CKPT_DIR="$CKPT_ROOT/10000"
+
+mkdir -p "$CKPT_DIR/assets/caozilin/franka_mujoco"
+
+cp \
+  "$CKPT_DIR/assets/caozilin/franka_mujoco_bell_tolerance20/norm_stats.json" \
+  "$CKPT_DIR/assets/caozilin/franka_mujoco/norm_stats.json"
+
+CUDA_VISIBLE_DEVICES=0 \
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.7 \
+uv run --no-sync scripts/serve_policy.py \
+  --port=8000 \
+  policy:checkpoint \
+  --policy.config=pi05_franka_mujoco_joint19_state \
+  --policy.dir="$CKPT_DIR"
+```
+
 ## Troubleshooting
 
 We will collect common issues and their solutions here. If you encounter an issue, please check here first. If you can't find a solution, please file an issue on the repo (see [here](CONTRIBUTING.md) for guidelines).

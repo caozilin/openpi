@@ -379,6 +379,9 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
     """Transforms for TaskTol-VLA Franka MuJoCo data converted to LeRobot."""
 
     joint_task_tolerance: bool = False
+    # Multiplier applied only to the seven physical-action loss dimensions for
+    # samples labeled as tolerance trajectories. Exposed as a data CLI option.
+    tolerance_trajectory_action_loss_weight: float = 1.0
     sequence_keys: Sequence[str] = (
         "actions",
         "stage_target_pose",
@@ -387,14 +390,17 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
 
     @override
     def create(self, assets_dirs: pathlib.Path, model_config: _model.BaseModelConfig) -> DataConfig:
+        if self.tolerance_trajectory_action_loss_weight < 0:
+            raise ValueError("tolerance_trajectory_action_loss_weight must be non-negative")
         repack_structure = {
             "observation/image": "image",
             "observation/wrist_image": "wrist_image",
             "observation/state": "state",
             "actions": "actions",
             "prompt": "prompt",
-            "trajectory_is_tolerance": "trajectory_is_tolerance",
         }
+        if self.tolerance_trajectory_action_loss_weight != 1.0:
+            repack_structure["trajectory_is_tolerance"] = "trajectory_is_tolerance"
         if self.joint_task_tolerance:
             repack_structure.update(
                 {
@@ -412,6 +418,7 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
                 franka_mujoco_policy.FrankaMujocoInputs(
                     model_type=model_config.model_type,
                     joint_task_tolerance=self.joint_task_tolerance,
+                    tolerance_trajectory_action_loss_weight=self.tolerance_trajectory_action_loss_weight,
                 )
             ],
             outputs=[
