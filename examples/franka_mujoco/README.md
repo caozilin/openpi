@@ -19,28 +19,22 @@ model input nor a prediction target. The converter additionally resolves each
 frame's `stage_annotation_id` and stores these future tolerance-head targets:
 
 ```text
-stage_target_pose   [b1x, b1y, b1z, b2x, b2y, b2z]
-rotation_tolerance  [Rx-, Rx+, Ry-, Ry+, Rz-, Rz+]
+tolerance_frame_code  [cos(phi), sin(phi)]
+rotation_tolerance    [Rx-, Rx+, Ry-, Ry+, Rz-, Rz+]
 ```
 
-Despite its retained dataset key, `stage_target_pose` contains only the
-target orientation and no XYZ position. The converter maps its raw
-three-dimensional axis-angle vector to a rotation matrix
-and stores its first two columns in order. A decoder can apply Gram-Schmidt to
-these two vectors and recover a proper SO(3) matrix. The converter copies the
-annotation selected by each frame without applying phase-specific rules.
-`tolerance_frame` is deliberately not stored: runtime derives it uniquely from
-the target rotation with the dataset's deterministic `box_tolerance_frame`
-rule. The data loader sequences both stored targets over the same 16-step horizon as
-`actions`; the conventional pi0.5 transforms currently discard them until the
-tolerance head is introduced.
+`stage_target_pose` remains raw-dataset provenance only. The converter copies
+the annotation's two-dimensional gravity-aligned heading code directly; it is
+the VLA supervision target. Runtime normalizes the code and reconstructs the
+full SO(3) tolerance frame using world gravity. The data loader sequences both
+stored targets over the same 16-step horizon as `actions`; the action-only
+config discards them, while the joint15 config packs them into its target.
 
-The `pi05_franka_mujoco_joint19` config uses the existing 32-dimensional pi0.5
-action interface without adding model modules. It concatenates the seven
-physical actions, one six-dimensional target rotation, and six bilateral tolerance
-magnitudes into the first 19 channels. Its grouped flow-matching loss weights physical actions by
-1.0 and each TaskTol group by 0.5; padded channels 19 through 31 are excluded
-from the loss. The original `pi05_franka_mujoco` config remains action-only.
+The `pi05_franka_mujoco_joint15` config uses a native 15-dimensional pi0.5
+action interface. It concatenates the seven
+physical actions, one two-dimensional frame code, and six bilateral tolerance
+magnitudes. Its grouped flow-matching loss weights physical actions by
+1.0 and each TaskTol group by 0.5. The original `pi05_franka_mujoco` config remains action-only.
 
 The seven-dimensional state is:
 
@@ -74,7 +68,7 @@ every episode. Per-episode values in `episode_refinements` are deliberately
 ignored, even when present. If neither task metadata nor an optimized
 annotation supplies tolerances, the converter prints a warning and uses the
 original defaults: Pre-grasp allows +/-30 degrees around tolerance-frame Y,
-Post-grasp allows +/-45 degrees around tolerance-frame Z, and Grasp/Release are
+Post-grasp allows +/-30 degrees around tolerance-frame Z, and Grasp/Release are
 strict.
 
 Install the locked OpenPI environment and run conversion on Linux. Conversion,
@@ -109,14 +103,14 @@ CUDA_VISIBLE_DEVICES=0 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
 uv run scripts/train.py pi05_franka_mujoco --exp-name=franka_mujoco_lora
 ```
 
-For joint 19-dimensional training, normalization statistics must be recomputed
-because its packed action statistics have shape 19 rather than 7:
+For joint 15-dimensional training, normalization statistics must be recomputed
+because its packed action statistics have shape 15 rather than 7:
 
 ```bash
-uv run scripts/compute_norm_stats.py --config-name pi05_franka_mujoco_joint19
+uv run scripts/compute_norm_stats.py --config-name pi05_franka_mujoco_joint15
 
 CUDA_VISIBLE_DEVICES=0 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
-uv run scripts/train.py pi05_franka_mujoco_joint19 --exp-name=franka_mujoco_joint19_lora
+uv run scripts/train.py pi05_franka_mujoco_joint15 --exp-name=franka_mujoco_joint15_lora
 ```
 
 Joint training logs the backward-compatible `loss` metric plus the following
@@ -125,10 +119,10 @@ W&B metrics:
 ```text
 loss/total
 loss/action
-loss/stage_target_pose
+loss/tolerance_frame_code
 loss/rotation_tolerance
 loss_weighted/action
-loss_weighted/stage_target_pose
+loss_weighted/tolerance_frame_code
 loss_weighted/rotation_tolerance
 ```
 

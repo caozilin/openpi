@@ -35,12 +35,13 @@ ACTION_DIM = 7
 JOINT_STATE_DIM = 7
 ROBOT_ID_DIM = 1
 PHASE_DIM = 1
-ROTATION_6D_DIM = 6
-STAGE_TARGET_POSE_DIM = ROTATION_6D_DIM
+TOLERANCE_FRAME_CODE_DIM = 2
 ROTATION_TOLERANCE_DIM = 6
+ROTATION_TOLERANCE_MAXIMUM_RAD = np.pi / 6
 TRAJECTORY_TYPE_DIM = 1
 NOMINAL_TRAJECTORY = "nominal"
 TOLERANCE_TRAJECTORY = "tolerance"
+BOUNDARY_TOLERANCE_TRAJECTORY = "boundary_tolerance"
 PHASE_LABELS = {
     "pregrasp": "Pre-grasp",
     "grasp": "Grasp",
@@ -64,7 +65,7 @@ ROTATION_TOLERANCE_PROFILE_ORDER = (
 DEFAULT_ROTATION_TOLERANCE_PROFILES_RAD = {
     "pregrasp": [0.0, 0.0, np.pi / 6, np.pi / 6, 0.0, 0.0],
     "grasp": [0.0] * ROTATION_TOLERANCE_DIM,
-    "postgrasp": [0.0, 0.0, 0.0, 0.0, np.pi / 4, np.pi / 4],
+    "postgrasp": [0.0, 0.0, 0.0, 0.0, np.pi / 6, np.pi / 6],
     "release": [0.0] * ROTATION_TOLERANCE_DIM,
 }
 SINGLE_AXIS_TO_INDICES = {
@@ -118,7 +119,11 @@ def trajectory_is_tolerance(
     invalid_types = sorted({
         str(value)
         for value in type_values
-        if value not in (NOMINAL_TRAJECTORY, TOLERANCE_TRAJECTORY)
+        if value not in (
+            NOMINAL_TRAJECTORY,
+            TOLERANCE_TRAJECTORY,
+            BOUNDARY_TOLERANCE_TRAJECTORY,
+        )
     })
     if invalid_types:
         raise ValueError(f"{source}: invalid trajectory_type value(s) {invalid_types}")
@@ -139,7 +144,7 @@ def trajectory_is_tolerance(
     if len(set(binary_values)) > 1:
         raise ValueError(f"{source}: inconsistent trajectory_is_tolerance labels")
 
-    from_type = type_values[0] == TOLERANCE_TRAJECTORY if type_values else None
+    from_type = type_values[0] != NOMINAL_TRAJECTORY if type_values else None
     from_binary = binary_values[0] if binary_values else None
     if from_type is not None and from_binary is not None and from_type != from_binary:
         raise ValueError(f"{source}: trajectory type and binary label disagree")
@@ -152,13 +157,6 @@ def _require_vector(value: Any, size: int, *, field: str, source: Path) -> np.nd
     if array.shape != (size,) or not np.all(np.isfinite(array)):
         raise ValueError(f"{source}: {field} must be a finite vector with shape ({size},), got {array}")
     return array
-
-
-def rotation_vector_to_6d(value: Any, *, field: str, source: Path) -> np.ndarray:
-    """Encode an axis-angle rotation as the first two rotation-matrix columns."""
-    rotation_vector = _require_vector(value, 3, field=field, source=source)
-    rotation_matrix, _ = cv2.Rodrigues(rotation_vector.astype(np.float64))
-    return np.concatenate((rotation_matrix[:, 0], rotation_matrix[:, 1])).astype(np.float32)
 
 
 def _default_tolerance_profiles() -> dict[str, list[float]]:
@@ -203,8 +201,8 @@ def _load_tolerance_summary(path: Path) -> dict[tuple[str, str, str], dict[str, 
                         degrees = float(row[column])
                     except (TypeError, ValueError) as error:
                         raise ValueError(f"{path}:{row_number}: invalid {column} value {row[column]!r}") from error
-                    if not math.isfinite(degrees) or degrees < 0.0:
-                        raise ValueError(f"{path}:{row_number}: {column} must be a finite non-negative value")
+                    if not math.isfinite(degrees) or not 0.0 <= degrees <= 30.0:
+                        raise ValueError(f"{path}:{row_number}: {column} must be in [0, 30] degrees")
                     values.append(math.radians(degrees))
             profiles[phase] = values
         profiles["grasp"] = [0.0] * ROTATION_TOLERANCE_DIM
@@ -250,8 +248,8 @@ def _tolerance_profiles_from_metadata(metadata: dict[str, Any], *, source: Path)
             field=f"annotation.rotation_tolerance_profiles_rad.{phase}",
             source=source,
         )
-        if np.any(value < 0.0):
-            raise ValueError(f"{source}: rotation tolerance profile {phase!r} must contain non-negative magnitudes")
+        if np.any(value < 0.0) or np.any(value > ROTATION_TOLERANCE_MAXIMUM_RAD + 1e-12):
+            raise ValueError(f"{source}: rotation tolerance profile {phase!r} must be in [0, 30] degrees")
         validated[phase] = value.tolist()
     return validated
 
@@ -284,8 +282,8 @@ def _load_tolerance_annotation(
                 field=f"rotation_tolerance_bounds_rad.{phase}",
                 source=annotation_path,
             )
-            if np.any(bounds < 0.0):
-                raise ValueError(f"{annotation_path}: task-level tolerance phase {phase!r} must be non-negative")
+            if np.any(bounds < 0.0) or np.any(bounds > ROTATION_TOLERANCE_MAXIMUM_RAD + 1e-12):
+                raise ValueError(f"{annotation_path}: task-level tolerance phase {phase!r} must be in [0, 30] degrees")
             profiles[phase] = bounds.tolist()
 
         # Per-episode `episode_refinements` are deliberately not applied. The
@@ -352,6 +350,8 @@ def _load_single_axis_searches(
                 field=f"rotation_tolerance_bounds_rad.{phase}",
                 source=search_path,
             )
+            if np.any(bounds < 0.0) or np.any(bounds > ROTATION_TOLERANCE_MAXIMUM_RAD + 1e-12):
+                raise ValueError(f"{search_path}: tolerance phase {phase!r} must be in [0, 30] degrees")
             for idx in axis_indices:
                 merged[phase][idx] = float(bounds[idx])
 
@@ -461,9 +461,6 @@ def tolerance_targets_from_frame(
     except (KeyError, TypeError) as error:
         raise ValueError(f"{source}: unknown stage_annotation_id {annotation_id!r}") from error
 
-    target_pose = annotation.get("stage_target_pose")
-    if not isinstance(target_pose, dict):
-        raise ValueError(f"{source}: annotation {annotation_id} is missing stage_target_pose")
     profile = annotation.get("rotation_tolerance_profile")
     try:
         tolerance = tolerance_profiles[profile]
@@ -471,9 +468,10 @@ def tolerance_targets_from_frame(
         raise ValueError(f"{source}: unknown rotation tolerance profile {profile!r}") from error
 
     return {
-        "stage_target_pose": rotation_vector_to_6d(
-            target_pose.get("rotation_vector_base_rad"),
-            field="stage_target_pose.rotation_vector_base_rad",
+        "tolerance_frame_code": _require_vector(
+            annotation.get("tolerance_frame_code"),
+            TOLERANCE_FRAME_CODE_DIM,
+            field="tolerance_frame_code",
             source=source,
         ),
         "rotation_tolerance": _require_vector(
@@ -732,10 +730,10 @@ def _dataset_features() -> dict[str, dict[str, Any]]:
             "shape": (TRAJECTORY_TYPE_DIM,),
             "names": ["is_tolerance"],
         },
-        "stage_target_pose": {
+        "tolerance_frame_code": {
             "dtype": "float32",
-            "shape": (STAGE_TARGET_POSE_DIM,),
-            "names": ["r1x", "r1y", "r1z", "r2x", "r2y", "r2z"],
+            "shape": (TOLERANCE_FRAME_CODE_DIM,),
+            "names": ["cos_phi", "sin_phi"],
         },
         "rotation_tolerance": {
             "dtype": "float32",

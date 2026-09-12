@@ -1,4 +1,5 @@
 import numpy as np
+import pytest
 
 from openpi.models import model as _model
 from openpi.policies import franka_mujoco_policy
@@ -55,7 +56,7 @@ def test_franka_mujoco_joint_tolerance_inputs_and_outputs() -> None:
         joint_task_tolerance=True,
     )
     actions = np.arange(2 * 7, dtype=np.float32).reshape(2, 7)
-    target = np.full((2, 6), 1.0, dtype=np.float32)
+    frame_code = np.full((2, 2), 1.0, dtype=np.float32)
     tolerance = np.full((2, 6), 3.0, dtype=np.float32)
     result = transform(
         {
@@ -63,16 +64,20 @@ def test_franka_mujoco_joint_tolerance_inputs_and_outputs() -> None:
             "observation/wrist_image": np.zeros((20, 30, 3), dtype=np.uint8),
             "observation/state": np.arange(7, dtype=np.float32),
             "actions": actions,
-            "stage_target_pose": target,
+            "tolerance_frame_code": frame_code,
             "rotation_tolerance": tolerance,
         }
     )
 
-    assert result["actions"].shape == (2, 19)
-    np.testing.assert_array_equal(result["actions"], np.concatenate((actions, target, tolerance), axis=-1))
+    assert result["actions"].shape == (2, 15)
+    np.testing.assert_array_equal(result["actions"], np.concatenate((actions, frame_code, tolerance), axis=-1))
 
-    padded = np.pad(result["actions"], ((0, 0), (0, 13)))
-    outputs = franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=True)({"actions": padded})
+    outputs = franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=True)({"actions": result["actions"]})
     np.testing.assert_array_equal(outputs["actions"], actions)
-    np.testing.assert_array_equal(outputs["stage_target_pose"], target)
+    np.testing.assert_array_equal(outputs["tolerance_frame_code"], frame_code)
     np.testing.assert_array_equal(outputs["rotation_tolerance"], tolerance)
+
+    with pytest.raises(ValueError, match="exactly 15"):
+        franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=True)(
+            {"actions": np.pad(result["actions"], ((0, 0), (0, 17)))}
+        )

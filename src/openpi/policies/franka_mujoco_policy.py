@@ -6,16 +6,15 @@ import numpy as np
 from openpi import transforms
 from openpi.models import model as _model
 
-
 STATE_DIM = 7
 ACTION_DIM = 7
-ROTATION_6D_DIM = 6
+TOLERANCE_FRAME_CODE_DIM = 2
 ROTATION_TOLERANCE_DIM = 6
-JOINT_ACTION_DIM = ACTION_DIM + ROTATION_6D_DIM + ROTATION_TOLERANCE_DIM
-TARGET_ROTATION_SLICE = slice(ACTION_DIM, ACTION_DIM + ROTATION_6D_DIM)
-ROTATION_TOLERANCE_SLICE = slice(TARGET_ROTATION_SLICE.stop, JOINT_ACTION_DIM)
+JOINT_ACTION_DIM = ACTION_DIM + TOLERANCE_FRAME_CODE_DIM + ROTATION_TOLERANCE_DIM
+TOLERANCE_FRAME_CODE_SLICE = slice(ACTION_DIM, ACTION_DIM + TOLERANCE_FRAME_CODE_DIM)
+ROTATION_TOLERANCE_SLICE = slice(TOLERANCE_FRAME_CODE_SLICE.stop, JOINT_ACTION_DIM)
 TASK_TOLERANCE_DIMS = {
-    "stage_target_pose": ROTATION_6D_DIM,
+    "tolerance_frame_code": TOLERANCE_FRAME_CODE_DIM,
     "rotation_tolerance": ROTATION_TOLERANCE_DIM,
 }
 
@@ -116,11 +115,14 @@ class FrankaMujocoOutputs(transforms.DataTransformFn):
         predictions = np.asarray(data["actions"])
         outputs = {"actions": predictions[:, :ACTION_DIM]}
         if self.joint_task_tolerance:
-            if predictions.shape[-1] < JOINT_ACTION_DIM:
-                raise ValueError(f"Expected at least {JOINT_ACTION_DIM} joint output dimensions, got {predictions.shape}")
+            if predictions.shape[-1] != JOINT_ACTION_DIM:
+                raise ValueError(
+                    f"Expected exactly {JOINT_ACTION_DIM} joint output dimensions, "
+                    f"got {predictions.shape}"
+                )
             outputs.update(
                 {
-                    "stage_target_pose": predictions[:, TARGET_ROTATION_SLICE],
+                    "tolerance_frame_code": predictions[:, TOLERANCE_FRAME_CODE_SLICE],
                     "rotation_tolerance": predictions[:, ROTATION_TOLERANCE_SLICE],
                 }
             )

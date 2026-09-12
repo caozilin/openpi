@@ -3,7 +3,6 @@ import io
 import json
 from pathlib import Path
 
-import cv2
 import numpy as np
 
 from examples.franka_mujoco import convert_franka_mujoco_data_to_lerobot as converter
@@ -46,33 +45,35 @@ def test_trajectory_type_binary_label_is_consistent_across_episode() -> None:
     )
 
 
+def test_boundary_tolerance_trajectory_maps_to_tolerance_binary_label() -> None:
+    document = {
+        "episode": {
+            "trajectory_type": "boundary_tolerance",
+            "trajectory_is_tolerance": True,
+        },
+        "trajectory": [
+            {
+                "trajectory_type": "boundary_tolerance",
+                "trajectory_is_tolerance": True,
+            }
+        ],
+    }
+    manifest_entry = {
+        "trajectory_type": "boundary_tolerance",
+        "trajectory_is_tolerance": True,
+    }
+
+    assert converter.trajectory_is_tolerance(
+        document, manifest_entry, source=Path("trajectory.json")
+    )
+
+
 def test_legacy_unlabeled_trajectory_defaults_to_nominal() -> None:
     assert not converter.trajectory_is_tolerance(
         {"episode": {}, "trajectory": [{}]},
         {},
         source=Path("trajectory.json"),
     )
-
-
-def test_rotation_vector_to_6d_round_trips_through_gram_schmidt() -> None:
-    rotation_vector = np.asarray([0.4, -0.3, 1.2], dtype=np.float32)
-    encoded = converter.rotation_vector_to_6d(
-        rotation_vector,
-        field="rotation",
-        source=Path("trajectory.json"),
-    )
-
-    first = encoded[:3] / np.linalg.norm(encoded[:3])
-    second_raw = encoded[3:] - np.dot(first, encoded[3:]) * first
-    second = second_raw / np.linalg.norm(second_raw)
-    decoded = np.column_stack((first, second, np.cross(first, second)))
-    expected, _ = cv2.Rodrigues(rotation_vector.astype(np.float64))
-
-    np.testing.assert_allclose(decoded, expected, atol=1e-6)
-    np.testing.assert_allclose(decoded.T @ decoded, np.eye(3), atol=1e-6)
-    np.testing.assert_allclose(np.linalg.det(decoded), 1.0, atol=1e-6)
-    assert encoded.shape == (6,)
-    assert encoded.dtype == np.float32
 
 
 def test_joint_state_from_frame_preserves_fixed_width_and_ur5e_padding() -> None:
@@ -232,7 +233,7 @@ def test_tolerance_targets_follow_the_frame_annotation_reference() -> None:
                     "position_m": [0.4, 0.1, 0.5],
                     "rotation_vector_base_rad": [0.0, 0.0, 0.0],
                 },
-                "tolerance_frame_rotation_vector_base_rad": [0.0, 0.0, np.pi / 2],
+                "tolerance_frame_code": [0.0, 1.0],
                 "rotation_tolerance_profile": "pregrasp",
             }
         },
@@ -240,8 +241,8 @@ def test_tolerance_targets_follow_the_frame_annotation_reference() -> None:
         source=Path("trajectory.json"),
     )
 
-    assert set(targets) == {"stage_target_pose", "rotation_tolerance"}
-    np.testing.assert_allclose(targets["stage_target_pose"], [1.0, 0.0, 0.0, 0.0, 1.0, 0.0], atol=1e-6)
+    assert set(targets) == {"tolerance_frame_code", "rotation_tolerance"}
+    np.testing.assert_allclose(targets["tolerance_frame_code"], [0.0, 1.0])
     np.testing.assert_allclose(targets["rotation_tolerance"], [0.1, 0.2, 0.3, 0.4, 0.5, 0.6])
     assert all(value.dtype == np.float32 for value in targets.values())
 
@@ -251,7 +252,7 @@ def test_load_tolerance_annotation_uses_task_bounds_and_ignores_episode_refineme
         "rotation_tolerance_bounds_order": list(converter.ROTATION_TOLERANCE_PROFILE_ORDER),
         "rotation_tolerance_bounds_rad": {
             "pregrasp": [0.0, 0.0, 0.1, 0.2, 0.0, 0.0],
-            "postgrasp": [0.0, 0.0, 0.0, 0.0, 0.7, 0.8],
+            "postgrasp": [0.0, 0.0, 0.0, 0.0, 0.4, 0.5],
         },
         "episode_refinements": [
             {
@@ -266,7 +267,7 @@ def test_load_tolerance_annotation_uses_task_bounds_and_ignores_episode_refineme
                     "postgrasp": {
                         "x": {"negative": 0.0, "positive": 0.0},
                         "y": {"negative": 0.0, "positive": 0.0},
-                        "z": {"negative": 45.0, "positive": 45.0},
+                        "z": {"negative": 30.0, "positive": 30.0},
                     },
                 },
             }
@@ -280,7 +281,7 @@ def test_load_tolerance_annotation_uses_task_bounds_and_ignores_episode_refineme
     )
 
     np.testing.assert_allclose(task_profiles["pregrasp"], [0.0, 0.0, 0.1, 0.2, 0.0, 0.0])
-    np.testing.assert_allclose(task_profiles["postgrasp"], [0.0, 0.0, 0.0, 0.0, 0.7, 0.8])
+    np.testing.assert_allclose(task_profiles["postgrasp"], [0.0, 0.0, 0.0, 0.0, 0.4, 0.5])
 
 
 def test_load_tolerance_annotation_falls_back_without_file(tmp_path: Path) -> None:
@@ -297,13 +298,13 @@ def test_load_tolerance_summary_converts_degrees_to_directional_radians(tmp_path
         "robot_uid,training_scene_id,training_task_id,"
         "pre_rx_neg,pre_rx_pos,pre_ry_neg,pre_ry_pos,pre_rz_neg,pre_rz_pos,"
         "post_rx_neg,post_rx_pos,post_ry_neg,post_ry_pos,post_rz_neg,post_rz_pos\n"
-        "panda,scene,task,30,20,10,0,45,5,1,2,3,4,5,6\n",
+        "panda,scene,task,30,20,10,0,30,5,1,2,3,4,5,6\n",
         encoding="utf-8-sig",
     )
 
     profiles = converter._load_tolerance_summary(summary_path)[("panda", "scene", "task")]
 
-    np.testing.assert_allclose(profiles["pregrasp"], np.deg2rad([30, 20, 10, 0, 45, 5]))
+    np.testing.assert_allclose(profiles["pregrasp"], np.deg2rad([30, 20, 10, 0, 30, 5]))
     np.testing.assert_allclose(profiles["postgrasp"], np.deg2rad([1, 2, 3, 4, 5, 6]))
     np.testing.assert_array_equal(profiles["grasp"], np.zeros(6))
     np.testing.assert_array_equal(profiles["release"], np.zeros(6))
@@ -336,7 +337,7 @@ def test_load_single_axis_searches_overrides_corresponding_axes(tmp_path: Path) 
                 },
                 "rotation_tolerance_bounds_rad": {
                     "pregrasp": [0.1745, 0.1745, 0.0, 0.0, 0.0, 0.0],
-                    "postgrasp": [0.5236, 0.5236, 0.5236, 0.5236, 0.7854, 0.7854],
+                    "postgrasp": [0.52, 0.52, 0.52, 0.52, 0.5, 0.5],
                 },
             }
         ),
@@ -363,7 +364,7 @@ def test_load_single_axis_searches_merges_multiple_axes(tmp_path: Path) -> None:
                     "single_axis_only": ["x"],
                 },
                 "rotation_tolerance_bounds_rad": {
-                    "pregrasp": [10.0, 10.0, 0.0, 0.0, 0.0, 0.0],
+                    "pregrasp": [0.1, 0.1, 0.0, 0.0, 0.0, 0.0],
                 },
             }
         ),
@@ -377,7 +378,7 @@ def test_load_single_axis_searches_merges_multiple_axes(tmp_path: Path) -> None:
                     "single_axis_only": ["y"],
                 },
                 "rotation_tolerance_bounds_rad": {
-                    "pregrasp": [0.0, 0.0, 5.0, 5.0, 0.0, 0.0],
+                    "pregrasp": [0.0, 0.0, 0.2, 0.2, 0.0, 0.0],
                 },
             }
         ),
@@ -387,10 +388,10 @@ def test_load_single_axis_searches_merges_multiple_axes(tmp_path: Path) -> None:
     base = converter._default_tolerance_profiles()
     merged = converter._load_single_axis_searches(tmp_path, base)
 
-    np.testing.assert_allclose(merged["pregrasp"][0], 10.0)
-    np.testing.assert_allclose(merged["pregrasp"][1], 10.0)
-    np.testing.assert_allclose(merged["pregrasp"][2], 5.0)
-    np.testing.assert_allclose(merged["pregrasp"][3], 5.0)
+    np.testing.assert_allclose(merged["pregrasp"][0], 0.1)
+    np.testing.assert_allclose(merged["pregrasp"][1], 0.1)
+    np.testing.assert_allclose(merged["pregrasp"][2], 0.2)
+    np.testing.assert_allclose(merged["pregrasp"][3], 0.2)
     np.testing.assert_allclose(merged["pregrasp"][4], base["pregrasp"][4])
     np.testing.assert_allclose(merged["pregrasp"][5], base["pregrasp"][5])
 
@@ -402,7 +403,7 @@ def test_load_tolerance_annotation_with_single_axis_search(tmp_path: Path) -> No
                 "rotation_tolerance_bounds_order": list(converter.ROTATION_TOLERANCE_PROFILE_ORDER),
                 "rotation_tolerance_bounds_rad": {
                     "pregrasp": [0.0, 0.0, 0.1, 0.2, 0.0, 0.0],
-                    "postgrasp": [0.0, 0.0, 0.0, 0.0, 0.7, 0.8],
+                    "postgrasp": [0.0, 0.0, 0.0, 0.0, 0.4, 0.5],
                 },
             }
         ),
@@ -435,8 +436,8 @@ def test_load_tolerance_annotation_with_single_axis_search(tmp_path: Path) -> No
     np.testing.assert_allclose(task_profiles["pregrasp"][2], 0.1)
     np.testing.assert_allclose(task_profiles["pregrasp"][3], 0.2)
     # postgrasp unchanged
-    np.testing.assert_allclose(task_profiles["postgrasp"][4], 0.7)
-    np.testing.assert_allclose(task_profiles["postgrasp"][5], 0.8)
+    np.testing.assert_allclose(task_profiles["postgrasp"][4], 0.4)
+    np.testing.assert_allclose(task_profiles["postgrasp"][5], 0.5)
 
 
 def test_repair_partial_dataset_rolls_back_uncommitted_tail(tmp_path: Path) -> None:

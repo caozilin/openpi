@@ -1,17 +1,21 @@
-"""Compute both Franka MuJoCo normalization files directly from LeRobot Parquet.
+"""Compute Franka MuJoCo normalization files from LeRobot Parquet or Arrow.
 
-This intentionally bypasses ``datasets.load_dataset``: it reads only the four
-numeric columns needed for normalization and never decodes images or creates an
-Arrow cache. The 19-D action target is computed once, then its first seven
+Both backends read only the numeric columns needed for normalization and never
+decode images. The 15-D action target is computed once, then its first seven
 dimensions are reused for the original pi0.5 normalization file.
 """
 
+from collections.abc import Iterator
 import json
 import os
 import pathlib
+import re
+from typing import Literal
 
+import datasets
 import numpy as np
 import pyarrow as pa
+import pyarrow.compute as pc
 import pyarrow.parquet as pq
 import tqdm
 import tyro
@@ -20,21 +24,132 @@ import openpi.shared.normalize as normalize
 
 STATE_DIM = 7
 ACTION_DIM = 7
-STAGE_TARGET_POSE_DIM = 6
+TOLERANCE_FRAME_CODE_DIM = 2
 ROTATION_TOLERANCE_DIM = 6
-JOINT_ACTION_DIM = ACTION_DIM + STAGE_TARGET_POSE_DIM + ROTATION_TOLERANCE_DIM
-PARQUET_COLUMNS = ("state", "actions", "stage_target_pose", "rotation_tolerance")
+JOINT_ACTION_DIM = ACTION_DIM + TOLERANCE_FRAME_CODE_DIM + ROTATION_TOLERANCE_DIM
+PARQUET_COLUMNS = ("state", "actions", "tolerance_frame_code", "rotation_tolerance")
+ARROW_COLUMNS = (*PARQUET_COLUMNS, "episode_index")
 
 
-def _fixed_size_list_to_numpy(column: pa.ChunkedArray, *, name: str, dimension: int) -> np.ndarray:
+def _vector_column_to_numpy(column: pa.ChunkedArray, *, name: str, dimension: int) -> np.ndarray:
     array = column.combine_chunks()
-    if not pa.types.is_fixed_size_list(array.type) or array.type.list_size != dimension:
-        raise ValueError(f"Expected {name} to be fixed_size_list[{dimension}], got {array.type}")
-    values = array.values.to_numpy(zero_copy_only=False).reshape(len(array), dimension)
+    if pa.types.is_fixed_size_list(array.type):
+        if array.type.list_size != dimension:
+            raise ValueError(f"Expected {name} vectors of length {dimension}, got {array.type}")
+        flat_values = array.values
+    elif pa.types.is_list(array.type) or pa.types.is_large_list(array.type):
+        lengths = pc.list_value_length(array).to_numpy(zero_copy_only=False)
+        if not np.all(lengths == dimension):
+            raise ValueError(f"Expected every {name} vector to have length {dimension}")
+        flat_values = pc.list_flatten(array)
+    else:
+        raise ValueError(f"Expected {name} to be a list-valued column, got {array.type}")
+    values = flat_values.to_numpy(zero_copy_only=False).reshape(len(array), dimension)
     values = np.asarray(values, dtype=np.float32)
     if not np.all(np.isfinite(values)):
         raise ValueError(f"Column {name} contains non-finite values")
     return values
+
+
+def _arrays_from_table(table: pa.Table, *, source: pathlib.Path) -> tuple[np.ndarray, np.ndarray]:
+    missing = set(PARQUET_COLUMNS).difference(table.column_names)
+    if missing:
+        raise ValueError(f"{source}: missing numeric columns {sorted(missing)}")
+    state = _vector_column_to_numpy(table["state"], name="state", dimension=STATE_DIM)
+    actions = _vector_column_to_numpy(table["actions"], name="actions", dimension=ACTION_DIM)
+    frame_code = _vector_column_to_numpy(
+        table["tolerance_frame_code"], name="tolerance_frame_code", dimension=TOLERANCE_FRAME_CODE_DIM
+    )
+    tolerance = _vector_column_to_numpy(
+        table["rotation_tolerance"], name="rotation_tolerance", dimension=ROTATION_TOLERANCE_DIM
+    )
+    row_count = len(state)
+    if not (row_count == len(actions) == len(frame_code) == len(tolerance)):
+        raise ValueError(f"Numeric column lengths do not match in {source}")
+    return state, np.concatenate((actions, frame_code, tolerance), axis=-1)
+
+
+def _iter_lerobot_episodes(
+    dataset_root: pathlib.Path, expected_episodes: int
+) -> Iterator[tuple[np.ndarray, np.ndarray]]:
+    parquet_paths = sorted((dataset_root / "data").glob("chunk-*/episode_*.parquet"))
+    if len(parquet_paths) != expected_episodes:
+        raise ValueError(f"Expected {expected_episodes} episode Parquets, found {len(parquet_paths)}")
+    for parquet_path in parquet_paths:
+        table = pq.read_table(parquet_path, columns=list(PARQUET_COLUMNS))
+        yield _arrays_from_table(table, source=parquet_path)
+
+
+def _find_arrow_shards(arrow_cache_dir: pathlib.Path, expected_frames: int) -> tuple[pathlib.Path, list[pathlib.Path]]:
+    info_paths = (
+        [arrow_cache_dir / "dataset_info.json"]
+        if (arrow_cache_dir / "dataset_info.json").is_file()
+        else sorted(arrow_cache_dir.rglob("dataset_info.json"))
+    )
+    matches: list[tuple[pathlib.Path, list[pathlib.Path]]] = []
+    for info_path in info_paths:
+        try:
+            info = json.loads(info_path.read_text(encoding="utf-8"))
+            split = info.get("splits", {}).get("train", {})
+            shard_lengths = split.get("shard_lengths")
+            num_rows = split.get("num_examples")
+            if num_rows is None and shard_lengths is not None:
+                num_rows = sum(shard_lengths)
+        except (OSError, TypeError, ValueError):
+            continue
+        shards = sorted(
+            (
+                path
+                for path in info_path.parent.glob("*.arrow")
+                if re.fullmatch(r"parquet-train-\d+-of-\d+\.arrow", path.name)
+            ),
+            key=lambda path: int(path.name.split("-")[2]),
+        )
+        expected_shards = split.get("num_shards")
+        if expected_shards is None and shard_lengths is not None:
+            expected_shards = len(shard_lengths)
+        if num_rows == expected_frames and shards and (expected_shards is None or len(shards) == expected_shards):
+            matches.append((info_path.parent, shards))
+    if not matches:
+        raise FileNotFoundError(
+            f"No complete Arrow cache with {expected_frames} rows was found under {arrow_cache_dir}"
+        )
+    if len(matches) > 1:
+        locations = "\n".join(f"  - {entry}" for entry, _ in matches)
+        raise RuntimeError(f"Multiple matching Arrow caches found; pass one exact cache directory:\n{locations}")
+    return matches[0]
+
+
+def _iter_arrow_episodes(
+    arrow_cache_dir: pathlib.Path, expected_frames: int, expected_episodes: int
+) -> Iterator[tuple[np.ndarray, np.ndarray]]:
+    cache_entry, shard_paths = _find_arrow_shards(arrow_cache_dir, expected_frames)
+    tables = []
+    for shard_path in shard_paths:
+        shard = datasets.Dataset.from_file(str(shard_path))
+        missing = set(ARROW_COLUMNS).difference(shard.column_names)
+        if missing:
+            raise ValueError(f"{shard_path}: missing Arrow columns {sorted(missing)}")
+        tables.append(shard.select_columns(list(ARROW_COLUMNS)).data.table)
+    table = pa.concat_tables(tables) if len(tables) > 1 else tables[0]
+    if len(table) != expected_frames:
+        raise ValueError(f"Expected {expected_frames} Arrow rows, found {len(table)} in {cache_entry}")
+    episode_indices = np.asarray(table["episode_index"].combine_chunks().to_numpy(), dtype=np.int64)
+    if len(episode_indices) == 0 or np.any(np.diff(episode_indices) < 0):
+        raise ValueError("Arrow episode_index must be non-empty and monotonically non-decreasing")
+    boundaries = np.flatnonzero(np.diff(episode_indices)) + 1
+    starts = np.concatenate(([0], boundaries))
+    stops = np.concatenate((boundaries, [len(episode_indices)]))
+    unique_episode_indices = episode_indices[starts]
+    if len(starts) != expected_episodes or not np.array_equal(
+        unique_episode_indices, np.arange(expected_episodes, dtype=np.int64)
+    ):
+        raise ValueError(
+            f"Expected contiguous episode indices 0..{expected_episodes - 1}, got {unique_episode_indices.tolist()}"
+        )
+    numeric_table = table.select(list(PARQUET_COLUMNS))
+    for start, stop in zip(starts, stops, strict=True):
+        yield _arrays_from_table(numeric_table.slice(int(start), int(stop - start)), source=cache_entry)
 
 
 def _action_chunks(values: np.ndarray, action_horizon: int) -> np.ndarray:
@@ -66,14 +181,14 @@ def _stage_json(path: pathlib.Path, stats: dict[str, normalize.NormStats]) -> pa
 
 def main(
     dataset_root: pathlib.Path,
+    source: Literal["auto", "lerobot", "arrow"] = "auto",
+    arrow_cache_dir: pathlib.Path | None = None,
     action_horizon: int = 16,
     batch_size: int = 24,
-    joint_output_dir: pathlib.Path = pathlib.Path(
-        "assets/pi05_franka_mujoco_joint19/caozilin/franka_mujoco"
-    ),
+    joint_output_dir: pathlib.Path = pathlib.Path("assets/pi05_franka_mujoco_joint15/caozilin/franka_mujoco"),
     pi05_output_dir: pathlib.Path = pathlib.Path("assets/pi05_franka_mujoco/caozilin/franka_mujoco"),
 ) -> None:
-    """Scan one local LeRobot dataset and atomically write Joint19 and pi0.5 stats."""
+    """Scan one LeRobot dataset or completed Arrow cache and write both stats files."""
     dataset_root = dataset_root.expanduser().resolve()
     if action_horizon <= 0:
         raise ValueError(f"action_horizon must be positive, got {action_horizon}")
@@ -85,33 +200,27 @@ def main(
     info = json.loads(info_path.read_text(encoding="utf-8"))
     expected_episodes = int(info["total_episodes"])
     expected_frames = int(info["total_frames"])
-
-    parquet_paths = sorted((dataset_root / "data").glob("chunk-*/episode_*.parquet"))
-    if len(parquet_paths) != expected_episodes:
-        raise ValueError(f"Expected {expected_episodes} episode Parquets, found {len(parquet_paths)}")
+    if source == "auto":
+        source = "arrow" if arrow_cache_dir is not None else "lerobot"
+    if source == "arrow":
+        if arrow_cache_dir is None:
+            raise ValueError("--arrow-cache-dir is required when --source arrow")
+        arrow_cache_dir = arrow_cache_dir.expanduser().resolve()
+        if not arrow_cache_dir.is_dir():
+            raise FileNotFoundError(f"Arrow cache directory does not exist: {arrow_cache_dir}")
+        episodes = _iter_arrow_episodes(arrow_cache_dir, expected_frames, expected_episodes)
+    else:
+        episodes = _iter_lerobot_episodes(dataset_root, expected_episodes)
 
     state_stats = normalize.RunningStats()
     joint_action_stats = normalize.RunningStats()
     processed_frames = 0
     pending_states = np.empty((0, STATE_DIM), dtype=np.float32)
     pending_joint_actions = np.empty((0, action_horizon, JOINT_ACTION_DIM), dtype=np.float32)
-    progress = tqdm.tqdm(total=expected_frames, unit="frames", desc="Computing Joint19 stats")
+    progress = tqdm.tqdm(total=expected_frames, unit="frames", desc="Computing Joint15 stats")
     try:
-        for parquet_path in parquet_paths:
-            table = pq.read_table(parquet_path, columns=list(PARQUET_COLUMNS))
-            state = _fixed_size_list_to_numpy(table["state"], name="state", dimension=STATE_DIM)
-            actions = _fixed_size_list_to_numpy(table["actions"], name="actions", dimension=ACTION_DIM)
-            target_pose = _fixed_size_list_to_numpy(
-                table["stage_target_pose"], name="stage_target_pose", dimension=STAGE_TARGET_POSE_DIM
-            )
-            tolerance = _fixed_size_list_to_numpy(
-                table["rotation_tolerance"], name="rotation_tolerance", dimension=ROTATION_TOLERANCE_DIM
-            )
+        for state, joint_actions in episodes:
             row_count = len(state)
-            if not (row_count == len(actions) == len(target_pose) == len(tolerance)):
-                raise ValueError(f"Numeric column lengths do not match in {parquet_path}")
-
-            joint_actions = np.concatenate((actions, target_pose, tolerance), axis=-1)
             pending_states = np.concatenate((pending_states, state), axis=0)
             pending_joint_actions = np.concatenate(
                 (pending_joint_actions, _action_chunks(joint_actions, action_horizon)), axis=0
@@ -149,8 +258,8 @@ def main(
     os.replace(staged_joint_path, joint_path)
     os.replace(staged_pi05_path, pi05_path)
 
-    print(f"Processed {processed_frames} frames from {expected_episodes} episodes")
-    print(f"Joint19 stats (state=7, actions=19): {joint_path}")
+    print(f"Processed {processed_frames} frames from {expected_episodes} episodes using {source}")
+    print(f"Joint15 stats (state=7, actions=15): {joint_path}")
     print(f"pi0.5 stats (state=7, actions=7): {pi05_path}")
 
 

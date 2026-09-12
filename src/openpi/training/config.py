@@ -384,7 +384,7 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
     tolerance_trajectory_action_loss_weight: float = 1.0
     sequence_keys: Sequence[str] = (
         "actions",
-        "stage_target_pose",
+        "tolerance_frame_code",
         "rotation_tolerance",
     )
 
@@ -404,7 +404,7 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
         if self.joint_task_tolerance:
             repack_structure.update(
                 {
-                    "stage_target_pose": "stage_target_pose",
+                    "tolerance_frame_code": "tolerance_frame_code",
                     "rotation_tolerance": "rotation_tolerance",
                 }
             )
@@ -878,9 +878,10 @@ _CONFIGS = [
         fsdp_devices=1,
     ),
     TrainConfig(
-        name="pi05_franka_mujoco_joint19",
+        name="pi05_franka_mujoco_joint15",
         model=pi0_config.Pi0Config(
             pi05=True,
+            action_dim=15,
             action_horizon=16,
             discrete_state_input=False,
             max_token_len=48,
@@ -888,8 +889,8 @@ _CONFIGS = [
             action_expert_variant="gemma_300m_lora",
             action_loss_groups=(
                 ("action", 0, 7, 1.0),
-                ("stage_target_pose", 7, 13, 0.5),
-                ("rotation_tolerance", 13, 19, 0.5),
+                ("tolerance_frame_code", 7, 9, 0.5),
+                ("rotation_tolerance", 9, 15, 0.5),
             ),
         ),
         data=LeRobotFrankaMujocoDataConfig(
@@ -905,7 +906,10 @@ _CONFIGS = [
             decay_lr=5e-6,
         ),
         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
-        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
+        weight_loader=weight_loaders.CheckpointWeightLoader(
+            "gs://openpi-assets/checkpoints/pi05_base/params",
+            skip_mismatched_shapes=True,
+        ),
         freeze_filter=pi0_config.Pi0Config(
             pi05=True,
             action_horizon=16,
@@ -921,9 +925,10 @@ _CONFIGS = [
         fsdp_devices=1,
     ),
     TrainConfig(
-        name="pi05_franka_mujoco_joint19_state",
+        name="pi05_franka_mujoco_joint15_state",
         model=pi0_config.Pi0Config(
             pi05=True,
+            action_dim=15,
             action_horizon=16,
             discrete_state_input=True,
             max_token_len=64,
@@ -931,15 +936,15 @@ _CONFIGS = [
             action_expert_variant="gemma_300m_lora",
             action_loss_groups=(
                 ("action", 0, 7, 1.0),
-                ("stage_target_pose", 7, 13, 0.5),
-                ("rotation_tolerance", 13, 19, 0.5),
+                ("tolerance_frame_code", 7, 9, 0.5),
+                ("rotation_tolerance", 9, 15, 0.5),
             ),
         ),
         data=LeRobotFrankaMujocoDataConfig(
             repo_id="caozilin/franka_mujoco",
-            # Reuse the same 7-D state and 19-D action normalization stats as
-            # the action-only-input joint19 configuration.
-            assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_joint19"),
+            # Reuse the same 7-D state and 15-D action normalization stats as
+            # the action-only-input joint15 configuration.
+            assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_joint15"),
             base_config=DataConfig(prompt_from_task=True),
             joint_task_tolerance=True,
         ),
@@ -951,7 +956,10 @@ _CONFIGS = [
             decay_lr=5e-6,
         ),
         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
-        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
+        weight_loader=weight_loaders.CheckpointWeightLoader(
+            "gs://openpi-assets/checkpoints/pi05_base/params",
+            skip_mismatched_shapes=True,
+        ),
         freeze_filter=pi0_config.Pi0Config(
             pi05=True,
             action_horizon=16,
