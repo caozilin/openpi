@@ -1,7 +1,10 @@
 import dataclasses
 import functools
 import logging
+import math
+import pathlib
 import platform
+import time
 from typing import Any
 
 import etils.epath as epath
@@ -13,8 +16,8 @@ import jax.experimental
 import jax.numpy as jnp
 import numpy as np
 import optax
+import swanlab
 import tqdm_loggable.auto as tqdm
-import wandb
 
 import openpi.models.model as _model
 import openpi.shared.array_typing as at
@@ -22,6 +25,7 @@ import openpi.shared.nnx_utils as nnx_utils
 import openpi.training.checkpoints as _checkpoints
 import openpi.training.config as _config
 import openpi.training.data_loader as _data_loader
+import openpi.training.experiment_tracking as experiment_tracking
 import openpi.training.optimizer as _optimizer
 import openpi.training.sharding as sharding
 import openpi.training.utils as training_utils
@@ -45,29 +49,6 @@ def init_logging():
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
     logger.handlers[0].setFormatter(formatter)
-
-
-def init_wandb(config: _config.TrainConfig, *, resuming: bool, log_code: bool = False, enabled: bool = True):
-    if not enabled:
-        wandb.init(mode="disabled")
-        return
-
-    ckpt_dir = config.checkpoint_dir
-    if not ckpt_dir.exists():
-        raise FileNotFoundError(f"Checkpoint directory {ckpt_dir} does not exist.")
-    if resuming:
-        run_id = (ckpt_dir / "wandb_id.txt").read_text().strip()
-        wandb.init(id=run_id, resume="must", project=config.project_name)
-    else:
-        wandb.init(
-            name=config.exp_name,
-            config=dataclasses.asdict(config),
-            project=config.project_name,
-        )
-        (ckpt_dir / "wandb_id.txt").write_text(wandb.run.id)
-
-    if log_code:
-        wandb.run.log_code(epath.Path(__file__).parent.parent)
 
 
 def _load_weights_and_validate(loader: _weight_loaders.WeightLoader, params_shape: at.Params) -> at.Params:
@@ -147,9 +128,7 @@ def train_step(
     def loss_fn(
         model: _model.BaseModel, rng: at.KeyArrayLike, observation: _model.Observation, actions: _model.Actions
     ):
-        chunked_loss, chunked_loss_info = model.compute_loss_with_breakdown(
-            rng, observation, actions, train=True
-        )
+        chunked_loss, chunked_loss_info = model.compute_loss_with_breakdown(rng, observation, actions, train=True)
         loss_info = {name: jnp.mean(value) for name, value in chunked_loss_info.items()}
         return jnp.mean(chunked_loss), loss_info
 
@@ -197,6 +176,109 @@ def train_step(
     return new_state, info
 
 
+def validation_step(
+    state: training_utils.TrainState,
+    batch: tuple[_model.Observation, _model.Actions],
+    rng: at.KeyArrayLike,
+) -> dict[str, at.Array]:
+    """Compute loss without augmentation, gradients, or optimizer updates."""
+    model = nnx.merge(state.model_def, state.params)
+    model.eval()
+    observation, actions = batch
+    loss, breakdown = model.compute_loss_with_breakdown(rng, observation, actions, train=False)
+    return {"loss": jnp.mean(loss), **{name: jnp.mean(value) for name, value in breakdown.items()}}
+
+
+def run_validation(validation_loader: _data_loader.DataLoader, pvalidation_step, state, rng, *, name: str):
+    started = time.perf_counter()
+    totals = None
+    count = 0
+    for index, batch in enumerate(validation_loader):
+        metrics = pvalidation_step(state, batch, jax.random.fold_in(rng, index))
+        totals = metrics if totals is None else jax.tree.map(lambda x, y: x + y, totals, metrics)
+        count += 1
+    if count == 0:
+        raise ValueError(f"Validation dataset {name!r} contains no complete batches.")
+    averages = jax.device_get(jax.tree.map(lambda x: x / count, totals))
+    prefix = f"validation/{name}"
+    result = {f"{prefix}/{metric}": float(value) for metric, value in averages.items()}
+    result[f"{prefix}/num_batches"] = count
+    result[f"{prefix}/duration_seconds"] = time.perf_counter() - started
+    return result
+
+
+def validation_batch_size(train_batch_size: int, factor: float, num_devices: int) -> int:
+    """Round down to a sharding-compatible batch size, keeping one example per device."""
+    return max(num_devices, int(train_batch_size * factor) // num_devices * num_devices)
+
+
+def validation_batch_count(train_batch_size: int, reference_batches: int, val_batch_size: int) -> int:
+    """Keep the validation sample budget stable when its batch size changes."""
+    return math.ceil(reference_batches * train_batch_size / val_batch_size)
+
+
+def _same_lerobot_dataset(first: _config.DataConfig, second: _config.DataConfig) -> bool:
+    def dataset_root(data_config):
+        root = data_config.lerobot_dataset_root
+        return pathlib.Path(root).expanduser().resolve() if root is not None else None
+
+    first_root, second_root = dataset_root(first), dataset_root(second)
+    return (first_root is not None and first_root == second_root) or (
+        first.repo_id == second.repo_id and first_root == second_root
+    )
+
+
+def create_validation_loaders(config: _config.TrainConfig, train_data_config: _config.DataConfig, data_sharding):
+    """Load each independent validation dataset with the training transforms and statistics."""
+    validation_datasets = config.validation_datasets
+    if not validation_datasets:
+        return {}, 0
+    if train_data_config.rlds_data_dir is not None:
+        raise ValueError("Loss validation currently supports LeRobot datasets only.")
+
+    # Check all sources before starting any validation data-loader workers.
+    data_configs = {"training": train_data_config}
+    for dataset in validation_datasets:
+        data_config = dataclasses.replace(
+            train_data_config,
+            repo_id=dataset.repo_id,
+            lerobot_dataset_root=dataset.lerobot_dataset_root,
+            hf_datasets_cache_dir=dataset.hf_datasets_cache_dir,
+            lerobot_arrow_cache_dir=dataset.lerobot_arrow_cache_dir,
+        )
+        for other_name, other_config in data_configs.items():
+            if _same_lerobot_dataset(data_config, other_config):
+                raise ValueError(f"Validation dataset {dataset.name!r} must be distinct from {other_name!r}.")
+        data_configs[f"validation/{dataset.name}"] = data_config
+
+    batch_size = validation_batch_size(config.batch_size, config.validation_batch_size_factor, jax.device_count())
+    num_batches = validation_batch_count(config.batch_size, config.validation_num_batches, batch_size)
+    loaders = {}
+    for dataset in validation_datasets:
+        logging.info(
+            "Validation %s: repo_id=%s, batch size=%d, max batches=%d (training batch size=%d, factor=%g)",
+            dataset.name,
+            dataset.repo_id,
+            batch_size,
+            num_batches,
+            config.batch_size,
+            config.validation_batch_size_factor,
+        )
+        loaders[dataset.name] = _data_loader.create_torch_data_loader(
+            data_configs[f"validation/{dataset.name}"],
+            model_config=config.model,
+            action_horizon=config.model.action_horizon,
+            batch_size=batch_size,
+            sharding=data_sharding,
+            shuffle=False,
+            num_batches=num_batches,
+            repeat=False,
+            num_workers=config.num_workers,
+            seed=config.seed,
+        )
+    return loaders, batch_size
+
+
 def main(config: _config.TrainConfig):
     init_logging()
     logging.info(f"Running on: {platform.node()}")
@@ -221,23 +303,28 @@ def main(config: _config.TrainConfig):
         overwrite=config.overwrite,
         resume=config.resume,
     )
-    init_wandb(config, resuming=resuming, enabled=config.wandb_enabled)
+    experiment_tracking.init_swanlab(config, resuming=resuming)
 
     data_loader = _data_loader.create_data_loader(
         config,
         sharding=data_sharding,
         shuffle=True,
     )
+    validation_loaders, val_batch_size = create_validation_loaders(config, data_loader.data_config(), data_sharding)
+
     data_iter = iter(data_loader)
     batch = next(data_iter)
     logging.info(f"Initialized data loader:\n{training_utils.array_tree_to_info(batch)}")
 
-    # Log images from first batch to sanity check.
-    images_to_log = [
-        wandb.Image(np.concatenate([np.array(img[i]) for img in batch[0].images.values()], axis=1))
-        for i in range(min(5, len(next(iter(batch[0].images.values())))))
-    ]
-    wandb.log({"camera_views": images_to_log}, step=0)
+    # Images are normalized to [-1, 1] by the model input transforms.
+    if config.swanlab_enabled and not resuming:
+        images_to_log = [
+            experiment_tracking.camera_image(
+                np.concatenate([np.array(img[i]) for img in batch[0].images.values()], axis=1)
+            )
+            for i in range(min(5, len(next(iter(batch[0].images.values())))))
+        ]
+        swanlab.log({"camera_views": images_to_log}, step=0)
 
     train_state, train_state_sharding = init_train_state(config, init_rng, mesh, resume=resuming)
     jax.block_until_ready(train_state)
@@ -253,6 +340,14 @@ def main(config: _config.TrainConfig):
         donate_argnums=(1,),
     )
 
+    pvalidation_step = None
+    if validation_loaders:
+        pvalidation_step = jax.jit(
+            validation_step,
+            in_shardings=(train_state_sharding, data_sharding, replicated_sharding),
+            out_shardings=replicated_sharding,
+        )
+
     start_step = int(train_state.step)
     pbar = tqdm.tqdm(
         range(start_step, config.num_train_steps),
@@ -265,21 +360,42 @@ def main(config: _config.TrainConfig):
     for step in pbar:
         with sharding.set_mesh(mesh):
             train_state, info = ptrain_step(train_rng, train_state, batch)
+        completed_step = step + 1
+        step_metrics = {}
         infos.append(info)
-        if step % config.log_interval == 0:
+        if completed_step % config.log_interval == 0 or completed_step == config.num_train_steps:
             stacked_infos = common_utils.stack_forest(infos)
             reduced_info = jax.device_get(jax.tree.map(jnp.mean, stacked_infos))
             info_str = ", ".join(f"{k}={v:.4f}" for k, v in reduced_info.items())
-            pbar.write(f"Step {step}: {info_str}")
-            wandb.log(reduced_info, step=step)
+            pbar.write(f"Step {completed_step}: {info_str}")
+            step_metrics.update({key: float(value) for key, value in reduced_info.items()})
             infos = []
-        batch = next(data_iter)
 
-        if (step % config.save_interval == 0 and step > start_step) or step == config.num_train_steps - 1:
-            _checkpoints.save_state(checkpoint_manager, train_state, data_loader, step)
+        save_checkpoint = completed_step % config.save_interval == 0 or completed_step == config.num_train_steps
+        if save_checkpoint:
+            for name, validation_loader in validation_loaders.items():
+                with sharding.set_mesh(mesh):
+                    validation_metrics = run_validation(
+                        validation_loader, pvalidation_step, train_state, train_rng, name=name
+                    )
+                prefix = f"validation/{name}"
+                validation_metrics[f"{prefix}/batch_size"] = val_batch_size
+                validation_metrics[f"{prefix}/num_samples"] = (
+                    validation_metrics[f"{prefix}/num_batches"] * val_batch_size
+                )
+                pbar.write(f"Step {completed_step} validation [{name}]: {validation_metrics}")
+                step_metrics.update(validation_metrics)
+        if step_metrics and config.swanlab_enabled:
+            # Keep training and all validation metrics aligned to the same completed step.
+            swanlab.log(step_metrics, step=completed_step)
+        if save_checkpoint:
+            _checkpoints.save_state(checkpoint_manager, train_state, data_loader, completed_step)
+        if completed_step < config.num_train_steps:
+            batch = next(data_iter)
 
     logging.info("Waiting for checkpoint manager to finish")
     checkpoint_manager.wait_until_finished()
+    swanlab.finish()
 
 
 if __name__ == "__main__":

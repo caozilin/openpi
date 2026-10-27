@@ -1,0 +1,220 @@
+{
+  "plan": [
+    {
+      "case": 0,
+      "demo": "demo_10",
+      "suite": "libero_spatial",
+      "task_id": 0
+    },
+    {
+      "case": 1,
+      "demo": "demo_7",
+      "suite": "libero_spatial",
+      "task_id": 1
+    },
+    {
+      "case": 2,
+      "demo": "demo_30",
+      "suite": "libero_spatial",
+      "task_id": 2
+    },
+    {
+      "case": 3,
+      "demo": "demo_0",
+      "suite": "libero_spatial",
+      "task_id": 3
+    },
+    {
+      "case": 5,
+      "demo": "demo_32",
+      "suite": "libero_spatial",
+      "task_id": 5
+    },
+    {
+      "case": 6,
+      "demo": "demo_6",
+      "suite": "libero_spatial",
+      "task_id": 6
+    },
+    {
+      "case": 7,
+      "demo": "demo_6",
+      "suite": "libero_spatial",
+      "task_id": 7
+    },
+    {
+      "case": 8,
+      "demo": "demo_0",
+      "suite": "libero_spatial",
+      "task_id": 8
+    },
+    {
+      "case": 9,
+      "demo": "demo_0",
+      "suite": "libero_spatial",
+      "task_id": 9
+    },
+    {
+      "case": 11,
+      "demo": "demo_13",
+      "suite": "libero_object",
+      "task_id": 1
+    },
+    {
+      "case": 12,
+      "demo": "demo_17",
+      "suite": "libero_object",
+      "task_id": 2
+    },
+    {
+      "case": 13,
+      "demo": "demo_3",
+      "suite": "libero_object",
+      "task_id": 3
+    },
+    {
+      "case": 14,
+      "demo": "demo_6",
+      "suite": "libero_object",
+      "task_id": 4
+    },
+    {
+      "case": 15,
+      "demo": "demo_6",
+      "suite": "libero_object",
+      "task_id": 5
+    },
+    {
+      "case": 16,
+      "demo": "demo_3",
+      "suite": "libero_object",
+      "task_id": 6
+    },
+    {
+      "case": 17,
+      "demo": "demo_19",
+      "suite": "libero_object",
+      "task_id": 7
+    },
+    {
+      "case": 18,
+      "demo": "demo_3",
+      "suite": "libero_object",
+      "task_id": 8
+    },
+    {
+      "case": 19,
+      "demo": "demo_5",
+      "suite": "libero_object",
+      "task_id": 9
+    },
+    {
+      "case": 20,
+      "demo": "demo_23",
+      "suite": "libero_goal",
+      "task_id": 0
+    },
+    {
+      "case": 21,
+      "demo": "demo_1",
+      "suite": "libero_goal",
+      "task_id": 1
+    },
+    {
+      "case": 23,
+      "demo": "demo_43",
+      "suite": "libero_goal",
+      "task_id": 3
+    },
+    {
+      "case": 24,
+      "demo": "demo_2",
+      "suite": "libero_goal",
+      "task_id": 4
+    },
+    {
+      "case": 25,
+      "demo": "demo_11",
+      "suite": "libero_goal",
+      "task_id": 5
+    },
+    {
+      "case": 26,
+      "demo": "demo_2",
+      "suite": "libero_goal",
+      "task_id": 6
+    },
+    {
+      "case": 27,
+      "demo": "demo_2",
+      "suite": "libero_goal",
+      "task_id": 7
+    },
+    {
+      "case": 28,
+      "demo": "demo_35",
+      "suite": "libero_goal",
+      "task_id": 8
+    },
+    {
+      "case": 29,
+      "demo": "demo_41",
+      "suite": "libero_goal",
+      "task_id": 9
+    },
+    {
+      "case": 30,
+      "demo": "demo_10",
+      "suite": "libero_10",
+      "task_id": 0
+    },
+    {
+      "case": 31,
+      "demo": "demo_12",
+      "suite": "libero_10",
+      "task_id": 1
+    },
+    {
+      "case": 32,
+      "demo": "demo_46",
+      "suite": "libero_10",
+      "task_id": 2
+    },
+    {
+      "case": 33,
+      "demo": "demo_13",
+      "suite": "libero_10",
+      "task_id": 3
+    },
+    {
+      "case": 34,
+      "demo": "demo_35",
+      "suite": "libero_10",
+      "task_id": 4
+    },
+    {
+      "case": 35,
+      "demo": "demo_22",
+      "suite": "libero_10",
+      "task_id": 5
+    },
+    {
+      "case": 36,
+      "demo": "demo_45",
+      "suite": "libero_10",
+      "task_id": 6
+    },
+    {
+      "case": 37,
+      "demo": "demo_22",
+      "suite": "libero_10",
+      "task_id": 7
+    },
+    {
+      "case": 39,
+      "demo": "demo_10",
+      "suite": "libero_10",
+      "task_id": 9
+    }
+  ]
+}

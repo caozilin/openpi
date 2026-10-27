@@ -5,7 +5,9 @@ from collections.abc import Sequence
 import dataclasses
 import difflib
 import logging
+import math
 import pathlib
+import re
 from typing import Any, Literal, Protocol, TypeAlias
 
 import etils.epath as epath
@@ -21,6 +23,7 @@ import openpi.policies.aloha_policy as aloha_policy
 import openpi.policies.droid_policy as droid_policy
 import openpi.policies.franka_mujoco_policy as franka_mujoco_policy
 import openpi.policies.libero_policy as libero_policy
+from openpi.shared import franka_mujoco_dataset as _franka_dataset
 import openpi.shared.download as _download
 import openpi.shared.normalize as _normalize
 import openpi.training.droid_rlds_dataset as droid_rlds_dataset
@@ -75,6 +78,8 @@ class DataConfig:
     # Optional Hugging Face datasets cache (or a specific completed cache entry) to load directly from Arrow.
     # This permits training with only the LeRobot metadata and the generated Arrow files.
     lerobot_arrow_cache_dir: str | None = None
+    # Required source schema recorded by the dataset converter in LeRobot info.json.
+    source_schema: str | None = None
     # Directory within the assets directory containing the data assets.
     asset_id: str | None = None
     # Contains precomputed normalization stats. If None, normalization will not be performed.
@@ -382,16 +387,22 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
     # Multiplier applied only to the seven physical-action loss dimensions for
     # samples labeled as tolerance trajectories. Exposed as a data CLI option.
     tolerance_trajectory_action_loss_weight: float = 1.0
-    sequence_keys: Sequence[str] = (
-        "actions",
-        "tolerance_frame_code",
-        "rotation_tolerance",
-    )
 
     @override
     def create(self, assets_dirs: pathlib.Path, model_config: _model.BaseModelConfig) -> DataConfig:
         if self.tolerance_trajectory_action_loss_weight < 0:
             raise ValueError("tolerance_trajectory_action_loss_weight must be non-negative")
+        base_config = self.create_base_config(assets_dirs, model_config)
+        if self.joint_task_tolerance and base_config.norm_stats is not None:
+            action_stats = base_config.norm_stats["actions"]
+            for field in ("mean", "std", "q01", "q99"):
+                values = getattr(action_stats, field)
+                if values is not None and values.shape != (franka_mujoco_policy.JOINT_ACTION_DIM,):
+                    raise ValueError(
+                        f"Joint action normalization {field} must have shape "
+                        f"({franka_mujoco_policy.JOINT_ACTION_DIM},), got {values.shape}. "
+                        "Recompute normalization statistics for the 7+6 dataset."
+                    )
         repack_structure = {
             "observation/image": "image",
             "observation/wrist_image": "wrist_image",
@@ -402,17 +413,8 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
         if self.tolerance_trajectory_action_loss_weight != 1.0:
             repack_structure["trajectory_is_tolerance"] = "trajectory_is_tolerance"
         if self.joint_task_tolerance:
-            repack_structure.update(
-                {
-                    "tolerance_frame_code": "tolerance_frame_code",
-                    "rotation_tolerance": "rotation_tolerance",
-                }
-            )
-        repack_transform = _transforms.Group(
-            inputs=[
-                _transforms.RepackTransform(repack_structure)
-            ]
-        )
+            repack_structure["rotation_tolerance"] = "rotation_tolerance"
+        repack_transform = _transforms.Group(inputs=[_transforms.RepackTransform(repack_structure)])
         data_transforms = _transforms.Group(
             inputs=[
                 franka_mujoco_policy.FrankaMujocoInputs(
@@ -421,16 +423,15 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
                     tolerance_trajectory_action_loss_weight=self.tolerance_trajectory_action_loss_weight,
                 )
             ],
-            outputs=[
-                franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=self.joint_task_tolerance)
-            ],
+            outputs=[franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=self.joint_task_tolerance)],
         )
         return dataclasses.replace(
-            self.create_base_config(assets_dirs, model_config),
+            base_config,
             repack_transforms=repack_transform,
             data_transforms=data_transforms,
             model_transforms=ModelTransformFactory()(model_config),
-            action_sequence_keys=self.sequence_keys,
+            action_sequence_keys=("actions", "rotation_tolerance") if self.joint_task_tolerance else ("actions",),
+            source_schema=_franka_dataset.SOURCE_SCHEMA,
         )
 
 
@@ -542,6 +543,21 @@ class LeRobotDROIDDataConfig(DataConfigFactory):
 
 
 @dataclasses.dataclass(frozen=True)
+class ValidationDatasetConfig:
+    name: str
+    repo_id: str
+    lerobot_dataset_root: str | None = None
+    hf_datasets_cache_dir: str | None = None
+    lerobot_arrow_cache_dir: str | None = None
+
+    def __post_init__(self) -> None:
+        if not re.fullmatch(r"[A-Za-z0-9_-]+", self.name):
+            raise ValueError("Validation dataset names must contain only letters, digits, underscores, or hyphens.")
+        if not self.repo_id.strip():
+            raise ValueError("Validation dataset repo_id must not be empty.")
+
+
+@dataclasses.dataclass(frozen=True)
 class TrainConfig:
     # Name of the config. Must be unique. Will be used to reference this config.
     name: tyro.conf.Suppress[str]
@@ -574,6 +590,25 @@ class TrainConfig:
     # Determines the data to be trained on.
     data: DataConfigFactory = dataclasses.field(default_factory=FakeDataConfig)
 
+    # Zero to two separate LeRobot datasets for JAX loss validation. Both use the
+    # training data transforms and normalization statistics. A slot is disabled
+    # when its repo_id is None; names remain stable when another slot is enabled.
+    validation_name: str = "val1"
+    validation_repo_id: str | None = None
+    validation_lerobot_dataset_root: str | None = None
+    validation_hf_datasets_cache_dir: str | None = None
+    validation_lerobot_arrow_cache_dir: str | None = None
+    validation2_name: str = "val2"
+    validation2_repo_id: str | None = None
+    validation2_lerobot_dataset_root: str | None = None
+    validation2_hf_datasets_cache_dir: str | None = None
+    validation2_lerobot_arrow_cache_dir: str | None = None
+    # Per-dataset validation sample budget in units of training batches; actual validation batch
+    # count adjusts with validation_batch_size_factor to cover roughly the same examples.
+    validation_num_batches: int = 16
+    # Validation batch size is this multiple of the training batch size.
+    validation_batch_size_factor: float = 2.5
+
     # Base directory for config assets (e.g., norm stats).
     assets_base_dir: str = "./assets"
     # Base directory for checkpoints.
@@ -601,8 +636,13 @@ class TrainConfig:
     # If true, will resume training from the last checkpoint.
     resume: bool = False
 
-    # If true, will enable wandb logging.
-    wandb_enabled: bool = True
+    # If true, will enable SwanLab logging.
+    swanlab_enabled: bool = True
+    # None lets the SwanLab SDK use SWANLAB_MODE (online by default).
+    swanlab_mode: Literal["online", "offline", "local", "disabled"] | None = None
+    swanlab_workspace: str | None = None
+    # None uses SWANLAB_LOG_DIR, or ./swanlog when the environment variable is unset.
+    swanlab_log_dir: str | None = None
 
     # Used to pass metadata to the policy server.
     policy_metadata: dict[str, Any] | None = None
@@ -630,9 +670,33 @@ class TrainConfig:
         """Get the filter for the trainable parameters."""
         return nnx.All(nnx.Param, nnx.Not(self.freeze_filter))
 
+    @property
+    def validation_datasets(self) -> tuple[ValidationDatasetConfig, ...]:
+        """Return enabled validation slots in their configured order."""
+        datasets = []
+        for prefix in ("validation", "validation2"):
+            repo_id = getattr(self, f"{prefix}_repo_id")
+            paths = {
+                field: getattr(self, f"{prefix}_{field}")
+                for field in ("lerobot_dataset_root", "hf_datasets_cache_dir", "lerobot_arrow_cache_dir")
+            }
+            if repo_id is None:
+                if any(path is not None for path in paths.values()):
+                    raise ValueError(f"{prefix}_repo_id is required when {prefix} dataset paths are set.")
+                continue
+            datasets.append(ValidationDatasetConfig(name=getattr(self, f"{prefix}_name"), repo_id=repo_id, **paths))
+        return tuple(datasets)
+
     def __post_init__(self) -> None:
         if self.resume and self.overwrite:
             raise ValueError("Cannot resume and overwrite at the same time.")
+        if self.validation_num_batches < 1:
+            raise ValueError("validation_num_batches must be positive.")
+        if not (math.isfinite(self.validation_batch_size_factor) and self.validation_batch_size_factor > 0):
+            raise ValueError("validation_batch_size_factor must be finite and positive.")
+        names = [dataset.name for dataset in self.validation_datasets]
+        if len(names) != len(set(names)):
+            raise ValueError("Validation dataset names must be unique.")
 
 
 # Use `get_config` if you need to get a config by name in your code.
@@ -878,10 +942,10 @@ _CONFIGS = [
         fsdp_devices=1,
     ),
     TrainConfig(
-        name="pi05_franka_mujoco_joint15",
+        name="pi05_franka_mujoco_joint13",
         model=pi0_config.Pi0Config(
             pi05=True,
-            action_dim=15,
+            action_dim=13,
             action_horizon=16,
             discrete_state_input=False,
             max_token_len=48,
@@ -889,8 +953,7 @@ _CONFIGS = [
             action_expert_variant="gemma_300m_lora",
             action_loss_groups=(
                 ("action", 0, 7, 1.0),
-                ("tolerance_frame_code", 7, 9, 0.5),
-                ("rotation_tolerance", 9, 15, 0.5),
+                ("rotation_tolerance", 7, 13, 0.5),
             ),
         ),
         data=LeRobotFrankaMujocoDataConfig(
@@ -925,10 +988,10 @@ _CONFIGS = [
         fsdp_devices=1,
     ),
     TrainConfig(
-        name="pi05_franka_mujoco_joint15_state",
+        name="pi05_franka_mujoco_joint13_state",
         model=pi0_config.Pi0Config(
             pi05=True,
-            action_dim=15,
+            action_dim=13,
             action_horizon=16,
             discrete_state_input=True,
             max_token_len=64,
@@ -936,15 +999,14 @@ _CONFIGS = [
             action_expert_variant="gemma_300m_lora",
             action_loss_groups=(
                 ("action", 0, 7, 1.0),
-                ("tolerance_frame_code", 7, 9, 0.5),
-                ("rotation_tolerance", 9, 15, 0.5),
+                ("rotation_tolerance", 7, 13, 0.5),
             ),
         ),
         data=LeRobotFrankaMujocoDataConfig(
             repo_id="caozilin/franka_mujoco",
-            # Reuse the same 7-D state and 15-D action normalization stats as
-            # the action-only-input joint15 configuration.
-            assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_joint15"),
+            # Reuse the same 7-D state and 13-D action normalization stats as
+            # the action-only-input joint13 configuration.
+            assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_joint13"),
             base_config=DataConfig(prompt_from_task=True),
             joint_task_tolerance=True,
         ),
@@ -1155,7 +1217,7 @@ _CONFIGS = [
         overwrite=True,
         exp_name="debug",
         num_train_steps=10,
-        wandb_enabled=False,
+        swanlab_enabled=False,
     ),
     TrainConfig(
         name="debug_restore",
@@ -1166,7 +1228,7 @@ _CONFIGS = [
         overwrite=True,
         exp_name="debug",
         num_train_steps=10,
-        wandb_enabled=False,
+        swanlab_enabled=False,
     ),
     TrainConfig(
         name="debug_pi05",
@@ -1176,7 +1238,7 @@ _CONFIGS = [
         num_train_steps=10,
         overwrite=True,
         exp_name="debug_pi05",
-        wandb_enabled=False,
+        swanlab_enabled=False,
     ),
     # RoboArena & PolaRiS configs.
     *roboarena_config.get_roboarena_configs(),

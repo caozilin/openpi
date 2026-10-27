@@ -3,6 +3,11 @@ assets/
 checkpoints/
 data/
 wandb/
+swanlog/
+
+# Local experiment dependencies and downloaded demonstration samples.
+/experiments/libero_tasktol_compat/locked_wheels/
+/experiments/libero_tasktol_compat/replay_provenance_audit/official_rlds_samples/**/*.tfrecord
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

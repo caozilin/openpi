@@ -8,15 +8,9 @@ from openpi.models import model as _model
 
 STATE_DIM = 7
 ACTION_DIM = 7
-TOLERANCE_FRAME_CODE_DIM = 2
 ROTATION_TOLERANCE_DIM = 6
-JOINT_ACTION_DIM = ACTION_DIM + TOLERANCE_FRAME_CODE_DIM + ROTATION_TOLERANCE_DIM
-TOLERANCE_FRAME_CODE_SLICE = slice(ACTION_DIM, ACTION_DIM + TOLERANCE_FRAME_CODE_DIM)
-ROTATION_TOLERANCE_SLICE = slice(TOLERANCE_FRAME_CODE_SLICE.stop, JOINT_ACTION_DIM)
-TASK_TOLERANCE_DIMS = {
-    "tolerance_frame_code": TOLERANCE_FRAME_CODE_DIM,
-    "rotation_tolerance": ROTATION_TOLERANCE_DIM,
-}
+JOINT_ACTION_DIM = ACTION_DIM + ROTATION_TOLERANCE_DIM
+ROTATION_TOLERANCE_SLICE = slice(ACTION_DIM, JOINT_ACTION_DIM)
 
 
 def make_franka_mujoco_example() -> dict:
@@ -72,17 +66,11 @@ class FrankaMujocoInputs(transforms.DataTransformFn):
                 "right_wrist_0_rgb": np.True_ if self.model_type == _model.ModelType.PI0_FAST else np.False_,
             },
         }
-        trajectory_label = np.asarray(
-            data.get("trajectory_is_tolerance", [0]), dtype=np.int64
-        ).reshape(-1)
+        trajectory_label = np.asarray(data.get("trajectory_is_tolerance", [0]), dtype=np.int64).reshape(-1)
         if trajectory_label.shape != (1,) or trajectory_label[0] not in (0, 1):
-            raise ValueError(
-                "trajectory_is_tolerance must contain exactly one binary value"
-            )
+            raise ValueError("trajectory_is_tolerance must contain exactly one binary value")
         inputs["action_loss_weight"] = np.float32(
-            1.0
-            + float(trajectory_label[0])
-            * (self.tolerance_trajectory_action_loss_weight - 1.0)
+            1.0 + float(trajectory_label[0]) * (self.tolerance_trajectory_action_loss_weight - 1.0)
         )
 
         if "actions" in data:
@@ -90,15 +78,11 @@ class FrankaMujocoInputs(transforms.DataTransformFn):
             if actions.shape[-1] != ACTION_DIM:
                 raise ValueError(f"Expected {ACTION_DIM}-D Franka actions, got shape {actions.shape}")
             if self.joint_task_tolerance:
-                targets = []
-                for key, dimension in TASK_TOLERANCE_DIMS.items():
-                    value = np.asarray(data[key], dtype=np.float32)
-                    if value.shape[:-1] != actions.shape[:-1] or value.shape[-1] != dimension:
-                        raise ValueError(
-                            f"Expected {key} shape {(*actions.shape[:-1], dimension)}, got {value.shape}"
-                        )
-                    targets.append(value)
-                actions = np.concatenate((actions, *targets), axis=-1)
+                tolerance = np.asarray(data["rotation_tolerance"], dtype=np.float32)
+                expected_shape = (*actions.shape[:-1], ROTATION_TOLERANCE_DIM)
+                if tolerance.shape != expected_shape:
+                    raise ValueError(f"Expected rotation_tolerance shape {expected_shape}, got {tolerance.shape}")
+                actions = np.concatenate((actions, tolerance), axis=-1)
             inputs["actions"] = actions
         if "prompt" in data:
             inputs["prompt"] = data["prompt"]
@@ -117,13 +101,7 @@ class FrankaMujocoOutputs(transforms.DataTransformFn):
         if self.joint_task_tolerance:
             if predictions.shape[-1] != JOINT_ACTION_DIM:
                 raise ValueError(
-                    f"Expected exactly {JOINT_ACTION_DIM} joint output dimensions, "
-                    f"got {predictions.shape}"
+                    f"Expected exactly {JOINT_ACTION_DIM} joint output dimensions, got {predictions.shape}"
                 )
-            outputs.update(
-                {
-                    "tolerance_frame_code": predictions[:, TOLERANCE_FRAME_CODE_SLICE],
-                    "rotation_tolerance": predictions[:, ROTATION_TOLERANCE_SLICE],
-                }
-            )
+            outputs["rotation_tolerance"] = predictions[:, ROTATION_TOLERANCE_SLICE]
         return outputs

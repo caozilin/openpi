@@ -160,7 +160,30 @@ Now we can kick off training with the following command (the `--overwrite` flag 
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 uv run scripts/train.py pi05_libero --exp-name=my_experiment --overwrite
 ```
 
-The command will log training progress to the console and save checkpoints to the `checkpoints` directory. You can also monitor training progress on the Weights & Biases dashboard. For maximally using the GPU memory, set `XLA_PYTHON_CLIENT_MEM_FRACTION=0.9` before running training -- this enables JAX to use up to 90% of the GPU memory (vs. the default of 75%).
+The command will log training progress to the console and save checkpoints to the `checkpoints` directory. You can also monitor training progress on the SwanLab dashboard. For maximally using the GPU memory, set `XLA_PYTHON_CLIENT_MEM_FRACTION=0.9` before running training -- this enables JAX to use up to 90% of the GPU memory (vs. the default of 75%).
+
+Experiment tracking uses SwanLab for both the JAX and PyTorch trainers. After installing dependencies, log in once:
+
+```bash
+uv run swanlab login
+```
+
+The project defaults to `openpi`; use `--project-name` and `--exp-name` to set the project and experiment names. Optional flags are `--swanlab-workspace`, `--swanlab-log-dir`, and `--swanlab-mode=online|offline|local|disabled`. These also work with the PyTorch entrypoint. To disable tracking, use `--no-swanlab-enabled` (debug configs disable it by default).
+
+The legacy local dashboard mode requires the optional `swanlab[dashboard]` extra; offline recording and later synchronization work with the default installation.
+
+For a server without network access, record locally and sync later:
+
+```bash
+SWANLAB_LOG_DIR=/path/to/swanlog uv run scripts/train.py pi05_libero --exp-name=my_experiment --swanlab-mode=offline
+uv run swanlab sync /path/to/swanlog/<run-directory>
+```
+
+`SWANLAB_MODE`, `SWANLAB_LOG_DIR`, `SWANLAB_WORKSPACE`, and `SWANLAB_API_KEY` can also be supplied through the environment; explicit training flags take priority. Online experiments save their ID in `swanlab_id.txt` beside the model checkpoints, and `--resume` continues that experiment. An old checkpoint containing only `wandb_id.txt` still restores the model and starts a new SwanLab experiment. Offline/local resumes create a new log session while retaining the model's training step; an existing online experiment ID is preserved.
+
+The SDK is constrained to SwanLab 0.7.x for compatibility with the optional RLDS stack. TensorFlow and TensorFlow CPU use 2.17.1, including an override for dlimp's older TensorFlow pin, so their `wrapt` and `protobuf` requirements can be resolved together. W&B may remain installed as a transitive LeRobot dependency; the project trainers do not use it.
+
+The original trainer under `third_party/libero` also uses SwanLab: set `use_swanlab=true swanlab_project=<project>` in its Hydra command. Confusion matrices are recorded as heatmaps and forward-transfer results as line charts; raw results continue to be saved in `result.pt`.
 
 **Note:** We provide functionality for *reloading* normalization statistics for state / action normalization from pre-training. This can be beneficial if you are fine-tuning to a new task on a robot that was part of our pre-training mixture. For more details on how to reload normalization statistics, see the [norm_stats.md](docs/norm_stats.md) file.
 
@@ -308,7 +331,9 @@ With torch.compile, inference speed is comparable between JAX and PyTorch.
 
 ## Bell Tolerance20：data → share → Arrow → 训练
 
-本节记录 `bell_tolerance20` 数据集在 GPU 容器上的完整离线训练流程。路径约定如下：
+本节记录 `bell_tolerance20` 数据集在 GPU 容器上的完整离线训练流程。
+
+数据源仅接受 schema 8.0 / release 5.0。联合目标固定为 7 维动作 + 6 维双侧容差；每条 episode 必须先完成 `tolerance_labels.json` 后补标注。重新转换 LeRobot 数据、生成 Arrow 缓存并计算 13 维归一化统计，然后使用 `joint13` 配置开启新实验。路径约定如下：
 
 ```text
 本地原始数据：
@@ -327,10 +352,10 @@ With torch.compile, inference speed is comparable between JAX and PyTorch.
 /root/gpufree-data/franka_mujoco_bell_tolerance20_metadata
 
 归一化统计（share）：
-/root/gpufree-share/openpi-assets/pi05_franka_mujoco_joint15_state/caozilin/franka_mujoco_bell_tolerance20/norm_stats.json
+/root/gpufree-share/openpi-assets/pi05_franka_mujoco_joint13_state/caozilin/franka_mujoco_bell_tolerance20/norm_stats.json
 
 训练 checkpoint（share）：
-/root/gpufree-share/checkpoints/pi05_franka_mujoco_joint15_state/franka_mujoco_bell_tolerance20_joint15_state_lora
+/root/gpufree-share/checkpoints/pi05_franka_mujoco_joint13_state/franka_mujoco_bell_tolerance20_joint13_state_lora
 ```
 
 ### 1. 连接服务器并更新代码
@@ -387,7 +412,7 @@ LEROBOT_HOME=/root/gpufree-share/datasets
 LEROBOT_ROOT=/root/gpufree-share/datasets/caozilin/franka_mujoco_bell_tolerance20
 ARROW_ROOT=/root/gpufree-data/franka_mujoco_bell_tolerance20_arrow
 META_ROOT=/root/gpufree-data/franka_mujoco_bell_tolerance20_metadata
-ASSETS_ROOT=/root/gpufree-share/openpi-assets/pi05_franka_mujoco_joint15_state
+ASSETS_ROOT=/root/gpufree-share/openpi-assets/pi05_franka_mujoco_joint13_state
 TMP_ROOT=/root/gpufree-data/openpi_tmp
 
 mkdir -p \
@@ -401,7 +426,7 @@ mkdir -p \
 
 ### 4. 将原始数据转换到 share
 
-转换器会自动读取原始数据根目录中的 `tolerance_summary.csv`。首次转换执行：
+转换器按 `subtask_index + phase` 读取各 episode 的 `tolerance_labels.json`，校验轨迹 SHA-256、帧数和标签覆盖。Pre/Post 标签必须完整，Grasp/Release 为零。首次转换执行：
 
 ```bash
 HF_LEROBOT_HOME="$LEROBOT_HOME" \
@@ -418,9 +443,11 @@ uv run --no-sync python \
 
 若转换中断且输出目录已经存在，在相同命令末尾添加 `--resume`。只有明确需要删除并重建现有转换结果时才使用 `--overwrite`。
 
+未标注的 schema 8.0 基础轨迹可用 `--no-joint-task-tolerance` 单独导出和统计七维动作，训练配置使用 `pi05_franka_mujoco`。联合转换缺少标签时直接报错，不会填充默认容差。详见 [转换与训练说明](examples/franka_mujoco/README.md)。
+
 ### 5. 计算 Bell Tolerance20 的归一化统计
 
-必须针对当前数据集重新计算 state 和 joint15 action 的统计量，不能直接沿用 v3 全量数据集的统计：
+对当前 schema 8.0 导出重新计算七维 state 与十三维 joint13 action 的统计量：
 
 ```bash
 cd /root/openpi
@@ -459,7 +486,7 @@ uv run --no-sync python -c \
 
 ### 7. π₀.₅ base 在 share 中的位置
 
-`pi05_franka_mujoco_joint15_state` 配置的底模地址是：
+`pi05_franka_mujoco_joint13_state` 配置的底模地址是：
 
 ```text
 gs://openpi-assets/checkpoints/pi05_base/params
@@ -491,26 +518,52 @@ OPENPI_DATA_HOME=/root/gpufree-share/cache/openpi \
 TMPDIR=/root/gpufree-data/openpi_tmp \
 CUDA_VISIBLE_DEVICES=0 \
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
-uv run --no-sync scripts/train.py pi05_franka_mujoco_joint15_state \
-  --exp-name=franka_mujoco_bell_tolerance20_joint15_state_lora \
+uv run --no-sync scripts/train.py pi05_franka_mujoco_joint13_state \
+  --exp-name=franka_mujoco_bell_tolerance20_joint13_state_lora \
   --checkpoint-base-dir=/root/gpufree-share/checkpoints \
   --data.repo-id=caozilin/franka_mujoco_bell_tolerance20 \
   --data.tolerance-trajectory-action-loss-weight=4.0 \
-  --data.assets.assets-dir=/root/gpufree-share/openpi-assets/pi05_franka_mujoco_joint15_state \
+  --data.assets.assets-dir=/root/gpufree-share/openpi-assets/pi05_franka_mujoco_joint13_state \
   --data.lerobot-dataset-root=/root/gpufree-data/franka_mujoco_bell_tolerance20_metadata \
   --data.hf-datasets-cache-dir=/root/gpufree-data/franka_mujoco_bell_tolerance20_arrow \
   --data.lerobot-arrow-cache-dir=/root/gpufree-data/franka_mujoco_bell_tolerance20_arrow
 ```
 
-该配置使用 7 维末端 state、16 步 action chunk 和 15 维联合目标。CLI 参数 `--data.tolerance-trajectory-action-loss-weight` 默认为 `1.0`，因此不传参数时所有轨迹都保持原始 action 权重，而且兼容不含 `trajectory_is_tolerance` 列的旧 LeRobot 数据。只有将该参数设为非 `1.0` 时，数据集才必须提供这个标签。上面的 Bell 命令显式设置为 `4.0`：nominal 轨迹的 loss 为 `1.0 × action + 0.5 × frame code + 0.5 × tolerance`；tolerance 轨迹只把物理 action 项提高到 `4.0`，另外两项仍为 `0.5`。
+JAX 训练支持 0～2 个独立的、与训练集格式相同的 LeRobot 验证数据集。默认两个验证集都关闭；配置 `validation-repo-id` 启用第一组，配置 `validation2-repo-id` 启用第二组，也可以只启用第二组。可在上述训练命令末尾追加以下参数（先给原命令最后一行加上续行符 `\`）：
+
+```bash
+  --validation-repo-id=caozilin/franka_mujoco_validation \
+  --validation-lerobot-dataset-root=/root/gpufree-data/franka_mujoco_validation_metadata \
+  --validation-hf-datasets-cache-dir=/root/gpufree-data/franka_mujoco_validation_arrow \
+  --validation-lerobot-arrow-cache-dir=/root/gpufree-data/franka_mujoco_validation_arrow \
+  --validation-num-batches=16 \
+  --validation-batch-size-factor=2.5
+```
+
+第二组使用自己的 LeRobot 和 Arrow 路径，追加以下参数即可启用：
+
+```bash
+  --validation2-repo-id=caozilin/franka_mujoco_validation_shifted \
+  --validation2-lerobot-dataset-root=/root/gpufree-data/franka_mujoco_validation_shifted_metadata \
+  --validation2-hf-datasets-cache-dir=/root/gpufree-data/franka_mujoco_validation_shifted_arrow \
+  --validation2-lerobot-arrow-cache-dir=/root/gpufree-data/franka_mujoco_validation_shifted_arrow
+```
+
+第一、第二组默认分别命名为 `val1`、`val2`，可用 `--validation-name=heldout` 和 `--validation2-name=shifted` 修改。名称必须唯一，只能含英文字母、数字、下划线或连字符。SwanLab 分别记录 `validation/val1/loss`、`validation/val2/loss`，以及各自的分项 loss、`batch_size`、`num_batches`、`num_samples`、`duration_seconds`；终端会输出 `Step 1000 validation [val1]: ...`、`Step 1000 validation [val2]: ...`。自定义名称也会同步用于日志键和终端输出。未启用的验证集不会产生指标；同一步的训练和全部验证指标合并提交给 SwanLab。
+
+验证只计算前向 loss，不运行仿真或多步动作采样，因此验证 BS 可以大于训练 BS；训练参数和优化器状态仍驻留显存，实际峰值需要在目标设备上测试。默认系数为 `2.5`，上例中的参数可以省略：训练 BS 24 对应验证 BS 60。`validation-num-batches=16` 表示**每个验证集**以 16 个训练 batch（384 个样本）为预算；向上取整后，每个验证集实际运行 7 个验证 batch，共 420 个样本。两个验证集顺序执行，共用同一个 JAX 验证函数；相同输入形状可以复用编译结果，验证计算总耗时会随数据集数量增加。多设备时，验证 BS 会向下取整为设备数的整数倍，最低保证每台设备 1 个样本；实际验证样本量可能因取整或数据集不足而略有变化。
+
+验证沿用训练集的数据变换和归一化统计，每次从各自验证集的开头读取样本；不足预算时不会重复样本。验证与 checkpoint 同频，在完成第 1000、2000 等次参数更新和最后一次更新时执行。第一次验证会编译 JAX 前向计算图，耗时通常高于后续验证。训练集与两个验证集应使用不同的数据源，且动作、状态维度及含义相同。
+
+该配置使用 7 维末端 state、16 步 action chunk 和 13 维联合目标（7 维动作 + 6 维双侧容差）。CLI 参数 `--data.tolerance-trajectory-action-loss-weight` 默认为 `1.0`，因此不传参数时所有轨迹都保持原始 action 权重。将该参数设为非 `1.0` 时，加载器读取当前导出中的 `trajectory_is_tolerance` 标签。上面的 Bell 命令显式设置为 `4.0`：nominal 轨迹的 loss 为 `1.0 × action + 0.5 × tolerance`；tolerance 轨迹只把物理 action 项提高到 `4.0`，容差项仍为 `0.5`。
 
 ### 9. 使用 tar + pv 拉取 10000 步 checkpoint
 
 以下命令在本机执行。远端先用 `tar` 将整个 checkpoint 合并为单一数据流，通过 SSH 传输；本机用 `pv` 显示实时速度、已传输大小和进度，再直接解包到对应实验目录。`train_state/` 会在远端打包阶段被排除，从而避免传输优化器状态。
 
 ```bash
-REMOTE_PARENT=/root/gpufree-share/checkpoints/pi05_franka_mujoco_joint15_state/franka_mujoco_bell_tolerance20_joint15_state_lora
-LOCAL_PARENT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint15_state/franka_mujoco_bell_tolerance20_joint15_state_lora
+REMOTE_PARENT=/root/gpufree-share/checkpoints/pi05_franka_mujoco_joint13_state/franka_mujoco_bell_tolerance20_joint13_state_lora
+LOCAL_PARENT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint13_state/franka_mujoco_bell_tolerance20_joint13_state_lora
 
 mkdir -p "$LOCAL_PARENT"
 
@@ -523,7 +576,7 @@ ssh -p 31283 root@183.147.142.40 \
 下载完成后的目录为：
 
 ```text
-/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint15_state/franka_mujoco_bell_tolerance20_joint15_state_lora/10000
+/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint13_state/franka_mujoco_bell_tolerance20_joint13_state_lora/10000
 ```
 
 本地 checkpoint 保留以下推理文件：
@@ -550,12 +603,12 @@ ssh -p 31283 root@183.147.142.40 \
 10000/assets/caozilin/franka_mujoco_bell_tolerance20/norm_stats.json
 ```
 
-现有 `pi05_franka_mujoco_joint15_state` 配置默认查找 `assets/caozilin/franka_mujoco/`。部署前将 Bell 统计文件复制到该配置预期的位置即可，无需新增训练配置：
+现有 `pi05_franka_mujoco_joint13_state` 配置默认查找 `assets/caozilin/franka_mujoco/`。部署前将 Bell 统计文件复制到该配置预期的位置即可，无需新增训练配置：
 
 ```bash
 cd /media/czl/sata/franka_my_code/openpi
 
-CKPT_ROOT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint15_state/franka_mujoco_bell_tolerance20_joint15_state_lora
+CKPT_ROOT=/media/czl/sata/franka_my_code/openpi/checkpoints/pi05_franka_mujoco_joint13_state/franka_mujoco_bell_tolerance20_joint13_state_lora
 CKPT_DIR="$CKPT_ROOT/10000"
 
 mkdir -p "$CKPT_DIR/assets/caozilin/franka_mujoco"
@@ -569,7 +622,7 @@ XLA_PYTHON_CLIENT_MEM_FRACTION=0.7 \
 uv run --no-sync scripts/serve_policy.py \
   --port=8000 \
   policy:checkpoint \
-  --policy.config=pi05_franka_mujoco_joint15_state \
+  --policy.config=pi05_franka_mujoco_joint13_state \
   --policy.dir="$CKPT_DIR"
 ```
 

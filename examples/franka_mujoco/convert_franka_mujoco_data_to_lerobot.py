@@ -1,4 +1,4 @@
-"""Convert TaskTol-VLA multi-robot MuJoCo schema 7.0 data to LeRobot format.
+"""Convert TaskTol-VLA multi-robot MuJoCo schema 8.0 data to LeRobot format.
 
 Example:
 uv run python examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot.py \
@@ -10,7 +10,6 @@ from __future__ import annotations
 
 from collections.abc import Iterator
 from concurrent.futures import ThreadPoolExecutor
-import csv
 import hashlib
 import json
 import math
@@ -21,12 +20,14 @@ from typing import TYPE_CHECKING, Any
 import cv2
 import numpy as np
 
+from openpi.shared import franka_mujoco_dataset as dataset_format
+
 if TYPE_CHECKING:
     from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
 
 
-SCHEMA_VERSION = "7.0"
-DATASET_RELEASE_VERSION = "4.2"
+SCHEMA_VERSION = dataset_format.SCHEMA_VERSION
+DATASET_RELEASE_VERSION = dataset_format.DATASET_RELEASE_VERSION
 FPS = 10
 IMAGE_HEIGHT = 224
 IMAGE_WIDTH = 224
@@ -35,13 +36,10 @@ ACTION_DIM = 7
 JOINT_STATE_DIM = 7
 ROBOT_ID_DIM = 1
 PHASE_DIM = 1
-TOLERANCE_FRAME_CODE_DIM = 2
 ROTATION_TOLERANCE_DIM = 6
-ROTATION_TOLERANCE_MAXIMUM_RAD = np.pi / 6
 TRAJECTORY_TYPE_DIM = 1
 NOMINAL_TRAJECTORY = "nominal"
 TOLERANCE_TRAJECTORY = "tolerance"
-BOUNDARY_TOLERANCE_TRAJECTORY = "boundary_tolerance"
 PHASE_LABELS = {
     "pregrasp": "Pre-grasp",
     "grasp": "Grasp",
@@ -54,35 +52,10 @@ ROBOT_SPECS = {
     "xarm7": {"id": 1, "arm_dof": 7},
     "ur5e": {"id": 2, "arm_dof": 6},
 }
-ROTATION_TOLERANCE_PROFILE_ORDER = (
-    "rx_negative",
-    "rx_positive",
-    "ry_negative",
-    "ry_positive",
-    "rz_negative",
-    "rz_positive",
-)
-DEFAULT_ROTATION_TOLERANCE_PROFILES_RAD = {
-    "pregrasp": [0.0, 0.0, np.pi / 6, np.pi / 6, 0.0, 0.0],
-    "grasp": [0.0] * ROTATION_TOLERANCE_DIM,
-    "postgrasp": [0.0, 0.0, 0.0, 0.0, np.pi / 6, np.pi / 6],
-    "release": [0.0] * ROTATION_TOLERANCE_DIM,
-}
-SINGLE_AXIS_TO_INDICES = {
-    "x": (0, 1),  # rx_negative, rx_positive
-    "y": (2, 3),  # ry_negative, ry_positive
-    "z": (4, 5),  # rz_negative, rz_positive
-}
+ROTATION_TOLERANCE_PROFILE_ORDER = dataset_format.ROTATION_TOLERANCE_ORDER
 CONVERSION_STATE_PATH = Path("meta/conversion_state.jsonl")
 
-EpisodeSpec = tuple[Path, dict[str, Any], dict[str, list[float]], str, int, int]
-
-TOLERANCE_SUMMARY_COLUMNS = tuple(
-    f"{stage}_r{axis}_{side}"
-    for stage in ("pre", "post")
-    for axis in "xyz"
-    for side in ("neg", "pos")
-)
+EpisodeSpec = tuple[Path, dict[str, Any], str, int, int]
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -102,54 +75,34 @@ def trajectory_is_tolerance(
     *,
     source: Path,
 ) -> bool:
+    """Resolve the schema 8.0 execution variant, independently of tolerance labels."""
     episode = document.get("episode")
     trajectory = document.get("trajectory")
     if not isinstance(episode, dict) or not isinstance(trajectory, list):
         raise ValueError(f"{source}: expected episode object and trajectory list")
 
     type_values = [
-        value
-        for value in (
-            manifest_entry.get("trajectory_type"),
-            episode.get("trajectory_type"),
-            *(frame.get("trajectory_type") for frame in trajectory if isinstance(frame, dict)),
-        )
-        if value is not None
+        record["execution_variant"]
+        for record in (manifest_entry, episode, *trajectory)
+        if isinstance(record, dict) and "execution_variant" in record
     ]
-    invalid_types = sorted({
-        str(value)
-        for value in type_values
-        if value not in (
-            NOMINAL_TRAJECTORY,
-            TOLERANCE_TRAJECTORY,
-            BOUNDARY_TOLERANCE_TRAJECTORY,
-        )
-    })
+    invalid_types = sorted(
+        {
+            str(value)
+            for value in type_values
+            if value
+            not in (
+                NOMINAL_TRAJECTORY,
+                TOLERANCE_TRAJECTORY,
+            )
+        }
+    )
     if invalid_types:
-        raise ValueError(f"{source}: invalid trajectory_type value(s) {invalid_types}")
+        raise ValueError(f"{source}: invalid execution_variant value(s) {invalid_types}")
     if len(set(type_values)) > 1:
-        raise ValueError(f"{source}: inconsistent trajectory_type labels")
-
-    binary_values = [
-        value
-        for value in (
-            manifest_entry.get("trajectory_is_tolerance"),
-            episode.get("trajectory_is_tolerance"),
-            *(frame.get("trajectory_is_tolerance") for frame in trajectory if isinstance(frame, dict)),
-        )
-        if value is not None
-    ]
-    if any(type(value) is not bool for value in binary_values):
-        raise ValueError(f"{source}: trajectory_is_tolerance must be boolean")
-    if len(set(binary_values)) > 1:
-        raise ValueError(f"{source}: inconsistent trajectory_is_tolerance labels")
-
-    from_type = type_values[0] != NOMINAL_TRAJECTORY if type_values else None
-    from_binary = binary_values[0] if binary_values else None
-    if from_type is not None and from_binary is not None and from_type != from_binary:
-        raise ValueError(f"{source}: trajectory type and binary label disagree")
-    # Legacy raw datasets predate this label and are nominal by definition.
-    return bool(from_type if from_type is not None else from_binary if from_binary is not None else False)
+        raise ValueError(f"{source}: inconsistent execution_variant labels")
+    # Base collection omits the variant; mixed datasets declare nominal/tolerance.
+    return bool(type_values and type_values[0] == TOLERANCE_TRAJECTORY)
 
 
 def _require_vector(value: Any, size: int, *, field: str, source: Path) -> np.ndarray:
@@ -157,209 +110,6 @@ def _require_vector(value: Any, size: int, *, field: str, source: Path) -> np.nd
     if array.shape != (size,) or not np.all(np.isfinite(array)):
         raise ValueError(f"{source}: {field} must be a finite vector with shape ({size},), got {array}")
     return array
-
-
-def _default_tolerance_profiles() -> dict[str, list[float]]:
-    return {name: list(values) for name, values in DEFAULT_ROTATION_TOLERANCE_PROFILES_RAD.items()}
-
-
-def _load_tolerance_summary(path: Path) -> dict[tuple[str, str, str], dict[str, list[float]]]:
-    """Load authoritative task-level directional bounds from a summary CSV.
-
-    CSV bounds are expressed in degrees and converted to non-negative radian
-    magnitudes in the LeRobot feature order.
-    """
-    try:
-        with path.open("r", encoding="utf-8-sig", newline="") as file:
-            reader = csv.DictReader(file)
-            fieldnames = set(reader.fieldnames or ())
-            required = {"robot_uid", "training_scene_id", "training_task_id", *TOLERANCE_SUMMARY_COLUMNS}
-            missing = sorted(required - fieldnames)
-            if missing:
-                raise ValueError(f"{path}: missing required columns {missing}")
-            rows = list(reader)
-    except OSError as error:
-        raise ValueError(f"Failed to read tolerance summary {path}: {error}") from error
-    if not rows:
-        raise ValueError(f"Tolerance summary is empty: {path}")
-
-    result: dict[tuple[str, str, str], dict[str, list[float]]] = {}
-    for row_number, row in enumerate(rows, start=2):
-        key = (row["robot_uid"], row["training_scene_id"], row["training_task_id"])
-        if not all(key):
-            raise ValueError(f"{path}:{row_number}: empty robot or task identity")
-        if key in result:
-            raise ValueError(f"{path}:{row_number}: duplicate tolerance row {key}")
-
-        profiles = _default_tolerance_profiles()
-        for stage, phase in (("pre", "pregrasp"), ("post", "postgrasp")):
-            values = []
-            for axis in "xyz":
-                for side in ("neg", "pos"):
-                    column = f"{stage}_r{axis}_{side}"
-                    try:
-                        degrees = float(row[column])
-                    except (TypeError, ValueError) as error:
-                        raise ValueError(f"{path}:{row_number}: invalid {column} value {row[column]!r}") from error
-                    if not math.isfinite(degrees) or not 0.0 <= degrees <= 30.0:
-                        raise ValueError(f"{path}:{row_number}: {column} must be in [0, 30] degrees")
-                    values.append(math.radians(degrees))
-            profiles[phase] = values
-        profiles["grasp"] = [0.0] * ROTATION_TOLERANCE_DIM
-        profiles["release"] = [0.0] * ROTATION_TOLERANCE_DIM
-        result[key] = profiles
-    return result
-
-
-def _report_unused_tolerance_summary_rows(
-    summary_profiles: dict[tuple[str, str, str], dict[str, list[float]]],
-    used_summary_keys: set[tuple[str, str, str]],
-    *,
-    raw_dir: Path,
-) -> None:
-    unused_summary_keys = set(summary_profiles) - used_summary_keys
-    if unused_summary_keys:
-        print(
-            f"Ignoring {len(unused_summary_keys)} tolerance row(s) for tasks "
-            f"not present under {raw_dir}."
-        )
-
-
-def _tolerance_profiles_from_metadata(metadata: dict[str, Any], *, source: Path) -> dict[str, list[float]]:
-    annotation = metadata.get("annotation")
-    profiles = annotation.get("rotation_tolerance_profiles_rad") if isinstance(annotation, dict) else None
-    if not isinstance(profiles, dict):
-        print(
-            f"WARNING: {source} has no annotation.rotation_tolerance_profiles_rad; "
-            "using the original default task tolerance profiles.",
-        )
-        return _default_tolerance_profiles()
-
-    order = annotation.get("rotation_tolerance_profile_order")
-    if order is not None and tuple(order) != ROTATION_TOLERANCE_PROFILE_ORDER:
-        raise ValueError(
-            f"{source}: rotation_tolerance_profile_order must be {ROTATION_TOLERANCE_PROFILE_ORDER}, got {order}"
-        )
-    validated = {}
-    for phase in PHASE_LABELS:
-        value = _require_vector(
-            profiles.get(phase),
-            ROTATION_TOLERANCE_DIM,
-            field=f"annotation.rotation_tolerance_profiles_rad.{phase}",
-            source=source,
-        )
-        if np.any(value < 0.0) or np.any(value > ROTATION_TOLERANCE_MAXIMUM_RAD + 1e-12):
-            raise ValueError(f"{source}: rotation tolerance profile {phase!r} must be in [0, 30] degrees")
-        validated[phase] = value.tolist()
-    return validated
-
-
-def _load_tolerance_annotation(
-    task_dir: Path,
-    task_profiles: dict[str, list[float]],
-) -> dict[str, list[float]]:
-    """Load one optimized task-level tolerance profile shared by all episodes."""
-    annotation_path = task_dir / "tolerance_annotation.json"
-    profiles = {name: list(values) for name, values in task_profiles.items()}
-    if annotation_path.is_file():
-        document = _load_json(annotation_path)
-        order = document.get("rotation_tolerance_bounds_order")
-        if order is not None and tuple(order) != ROTATION_TOLERANCE_PROFILE_ORDER:
-            raise ValueError(
-                f"{annotation_path}: rotation_tolerance_bounds_order must be "
-                f"{ROTATION_TOLERANCE_PROFILE_ORDER}, got {order}"
-            )
-
-        task_bounds = document.get("rotation_tolerance_bounds_rad")
-        if not isinstance(task_bounds, dict):
-            raise ValueError(f"{annotation_path}: rotation_tolerance_bounds_rad must be an object")
-        for phase, value in task_bounds.items():
-            if phase not in PHASE_LABELS:
-                raise ValueError(f"{annotation_path}: unknown task-level tolerance phase {phase!r}")
-            bounds = _require_vector(
-                value,
-                ROTATION_TOLERANCE_DIM,
-                field=f"rotation_tolerance_bounds_rad.{phase}",
-                source=annotation_path,
-            )
-            if np.any(bounds < 0.0) or np.any(bounds > ROTATION_TOLERANCE_MAXIMUM_RAD + 1e-12):
-                raise ValueError(f"{annotation_path}: task-level tolerance phase {phase!r} must be in [0, 30] degrees")
-            profiles[phase] = bounds.tolist()
-
-        # Per-episode `episode_refinements` are deliberately not applied. The
-        # converted dataset uses one counterfactual-search result for every episode
-        # of the task so the labels do not depend on episode-specific optimization.
-        refinements = document.get("episode_refinements")
-        refinement_count = len(refinements) if isinstance(refinements, list) else 0
-        print(
-            f"Loaded {annotation_path}: using optimized task-level tolerances for all episodes; "
-            f"ignored {refinement_count} per-episode refinements."
-        )
-
-    profiles = _load_single_axis_searches(task_dir, profiles)
-    return profiles
-
-
-def _load_single_axis_searches(
-    task_dir: Path,
-    profiles: dict[str, list[float]],
-) -> dict[str, list[float]]:
-    """Merge single-axis search results into tolerance profiles.
-
-    Scans ``task_dir`` for ``single_axis_*.json`` files.  For each file the
-    ``single_axis_only`` field determines which rotation axes were searched and
-    ``rotation_tolerance_bounds_rad`` supplies the optimized per-phase values.
-    Only the searched axes override the existing profiles; unsearched axes are
-    left unchanged.
-    """
-    merged = {name: list(values) for name, values in profiles.items()}
-    for search_path in sorted(task_dir.glob("single_axis_*.json")):
-        document = _load_json(search_path)
-        if document.get("method") != "single_axis_only_search":
-            continue
-
-        search_config = document.get("search")
-        if not isinstance(search_config, dict):
-            raise ValueError(f"{search_path}: search must be an object")
-        searched_axes = search_config.get("single_axis_only")
-        if not isinstance(searched_axes, list):
-            raise ValueError(f"{search_path}: search.single_axis_only must be a list")
-
-        bounds_rad = document.get("rotation_tolerance_bounds_rad")
-        if not isinstance(bounds_rad, dict):
-            raise ValueError(f"{search_path}: rotation_tolerance_bounds_rad must be an object")
-
-        axis_indices: list[int] = []
-        for axis in searched_axes:
-            try:
-                indices = SINGLE_AXIS_TO_INDICES[axis]
-            except KeyError as error:
-                raise ValueError(
-                    f"{search_path}: unknown single_axis_only value {axis!r}; "
-                    f"expected one of {tuple(SINGLE_AXIS_TO_INDICES)}"
-                ) from error
-            axis_indices.extend(indices)
-
-        for phase in PHASE_LABELS:
-            phase_bounds = bounds_rad.get(phase)
-            if phase_bounds is None:
-                continue
-            bounds = _require_vector(
-                phase_bounds,
-                ROTATION_TOLERANCE_DIM,
-                field=f"rotation_tolerance_bounds_rad.{phase}",
-                source=search_path,
-            )
-            if np.any(bounds < 0.0) or np.any(bounds > ROTATION_TOLERANCE_MAXIMUM_RAD + 1e-12):
-                raise ValueError(f"{search_path}: tolerance phase {phase!r} must be in [0, 30] degrees")
-            for idx in axis_indices:
-                merged[phase][idx] = float(bounds[idx])
-
-        print(
-            f"Loaded {search_path.name}: single-axis search for axes {searched_axes}; "
-            f"merged into tolerance profiles."
-        )
-    return merged
 
 
 def _episode_key(entry: dict[str, Any], *, source: Path) -> tuple[int, int]:
@@ -426,82 +176,21 @@ def phase_from_frame(
     """Return the canonical four-stage phase ID."""
     phase = frame.get("phase")
     if phase not in PHASE_TO_ID:
-        raise ValueError(
-            f"{source}: phase must be one of {tuple(PHASE_TO_ID)}, got {phase!r}"
-        )
+        raise ValueError(f"{source}: phase must be one of {tuple(PHASE_TO_ID)}, got {phase!r}")
     return np.asarray([PHASE_TO_ID[phase]], dtype=np.int64)
 
 
-def _stage_annotation_lookup(document: dict[str, Any], *, source: Path) -> dict[int, dict[str, Any]]:
-    values = document.get("stage_annotations")
-    if not isinstance(values, list):
-        raise ValueError(f"{source}: stage_annotations must be a list")
-    annotations: dict[int, dict[str, Any]] = {}
-    for value in values:
-        if not isinstance(value, dict):
-            raise ValueError(f"{source}: every stage annotation must be an object")
-        annotation_id = value.get("id")
-        if not isinstance(annotation_id, int) or isinstance(annotation_id, bool):
-            raise ValueError(f"{source}: every stage annotation must have an integer id")
-        annotations[annotation_id] = value
-    return annotations
-
-
-def tolerance_targets_from_frame(
-    frame: dict[str, Any],
-    *,
-    annotations: dict[int, dict[str, Any]],
-    tolerance_profiles: dict[str, Any],
-    source: Path,
-) -> dict[str, np.ndarray]:
-    """Resolve the annotation referenced by a frame without inferring phase semantics."""
-    annotation_id = frame.get("stage_annotation_id")
-    try:
-        annotation = annotations[annotation_id]
-    except (KeyError, TypeError) as error:
-        raise ValueError(f"{source}: unknown stage_annotation_id {annotation_id!r}") from error
-
-    profile = annotation.get("rotation_tolerance_profile")
-    try:
-        tolerance = tolerance_profiles[profile]
-    except (KeyError, TypeError) as error:
-        raise ValueError(f"{source}: unknown rotation tolerance profile {profile!r}") from error
-
-    return {
-        "tolerance_frame_code": _require_vector(
-            annotation.get("tolerance_frame_code"),
-            TOLERANCE_FRAME_CODE_DIM,
-            field="tolerance_frame_code",
-            source=source,
-        ),
-        "rotation_tolerance": _require_vector(
-            tolerance,
-            ROTATION_TOLERANCE_DIM,
-            field=f"rotation_tolerance_profiles_rad.{profile}",
-            source=source,
-        ),
-    }
-
-
 def _task_directories(raw_dir: Path) -> list[Path]:
-    _EXCLUDED_PARENTS = {"failed_episodes", "single_axis_failure_videos"}
+    excluded_parents = {"failed_episodes"}
 
     task_dirs = sorted(
         path.parent
         for path in raw_dir.rglob("manifest.json")
-        if path.parent.name not in _EXCLUDED_PARENTS
-        and not any(part in _EXCLUDED_PARENTS for part in path.parent.parts)
+        if path.parent.name not in excluded_parents and not any(part in excluded_parents for part in path.parent.parts)
     )
     if not task_dirs:
         raise ValueError(f"No task directories containing manifest.json found under {raw_dir}")
     return task_dirs
-
-
-def _infer_robot_uid(task_dir: Path) -> str:
-    for part in reversed(task_dir.parts):
-        if part.lower() in ROBOT_SPECS:
-            return part.lower()
-    raise ValueError(f"{task_dir}: cannot infer robot UID from the directory hierarchy")
 
 
 def _validate_robot(metadata: dict[str, Any], *, source: Path) -> str:
@@ -534,15 +223,6 @@ def _validate_task(task_dir: Path) -> tuple[dict[str, Any], dict[str, Any], str,
         raise ValueError(
             f"{manifest_path}: expected schema_version {SCHEMA_VERSION}, got {manifest.get('schema_version')}"
         )
-    if not metadata_path.is_file():
-        robot_uid = _infer_robot_uid(task_dir)
-        print(
-            f"WARNING: {metadata_path} is missing; assuming {FPS} Hz, {IMAGE_WIDTH}x{IMAGE_HEIGHT} videos, "
-            f"robot={robot_uid}, and the original default task tolerance profiles."
-        )
-        metadata = {"annotation": {"rotation_tolerance_profiles_rad": _default_tolerance_profiles()}}
-        return metadata, manifest, robot_uid, IMAGE_WIDTH, IMAGE_HEIGHT
-
     metadata = _load_json(metadata_path)
     if str(metadata.get("schema_version")) != SCHEMA_VERSION:
         raise ValueError(
@@ -559,13 +239,15 @@ def _validate_task(task_dir: Path) -> tuple[dict[str, Any], dict[str, Any], str,
     action_format = metadata.get("action_format")
     if not isinstance(action_format, dict) or int(action_format.get("dimension", -1)) != ACTION_DIM:
         raise ValueError(f"{metadata_path}: action_format.dimension must be {ACTION_DIM}")
+    if action_format.get("rotation") != dataset_format.ACTION_ROTATION_CONVENTION:
+        raise ValueError(f"{metadata_path}: actions must use base-frame left-multiplied rotation-vector increments")
     if metadata.get("phase_labels") != PHASE_LABELS:
-        raise ValueError(f"{metadata_path}: phase_labels must define the canonical four schema 7.0 phases")
+        raise ValueError(f"{metadata_path}: phase_labels must define the canonical four schema 8.0 phases")
 
-    tolerance_profiles = _tolerance_profiles_from_metadata(metadata, source=metadata_path)
-    annotation = dict(metadata.get("annotation") or {})
-    annotation["rotation_tolerance_profiles_rad"] = tolerance_profiles
-    metadata = {**metadata, "annotation": annotation}
+    if metadata.get("tolerance_labels") != dataset_format.tolerance_label_metadata():
+        raise ValueError(f"{metadata_path}: invalid deferred tolerance label contract")
+    if "annotation" in metadata:
+        raise ValueError(f"{metadata_path}: task-level tolerance annotations are not part of schema 8.0")
 
     video = metadata.get("video", {})
     resolution = video.get("resolution")
@@ -615,13 +297,13 @@ def _prepare_episode(
     episode_dir: Path,
     manifest_entry: dict[str, Any],
     *,
-    tolerance_profiles: dict[str, list[float]],
+    joint_task_tolerance: bool,
     robot_uid: str,
     width: int,
     height: int,
 ) -> list[dict[str, Any]]:
     trajectory_path = episode_dir / "trajectory.json"
-    document = _load_json(trajectory_path)
+    document, trajectory_sha256 = dataset_format.read_trajectory(episode_dir)
     episode = document.get("episode")
     trajectory = document.get("trajectory")
     if not isinstance(episode, dict) or not isinstance(trajectory, list):
@@ -642,7 +324,14 @@ def _prepare_episode(
         raise ValueError(f"{trajectory_path}: instruction does not match the manifest")
     if not all(isinstance(frame, dict) for frame in trajectory):
         raise ValueError(f"{trajectory_path}: every trajectory frame must be an object")
-    annotations = _stage_annotation_lookup(document, source=trajectory_path)
+    tolerances = (
+        dataset_format.load_rotation_tolerance(episode_dir, document, trajectory_sha256)
+        if joint_task_tolerance
+        else None
+    )
+    expected_video_counts = {"main_rgb.mp4": frame_count, "wrist_rgb.mp4": frame_count}
+    if episode.get("video_frame_counts") != expected_video_counts:
+        raise ValueError(f"{trajectory_path}: inconsistent video_frame_counts")
     is_tolerance = trajectory_is_tolerance(document, manifest_entry, source=trajectory_path)
 
     main_path = episode_dir / "main_rgb.mp4"
@@ -661,23 +350,21 @@ def _prepare_episode(
                 robot_uid=robot_uid,
                 source=trajectory_path,
             )
-            tolerance_targets = tolerance_targets_from_frame(
-                frame,
-                annotations=annotations,
-                tolerance_profiles=tolerance_profiles,
-                source=trajectory_path,
+            tolerance_targets = {} if tolerances is None else {"rotation_tolerance": tolerances[index]}
+            frame_data_list.append(
+                {
+                    "image": _read_rgb(main_capture, path=main_path, index=index),
+                    "wrist_image": _read_rgb(wrist_capture, path=wrist_path, index=index),
+                    "state": state_from_frame(frame, source=trajectory_path),
+                    "robot_id": np.asarray([ROBOT_SPECS[robot_uid]["id"]], dtype=np.int64),
+                    "actions": action,
+                    "phase": phase_from_frame(frame, source=trajectory_path),
+                    "subtask_index": np.asarray([frame["subtask_index"]], dtype=np.int64),
+                    "trajectory_is_tolerance": np.asarray([is_tolerance], dtype=np.int64),
+                    **tolerance_targets,
+                    "task": instruction,
+                }
             )
-            frame_data_list.append({
-                "image": _read_rgb(main_capture, path=main_path, index=index),
-                "wrist_image": _read_rgb(wrist_capture, path=wrist_path, index=index),
-                "state": state_from_frame(frame, source=trajectory_path),
-                "robot_id": np.asarray([ROBOT_SPECS[robot_uid]["id"]], dtype=np.int64),
-                "actions": action,
-                "phase": phase_from_frame(frame, source=trajectory_path),
-                "trajectory_is_tolerance": np.asarray([is_tolerance], dtype=np.int64),
-                **tolerance_targets,
-                "task": instruction,
-            })
 
         main_extra, _ = main_capture.read()
         wrist_extra, _ = wrist_capture.read()
@@ -709,8 +396,8 @@ def _write_episode(dataset: LeRobotDataset, frame_data_list: list[dict[str, Any]
     dataset.save_episode()
 
 
-def _dataset_features() -> dict[str, dict[str, Any]]:
-    return {
+def _dataset_features(*, joint_task_tolerance: bool) -> dict[str, dict[str, Any]]:
+    features = {
         "image": {
             "dtype": "image",
             "shape": (IMAGE_HEIGHT, IMAGE_WIDTH, 3),
@@ -725,22 +412,35 @@ def _dataset_features() -> dict[str, dict[str, Any]]:
         "robot_id": {"dtype": "int64", "shape": (ROBOT_ID_DIM,), "names": ["robot_id"]},
         "actions": {"dtype": "float32", "shape": (ACTION_DIM,), "names": ["actions"]},
         "phase": {"dtype": "int64", "shape": (PHASE_DIM,), "names": ["phase"]},
+        "subtask_index": {"dtype": "int64", "shape": (1,), "names": ["subtask_index"]},
         "trajectory_is_tolerance": {
             "dtype": "int64",
             "shape": (TRAJECTORY_TYPE_DIM,),
             "names": ["is_tolerance"],
         },
-        "tolerance_frame_code": {
-            "dtype": "float32",
-            "shape": (TOLERANCE_FRAME_CODE_DIM,),
-            "names": ["cos_phi", "sin_phi"],
-        },
-        "rotation_tolerance": {
+    }
+    if joint_task_tolerance:
+        features["rotation_tolerance"] = {
             "dtype": "float32",
             "shape": (ROTATION_TOLERANCE_DIM,),
             "names": list(ROTATION_TOLERANCE_PROFILE_ORDER),
-        },
-    }
+        }
+    return features
+
+
+def _validate_dataset_features(info: dict[str, Any], *, joint_task_tolerance: bool) -> None:
+    from lerobot.common.datasets.utils import DEFAULT_FEATURES
+
+    dataset_format.validate_export_info(info, joint_task_tolerance=joint_task_tolerance)
+    if info["joint_task_tolerance"] != joint_task_tolerance:
+        raise ValueError("Cannot change conversion mode while resuming; use a new dataset or --overwrite")
+    expected = {**_dataset_features(joint_task_tolerance=joint_task_tolerance), **DEFAULT_FEATURES}
+    # Metadata JSON serializes tuple shapes as lists.
+    expected = json.loads(json.dumps(expected))
+    if info.get("features") != expected:
+        raise ValueError("Existing dataset features are incompatible with the current conversion mode")
+    if info.get("robot_type") != "tasktol_mujoco" or info.get("fps") != FPS:
+        raise ValueError("Existing dataset robot_type or fps is incompatible")
 
 
 def _open_dataset_for_append(
@@ -862,14 +562,16 @@ def _repair_partial_dataset(output_path: Path) -> int:
     total_frames = sum(int(row["length"]) for row in episode_rows[:committed])
     chunk_size = int(info["chunks_size"])
     video_keys = [feature for feature in info["features"].values() if feature["dtype"] == "video"]
-    info.update({
-        "total_episodes": committed,
-        "total_frames": total_frames,
-        "total_tasks": len(task_rows),
-        "total_videos": committed * len(video_keys),
-        "total_chunks": math.ceil(committed / chunk_size),
-        "splits": {"train": f"0:{committed}"},
-    })
+    info.update(
+        {
+            "total_episodes": committed,
+            "total_frames": total_frames,
+            "total_tasks": len(task_rows),
+            "total_videos": committed * len(video_keys),
+            "total_chunks": math.ceil(committed / chunk_size),
+            "splits": {"train": f"0:{committed}"},
+        }
+    )
     temporary_info = info_path.with_name(".info.json.tmp")
     temporary_info.write_text(json.dumps(info, indent=2) + "\n", encoding="utf-8")
     temporary_info.replace(info_path)
@@ -877,144 +579,67 @@ def _repair_partial_dataset(output_path: Path) -> int:
 
 
 def _source_id(raw_dir: Path, spec: EpisodeSpec) -> str:
-    episode_dir, entry, _, robot_uid, _, _ = spec
+    episode_dir, entry, robot_uid, _, _ = spec
     relative_path = episode_dir.resolve().relative_to(raw_dir)
     return f"{robot_uid}:{relative_path.as_posix()}:{entry['episode_index']}:{entry['seed']}"
 
 
-def _fingerprint_arrays(
-    states: np.ndarray,
-    actions: np.ndarray,
-    robot_ids: np.ndarray,
-    trajectory_types: np.ndarray | None = None,
-) -> str:
-    if trajectory_types is None:
-        trajectory_types = np.zeros(
-            (len(states), TRAJECTORY_TYPE_DIM), dtype=np.int64
-        )
+def _source_fingerprint(spec: EpisodeSpec, *, joint_task_tolerance: bool) -> str:
     digest = hashlib.sha256()
-    for array, dtype in (
-        (states, "<f4"),
-        (actions, "<f4"),
-        (robot_ids, "<i8"),
-        (trajectory_types, "<i8"),
-    ):
-        normalized = np.ascontiguousarray(array, dtype=dtype).reshape(len(array), -1)
-        digest.update(np.asarray(normalized.shape, dtype="<i8").tobytes())
-        digest.update(normalized.tobytes())
+    digest.update(json.dumps(spec[1], sort_keys=True, ensure_ascii=False).encode("utf-8"))
+    names = ["trajectory.json"]
+    if joint_task_tolerance:
+        names.append(dataset_format.TOLERANCE_LABEL_FILE)
+    for name in names:
+        digest.update(name.encode())
+        digest.update(hashlib.sha256((spec[0] / name).read_bytes()).digest())
     return digest.hexdigest()
 
 
-def _raw_episode_fingerprint(spec: EpisodeSpec) -> str:
-    episode_dir, entry, _, robot_uid, _, _ = spec
-    trajectory_path = episode_dir / "trajectory.json"
-    document = _load_json(trajectory_path)
-    trajectory = document.get("trajectory")
-    if not isinstance(trajectory, list) or not trajectory:
-        raise ValueError(f"{trajectory_path}: expected a non-empty trajectory list")
-    states = np.stack([state_from_frame(frame, source=trajectory_path) for frame in trajectory])
-    actions = np.stack([
-        _require_vector(frame.get("action"), ACTION_DIM, field="action", source=trajectory_path)
-        for frame in trajectory
-    ])
-    robot_ids = np.full((len(trajectory), ROBOT_ID_DIM), ROBOT_SPECS[robot_uid]["id"], dtype=np.int64)
-    is_tolerance = trajectory_is_tolerance(document, entry, source=trajectory_path)
-    trajectory_types = np.full(
-        (len(trajectory), TRAJECTORY_TYPE_DIM), is_tolerance, dtype=np.int64
-    )
-    return _fingerprint_arrays(states, actions, robot_ids, trajectory_types)
-
-
-def _parquet_episode_fingerprint(path: Path) -> str:
-    import pyarrow.parquet as parquet
-
-    table = parquet.read_table(
-        path,
-        columns=["state", "actions", "robot_id", "trajectory_is_tolerance"],
-    )
-    return _fingerprint_arrays(
-        np.asarray(table["state"].to_pylist(), dtype=np.float32),
-        np.asarray(table["actions"].to_pylist(), dtype=np.float32),
-        np.asarray(table["robot_id"].to_pylist(), dtype=np.int64),
-        np.asarray(table["trajectory_is_tolerance"].to_pylist(), dtype=np.int64),
-    )
-
-
-def _load_or_rebuild_conversion_state(
+def _load_conversion_state(
     output_path: Path,
     raw_dir: Path,
     episode_specs: list[EpisodeSpec],
     committed: int,
     *,
-    workers: int,
+    joint_task_tolerance: bool,
 ) -> list[dict[str, Any]]:
     state_path = output_path / CONVERSION_STATE_PATH
-    rows = _read_jsonlines(state_path)
-    if len(rows) > committed:
-        rows = rows[:committed]
-    planned_by_id = {_source_id(raw_dir, spec): spec for spec in episode_specs}
-    if len(planned_by_id) != len(episode_specs):
-        raise ValueError("Raw dataset contains duplicate episode identities")
-    completed_ids = []
-    for expected_index, row in enumerate(rows):
+    rows = _read_jsonlines(state_path)[:committed]
+    planned = {_source_id(raw_dir, spec): spec for spec in episode_specs}
+    if len(planned) != len(episode_specs) or len(rows) != committed:
+        raise ValueError(f"{state_path}: incomplete conversion journal or duplicate source identities")
+    completed_ids = set()
+    for index, row in enumerate(rows):
         source_id = row.get("source_id")
-        if row.get("episode_index") != expected_index or source_id not in planned_by_id:
-            raise ValueError(f"Invalid or stale resume state in {state_path} at episode {expected_index}")
-        completed_ids.append(source_id)
-    if len(set(completed_ids)) != len(completed_ids):
-        raise ValueError(f"Duplicate source episode in {state_path}")
-
-    if len(rows) < committed:
-        print(
-            f"Rebuilding resume index for {committed - len(rows)} existing episodes "
-            "from trajectory fingerprints (one-time operation)..."
-        )
-        info = _load_json(output_path / "meta/info.json")
-        chunk_size = int(info["chunks_size"])
-        pattern = str(info["data_path"])
-        missing_output_fingerprints: dict[str, list[int]] = {}
-        for episode_index in range(len(rows), committed):
-            parquet_path = output_path / pattern.format(
-                episode_chunk=episode_index // chunk_size,
-                episode_index=episode_index,
-            )
-            fingerprint = _parquet_episode_fingerprint(parquet_path)
-            missing_output_fingerprints.setdefault(fingerprint, []).append(episode_index)
-
-        unmatched_specs = [spec for spec in episode_specs if _source_id(raw_dir, spec) not in completed_ids]
-        fingerprint_to_ids: dict[str, list[str]] = {}
-        if workers > 1:
-            with ThreadPoolExecutor(max_workers=workers) as executor:
-                fingerprints = executor.map(_raw_episode_fingerprint, unmatched_specs)
-                for spec, fingerprint in zip(unmatched_specs, fingerprints, strict=True):
-                    if fingerprint in missing_output_fingerprints:
-                        fingerprint_to_ids.setdefault(fingerprint, []).append(_source_id(raw_dir, spec))
-        else:
-            for spec in unmatched_specs:
-                fingerprint = _raw_episode_fingerprint(spec)
-                if fingerprint in missing_output_fingerprints:
-                    fingerprint_to_ids.setdefault(fingerprint, []).append(_source_id(raw_dir, spec))
-
-        recovered: dict[int, str] = {}
-        for fingerprint, output_indices in missing_output_fingerprints.items():
-            source_ids = sorted(fingerprint_to_ids.get(fingerprint, []))
-            if len(source_ids) < len(output_indices):
-                raise ValueError(
-                    "Could not match every existing LeRobot episode to a raw trajectory; "
-                    "the raw dataset may have changed."
-                )
-            recovered.update(dict(zip(output_indices, source_ids, strict=False)))
-        for episode_index in range(len(rows), committed):
-            rows.append({"episode_index": episode_index, "source_id": recovered[episode_index]})
-        _write_jsonlines_atomic(state_path, rows)
-        print(f"Resume index rebuilt: {len(rows)} completed raw trajectories identified.")
+        if row.get("episode_index") != index or source_id not in planned or source_id in completed_ids:
+            raise ValueError(f"{state_path}: invalid resume state at episode {index}")
+        if row.get("source_sha256") != _source_fingerprint(
+            planned[source_id], joint_task_tolerance=joint_task_tolerance
+        ):
+            raise ValueError(f"{state_path}: manifest, trajectory or tolerance labels changed; rebuild the export")
+        completed_ids.add(source_id)
+    _write_jsonlines_atomic(state_path, rows)
     return rows
 
 
-def _append_conversion_state(output_path: Path, episode_index: int, source_id: str) -> None:
-    state_path = output_path / CONVERSION_STATE_PATH
-    with state_path.open("a", encoding="utf-8") as file:
-        file.write(json.dumps({"episode_index": episode_index, "source_id": source_id}) + "\n")
+def _append_conversion_state(
+    output_path: Path,
+    episode_index: int,
+    source_id: str,
+    source_sha256: str,
+) -> None:
+    with (output_path / CONVERSION_STATE_PATH).open("a", encoding="utf-8") as file:
+        file.write(
+            json.dumps(
+                {
+                    "episode_index": episode_index,
+                    "source_id": source_id,
+                    "source_sha256": source_sha256,
+                }
+            )
+            + "\n"
+        )
         file.flush()
 
 
@@ -1022,7 +647,7 @@ def main(
     raw_dir: Path,
     repo_id: str,
     *,
-    tolerance_summary: Path | None = None,
+    joint_task_tolerance: bool = True,
     push_to_hub: bool = False,
     private: bool = True,
     overwrite: bool = False,
@@ -1055,64 +680,28 @@ def main(
     # Suppress those nested bars so the terminal shows one stable global ETA.
     datasets.disable_progress_bars()
 
-    if tolerance_summary is None:
-        candidate = raw_dir / "tolerance_summary.csv"
-        tolerance_summary = candidate if candidate.is_file() else None
-    else:
-        tolerance_summary = tolerance_summary.expanduser().resolve()
-        if not tolerance_summary.is_file():
-            raise ValueError(f"Tolerance summary does not exist: {tolerance_summary}")
-    summary_profiles = _load_tolerance_summary(tolerance_summary) if tolerance_summary is not None else {}
-    used_summary_keys: set[tuple[str, str, str]] = set()
-    if tolerance_summary is not None:
-        print(f"Loaded authoritative task tolerances from {tolerance_summary} ({len(summary_profiles)} rows).")
-
-    task_specs = []
-    for task_dir in _task_directories(raw_dir):
-        metadata, manifest, robot_uid, width, height = _validate_task(task_dir)
-        if summary_profiles:
-            relative_parts = task_dir.relative_to(raw_dir).parts
-            if len(relative_parts) != 3:
-                raise ValueError(
-                    f"{task_dir}: expected robot/scene/task hierarchy for tolerance-summary lookup"
-                )
-            summary_key = (robot_uid, relative_parts[1], relative_parts[2])
-            try:
-                task_profiles = summary_profiles[summary_key]
-            except KeyError as error:
-                raise ValueError(f"{tolerance_summary}: no tolerance row for task {summary_key}") from error
-            used_summary_keys.add(summary_key)
-        else:
-            task_profiles = _load_tolerance_annotation(
-                task_dir,
-                metadata["annotation"]["rotation_tolerance_profiles_rad"],
-            )
-        task_specs.append((task_dir, manifest, robot_uid, width, height, task_profiles))
-    _report_unused_tolerance_summary_rows(summary_profiles, used_summary_keys, raw_dir=raw_dir)
-
-    # Collect all episode specs first
     episode_specs: list[EpisodeSpec] = []
-    missing_trajectories: list[Path] = []
-    for task_dir, manifest, robot_uid, width, height, task_profiles in task_specs:
+    for task_dir in _task_directories(raw_dir):
+        _, manifest, robot_uid, width, height = _validate_task(task_dir)
         for entry in _episode_entries(task_dir, manifest):
             episode_dir = task_dir / str(entry["path"])
-            if not episode_dir.is_dir():
-                raise ValueError(f"Episode directory does not exist: {episode_dir}")
-            if not (episode_dir / "trajectory.json").is_file():
-                missing_trajectories.append(episode_dir)
-                continue
-            episode_specs.append((episode_dir, entry, task_profiles, robot_uid, width, height))
+            if not episode_dir.resolve().is_relative_to(task_dir.resolve()):
+                raise ValueError(f"Episode path escapes task directory: {episode_dir}")
+            episode_specs.append((episode_dir, entry, robot_uid, width, height))
 
     if max_episodes is not None:
         episode_specs = episode_specs[:max_episodes]
-
-    if missing_trajectories:
-        examples = ", ".join(str(path) for path in missing_trajectories[:3])
-        suffix = "" if len(missing_trajectories) <= 3 else ", ..."
-        print(
-            f"Warning: skipping {len(missing_trajectories)} manifest entries whose trajectory.json is missing. "
-            f"Examples: {examples}{suffix}"
-        )
+    if not episode_specs:
+        raise ValueError("No successful episodes found")
+    if len({_source_id(raw_dir, spec) for spec in episode_specs}) != len(episode_specs):
+        raise ValueError("Raw dataset contains duplicate episode identities")
+    for episode_dir, _, _, _, _ in episode_specs:
+        for name in ("trajectory.json", "main_rgb.mp4", "wrist_rgb.mp4"):
+            if not (episode_dir / name).is_file():
+                raise FileNotFoundError(f"Required episode file is missing: {episode_dir / name}")
+        document, digest = dataset_format.read_trajectory(episode_dir)
+        if joint_task_tolerance:
+            dataset_format.load_rotation_tolerance(episode_dir, document, digest)
 
     output_path = HF_LEROBOT_HOME / repo_id
     completed_rows: list[dict[str, Any]] = []
@@ -1125,14 +714,16 @@ def main(
             )
 
     if output_path.exists():
+        info = _load_json(output_path / "meta/info.json")
+        _validate_dataset_features(info, joint_task_tolerance=joint_task_tolerance)
         committed = _repair_partial_dataset(output_path)
         print(f"Resume check: {committed} fully committed LeRobot episodes; rolled back any incomplete tail files.")
-        completed_rows = _load_or_rebuild_conversion_state(
+        completed_rows = _load_conversion_state(
             output_path,
             raw_dir,
             episode_specs,
             committed,
-            workers=workers,
+            joint_task_tolerance=joint_task_tolerance,
         )
         dataset = _open_dataset_for_append(
             repo_id,
@@ -1140,22 +731,19 @@ def main(
             image_writer_threads=image_writer_threads,
             image_writer_processes=image_writer_processes,
         )
-        expected_features = _dataset_features()
-        for key, expected in expected_features.items():
-            actual = dataset.meta.features.get(key)
-            if actual != expected:
-                raise ValueError(f"Existing dataset feature {key!r} is incompatible: {actual!r} != {expected!r}")
-        if dataset.meta.robot_type != "tasktol_mujoco" or dataset.meta.fps != FPS:
-            raise ValueError("Existing dataset robot_type or fps is incompatible with this converter")
     else:
         dataset = LeRobotDataset.create(
             repo_id=repo_id,
             robot_type="tasktol_mujoco",
             fps=FPS,
-            features=_dataset_features(),
+            features=_dataset_features(joint_task_tolerance=joint_task_tolerance),
             image_writer_threads=image_writer_threads,
             image_writer_processes=image_writer_processes,
         )
+        from lerobot.common.datasets.utils import write_info
+
+        dataset.meta.info.update(dataset_format.export_metadata(joint_task_tolerance=joint_task_tolerance))
+        write_info(dataset.meta.info, output_path)
         _write_jsonlines_atomic(output_path / CONVERSION_STATE_PATH, [])
 
     completed_ids = {str(row["source_id"]) for row in completed_rows}
@@ -1164,10 +752,8 @@ def main(
         raise ValueError("Resume state contains duplicate or unplanned raw episodes")
 
     total_episodes = len(episode_specs)
-    total_frames = sum(int(entry.get("frames", 0)) for _, entry, _, _, _, _ in episode_specs)
-    completed_frames = total_frames - sum(
-        int(entry.get("frames", 0)) for _, entry, _, _, _, _ in remaining_specs
-    )
+    total_frames = sum(int(entry.get("frames", 0)) for _, entry, _, _, _ in episode_specs)
+    completed_frames = total_frames - sum(int(entry.get("frames", 0)) for _, entry, _, _, _ in remaining_specs)
     print(
         f"Planned conversion: {total_episodes} episodes, {total_frames} frames, workers={workers}; "
         f"completed={len(completed_ids)}, remaining={len(remaining_specs)}"
@@ -1193,12 +779,12 @@ def main(
                     spec = next(episode_iter)
                 except StopIteration:
                     return False
-                episode_dir, entry, task_profiles, robot_uid, width, height = spec
+                episode_dir, entry, robot_uid, width, height = spec
                 future = executor.submit(
                     _prepare_episode,
                     episode_dir,
                     entry,
-                    tolerance_profiles=task_profiles,
+                    joint_task_tolerance=joint_task_tolerance,
                     robot_uid=robot_uid,
                     width=width,
                     height=height,
@@ -1217,27 +803,37 @@ def main(
                 except Exception as error:
                     raise RuntimeError(f"Failed to prepare episode {episode_dir}") from error
                 episode_index = dataset.meta.total_episodes
+                _append_conversion_state(
+                    output_path,
+                    episode_index,
+                    _source_id(raw_dir, spec),
+                    _source_fingerprint(spec, joint_task_tolerance=joint_task_tolerance),
+                )
                 _write_episode(dataset, frame_data_list)
                 converted += 1
-                _append_conversion_state(output_path, episode_index, _source_id(raw_dir, spec))
                 progress.set_postfix_str(f"episodes={converted}/{total_episodes}", refresh=False)
                 progress.update(len(frame_data_list))
                 submit_next()
     else:
         for spec in remaining_specs:
-            episode_dir, entry, task_profiles, robot_uid, width, height = spec
+            episode_dir, entry, robot_uid, width, height = spec
             frame_data_list = _prepare_episode(
                 episode_dir,
                 entry,
-                tolerance_profiles=task_profiles,
+                joint_task_tolerance=joint_task_tolerance,
                 robot_uid=robot_uid,
                 width=width,
                 height=height,
             )
             episode_index = dataset.meta.total_episodes
+            _append_conversion_state(
+                output_path,
+                episode_index,
+                _source_id(raw_dir, spec),
+                _source_fingerprint(spec, joint_task_tolerance=joint_task_tolerance),
+            )
             _write_episode(dataset, frame_data_list)
             converted += 1
-            _append_conversion_state(output_path, episode_index, _source_id(raw_dir, spec))
             progress.set_postfix_str(f"episodes={converted}/{total_episodes}", refresh=False)
             progress.update(len(frame_data_list))
 

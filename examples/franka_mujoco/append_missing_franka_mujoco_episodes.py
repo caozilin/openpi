@@ -6,18 +6,21 @@ rewritten. Metadata is snapshotted and restored together with removal of newly
 created Parquet files if a normal Python exception interrupts the append.
 """
 
+# This entry point intentionally shares the converter's internal transaction helpers.
+# ruff: noqa: SLF001
+
 from __future__ import annotations
 
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import as_completed
 import hashlib
 import json
 from pathlib import Path
 import shutil
 from typing import Any
 
-import pyarrow.parquet as pq
-
 import convert_franka_mujoco_data_to_lerobot as converter
+import pyarrow.parquet as pq
 
 
 def _sha256(path: Path) -> str:
@@ -54,13 +57,13 @@ def _verify_existing_dataset(
     *,
     expected_episodes: int,
     expected_frames: int,
+    joint_task_tolerance: bool,
 ) -> dict[str, Any]:
     info_path = dataset_root / "meta" / "info.json"
     info = json.loads(info_path.read_text(encoding="utf-8"))
+    converter._validate_dataset_features(info, joint_task_tolerance=joint_task_tolerance)
     if info.get("total_episodes") != expected_episodes:
-        raise ValueError(
-            f"{info_path}: expected {expected_episodes} episodes, got {info.get('total_episodes')}"
-        )
+        raise ValueError(f"{info_path}: expected {expected_episodes} episodes, got {info.get('total_episodes')}")
     if info.get("total_frames") != expected_frames:
         raise ValueError(f"{info_path}: expected {expected_frames} frames, got {info.get('total_frames')}")
 
@@ -100,12 +103,9 @@ def _prepare_append_specs(
     append_start: int,
     append_count: int,
     expected_append_frames: int,
-) -> list[tuple[Path, dict[str, Any], dict[str, list[float]], str, int, int]]:
-    metadata, manifest, robot_uid, width, height = converter._validate_task(raw_task_dir)
-    profiles = converter._load_tolerance_annotation(
-        raw_task_dir,
-        metadata["annotation"]["rotation_tolerance_profiles_rad"],
-    )
+    joint_task_tolerance: bool,
+) -> list[converter.EpisodeSpec]:
+    _, manifest, robot_uid, width, height = converter._validate_task(raw_task_dir)
     entries = list(converter._episode_entries(raw_task_dir, manifest))[append_start : append_start + append_count]
     if len(entries) != append_count:
         raise ValueError(f"Selected {len(entries)} raw episodes, expected {append_count}")
@@ -118,7 +118,9 @@ def _prepare_append_specs(
         missing = [path.name for path in required if not path.is_file()]
         if missing:
             raise ValueError(f"{episode_dir}: missing required files {missing}")
-        document = json.loads((episode_dir / "trajectory.json").read_text(encoding="utf-8"))
+        document, digest = converter.dataset_format.read_trajectory(episode_dir)
+        if joint_task_tolerance:
+            converter.dataset_format.load_rotation_tolerance(episode_dir, document, digest)
         actual_frames = len(document.get("trajectory", []))
         manifest_frames = int(entry.get("frames", -1))
         if actual_frames != manifest_frames:
@@ -126,7 +128,7 @@ def _prepare_append_specs(
                 f"{episode_dir}: trajectory has {actual_frames} frames, manifest declares {manifest_frames}"
             )
         frame_total += actual_frames
-        specs.append((episode_dir, entry, profiles, robot_uid, width, height))
+        specs.append((episode_dir, entry, robot_uid, width, height))
     if frame_total != expected_append_frames:
         raise ValueError(f"Selected raw episodes contain {frame_total} frames, expected {expected_append_frames}")
     return specs
@@ -141,40 +143,28 @@ def _expected_new_paths(dataset: Any, start: int, count: int) -> list[Path]:
 
 
 def _open_for_append(repo_id: str, dataset_root: Path) -> Any:
-    """Open only LeRobot metadata and an empty in-memory table for new rows.
-
-    The normal LeRobotDataset constructor materializes all existing Parquet
-    files into a Hugging Face Arrow cache. That is unnecessary for append and
-    can require roughly another full-dataset worth of disk space.
-    """
-    from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
-    from lerobot.common.datasets.lerobot_dataset import LeRobotDatasetMetadata
-    from lerobot.common.datasets.lerobot_dataset import get_safe_default_codec
-
-    dataset = LeRobotDataset.__new__(LeRobotDataset)
-    dataset.meta = LeRobotDatasetMetadata(repo_id, root=dataset_root)
-    dataset.repo_id = repo_id
-    dataset.root = dataset_root
-    dataset.revision = None
-    dataset.tolerance_s = 1e-4
-    dataset.image_writer = None
-    dataset.episode_buffer = dataset.create_episode_buffer()
-    dataset.episodes = None
-    dataset.hf_dataset = dataset.create_hf_dataset()
-    dataset.image_transforms = None
-    dataset.delta_timestamps = None
-    dataset.delta_indices = None
-    dataset.episode_data_index = None
-    dataset.video_backend = get_safe_default_codec()
-    return dataset
+    return converter._open_dataset_for_append(
+        repo_id,
+        dataset_root,
+        image_writer_threads=0,
+        image_writer_processes=0,
+    )
 
 
-def _append(dataset: Any, specs: list[tuple], *, workers: int, progress_interval_seconds: float) -> None:
+def _append(
+    dataset: Any,
+    specs: list[converter.EpisodeSpec],
+    *,
+    raw_dir: Path,
+    joint_task_tolerance: bool,
+    workers: int,
+    progress_interval_seconds: float,
+) -> None:
     import datasets
     import tqdm
 
     datasets.disable_progress_bars()
-    total_frames = sum(int(entry["frames"]) for _, entry, _, _, _, _ in specs)
+    total_frames = sum(int(entry["frames"]) for _, entry, _, _, _ in specs)
     progress = tqdm.tqdm(
         total=total_frames,
         desc="Appending",
@@ -189,30 +179,38 @@ def _append(dataset: Any, specs: list[tuple], *, workers: int, progress_interval
 
         def submit_next() -> bool:
             try:
-                episode_dir, entry, profiles, robot_uid, width, height = next(episode_iter)
+                spec = next(episode_iter)
+                episode_dir, entry, robot_uid, width, height = spec
             except StopIteration:
                 return False
             future = executor.submit(
                 converter._prepare_episode,
                 episode_dir,
                 entry,
-                tolerance_profiles=profiles,
+                joint_task_tolerance=joint_task_tolerance,
                 robot_uid=robot_uid,
                 width=width,
                 height=height,
             )
-            futures[future] = episode_dir
+            futures[future] = spec
             return True
 
         for _ in range(min(workers, len(specs))):
             submit_next()
         while futures:
             future = next(as_completed(futures))
-            episode_dir = futures.pop(future)
+            spec = futures.pop(future)
+            episode_dir = spec[0]
             try:
                 frames = future.result()
             except Exception as error:
                 raise RuntimeError(f"Failed to prepare {episode_dir}") from error
+            converter._append_conversion_state(
+                dataset.root,
+                dataset.meta.total_episodes,
+                converter._source_id(raw_dir, spec),
+                converter._source_fingerprint(spec, joint_task_tolerance=joint_task_tolerance),
+            )
             converter._write_episode(dataset, frames)
             completed += 1
             progress.set_postfix_str(f"episodes={completed}/{len(specs)}", refresh=False)
@@ -225,12 +223,14 @@ def main(
     raw_task_dir: Path,
     repo_id: str,
     baseline_path: Path,
+    raw_dir: Path,
     *,
-    expected_existing_episodes: int = 4147,
-    expected_existing_frames: int = 528803,
+    expected_existing_episodes: int,
+    expected_existing_frames: int,
     append_start: int = 0,
-    append_count: int = 253,
-    expected_append_frames: int = 41317,
+    append_count: int,
+    expected_append_frames: int,
+    joint_task_tolerance: bool = True,
     workers: int = 12,
     image_writer_threads: int = 2,
     progress_interval_seconds: float = 5.0,
@@ -238,30 +238,41 @@ def main(
 ) -> None:
     """Preflight or execute a protected append to an existing LeRobot dataset."""
     from lerobot.common.datasets.lerobot_dataset import HF_LEROBOT_HOME
-    from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
 
     if workers <= 0 or image_writer_threads < 0 or progress_interval_seconds <= 0:
         raise ValueError("Invalid worker, image-writer, or progress interval setting")
     raw_task_dir = raw_task_dir.expanduser().resolve()
+    raw_dir = raw_dir.expanduser().resolve()
+    if not raw_task_dir.is_relative_to(raw_dir):
+        raise ValueError("raw_task_dir must be under the original conversion raw_dir")
     baseline_path = baseline_path.expanduser().resolve()
     dataset_root = HF_LEROBOT_HOME / repo_id
     if not raw_task_dir.is_dir() or not dataset_root.is_dir() or not baseline_path.is_file():
         raise FileNotFoundError("Raw task directory, existing dataset, or baseline path does not exist")
 
     print("Verifying existing dataset and SHA-256 baseline...")
-    info = _verify_existing_dataset(
+    _verify_existing_dataset(
         dataset_root,
         baseline_path,
         expected_episodes=expected_existing_episodes,
         expected_frames=expected_existing_frames,
+        joint_task_tolerance=joint_task_tolerance,
     )
+    journal = converter._read_jsonlines(dataset_root / converter.CONVERSION_STATE_PATH)
+    if len(journal) != expected_existing_episodes:
+        raise ValueError("Current conversion journal must cover every existing episode")
     print("Validating raw append set...")
     specs = _prepare_append_specs(
         raw_task_dir,
         append_start=append_start,
         append_count=append_count,
         expected_append_frames=expected_append_frames,
+        joint_task_tolerance=joint_task_tolerance,
     )
+    completed_ids = {row["source_id"] for row in journal}
+    append_ids = [converter._source_id(raw_dir, spec) for spec in specs]
+    if len(set(append_ids)) != len(append_ids) or completed_ids.intersection(append_ids):
+        raise ValueError("Append set contains duplicate or already converted source episodes")
 
     final_episodes = expected_existing_episodes + append_count
     final_frames = expected_existing_frames + expected_append_frames
@@ -288,7 +299,14 @@ def main(
     try:
         if image_writer_threads:
             dataset.start_image_writer(num_processes=0, num_threads=image_writer_threads)
-        _append(dataset, specs, workers=workers, progress_interval_seconds=progress_interval_seconds)
+        _append(
+            dataset,
+            specs,
+            raw_dir=raw_dir,
+            joint_task_tolerance=joint_task_tolerance,
+            workers=workers,
+            progress_interval_seconds=progress_interval_seconds,
+        )
         dataset.stop_image_writer()
         if dataset.meta.total_episodes != final_episodes or dataset.meta.total_frames != final_frames:
             raise ValueError(

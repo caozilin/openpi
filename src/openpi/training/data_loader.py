@@ -16,6 +16,7 @@ import numpy as np
 import torch
 
 import openpi.models.model as _model
+from openpi.shared import franka_mujoco_dataset as _franka_dataset
 import openpi.training.config as _config
 from openpi.training.droid_rlds_dataset import DroidRldsDataset
 import openpi.transforms as _transforms
@@ -123,6 +124,9 @@ class ArrowCachedLeRobotDataset(lerobot_dataset.LeRobotDataset):
             raise RuntimeError(
                 f"Arrow cache row count mismatch: expected {dataset_meta.total_frames}, found {len(hf_dataset)}"
             )
+        expected_features = lerobot_dataset.get_hf_features_from_features(dataset_meta.features)
+        if hf_dataset.features != expected_features:
+            raise ValueError("Arrow cache features do not match dataset metadata; regenerate the Arrow cache")
         hf_dataset.set_transform(lerobot_dataset.hf_transform_to_torch)
 
         self.repo_id = repo_id
@@ -269,6 +273,13 @@ def create_torch_dataset(
         cache_dir,
     )
     dataset_meta = lerobot_dataset.LeRobotDatasetMetadata(repo_id, root=dataset_root)
+    if data_config.source_schema is not None:
+        if dataset_meta.info.get("source_schema") != data_config.source_schema:
+            raise ValueError(f"Dataset requires source schema {data_config.source_schema}; reconvert the raw data")
+        if data_config.source_schema == _franka_dataset.SOURCE_SCHEMA:
+            _franka_dataset.validate_export_info(
+                dataset_meta.info, joint_task_tolerance="rotation_tolerance" in data_config.action_sequence_keys,
+            )
     delta_timestamps = {
         key: [t / dataset_meta.fps for t in range(action_horizon)] for key in data_config.action_sequence_keys
     }
@@ -421,6 +432,7 @@ def create_torch_data_loader(
     skip_norm_stats: bool = False,
     shuffle: bool = False,
     num_batches: int | None = None,
+    repeat: bool = True,
     num_workers: int = 0,
     seed: int = 0,
     framework: str = "jax",
@@ -435,9 +447,10 @@ def create_torch_data_loader(
             use a single device sharding.
         skip_norm_stats: Whether to skip data normalization.
         shuffle: Whether to shuffle the data.
-        num_batches: Determines the number of batches to return. If the number exceeds the
-            number of batches in the dataset, the data loader will loop over the dataset.
-            If not provided, will iterate over the dataset indefinitely.
+        repeat: Whether to cycle over the dataset after one pass.
+        num_batches: Maximum number of batches to return. If repeat is true, the loader
+            cycles over the dataset as needed. If not provided, it iterates indefinitely
+            when repeat is true or once when repeat is false.
         num_workers: The number of worker processes to use. If zero, the data loader will
             execute in the main process.
         seed: The seed to use for shuffling the data.
@@ -472,6 +485,7 @@ def create_torch_data_loader(
         shuffle=(sampler is None and shuffle),  # Don't shuffle if using sampler
         sampler=sampler,
         num_batches=num_batches,
+        repeat=repeat,
         num_workers=num_workers,
         seed=seed,
         framework=framework,
@@ -533,6 +547,7 @@ class TorchDataLoader:
         shuffle: bool = False,
         sampler: torch.utils.data.Sampler | None = None,
         num_batches: int | None = None,
+        repeat: bool = True,
         num_workers: int = 0,
         seed: int = 0,
         framework: str = "jax",
@@ -544,10 +559,8 @@ class TorchDataLoader:
             local_batch_size: The local batch size for each process.
             sharding: The sharding to use for the data loader.
             shuffle: Whether to shuffle the data.
-            num_batches: If provided, determines the number of returned batches. If the
-                number is larger than the number of batches in the dataset, the data loader
-                will loop over the dataset. If not provided, will iterate over the dataset
-                indefinitely.
+            num_batches: Maximum number of batches to return.
+            repeat: Whether to cycle over the dataset after one pass.
             num_workers: The number of worker processes to use. If zero, the data loader will
                 execute in the main process.
             seed: The seed to use for shuffling the data.
@@ -567,6 +580,7 @@ class TorchDataLoader:
                 jax.sharding.PartitionSpec("B"),
             )
         self._num_batches = num_batches
+        self._repeat = repeat
 
         mp_context = None
         if num_workers > 0:
@@ -602,13 +616,15 @@ class TorchDataLoader:
                 try:
                     batch = next(data_iter)
                 except StopIteration:
-                    break  # We've exhausted the dataset. Create a new iterator and start over.
+                    break  # We've exhausted the dataset.
                 num_items += 1
                 # For JAX, convert to sharded arrays; for PyTorch, return torch tensors
                 if self._sharding is not None:
                     yield jax.tree.map(lambda x: jax.make_array_from_process_local_data(self._sharding, x), batch)
                 else:
                     yield jax.tree.map(torch.as_tensor, batch)
+            if not self._repeat:
+                return
 
 
 def _collate_fn(items):

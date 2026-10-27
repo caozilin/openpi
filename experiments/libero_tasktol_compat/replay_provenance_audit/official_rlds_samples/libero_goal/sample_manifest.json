@@ -1,0 +1,40 @@
+{
+  "suite": "libero_goal",
+  "revision": "6ce6aaaaabdbe590b1eef5cd29c0d33f14a08551",
+  "source_url": "https://huggingface.co/datasets/openvla/modified_libero_rlds/resolve/6ce6aaaaabdbe590b1eef5cd29c0d33f14a08551/libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00000-of-00016",
+  "partial_shard": true,
+  "complete_records": 4,
+  "record_crc32c_verified": true,
+  "bytes": 21206416,
+  "saved_prefix_sha256": "5c6da783f7dd1208eedc532fcaf5235b5d2439eac3b82c84fc3bc53b1614f9f5",
+  "feature_layout": {
+    "steps/is_first": [
+      112
+    ],
+    "steps/action": [
+      784
+    ],
+    "steps/discount": [
+      112
+    ],
+    "steps/is_last": [
+      112
+    ],
+    "steps/language_instruction": 112,
+    "steps/observation/wrist_image": 112,
+    "steps/reward": [
+      112
+    ],
+    "steps/is_terminal": [
+      112
+    ],
+    "steps/observation/state": [
+      896
+    ],
+    "steps/observation/joint_state": [
+      784
+    ],
+    "steps/observation/image": 112,
+    "episode_metadata/file_path": 1
+  }
+}

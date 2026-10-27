@@ -1,0 +1,3 @@
+# Install after the LIBERO environment's requirements.txt, using Python 3.8.
+h5py==3.10.0
+tqdm==4.67.1

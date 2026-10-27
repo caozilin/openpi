@@ -56,28 +56,29 @@ def test_franka_mujoco_joint_tolerance_inputs_and_outputs() -> None:
         joint_task_tolerance=True,
     )
     actions = np.arange(2 * 7, dtype=np.float32).reshape(2, 7)
-    frame_code = np.full((2, 2), 1.0, dtype=np.float32)
-    tolerance = np.full((2, 6), 3.0, dtype=np.float32)
+    tolerance = np.arange(2 * 6, dtype=np.float32).reshape(2, 6) + 100
     result = transform(
         {
             "observation/image": np.zeros((20, 30, 3), dtype=np.uint8),
             "observation/wrist_image": np.zeros((20, 30, 3), dtype=np.uint8),
             "observation/state": np.arange(7, dtype=np.float32),
             "actions": actions,
-            "tolerance_frame_code": frame_code,
             "rotation_tolerance": tolerance,
         }
     )
 
-    assert result["actions"].shape == (2, 15)
-    np.testing.assert_array_equal(result["actions"], np.concatenate((actions, frame_code, tolerance), axis=-1))
+    assert result["actions"].shape == (2, 13)
+    np.testing.assert_array_equal(result["actions"], np.concatenate((actions, tolerance), axis=-1))
 
     outputs = franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=True)({"actions": result["actions"]})
+    assert set(outputs) == {"actions", "rotation_tolerance"}
     np.testing.assert_array_equal(outputs["actions"], actions)
-    np.testing.assert_array_equal(outputs["tolerance_frame_code"], frame_code)
     np.testing.assert_array_equal(outputs["rotation_tolerance"], tolerance)
 
-    with pytest.raises(ValueError, match="exactly 15"):
+
+@pytest.mark.parametrize("dimension", [7, 12, 15, 32])
+def test_joint_outputs_reject_incompatible_dimensions(dimension: int) -> None:
+    with pytest.raises(ValueError, match="exactly 13"):
         franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=True)(
-            {"actions": np.pad(result["actions"], ((0, 0), (0, 17)))}
+            {"actions": np.zeros((2, dimension), dtype=np.float32)}
         )

@@ -1,0 +1,40 @@
+{
+  "suite": "libero_spatial",
+  "revision": "6ce6aaaaabdbe590b1eef5cd29c0d33f14a08551",
+  "source_url": "https://huggingface.co/datasets/openvla/modified_libero_rlds/resolve/6ce6aaaaabdbe590b1eef5cd29c0d33f14a08551/libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00000-of-00016",
+  "partial_shard": true,
+  "complete_records": 4,
+  "record_crc32c_verified": true,
+  "bytes": 17307603,
+  "saved_prefix_sha256": "260c5bc4fc5d8e39563e71ad223842c0deaaff9cbcfae129481caec28fe7f21e",
+  "feature_layout": {
+    "steps/is_first": [
+      110
+    ],
+    "steps/action": [
+      770
+    ],
+    "steps/discount": [
+      110
+    ],
+    "steps/is_last": [
+      110
+    ],
+    "steps/language_instruction": 110,
+    "steps/observation/wrist_image": 110,
+    "steps/reward": [
+      110
+    ],
+    "steps/is_terminal": [
+      110
+    ],
+    "steps/observation/state": [
+      880
+    ],
+    "steps/observation/joint_state": [
+      770
+    ],
+    "steps/observation/image": 110,
+    "episode_metadata/file_path": 1
+  }
+}

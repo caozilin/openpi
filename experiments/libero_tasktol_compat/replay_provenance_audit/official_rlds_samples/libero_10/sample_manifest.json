@@ -1,0 +1,40 @@
+{
+  "suite": "libero_10",
+  "revision": "6ce6aaaaabdbe590b1eef5cd29c0d33f14a08551",
+  "source_url": "https://huggingface.co/datasets/openvla/modified_libero_rlds/resolve/6ce6aaaaabdbe590b1eef5cd29c0d33f14a08551/libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00000-of-00032",
+  "partial_shard": true,
+  "complete_records": 4,
+  "record_crc32c_verified": true,
+  "bytes": 37786607,
+  "saved_prefix_sha256": "bf79caf2852164c20ef120a6153360f019c175e30aefafc973c4edc24d3bf299",
+  "feature_layout": {
+    "steps/is_first": [
+      214
+    ],
+    "steps/action": [
+      1498
+    ],
+    "steps/discount": [
+      214
+    ],
+    "steps/is_last": [
+      214
+    ],
+    "steps/language_instruction": 214,
+    "steps/observation/wrist_image": 214,
+    "steps/reward": [
+      214
+    ],
+    "steps/is_terminal": [
+      214
+    ],
+    "steps/observation/state": [
+      1712
+    ],
+    "steps/observation/joint_state": [
+      1498
+    ],
+    "steps/observation/image": 214,
+    "episode_metadata/file_path": 1
+  }
+}

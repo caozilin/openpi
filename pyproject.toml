@@ -30,7 +30,8 @@ dependencies = [
     "tqdm-loggable>=0.2",
     "typing-extensions>=4.12.2",
     "tyro>=0.9.5",
-    "wandb>=0.22.3",
+    # Keep the validated SwanLab 0.7 SDK and log format alongside the optional TensorFlow RLDS stack.
+    "swanlab>=0.7.12,<0.8",
     "filelock>=3.16.1",
     "beartype==0.19.0",
     "treescope>=0.1.7",
@@ -56,12 +57,14 @@ dev = [
 ]
 rlds = [
     "dlimp",
-    "tensorflow-cpu==2.15.0",
+    # 2.17 supports the wrapt>=1.17 required by SwanLab and the pinned ml-dtypes.
+    "tensorflow-cpu==2.17.1",
     "tensorflow-datasets==4.9.9",
 ]
 
 [tool.uv]
-override-dependencies = ["ml-dtypes==0.4.1", "tensorstore==0.1.74"]
+# dlimp pins TensorFlow 2.15; use 2.17 for compatibility with SwanLab's wrapt dependency.
+override-dependencies = ["ml-dtypes==0.4.1", "tensorstore==0.1.74", "tensorflow==2.17.1"]
 
 [tool.uv.sources]
 openpi-client = { workspace = true }
@@ -127,7 +130,7 @@ unfixable = [
 force-single-line = true
 force-sort-within-sections = true
 single-line-exclusions = ["collections.abc", "typing", "typing_extensions"]
-known-third-party = ["wandb"]
+known-third-party = ["swanlab"]
 
 [build-system]
 requires = ["hatchling"]

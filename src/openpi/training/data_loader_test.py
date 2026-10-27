@@ -78,6 +78,24 @@ def test_torch_data_loader_infinite():
         _ = next(data_iter)
 
 
+def test_torch_data_loader_finite_validation_batches():
+    config = pi0_config.Pi0Config(action_dim=24, action_horizon=50, max_token_len=48)
+    dataset = _data_loader.FakeDataset(config, 10)
+    loader = _data_loader.TorchDataLoader(
+        dataset,
+        local_batch_size=4,
+        num_batches=16,
+        repeat=False,
+        framework="pytorch",
+    )
+
+    first_pass = list(loader)
+    second_pass = list(loader)
+    assert len(first_pass) == len(second_pass) == 2
+    for first, second in zip(first_pass, second_pass, strict=True):
+        assert (first["actions"] == second["actions"]).all()
+
+
 def test_torch_data_loader_parallel():
     config = pi0_config.Pi0Config(action_dim=24, action_horizon=50, max_token_len=48)
     dataset = _data_loader.FakeDataset(config, 10)
@@ -207,3 +225,34 @@ def test_with_real_dataset():
 
     for _, actions in batches:
         assert actions.shape == (config.batch_size, config.model.action_horizon, config.model.action_dim)
+
+
+@pytest.mark.parametrize("joint", [False, True])
+def test_franka_dataset_schema_and_label_mode_are_checked_before_reading(monkeypatch, tmp_path, joint):
+    from openpi.shared import franka_mujoco_dataset as dataset_format
+
+    info = dataset_format.export_metadata(joint_task_tolerance=False)
+
+    class Metadata:
+        fps = 10
+
+        def __init__(self, *_args, **_kwargs):
+            self.info = info
+
+    monkeypatch.setattr(_data_loader.lerobot_dataset, "LeRobotDatasetMetadata", Metadata)
+    monkeypatch.setattr(_data_loader.lerobot_dataset, "LeRobotDataset", lambda *_args, **_kwargs: object())
+    cfg = _config.DataConfig(
+        repo_id="owner/franka",
+        lerobot_dataset_root=str(tmp_path),
+        source_schema=dataset_format.SOURCE_SCHEMA,
+        action_sequence_keys=("actions", "rotation_tolerance") if joint else ("actions",),
+    )
+    model = pi0_config.Pi0Config(action_dim=13 if joint else 7)
+    if joint:
+        with pytest.raises(ValueError, match="labeled"):
+            _data_loader.create_torch_dataset(cfg, 3, model)
+    else:
+        assert _data_loader.create_torch_dataset(cfg, 3, model) is not None
+    info.clear()
+    with pytest.raises(ValueError, match="source schema"):
+        _data_loader.create_torch_dataset(cfg, 3, model)

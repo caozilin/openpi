@@ -1,0 +1,351 @@
+{
+  "official_revision": "6ce6aaaaabdbe590b1eef5cd29c0d33f14a08551",
+  "official_dataset": "https://huggingface.co/datasets/openvla/modified_libero_rlds",
+  "totals": [
+    {
+      "suite": "libero_spatial",
+      "official_saved": 432,
+      "local_saved": 436
+    },
+    {
+      "suite": "libero_object",
+      "official_saved": 454,
+      "local_saved": 452
+    },
+    {
+      "suite": "libero_goal",
+      "official_saved": 428,
+      "local_saved": 427
+    },
+    {
+      "suite": "libero_10",
+      "official_saved": 379,
+      "local_saved": 384
+    }
+  ],
+  "matching": "Exact float32 action sequence hash; same retained action index for both pre-action observation streams.",
+  "scope": "First records of first shard per suite, not a random or exhaustive sample.",
+  "episodes": [
+    {
+      "suite": "libero_spatial",
+      "sample_index": 0,
+      "steps": 110,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_spatial/pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate_demo.hdf5"
+      ],
+      "instruction": "pick up the black bowl next to the cookie box and place it on the plate",
+      "local_action_sequence_matches": 1,
+      "task_name": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+      "demo_id": "demo_40",
+      "eef_max_mm": 0.12334653822395429,
+      "eef_median_mm": 0.013131565323972118,
+      "joint_max_abs_rad": 0.0005020079044527614,
+      "gripper_max_abs_m": 0.0010409857367951595,
+      "official_vs_raw_eef_max_mm": 6.918408017465422,
+      "official_vs_raw_eef_median_mm": 5.435752093745358,
+      "local_vs_raw_eef_max_mm": 6.911060641745807,
+      "mainview_comparison": "libero_spatial_00_demo_40.png"
+    },
+    {
+      "suite": "libero_spatial",
+      "sample_index": 1,
+      "steps": 138,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_spatial/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate_demo.hdf5"
+      ],
+      "instruction": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+      "local_action_sequence_matches": 1,
+      "task_name": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+      "demo_id": "demo_14",
+      "eef_max_mm": 0.8993235455861222,
+      "eef_median_mm": 0.4839693023587368,
+      "joint_max_abs_rad": 0.048328057741304664,
+      "gripper_max_abs_m": 0.0006857292961139592,
+      "official_vs_raw_eef_max_mm": 11.352300318546664,
+      "official_vs_raw_eef_median_mm": 6.974657889084106,
+      "local_vs_raw_eef_max_mm": 11.92999196350532,
+      "mainview_comparison": "libero_spatial_01_demo_14.png"
+    },
+    {
+      "suite": "libero_spatial",
+      "sample_index": 2,
+      "steps": 127,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_spatial/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate_demo.hdf5"
+      ],
+      "instruction": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+      "local_action_sequence_matches": 1,
+      "task_name": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+      "demo_id": "demo_42",
+      "eef_max_mm": 0.49515535453371656,
+      "eef_median_mm": 0.003994116886159942,
+      "joint_max_abs_rad": 0.00036860707728769704,
+      "gripper_max_abs_m": 0.00020654357996846735,
+      "official_vs_raw_eef_max_mm": 5.6708821278603585,
+      "official_vs_raw_eef_median_mm": 2.166540312593538,
+      "local_vs_raw_eef_max_mm": 5.673614474492232,
+      "mainview_comparison": "libero_spatial_02_demo_42.png"
+    },
+    {
+      "suite": "libero_spatial",
+      "sample_index": 3,
+      "steps": 100,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate_demo.hdf5"
+      ],
+      "instruction": "pick up the black bowl on the ramekin and place it on the plate",
+      "local_action_sequence_matches": 1,
+      "task_name": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+      "demo_id": "demo_5",
+      "eef_max_mm": 0.0015307885316880356,
+      "eef_median_mm": 2.6110539507817272e-05,
+      "joint_max_abs_rad": 2.81037892224667e-06,
+      "gripper_max_abs_m": 1.529302427213334e-05,
+      "official_vs_raw_eef_max_mm": 18.929032235298312,
+      "official_vs_raw_eef_median_mm": 8.399811946061346,
+      "local_vs_raw_eef_max_mm": 18.930526604521994,
+      "mainview_comparison": "libero_spatial_03_demo_5.png"
+    },
+    {
+      "suite": "libero_object",
+      "sample_index": 0,
+      "steps": 143,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket_demo.hdf5"
+      ],
+      "instruction": "pick up the orange juice and place it in the basket",
+      "local_action_sequence_matches": 1,
+      "task_name": "pick_up_the_orange_juice_and_place_it_in_the_basket",
+      "demo_id": "demo_31",
+      "eef_max_mm": 0.0001261147896748759,
+      "eef_median_mm": 8.299886571664946e-05,
+      "joint_max_abs_rad": 6.29249697681189e-07,
+      "gripper_max_abs_m": 4.786620928613761e-07,
+      "official_vs_raw_eef_max_mm": 8.460529795974272,
+      "official_vs_raw_eef_median_mm": 2.573415311557235,
+      "local_vs_raw_eef_max_mm": 8.460532323004918,
+      "mainview_comparison": "libero_object_00_demo_31.png"
+    },
+    {
+      "suite": "libero_object",
+      "sample_index": 1,
+      "steps": 148,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket_demo.hdf5"
+      ],
+      "instruction": "pick up the ketchup and place it in the basket",
+      "local_action_sequence_matches": 1,
+      "task_name": "pick_up_the_ketchup_and_place_it_in_the_basket",
+      "demo_id": "demo_11",
+      "eef_max_mm": 1.663209900394378e-05,
+      "eef_median_mm": 7.019816820628498e-06,
+      "joint_max_abs_rad": 1.203601964760992e-07,
+      "gripper_max_abs_m": 1.8624352199347882e-09,
+      "official_vs_raw_eef_max_mm": 7.516441559077695,
+      "official_vs_raw_eef_median_mm": 5.943357440263798,
+      "local_vs_raw_eef_max_mm": 7.51643966662406,
+      "mainview_comparison": "libero_object_01_demo_11.png"
+    },
+    {
+      "suite": "libero_object",
+      "sample_index": 2,
+      "steps": 141,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket_demo.hdf5"
+      ],
+      "instruction": "pick up the ketchup and place it in the basket",
+      "local_action_sequence_matches": 1,
+      "task_name": "pick_up_the_ketchup_and_place_it_in_the_basket",
+      "demo_id": "demo_21",
+      "eef_max_mm": 0.0010382650530463603,
+      "eef_median_mm": 0.0002136828551559925,
+      "joint_max_abs_rad": 1.7243994032245524e-05,
+      "gripper_max_abs_m": 8.182243937643677e-05,
+      "official_vs_raw_eef_max_mm": 11.812867283985915,
+      "official_vs_raw_eef_median_mm": 7.5759102465765515,
+      "local_vs_raw_eef_max_mm": 11.812863151288346,
+      "mainview_comparison": "libero_object_02_demo_21.png"
+    },
+    {
+      "suite": "libero_object",
+      "sample_index": 3,
+      "steps": 130,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket_demo.hdf5"
+      ],
+      "instruction": "pick up the cream cheese and place it in the basket",
+      "local_action_sequence_matches": 1,
+      "task_name": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+      "demo_id": "demo_38",
+      "eef_max_mm": 0.00043414409632165033,
+      "eef_median_mm": 1.0144157260683166e-05,
+      "joint_max_abs_rad": 1.513810909292701e-06,
+      "gripper_max_abs_m": 0.00010029648157537652,
+      "official_vs_raw_eef_max_mm": 4.616216199655649,
+      "official_vs_raw_eef_median_mm": 3.8532107966985523,
+      "local_vs_raw_eef_max_mm": 4.61621514425735,
+      "mainview_comparison": "libero_object_03_demo_38.png"
+    },
+    {
+      "suite": "libero_goal",
+      "sample_index": 0,
+      "steps": 112,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_goal/put_the_bowl_on_the_plate_demo.hdf5"
+      ],
+      "instruction": "put the bowl on the plate",
+      "local_action_sequence_matches": 1,
+      "task_name": "put_the_bowl_on_the_plate",
+      "demo_id": "demo_10",
+      "eef_max_mm": 5.8869703607586204e-05,
+      "eef_median_mm": 2.1383739029244615e-05,
+      "joint_max_abs_rad": 1.1719317916103478e-07,
+      "gripper_max_abs_m": 1.8391679984519627e-09,
+      "official_vs_raw_eef_max_mm": 5.07001949305139,
+      "official_vs_raw_eef_median_mm": 4.209571561985348,
+      "local_vs_raw_eef_max_mm": 5.070024679258393,
+      "mainview_comparison": "libero_goal_00_demo_10.png"
+    },
+    {
+      "suite": "libero_goal",
+      "sample_index": 1,
+      "steps": 155,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_goal/put_the_wine_bottle_on_the_rack_demo.hdf5"
+      ],
+      "instruction": "put the wine bottle on the rack",
+      "local_action_sequence_matches": 1,
+      "task_name": "put_the_wine_bottle_on_the_rack",
+      "demo_id": "demo_13",
+      "eef_max_mm": 5.9935078434018376e-05,
+      "eef_median_mm": 2.802430227843779e-05,
+      "joint_max_abs_rad": 1.2170523655541388e-07,
+      "gripper_max_abs_m": 1.8423202824413565e-09,
+      "official_vs_raw_eef_max_mm": 10.788675714422203,
+      "official_vs_raw_eef_median_mm": 3.709767036572518,
+      "local_vs_raw_eef_max_mm": 10.788652863093937,
+      "mainview_comparison": "libero_goal_01_demo_13.png"
+    },
+    {
+      "suite": "libero_goal",
+      "sample_index": 2,
+      "steps": 150,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_goal/put_the_wine_bottle_on_the_rack_demo.hdf5"
+      ],
+      "instruction": "put the wine bottle on the rack",
+      "local_action_sequence_matches": 1,
+      "task_name": "put_the_wine_bottle_on_the_rack",
+      "demo_id": "demo_6",
+      "eef_max_mm": 5.9645461289161676e-05,
+      "eef_median_mm": 2.4268444120051098e-05,
+      "joint_max_abs_rad": 1.2513733826935436e-07,
+      "gripper_max_abs_m": 2.4577986625085035e-09,
+      "official_vs_raw_eef_max_mm": 7.162101743607843,
+      "official_vs_raw_eef_median_mm": 3.1042640186070583,
+      "local_vs_raw_eef_max_mm": 7.162100607749675,
+      "mainview_comparison": "libero_goal_02_demo_6.png"
+    },
+    {
+      "suite": "libero_goal",
+      "sample_index": 3,
+      "steps": 177,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_goal/open_the_top_drawer_and_put_the_bowl_inside_demo.hdf5"
+      ],
+      "instruction": "open the top drawer and put the bowl inside",
+      "local_action_sequence_matches": 1,
+      "task_name": "open_the_top_drawer_and_put_the_bowl_inside",
+      "demo_id": "demo_17",
+      "eef_max_mm": 5.917243018513324e-05,
+      "eef_median_mm": 2.5339956259054464e-05,
+      "joint_max_abs_rad": 1.2260678339259812e-07,
+      "gripper_max_abs_m": 1.8398287407461744e-09,
+      "official_vs_raw_eef_max_mm": 17.166160708718404,
+      "official_vs_raw_eef_median_mm": 7.365822034685468,
+      "local_vs_raw_eef_max_mm": 17.16617373050413,
+      "mainview_comparison": "libero_goal_03_demo_17.png"
+    },
+    {
+      "suite": "libero_10",
+      "sample_index": 0,
+      "steps": 214,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate_demo.hdf5"
+      ],
+      "instruction": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+      "local_action_sequence_matches": 1,
+      "task_name": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+      "demo_id": "demo_19",
+      "eef_max_mm": 3.0438391534328555e-05,
+      "eef_median_mm": 1.5975605134479657e-05,
+      "joint_max_abs_rad": 1.1960317092274408e-07,
+      "gripper_max_abs_m": 1.8619521896523494e-09,
+      "official_vs_raw_eef_max_mm": 6.804866128573493,
+      "official_vs_raw_eef_median_mm": 3.9531741279287806,
+      "local_vs_raw_eef_max_mm": 6.804871592303528,
+      "mainview_comparison": "libero_10_00_demo_19.png"
+    },
+    {
+      "suite": "libero_10",
+      "sample_index": 1,
+      "steps": 284,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_demo.hdf5"
+      ],
+      "instruction": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+      "local_action_sequence_matches": 1,
+      "task_name": "LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate",
+      "demo_id": "demo_16",
+      "eef_max_mm": 0.9552787310006755,
+      "eef_median_mm": 2.045272106825153e-05,
+      "joint_max_abs_rad": 0.0035444116260052727,
+      "gripper_max_abs_m": 0.0003984628935360182,
+      "official_vs_raw_eef_max_mm": 11.511036976523904,
+      "official_vs_raw_eef_median_mm": 2.30713006556949,
+      "local_vs_raw_eef_max_mm": 11.543350272596019,
+      "mainview_comparison": "libero_10_01_demo_16.png"
+    },
+    {
+      "suite": "libero_10",
+      "sample_index": 2,
+      "steps": 345,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it_demo.hdf5"
+      ],
+      "instruction": "put the yellow and white mug in the microwave and close it",
+      "local_action_sequence_matches": 1,
+      "task_name": "KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it",
+      "demo_id": "demo_39",
+      "eef_max_mm": 1.2779363711049168,
+      "eef_median_mm": 5.039806512638989e-05,
+      "joint_max_abs_rad": 0.009646661623579744,
+      "gripper_max_abs_m": 0.001584557181977352,
+      "official_vs_raw_eef_max_mm": 83.95896627011619,
+      "official_vs_raw_eef_median_mm": 25.962621965504358,
+      "local_vs_raw_eef_max_mm": 84.62259204083477,
+      "mainview_comparison": "libero_10_02_demo_39.png"
+    },
+    {
+      "suite": "libero_10",
+      "sample_index": 3,
+      "steps": 285,
+      "official_file_path": [
+        "/iris/u/moojink/prismatic-dev/LIBERO/libero/datasets/regenerated--no_noops/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it_demo.hdf5"
+      ],
+      "instruction": "put the yellow and white mug in the microwave and close it",
+      "local_action_sequence_matches": 1,
+      "task_name": "KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it",
+      "demo_id": "demo_10",
+      "eef_max_mm": 6.069554457031427e-05,
+      "eef_median_mm": 2.6748088558052823e-05,
+      "joint_max_abs_rad": 1.3313320046393073e-07,
+      "gripper_max_abs_m": 6.142077731835505e-09,
+      "official_vs_raw_eef_max_mm": 22.030724309650438,
+      "official_vs_raw_eef_median_mm": 3.512684754793976,
+      "local_vs_raw_eef_max_mm": 22.03070391522518,
+      "mainview_comparison": "libero_10_03_demo_10.png"
+    }
+  ],
+  "source_sha256": "9d5e295269dc0f1194c090de2c7874babf23e728609f37120558d970f1594396"
+}

@@ -1,0 +1,52 @@
+{
+  "plan": [
+    {
+      "case": 20,
+      "demo": "demo_0",
+      "suite": "libero_goal",
+      "task_id": 0
+    },
+    {
+      "case": 20,
+      "demo": "demo_1",
+      "suite": "libero_goal",
+      "task_id": 0
+    },
+    {
+      "case": 23,
+      "demo": "demo_0",
+      "suite": "libero_goal",
+      "task_id": 3
+    },
+    {
+      "case": 23,
+      "demo": "demo_1",
+      "suite": "libero_goal",
+      "task_id": 3
+    },
+    {
+      "case": 25,
+      "demo": "demo_0",
+      "suite": "libero_goal",
+      "task_id": 5
+    },
+    {
+      "case": 25,
+      "demo": "demo_1",
+      "suite": "libero_goal",
+      "task_id": 5
+    },
+    {
+      "case": 36,
+      "demo": "demo_0",
+      "suite": "libero_10",
+      "task_id": 6
+    },
+    {
+      "case": 36,
+      "demo": "demo_1",
+      "suite": "libero_10",
+      "task_id": 6
+    }
+  ]
+}

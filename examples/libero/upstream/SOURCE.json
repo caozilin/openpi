@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/openvla/openvla",
+  "commit": "0ebc5e333ee7a916813bf50db240f1af7ba1d295",
+  "path": "experiments/robot/libero/regenerate_libero_dataset.py",
+  "sha256": "f17dd49e61659b515ccd691c0ee57d20fb57909af3b8b53ef7e7e6bee55ceb49",
+  "license": "MIT",
+  "purpose": "Unmodified, inert reference used by replay-equivalence tests."
+}

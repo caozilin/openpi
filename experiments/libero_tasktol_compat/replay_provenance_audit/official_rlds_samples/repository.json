@@ -1,0 +1,343 @@
+{
+  "_id": "66d9ea24776a130de7a3a91e",
+  "id": "openvla/modified_libero_rlds",
+  "author": "openvla",
+  "sha": "6ce6aaaaabdbe590b1eef5cd29c0d33f14a08551",
+  "lastModified": "2024-09-05T19:18:36.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "license:mit",
+    "arxiv:2406.09246",
+    "region:us"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tModified LIBERO RLDS Datasets\n\t\n\nThis repository contains the four modified LIBERO datasets\nused in the OpenVLA fine-tuning experiments, stored in RLDS data format. See Appendix E in the\nOpenVLA paper for details about the fine-tuning experiments and\nspecific dataset modifications, and see the OpenVLA GitHub README\nfor instructions on how to run OpenVLA in LIBERO environments.\n\n\t\n\t\t\n\t\n\t\n\t\tCitation\n\t\n\nBibTeX:\n@article{kim24openvla,\n    title={OpenVLA: An Open-Source\u2026 See the full description on the dataset page: https://huggingface.co/datasets/openvla/modified_libero_rlds.",
+  "downloads": 16425,
+  "likes": 78,
+  "cardData": {
+    "license": "mit"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/dataset_info.json"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/features.json"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00000-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00001-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00002-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00003-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00004-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00005-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00006-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00007-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00008-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00009-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00010-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00011-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00012-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00013-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00014-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00015-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00016-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00017-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00018-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00019-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00020-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00021-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00022-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00023-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00024-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00025-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00026-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00027-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00028-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00029-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00030-of-00032"
+    },
+    {
+      "rfilename": "libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00031-of-00032"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/dataset_info.json"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/features.json"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00000-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00001-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00002-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00003-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00004-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00005-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00006-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00007-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00008-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00009-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00010-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00011-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00012-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00013-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00014-of-00016"
+    },
+    {
+      "rfilename": "libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00015-of-00016"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/dataset_info.json"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/features.json"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00000-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00001-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00002-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00003-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00004-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00005-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00006-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00007-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00008-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00009-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00010-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00011-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00012-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00013-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00014-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00015-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00016-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00017-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00018-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00019-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00020-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00021-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00022-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00023-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00024-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00025-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00026-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00027-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00028-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00029-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00030-of-00032"
+    },
+    {
+      "rfilename": "libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00031-of-00032"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/dataset_info.json"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/features.json"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00000-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00001-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00002-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00003-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00004-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00005-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00006-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00007-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00008-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00009-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00010-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00011-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00012-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00013-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00014-of-00016"
+    },
+    {
+      "rfilename": "libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00015-of-00016"
+    }
+  ],
+  "createdAt": "2024-09-05T17:28:04.000Z",
+  "usedStorage": 10230648737
+}

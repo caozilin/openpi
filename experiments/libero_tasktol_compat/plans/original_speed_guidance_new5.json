@@ -1,0 +1,34 @@
+{
+  "plan": [
+    {
+      "case": 4,
+      "demo": "demo_2",
+      "suite": "libero_spatial",
+      "task_id": 4
+    },
+    {
+      "case": 22,
+      "demo": "demo_1",
+      "suite": "libero_goal",
+      "task_id": 2
+    },
+    {
+      "case": 30,
+      "demo": "demo_10",
+      "suite": "libero_10",
+      "task_id": 0
+    },
+    {
+      "case": 7,
+      "demo": "demo_6",
+      "suite": "libero_spatial",
+      "task_id": 7
+    },
+    {
+      "case": 36,
+      "demo": "demo_45",
+      "suite": "libero_10",
+      "task_id": 6
+    }
+  ]
+}
