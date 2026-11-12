@@ -1,0 +1,12 @@
+{
+  "run": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1",
+  "plan": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/plan.json",
+  "summary": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/summary.json",
+  "success_sources": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/successful_sources.json",
+  "audit": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/independent_final_audit.json",
+  "completion": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/task_completion.json",
+  "deletion": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-07_libero_annotated_tolerance_dataset/legacy_deletion_verification.json",
+  "postpublication_verification": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-07_libero_annotated_tolerance_dataset/final_delivery_verification.json",
+  "per_task": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-07_libero_annotated_tolerance_dataset/per_task_summary.json",
+  "delivery_completion": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-07_libero_annotated_tolerance_dataset/delivery_completion.json"
+}

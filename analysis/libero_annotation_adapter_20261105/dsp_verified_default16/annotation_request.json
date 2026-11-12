@@ -1,0 +1,16 @@
+{
+  "scope": "pure offline kinematics; self and table geometry; no physics or policy inference",
+  "planned_episodes": 1,
+  "control_hz": 20,
+  "workers": 1,
+  "sources": [
+    {
+      "episode_index": 0,
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "demo": "demo_0",
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0",
+      "frames": 97
+    }
+  ]
+}

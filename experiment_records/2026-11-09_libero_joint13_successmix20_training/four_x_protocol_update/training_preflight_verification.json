@@ -1,0 +1,51 @@
+{
+  "complete": true,
+  "scope": "CPU actual LeRobot horizon10/repack/state8/target13/normalize/pad32/Observation/JIT loss; no optimizer step",
+  "checks": [
+    {
+      "episode": 0,
+      "frame": 0,
+      "flag": 0,
+      "weight": 1.0,
+      "normalized_action_sha256": "be401ef786569e058794a91d7139a0a60da883293c77e3e9bd603de95ed49730"
+    },
+    {
+      "episode": 0,
+      "frame": 5,
+      "flag": 0,
+      "weight": 1.0,
+      "normalized_action_sha256": "68ff20e83f4b5794a1d094aa0ea773ba286b5be3d48836eb55e4dd1797f5bdf2"
+    },
+    {
+      "episode": 2,
+      "frame": 0,
+      "flag": 1,
+      "weight": 4.0,
+      "normalized_action_sha256": "fcc356910fda313d5eb9bc82a24b922820adff7a669c48edba36e3ceca5aa264"
+    },
+    {
+      "episode": 2,
+      "frame": 5,
+      "flag": 1,
+      "weight": 4.0,
+      "normalized_action_sha256": "c98cf0853fa9775b1c0762936c0c2314e42c48f1cf2ce223c49c1fa9381d2e98"
+    }
+  ],
+  "nominal_actions_and_labels_unchanged": true,
+  "normalization_targets_equal_before_after": true,
+  "swanlab_enabled": true,
+  "swanlab_mode": "online",
+  "config_weight": 4.0,
+  "metrics": {
+    "batch/action_loss_weight_mean": 2.5,
+    "batch/reweighted_action_fraction": 0.5,
+    "loss/action": 1.0,
+    "loss/action_nominal_contribution": 0.5,
+    "loss/action_reweighted_contribution": 0.5,
+    "loss/rotation_tolerance": 1.0,
+    "loss/total": 3.0,
+    "loss_weighted/action": 2.5,
+    "loss_weighted/rotation_tolerance": 0.5
+  },
+  "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0"
+}

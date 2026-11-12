@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "case": "libero_spatial/task_04/demo_1",
+  "frames": 141,
+  "protocol": "same shared run_counterfactual_trial; process-local hooks; no physics or changes to frozen batch",
+  "controls": [
+    "unmodified offline",
+    "absolute rotation constraints only",
+    "source command history only",
+    "absolute + source history",
+    "absolute + source history + saved targets"
+  ],
+  "script": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/diagnose_zero_replay.py",
+  "script_sha256": "7ca7f46e85672054cc5b3c2bad39fe270b4156d7ac610e9a09d83b7dfdac1345",
+  "all_modes": [
+    "absolute",
+    "absolute_source_history",
+    "absolute_source_history_source_target",
+    "offline",
+    "offline_align_handoff",
+    "offline_derivatives",
+    "offline_iter100",
+    "offline_iter21",
+    "offline_repeat",
+    "offline_so3_chart",
+    "offline_so3_chart_align_handoff",
+    "offline_so3_chart_at135",
+    "offline_so3_chart_at135_derivatives",
+    "offline_source_history",
+    "offline_source_state"
+  ],
+  "summary": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/summary.json"
+}

@@ -1,0 +1,485 @@
+{
+  "passed": true,
+  "groups": {
+    "nominal": {
+      "config": "pi05_franka_nominal100_action7_nostate_3gpu_bs36_40k",
+      "frames": 421102,
+      "repo": "caozilin/franka_100_nominal",
+      "norm_sha256": "e1e3c4e7630f6ee524d99ae99cb0dfe8f61306d83c3feebbfa564edc0c5b7a07",
+      "max_prompt_tokens": 32,
+      "prompt_count": 75,
+      "observed_action_loss_weights": [
+        1.0
+      ],
+      "sample_checks": [
+        {
+          "index": 0,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 105275,
+          "tokens": 8,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 210551,
+          "tokens": 9,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 421101,
+          "tokens": 5,
+          "action_loss_weight": 1.0
+        }
+      ],
+      "resolved_config": {
+        "name": "pi05_franka_nominal100_action7_nostate_3gpu_bs36_40k",
+        "project_name": "openpi-tasktol",
+        "exp_name": "<PropagatingMissingType id='140077560059664'>",
+        "model": {
+          "action_dim": 32,
+          "action_horizon": 16,
+          "max_token_len": 48,
+          "dtype": "bfloat16",
+          "paligemma_variant": "gemma_2b_lora",
+          "action_expert_variant": "gemma_300m_lora",
+          "pi05": true,
+          "discrete_state_input": false,
+          "action_loss_groups": [
+            [
+              "action",
+              0,
+              7,
+              1.0
+            ]
+          ]
+        },
+        "weight_loader": {
+          "params_path": "gs://openpi-assets/checkpoints/pi05_base/params"
+        },
+        "pytorch_weight_path": null,
+        "pytorch_training_precision": "bfloat16",
+        "lr_schedule": {
+          "warmup_steps": 1000,
+          "peak_lr": 5e-05,
+          "decay_steps": 40000,
+          "decay_lr": 5e-06
+        },
+        "optimizer": {
+          "b1": 0.9,
+          "b2": 0.95,
+          "eps": 1e-08,
+          "weight_decay": 1e-10,
+          "clip_gradient_norm": 1.0
+        },
+        "ema_decay": null,
+        "freeze_filter": "All(PathRegex(pattern=re.compile('.*llm.*'), sep='/'), Not(PathRegex(pattern=re.compile('.*lora.*'), sep='/')))",
+        "data": {
+          "repo_id": "caozilin/franka_100_nominal",
+          "lerobot_dataset_root": "/mnt/SharedData/czl/lerobot/caozilin/franka_100_nominal",
+          "hf_datasets_cache_dir": "/mnt/SharedData/czl/hf_datasets/caozilin/franka_100_nominal",
+          "lerobot_arrow_cache_dir": null,
+          "assets": {
+            "assets_dir": "/mnt/SharedData/czl/assets/pi05_franka_mujoco_state_action7",
+            "asset_id": null
+          },
+          "base_config": {
+            "repo_id": null,
+            "lerobot_dataset_root": null,
+            "hf_datasets_cache_dir": null,
+            "lerobot_arrow_cache_dir": null,
+            "source_schema": null,
+            "asset_id": null,
+            "norm_stats": null,
+            "repack_transforms": {
+              "inputs": [],
+              "outputs": []
+            },
+            "data_transforms": {
+              "inputs": [],
+              "outputs": []
+            },
+            "model_transforms": {
+              "inputs": [],
+              "outputs": []
+            },
+            "use_quantile_norm": false,
+            "action_sequence_keys": [
+              "actions"
+            ],
+            "prompt_from_task": true,
+            "rlds_data_dir": null,
+            "action_space": null,
+            "datasets": []
+          },
+          "joint_task_tolerance": false,
+          "tolerance_trajectory_action_loss_weight": 1.0
+        },
+        "validation_name": "val1",
+        "validation_repo_id": null,
+        "validation_lerobot_dataset_root": null,
+        "validation_hf_datasets_cache_dir": null,
+        "validation_lerobot_arrow_cache_dir": null,
+        "validation2_name": "val2",
+        "validation2_repo_id": null,
+        "validation2_lerobot_dataset_root": null,
+        "validation2_hf_datasets_cache_dir": null,
+        "validation2_lerobot_arrow_cache_dir": null,
+        "validation_num_batches": 16,
+        "validation_batch_size_factor": 2.5,
+        "assets_base_dir": "./assets",
+        "checkpoint_base_dir": "./checkpoints",
+        "seed": 42,
+        "batch_size": 36,
+        "num_workers": 8,
+        "num_train_steps": 40000,
+        "log_interval": 10,
+        "save_interval": 5000,
+        "keep_period": 5000,
+        "overwrite": false,
+        "resume": false,
+        "swanlab_enabled": true,
+        "swanlab_mode": "online",
+        "swanlab_workspace": null,
+        "swanlab_log_dir": null,
+        "policy_metadata": null,
+        "fsdp_devices": 1
+      }
+    },
+    "joint": {
+      "config": "pi05_tasktol_mix20_joint32_nostate_4xloss_3gpu_bs36_40k",
+      "frames": 421029,
+      "repo": "caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+      "norm_sha256": "ceefe7d23f307025d6ab06711faeecb6c2a815029f91c814ad0ad5e06c8dc21b",
+      "max_prompt_tokens": 32,
+      "prompt_count": 75,
+      "observed_action_loss_weights": [
+        1.0,
+        4.0
+      ],
+      "sample_checks": [
+        {
+          "index": 0,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 174,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 345,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 515,
+          "tokens": 6,
+          "action_loss_weight": 4.0
+        },
+        {
+          "index": 670,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 816,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 978,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 1123,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 1265,
+          "tokens": 6,
+          "action_loss_weight": 4.0
+        },
+        {
+          "index": 1395,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 1552,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 1730,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 1871,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 2029,
+          "tokens": 6,
+          "action_loss_weight": 4.0
+        },
+        {
+          "index": 2150,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 2312,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 2483,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 2641,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 2784,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 2927,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 3060,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 3211,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 3388,
+          "tokens": 6,
+          "action_loss_weight": 4.0
+        },
+        {
+          "index": 3529,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 3696,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 3847,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 4014,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 4182,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 4328,
+          "tokens": 6,
+          "action_loss_weight": 4.0
+        },
+        {
+          "index": 4459,
+          "tokens": 6,
+          "action_loss_weight": 4.0
+        },
+        {
+          "index": 4588,
+          "tokens": 6,
+          "action_loss_weight": 4.0
+        },
+        {
+          "index": 4759,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 4942,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 5107,
+          "tokens": 6,
+          "action_loss_weight": 4.0
+        },
+        {
+          "index": 5235,
+          "tokens": 6,
+          "action_loss_weight": 4.0
+        },
+        {
+          "index": 5371,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 5522,
+          "tokens": 6,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 105257,
+          "tokens": 8,
+          "action_loss_weight": 4.0
+        },
+        {
+          "index": 210514,
+          "tokens": 10,
+          "action_loss_weight": 1.0
+        },
+        {
+          "index": 421028,
+          "tokens": 5,
+          "action_loss_weight": 1.0
+        }
+      ],
+      "resolved_config": {
+        "name": "pi05_tasktol_mix20_joint32_nostate_4xloss_3gpu_bs36_40k",
+        "project_name": "openpi-tasktol",
+        "exp_name": "<PropagatingMissingType id='140077560059664'>",
+        "model": {
+          "action_dim": 32,
+          "action_horizon": 16,
+          "max_token_len": 48,
+          "dtype": "bfloat16",
+          "paligemma_variant": "gemma_2b_lora",
+          "action_expert_variant": "gemma_300m_lora",
+          "pi05": true,
+          "discrete_state_input": false,
+          "action_loss_groups": [
+            [
+              "action",
+              0,
+              7,
+              1.0
+            ],
+            [
+              "rotation_tolerance",
+              7,
+              13,
+              0.5
+            ]
+          ]
+        },
+        "weight_loader": {
+          "params_path": "gs://openpi-assets/checkpoints/pi05_base/params"
+        },
+        "pytorch_weight_path": null,
+        "pytorch_training_precision": "bfloat16",
+        "lr_schedule": {
+          "warmup_steps": 1000,
+          "peak_lr": 5e-05,
+          "decay_steps": 40000,
+          "decay_lr": 5e-06
+        },
+        "optimizer": {
+          "b1": 0.9,
+          "b2": 0.95,
+          "eps": 1e-08,
+          "weight_decay": 1e-10,
+          "clip_gradient_norm": 1.0
+        },
+        "ema_decay": null,
+        "freeze_filter": "All(PathRegex(pattern=re.compile('.*llm.*'), sep='/'), Not(PathRegex(pattern=re.compile('.*lora.*'), sep='/')))",
+        "data": {
+          "repo_id": "caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+          "lerobot_dataset_root": "/mnt/SharedData/czl/lerobot/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+          "hf_datasets_cache_dir": "/mnt/SharedData/czl/hf_datasets/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+          "lerobot_arrow_cache_dir": null,
+          "assets": {
+            "assets_dir": "/mnt/SharedData/czl/assets/pi05_franka_mujoco_joint13",
+            "asset_id": null
+          },
+          "base_config": {
+            "repo_id": null,
+            "lerobot_dataset_root": null,
+            "hf_datasets_cache_dir": null,
+            "lerobot_arrow_cache_dir": null,
+            "source_schema": null,
+            "asset_id": null,
+            "norm_stats": null,
+            "repack_transforms": {
+              "inputs": [],
+              "outputs": []
+            },
+            "data_transforms": {
+              "inputs": [],
+              "outputs": []
+            },
+            "model_transforms": {
+              "inputs": [],
+              "outputs": []
+            },
+            "use_quantile_norm": false,
+            "action_sequence_keys": [
+              "actions"
+            ],
+            "prompt_from_task": true,
+            "rlds_data_dir": null,
+            "action_space": null,
+            "datasets": []
+          },
+          "joint_task_tolerance": true,
+          "tolerance_trajectory_action_loss_weight": 4.0
+        },
+        "validation_name": "val1",
+        "validation_repo_id": null,
+        "validation_lerobot_dataset_root": null,
+        "validation_hf_datasets_cache_dir": null,
+        "validation_lerobot_arrow_cache_dir": null,
+        "validation2_name": "val2",
+        "validation2_repo_id": null,
+        "validation2_lerobot_dataset_root": null,
+        "validation2_hf_datasets_cache_dir": null,
+        "validation2_lerobot_arrow_cache_dir": null,
+        "validation_num_batches": 16,
+        "validation_batch_size_factor": 2.5,
+        "assets_base_dir": "./assets",
+        "checkpoint_base_dir": "./checkpoints",
+        "seed": 42,
+        "batch_size": 36,
+        "num_workers": 8,
+        "num_train_steps": 40000,
+        "log_interval": 10,
+        "save_interval": 5000,
+        "keep_period": 5000,
+        "overwrite": false,
+        "resume": false,
+        "swanlab_enabled": true,
+        "swanlab_mode": "online",
+        "swanlab_workspace": null,
+        "swanlab_log_dir": null,
+        "policy_metadata": null,
+        "fsdp_devices": 1
+      }
+    }
+  },
+  "seconds": 27.386021212907508
+}

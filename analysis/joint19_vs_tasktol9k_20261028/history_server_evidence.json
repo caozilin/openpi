@@ -1,0 +1,108 @@
+{
+  "checked_unix": 1793189082.1957507,
+  "scope": "/mnt/SharedData/czl checkpoints, runs and swanlog; /home/czl/openpi has no checkpoint directory",
+  "checkpoints": [
+    {
+      "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/1500",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          13
+        ]
+      },
+      "train_state_present": true
+    },
+    {
+      "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/3000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          13
+        ]
+      },
+      "train_state_present": true
+    },
+    {
+      "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/4500",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          13
+        ]
+      },
+      "train_state_present": true
+    },
+    {
+      "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/6000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          13
+        ]
+      },
+      "train_state_present": true
+    },
+    {
+      "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/7500",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          13
+        ]
+      },
+      "train_state_present": true
+    },
+    {
+      "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/9000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          13
+        ]
+      },
+      "train_state_present": true
+    }
+  ],
+  "training_sessions": [
+    {
+      "path": "/mnt/SharedData/czl/runs/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/train.log",
+      "first_logged_step": 10,
+      "last_logged_step": 9000,
+      "initialization_messages": [
+        "00:19:17.969 [I] Initializing action_in_proj/kernel instead of loading checkpoint shape (32, 1024) into (13, 1024) (1509284:weight_loaders.py:107)",
+        "00:19:17.969 [I] Initializing action_out_proj/bias instead of loading checkpoint shape (32,) into (13,) (1509284:weight_loaders.py:107)",
+        "00:19:17.969 [I] Initializing action_out_proj/kernel instead of loading checkpoint shape (1024, 32) into (1024, 13) (1509284:weight_loaders.py:107)"
+      ],
+      "exit_status": null
+    },
+    {
+      "path": "/mnt/SharedData/czl/runs/TaskTol_mix20_4xloss_7gpu_bs84_resume15k_20261028/train.log",
+      "first_logged_step": 9010,
+      "last_logged_step": 10490,
+      "initialization_messages": [],
+      "exit_status": {
+        "exit_code": 130,
+        "finished_unix": 1793178669.5984683
+      }
+    }
+  ],
+  "swanlab_sessions": [
+    {
+      "source": "/mnt/SharedData/czl/swanlog/run-20261028_001729-iiaue9yel2f2z00b5nozc/files/config.yaml",
+      "name": "pi05_tasktol_mix20_4xloss_7gpu_9k",
+      "exp_name": "TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027",
+      "action_dim": 13,
+      "resume": false,
+      "configured_steps": 9000
+    },
+    {
+      "source": "/mnt/SharedData/czl/swanlog/run-20261028_152630-iiaue9yel2f2z00b5nozc/files/config.yaml",
+      "name": "pi05_tasktol_mix20_4xloss_7gpu_9k",
+      "exp_name": "TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027",
+      "action_dim": 13,
+      "resume": true,
+      "configured_steps": 15000
+    }
+  ],
+  "non_training_run_directory": "franka_100_nominal_20261028 contains conversion and audit files only"
+}

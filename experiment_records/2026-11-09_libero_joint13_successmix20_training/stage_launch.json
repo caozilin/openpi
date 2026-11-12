@@ -1,0 +1,14 @@
+{
+  "pid": 47516,
+  "command": [
+    "/media/czl/sata/franka_my_code/openpi/.venv/bin/python",
+    "-u",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/build_successmix20_joint13.py",
+    "--output",
+    "/tmp/libero_joint13_successmix20_replacement_stage_20261109",
+    "--workers",
+    "6",
+    "--replacements-only"
+  ],
+  "script_sha256": "799e5591fc481cb30d330d9205c9225bd540277164f7335f95e93a36035237c0"
+}

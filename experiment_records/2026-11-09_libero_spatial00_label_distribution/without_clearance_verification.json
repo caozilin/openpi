@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "n": 47,
+  "candidates_checked": 1316,
+  "retained_candidates": 1314,
+  "verified": [
+    "unfiltered-candidate minimum for all 47 demos",
+    "CSV/JSON matching",
+    "all 5-degree counts",
+    "all changed candidates originally clearance-only failures",
+    "aggregate and per-demo reduction"
+  ],
+  "selected_metric_and_trial_sha_check": "141 old/new/zero reads in generating script, original audit-bound candidate SHA",
+  "new_search_or_rollout": false,
+  "original_labels_modified": false
+}

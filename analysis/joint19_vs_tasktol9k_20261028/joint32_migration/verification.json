@@ -1,0 +1,9 @@
+{
+  "local_regressions_passed": 87,
+  "local_train_configuration_tests_passed": 23,
+  "server_train_checkpoint_tests_passed": 3,
+  "external_real_dataset_test_not_run": true,
+  "production_training_started": false,
+  "all_deployed_file_hashes_match_local": true,
+  "loss_policy": "existing grouped effective-dimension loss retained; official JAX computes mean across all32"
+}

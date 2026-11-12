@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "episodes": 199,
+  "paired_blocks": 245,
+  "block_to_episode_recomputations": 1592,
+  "aggregate_means_recomputed": true,
+  "hash_checks": "199 label files and 490 paired trial reads verified by analyze.py",
+  "no_raw_data_modified": true
+}

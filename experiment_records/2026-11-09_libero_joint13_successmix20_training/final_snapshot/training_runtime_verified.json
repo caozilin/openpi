@@ -1,0 +1,74 @@
+{
+  "complete": true,
+  "at": "2026-11-10T16:10:30.894885+08:00",
+  "parent": 3339995,
+  "trainer": {
+    "pid": 3339998,
+    "ppid": 3339995,
+    "state": "S",
+    "start_ticks": 218852163,
+    "command": "/home/czl/openpi/.venv/bin/python -u /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py --run-dir /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109 --stage train "
+  },
+  "workers": [
+    {
+      "pid": 3340589,
+      "ppid": 3339998,
+      "state": "S",
+      "start_ticks": 218855558,
+      "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=168) --multiprocessing-fork "
+    },
+    {
+      "pid": 3340720,
+      "ppid": 3339998,
+      "state": "S",
+      "start_ticks": 218856787,
+      "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=172) --multiprocessing-fork "
+    },
+    {
+      "pid": 3340821,
+      "ppid": 3339998,
+      "state": "S",
+      "start_ticks": 218857998,
+      "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=176) --multiprocessing-fork "
+    },
+    {
+      "pid": 3340919,
+      "ppid": 3339998,
+      "state": "S",
+      "start_ticks": 218859220,
+      "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=180) --multiprocessing-fork "
+    },
+    {
+      "pid": 3341007,
+      "ppid": 3339998,
+      "state": "S",
+      "start_ticks": 218860447,
+      "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=184) --multiprocessing-fork "
+    },
+    {
+      "pid": 3341115,
+      "ppid": 3339998,
+      "state": "S",
+      "start_ticks": 218861666,
+      "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=188) --multiprocessing-fork "
+    },
+    {
+      "pid": 3341253,
+      "ppid": 3339998,
+      "state": "S",
+      "start_ticks": 218862958,
+      "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=192) --multiprocessing-fork "
+    },
+    {
+      "pid": 3341416,
+      "ppid": 3339998,
+      "state": "S",
+      "start_ticks": 218864214,
+      "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=196) --multiprocessing-fork "
+    }
+  ],
+  "num_workers": 8,
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "0,1,2,3,4,6"
+  }
+}

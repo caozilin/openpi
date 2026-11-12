@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-09T20:27:16.768380+08:00",
+  "parent": {
+    "pid": 3312670,
+    "state": "T",
+    "ppid": 1,
+    "start_ticks": 218533103,
+    "exit_code": 0,
+    "command": "/home/czl/openpi/.venv/bin/python -u /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py --run-dir /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109 "
+  },
+  "normalization": {
+    "pid": 3312672,
+    "state": "S",
+    "ppid": 3312670,
+    "start_ticks": 218533113,
+    "exit_code": 0,
+    "command": "/home/czl/openpi/.venv/bin/python -u /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py --run-dir /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109 --stage norm "
+  },
+  "reason": "User requested4x before any GPU training",
+  "original_request_sha256": "9077cac73ceae17e0e9226af65d5221cd1b0089b6a681ba978bee22a6bcb9917",
+  "normalization_continues": true
+}

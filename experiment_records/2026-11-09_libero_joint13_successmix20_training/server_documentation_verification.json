@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "observed_at": "2026-11-09T21:23:28.349872+08:00",
+  "agent_entry": "/media/czl/sata/franka_my_code/openpi/AGENTS.md",
+  "server_document": "/media/czl/sata/franka_my_code/openpi/docs/TRAINING_SERVER.md",
+  "private_credentials_path": "/media/czl/sata/franka_my_code/openpi/.local/server_access/training_server.json",
+  "private_file_mode": "0o600",
+  "private_directory_mode": "0o700",
+  "private_file_git_ignored": true,
+  "private_file_git_tracked": false,
+  "password_content_not_printed": true,
+  "private_key_content_not_read_or_copied": true,
+  "remote_repository_or_credentials_changed": false,
+  "ssh_key_authorization_status": "explicit existing localed25519 key rejected by remote; use existing authorized interactive password/control connection",
+  "training_unchanged": true
+}

@@ -1,0 +1,207 @@
+{
+  "complete": true,
+  "n": 47,
+  "directions": 8,
+  "verified": [
+    "median",
+    "linear quartiles",
+    "within5 count",
+    "normalized L1 score",
+    "all 47 rank order"
+  ],
+  "input": [
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_spatial00_label_distribution/details.json",
+      "sha256": "e4bd4f5a25ca1b9fdb3e0197070f3b951c63ee556fddd6bf5bd161783a06fdc2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_0/report.json",
+      "sha256": "b699ecb6bc69e65af0bf0a1f65983ac5e0ccfc2533b3f6b04971083629546ae9"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_1/report.json",
+      "sha256": "1977f0bd8612a379cd074bf79d36ae18c3271c5c77cb499227fc4dfd175efa59"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_2/report.json",
+      "sha256": "4b4f925ac44bcb3c19a15c6678476cea42b79f8563e49f948b3c7d9c03ac84de"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_3/report.json",
+      "sha256": "28505ea33705ad1b10cb459ba4c7b1d15e304dbe38fa3035daa7d1a7bea70cb1"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_4/report.json",
+      "sha256": "e3425b8c887dc78b87bc9566b35e2dfd827f5b8df71f00a3850978079a203e50"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_5/report.json",
+      "sha256": "6ab0b2c2bdeeb73555e5b0c25318e3b37458a7014a30d68d3f69fa423bff31f4"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_6/report.json",
+      "sha256": "eb84745f92048d191117d1116afd2073a2dec17ee89cfb27c79b02a4b353cef8"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_7/report.json",
+      "sha256": "65a6380739a504b173b8965ca3b808c42daf7acbbcc9add3f42b768c9b34fe63"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_8/report.json",
+      "sha256": "fbf18fc16e52ae6d4f76257d7920210008645e4f27f7fce07dd3ca86668066d6"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_9/report.json",
+      "sha256": "f1634f41a2e0fbb4cf427bc4586458e4e7941d5f3e4abf3879b93c36729fe3c7"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_10/report.json",
+      "sha256": "a9d624a5817ddf089ebdd88c303dffb614e0975e04939a6bcfdde17e707141a0"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_11/report.json",
+      "sha256": "675a7646c231a6f55d0257605e4d7151247bf82e1cafdc344b76d24b242404ea"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_12/report.json",
+      "sha256": "94ac7023aaf78fa1539dad9c867cfdd9bb56543859a64b4f8ecce76c7df814bc"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_13/report.json",
+      "sha256": "7fa06bd7eb41986237aac0a7136953de41f6e3f13fb6a81afecd48b12fa0c1c5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_14/report.json",
+      "sha256": "821965316f5e277416a7e2a1c05e215411763feee68ed6b7dd646508659af66d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_15/report.json",
+      "sha256": "e2c5ca4c604e79c4b4348556a1d20b7e85c2e393fbe333483efdeefe17b81de5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_16/report.json",
+      "sha256": "043a2d3a8c78bb5b26076d849ae3c930d014181829b5cf29f80dc54ef36b39ec"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_17/report.json",
+      "sha256": "4813bc1f12a060f13c1b6630ace5335a34bf5f0b3a2196d3232ca986dd8aef96"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_18/report.json",
+      "sha256": "640ef9c89c43b73651e3bf173474b432b5e15cb1af3c0e92899ee1f421841746"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_19/report.json",
+      "sha256": "fae07dc47238453376eaf08eae00079be9520a987e52d7ff724dec48b9cfb9ea"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_20/report.json",
+      "sha256": "9235dc2d24b661400e1f550effd27ac7904ddc9878e525acedc267216d1206b5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_21/report.json",
+      "sha256": "02785c7d9ff5fe22010eeb9abc35357b68ece92ef180659f8c2e74414208dd6a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_22/report.json",
+      "sha256": "705fa361f32c03760e700ab644ea2b142e8ceabf17ff682f8a5f28898fae1f92"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_23/report.json",
+      "sha256": "b64ba9f69e4e2a7746595a3761034bd98acbb715c7f67a808ee22eab685d7a7e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_24/report.json",
+      "sha256": "988021cece16447e987339fb5423ea3f42ddcb0b37420bd2ae39b564cec1317d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_26/report.json",
+      "sha256": "5286b0d90b7442b5813e48445d324ff4ca90af8b0d842c8847b6117f66b53ce5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_27/report.json",
+      "sha256": "ca9077c6f57a53bcde6c1280a49a8cf2a8a476954eb4cee43edb38d3ffad46f5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_28/report.json",
+      "sha256": "e4c2097757f9c3e64a040161eb5621d58e308552242859f0270720141b3cae2f"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_29/report.json",
+      "sha256": "32e776ec29f81d9c1a35cbf74d45e5cefef35a669d60f656b1ef0416ac89bb8b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_30/report.json",
+      "sha256": "3013404a6233b900356d3db61ea31925130827985d9dac0f0869416d23d6365c"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_31/report.json",
+      "sha256": "81582b0ea9eb9400e664e234f90358270323aa4c4454e8d34fd9ced7dfaaee3b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_32/report.json",
+      "sha256": "15958a459f830cfb589fb5dff8ce2b19162c0e2963645ef642d1a2f6b279e5ae"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_33/report.json",
+      "sha256": "618611a15cdd5fe3cf629b026a80fcd3864d41097043587a188473bc04469a33"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_36/report.json",
+      "sha256": "064df6d0c85441488bbc8de2aa4f7081ba41cefcb67f33c30e7e66ad7d66996e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_37/report.json",
+      "sha256": "257adca8c7fb2f8a492322bd04a30143fc1f7fec1f52e4b9a77394d2998c78f2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_38/report.json",
+      "sha256": "b8c3215be61b937d9a89393403937709d407a6b2f82c1a5b08dcb32e824558d6"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_39/report.json",
+      "sha256": "1454b3f67d1a7f67aada90d8af4c88679f4aae6894008e1be0293d53ff984633"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_40/report.json",
+      "sha256": "baf95d306923b4ca624eb7828c821c75c8742662d4a614081b039bb100cf5b92"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_41/report.json",
+      "sha256": "4c4345ec665b6d699be85eafbe0938c4ffb5600a8c75f80aea36f85709e2a53f"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_42/report.json",
+      "sha256": "9b2cd836b948047ec651621f6f612b8ecc59a6e9fd74079079d9c22d997d83ac"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_43/report.json",
+      "sha256": "a1c8048c776becf69578189b241b1e1adc55e8e42dc1a019ee9fb88c022b3968"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_44/report.json",
+      "sha256": "8af982197345f544be53aabf0880a350978ae40913ab7cee24642548a3eab9d4"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_45/report.json",
+      "sha256": "cbd4c9a5219178b7136ad624aa411f705e6a85382b7e70a70b83fbf6c0176222"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_46/report.json",
+      "sha256": "f9cdbcca3794f9ef57de1098be5bb6beb2d483239facbad0b868329754acc0b2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_47/report.json",
+      "sha256": "861f86ddfd176a2ad4242c4038e57c6bfa242e1bd931e5e5f781118e24c4762b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_48/report.json",
+      "sha256": "0e7ec1e2f87f651fdc411d3c6eff5d74a35ee479185060f6cdc84dbc27fbf126"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_49/report.json",
+      "sha256": "03e4f7d90f9a6f3a65e3f89332deb8b9814b4b30e303cb9308d26855de3e266e"
+    }
+  ],
+  "new_search_or_simulation": false
+}

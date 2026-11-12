@@ -1,0 +1,192 @@
+{
+  "updated_at": "2026-11-06T16:27:57.735658+08:00",
+  "status": "已完成并通过独立审计",
+  "local": {
+    "new_run": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105",
+      "exists": true,
+      "status": "存在"
+    },
+    "request": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/evaluation_request.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "old400_provenance": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/preserved_formal400.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "old400_manifest": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_formal_seed0to5_20261104/combined_formal_400.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "formal_seed0to5_run": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_formal_seed0to5_20261104",
+      "exists": true,
+      "status": "存在"
+    },
+    "first_pass_seed6to9_run": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_40tasks_10seeds_extension_20261104",
+      "exists": true,
+      "status": "存在"
+    },
+    "official_initial_states": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/official_initial_states.npz",
+      "exists": true,
+      "status": "存在"
+    },
+    "official_tasks": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/official_tasks.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "new_summary": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/summary.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "new_completion": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/evaluation_completion.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "final_audit": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/evaluation_independent_final_audit.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "final_audit_state": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/independent_audit_state.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "combined_json": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/combined_formal_2000.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "combined_csv": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/combined_formal_2000.csv",
+      "exists": true,
+      "status": "存在"
+    },
+    "run_report": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/NOMINAL_50SEED_REPORT.md",
+      "exists": true,
+      "status": "存在"
+    },
+    "task_completion": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/task_completion.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "audit_log": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/independent_audit.log",
+      "exists": true,
+      "status": "存在"
+    },
+    "evaluation_log": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/evaluation_pipeline.log",
+      "exists": true,
+      "status": "存在"
+    },
+    "recovery_log": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/final_audit_recovery.log",
+      "exists": true,
+      "status": "存在"
+    },
+    "resume_history": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/RESUME_HISTORY.md",
+      "exists": true,
+      "status": "存在"
+    },
+    "first_resume_receipt": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/resume_after_transport_failure.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "second_resume_receipt": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/resume_after_host_restart.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "attempts": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/attempts",
+      "exists": true,
+      "status": "存在"
+    },
+    "server_shutdown": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/inference_shutdown_verification.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "tunnel_cleanup": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105/local_cleanup_verification.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "training_audit": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/training_independent_final_audit.json",
+      "exists": true,
+      "status": "存在"
+    },
+    "dataset": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_full_20261101",
+      "exists": true,
+      "status": "存在"
+    },
+    "handoff": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/SERVER_HANDOFF.md",
+      "exists": true,
+      "status": "存在"
+    },
+    "eval_manager_source": {
+      "path": "/media/czl/sata/franka_my_code/openpi/examples/libero/eval_nominal50.py",
+      "exists": true,
+      "status": "存在"
+    },
+    "shared_eval_worker": {
+      "path": "/media/czl/sata/franka_my_code/openpi/examples/libero/eval_reconstructed_libero_local.py",
+      "exists": true,
+      "status": "存在"
+    },
+    "auditor_source": {
+      "path": "/media/czl/sata/franka_my_code/openpi/examples/libero/audit_formal_nominal.py",
+      "exists": true,
+      "status": "存在"
+    },
+    "final_audit_recovery_source": {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_nominal50_20261105/final_audit_recovery.py",
+      "exists": true,
+      "status": "存在"
+    },
+    "frozen_runtime": {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/frozen_shared_runtime",
+      "exists": true,
+      "status": "存在"
+    },
+    "final_record_verification": {
+      "path": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_nominal_50seeds/verification.json",
+      "exists": true,
+      "status": "存在"
+    }
+  },
+  "episode_artifacts": {
+    "relative_pattern": "episodes/<suite>/task_<00..09>/seed_<seed>/{result.json,trajectory.json,trajectory.npz,rollout.mp4}",
+    "roots": [
+      "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_formal_seed0to5_20261104",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_40tasks_10seeds_extension_20261104"
+    ],
+    "source_resolution": "Each row in preserved_formal400.json or combined_formal_2000.json names its source_result; do not assume all2000 episodes are in new_run."
+  },
+  "remote": {
+    "host": "czl@100.73.28.99",
+    "checkpoint": "/mnt/SharedData/czl/checkpoints/pi05_libero_reconstructed_nostate_6gpu_bs72/Pi05_libero_reconstructed_NoState_LoRA_6gpu_bs72_10k_20261101/10000",
+    "inference_run": "/mnt/SharedData/czl/runs/libero_eval_pi05_reconstructed_10000_nominal_hold20_seed10to49_20261105",
+    "training_run": "/mnt/SharedData/czl/runs/pi05_libero_reconstructed_lora_6gpu_bs72_10k_20261101"
+  },
+  "swanlab": "https://swanlab.cn/@caozilin/openpi/runs/95dgsykkqsun5pvkuts3t"
+}

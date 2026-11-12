@@ -1,0 +1,73 @@
+{
+  "complete": true,
+  "checked_at": "2026-11-07T21:13:51.611335+08:00",
+  "episodes": 1851,
+  "success": 1503,
+  "failed": 348,
+  "rejected": 7,
+  "infrastructure_errors": 0,
+  "success_percent": 81.19935170178282,
+  "excluded_unlabeled": 24,
+  "verified_artifacts": 14808,
+  "verified_raw_bytes": 3441504647,
+  "verified_videos": 3702,
+  "decoded_video_frames_bound_to_audit": 616394,
+  "verified_label_files": 1851,
+  "verified_viewer_links": 7404,
+  "original_artifact_sha_unchanged_after_publication_and_cleanup": true,
+  "successful_index_verified": true,
+  "old_dataset_artifacts_absent": true,
+  "process_checks": [
+    {
+      "record": "generation_launch.json",
+      "pid": 69335,
+      "related_process_exited": true
+    },
+    {
+      "record": "pipeline_process.json",
+      "pid": 87835,
+      "related_process_exited": true
+    },
+    {
+      "record": "auditing_process.json",
+      "pid": 259383,
+      "related_process_exited": true
+    },
+    {
+      "record": "viewer_build_process.json",
+      "pid": 344919,
+      "related_process_exited": true
+    }
+  ],
+  "locks_released": true,
+  "suites": {
+    "libero_spatial": {
+      "total": 455,
+      "success": 378,
+      "failed": 77,
+      "success_percent": 83.07692307692308
+    },
+    "libero_object": {
+      "total": 493,
+      "success": 412,
+      "failed": 81,
+      "success_percent": 83.56997971602433
+    },
+    "libero_goal": {
+      "total": 448,
+      "success": 418,
+      "failed": 30,
+      "success_percent": 93.30357142857143
+    },
+    "libero_10": {
+      "total": 455,
+      "success": 295,
+      "failed": 160,
+      "success_percent": 64.83516483516483
+    }
+  },
+  "audit_sha256": "719b6798e3296699128d68d39907d362e8785eba322e1aac756fb1724ad4c3fb",
+  "plan_sha256": "74d53d11bdc604b2b167a007001fe1ac342d9c7253b43aa20d8090fc041f4bcf",
+  "summary_sha256": "6f9b7d9168dce926dec09e0e73ec3fd4ac0cef1e3ce18dd75e455445733f21b0",
+  "deletion_receipt_sha256": "663a69accec98ee640628c5110c79301da355b57a99dcc45013e8d8461c38f5d"
+}

@@ -1,0 +1,91 @@
+{
+  "complete": true,
+  "observed_at": "2026-11-09T20:51:08.905167+08:00",
+  "scope": "Read-only comparison of original and joint13 loss definitions, first logged10-step means and actual normalization values; no new training/evaluation",
+  "original_run": "czl@100.73.28.99:/mnt/SharedData/czl/runs/pi05_libero_reconstructed_lora_6gpu_bs72_10k_20261101",
+  "current_run": "czl@100.73.28.99:/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109",
+  "old_first_logged_step": 10,
+  "old_loss": 0.0958,
+  "old_action_loss_groups": null,
+  "old_loss_denominator": 32,
+  "old_active_action_dimensions": 7,
+  "old_padding_dimensions": 25,
+  "new_action_loss_groups": [
+    [
+      "action",
+      0,
+      7,
+      1.0
+    ],
+    [
+      "rotation_tolerance",
+      7,
+      13,
+      0.5
+    ]
+  ],
+  "new_first_logged_step": 10,
+  "new_raw_action7_mse": 0.4343,
+  "new_weighted_action7_loss": 0.6414,
+  "new_raw_tolerance6_mse": 0.8473,
+  "new_weighted_tolerance6_loss": 0.4236,
+  "new_total_loss": 1.065,
+  "all_first7_norm_stats_exact_equal": true,
+  "per_stat_max_absolute_difference": {
+    "mean": 0.0,
+    "std": 0.0,
+    "q01": 0.0,
+    "q99": 0.0
+  },
+  "action7_contribution_if_divided_by32": 0.09500312500000001,
+  "same_action_error_contribution_scale_factor": 4.571428571428571,
+  "caveats": [
+    "Old total includes prediction residuals on25 padded dimensions; target padding0 does not mean residual0.",
+    "The numerical rescaling of current7D contribution is not an exact same-batch comparison of old total.",
+    "Current301 observation replacements and joint tolerance gradients also differ; raw loss/action is before4x sample weighting.",
+    "Both first logged Step10 entries are averages of preceding10 optimization steps, not an isolated first-step loss."
+  ],
+  "local_evidence": [
+    "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/training_request.json",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/training_request.json",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/four_x_protocol_update/first_real_metrics_and_cloud_verification.json",
+    "/media/czl/sata/franka_my_code/openpi/src/openpi/models/pi0.py",
+    "/media/czl/sata/franka_my_code/openpi/scripts/train.py"
+  ],
+  "result": "Loss denominator change explains the approximate4.5x raw action metric difference; normalization change excluded by exact first7-statistics comparison. This is not a performance ranking.",
+  "clarification": {
+    "physical_action_error_definition_unchanged": "Per-dimension flow-matching velocity squared error; only reduction coefficients and sample weights differ for that term",
+    "old_action_contribution": "sum(e[0:7])/32",
+    "new_action_contribution": "w*sum(e[0:7])/7, w=1 nominal or4 tolerance source",
+    "overall_objective_differences": [
+      "New6D tolerance targets and loss",
+      "Old25 padding dimensions were supervised; now6 replaced with tolerance targets and remaining19 excluded from loss",
+      "4x loss on tolerance observation sources;301 observation replacements"
+    ],
+    "affects_backpropagation": true,
+    "same_training_trajectory_not_guaranteed": true
+  },
+  "initialization_verification": {
+    "actual_base_checkpoint": "czl@100.73.28.99:/home/czl/.cache/openpi/openpi-assets/checkpoints/pi05_base/params",
+    "base_projection_shapes": {
+      "action_in_proj/kernel": [
+        32,
+        1024
+      ],
+      "action_out_proj/kernel": [
+        1024,
+        32
+      ],
+      "action_out_proj/bias": [
+        32
+      ]
+    },
+    "base_checkpoint_lora_entries": 0,
+    "actual_weight_loader_source_sha256": "fa63189f02ad437c5aa70b587a61299e48bc479cba4dce5407037fbc5c94e7fe",
+    "load_contract": "CheckpointWeightLoader merges missing LoRA only; trainer validates every parameter shape/dtype before training",
+    "base_and_action_head_reinitialized_for_joint13": false,
+    "official_new_lora_parameters_initialized": true,
+    "seed_both_runs": 42,
+    "bit_identical_initial_lora_arrays_across_historical_runs": "Not independently compared; same recorded seed/configuration/protocol"
+  }
+}

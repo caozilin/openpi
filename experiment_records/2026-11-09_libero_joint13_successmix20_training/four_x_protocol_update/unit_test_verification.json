@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "passed": 34,
+  "command": "JAX_PLATFORMS=cpu .venv/bin/python -m pytest src/openpi/training/libero_joint_test.py src/openpi/models/pi0_test.py src/openpi/policies/franka_mujoco_policy_test.py -q -p no:cacheprovider",
+  "verifies": [
+    "flag-only weight1/4 including all-zero tolerance label",
+    "unchanged state8 and physical action7/tolerance6 targets",
+    "normalize13/pad32/Observation preserves sample weight",
+    "JIT loss contribution identities and gradient action4x/tolerance1x/padding0",
+    "Franka existing behavior preserved"
+  ],
+  "history": "Initial test fixture lacked batch dimensions for typed Observation; fixture fixed; production data-loader already batches."
+}

@@ -1,0 +1,8 @@
+{
+  "cause": "LeRobotv2.1 subset offset table has40 rows while __getitem__ passes original episode47; IndexError before task1 read",
+  "original_data_changed": false,
+  "training_dataset_scope": "full contiguous1875; no training reader modifications",
+  "repair": "audit-only subclass maps original episode ID to compact subset offset index",
+  "converter_manifest_sha256": "c3f15b3b64fee8fc53dd8361229c85bc60e643041e4b24c247bf8838e17f716c",
+  "recheck_scope": "repeat all1875 bytes/labels then actual40-task reads"
+}

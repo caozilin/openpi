@@ -1,0 +1,23 @@
+{
+  "complete": true,
+  "source_hashes_checked": 10416,
+  "unique_raw_trials_reparsed": 4358,
+  "episodes_checked": 1875,
+  "paired_episodes": 1837,
+  "independent_blocks_checked": 2301,
+  "tasks_checked": 40,
+  "checks": [
+    "independent candidate selection from authored endpoints",
+    "all seven metric pooling rules",
+    "CSV mean/median/threshold and regression counts",
+    "40-task speed summary",
+    "all original SHA unchanged"
+  ],
+  "new_search_or_rollout": false,
+  "original_data_modified": false,
+  "additional_verified": [
+    "all 38 full-failure diagnoses match protected original hashes",
+    "36 solver failures are IPOPT iteration-cap terminations",
+    "40 separate task analysis sections"
+  ]
+}

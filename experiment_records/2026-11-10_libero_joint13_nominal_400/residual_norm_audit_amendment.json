@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-10T20:13:40.236029+08:00",
+  "reason": "Audit used L2 residual with same10um tolerance; actual frozen IPOPT controller uses max absolute component for both position and strict rotation (controller.py634). Correct read-only audit to same canonical residual, no threshold changes.",
+  "new_sources": {
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_evaluation_v3.py": "f011770dc688957fa153df062c26ab252b61ff04121fdf84ba157373cdd7e208",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_nominal_reference_v3.py": "0ef10a79386d52c996504a9798455ebe35965e6dcd31e8c573808c2a383f65b6",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/finish_existing400.py": "affe1108cc8e4117e6c525143bef2d87c75465e3c8e9134c8265de42f931b502"
+  },
+  "preserved_all400_artifacts": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/attempts/0002_audit_residual_norm/all400_artifact_sha256.json",
+  "all_rollouts_preserved": 400,
+  "no_new_rollouts_or_inference": true
+}

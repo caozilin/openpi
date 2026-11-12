@@ -18,9 +18,14 @@ import sys
 
 ROOT=Path(__file__).resolve().parents[2]
 SHARED=ROOT.parent/'franka_mujoco'
+ACTIVE_SHARED=Path(os.environ.get('TASKTOL_FROZEN_SHARED_ROOT',str(SHARED))).resolve()
 RUN=ROOT/'experiments/libero_tasktol_compat/results/task_pose_default_ipopt400_fixed_v2'
 SELECTION=ROOT/'data/libero40_mask_annotation/20261019_mainview_v1'
-sys.path[:0]=[str(ROOT),str(SHARED),str(ROOT/'third_party/libero'),str(ROOT/'examples/libero')]
+sys.path[:0]=[str(ROOT),str(ACTIVE_SHARED),str(ROOT/'third_party/libero'),str(ROOT/'examples/libero')]
+# Archive replay pins the package before experiment helpers add live repo paths.
+if ACTIVE_SHARED!=SHARED:
+    import tasktol
+    assert Path(tasktol.__file__).resolve().is_relative_to(ACTIVE_SHARED)
 
 
 def dump(path,value):
@@ -40,14 +45,16 @@ def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 def freeze_sources():
     # All shared source files are hashed; only this experiment writes outputs.
-    paths=[*sorted((SHARED/'tasktol').rglob('*.py')),Path(__file__),
+    paths=[*sorted((ACTIVE_SHARED/'tasktol').rglob('*.py')),Path(__file__),
         ROOT/'examples/libero/mask_viewer/phase_adapter.py',
         ROOT/'examples/libero/regenerate_libero_dataset.py',
         Path(__file__).with_name('observe_online_ipopt.py')]
-    return {str(p):sha(p) for p in paths}
+    return {str(SHARED/p.relative_to(ACTIVE_SHARED)) if p.is_relative_to(ACTIVE_SHARED/'tasktol') else str(p):sha(p) for p in paths}
 
 
-def worker(output,seed,mode,reference_transform=None,observation_callback=None):
+def worker(output,seed,mode,reference_transform=None,observation_callback=None,phase_policy=None,control_transform=None,
+           recording_options=None):
+    from contextlib import ExitStack
     import h5py
     import imageio.v2 as imageio
     import mujoco
@@ -80,8 +87,10 @@ def worker(output,seed,mode,reference_transform=None,observation_callback=None):
         after_rng=json.loads(f['regeneration/episodes'][demo].attrs['rng_state'])
     dest=output/f'seed_{seed:02d}'/mode
     dest.mkdir(parents=True,exist_ok=False)
+    recording_options = dict(recording_options or {})
+    paired_video = bool(recording_options.get('paired_video', False))
     env=OffScreenRenderEnv(bddl_file_name=str(Path(get_libero_path('bddl_files'))/task['suite']/(task['task_name']+'.bddl')),
-        controller='OSC_POSE',camera_names=['agentview','robot0_eye_in_hand'] if observation_callback else ['agentview'],
+        controller='OSC_POSE',camera_names=['agentview','robot0_eye_in_hand'] if observation_callback or paired_video else ['agentview'],
         camera_heights=256,camera_widths=256,control_freq=20)
     rows=[];states=[];observer=OnlineIpoptObserver();ever=False
     try:
@@ -96,6 +105,8 @@ def worker(output,seed,mode,reference_transform=None,observation_callback=None):
         model=env.sim.model._model
         physical_hash=hashlib.sha256(b''.join(np.asarray(getattr(model,k)).tobytes()
             for k in ['body_pos','body_quat','body_mass','body_inertia','geom_friction','jnt_range'])).hexdigest()
+        if job.get('expected_model_sha256'):
+            assert physical_hash==job['expected_model_sha256'],'Scene differs from paired baseline'
         if trial:
             prior=json.loads((trial/'ipopt_state_B10/report.json').read_text())
             assert physical_hash==prior['model_sha256'],'Saved scene differs from selected recording'
@@ -119,20 +130,36 @@ def worker(output,seed,mode,reference_transform=None,observation_callback=None):
         classifier_type,phase_model,_=shared_classifier();classifier=classifier_type(phase_model)
         observer.ik=session.ik
         Image.fromarray(obs['agentview_image'][::-1,::-1].copy()).save(dest/'initial.png')
-        with imageio.get_writer(dest/'main_rgb.mp4',fps=20,codec='libx264',quality=7) as video,observer:
+        with ExitStack() as stack:
+            video=stack.enter_context(imageio.get_writer(dest/'main_rgb.mp4',fps=20,codec='libx264',quality=7))
+            wrist=stack.enter_context(imageio.get_writer(dest/'wrist_rgb.mp4',fps=20,codec='libx264',quality=7)) if paired_video else None
+            stack.enter_context(observer)
             for i,action in enumerate(actions):
                 if observation_callback is not None:observation_callback(i,action,obs,env)
                 states.append(env.sim.get_state().flatten().copy())
                 video.append_data(np.ascontiguousarray(obs['agentview_image'][::-1,::-1]))
+                if wrist is not None:
+                    wrist.append_data(np.ascontiguousarray(obs['robot0_eye_in_hand_image'][::-1,::-1]))
                 fingers=env.sim.data.qpos[session.handles.finger_qpos_ids].copy()
                 phase=classifier.update(np.clip(fingers*[1.,-1.],0,.04),bool(action[6]>0))
                 protocol_phase={'pregrasp':'APP','grasp':'ENG','postgrasp':'EXEC','release':'DIS'}[phase.phase.key]
                 semantic=task['masks'].get(protocol_phase,'000') if phase.subtask_index==0 else '000'
                 if phase.subtask_index>0:protocol_phase='outside_subtask'
-                obs,row=session.step(action,phase=protocol_phase,subtask_index=phase.subtask_index,
-                    semantic_mask=semantic,bounds_rad=np.full(6,np.deg2rad(30)) if mode=='mask30' else None)
+                phase_details={}
+                if phase_policy is not None:
+                    phase_details=phase_policy(i,phase,action)
+                    protocol_phase=phase_details['phase'];semantic=phase_details['semantic_mask']
+                applied_action=action
+                if control_transform is not None:
+                    applied_action,phase_details=control_transform(i,action,phase,phase_details,session)
+                    protocol_phase=phase_details['phase'];semantic=phase_details['semantic_mask']
+                applied_bounds = phase_details.get('bounds_rad', np.full(6,np.deg2rad(30))) if mode=='mask30' else None
+                applied_subtask = phase_details.get('label_subtask_index', phase.subtask_index)
+                obs,row=session.step(applied_action,phase=protocol_phase,subtask_index=applied_subtask,
+                    semantic_mask=semantic,bounds_rad=applied_bounds)
                 row.update(observed_phase=phase.phase.key,phase_aperture_m=phase.aperture_m,phase_motion_m=phase.motion_m,
                     observed_subtask_index=phase.subtask_index,mask_prediction=semantic)
+                row.update(phase_details)
                 if not row['aborted']:
                     assert row['physics_steps']==25
                     after_r=Rotation.from_rotvec(row['post_action']['rotation_vector_rad']).as_matrix()
@@ -147,6 +174,8 @@ def worker(output,seed,mode,reference_transform=None,observation_callback=None):
                         row['actual_rotation_release_rad']=coords.tolist()
                         row['actual_tolerance_violation_rad']=step.predicted_violation(coords).tolist()
                 else:assert row['physics_steps']==0
+                if control_transform is not None and hasattr(control_transform,'observe'):
+                    control_transform.observe(row,session)
                 if protocol_phase not in ('APP','EXEC') or mode=='off':assert row['effective_mask']=='000'
                 assert all(a=='0' or b=='1' for a,b in zip(row['effective_mask'],semantic,strict=True))
                 rows.append(row);ever|=row['success']
@@ -166,6 +195,12 @@ def worker(output,seed,mode,reference_transform=None,observation_callback=None):
             tolerance_protocol=dict(masks=task['masks'],bounds_deg=[30]*6 if mode=='mask30' else None,
                 strict_phases=['ENG','DIS','outside_subtask'],frame='shared client stage_endpoint',subtask_rebase='shared client, on observed cycle change'),
             reference_scope='Saved selected independent physical increments; current-state feedback for online phase and joint execution; no VLA inference; no future states supplied to controller')
+        if phase_policy is not None:
+            report['tolerance_protocol']['semantic_mapping']=plan.get('phase_policy',{})
+        if control_transform is not None:
+            report['applied_actions_sha256']=hashlib.sha256(np.asarray([r['action']for r in rows]).tobytes()).hexdigest()
+            report['action_recovery_policy']=plan.get('recovery_policy',{})
+            report['reference_scope']+='; causal between-subtask SO(3) nominal-action recovery, base actions retained separately'
     finally:env.close()
     executed=[r for r in rows if not r['aborted']]
     def stats(values):

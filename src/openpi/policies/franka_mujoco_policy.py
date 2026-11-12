@@ -8,6 +8,7 @@ from openpi.models import model as _model
 
 STATE_DIM = 7
 ACTION_DIM = 7
+MODEL_ACTION_DIM = 32
 ROTATION_TOLERANCE_DIM = 6
 JOINT_ACTION_DIM = ACTION_DIM + ROTATION_TOLERANCE_DIM
 ROTATION_TOLERANCE_SLICE = slice(ACTION_DIM, JOINT_ACTION_DIM)
@@ -99,9 +100,9 @@ class FrankaMujocoOutputs(transforms.DataTransformFn):
         predictions = np.asarray(data["actions"])
         outputs = {"actions": predictions[:, :ACTION_DIM]}
         if self.joint_task_tolerance:
-            if predictions.shape[-1] != JOINT_ACTION_DIM:
+            if predictions.shape[-1] != MODEL_ACTION_DIM:
                 raise ValueError(
-                    f"Expected exactly {JOINT_ACTION_DIM} joint output dimensions, got {predictions.shape}"
+                    f"Expected the pretrained {MODEL_ACTION_DIM}-D model output, got {predictions.shape}"
                 )
             outputs["rotation_tolerance"] = predictions[:, ROTATION_TOLERANCE_SLICE]
         return outputs

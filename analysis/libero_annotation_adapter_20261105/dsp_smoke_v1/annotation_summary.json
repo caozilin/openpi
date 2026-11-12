@@ -1,0 +1,37 @@
+{
+  "complete": true,
+  "processed": 2,
+  "labeled": 1,
+  "no_feasible_label": 1,
+  "adapter_errors": 0,
+  "results": [
+    {
+      "complete": true,
+      "status": "labeled",
+      "source_episode_index": 0,
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "demo": "demo_0",
+      "frames": 97,
+      "semantic_subtasks": 1,
+      "extra": 2,
+      "preflight": false,
+      "label_policy": "speed_best_feasible_search_caps_v1",
+      "labels": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/dsp_smoke_v1/libero_spatial/task_00/demo_0/tolerance_labels.json"
+    },
+    {
+      "complete": true,
+      "status": "no_feasible_label",
+      "source_episode_index": 1689,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_0",
+      "frames": 202,
+      "semantic_subtasks": 2,
+      "extra": 2,
+      "preflight": false,
+      "label_policy": "speed_best_feasible_search_caps_v1",
+      "labels": null
+    }
+  ]
+}

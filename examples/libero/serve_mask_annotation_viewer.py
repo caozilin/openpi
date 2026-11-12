@@ -6,13 +6,10 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import re
 import shutil
-import json
-import subprocess
+import signal
 import sys
-import time
-from urllib.request import urlopen
 
-DEFAULT = Path(__file__).resolve().parents[2] / 'data/libero40_mask_annotation/20261019_viewer_10demos_v2'
+DEFAULT = Path(__file__).resolve().parents[2] / 'data/libero_tasktol_joint_servo/20261101_full_v1/viewer'
 
 def byte_range(header: str | None, size: int):
     if not header: return None
@@ -60,32 +57,35 @@ class ViewerHandler(SimpleHTTPRequestHandler):
         if args and str(args[1] if len(args)>1 else '') not in ('200','206','304'):
             super().log_message(format,*args)
 
+def install_exit_signals():
+    """Exit the foreground server on terminal interrupts and termination."""
+    def stop(_signum, _frame):
+        raise KeyboardInterrupt
+    for name in ('SIGINT', 'SIGTERM', 'SIGHUP'):
+        signum = getattr(signal, name, None)
+        if signum is not None:
+            signal.signal(signum, stop)
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     default=Path(__file__).resolve().parent if Path(__file__).name=='serve.py' else DEFAULT
     ap.add_argument('--directory',type=Path,default=default);ap.add_argument('--port',type=int,default=8768)
-    ap.add_argument('--background',action='store_true',help='Keep the loopback preview alive after the launching shell exits')
+    ap.add_argument('--background',action='store_true',help='兼容旧参数；仍在前台运行，不创建后台进程')
+    ap.add_argument('--benchmark',action='store_true',help='显示Benchmark回放，包括最新400回合与新增seed')
+    ap.add_argument('--benchmark-root',type=Path,default=Path(__file__).resolve().parents[2]/'data/libero_evaluation')
     args=ap.parse_args();directory=args.directory.resolve()
-    if not (directory/'index.html').is_file():raise SystemExit(f'No viewer index.html: {directory}')
     if args.background:
-        if args.port==0:raise SystemExit('--background requires an explicit port')
-        qa=directory/'qa';qa.mkdir(exist_ok=True)
-        with (qa/'preview_server.log').open('ab') as log:
-            child=subprocess.Popen([sys.executable,str(Path(__file__).resolve()),'--directory',str(directory),'--port',str(args.port)],stdin=subprocess.DEVNULL,stdout=log,stderr=log,start_new_session=True)
-        url=f'http://127.0.0.1:{args.port}/index.html'
-        for _ in range(50):
-            if child.poll() is not None:raise SystemExit(f'Preview exited; see {qa / "preview_server.log"}')
-            try:
-                with urlopen(url,timeout=.5) as response:
-                    if response.status==200:
-                        (qa/'preview_server.json').write_text(json.dumps(dict(pid=child.pid,url=url,directory=str(directory)),indent=2))
-                        print(f'LIBERO Dataset Studio: {url} (background PID {child.pid})',flush=True)
-                        return
-            except OSError:pass
-            time.sleep(.1)
-        child.terminate();raise SystemExit('Preview did not become ready in5seconds')
+        print('--background 已停用：服务将在当前终端持续运行，Ctrl+C结束。',flush=True)
+    if args.benchmark:
+        sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+        from examples.libero.serve_benchmark_viewer import main as benchmark_main
+        benchmark_main(['--root',str(args.benchmark_root),'--port',str(args.port)])
+        return
+    if not (directory/'index.html').is_file():raise SystemExit(f'No viewer index.html: {directory}')
+    install_exit_signals()
     server=ThreadingHTTPServer(('127.0.0.1',args.port),partial(ViewerHandler,directory=str(directory)))
-    print(f'LIBERO Dataset Studio: http://127.0.0.1:{server.server_port}/index.html',flush=True)
+    server.daemon_threads=True
+    print(f'LIBERO Dataset Studio: http://127.0.0.1:{server.server_port}/index.html · 前台运行，Ctrl+C结束',flush=True)
     try:server.serve_forever()
     except KeyboardInterrupt:pass
     finally:server.server_close()

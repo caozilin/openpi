@@ -1,0 +1,51 @@
+{
+  "complete": true,
+  "episodes": 1851,
+  "excluded_baseline_unavailable": 24,
+  "unique_sources": true,
+  "independent_aggregation": "math.fsum over per-demo pairs; ratio of overall means",
+  "checks": {
+    "all_labeled.velocity": {
+      "zero_mean": 0.660007143801675,
+      "best_mean": 0.5313131618525051,
+      "improvement_percent": 19.49887711940298
+    },
+    "all_labeled.acceleration": {
+      "zero_mean": 5.4916854926469405,
+      "best_mean": 4.04829656736324,
+      "improvement_percent": 26.283168022209534
+    },
+    "all_labeled.mY": {
+      "zero_mean": 0.07917755071812244,
+      "best_mean": 0.0771620802620714,
+      "improvement_percent": -2.545507454791384
+    },
+    "all_labeled.sigma_min": {
+      "zero_mean": 0.8981523842490654,
+      "best_mean": 1.102212046293942,
+      "improvement_percent": 22.719937688022558
+    },
+    "excluding_gp_recovered_case.velocity": {
+      "zero_mean": 0.6600291740667431,
+      "best_mean": 0.5312937848874995,
+      "improvement_percent": 19.504499836885355
+    },
+    "excluding_gp_recovered_case.acceleration": {
+      "zero_mean": 5.492166809178846,
+      "best_mean": 4.048261760589888,
+      "improvement_percent": 26.290262090652732
+    },
+    "excluding_gp_recovered_case.mY": {
+      "zero_mean": 0.07917951193745328,
+      "best_mean": 0.07716199054499816,
+      "improvement_percent": -2.5480346406388947
+    },
+    "excluding_gp_recovered_case.sigma_min": {
+      "zero_mean": 0.898208969635518,
+      "best_mean": 1.1023255865517902,
+      "improvement_percent": 22.724847314662224
+    }
+  },
+  "summary_sha256": "003d6fcfa4b85b288852491343930616b5c89cbe2474d36865968caac957df0e",
+  "pairs_sha256": "a6a876dd58168649947a3f783c36114c38e7e306cbb5a22b3a29d896d3de0464"
+}

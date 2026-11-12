@@ -22,7 +22,16 @@ def verify_episode(out,record,task):
     from tasktol.control.joint_tracker import JointReferenceTracker
     from tasktol.simulation.preset_runtime import PresetSimulationBackend
     from experiments.libero_tasktol_compat.osc_reference import integrate_reference_actions
-    folder=Path(record['folder']);report=json.loads((folder/'report.json').read_text())
+    folder=Path(record['folder'])
+    artifacts=[*sorted(p for p in folder.iterdir()if p.is_file()),Path(task['source_hdf5'])]
+    signature=dict(verifier_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        source_input_sha256=record['source_input_sha256'],
+        files=[dict(path=str(p),size=p.stat().st_size,mtime_ns=p.stat().st_mtime_ns)for p in artifacts])
+    cache=out/'episode_validation'/f"case_{record['case']:02d}"/(record['demo']+'.json')
+    if cache.exists():
+        saved=json.loads(cache.read_text())
+        if saved['signature']==signature:return saved['audit']
+    report=json.loads((folder/'report.json').read_text())
     rows=json.loads((folder/'trajectory.json').read_text());n=len(rows)
     assert record['success'] and report['success'] and not report['execution_rejected']
     assert n==report['executed_frames']==report['planned_frames']
@@ -91,10 +100,12 @@ def verify_episode(out,record,task):
     probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-count_frames','-select_streams','v:0',
         '-show_entries','stream=nb_read_frames,r_frame_rate','-of','json',str(folder/'main_rgb.mp4')]))['streams'][0]
     assert int(probe['nb_read_frames'])==n and probe['r_frame_rate']=='20/1'
-    return dict(case=record['case'],demo=record['demo'],frames=n,physics_steps=j,full_decode=True,
+    audit=dict(case=record['case'],demo=record['demo'],frames=n,physics_steps=j,full_decode=True,
         cameras=['agentview_rgb','eye_in_hand_rgb'],servo_bitwise_verified=True,
         position_errors_mm=[r['source_next_position_error_mm']for r in rows],
         rotation_errors_deg=[r['source_next_rotation_error_deg']for r in rows],report=report)
+    from experiments.libero_tasktol_compat.rollout_mask_tolerance import dump
+    dump(cache,dict(signature=signature,audit=audit));return audit
 
 
 def verify_preflight(out,record):
@@ -108,12 +119,21 @@ def verify_preflight(out,record):
     dest=out/'.preflight_replay'/f"case_{case:02d}_{record['demo']}"
     ref=dataset.reconstruction.load_reference(folder/'state_reference.hdf5')
     runner.dump(dest/'joint_native/plan.json',dict(case=case,task=entry['task'],jobs=[job],source_sha256=plan['source_sha256']))
+    image_audit=dict(max_abs_channel_error=0,different_channels=0,total_channels=0,max_different_fraction_per_image=0.)
     try:
         with h5py.File(folder/'recording.hdf5')as file:
             group=file['data'][record['demo']]
             def compare(index,action,obs,env):
-                np.testing.assert_array_equal(obs['agentview_image'],group['obs/agentview_rgb'][index])
-                np.testing.assert_array_equal(obs['robot0_eye_in_hand_image'],group['obs/eye_in_hand_rgb'][index])
+                for actual,key in [(obs['agentview_image'],'agentview_rgb'),(obs['robot0_eye_in_hand_image'],'eye_in_hand_rgb')]:
+                    expected=group['obs'][key][index]
+                    delta=np.abs(actual.astype(np.int16)-expected.astype(np.int16))
+                    maximum=int(delta.max());different=int(np.count_nonzero(delta));fraction=different/delta.size
+                    # Historical native GPU renders can differ by one uint8
+                    # level at a few pixels. Physics remains bitwise strict.
+                    assert maximum<=1 and fraction<=.001,(index,key,maximum,fraction)
+                    image_audit['max_abs_channel_error']=max(image_audit['max_abs_channel_error'],maximum)
+                    image_audit['different_channels']+=different;image_audit['total_channels']+=delta.size
+                    image_audit['max_different_fraction_per_image']=max(image_audit['max_different_fraction_per_image'],fraction)
                 np.testing.assert_array_equal(env.sim.get_state().flatten(),group['states'][index])
             report=servo.worker(dest,0,'joint_native',reference_transform=lambda original,session:ref,observation_callback=compare)
         assert report['success'];cold=dest/'joint_native/seed_00/off'
@@ -121,7 +141,8 @@ def verify_preflight(out,record):
             with np.load(cold/name)as a,np.load(folder/name)as b:
                 for k in a.files:np.testing.assert_array_equal(a[k],b[k])
         record['independent_replay_bitwise_identical']=True
-        record['preflight_replay_all_native_images_bitwise_identical']=True
+        record['preflight_replay_all_native_images_bitwise_identical']=image_audit['different_channels']==0
+        record['preflight_replay_image_audit']=image_audit
         runner.dump(out/'records'/f'case_{case:02d}'/(record['demo']+'.json'),record)
     finally:
         if dest.exists():shutil.rmtree(dest)

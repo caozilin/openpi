@@ -1,0 +1,5 @@
+{
+  "stage": "failed_or_interrupted",
+  "at": "2026-11-10T16:52:14.776248+08:00",
+  "error": "Traceback (most recent call last):\n  File \"/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/pipeline.py\", line 158, in main\n    assert p.returncode==0,'Evaluation infrastructure failure; inspect logs'\n           ^^^^^^^^^^^^^^^\nAssertionError: Evaluation infrastructure failure; inspect logs\n"
+}

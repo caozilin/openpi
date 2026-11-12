@@ -1,0 +1,10 @@
+{
+  "status": "paused_by_user",
+  "at": "2026-11-09T16:22:54.371750+08:00",
+  "reason": "User will reprocess some tolerance labels; pause upload/training pending revised labels",
+  "local_dataset_audit_complete": true,
+  "training_launched": false,
+  "local_upload_and_dispatch_stopped": true,
+  "remote_finisher_stopped": true,
+  "preserve_all_existing_data": true
+}

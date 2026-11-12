@@ -1,0 +1,50 @@
+{
+  "observed_at": "2026-11-10T16:25:01.146835+08:00",
+  "latest_authorized_scope": "successmix20:1574nominal+301tolerance;1875total,originalactions7 preserved",
+  "goal_complete": false,
+  "requirements": {
+    "local_dataset_and_full_independent_audit": {
+      "state": "complete",
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/dataset_independent_audit.json"
+    },
+    "remote_upload_full_sha_original_columns_and_actual_reader": {
+      "state": "complete",
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/lerobot_upload_verification.json"
+    },
+    "actual_training_configuration": {
+      "state": "4x user request deployed; actual config/real LeRobot CPU preflight verified; online SwanLab RUNNING",
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/four_x_protocol_update/startup_verification.json"
+    },
+    "new_state8_actions13_normalization": {
+      "state": "complete",
+      "planned_batches": 4338,
+      "exit_code": 0,
+      "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/normalization_completion.json"
+    },
+    "sixgpu10000_steps": {
+      "state": "complete",
+      "parent": 3339995,
+      "trainer": 3339998,
+      "finisher": 3339996,
+      "first_logged_step": 10,
+      "last_verified_loss": 0.1988,
+      "swanlab_cloud_first_step_verified": true,
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/final_snapshot/training_completion.json",
+      "last_observed_logged_step": 10000,
+      "prefix100_cloud_verified": true,
+      "prefix100_evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/training_prefix100_verification.json",
+      "latest_observation": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/training_live_verified_latest.json"
+    },
+    "five_checkpoints_full_cpu_restore_and_cloud_final_audit": {
+      "state": "complete",
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/final_snapshot/training_independent_final_audit.json"
+    },
+    "newly_authorized_prediction_tolerance400": {
+      "state": "running",
+      "record": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/README.md"
+    }
+  },
+  "training_requirements_complete": true,
+  "latest_user_extension": "only final10000 checkpoint learned tolerance400 evaluation now running"
+}

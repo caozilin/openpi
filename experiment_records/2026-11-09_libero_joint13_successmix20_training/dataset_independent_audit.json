@@ -1,0 +1,344 @@
+{
+  "complete": true,
+  "episodes": 1875,
+  "frames": 312374,
+  "tasks": 40,
+  "fps": 20,
+  "nominal_episodes": 1574,
+  "tolerance_episodes": 301,
+  "success_pool": 1503,
+  "per_task_sampling_verified": true,
+  "all_nominal_actions_unchanged": true,
+  "all_source_identities_preserved": true,
+  "all_nominal_observations_identical": true,
+  "all_tolerance_decoded_video_pixels_equal": true,
+  "all_tolerance_preaction_states_equal": true,
+  "all_labels_equal_audited_search_outputs": true,
+  "all_trajectory_flags_verified": true,
+  "missing_labels": 0,
+  "portable_lerobot_reader_passed": true,
+  "reader_checks": [
+    {
+      "episode_index": 0,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 2,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 47,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 49,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 94,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 95,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 142,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 151,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 187,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 193,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 227,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 237,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 275,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 276,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 323,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 325,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 367,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 380,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 416,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 420,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 465,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 478,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 515,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 519,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 564,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 574,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 613,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 633,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 662,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 670,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 710,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 711,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 759,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 764,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 808,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 809,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 858,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 859,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 908,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 928,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 958,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 960,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1004,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1011,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1054,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1055,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1101,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1102,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1146,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1147,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1195,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1201,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1232,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1234,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1277,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1278,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1325,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1332,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1375,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1376,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1416,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1420,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1465,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1469,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1515,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1520,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1565,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1566,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1605,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1611,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1651,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1660,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1689,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1690,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1734,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1736,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1784,
+      "trajectory_is_tolerance": 0
+    },
+    {
+      "episode_index": 1789,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1829,
+      "trajectory_is_tolerance": 1
+    },
+    {
+      "episode_index": 1831,
+      "trajectory_is_tolerance": 0
+    }
+  ],
+  "request_sha256": "92e86f597f84b801299ba80482adf506ea1a989e8b94f7a4cec53619797d8337",
+  "manifest_sha256": "4075678b09991e0efb8d198174269bd38d382b3db6300e163ad4297154a4bf0c"
+}

@@ -1,0 +1,76 @@
+{
+  "observed_at": "2026-11-10T17:56:50.861738+08:00",
+  "automation_id": "libero-400-15",
+  "completed_episodes": 400,
+  "expected_episodes": 400,
+  "successes": 366,
+  "per_suite": {
+    "libero_spatial": {
+      "completed": 100,
+      "successes": 92
+    },
+    "libero_object": {
+      "completed": 100,
+      "successes": 95
+    },
+    "libero_goal": {
+      "completed": 100,
+      "successes": 92
+    },
+    "libero_10": {
+      "completed": 100,
+      "successes": 87
+    }
+  },
+  "terminations": {
+    "task_success": 366,
+    "step_limit": 29,
+    "ik_failure_streak": 5
+  },
+  "infrastructure_errors": 0,
+  "historical_uncommitted_infrastructure_errors": 6,
+  "delta_completed": 93,
+  "delta_successes": 84,
+  "pipeline_state": {
+    "stage": "auditing",
+    "at": "2026-11-10T17:55:31.443425+08:00"
+  },
+  "active_pipeline_audit_processes": [
+    {
+      "pid": 30768,
+      "ppid": 2688,
+      "state": "S",
+      "start_ticks": 774657,
+      "command": "python3 -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/pipeline.py "
+    },
+    {
+      "pid": 58541,
+      "ppid": 30768,
+      "state": "R",
+      "start_ticks": 1092783,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/audit_evaluation.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 "
+    }
+  ],
+  "former_client_pids_alive": [],
+  "locks": {
+    "evaluation.lock": "released",
+    "independent_audit.lock": "held",
+    "pipeline.lock": "held",
+    "initial_audit.lock": "released"
+  },
+  "preserved66_artifact_sha_unchanged": true,
+  "frozen_sources_checked": 479,
+  "full_audit": {
+    "stage": "auditing",
+    "checked_episodes": 72,
+    "expected_episodes": 400
+  },
+  "evaluation_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}

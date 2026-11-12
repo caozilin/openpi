@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-11-07T18:16:38.218249+08:00",
+  "processed": 1875,
+  "percentage": 100,
+  "labeled": 1851,
+  "no_feasible_label": 0,
+  "baseline_unavailable": 24,
+  "adapter_errors": 0,
+  "historical_infrastructure_errors": 1,
+  "stage": "complete_audited_and_storage_verified",
+  "independent_audit_complete": true,
+  "all_related_processes_exited": true,
+  "delta_since_previous": 0,
+  "storage_default_applied": true
+}

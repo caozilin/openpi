@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "metadata_observations_bound": 1316,
+  "raw_trials_sha_checked": 602,
+  "n": 47,
+  "verified": [
+    "all best selections",
+    "12+16 query counts",
+    "label/plan/audit SHA binding",
+    "per-frame relative clearance and bottleneck",
+    "zero/nonzero handoff policy"
+  ],
+  "original_data_modified": false,
+  "new_search_or_rollout": false,
+  "derived_json_independently_recomputed": [
+    "15 low-bound groups",
+    "all 420 candidate reasons and feasible counts",
+    "best-row rankings",
+    "larger-bound alternatives",
+    "bottleneck arithmetic"
+  ]
+}

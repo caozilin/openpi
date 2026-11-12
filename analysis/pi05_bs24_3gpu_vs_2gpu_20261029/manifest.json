@@ -1,0 +1,7 @@
+{
+  "config_before_sha256": "adbb34d14c938c557af226275f9da6f27b52c7379130f579ce1ea83b15c4d65b",
+  "files": {
+    "src/openpi/training/config.py": "73c12416b8ad450d4b78e52431d465be763035e9c63c0efc3777e1ebed3b1435",
+    "analysis/pi05_bs24_3gpu_vs_2gpu_20261029/run_parallel_short.py": "b504eee6b5ab21eda78561870dfc39d6ea8cbc52520de9932eda5167f6da2bca"
+  }
+}

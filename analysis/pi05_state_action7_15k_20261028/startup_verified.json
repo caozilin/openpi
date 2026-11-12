@@ -1,0 +1,25 @@
+{
+  "verified_unix": 1793193940.052917,
+  "training_pid": 2305661,
+  "last_logged_step": 10,
+  "last_metrics": {
+    "grad_norm": 0.8777,
+    "loss": 0.3808,
+    "loss/action": 0.3808,
+    "loss/total": 0.3808,
+    "loss_weighted/action": 0.3808,
+    "param_norm": 1803.7705
+  },
+  "swanlab_run_id": "bxuk75iphdqejab69f03x",
+  "swanlab_url": "https://swanlab.cn/@caozilin/openpi-tasktol/runs/bxuk75iphdqejab69f03x",
+  "model_interface_32_confirmed_in_runtime_log": true,
+  "real_batch_shape_confirmed": true,
+  "from_official_base_confirmed": true,
+  "gpu_status": "0, 23562 MiB, 100 %\n1, 23550 MiB, 100 %\n2, 23550 MiB, 100 %\n3, 23550 MiB, 100 %\n4, 23550 MiB, 100 %\n5, 23550 MiB, 100 %\n6, 23565 MiB, 100 %\n",
+  "progress_samples": [
+    "21:24:50.879 [I] Progress on: 8.00it/15.0kit rate:6.9s/it remaining:28:52:47 elapsed:02:14 postfix:- (2305661:tqdm_logging.py:145)",
+    "21:25:03.722 [I] Progress on: 9.00it/15.0kit rate:6.2s/it remaining:25:55:17 elapsed:02:27 postfix:- (2305661:tqdm_logging.py:145)",
+    "21:25:17.478 [I] Progress on: 14.0it/15.0kit rate:4.6s/it remaining:19:06:27 elapsed:02:41 postfix:- (2305661:tqdm_logging.py:145)",
+    "21:25:31.394 [I] Progress on: 17.0it/15.0kit rate:4.6s/it remaining:19:20:32 elapsed:02:55 postfix:- (2305661:tqdm_logging.py:145)"
+  ]
+}

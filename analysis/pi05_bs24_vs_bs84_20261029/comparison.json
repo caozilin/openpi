@@ -1,0 +1,186 @@
+{
+  "throughput": {
+    "baseline_first_15_minutes": {
+      "first_step": 24.0,
+      "last_step": 199.0,
+      "points": 56,
+      "elapsed_seconds": 799.7690000534058,
+      "seconds_per_step": 4.570108571733747,
+      "regression_seconds_per_step": 4.565835782749518,
+      "samples_per_second": 18.38030731250947,
+      "samples_per_second_per_gpu": 2.625758187501353
+    },
+    "baseline_same_early_steps": {
+      "first_step": 24.0,
+      "last_step": 349.0,
+      "points": 105,
+      "elapsed_seconds": 1494.9240000247955,
+      "seconds_per_step": 4.599766153922448,
+      "regression_seconds_per_step": 4.57189314632136,
+      "samples_per_second": 18.26179792387251,
+      "samples_per_second_per_gpu": 2.60882827483893
+    },
+    "short_6gpu_bs24": {
+      "first_step": 22.0,
+      "last_step": 349.0,
+      "points": 67,
+      "elapsed_seconds": 750.1329998970032,
+      "seconds_per_step": 2.2939847091651475,
+      "regression_seconds_per_step": 2.29704843524833,
+      "samples_per_second": 10.46214471444073,
+      "samples_per_second_per_gpu": 1.7436907857401216
+    }
+  },
+  "throughput_bs24_over_bs84": 0.5692040147402916,
+  "same_sample_windows": [
+    {
+      "sample_interval": [
+        0,
+        1680
+      ],
+      "bs84_loss": 0.36540000000000006,
+      "bs24_loss": 0.3206428571428571,
+      "bs24_over_bs84_loss": 0.8775119243099536,
+      "bs84_step_end": 20.0,
+      "bs24_step_end": 70.0
+    },
+    {
+      "sample_interval": [
+        1680,
+        3360
+      ],
+      "bs84_loss": 0.31980000000000003,
+      "bs24_loss": 0.23214285714285715,
+      "bs24_over_bs84_loss": 0.7259001161440185,
+      "bs84_step_end": 40.0,
+      "bs24_step_end": 140.0
+    },
+    {
+      "sample_interval": [
+        3360,
+        5040
+      ],
+      "bs84_loss": 0.26994999999999997,
+      "bs24_loss": 0.20031428571428572,
+      "bs24_over_bs84_loss": 0.7420421771227477,
+      "bs84_step_end": 60.0,
+      "bs24_step_end": 210.0
+    },
+    {
+      "sample_interval": [
+        5040,
+        6720
+      ],
+      "bs84_loss": 0.24620000000000003,
+      "bs24_loss": 0.16949999999999998,
+      "bs24_over_bs84_loss": 0.6884646628757106,
+      "bs84_step_end": 80.0,
+      "bs24_step_end": 280.0
+    },
+    {
+      "sample_interval": [
+        6720,
+        8400
+      ],
+      "bs84_loss": 0.23145000000000002,
+      "bs24_loss": 0.14814285714285713,
+      "bs24_over_bs84_loss": 0.6400641915871986,
+      "bs84_step_end": 100.0,
+      "bs24_step_end": 350.0
+    }
+  ],
+  "same_update_steps": [
+    {
+      "step": 50,
+      "bs84_loss": 0.2786,
+      "bs24_loss": 0.284,
+      "bs84_samples": 4200,
+      "bs24_samples": 1200
+    },
+    {
+      "step": 100,
+      "bs84_loss": 0.2266,
+      "bs24_loss": 0.2445,
+      "bs84_samples": 8400,
+      "bs24_samples": 2400
+    },
+    {
+      "step": 150,
+      "bs84_loss": 0.1829,
+      "bs24_loss": 0.2446,
+      "bs84_samples": 12600,
+      "bs24_samples": 3600
+    },
+    {
+      "step": 200,
+      "bs84_loss": 0.1633,
+      "bs24_loss": 0.2028,
+      "bs84_samples": 16800,
+      "bs24_samples": 4800
+    },
+    {
+      "step": 300,
+      "bs84_loss": 0.1305,
+      "bs24_loss": 0.1349,
+      "bs84_samples": 25200,
+      "bs24_samples": 7200
+    },
+    {
+      "step": 350,
+      "bs84_loss": 0.1103,
+      "bs24_loss": 0.1626,
+      "bs84_samples": 29400,
+      "bs24_samples": 8400
+    }
+  ],
+  "same_postcompile_time_approximate": [
+    {
+      "postcompile_seconds": 300,
+      "bs84": {
+        "step": 60,
+        "samples": 5040,
+        "last_30_updates_loss_mean": 0.2793333333333333
+      },
+      "bs24": {
+        "step": 130,
+        "samples": 3120,
+        "last_30_updates_loss_mean": 0.22043333333333334
+      }
+    },
+    {
+      "postcompile_seconds": 600,
+      "bs84": {
+        "step": 130,
+        "samples": 10920,
+        "last_30_updates_loss_mean": 0.21566666666666667
+      },
+      "bs24": {
+        "step": 260,
+        "samples": 6240,
+        "last_30_updates_loss_mean": 0.17323333333333332
+      }
+    }
+  ],
+  "short_actual_postcompile_seconds": 794.7825980186462,
+  "short_compile_seconds": 107.6875741481781,
+  "supervisor_timer_note": "Timer began on the empty initial progress line and included first-step compilation; measured throughput excludes it.",
+  "baseline_first_15m_completed_steps": 199.0,
+  "short_last_metric": {
+    "step": 350,
+    "samples": 8400,
+    "metrics": {
+      "grad_norm": 1.0139,
+      "loss": 0.1626,
+      "loss/action": 0.1626,
+      "loss/total": 0.1626,
+      "loss_weighted/action": 0.1626,
+      "param_norm": 1803.776
+    }
+  },
+  "limitations": [
+    "Separate wall-clock runs; CPU load and data cache state differ.",
+    "Training losses, not a common held-out validation set or closed-loop success.",
+    "Same per-update LR schedule; at equal samples bs24 performs 3.5 times as many updates and advances warmup faster.",
+    "Batch-dependent random augmentation/noise and BF16 collective reductions differ."
+  ]
+}

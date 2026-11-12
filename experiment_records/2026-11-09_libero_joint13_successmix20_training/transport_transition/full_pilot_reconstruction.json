@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "expected_sha256": "98ee06c2071f5e3fb8f8dc0f4c7e9f302e886fc2ec0b20c87bab7b6a07b52008",
+  "actual_sha256": "98ee06c2071f5e3fb8f8dc0f4c7e9f302e886fc2ec0b20c87bab7b6a07b52008",
+  "frames": 89,
+  "both_videos_all_frames_reconstructed": true,
+  "production_dataset_modified": false
+}

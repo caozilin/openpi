@@ -1,0 +1,21 @@
+{
+  "user_requested_pause": true,
+  "local_supervisors_stopped": [
+    {
+      "pid": 26535,
+      "command": "/usr/bin/python3 -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_nominal_joint13_training/start_joint_training_when_verified.py ",
+      "signal": "SIGTERM",
+      "group": 26535
+    },
+    {
+      "pid": 26533,
+      "command": "/usr/bin/python3 -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_nominal_joint13_training/upload_joint_dataset.py ",
+      "signal": "SIGTERM",
+      "group": 26533
+    },
+    {
+      "pid": 26531,
+      "already_exited": true
+    }
+  ]
+}

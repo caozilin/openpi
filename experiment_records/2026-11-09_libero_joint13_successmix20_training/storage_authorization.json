@@ -1,0 +1,7 @@
+{
+  "explicit_user_answer": "之前全名义轨迹的容差数据集半成品直接删除",
+  "allow_retire_untrained_nominal_conversion": true,
+  "allow_remove_matching_remote_partial_upload": true,
+  "authorized_at": "2026-11-09T17:37:14.228592+08:00",
+  "scope": "only generated untrained nominal joint13 conversion and its matching partial remote upload; original nominal recordings/dataset, tolerance replay, and labels protected"
+}

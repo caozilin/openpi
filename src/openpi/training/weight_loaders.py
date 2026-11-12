@@ -46,18 +46,12 @@ class CheckpointWeightLoader(WeightLoader):
     """
 
     params_path: str
-    skip_mismatched_shapes: bool = False
 
     def load(self, params: at.Params) -> at.Params:
         # We are loading np.ndarray and relying on the training code to properly convert and shard the params.
         loaded_params = _model.restore_params(download.maybe_download(self.params_path), restore_type=np.ndarray)
         # Add all missing LoRA weights.
-        return _merge_params(
-            loaded_params,
-            params,
-            missing_regex=".*lora.*",
-            use_reference_for_mismatched=self.skip_mismatched_shapes,
-        )
+        return _merge_params(loaded_params, params, missing_regex=".*lora.*")
 
 
 @dataclasses.dataclass(frozen=True)
@@ -84,7 +78,6 @@ def _merge_params(
     params: at.Params,
     *,
     missing_regex: str,
-    use_reference_for_mismatched: bool = False,
 ) -> at.Params:
     """Merges the loaded parameters with the reference parameters.
 
@@ -103,15 +96,6 @@ def _merge_params(
     result = {}
     for k, v in flat_loaded.items():
         if k in flat_ref:
-            if use_reference_for_mismatched and np.shape(v) != np.shape(flat_ref[k]):
-                logger.info(
-                    "Initializing %s instead of loading checkpoint shape %s into %s",
-                    k,
-                    np.shape(v),
-                    np.shape(flat_ref[k]),
-                )
-                result[k] = flat_ref[k]
-                continue
             result[k] = v.astype(flat_ref[k].dtype) if v.dtype != flat_ref[k].dtype else v
 
     flat_loaded.clear()

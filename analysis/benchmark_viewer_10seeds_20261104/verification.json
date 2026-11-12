@@ -1,0 +1,26 @@
+{
+  "combined": {
+    "name": "pi05_reconstructed_10000_nominal_hold20_40tasks_10seeds_extension_20261104--latest400",
+    "completed": 400,
+    "successes": 385,
+    "failures": 15
+  },
+  "episodes": [
+    {
+      "task": 4,
+      "seed": 0,
+      "source": {
+        "run": "pi05_reconstructed_10000_nominal_failed_retry_hold20_20261104",
+        "result_path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_failed_retry_hold20_20261104/episodes/libero_spatial/task_04/seed_0/result.json"
+      }
+    },
+    {
+      "task": 0,
+      "seed": 9,
+      "source": {
+        "run": "pi05_reconstructed_10000_nominal_hold20_40tasks_10seeds_extension_20261104",
+        "result_path": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_reconstructed_10000_nominal_hold20_40tasks_10seeds_extension_20261104/episodes/libero_spatial/task_00/seed_9/result.json"
+      }
+    }
+  ]
+}

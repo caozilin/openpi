@@ -1,0 +1,9 @@
+{
+  "pid": 19496,
+  "start_ticks": 602033,
+  "command": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/pipeline.py",
+  "at": "2026-11-10T16:33:43.946198+08:00",
+  "pipeline_sha256": "c023e9985a4f5df7b70e439067cfd5f316576e407a400536623eccd35ec36ebe",
+  "reuses_committed_episodes": 6,
+  "remote_inference_reused": true
+}

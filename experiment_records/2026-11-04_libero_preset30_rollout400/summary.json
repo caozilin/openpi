@@ -1,0 +1,122 @@
+{
+  "complete": true,
+  "rollouts_tolerance": 400,
+  "nominal_formal_comparators": 400,
+  "formal_nominal_successes": 380,
+  "tolerance_successes": 370,
+  "success_delta_percentage_points": -2.5,
+  "pairs": {
+    "both_success": 356,
+    "tolerance_regressed": 24,
+    "tolerance_improved": 14,
+    "both_failed": 6
+  },
+  "all400": {
+    "n": 400,
+    "metrics": {
+      "actual": {
+        "velocity": {
+          "nominal_mean": 0.6051567900678635,
+          "tolerance_mean": 0.4708926055238987,
+          "reduction_pct": 22.186677361565778
+        },
+        "acceleration": {
+          "nominal_mean": 1.9640558513798405,
+          "tolerance_mean": 1.5436007962417522,
+          "reduction_pct": 21.407489753547438
+        },
+        "jerk": {
+          "nominal_mean": 39.30015790225321,
+          "tolerance_mean": 29.352660337081787,
+          "reduction_pct": 25.31159694043138
+        },
+        "travel": {
+          "nominal_mean": 4.534833025241692,
+          "tolerance_mean": 3.752204365353573,
+          "reduction_pct": 17.25815825041116
+        }
+      },
+      "reference": {
+        "velocity": {
+          "nominal_mean": 0.6368039940163185,
+          "tolerance_mean": 0.4922201074172699,
+          "reduction_pct": 22.704613657831974
+        },
+        "acceleration": {
+          "nominal_mean": 3.9320648342800597,
+          "tolerance_mean": 2.949165359171568,
+          "reduction_pct": 24.99703124270726
+        },
+        "jerk": {
+          "nominal_mean": 122.60183792550556,
+          "tolerance_mean": 90.86029312206587,
+          "reduction_pct": 25.88994206002545
+        },
+        "travel": {
+          "nominal_mean": 4.745112627556887,
+          "tolerance_mean": 3.890368293021254,
+          "reduction_pct": 18.013151670452864
+        }
+      }
+    },
+    "duration_s": {
+      "nominal": 7.970125,
+      "tolerance": 8.3155
+    }
+  },
+  "both_success": {
+    "n": 356,
+    "metrics": {
+      "actual": {
+        "velocity": {
+          "nominal_mean": 0.609758733412571,
+          "tolerance_mean": 0.4685458426768232,
+          "reduction_pct": 23.15881396981997
+        },
+        "acceleration": {
+          "nominal_mean": 1.9426708199913159,
+          "tolerance_mean": 1.4728163798596998,
+          "reduction_pct": 24.18600389198806
+        },
+        "jerk": {
+          "nominal_mean": 38.8902144987682,
+          "tolerance_mean": 27.918906493141726,
+          "reduction_pct": 28.210973241029514
+        },
+        "travel": {
+          "nominal_mean": 4.214596349787504,
+          "tolerance_mean": 3.346114364177596,
+          "reduction_pct": 20.606528206519613
+        }
+      },
+      "reference": {
+        "velocity": {
+          "nominal_mean": 0.6430318006955287,
+          "tolerance_mean": 0.4925748632662601,
+          "reduction_pct": 23.398055471988854
+        },
+        "acceleration": {
+          "nominal_mean": 3.9048095182591367,
+          "tolerance_mean": 2.815228735571132,
+          "reduction_pct": 27.903557845601846
+        },
+        "jerk": {
+          "nominal_mean": 121.58366814170682,
+          "tolerance_mean": 86.19022102263077,
+          "reduction_pct": 29.1103629788704
+        },
+        "travel": {
+          "nominal_mean": 4.434512925541217,
+          "tolerance_mean": 3.5123273300864564,
+          "reduction_pct": 20.795645676062858
+        }
+      }
+    },
+    "duration_s": {
+      "nominal": 7.296629213483147,
+      "tolerance": 7.550421348314607
+    }
+  },
+  "definition": "20Hz joint-space L2 finite differences over saved post-action physical q, and separately command joint targets; no initial padding, no cross-episode differences. Entire recorded episode, episode equal. Not task duration speed.",
+  "limitations": "Closed-loop groups produce different actions and lengths; successful intersection is conditional. No mY or sigma FK recomputation and no new rollout."
+}

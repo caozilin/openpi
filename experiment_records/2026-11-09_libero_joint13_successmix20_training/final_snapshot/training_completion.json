@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "exit_code": 0,
+  "steps": 10000,
+  "global_batch": 72,
+  "per_gpu_batch": 12,
+  "checkpoint_dir": "/mnt/SharedData/czl/checkpoints/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109",
+  "swanlab_enabled": true,
+  "swanlab_mode": "online",
+  "swanlab_log_dir": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/swanlog"
+}

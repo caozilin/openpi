@@ -1,0 +1,43 @@
+{
+  "complete": true,
+  "checked_at": "2026-11-07T18:16:38.218249+08:00",
+  "processes": [
+    {
+      "record": "pipeline_process.json",
+      "pid": 9702,
+      "related_process_exited": true
+    },
+    {
+      "record": "annotating_process.json",
+      "pid": 9704,
+      "related_process_exited": true
+    },
+    {
+      "record": "auditing_process.json",
+      "pid": 60595,
+      "related_process_exited": true
+    },
+    {
+      "record": "recovery_process.json",
+      "pid": 60491,
+      "related_process_exited": true
+    }
+  ],
+  "locks_released": [
+    "pipeline.lock",
+    "annotation.lock",
+    "recovery.lock"
+  ],
+  "audit_sha256": "fda5995f1dd43d96b6861d920761115a8b8b882ff98e6493d87975febbbc56bb",
+  "task_completion_sha256": "fa50c32b889874ee9b90a998ac00b3c96a67326d19903bac66941d03ee3c6a85",
+  "original_frozen_source_snapshot_files_verified": 190,
+  "future_storage_default_hashes_verified": true,
+  "original_request_unmodified": true,
+  "metrics_verified": true,
+  "postapply_tests_passed": 89,
+  "postapply_compileall_exit_code": 0,
+  "real_trial_roundtrips_passed": 6,
+  "pytest_warning": "One existing torch.jit.script deprecation warning",
+  "original_request_sha256_verified_against_recovery_request": true,
+  "heartbeat_deleted": true
+}

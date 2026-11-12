@@ -1,0 +1,27 @@
+{
+  "complete": false,
+  "expected_episodes": 400,
+  "completed_episodes": 6,
+  "successes": 6,
+  "infrastructure_errors": 0,
+  "infrastructure_error_files": [],
+  "per_suite": {
+    "libero_spatial": {
+      "episodes": 6,
+      "successes": 6
+    },
+    "libero_object": {
+      "episodes": 0,
+      "successes": 0
+    },
+    "libero_goal": {
+      "episodes": 0,
+      "successes": 0
+    },
+    "libero_10": {
+      "episodes": 0,
+      "successes": 0
+    }
+  },
+  "updated_at": "2026-11-10T16:27:53.608498+08:00"
+}

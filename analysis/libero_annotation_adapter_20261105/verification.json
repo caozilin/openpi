@@ -1,0 +1,20 @@
+{
+  "complete": true,
+  "related_tests_passed": 226,
+  "test_groups": {
+    "DSP_shared_backend_adapter": 107,
+    "shared_io_import_migration": 107,
+    "native_LIBERO_existing_environment": 12
+  },
+  "compileall_tasktol_tests": "passed",
+  "full_collection": {
+    "collected": 1943,
+    "default_environment_missing": [
+      "robosuite",
+      "h5py"
+    ],
+    "affected_two_modules_tested_in_existing_libero_environment": true
+  },
+  "independent_audit": "final_independent_audit.json",
+  "full_dataset_started": false
+}

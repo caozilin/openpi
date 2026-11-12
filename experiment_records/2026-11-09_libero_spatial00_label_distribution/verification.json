@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "source_files_checked": 212,
+  "demos_checked": 47,
+  "signed_directions_checked": 8,
+  "pairs_per_direction": 1081,
+  "original_raw_data_modified": false,
+  "new_search_or_simulation": false,
+  "scope": "SHA binding, phase labels and independent CSV summary recomputation; historical execution audit reused"
+}

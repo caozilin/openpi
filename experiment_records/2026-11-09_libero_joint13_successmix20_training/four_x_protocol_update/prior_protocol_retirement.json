@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "at": "2026-11-09T20:37:17.160110+08:00",
+  "reason": "User4x configuration update before first training step; original normalization completed normally and preserved",
+  "stopped_parent": null,
+  "stopped_finisher": null,
+  "original_parent_pid": 3312670,
+  "original_finisher_pid": 3210109,
+  "archive_sha256": {
+    "training_request.json": "9077cac73ceae17e0e9226af65d5221cd1b0089b6a681ba978bee22a6bcb9917",
+    "actual_config.json": "aa0aab5e8195a5ce819a314f15dfd71672c797370d8c7fc8091841055b702150",
+    "training_launch.json": "b82ce61ca37c1685dfd41fdf7f3b0774a86d0806f76c8c13b2b856334814d555",
+    "training_process.json": "a441bc18d72ba53e075c9e2637cd6b6bda213298b3cdf586ae2555efeb223b7c",
+    "training_state.json": "7665858159abaa8503166b59eb015e1e745c45455fd59be1f4bb865d03a54aaa",
+    "overlay_manifest.json": "fba5db2f02583ba1707d38264ce1b2346ed237060d527bbc753454e2543dea7a",
+    "overlay_preparation.json": "6765a6654e3ca5f06f724650b9f5dbf41436ea5771a10d3df83de97469c0e5de",
+    "train_successmix20_joint13_pi05_server.py": "73f1e55d84cbc076f6760f971cdbca0ad126767a371c299d85d8f60a5a7124cc",
+    "audit_successmix20_joint13_training_server.py": "1de9e51d82ede022f30b7ae206ad53d19c6f6ed4f2282a9585700c119bb45add",
+    "finish_successmix20_joint13_training_server.py": "f5174d511fce2e173a912b416f4411d9c60e7906c1a364c3d254de14339bc455",
+    "finish_training_process.json": "ee6a45fb2ce28bc944f9785550025a7e0bf49a9adbf4cdfcec07cedfa9d0a4e2",
+    "finish_training_state.json": "f4a4d1caaa8187959f8423552f2cd40c11094d95f2536334383d0c7d39b85641",
+    "training_live_process_snapshot.json": "555a631eae404cc47b9541e472e19093bef54c68066f9d653e49921392afc83a",
+    "normalization_completion.json": "e0205a31767a04b28d8b7ff62569e12be364e79587641b52c462179fff1d7c34"
+  },
+  "normalization_receipt_sha256": "e0205a31767a04b28d8b7ff62569e12be364e79587641b52c462179fff1d7c34",
+  "gpu_training_steps": 0
+}

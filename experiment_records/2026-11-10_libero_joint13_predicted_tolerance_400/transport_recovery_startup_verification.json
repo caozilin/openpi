@@ -1,0 +1,97 @@
+{
+  "observed_at": "2026-11-10T17:04:47.287740+08:00",
+  "automation_id": "libero-400-15",
+  "completed_episodes": 66,
+  "expected_episodes": 400,
+  "successes": 57,
+  "per_suite": {
+    "libero_spatial": {
+      "completed": 20,
+      "successes": 19
+    },
+    "libero_object": {
+      "completed": 20,
+      "successes": 17
+    },
+    "libero_goal": {
+      "completed": 20,
+      "successes": 15
+    },
+    "libero_10": {
+      "completed": 6,
+      "successes": 6
+    }
+  },
+  "terminations": {
+    "task_success": 57,
+    "step_limit": 9
+  },
+  "infrastructure_errors": 0,
+  "historical_uncommitted_infrastructure_errors": 6,
+  "delta_completed": 13,
+  "delta_successes": 9,
+  "pipeline_state": {
+    "stage": "evaluating",
+    "at": "2026-11-10T17:02:31.417816+08:00",
+    "evaluation_manager": 30823
+  },
+  "local_processes": [
+    {
+      "pid": 30768,
+      "ppid": 2688,
+      "start_ticks": 774657,
+      "state": "S",
+      "command": "python3 -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/pipeline.py "
+    },
+    {
+      "pid": 30823,
+      "ppid": 30768,
+      "start_ticks": 774780,
+      "state": "S",
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 "
+    },
+    {
+      "pid": 30824,
+      "ppid": 30823,
+      "start_ticks": 774832,
+      "state": "S",
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 0 "
+    },
+    {
+      "pid": 30825,
+      "ppid": 30823,
+      "start_ticks": 774832,
+      "state": "S",
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 1 "
+    },
+    {
+      "pid": 30826,
+      "ppid": 30823,
+      "start_ticks": 774832,
+      "state": "S",
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 2 "
+    },
+    {
+      "pid": 30827,
+      "ppid": 30823,
+      "start_ticks": 774832,
+      "state": "S",
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 3 "
+    },
+    {
+      "pid": 30828,
+      "ppid": 30823,
+      "start_ticks": 774832,
+      "state": "S",
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 4 "
+    },
+    {
+      "pid": 30829,
+      "ppid": 30823,
+      "start_ticks": 774832,
+      "state": "S",
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 5 "
+    }
+  ],
+  "preserved66_artifact_sha_unchanged": true
+}

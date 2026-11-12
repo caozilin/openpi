@@ -26,7 +26,8 @@ def freeze():
 runner.freeze_sources=freeze
 
 
-def worker(out,seed,variant,reference_transform=None,observation_callback=None):
+def worker(out,seed,variant,reference_transform=None,observation_callback=None,*,mode='off',phase_policy=None,control_transform=None,
+           recording_options=None):
     import numpy as np
     import libero.libero.envs as envs
     import tasktol.simulation.libero as client
@@ -47,17 +48,22 @@ def worker(out,seed,variant,reference_transform=None,observation_callback=None):
             return session
         envs.OffScreenRenderEnv=make_env;client.LiberoTaskTolSession=make_session
     try:
-        report=runner.worker(out/variant,seed,'off',reference_transform=reference_transform,observation_callback=observation_callback)
+        report=runner.worker(out/variant,seed,mode,reference_transform=reference_transform,
+            observation_callback=observation_callback,phase_policy=phase_policy,control_transform=control_transform,
+            recording_options=recording_options)
     finally:
         envs.OffScreenRenderEnv=native_env;client.LiberoTaskTolSession=native_session
-    report['variant']=variant;report['tolerance']='off'
+    report['variant']=variant;report['tolerance']='30deg' if mode=='mask30' else 'off'
     if sessions:
         controller=sessions[0].controller
         report['shared_joint_servo']=controller.servo_metadata
         report['shared_joint_servo_statistics']=controller.servo_statistics
         assert controller.servo_statistics['calls']==25*report['executed_frames']
-        np.savez_compressed(out/variant/f'seed_{seed:02d}/off/servo_physics.npz',samples=np.asarray(controller.reference_samples))
-    runner.dump(out/variant/f'seed_{seed:02d}/off/report.json',report)
+        save_physics = (recording_options or {}).get('save_servo_physics', True)
+        report['servo_physics_samples_saved'] = bool(save_physics)
+        if save_physics:
+            np.savez_compressed(out/variant/f'seed_{seed:02d}/{mode}/servo_physics.npz',samples=np.asarray(controller.reference_samples))
+    runner.dump(out/variant/f'seed_{seed:02d}/{mode}/report.json',report)
     return report
 
 

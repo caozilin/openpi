@@ -1,0 +1,417 @@
+{
+  "complete": true,
+  "episodes": 1875,
+  "frames": 312374,
+  "tasks": 40,
+  "fps": 20,
+  "all_original_columns_identical": true,
+  "all_embedded_png_bytes_identical": true,
+  "all_labels_equal_audited_search_outputs": true,
+  "all_nominal": true,
+  "portable_lerobot_reader_passed": true,
+  "reader_checks": [
+    {
+      "episode_index": 0,
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "indices": [
+        0,
+        48,
+        96
+      ]
+    },
+    {
+      "episode_index": 47,
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "indices": [
+        0,
+        75,
+        150
+      ]
+    },
+    {
+      "episode_index": 94,
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "indices": [
+        0,
+        51,
+        101
+      ]
+    },
+    {
+      "episode_index": 142,
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "indices": [
+        0,
+        49,
+        97
+      ]
+    },
+    {
+      "episode_index": 187,
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "indices": [
+        0,
+        76,
+        151
+      ]
+    },
+    {
+      "episode_index": 227,
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "indices": [
+        0,
+        68,
+        135
+      ]
+    },
+    {
+      "episode_index": 275,
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "indices": [
+        0,
+        68,
+        135
+      ]
+    },
+    {
+      "episode_index": 323,
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "indices": [
+        0,
+        77,
+        153
+      ]
+    },
+    {
+      "episode_index": 367,
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "indices": [
+        0,
+        57,
+        113
+      ]
+    },
+    {
+      "episode_index": 416,
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "indices": [
+        0,
+        67,
+        134
+      ]
+    },
+    {
+      "episode_index": 465,
+      "suite": "libero_object",
+      "task_id": 0,
+      "indices": [
+        0,
+        73,
+        146
+      ]
+    },
+    {
+      "episode_index": 515,
+      "suite": "libero_object",
+      "task_id": 1,
+      "indices": [
+        0,
+        69,
+        137
+      ]
+    },
+    {
+      "episode_index": 564,
+      "suite": "libero_object",
+      "task_id": 2,
+      "indices": [
+        0,
+        61,
+        122
+      ]
+    },
+    {
+      "episode_index": 613,
+      "suite": "libero_object",
+      "task_id": 3,
+      "indices": [
+        0,
+        66,
+        132
+      ]
+    },
+    {
+      "episode_index": 662,
+      "suite": "libero_object",
+      "task_id": 4,
+      "indices": [
+        0,
+        123,
+        246
+      ]
+    },
+    {
+      "episode_index": 710,
+      "suite": "libero_object",
+      "task_id": 5,
+      "indices": [
+        0,
+        65,
+        130
+      ]
+    },
+    {
+      "episode_index": 759,
+      "suite": "libero_object",
+      "task_id": 6,
+      "indices": [
+        0,
+        84,
+        167
+      ]
+    },
+    {
+      "episode_index": 808,
+      "suite": "libero_object",
+      "task_id": 7,
+      "indices": [
+        0,
+        74,
+        148
+      ]
+    },
+    {
+      "episode_index": 858,
+      "suite": "libero_object",
+      "task_id": 8,
+      "indices": [
+        0,
+        83,
+        166
+      ]
+    },
+    {
+      "episode_index": 908,
+      "suite": "libero_object",
+      "task_id": 9,
+      "indices": [
+        0,
+        62,
+        124
+      ]
+    },
+    {
+      "episode_index": 958,
+      "suite": "libero_goal",
+      "task_id": 0,
+      "indices": [
+        0,
+        68,
+        136
+      ]
+    },
+    {
+      "episode_index": 1004,
+      "suite": "libero_goal",
+      "task_id": 1,
+      "indices": [
+        0,
+        46,
+        92
+      ]
+    },
+    {
+      "episode_index": 1054,
+      "suite": "libero_goal",
+      "task_id": 2,
+      "indices": [
+        0,
+        46,
+        91
+      ]
+    },
+    {
+      "episode_index": 1101,
+      "suite": "libero_goal",
+      "task_id": 3,
+      "indices": [
+        0,
+        84,
+        168
+      ]
+    },
+    {
+      "episode_index": 1146,
+      "suite": "libero_goal",
+      "task_id": 4,
+      "indices": [
+        0,
+        45,
+        89
+      ]
+    },
+    {
+      "episode_index": 1195,
+      "suite": "libero_goal",
+      "task_id": 5,
+      "indices": [
+        0,
+        77,
+        153
+      ]
+    },
+    {
+      "episode_index": 1232,
+      "suite": "libero_goal",
+      "task_id": 6,
+      "indices": [
+        0,
+        45,
+        90
+      ]
+    },
+    {
+      "episode_index": 1277,
+      "suite": "libero_goal",
+      "task_id": 7,
+      "indices": [
+        0,
+        39,
+        78
+      ]
+    },
+    {
+      "episode_index": 1325,
+      "suite": "libero_goal",
+      "task_id": 8,
+      "indices": [
+        0,
+        44,
+        88
+      ]
+    },
+    {
+      "episode_index": 1375,
+      "suite": "libero_goal",
+      "task_id": 9,
+      "indices": [
+        0,
+        91,
+        182
+      ]
+    },
+    {
+      "episode_index": 1416,
+      "suite": "libero_10",
+      "task_id": 0,
+      "indices": [
+        0,
+        193,
+        386
+      ]
+    },
+    {
+      "episode_index": 1465,
+      "suite": "libero_10",
+      "task_id": 1,
+      "indices": [
+        0,
+        128,
+        256
+      ]
+    },
+    {
+      "episode_index": 1515,
+      "suite": "libero_10",
+      "task_id": 2,
+      "indices": [
+        0,
+        135,
+        270
+      ]
+    },
+    {
+      "episode_index": 1565,
+      "suite": "libero_10",
+      "task_id": 3,
+      "indices": [
+        0,
+        113,
+        226
+      ]
+    },
+    {
+      "episode_index": 1605,
+      "suite": "libero_10",
+      "task_id": 4,
+      "indices": [
+        0,
+        137,
+        273
+      ]
+    },
+    {
+      "episode_index": 1651,
+      "suite": "libero_10",
+      "task_id": 5,
+      "indices": [
+        0,
+        116,
+        232
+      ]
+    },
+    {
+      "episode_index": 1689,
+      "suite": "libero_10",
+      "task_id": 6,
+      "indices": [
+        0,
+        101,
+        201
+      ]
+    },
+    {
+      "episode_index": 1734,
+      "suite": "libero_10",
+      "task_id": 7,
+      "indices": [
+        0,
+        120,
+        240
+      ]
+    },
+    {
+      "episode_index": 1784,
+      "suite": "libero_10",
+      "task_id": 8,
+      "indices": [
+        0,
+        228,
+        455
+      ]
+    },
+    {
+      "episode_index": 1829,
+      "suite": "libero_10",
+      "task_id": 9,
+      "indices": [
+        0,
+        164,
+        327
+      ]
+    }
+  ],
+  "request_sha256": "0c54efaff602ec6f0454e95399fa3a0c0a6c5180325d7b57e84391c1352151cb",
+  "manifest_sha256": "c3f15b3b64fee8fc53dd8361229c85bc60e643041e4b24c247bf8838e17f716c",
+  "missing_labels": 0
+}

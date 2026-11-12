@@ -1,0 +1,9 @@
+{
+  "key": "libero_object/00/demo_36",
+  "mask": "001",
+  "success": true,
+  "execution_rejected": false,
+  "folder": "/media/czl/sata/franka_my_code/openpi/analysis/20261101_alphabet_soup_grasp_audit/axis_ablation/001/libero_object/00/demo_36/joint_native/seed_00/mask30",
+  "original011_bitwise_identical": null,
+  "unchanged_solver_model_actions_servo": true
+}

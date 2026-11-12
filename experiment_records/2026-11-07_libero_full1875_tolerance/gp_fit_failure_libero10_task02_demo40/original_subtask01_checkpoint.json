@@ -1,0 +1,2036 @@
+{
+  "identity_sha256": "f2bb48e209edd445a0d3f600b8909cefd9b6b1e0e59883e892b3ced681ee6392",
+  "state": {
+    "configuration": {
+      "version": 1,
+      "maximum": [
+        0.0,
+        0.0,
+        30.0,
+        30.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed": 2654120830,
+      "fit_maxiter": 100,
+      "sobol_points": 1024,
+      "restarts": 8,
+      "optimizer_maxiter": 100,
+      "duplicate_unit_tolerance": 1e-08,
+      "clearance_m": 0.0,
+      "dtype": "float64",
+      "device": "cpu",
+      "kernel": "ARD Matern5/2 + scale; official dimension-scaled LogNormal lengths (Hvarfner ICML2024); Gamma(2,.15) variance; no input warp",
+      "regressors": "exact GP MAP; fixed standardized observation variance 1e-6",
+      "solver": "Bernoulli probit variational GP; all fixed inducing locations; ELBO MAP",
+      "acquisition": "independent-model q=1 logCEI; full domain; Sobol + L-BFGS-B",
+      "fit_start": "cold deterministic per-query; no MCMC; official DSP prior; no warp",
+      "botorch_version": "0.18.1",
+      "gpytorch_version": "1.15.2",
+      "torch_version": "2.14.1+cpu",
+      "constraint_metric": "clearance_margin_m"
+    },
+    "observations": [
+      {
+        "success": true,
+        "velocity_rad_s": 0.6315973348665312,
+        "observed_velocity_rad_s": 0.6315973348665312,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.056364331838301696,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.0513643318383017,
+        "clearance_margin_m": 0.0514643318383017,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/77b034923b4901221fa6e431d30bdb78a091bd8e430528176c5b8ee1b88e5a6e/trial.json",
+        "raw_trial_sha256": "49a95d2f6d015263a065656752a51382e8525fcaff6ed4e3bd5ecf98ecfde490",
+        "index": 0,
+        "query_index": 0
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5440310166380411,
+        "observed_velocity_rad_s": 0.5440310166380411,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05648908055680856,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.051489080556808564,
+        "clearance_margin_m": 0.05158908055680857,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "raw_trial_sha256": "a22fd26806921bb875162d05d7826f61e475f0789068607b448c5162463c14cd",
+        "index": 1,
+        "query_index": 1
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.6239070656135549,
+        "observed_velocity_rad_s": 0.6239070656135549,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05552739064502045,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.05052739064502045,
+        "clearance_margin_m": 0.050627390645020455,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/f1b555375f62e98e4f1297c7e64d6f090b781f224f4d19ded04da89bbeee5f25/trial.json",
+        "raw_trial_sha256": "bcfddea72f4df391b230b35d1c1ef993e8cf47c7262fd973cca99728bef3d2dd",
+        "index": 2,
+        "query_index": 2
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5425948419618939,
+        "observed_velocity_rad_s": 0.5425948419618939,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.0564598322765565,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.051459832276556504,
+        "clearance_margin_m": 0.05155983227655651,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/4eb42c731f87fa850342d35324ce6b72f0d03b1926be0219ef1ce129e80feef2/trial.json",
+        "raw_trial_sha256": "2ae425a039809d4dad2aa71d6fa15b013384a4b75185bfe90685034b1d49d750",
+        "index": 3,
+        "query_index": 3
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5496701264035533,
+        "observed_velocity_rad_s": 0.5496701264035533,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05663476340350226,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.05163476340350226,
+        "clearance_margin_m": 0.05173476340350226,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          23.909461849714443,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/6fd320eb1bf09043d9b8f5f041dcc480adb189793c5f2ac69f7852fb98c7139f/trial.json",
+        "raw_trial_sha256": "b9f3441b059290badb0cd0e9d1ee50967b3b654c6b6f292ba4b2fb7f50472182",
+        "index": 4,
+        "query_index": 4,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          23.909461849714443,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          23.909461849714443,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5425948600290709,
+        "observed_velocity_rad_s": 0.5425948600290709,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05645983401668464,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.05145983401668464,
+        "clearance_margin_m": 0.051559834016684646,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          28.25534553660073,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/2582445d2104cdcf577d0b790b9138270b777815f7c63a07ac96ad0ba441b125/trial.json",
+        "raw_trial_sha256": "cfd2ccee99b034b23d622fc67fe5ce092935519a3abdd84e7cb45c00a17de3d9",
+        "index": 5,
+        "query_index": 5,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          28.25534553660073,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          28.25534553660073,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5440309859841113,
+        "observed_velocity_rad_s": 0.5440309859841113,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05648908000209419,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.05148908000209419,
+        "clearance_margin_m": 0.051589080002094195,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          28.9344194182898,
+          8.384858320533636,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/9e841b0b24117763005cae4b36ea9bbe473f03a8c44fc511ef855b7b4e9c0d5d/trial.json",
+        "raw_trial_sha256": "d4950658fad8b38f4f64ab8a79cebc94443f4bc7a7faa51dadf8d4d7874c25e7",
+        "index": 6,
+        "query_index": 6,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          28.9344194182898,
+          8.384858320533636,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          28.9344194182898,
+          8.384858320533636,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5467174962272919,
+        "observed_velocity_rad_s": 0.5467174962272919,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05841487204563045,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.05341487204563045,
+        "clearance_margin_m": 0.053514872045630456,
+        "clearance_bottleneck_source_frame": 196,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          26.18527091609642,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/d7026ceeb8037538178ea1cfc8ea78910107a688030baaf116b1cf56858bbe0d/trial.json",
+        "raw_trial_sha256": "c8f2f57eab67bf68d77723b7c73d91c067ad9f342e5ff747d488c9d61f87133c",
+        "index": 7,
+        "query_index": 7,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          26.18527091609642,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          26.18527091609642,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5425948551011566,
+        "observed_velocity_rad_s": 0.5425948551011566,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.056459832740223925,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.05145983274022393,
+        "clearance_margin_m": 0.05155983274022393,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          29.098431659325623,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/097beecc60b0527cd05136a92c0848e56a90ed5341d519d54edfe3e59af781e5/trial.json",
+        "raw_trial_sha256": "f07a34f3e1b09e1026f468d69728ba1964b0a5cea1a84df2b21a361ea7c7938c",
+        "index": 8,
+        "query_index": 8,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          29.098431659325623,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          29.098431659325623,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5602663197766757,
+        "observed_velocity_rad_s": 0.5602663197766757,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.0584030838029931,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.0534030838029931,
+        "clearance_margin_m": 0.0535030838029931,
+        "clearance_bottleneck_source_frame": 196,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          15.719653530456652,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/d29ffd5633458e8c1c8e2864c9004ecf9c7a6b90b938f1194463c83c07a819c4/trial.json",
+        "raw_trial_sha256": "702f8da30549f6bd9e31ce55a40ae3a076a79067185c51fd117fa82e65e0f21f",
+        "index": 9,
+        "query_index": 9,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          15.719653530456652,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          15.719653530456652,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5425948494307827,
+        "observed_velocity_rad_s": 0.5425948494307827,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.0583461382711663,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.053346138271166306,
+        "clearance_margin_m": 0.05344613827116631,
+        "clearance_bottleneck_source_frame": 196,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          28.713363035113318,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/9999a8ab2f5e0a31e5571f3a8b2010370f74feec42597dad46a70b16515b00d8/trial.json",
+        "raw_trial_sha256": "adb3496cc9d66a4d0238b429b611a336e2db6742eb64472970198ba8bf0429cc",
+        "index": 10,
+        "query_index": 10,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          28.713363035113318,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          28.713363035113318,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5425948494223992,
+        "observed_velocity_rad_s": 0.5425948494223992,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.058346138301535795,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.0533461383015358,
+        "clearance_margin_m": 0.0534461383015358,
+        "clearance_bottleneck_source_frame": 196,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          28.69896531507019,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/3fd9c16ada5ad9b007225345c7801ca293af13aac7a7d1f3c03e589c6320e1e1/trial.json",
+        "raw_trial_sha256": "95fb35f77e031641b7d1eaf01281bffb90701c5b346f0461bbff37bea4a0088c",
+        "index": 11,
+        "query_index": 11,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          28.69896531507019,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          28.69896531507019,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5529544895474494,
+        "observed_velocity_rad_s": 0.5529544895474494,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05680413263512608,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.05180413263512608,
+        "clearance_margin_m": 0.05190413263512608,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          21.24232185498036,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/386b7f89ed3afdb82dd1455debfc315b261e7549fc8b93c80b9740625979eac6/trial.json",
+        "raw_trial_sha256": "5903e22d0c258b99f7d094e9c333a636a24d7b10a0884dc1defd8e407f94cc89",
+        "index": 12,
+        "query_index": 12,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          21.24232185498036,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          21.24232185498036,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.542594849487312,
+        "observed_velocity_rad_s": 0.542594849487312,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05645983290292,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.05145983290292,
+        "clearance_margin_m": 0.05155983290292,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          28.781864183665075,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/f3c249a93d2dfee955f78cb7ce5c05d9974cb04a92e6291e38c710c858910254/trial.json",
+        "raw_trial_sha256": "91dece0d8d8a4d1c0875b42253c0e29f194813533c1211e96fee583449d2d9f3",
+        "index": 13,
+        "query_index": 13,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          28.781864183665075,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          28.781864183665075,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5425948493132388,
+        "observed_velocity_rad_s": 0.5425948493132388,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05645983312333324,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.05145983312333324,
+        "clearance_margin_m": 0.051559833123333246,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          28.735090178817593,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/0360a928917217e6c4586b074a07bf17d8bde4b2526253db5031521a0828b257/trial.json",
+        "raw_trial_sha256": "284e613adaf5a009aaea00ecf3e225080685a2035a1af0e01eaaff3077fbfe50",
+        "index": 14,
+        "query_index": 14,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          28.735090178817593,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          28.735090178817593,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.5425948540299634,
+        "observed_velocity_rad_s": 0.5425948540299634,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05645983257163378,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.051459832571633786,
+        "clearance_margin_m": 0.05155983257163379,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          29.23207937246253,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/e605da0bfd911eda814bb7f34937fcd6a3e3f69bee5f87bcd180c95e4f9ea19c/trial.json",
+        "raw_trial_sha256": "ba6f412442c1f539ac5f0f5dbad0419968be7503e3b0c1f41243083a103cfc1c",
+        "index": 15,
+        "query_index": 15,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          29.23207937246253,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          29.23207937246253,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": true,
+        "velocity_rad_s": 0.542594849440926,
+        "observed_velocity_rad_s": 0.542594849440926,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": true,
+        "minimum_clearance_m": 0.05645983317927916,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "kinematic_success",
+        "clearance_policy": "baseline_relative_clearance_v1",
+        "baseline_relative_g_m": 0.051459833179279164,
+        "clearance_margin_m": 0.05155983317927917,
+        "clearance_bottleneck_source_frame": 195,
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          28.711747181570285,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/evaluations/e55daa5a17f1dc216371778ba05f42adc2bd943460bf829b73cecdab63944e5a/trial.json",
+        "raw_trial_sha256": "e193fa3ca8ba262837a4b4733c5e7b6c1e53d5826446a9e357b58396c22b8fd0",
+        "index": 16,
+        "query_index": 16,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          28.711747181570285,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          28.711747181570285,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      }
+    ],
+    "initial_queries": 4,
+    "normalization": {
+      "velocity_offset": 0.5855325647700053,
+      "velocity_scale": 0.04231014032218912,
+      "clearance_offset_mm": 51.31015882917181,
+      "clearance_scale_mm": 1.0
+    },
+    "diagnostics": [
+      {
+        "after_queries": 4,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "log_cei": -1.6455926020382479,
+        "screen_best_log_cei": -1.6469371991711308,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 14,
+            "negative_mll": 2.7088784682223275,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 7,
+            "negative_mll": 2.7064142013335513,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 36,
+            "negative_mll": 1.5887959033608607,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 5,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "log_cei": -4.556808834138075,
+        "screen_best_log_cei": -4.571153502574331,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 17,
+            "negative_mll": 2.2465070813909644,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 10,
+            "negative_mll": 2.1506127933370878,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 35,
+            "negative_mll": 1.2710367243701024,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 6,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "log_cei": -5.278115079293266,
+        "screen_best_log_cei": -5.287221487372527,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 15,
+            "negative_mll": 1.49212488015384,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 12,
+            "negative_mll": 1.571199888246361,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 34,
+            "negative_mll": 1.0591972762007436,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 7,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "log_cei": -5.367354643466867,
+        "screen_best_log_cei": -5.501077473931132,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 14,
+            "negative_mll": 1.0915152741091076,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 18,
+            "negative_mll": 1.2442115550938708,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 42,
+            "negative_mll": 0.907883369298182,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 8,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "log_cei": -5.556137012485417,
+        "screen_best_log_cei": -7.03007446252472,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 14,
+            "negative_mll": 0.7811414324999068,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 20,
+            "negative_mll": 2.0147809513240755,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 37,
+            "negative_mll": 0.7943979522387624,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 9,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "log_cei": -9.654354147971025,
+        "screen_best_log_cei": -9.715701519428897,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 13,
+            "negative_mll": 0.22662954451822795,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 17,
+            "negative_mll": 1.5721499352272208,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 38,
+            "negative_mll": 0.7061315154165314,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 10,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "log_cei": -7.28980806313647,
+        "screen_best_log_cei": -10.661242432769626,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 12,
+            "negative_mll": 0.305141797539873,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 17,
+            "negative_mll": 1.5460252469717295,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 40,
+            "negative_mll": 0.6355183591347886,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 11,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "log_cei": -7.742445886113685,
+        "screen_best_log_cei": -10.779306962188663,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 18,
+            "negative_mll": -0.23258616840143712,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 46,
+            "negative_mll": 2.547048546867956,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 37,
+            "negative_mll": 0.5777439672272455,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 12,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "log_cei": -10.608969449823126,
+        "screen_best_log_cei": -10.875014015255905,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 17,
+            "negative_mll": -0.6943541359911438,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 39,
+            "negative_mll": 2.10296710880673,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 39,
+            "negative_mll": 0.5295986390324432,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 13,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "log_cei": -7.954435609663338,
+        "screen_best_log_cei": -8.964826913306698,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 17,
+            "negative_mll": -0.7672844086277497,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 41,
+            "negative_mll": 2.0583847976017435,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 35,
+            "negative_mll": 0.4888602883212402,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 14,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "log_cei": -8.147037588887805,
+        "screen_best_log_cei": -10.00010901317761,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 18,
+            "negative_mll": -1.1289611341115726,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 43,
+            "negative_mll": 8.096393946851821,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 40,
+            "negative_mll": 0.45394168546233854,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 15,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "log_cei": -8.274033178942844,
+        "screen_best_log_cei": -10.545601056750376,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 17,
+            "negative_mll": -1.4451351828994965,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 30,
+            "negative_mll": 75.90216099688243,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 35,
+            "negative_mll": 0.4236789251652303,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 16,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "log_cei": -8.280898414117008,
+        "screen_best_log_cei": -11.40389086641309,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 21,
+            "negative_mll": -1.714025261934414,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 33,
+            "negative_mll": 72.07434528719801,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 36,
+            "negative_mll": 0.397198987659921,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      }
+    ]
+  },
+  "timings": [
+    {
+      "index": 0,
+      "kind": "initial",
+      "evaluation_seconds": 9.31289996515261e-05
+    },
+    {
+      "index": 1,
+      "kind": "initial",
+      "evaluation_seconds": 0.696912647001227
+    },
+    {
+      "index": 2,
+      "kind": "initial",
+      "evaluation_seconds": 0.8472759090000181
+    },
+    {
+      "index": 3,
+      "kind": "initial",
+      "evaluation_seconds": 0.7328267590000905
+    },
+    {
+      "index": 4,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.7654286990000401,
+      "fit_seconds": 0.135173027001656,
+      "acquisition_seconds": 0.07070229400051176
+    },
+    {
+      "index": 5,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.744622045000142,
+      "fit_seconds": 0.12737514699983876,
+      "acquisition_seconds": 0.1040182979995734
+    },
+    {
+      "index": 6,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.6975896500007366,
+      "fit_seconds": 0.142362377999234,
+      "acquisition_seconds": 0.11125232900121773
+    },
+    {
+      "index": 7,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.7207109850005509,
+      "fit_seconds": 0.1565468549997604,
+      "acquisition_seconds": 0.0557370999995328
+    },
+    {
+      "index": 8,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.7841778490001161,
+      "fit_seconds": 0.1445454119984788,
+      "acquisition_seconds": 0.08680651899885561
+    },
+    {
+      "index": 9,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.7832092990011006,
+      "fit_seconds": 0.14064831900032004,
+      "acquisition_seconds": 0.053249081000103615
+    },
+    {
+      "index": 10,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.6914115069994295,
+      "fit_seconds": 0.15205922899986035,
+      "acquisition_seconds": 0.0776073280012497
+    },
+    {
+      "index": 11,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.7007154369985074,
+      "fit_seconds": 0.171082242999546,
+      "acquisition_seconds": 0.09399912700064306
+    },
+    {
+      "index": 12,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.744598319999568,
+      "fit_seconds": 0.16930169799888972,
+      "acquisition_seconds": 0.06663508800011186
+    },
+    {
+      "index": 13,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.7081327610012522,
+      "fit_seconds": 0.17386105100013083,
+      "acquisition_seconds": 0.11400366099951498
+    },
+    {
+      "index": 14,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.7124998290000804,
+      "fit_seconds": 0.1815006409997295,
+      "acquisition_seconds": 0.1590124560007098
+    },
+    {
+      "index": 15,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.6933105680000153,
+      "fit_seconds": 0.14931766700101434,
+      "acquisition_seconds": 0.1554503110000951
+    },
+    {
+      "index": 16,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.7284280129988474,
+      "fit_seconds": 0.16590509200068482,
+      "acquisition_seconds": 0.14911546099938278
+    }
+  ]
+}

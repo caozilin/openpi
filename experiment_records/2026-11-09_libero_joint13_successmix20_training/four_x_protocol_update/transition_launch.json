@@ -1,0 +1,11 @@
+{
+  "pid": 3334760,
+  "command": [
+    "/home/czl/openpi/.venv/bin/python",
+    "-u",
+    "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/four_x_protocol_update/transition_successmix20_four_x_server.py",
+    "--run-dir",
+    "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+  ],
+  "script_sha256": "abd76dd934fff7299e7d2a0423605a542f941a67ddf534cb4e05549b96ad07e5"
+}

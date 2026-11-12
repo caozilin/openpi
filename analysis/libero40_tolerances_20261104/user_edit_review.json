@@ -1,0 +1,689 @@
+{
+  "workbook_sha256": "25f4279618b45239b3f509889999cd33bb908b0f93638ba7c95b46563808b221",
+  "rows": 49,
+  "tasks": 40,
+  "unique_subtasks": 49,
+  "invalid": [],
+  "idIssues": [],
+  "degreeCounts": {
+    "0": 133,
+    "5": 12,
+    "15": 55,
+    "30": 94
+  },
+  "changed_cells": 67,
+  "changed_tasks": 22,
+  "changed_subtasks": 24,
+  "changes": [
+    {
+      "cell": "H9",
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I9",
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J9",
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H10",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I10",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J10",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H11",
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I11",
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J11",
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H12",
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I12",
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J12",
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "F13",
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "APP",
+      "axis": "yF",
+      "old": 30,
+      "new": 5
+    },
+    {
+      "cell": "H13",
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I13",
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J13",
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H14",
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I14",
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J14",
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 5
+    },
+    {
+      "cell": "H15",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I15",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J15",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H16",
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I16",
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J16",
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H17",
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I17",
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J17",
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H18",
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I18",
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J18",
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H21",
+      "suite": "libero_object",
+      "task_id": 2,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I21",
+      "suite": "libero_object",
+      "task_id": 2,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H23",
+      "suite": "libero_object",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I23",
+      "suite": "libero_object",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H26",
+      "suite": "libero_object",
+      "task_id": 7,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I26",
+      "suite": "libero_object",
+      "task_id": 7,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H28",
+      "suite": "libero_object",
+      "task_id": 9,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I28",
+      "suite": "libero_object",
+      "task_id": 9,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H30",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I30",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J30",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "F32",
+      "suite": "libero_goal",
+      "task_id": 3,
+      "subtask_id": 0,
+      "phase": "APP",
+      "axis": "yF",
+      "old": 30,
+      "new": 5
+    },
+    {
+      "cell": "H32",
+      "suite": "libero_goal",
+      "task_id": 3,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 0,
+      "new": 5
+    },
+    {
+      "cell": "I32",
+      "suite": "libero_goal",
+      "task_id": 3,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 0,
+      "new": 5
+    },
+    {
+      "cell": "J32",
+      "suite": "libero_goal",
+      "task_id": 3,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 0,
+      "new": 5
+    },
+    {
+      "cell": "H33",
+      "suite": "libero_goal",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I33",
+      "suite": "libero_goal",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J33",
+      "suite": "libero_goal",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H35",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I35",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H37",
+      "suite": "libero_goal",
+      "task_id": 8,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I37",
+      "suite": "libero_goal",
+      "task_id": 8,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J37",
+      "suite": "libero_goal",
+      "task_id": 8,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "F45",
+      "suite": "libero_10",
+      "task_id": 3,
+      "subtask_id": 0,
+      "phase": "APP",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H47",
+      "suite": "libero_10",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 5
+    },
+    {
+      "cell": "I47",
+      "suite": "libero_10",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 5
+    },
+    {
+      "cell": "J47",
+      "suite": "libero_10",
+      "task_id": 4,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H48",
+      "suite": "libero_10",
+      "task_id": 4,
+      "subtask_id": 1,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 5
+    },
+    {
+      "cell": "I48",
+      "suite": "libero_10",
+      "task_id": 4,
+      "subtask_id": 1,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 5
+    },
+    {
+      "cell": "J48",
+      "suite": "libero_10",
+      "task_id": 4,
+      "subtask_id": 1,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H50",
+      "suite": "libero_10",
+      "task_id": 6,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 5
+    },
+    {
+      "cell": "I50",
+      "suite": "libero_10",
+      "task_id": 6,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 5
+    },
+    {
+      "cell": "J50",
+      "suite": "libero_10",
+      "task_id": 6,
+      "subtask_id": 0,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "H51",
+      "suite": "libero_10",
+      "task_id": 6,
+      "subtask_id": 1,
+      "phase": "EXEC",
+      "axis": "xF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "I51",
+      "suite": "libero_10",
+      "task_id": 6,
+      "subtask_id": 1,
+      "phase": "EXEC",
+      "axis": "yF",
+      "old": 30,
+      "new": 15
+    },
+    {
+      "cell": "J51",
+      "suite": "libero_10",
+      "task_id": 6,
+      "subtask_id": 1,
+      "phase": "EXEC",
+      "axis": "zF",
+      "old": 30,
+      "new": 15
+    }
+  ]
+}

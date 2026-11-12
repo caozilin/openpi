@@ -1,0 +1,76 @@
+{
+  "attempts": [
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "STOPPED",
+      "iterations": 100,
+      "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 22,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "model": "VariationalELBO",
+      "status": "SUCCESS",
+      "iterations": 31,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "STOPPED",
+      "iterations": 100,
+      "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 25,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "model": "VariationalELBO",
+      "status": "SUCCESS",
+      "iterations": 31,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 65,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 39,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model": "VariationalELBO",
+      "status": "SUCCESS",
+      "iterations": 30,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 97,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 67,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "model": "VariationalELBO",
+      "status": "SUCCESS",
+      "iterations": 31,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    }
+  ]
+}

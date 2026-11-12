@@ -1,0 +1,739 @@
+{
+  "complete": true,
+  "labeled": 24,
+  "raw_trials": 660,
+  "results": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "demo": "demo_37",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            30.0,
+            19.775752871052802,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            15.0,
+            15.0,
+            0.0,
+            15.0,
+            0.0,
+            15.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_spatial/task_02/demo_37/tolerance_labels.json",
+      "labels_sha256": "fa05fa6f7e238e8fb964c15559708aa4c154296b40f95c78ec12b762a07aca4e"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_1",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            5.0,
+            5.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            15.0,
+            15.0,
+            10.578558510277938,
+            13.184601322838104,
+            15.0,
+            15.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_spatial/task_04/demo_1/tolerance_labels.json",
+      "labels_sha256": "a8bc08738689b0b1ae1f43a233a8067119b995a8712a55f88eebe905f721c169"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_20",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            5.0,
+            5.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            15.0,
+            15.0,
+            0.0,
+            15.0,
+            15.0,
+            15.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_spatial/task_04/demo_20/tolerance_labels.json",
+      "labels_sha256": "4b4de4beedb7331f1e103c3501283b46a775c4346cb143ea01c084b81d948abb"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_21",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            5.0,
+            5.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            15.0,
+            0.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 44,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_spatial/task_04/demo_21/tolerance_labels.json",
+      "labels_sha256": "47cc1039333952adde62de7ce4f72eaa7e75a4bd945d73d07a64a449f94ace26"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_24",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            5.0,
+            5.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 7,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_spatial/task_04/demo_24/tolerance_labels.json",
+      "labels_sha256": "12871354f64ea38de0a44d4bc9ccbb9347c41a594bc5588b01c2d43fee6e4b2d"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_37",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            2.399807902260608,
+            5.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            15.0,
+            15.0,
+            0.0,
+            11.022892131779273,
+            0.0,
+            15.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 2,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_spatial/task_04/demo_37/tolerance_labels.json",
+      "labels_sha256": "154564cb8ed45aa3d090e66eb30bec9f0d8534237cfdfc2f8a233e413bfe12ac"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_42",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            2.3049575594719736,
+            5.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            15.0,
+            13.25503913862956,
+            11.909422438208535,
+            13.525931474155676,
+            8.879588842675762,
+            15.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 8,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_spatial/task_04/demo_42/tolerance_labels.json",
+      "labels_sha256": "a212c707c89f5aadade11da2a1281e0569da21915ca3abf1003e58d0e56838cf"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "demo": "demo_14",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            30.0,
+            17.45617382337769,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 2,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_spatial/task_06/demo_14/tolerance_labels.json",
+      "labels_sha256": "196857e40d58cb26e63d0387ece3b556703d2e360925eef2b83b93d9c0bcbcb1"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "demo": "demo_49",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            11.064230978981213,
+            21.722341269778905,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            15.0,
+            12.756192280297629,
+            13.01967341455733,
+            15.0,
+            13.777124891606269,
+            10.018113553153627
+          ]
+        }
+      ],
+      "baseline_failure_frames": 3,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_spatial/task_07/demo_49/tolerance_labels.json",
+      "labels_sha256": "ac110a5405bf29a8764c30cda5c32dc41602a469e67865cb11af1b47d430df34"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "demo": "demo_39",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            30.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            15.0,
+            0.0,
+            0.0,
+            15.0,
+            0.0,
+            15.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_spatial/task_09/demo_39/tolerance_labels.json",
+      "labels_sha256": "d56bcdd4b43f6ffe1e7decd3cc1e57f0524eead6e2be4b3dcd430a17e67cd6c6"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_11",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            30.0,
+            0.0,
+            30.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            30.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_11/tolerance_labels.json",
+      "labels_sha256": "05bb14ec5b0338562d51c1cf86d04d279f54198ac1cf3c1c88f35872947ca431"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_17",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            22.028049123057396,
+            30.0,
+            24.590324285866828
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            30.0,
+            30.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 7,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_17/tolerance_labels.json",
+      "labels_sha256": "6e4b1a57dd6839704c86fa479d137f231534b67ce256d5f35be883dbfdec8df9"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_19",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            16.049752602511056,
+            29.44222407916333,
+            28.305207593299055,
+            0.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            30.0,
+            17.32920883515269
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_19/tolerance_labels.json",
+      "labels_sha256": "b836760977cf73afbe46f973b0872f0753000b89d40d04e47f0cbf901be7d967"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_20",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            24.403574114776564,
+            18.89467239982499,
+            0.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            30.0,
+            0.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 5,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_20/tolerance_labels.json",
+      "labels_sha256": "bec84d8cf26d08962959c7f727a60a2e97f9049b6fcc36ca1b967396e34a6a3e"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_21",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            15.895969056728436,
+            0.0,
+            3.7161417852202594
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            30.0,
+            30.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 2,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_21/tolerance_labels.json",
+      "labels_sha256": "260ffdd8ca6c88b7ef7de73aa07358df6102b09f59dc3a307d8e5c80070f688c"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_23",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            26.132099061697648,
+            27.081051320818684,
+            30.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            30.0,
+            0.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_23/tolerance_labels.json",
+      "labels_sha256": "71a07cd1327aaa865b3221b90a23d5ba0c21483c4aa28de98f61e21be815603b"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_24",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            29.468810419419952,
+            0.0,
+            30.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            19.575978822176722,
+            30.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 5,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_24/tolerance_labels.json",
+      "labels_sha256": "1987ac6f0177c1445024c913fc35812e7dd1a11d96634daaed38393d86f13fea"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_25",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            30.0,
+            24.832516053570053,
+            30.0,
+            0.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            27.09547686910738,
+            0.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_25/tolerance_labels.json",
+      "labels_sha256": "719b66651a0ed1703117a3b964d27f0f09f969c696f10c71ca385ede5b7514f6"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_27",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            30.0,
+            0.0,
+            30.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            18.33134020155826,
+            28.809693453207892
+          ]
+        }
+      ],
+      "baseline_failure_frames": 2,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_27/tolerance_labels.json",
+      "labels_sha256": "b85bfdd4419da924f49de3dc7c6f7539cab54f462d59b5d63bcc64fa0a9d5a2e"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_45",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            28.458007412981583,
+            23.834868974542985,
+            0.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            30.0,
+            30.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_45/tolerance_labels.json",
+      "labels_sha256": "55ccaf814d5bb38724c449decce68f2d3b0d3f2267059d08b23a9f4b2f5f56f9"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "demo": "demo_15",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            30.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 3,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_05/demo_15/tolerance_labels.json",
+      "labels_sha256": "a34c1fb619d5a00e862608e74d94b12aed835a282c90bec9704637bcd7dbd80a"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "demo": "demo_43",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            23.549872294326473,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_05/demo_43/tolerance_labels.json",
+      "labels_sha256": "2fc94c051e8d5d7e2b1dde468d5b5d80a95041a00d26540dd7ab2566b34b1bf3"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "demo": "demo_27",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            30.0,
+            30.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            22.99803122332122,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 1,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_08/demo_27/tolerance_labels.json",
+      "labels_sha256": "d6d41f42896ef4f63b4bd0cac462a3e685882b4dff9c0185661268ef93a6a892"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "demo": "demo_36",
+      "status": "labeled",
+      "subtasks": [
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            30.0,
+            30.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pregrasp": [
+            0.0,
+            0.0,
+            0.0,
+            30.0,
+            0.0,
+            0.0
+          ],
+          "postgrasp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "baseline_failure_frames": 2,
+      "labels_path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_08/demo_36/tolerance_labels.json",
+      "labels_sha256": "5b3c8079a58b8b3d915da39781c8139e4811192aa6e42f0050e789f9e66336d6"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "pid": 136691,
+  "command": [
+    "/usr/bin/python3",
+    "-u",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/upload_exact_transport.py"
+  ],
+  "method": "exact_compact_transport",
+  "script_sha256": "269318d5fcb429a1d302a482298255cf44a7e02ce1d1938bddca42461c95b0f1"
+}

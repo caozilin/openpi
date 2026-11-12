@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "status": "labeled",
+  "source_episode_index": 0,
+  "suite": "libero_spatial",
+  "task_id": 0,
+  "demo": "demo_0",
+  "frames": 97,
+  "subtasks": 1,
+  "annotation": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v4/libero_spatial/task_00/demo_0/tolerance_annotation.json",
+  "labels": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v4/libero_spatial/task_00/demo_0/tolerance_labels.json"
+}

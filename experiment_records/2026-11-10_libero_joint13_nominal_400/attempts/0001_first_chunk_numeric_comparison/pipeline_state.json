@@ -1,0 +1,5 @@
+{
+  "stage": "failed_or_interrupted",
+  "at": "2026-11-10T18:16:17.629398+08:00",
+  "error": "Traceback (most recent call last):\n  File \"/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/pipeline.py\", line 167, in main\n    if initial is not None and initial.poll() not in (None,0):raise RuntimeError('Initial integration audit failed; preserve completed results')\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Initial integration audit failed; preserve completed results\n"
+}

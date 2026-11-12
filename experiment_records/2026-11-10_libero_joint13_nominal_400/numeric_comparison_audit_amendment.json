@@ -1,0 +1,19 @@
+{
+  "reason": "Exact first-chunk1e-6 cross-run requirement invalidated by fixed identical packet cross-replica numerical differences; no physics/model/request edits",
+  "old_auditor_sha256": "8b823a3a79b93dbc385be69b45392e8f079fd268ba4f075062bf031c962ba444",
+  "new_source_sha256": {
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_evaluation_v2.py": "668e3a9cacd74981e0b021fd32c24b620589541f30eee2844de24277462e1d28",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/pipeline_v2.py": "905a9954665f9c3e0443b760c4f5e105a124305cf291eb741556cf20b0da4bf9"
+  },
+  "request_sha256": "ccb34c973fca0edc6ac08e1f323e195702bc9a8ec763f38eee37ee75f23c1575",
+  "preserved_committed_manifest": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/attempts/0001_first_chunk_numeric_comparison/preserved_committed_sha256.json",
+  "diagnostic": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/attempts/0001_first_chunk_numeric_comparison/fixed_packet_cross_replica_diagnosis.json",
+  "retained_checks": [
+    "same model parameter and normalization digest",
+    "same official initial state",
+    "same first physical prestate1e-12",
+    "first-chunk differences saved, no assumption of exact equality",
+    "all strict reference FK, no tolerance, failure hold, physics, native success, full videos"
+  ],
+  "completed_rollouts_retested": 0
+}

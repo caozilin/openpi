@@ -1,0 +1,93 @@
+--- /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/audit_evaluation.py
++++ /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_evaluation.py
+@@ -15,7 +15,7 @@
+ 
+ ROOT = Path('/media/czl/sata/franka_my_code/openpi')
+ sys.path.insert(0,str(ROOT))
+-RUN = ROOT / "data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110"
++RUN = ROOT / "data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110"
+ 
+ 
+ def sha(path):
+@@ -56,8 +56,8 @@
+     import numpy as np
+     from examples.libero.success_continuation import audit_record, audit_first_success_state
+ 
+-    from examples.libero.eval_joint13_predicted_libero_local import validate as validate_request, SUITES
+-    from examples.libero.predicted_tolerance_policy import PredictedTolerancePolicy, POLICY
++    from examples.libero.eval_joint13_nominal_libero_local import validate as validate_request, SUITES
++    from examples.libero.nominal_joint13_policy import NominalDiagnosticPolicy as PredictedTolerancePolicy, POLICY
+     from examples.libero.tasktol_actions import decode_tasktol_action
+ 
+     lock = (RUN / ("initial_audit.lock" if partial else "independent_audit.lock")).open("a")
+@@ -118,7 +118,7 @@
+         assert sha(Path(task["source_init_states"])) == task["source_init_sha256"]
+         assert result["complete"]
+         assert result["eval_identity"] == request["eval_identity"]
+-        assert result["tolerance_enabled"] is True
++        assert result["tolerance_enabled"] is False
+         for key, value in tolerance_settings.items():
+             if key == 'tolerance_bounds_policy' and value == 'uniform' and key not in result:
+                 continue  # Historical uniform-angle records predate this field.
+@@ -162,10 +162,18 @@
+                 official = initial[f"{suite}_{tid}_{seed}"]
+                 assert np.array_equal(z["initial_state"], official)
+                 assert hashlib.sha256(official.tobytes()).hexdigest() == result["initial_state_sha256"]
++                baseline = Path(request['paired_predicted_tolerance_run']) / 'episodes' / suite / f'task_{tid:02d}' / f'seed_{seed}'
++                baseline_result = read(baseline / 'result.json')
++                baseline_rows = read(baseline / 'trajectory.json')
++                assert result['server_metadata']['params_values_sha256'] == baseline_result['server_metadata']['params_values_sha256']
++                with np.load(baseline / 'trajectory.npz', allow_pickle=False) as old:
++                    np.testing.assert_allclose(states[0], old['pre_action_states'][0], atol=1e-12, rtol=0)
++                for field in ['model_action_raw', 'predicted_bounds_raw_rad']:
++                    np.testing.assert_allclose([x[field] for x in rows[:5]], [x[field] for x in baseline_rows[:5]], atol=1e-6, rtol=0)
+                 joint_indices = np.asarray(env.robots[0]._ref_joint_pos_indexes) + 1
+-                sys.path.insert(0,'/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400')
+-                from audit_bound_replay import RecordedToleranceReplay
+-                replay=RecordedToleranceReplay(env,official)
++                sys.path.insert(0,'/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400')
++                from audit_nominal_reference import RecordedNominalReplay
++                replay=RecordedNominalReplay(env,official)
+                 policy = PredictedTolerancePolicy()
+                 streak = 0
+                 for i, row in enumerate(rows):
+@@ -174,9 +182,9 @@
+                     np.testing.assert_array_equal(decode_tasktol_action(np.asarray(row['model_action_raw'])), actions[i])
+                     assert row['inference_chunk']==i//5 and row['inference_chunk_offset']==i%5
+                     selection = policy.resolve(np.asarray(row['pre_action']['finger_qpos_m']), actions[i], row['predicted_bounds_raw_rad'])
+-                    for field in ('phase','subtask_index','semantic_mask','observed_phase','observed_subtask_index','predicted_bounds_clipped'):
++                    for field in ('phase','subtask_index','semantic_mask','predicted_bounds_unused'):
+                         assert row[field]==selection[field], (suite,tid,seed,i,field)
+-                    assert np.allclose(row['bounds_rad'], selection['bounds_rad'], atol=1e-15, rtol=0)
++                    assert row['bounds_rad'] is selection['bounds_rad'] is None
+                     replay.verify(actions[i],selection,row)
+                     if row['phase'] in ('ENG','DIS'):
+                         assert row['semantic_mask'] == '000' 
+@@ -265,7 +273,7 @@
+                 "first_success_state_verified": bool(result.get("success") and "post_success_seconds" in result),
+                 "termination": result["termination"],
+                 "native_predicate_verified": True,
+-                "every_predicted_bound_and_causal_phase_recomputed": True,
++                "strict_nominal_reference_and_fk_verified": True,
+                 "official_initial_state_exact": True,
+                 "fresh_forward_success": fresh_success,
+                 "failed_frames": result["total_solver_failures"],
+@@ -293,15 +301,15 @@
+         {
+             "complete": True,
+             "checked_at": datetime.datetime.now().astimezone().isoformat(),
+-            "scope": f"Initial {len(verified)} committed episodes only; full400 remains unaudited" if partial else "All400 joint13 predicted-tolerance episodes, seeds0..9, six inference GPUs and hold20 policy",
++            "scope": f"Initial {len(verified)} committed episodes only; full400 remains unaudited" if partial else "All400 joint13 no-tolerance episodes, seeds0..9, six inference GPUs and hold20 policy",
+             "tolerance_settings": tolerance_settings,
+             "successes": sum(r["success"] for r in verified),
+             "episodes": len(verified),
+             "full_evaluation_audited": not partial,
+             "infrastructure_errors": 0,
+             "every_frame_reference_hold_physics_and_failure_counter_verified": True,
+-            "all_predicted_bounds_and_live_phases_recomputed": True,
+-            "canonical_ema_limits_and_contraction_recovery_recomputed": True,
++            "all_model_bounds_unused_and_strict_reference_verified": True,
++            "no_tolerance_branch_used": True,
+             "all_official_initial_states_exact": True,
+             "all_videos_decoded": True,
+             "native_predicate_sampling": "Original seeded model fixtures; Euler last-step cached geometry with final qpos, inverse integration roundtrip1e-12",

@@ -1,0 +1,57 @@
+{
+  "complete": true,
+  "checks": [
+    "5 Python installer/foreground CLI tests passed with host network permissions",
+    "Node accepted/rejected/missing/strict-axis telemetry tests passed",
+    "Original benchmark release tests passed",
+    "HTTP index and three dataset assets 200 from existing port8000 service",
+    "Browser frame0 and49 match raw recorded values",
+    "Browser original/recovery source toggles verified",
+    "Browser rejected early-stop at frame236 retains accepted values and ends curve",
+    "Browser playback moved release readout to frame4",
+    "No browser console errors at checked moments"
+  ],
+  "samples": [
+    {
+      "task": "libero_spatial/00/demo_0",
+      "mode": "tolerance",
+      "frames": 97,
+      "raw_trace_sha256": "71e4eaf634c3dd910a1dffeb1bd89b299068068fccb97f8416f8cee1fd0eaa50",
+      "first_recorded_release_deg": [
+        0.0,
+        1.4703665566285637,
+        0.0
+      ],
+      "rejected_frames": 0
+    },
+    {
+      "task": "libero_10/03/demo_21",
+      "mode": "tolerance",
+      "frames": 237,
+      "raw_trace_sha256": "2dc945647215b7aacb54a700df9cf3beda33664ee73d268ae887b8a008a22c82",
+      "first_recorded_release_deg": [
+        0.0,
+        0.9824721369516527,
+        0.0
+      ],
+      "rejected_frames": 1
+    },
+    {
+      "task": "libero_10/03/demo_21",
+      "mode": "recovery",
+      "frames": 250,
+      "raw_trace_sha256": "07695dc6a586e39ae0c1656bbb75c7571478450f3235ad450babebcb706ec427",
+      "first_recorded_release_deg": [
+        0.0,
+        0.9824721369516527,
+        0.0
+      ],
+      "rejected_frames": 0
+    }
+  ],
+  "existing_dataset_service_pid": 132831,
+  "existing_benchmark_service_pid": 131002,
+  "services_not_restarted": true,
+  "new_servers_started": false,
+  "source_traces_unchanged": true
+}

@@ -1,0 +1,77 @@
+{
+  "complete": false,
+  "processed": 6,
+  "labeled": 4,
+  "annotation_failed": 2,
+  "adapter_errors": 0,
+  "results": [
+    {
+      "complete": true,
+      "status": "labeled",
+      "source_episode_index": 0,
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "demo": "demo_0",
+      "frames": 97,
+      "subtasks": 1,
+      "annotation": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_spatial/task_00/demo_0/tolerance_annotation.json",
+      "labels": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_spatial/task_00/demo_0/tolerance_labels.json"
+    },
+    {
+      "complete": true,
+      "status": "labeled",
+      "source_episode_index": 187,
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_0",
+      "frames": 152,
+      "subtasks": 1,
+      "annotation": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_spatial/task_04/demo_0/tolerance_annotation.json",
+      "labels": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_spatial/task_04/demo_0/tolerance_labels.json"
+    },
+    {
+      "complete": true,
+      "status": "labeled",
+      "source_episode_index": 1101,
+      "suite": "libero_goal",
+      "task_id": 3,
+      "demo": "demo_0",
+      "frames": 169,
+      "subtasks": 1,
+      "annotation": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_goal/task_03/demo_0/tolerance_annotation.json",
+      "labels": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_goal/task_03/demo_0/tolerance_labels.json"
+    },
+    {
+      "complete": true,
+      "status": "labeled",
+      "source_episode_index": 1565,
+      "suite": "libero_10",
+      "task_id": 3,
+      "demo": "demo_1",
+      "frames": 227,
+      "subtasks": 2,
+      "annotation": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_10/task_03/demo_1/tolerance_annotation.json",
+      "labels": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_10/task_03/demo_1/tolerance_labels.json"
+    },
+    {
+      "complete": false,
+      "status": "annotation_failed",
+      "source_episode_index": 1689,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_0",
+      "error": "Nominal zero-tolerance trajectory failed",
+      "failure": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_10/task_06/demo_0/tolerance_annotation_failure.json"
+    },
+    {
+      "complete": false,
+      "status": "annotation_failed",
+      "source_episode_index": 1734,
+      "suite": "libero_10",
+      "task_id": 7,
+      "demo": "demo_0",
+      "error": "Nominal zero-tolerance trajectory failed",
+      "failure": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_10/task_07/demo_0/tolerance_annotation_failure.json"
+    }
+  ]
+}

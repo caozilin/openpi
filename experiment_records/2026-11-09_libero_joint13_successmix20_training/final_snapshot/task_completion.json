@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "finished_at": "2026-11-10T16:23:01.565183+08:00",
+  "episodes": 1875,
+  "frames": 312374,
+  "nominal_episodes": 1574,
+  "tolerance_episodes": 301,
+  "steps": 10000,
+  "full_independent_training_audit_sha256": "b6ab01c07275e52db6aa03f9335c9d428359b3a0bfd3d3180a496118e2ff64e5"
+}

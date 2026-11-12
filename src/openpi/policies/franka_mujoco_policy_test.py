@@ -70,15 +70,17 @@ def test_franka_mujoco_joint_tolerance_inputs_and_outputs() -> None:
     assert result["actions"].shape == (2, 13)
     np.testing.assert_array_equal(result["actions"], np.concatenate((actions, tolerance), axis=-1))
 
-    outputs = franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=True)({"actions": result["actions"]})
+    padded = np.pad(result["actions"], ((0, 0), (0, 19)))
+    padded[:, 13:] = 999  # Unused model dimensions must not leak into physical outputs.
+    outputs = franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=True)({"actions": padded})
     assert set(outputs) == {"actions", "rotation_tolerance"}
     np.testing.assert_array_equal(outputs["actions"], actions)
     np.testing.assert_array_equal(outputs["rotation_tolerance"], tolerance)
 
 
-@pytest.mark.parametrize("dimension", [7, 12, 15, 32])
+@pytest.mark.parametrize("dimension", [7, 12, 13, 15, 19, 31, 33])
 def test_joint_outputs_reject_incompatible_dimensions(dimension: int) -> None:
-    with pytest.raises(ValueError, match="exactly 13"):
+    with pytest.raises(ValueError, match="pretrained 32-D"):
         franka_mujoco_policy.FrankaMujocoOutputs(joint_task_tolerance=True)(
             {"actions": np.zeros((2, dimension), dtype=np.float32)}
         )

@@ -1,0 +1,22 @@
+# joint13无容差400当前交接
+先读AGENTS.md、docs/TRAINING_SERVER.md和本README。本组用户已明确授权，同模型10000/同seed0..9/40任务400，只关闭容差；本地6仿真、服务器6卡推理。run /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110。监督 /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/pipeline.py，真实监督66337、总控66398、六本地客户端66399..66404；远端manager3979754/六children3979755..3979760，以pipeline_launch和主机/proc/start_ticks/锁为准，活跃不重复启动。SSH /tmp/libero_joint13_nominal400_20261110.sock，远端/mnt/SharedData/czl/runs/libero_eval_joint13_successmix20_nominal_400_20261110，GPU0/1/2/3/4/6、端口18760..18765。本次model身份libero_joint13_successmix20_step10000_nominal_seed0to9_20261110，params digest固定32bdc6bc91f99c0ce46cda90e4d99fe5132a1309d7e9a045814ef0a91f0d65d5。不要动GPU5/其他用户/viewer，不重训。
+
+入口examples/libero/eval_joint13_nominal_libero_local.py，包装run_client.py；同10predict/5execute、20失败保持、成功续20步、严格boundsNone。33测试通过，源请求SHA见preparation_verification。监督自动做首6只读完整artifact检查并与旧组首chunk对齐，再400全审计/配对报告/定向收尾；全量未审计不可宣告全部完成。任何异常保留已提交成败和未完成证据，不能盲重启/改冻结SHA。每15分钟表格Spatial/Object/Goal/Long分别S/N、N/100，partial不能以400分母。
+
+旧预测容差400组在18:02已全部审计通过366成功、旧本地/远端父子均退出且锁/隧道释放；旧组进程不复用不恢复，全部旧视频结果保留。
+
+## 首块数值检查中断与保留续跑
+
+18:16首6已提交且成功，但初审额外要求两次运行首5输出逐项1e-6一致，检查失败导致本地父子正常退出（已主机核实）并释放锁；不是任务失败。全部6条24项artifact SHA保护，原始审计/监督/请求/日志及未提交目录保存在attempts/0001_first_chunk_numeric_comparison。没有重测已提交成败。
+
+同一固定观测packet字节、同噪声种子对六副本各重复2次诊断：各副本内部重复差0，但副本间actions最大差0.002929103、容差最大差0.005176160rad；同params/norm身份已核对。该packet来自一帧已存有损视频，只用于比较相同packet的副本数值差，不能证明旧运行原始输入字节相同，也不能将跨运行全部差异唯一归因GPU。首prestate一致不保证像素字节完全一致；历史请求没有完整原始packet。因此撤销“同模型/seed必保证1e-6逐输出一致”的额外审计条件，保留首chunk差值作为诊断，不放宽任何物理/FK/求解/原生成功门限，不改seed/模型/runtime。相同模型seed不声称比特级相同动作，后续比较按任务/seed配对。
+
+原冻结auditor/pipeline保留不改，新增audit_evaluation_v2.py/pipeline_v2.py独立补充清单numeric_comparison_audit_amendment.json绑定SHA。原请求ccb34c973fca0edc6ac08e1f323e195702bc9a8ec763f38eee37ee75f23c1575和490来源不变。修正初审18:22:50通过原6全部：同官方初态/首prestate1e-12、无容差boundsNone/mask000、严格参考累计/FK、25physics、失败保持/原生首末谓词/视频完整解码。证据run/initial_client_integration_audit.json和initial_audit_v2.log。
+
+确认原本地进程/只读初审退出后，18:23使用同冻结客户端和有界传输续跑剩余394；新监督pipeline_v2.py PID71157/start_ticks1258864，真实总控/6客户端见evaluation_state及主机/proc。远端原3979754和3979755..3979760全部复用未重启。完整400审计待完成；不要恢复旧66337或旧原始audit_evaluation.py。原independent_audit_state.failed是旧额外数值比较残留，历史已归档，当前全审计待全部400。
+
+
+19:39后续核查：完整审计已过390条，在Long09/seed0的额外L2位置误差检查拦截；冻结IPOPT的实际position_residual和rotation_residual均max(abs(component))，阈值1e-5m/1e-4rad，旧只读审计错误用了向量L2，同标量阈值更严格。保留attempts/0002_audit_residual_norm和全400×4 artifactSHA，原监督/审计已退出，物理、结果与门限均未改。新增audit_evaluation_v3.py+audit_nominal_reference_v3.py使用同canonical pose_error逐分量最大值，并逐帧对照记录残差；SHA见residual_norm_audit_amendment.json。finish_existing400.py仅重做完整只读审计并续接原finish_report/paired/定向清理，不执行任何新rollout/推理。新监督PID113851，日志finish_existing400.log，审计independent_audit_v3.log/PID见audit_v3_launch.json；活跃不重启。完整通过前仍属审计中。
+
+
+最终完成：20:19完整400只读v3审计通过、配对报告已生成、服务器3979754/3979755..3979760退出、专用socket/转发释放；20:22主机复核113851/113857及所有旧本地父子退出、全部锁释放、1600artifact及490冻结源不变。禁止再启动任何本次eval/audit/推理。见final_delivery_verification.json。

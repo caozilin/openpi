@@ -1,0 +1,6 @@
+{
+  "reason": "Canonicalize JSON loss groups to immutable tuples before model creation",
+  "previous_sha256": "e298b1da05ab672c5ea02bbbd0ad55506330bba3367654ed3e81cd86b3c0874d",
+  "current_sha256": "22145c276e088437f8b572b0c29e272e973e3c2f46ad00819604efa679a5c467",
+  "training_not_started": true
+}

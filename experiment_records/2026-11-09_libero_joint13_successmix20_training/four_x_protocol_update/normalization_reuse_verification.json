@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "at": "2026-11-09T20:37:17.177439+08:00",
+  "only_loss_weight_changed_in_normalization_inputs": true,
+  "reason": "RunningStats consumes only state/actions; per-sample loss weight is excluded from normalization fingerprint",
+  "original_request_sha256": "9077cac73ceae17e0e9226af65d5221cd1b0089b6a681ba978bee22a6bcb9917",
+  "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+  "original_inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+  "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+  "normalization_receipt_unchanged": true,
+  "receipt_sha256": "e0205a31767a04b28d8b7ff62569e12be364e79587641b52c462179fff1d7c34"
+}

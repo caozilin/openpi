@@ -1,0 +1,89 @@
+--- /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/pipeline.py
++++ /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/pipeline.py
+@@ -1,11 +1,11 @@
+-"""Supervise only the authorized learned-tolerance400 evaluation and its audit."""
++"""Supervise only the authorized no-tolerance400 evaluation and its audit."""
+ import base64,datetime,fcntl,hashlib,json,os,signal,subprocess,sys,time,traceback
+ from pathlib import Path
+ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
+-from examples.libero.eval_joint13_predicted_libero_local import DEFAULT as RUN, PYTHON, validate, read, dump
++from examples.libero.eval_joint13_nominal_libero_local import DEFAULT as RUN, PYTHON, validate, read, dump
+ REC=Path(__file__).resolve().parent
+-SOCKET='/tmp/libero_joint13_eval400_20261110.sock';HOST='czl@100.73.28.99'
+-REMOTE='/mnt/SharedData/czl/runs/libero_eval_joint13_successmix20_predtol_400_20261110'
++SOCKET='/tmp/libero_joint13_nominal400_20261110.sock';HOST='czl@100.73.28.99'
++REMOTE='/mnt/SharedData/czl/runs/libero_eval_joint13_successmix20_nominal_400_20261110'
+ TRAIN='/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109'
+ SERVER='serve_joint13_libero_eval_server.py'
+ def now():return datetime.datetime.now().astimezone().isoformat()
+@@ -118,31 +118,37 @@
+  assert len({(r['suite'],r['task_id'],r['seed']) for r in rows})==400
+  suites={s:dict(episodes=sum(x['suite']==s for x in rows),successes=sum(x['suite']==s and x['success'] for x in rows)) for s in ('libero_spatial','libero_object','libero_goal','libero_10')}
+  tasks=[dict(suite=s,task_id=t,successes=sum(x['suite']==s and x['task_id']==t and x['success'] for x in rows),episodes=10) for s in suites for t in range(10)]
+- transport_history=read(REC/'transport_recovery_amendment.json')
+- for name,h in read(Path(transport_history['all_committed_sha256'])).items():assert sha(Path(name))==h
+- report=dict(historical_infrastructure_errors=6,transport_recovery_amendment=str(REC/'transport_recovery_amendment.json'),complete=True,episodes=400,successes=sum(r['success'] for r in rows),per_suite=suites,per_task=tasks,terminations=dict(collections.Counter(r['termination'] for r in rows)),results=rows,infrastructure_errors=0)
+- dump(RUN/'predicted_tolerance400_report.json',report)
+- with (RUN/'predicted_tolerance400_results.csv').open('w') as f:
++ report=dict(historical_infrastructure_errors=0,complete=True,episodes=400,successes=sum(r['success'] for r in rows),per_suite=suites,per_task=tasks,terminations=dict(collections.Counter(r['termination'] for r in rows)),results=rows,infrastructure_errors=0)
++ dump(RUN/'nominal400_report.json',report)
++ with (RUN/'nominal400_results.csv').open('w') as f:
+   w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+- lines=['# joint13预测容差：40任务×seed0–9','',f"完整400回合成功{report['successes']}/400（{report['successes']/4:.2f}%），全部独立审计通过。",'','|套件|成功/100|','|---|---:|']+[f"|{s}|{v['successes']}/100|" for s,v in suites.items()]
++ lines=['# joint13无容差：40任务×seed0–9','',f"完整400回合成功{report['successes']}/400（{report['successes']/4:.2f}%），全部独立审计通过。",'','|套件|成功/100|','|---|---:|']+[f"|{s}|{v['successes']}/100|" for s,v in suites.items()]
+  lines+=['','|套件|task_id|成功/10|','|---|---:|---:|']+[f"|{v['suite']}|{v['task_id']:02d}|{v['successes']}/10|" for v in tasks]
+- lines+=['','历史中断：6条未提交回合server keepalive超时；66条已提交成败SHA均保留，仅未完成条目续跑。传输增加同packet同seed同模型重连，未改变物理协议。','模型为successmix20 joint13最终10000步；使用预测有向容差，0–30°裁剪，保留共享阶段和heading保护，不使用手工任务mask。连续失败20帧保持参考并终止，首次原生成功后继续20步；最终谓词单独记录。当前共享运行时与历史20261025快照不同，结果不声称为仅模型变化的严格因果对照。','',f'原始本地地址：{RUN}',f'请求：{RUN}/evaluation_request.json',f'审计：{RUN}/evaluation_independent_final_audit.json']
+- (RUN/'PREDICTED_TOLERANCE_400_REPORT.md').write_text('\n'.join(lines)+'\n')
+- for n in ['predicted_tolerance400_report.json','predicted_tolerance400_results.csv','evaluation_independent_final_audit.json','evaluation_completion.json','PREDICTED_TOLERANCE_400_REPORT.md']:
++ lines+=['','本组沿用已验证的同packet同seed同metadata有界重连wrapper，原600秒总deadline；历史容差组的6次中断不计入本组。','模型为successmix20 joint13最终10000步；客户端采用bounds_rad=None的严格无容差分支；模型预测容差仅诊断保存，不进入控制器。连续失败20帧保持参考并终止，首次原生成功后继续20步；最终谓词单独记录。当前共享运行时与历史20261025快照不同，结果不声称为仅模型变化的严格因果对照。','',f'原始本地地址：{RUN}',f'请求：{RUN}/evaluation_request.json',f'审计：{RUN}/evaluation_independent_final_audit.json']
++ (RUN/'NOMINAL_400_REPORT.md').write_text('\n'.join(lines)+'\n')
++ for n in ['nominal400_report.json','nominal400_results.csv','evaluation_independent_final_audit.json','evaluation_completion.json','NOMINAL_400_REPORT.md']:
+   shutil_copy=__import__('shutil').copyfile;shutil_copy(RUN/n,REC/n)
+  (REC/'RESULTS.md').write_text('\n'.join(lines)+'\n')
+  return {k:v for k,v in report.items() if k!='results'}
++
++def write_paired_comparison():
++ from collections import Counter
++ req=read(RUN/'evaluation_request.json');baseline=Path(req['paired_predicted_tolerance_run'])
++ assert read(baseline/'evaluation_independent_final_audit.json')['complete']
++ rows=[]
++ for p in sorted(RUN.glob('episodes/*/*/*/result.json')):
++  n=read(p);old=baseline/'episodes'/n['suite']/f"task_{n['task_id']:02d}"/f"seed_{n['seed']}"/'result.json';t=read(old)
++  assert n['initial_state_sha256']==t['initial_state_sha256']
++  assert n['server_metadata']['params_values_sha256']==t['server_metadata']['params_values_sha256']
++  outcome=('both_success' if n['success'] and t['success'] else 'nominal_only' if n['success'] else 'tolerance_only' if t['success'] else 'both_failed')
++  rows.append(dict(suite=n['suite'],task_id=n['task_id'],seed=n['seed'],nominal_success=n['success'],tolerance_success=t['success'],outcome=outcome,nominal_source=str(p),tolerance_source=str(old)))
++ assert len(rows)==400
++ dump(RUN/'paired_nominal_vs_predicted_tolerance.json',dict(complete=True,episodes=400,outcomes=dict(Counter(x['outcome'] for x in rows)),results=rows))
+ 
+ def main():
+  lock=(RUN/'pipeline.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+  dump(RUN/'pipeline_process.json',dict(pid=os.getpid(),command=sys.argv,started_at=now()))
+  validate(read(RUN/'evaluation_request.json'));children=[]
+- transport=read(REC/'transport_recovery_amendment.json')
+- for name,h in transport['source_sha256'].items():assert sha(Path(name))==h
+- for name,h in read(Path(transport['all_committed_sha256'])).items():assert sha(Path(name))==h
+- amendment=read(REC/'audit_implementation_amendment.json')
+- assert sha(Path(amendment['new_auditor']))==amendment['new_auditor_sha256']
+- assert sha(Path(amendment['canonical_replay_source']))==amendment['canonical_replay_sha256']
+  try:
+   while True:
+    q=remote(f"from pathlib import Path\nimport json\nr=Path({TRAIN!r})\np=r/'task_completion.json'\ns=r/'finish_training_state.json'\nprint(json.dumps(dict(task=json.loads(p.read_text()) if p.exists() else None,finish=json.loads(s.read_text()) if s.exists() else None)))")
+@@ -151,7 +157,7 @@
+    status('waiting_for_training_final_audit',training=q);time.sleep(15)
+   start_inference();status('loading_inference');wait_readiness()
+   log=(RUN/'evaluation_pipeline.log').open('a');p=subprocess.Popen([str(PYTHON),'-u',str(REC/'run_client.py'),'--run-dir',str(RUN)],cwd=ROOT,stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT);children.append(p)
+-  dump(RUN/'evaluation_launch.json',dict(pid=p.pid,command='examples.libero.eval_joint13_predicted_libero_local'))
++  dump(RUN/'evaluation_launch.json',dict(pid=p.pid,command='examples.libero.eval_joint13_nominal_libero_local'))
+   status('evaluating',evaluation_manager=p.pid)
+   initial=None
+   initial_verified=(RUN/'initial_client_integration_audit.json').exists() and read(RUN/'initial_client_integration_audit.json')['complete']
+@@ -165,7 +171,7 @@
+   status('auditing')
+   f=(RUN/'independent_audit.log').open('a');audit=subprocess.Popen([str(PYTHON),'-u',str(REC/'audit_evaluation.py'),'--run-dir',str(RUN)],cwd=ROOT,stdin=subprocess.DEVNULL,stdout=f,stderr=subprocess.STDOUT);children.append(audit)
+   assert audit.wait()==0,'Full evaluation audit failed'
+-  result=finish_report();stop_inference()
++  result=finish_report();write_paired_comparison();stop_inference()
+   dump(RUN/'task_completion.json',dict(result,all_required_audits_complete=True,own_inference_and_tunnels_stopped=True,finished_at=now()))
+   status('complete',**result)
+   with (REC/'README.md').open('a') as f:f.write(f"\n\n最终：已完成并通过独立审计，{result['successes']}/400。详见RESULTS.md；六副本与隧道已定向结束，viewer保留。\n")

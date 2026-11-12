@@ -1,0 +1,1662 @@
+{
+  "failure_groups": {
+    "libero_spatial/01": [
+      {
+        "key": "libero_spatial/01/demo_3",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_01/demo_3/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+        "sha256": "2f7102044756d3aa52084fbdd2568fef6ecdc2adf5ec54cdc5b9d2c9845a695f",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 171,
+            "phase": "release",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.008236053380722197,
+            "rotation_residual": 0.01787694301150685,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_spatial/01/demo_26",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_01/demo_26/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+        "sha256": "001d19951333d416228df68b35dc5254a99806b5ac0bb3b0df64025b8195959b",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 135,
+            "phase": "release",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.004528593243020698,
+            "rotation_residual": 0.024713522055349182,
+            "constraint_violation": 0.0
+          }
+        ]
+      }
+    ],
+    "libero_spatial/07": [
+      {
+        "key": "libero_spatial/07/demo_13",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_13/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+        "sha256": "36784a06e8acb661cd0a2d927c23fc1a73353f07508823c0ec60e79c31b4ec18",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 133,
+            "phase": "release",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.0032326818834717136,
+            "rotation_residual": 0.01543344273469023,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_spatial/07/demo_48",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_48/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+        "sha256": "d37ce51def8d1ac603456bbe7689f4dc9c4be2f04b33079bfb6e95d5c75af847",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 126,
+            "phase": "release",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.0020698492347323016,
+            "rotation_residual": 0.016543665821684768,
+            "constraint_violation": 0.0
+          }
+        ]
+      }
+    ],
+    "libero_goal/02": [
+      {
+        "key": "libero_goal/02/demo_8",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_8/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+        "sha256": "812bcd7f0ba95934b158197ecc5cfb43b942bb5989233448bc608199d963ccff",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 79,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.005086955132535598,
+            "rotation_residual": 0.010266524700469447,
+            "constraint_violation": 0.0013713722157050467
+          }
+        ]
+      },
+      {
+        "key": "libero_goal/02/demo_21",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_21/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+        "sha256": "c9ae6ad459f0c04b7415e66ece7300a7c0e9f0d6d9588eba2c1ee9e83e70ae00",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 71,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.005037412435984434,
+            "rotation_residual": 0.007822068146452678,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_goal/02/demo_26",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_26/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+        "sha256": "dae7ce766c6f23a1ef2ec8860531882bccfedace11349a781dbcf55fc6474fc4",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 95,
+            "phase": "release",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.003953415708568997,
+            "rotation_residual": 0.013364807714200505,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_goal/02/demo_36",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_36/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+        "sha256": "092574078cf4cd44eec04c6966b5b5a616606f873d1aa8a048b5a730ffcde571",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 89,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.007901099812835266,
+            "rotation_residual": 0.013914941051662475,
+            "constraint_violation": 0.0020721773193822512
+          }
+        ]
+      },
+      {
+        "key": "libero_goal/02/demo_47",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_47/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+        "sha256": "0667715d8be3905be9cb5b5478cacde1c0ed067a33e8b1a1e77fb30eb996bb7f",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 85,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.003909060787992802,
+            "rotation_residual": 0.022496388403133435,
+            "constraint_violation": 0.009707008519745375
+          }
+        ]
+      }
+    ],
+    "libero_10/06": [
+      {
+        "key": "libero_10/06/demo_3",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_06/demo_3/subtask_00/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+        "sha256": "7b31442f5701d02010c0d3fc631cc5e3db6ebd581e5ad71143a3315ef7c2b83a",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 102,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.005675957572842116,
+            "rotation_residual": 0.0,
+            "constraint_violation": 0.0042410440838341334
+          }
+        ]
+      }
+    ],
+    "libero_10/07": [
+      {
+        "key": "libero_10/07/demo_4",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_4/subtask_01/evaluations/d6812b2b22162efd2ceb238f6cf5006dac6ee2b810fd9d10dde5fcdbc1d9cd59/trial.json",
+        "sha256": "49e36bbd4f3880194e20d83f66d5e51b2e206f7ce4db629e6d9d4de1cf2ee8fb",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 74,
+            "phase": "grasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.0028264739211505407,
+            "rotation_residual": 0.017205979663969997,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/07/demo_15",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_15/subtask_01/evaluations/d6812b2b22162efd2ceb238f6cf5006dac6ee2b810fd9d10dde5fcdbc1d9cd59/trial.json",
+        "sha256": "38ad3f7635d74eb9143f19a557fdcdba19cb58da1146b4fc6f01bff3ce2388c2",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 54,
+            "phase": "grasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.0031576210125333418,
+            "rotation_residual": 0.05753474488949678,
+            "constraint_violation": 0.0
+          }
+        ]
+      }
+    ],
+    "libero_10/08": [
+      {
+        "key": "libero_10/08/demo_0",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_0/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "4b0da32e4ecfa5ad8f029b9d6cf6d85a370e32967da254b69e0a7668b4cb3611",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 249,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.004333150141657249,
+            "rotation_residual": 0.010772890253781997,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_2",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_2/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "2b3f143dd98aa7114c84519b3ce0d30c2541e844131d8a4cde078c597a3dcb91",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 157,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.006033966056325113,
+            "rotation_residual": 0.013719782111356426,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_4",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_4/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "52a90de9a5aa79c273479481e1394b9e025be19cd292ce3dca7bb72153c4a31b",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 192,
+            "phase": "release",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.005207459720605767,
+            "rotation_residual": 0.01422602836021913,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_7",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_7/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "9972b1018b72ceca77dccf1f050532b3f745f25dd67946c1322087d18949b0dd",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 134,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.007942224028558972,
+            "rotation_residual": 0.003251031731064197,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_8",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_8/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "5fed1cc2f932b3dd0b028870b8a9dd700a39caf524f791db17a4b34f0c779690",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 150,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.005959414725186282,
+            "rotation_residual": 0.014647095302205962,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_10",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_10/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "bc0f0208715b4ce1cb5ebd821c61cfe1a61d267131684325c1d52e3ad0e49e36",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 163,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.004339907086509581,
+            "rotation_residual": 0.01760250450304752,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_11",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_11/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "d6492b3af37ceaf503cc9675b0f38f2cf1e603c26bf905a3baa8c14beb8e1658",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 149,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.004229611991189541,
+            "rotation_residual": 0.019531046293788157,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_16",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_16/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "49a651d4b596a22a4c23e5e8c907f5b7720d9790fc7d24279df7fd25c895d3ef",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 178,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.004325334640637557,
+            "rotation_residual": 0.024185108010484135,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_17",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_17/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "749a774f0f34267c2a6e471ae0c2573cfd647ca80b3009b6e9b73118a73c3955",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 173,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.006495315497672863,
+            "rotation_residual": 0.015562687951048041,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_18",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_18/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "0445d73038b2ac9f07665eb50b3993bde91a41dc44a2c4bf09939b6dff3d220a",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 155,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.0039883279521437665,
+            "rotation_residual": 0.03573544684918071,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_20",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_20/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "52b9c47ddd53f59bdc78b59889f11b855f5537851197d7faab95cb8def7de28e",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 163,
+            "phase": "release",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.006682234796413722,
+            "rotation_residual": 0.014623412992022605,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_22",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_22/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "b67eeef95f1f752a8329a4cc140129bf73c17f1db8c158a97573c7341d9aaac8",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 146,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.009432255571379486,
+            "rotation_residual": 0.009352928883888195,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_24",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_24/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "2222852e2b8f12dc67f5dd9c8ebca34ac980dcd55350830badfecc27b728d1ee",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 144,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.008311962034797865,
+            "rotation_residual": 0.016196288780360477,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_25",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_25/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "042fffbeaf737ab7bb19321173d40be47ab9afdcd29c37cf51ed386ae94a9784",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 7,
+            "phase": "grasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.002863329042547491,
+            "rotation_residual": 0.003559395334595804,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_27",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_08/demo_27/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "1aa5b1755565066fe86fcfd6b9d0296b18ffe5b3a914a24d042173ae7b5f9c3a",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 172,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.008958468434098699,
+            "rotation_residual": 0.011885780102845616,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_28",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_28/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "a1b4080be792cf8788cd195c7f27d4e2e38b07f9c5b189693dd4a82391940e93",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 239,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.004306972286371308,
+            "rotation_residual": 0.014859122876956456,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_29",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_29/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "f7b9473d7ace93eb957c98b297ab79a2d2313e6465eea24c37f1629387400fc7",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 150,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.008349314063505212,
+            "rotation_residual": 0.013477821927144047,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_34",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_34/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "b2e10ec8a12c392d84fef8e77f287467b6f77c205c373706a5632367a060bb45",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 229,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.0046361645627179815,
+            "rotation_residual": 0.024596507259002354,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_36",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_08/demo_36/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "6c23477c740b5a9e70abe16547f0d4dcf200481ace08ab17ffbf2bd9b62ae3e3",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 164,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.006130175593355561,
+            "rotation_residual": 0.025040371761285745,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_37",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_37/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "c1a82eae047b1cdd33bd50ef922c0dc33f89fcb8ea85252266838e780fde0b1a",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 157,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.004738439144377618,
+            "rotation_residual": 0.015611804711049837,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_39",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_39/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "427793d9580f47137655d99797cd9fd472522ec15b4998cf7bcb108bb3793e5c",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 168,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.0038643928750692613,
+            "rotation_residual": 0.014408042383700317,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_40",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_40/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "31ba32170b7c8bdaff9a15d722f7e7c8444550084e47482f899eda9b843880a3",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 223,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.0054419486821055685,
+            "rotation_residual": 0.010596190692038342,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_43",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_43/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "1af5ab8460539dd1470e52ac190ca3bdb18fc3ff9634d5dc09c7c682550928f4",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 207,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.006235331334609656,
+            "rotation_residual": 0.020771231498270794,
+            "constraint_violation": 0.0
+          }
+        ]
+      },
+      {
+        "key": "libero_10/08/demo_44",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_44/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "e454a981fd67d62370f2456960ef79f7a4802a228b5f64149cccddcf3ac03006",
+        "reason": "optimizer_infeasible",
+        "details": [
+          {
+            "frame": 148,
+            "phase": "postgrasp",
+            "subtask_index": 0,
+            "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+            "position_residual": 0.003178583667192675,
+            "rotation_residual": 0.017312695858991818,
+            "constraint_violation": 0.0
+          }
+        ]
+      }
+    ],
+    "libero_10/05": [
+      {
+        "key": "libero_10/05/demo_15",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_05/demo_15/subtask_00/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "157b052e0c005c26a288efbe913eae89b10a076d78dbc877ddaadf6834c7a394",
+        "reason": "robot_self_collision",
+        "details": [
+          {
+            "frame": 229,
+            "category": "robot_self_collision",
+            "contact_index": 0,
+            "penetration_m": 0.0005722125088339571,
+            "distance_m": -0.0005722125088339571,
+            "geom_a": "robot0_link1_collision",
+            "geom_b": "robot0_link5_collision",
+            "body_a": "robot0_link1",
+            "body_b": "robot0_link5"
+          }
+        ]
+      },
+      {
+        "key": "libero_10/05/demo_43",
+        "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_05/demo_43/subtask_00/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "sha256": "13eaabe4730890af01601060bf30e2cdd84613219645a895e3b347b430a8871e",
+        "reason": "robot_self_collision",
+        "details": [
+          {
+            "frame": 239,
+            "category": "robot_self_collision",
+            "contact_index": 0,
+            "penetration_m": 0.005473235453862352,
+            "distance_m": -0.005473235453862352,
+            "geom_a": "robot0_link2_collision",
+            "geom_b": "robot0_link5_collision",
+            "body_a": "robot0_link2",
+            "body_b": "robot0_link5"
+          }
+        ]
+      }
+    ]
+  },
+  "velocity_gain_gt10pct": [
+    {
+      "key": "libero_10/04/demo_14",
+      "task_name": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.5486310462479044,
+        "acceleration": 3.3483502901442566,
+        "jerk": 99.18951624563438,
+        "mY": 0.04666162424157381,
+        "sigma_min": 0.08147246746796133,
+        "sigma_min_full": 0.018144349655555957,
+        "travel": 6.3830512286946846
+      },
+      "best": {
+        "velocity": 0.4116855523331883,
+        "acceleration": 2.6115394767063678,
+        "jerk": 80.9246854494528,
+        "mY": 0.061322666505117064,
+        "sigma_min": 0.6330899293785047,
+        "sigma_min_full": 0.14329110108395532,
+        "travel": 4.8177771895901484
+      },
+      "gains_pct": {
+        "velocity": 24.96130958160102,
+        "acceleration": 22.00518911078879,
+        "mY": 31.41991411966496,
+        "sigma_min": 677.0599676847451
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_14/subtask_00/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+          "full_sha": "12b0094771947cb9b238d1480242ee3999c9af802ea3a79f02f72e0ef8b3c337",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_14/subtask_00/evaluations/d9381551000047619c4a053853fe2b11c3054676470b53b6baf79123e6c7546b/trial.json",
+          "best_sha": "a51e67fbb18cb64799a95e9e92357c7092b41afe155c1160077643feed6ebd6c"
+        },
+        {
+          "index": 1,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_14/subtask_01/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+          "full_sha": "35c12a4dae06b35e0b5c735e5114a323294103c836dc6f0b170580c6cd0705a6",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_14/subtask_01/evaluations/c1fce0678d8748b4d8a6d7385f2b532a3c71cbc0c60bba33495b6f87b8c51e66/trial.json",
+          "best_sha": "d15ef078153c3d46aaaa7b86902d026f2eb2938cbd2b366054722f9b34b0753c"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/05/demo_23",
+      "task_name": "STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.589863146154412,
+        "acceleration": 7.650759764465912,
+        "jerk": 274.35920144424205,
+        "mY": 0.06466135463358133,
+        "sigma_min": 1.1741521252854086,
+        "sigma_min_full": 0.0939699282999763,
+        "travel": 5.827444701301353
+      },
+      "best": {
+        "velocity": 0.47824877137929883,
+        "acceleration": 3.3750221514711414,
+        "jerk": 105.95091412273376,
+        "mY": 0.07305707906567735,
+        "sigma_min": 1.3601852201482125,
+        "sigma_min_full": 0.13033229881023908,
+        "travel": 4.728043109721434
+      },
+      "gains_pct": {
+        "velocity": 18.922079723539,
+        "acceleration": 55.88644454441647,
+        "mY": 12.984145599287778,
+        "sigma_min": 15.844036803798623
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_05/demo_23/subtask_00/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+          "full_sha": "7e9c1e0063d4f005c3f7fa207d2b2fc1420395d2bf1d2cb92233153abe0f036e",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_05/demo_23/subtask_00/evaluations/a031744a673cb8bea6e208577858de5b7ebc4234e663d22ef9446f0935620ddc/trial.json",
+          "best_sha": "64e6538cd41c7bfe5329036834e51f9c9487bc467e22633c54ad9bcf7cd87f89"
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_49",
+      "task_name": "put_the_wine_bottle_on_top_of_the_cabinet",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.7680401889375414,
+        "acceleration": 4.921800746038972,
+        "jerk": 135.03318688255135,
+        "mY": 0.06340414025896517,
+        "sigma_min": 0.19210352159207233,
+        "sigma_min_full": 0.01896070674034036,
+        "travel": 4.391775910220218
+      },
+      "best": {
+        "velocity": 0.6238061978069297,
+        "acceleration": 4.223867829908,
+        "jerk": 122.85287622078218,
+        "mY": 0.07841279017981789,
+        "sigma_min": 0.7913777585078106,
+        "sigma_min_full": 0.08285780578125705,
+        "travel": 3.5696838919536216
+      },
+      "gains_pct": {
+        "velocity": 18.77948487697447,
+        "acceleration": 14.180438261192574,
+        "mY": 23.67140357010131,
+        "sigma_min": 311.95380071599317
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_49/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+          "full_sha": "6d9b57bcd606d3fab8f7dfb56c211a4101fc4c793af7b4299d905858b6ce48a3",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_49/subtask_00/evaluations/679e2a646be398def063b2097931bb59a26cfa441c0bc5cf8feec7c4911445a5/trial.json",
+          "best_sha": "dfd65279b1f823d8e2e8c341b5660e8a2a8d901c29c31650c73bd6ba4fac8999"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/07/demo_10",
+      "task_name": "LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.5646540821470636,
+        "acceleration": 4.4243609142093945,
+        "jerk": 133.90329134305023,
+        "mY": 0.04635259881370952,
+        "sigma_min": 0.3334631090190359,
+        "sigma_min_full": 0.0545520721015462,
+        "travel": 9.36746676853408
+      },
+      "best": {
+        "velocity": 0.4667688150703864,
+        "acceleration": 3.594268443417628,
+        "jerk": 108.963430028311,
+        "mY": 0.0641806479891865,
+        "sigma_min": 0.9043747924640491,
+        "sigma_min_full": 0.16249046583044666,
+        "travel": 7.749093890738408
+      },
+      "gains_pct": {
+        "velocity": 17.335439549905363,
+        "acceleration": 18.76186158606138,
+        "mY": 38.46181148791177,
+        "sigma_min": 171.20684957460236
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_10/subtask_00/evaluations/8c34460981a66a82264d9bffeabbcaa1bf136550a49cda4923d29239b5ab8b66/trial.json",
+          "full_sha": "ce8a3d7bd458b85a40210aef3c0a01d7adad9257a5e5b2c5e1abd8daad6b440f",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_10/subtask_00/evaluations/8e4682e3199c181ce82b59c867fd58992a90db74d2ab58955a53803a922b921d/trial.json",
+          "best_sha": "8ece1cb0505aefc3ecb078de7bfd2be247125e86aa76928b7bfc313110680f57"
+        },
+        {
+          "index": 1,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_10/subtask_01/evaluations/d6812b2b22162efd2ceb238f6cf5006dac6ee2b810fd9d10dde5fcdbc1d9cd59/trial.json",
+          "full_sha": "412d77b071358b975bc3c369937af0e76dd6f8818195b69ce03dd69eed2ef1f1",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_10/subtask_01/evaluations/fb405e86634c76f3f34172496b6aef6daa33e56ec5b28057a87cc79b7398fb2c/trial.json",
+          "best_sha": "951c7d431efb9af19bd462466b3779edff5a11d759ef4d1faed864a4e2bdd492"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/04/demo_28",
+      "task_name": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.536708190257066,
+        "acceleration": 3.7227948707754686,
+        "jerk": 114.12139377085828,
+        "mY": 0.05334925379644537,
+        "sigma_min": 0.47242708765741676,
+        "sigma_min_full": 0.10188503472480649,
+        "travel": 6.243449375824724
+      },
+      "best": {
+        "velocity": 0.45228329837294734,
+        "acceleration": 3.1664816902950226,
+        "jerk": 99.72296917484059,
+        "mY": 0.07160075962948818,
+        "sigma_min": 1.3880255512491446,
+        "sigma_min_full": 0.17535954614865654,
+        "travel": 5.28280565748334
+      },
+      "gains_pct": {
+        "velocity": 15.73012922416589,
+        "acceleration": 14.943428251918823,
+        "mY": 34.21136104861302,
+        "sigma_min": 193.8073593814924
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_28/subtask_00/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+          "full_sha": "629a551e1d9334d474a448ddd2128bc9c407810048c1ff919d78f909564a0475",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_28/subtask_00/evaluations/83653fdf3f57244b03548505edf3758a9b4fbd652ace07a58f63fc3a777aa063/trial.json",
+          "best_sha": "30caac9303c262dd5ceb3ca7c32c3b931795c7f43361e7ab0f3e7dae166437ca"
+        },
+        {
+          "index": 1,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_28/subtask_01/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+          "full_sha": "1dc0e58d0229c364a75e2d0eb39307cdb6fbb7839c9691e376154fd5ab116683",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_28/subtask_01/evaluations/c1fce0678d8748b4d8a6d7385f2b532a3c71cbc0c60bba33495b6f87b8c51e66/trial.json",
+          "best_sha": "245ab69d8602a7601d85129f2bd6ea6a3aa7c604e0563effbca1775813a8e259"
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_7",
+      "task_name": "put_the_wine_bottle_on_top_of_the_cabinet",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.6893433079543198,
+        "acceleration": 5.116004722086963,
+        "jerk": 145.6194459970301,
+        "mY": 0.06663942197430175,
+        "sigma_min": 0.19649784466380538,
+        "sigma_min_full": 0.019238926387280312,
+        "travel": 3.860608779111197
+      },
+      "best": {
+        "velocity": 0.5873320687231322,
+        "acceleration": 3.8813644644952072,
+        "jerk": 114.03306290258632,
+        "mY": 0.07455564975748148,
+        "sigma_min": 0.6171487406851272,
+        "sigma_min_full": 0.06349918245491681,
+        "travel": 3.294446448242286
+      },
+      "gains_pct": {
+        "velocity": 14.798321540817438,
+        "acceleration": 24.13289910115859,
+        "mY": 11.879196350521282,
+        "sigma_min": 214.07405090932534
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_7/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+          "full_sha": "38c6280d4f422dc56f454f102b98f9043a6bed4a6e3b1cb71b4206d9f567935d",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_7/subtask_00/evaluations/55c795dab00696383cdea1d700114f3abc59fe4d91e268bd4b5c2f22330fcfc6/trial.json",
+          "best_sha": "2c92832fb8fafc3d894faf8653757cbfb42dba90ce8fd9a133b42dd981c51c96"
+        }
+      ]
+    },
+    {
+      "key": "libero_spatial/07/demo_28",
+      "task_name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.6538709001379966,
+        "acceleration": 4.825483909104923,
+        "jerk": 158.62127572635964,
+        "mY": 0.05989440094873894,
+        "sigma_min": 0.11544622585713937,
+        "sigma_min_full": 0.011249064299248839,
+        "travel": 4.5270637303358106
+      },
+      "best": {
+        "velocity": 0.5630154201580451,
+        "acceleration": 3.2968681411912937,
+        "jerk": 100.02029590954056,
+        "mY": 0.07107777980019833,
+        "sigma_min": 0.8083662961992722,
+        "sigma_min_full": 0.08072516031039065,
+        "travel": 3.900160918474276
+      },
+      "gains_pct": {
+        "velocity": 13.895018108433476,
+        "acceleration": 31.67797876248999,
+        "mY": 18.671826872483056,
+        "sigma_min": 600.2102409130265
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_28/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+          "full_sha": "d42c0437ae654dc41db0df64dc99cc8556907f6487bb26c26de1b882d638d6d8",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_28/subtask_00/evaluations/5bfcc51c9e4a745ba83e948ddced501cae3e7da5ad357f54d930af099ab5baf5/trial.json",
+          "best_sha": "eddfa36ded8cf4c483731115d5fd8a7f4f452eacffda6226a714ba7c5be46482"
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_22",
+      "task_name": "put_the_wine_bottle_on_top_of_the_cabinet",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.8160957756546029,
+        "acceleration": 5.510933306642532,
+        "jerk": 155.74593441175975,
+        "mY": 0.07081008875899222,
+        "sigma_min": 0.32145722378054375,
+        "sigma_min_full": 0.031159535923883642,
+        "travel": 4.052888916600034
+      },
+      "best": {
+        "velocity": 0.7050359326219712,
+        "acceleration": 4.912827071791223,
+        "jerk": 143.73356636902795,
+        "mY": 0.0794832255893595,
+        "sigma_min": 0.735509638098921,
+        "sigma_min_full": 0.0765020709829645,
+        "travel": 3.503168723672079
+      },
+      "gains_pct": {
+        "velocity": 13.608677602031316,
+        "acceleration": 10.853084252179023,
+        "mY": 12.248447901099224,
+        "sigma_min": 128.80482493093623
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_22/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+          "full_sha": "99067756efb76fd42288f0dde630376c655f8201aea29e481f84883bcda08423",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_22/subtask_00/evaluations/5c047725dc814b1932665736cd194e09678ef1b61bbbf03ce2ff98e001db6886/trial.json",
+          "best_sha": "bc3cd9d47877cb8cdc8c776535206d07870eeb011f12a8410164536e45303a93"
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_13",
+      "task_name": "put_the_wine_bottle_on_top_of_the_cabinet",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.8828806233758296,
+        "acceleration": 5.554276892263224,
+        "jerk": 157.29916932674325,
+        "mY": 0.06368631403695572,
+        "sigma_min": 0.0670419231831375,
+        "sigma_min_full": 0.006711545343084172,
+        "travel": 4.025522594097304
+      },
+      "best": {
+        "velocity": 0.772934534729383,
+        "acceleration": 4.535093990991259,
+        "jerk": 132.28438230197546,
+        "mY": 0.06799303022222335,
+        "sigma_min": 0.35011812811609005,
+        "sigma_min_full": 0.035914449752537776,
+        "travel": 3.5320651258148397
+      },
+      "gains_pct": {
+        "velocity": 12.453109257970896,
+        "acceleration": 18.349515536246063,
+        "mY": 6.76238882779201,
+        "sigma_min": 422.2375962570125
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_13/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+          "full_sha": "a2f2cc11d3bb0672ac9c00f3c6283201aa19641f00d8a8ea1d7d6105bf532564",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_13/subtask_00/evaluations/b4171fa550b64047b2279b354afb966801f96732b5606e7edad9f3592669c506/trial.json",
+          "best_sha": "6b19c404e5f3118a8634d2daec1827a3d219e53409eadbb3e87e26a2b9a0ef18"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/07/demo_45",
+      "task_name": "LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.506601223936457,
+        "acceleration": 4.304422815939353,
+        "jerk": 125.63882099431166,
+        "mY": 0.04202831993918904,
+        "sigma_min": 0.1720974961838011,
+        "sigma_min_full": 0.04676794093231246,
+        "travel": 7.653956751589931
+      },
+      "best": {
+        "velocity": 0.44455563004480647,
+        "acceleration": 3.8742788081335244,
+        "jerk": 114.65837170743156,
+        "mY": 0.057754724177631486,
+        "sigma_min": 0.8707500639953741,
+        "sigma_min_full": 0.17907127909876078,
+        "travel": 6.721264492822562
+      },
+      "gains_pct": {
+        "velocity": 12.247422817010978,
+        "acceleration": 9.993070527667447,
+        "mY": 37.41858884960676,
+        "sigma_min": 405.9632378761677
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_45/subtask_00/evaluations/8c34460981a66a82264d9bffeabbcaa1bf136550a49cda4923d29239b5ab8b66/trial.json",
+          "full_sha": "920acf0f35d75de59096964b9bd91923b8e0680cc688335afd148e90591a1d76",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_45/subtask_00/evaluations/202f937ce0185f8516e8b0cc4d103af9b628d7a5afaaa450b59102f71f59de77/trial.json",
+          "best_sha": "525cc92fd8e437f82d1379fa24093b99fabe1a51eddc7edf6d46c60a0eae7ea5"
+        },
+        {
+          "index": 1,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_45/subtask_01/evaluations/d6812b2b22162efd2ceb238f6cf5006dac6ee2b810fd9d10dde5fcdbc1d9cd59/trial.json",
+          "full_sha": "f4f1022f17f7c3c0da2d16e39dd8a495db0aebb9ed22510d9b60dd46e0f84d0c",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_45/subtask_01/evaluations/fb405e86634c76f3f34172496b6aef6daa33e56ec5b28057a87cc79b7398fb2c/trial.json",
+          "best_sha": "9fe95f8bb191b24ccc34a066e8cdec7ca51169136df6ac58b95791adb79151ff"
+        }
+      ]
+    },
+    {
+      "key": "libero_spatial/07/demo_30",
+      "task_name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.6135307620160946,
+        "acceleration": 5.851995348431001,
+        "jerk": 197.60034685569946,
+        "mY": 0.06389113062522127,
+        "sigma_min": 0.19394479070344725,
+        "sigma_min_full": 0.01905633472611801,
+        "travel": 4.086716390691785
+      },
+      "best": {
+        "velocity": 0.5389035359625878,
+        "acceleration": 4.564118732259326,
+        "jerk": 152.28095037047478,
+        "mY": 0.07286616708506949,
+        "sigma_min": 0.6130423443104172,
+        "sigma_min_full": 0.0615018043034924,
+        "travel": 3.5904453374359644
+      },
+      "gains_pct": {
+        "velocity": 12.163567122254438,
+        "acceleration": 22.00747846658785,
+        "mY": 14.047390259056215,
+        "sigma_min": 216.0911628958337
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_30/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+          "full_sha": "a84b51758289321082351521b19019f3284274cab193570e811fb8c80221186c",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_30/subtask_00/evaluations/035ecb36e8f51749c1928a5498f5f23e5d00801dcd68a84bfe7f4ea0ccf5cf3e/trial.json",
+          "best_sha": "b4fed5ad893b22341135e0c4368d4e62c33a9111ccf8ba710c9ceeaac70e44e7"
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_27",
+      "task_name": "put_the_wine_bottle_on_top_of_the_cabinet",
+      "stratum": "supplement24",
+      "full": {
+        "velocity": 0.7713474090776206,
+        "acceleration": 5.100741567223111,
+        "jerk": 135.98327392955608,
+        "mY": 0.07069953882672099,
+        "sigma_min": 0.38797817633727427,
+        "sigma_min_full": 0.03864513214834277,
+        "travel": 3.793701652149239
+      },
+      "best": {
+        "velocity": 0.6867393262392846,
+        "acceleration": 4.606037656692243,
+        "jerk": 129.19940820914053,
+        "mY": 0.07717325426610265,
+        "sigma_min": 0.6770476236386688,
+        "sigma_min_full": 0.07017391587053443,
+        "travel": 3.3791223546214972
+      },
+      "gains_pct": {
+        "velocity": 10.968868481649608,
+        "acceleration": 9.698666439205406,
+        "mY": 9.156658652679805,
+        "sigma_min": 74.50662561239085
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_27/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+          "full_sha": "90687e6b99ec7e4d1e920539a834c1c747ca97668e61bf82a8cad0df17c77bd7",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_27/subtask_00/evaluations/b28d72bd8b15d1e52a7378e8260726de53bfece60cfe83adbaf0cce7b0857357/trial.json",
+          "best_sha": "f5fd99c937230ea45aac06a60a2e97562793ba4a14a644fdc82e40e8744d7a91"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/04/demo_12",
+      "task_name": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.43139590592029653,
+        "acceleration": 3.4457509983204675,
+        "jerk": 104.54040430366638,
+        "mY": 0.057296854690954566,
+        "sigma_min": 0.3739537826206356,
+        "sigma_min_full": 0.07561102703077242,
+        "travel": 5.481820115956761
+      },
+      "best": {
+        "velocity": 0.38640436857398974,
+        "acceleration": 3.002975155149926,
+        "jerk": 94.30718469198698,
+        "mY": 0.07392773342607904,
+        "sigma_min": 1.2609419314203731,
+        "sigma_min_full": 0.1632675418440568,
+        "travel": 4.935154632149857
+      },
+      "gains_pct": {
+        "velocity": 10.429291685169417,
+        "acceleration": 12.849908289553136,
+        "mY": 29.025814461941124,
+        "sigma_min": 237.19191783107573
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_12/subtask_00/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+          "full_sha": "dc6c38d3dcdcd74777707986f1c8720d6fc09cad558444ea35022c2a8c5d775d",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_12/subtask_00/evaluations/6245a239be24aefdb069660e2da93a8f7c0f5c7ff3d7b57e747ef648ddfa1e3b/trial.json",
+          "best_sha": "970ba429a029e80ed5b92a004dbf7dcfe714fe32736aa8b4a41187e446ae88a0"
+        },
+        {
+          "index": 1,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_12/subtask_01/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+          "full_sha": "e0bb6904c5359264d8d172780f4dffa54c45cc5b27ae3123a14c30bb89075e63",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_12/subtask_01/evaluations/4385b6ff726c34a2e8d5b442cf294d668671eef156023c1578b60b844a0260b6/trial.json",
+          "best_sha": "d37c6d94be8e76d2afdd4f84996047f4a1c167cf0d4fa0897c240c796f2414a1"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/04/demo_9",
+      "task_name": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.44215420517331194,
+        "acceleration": 3.451321141374382,
+        "jerk": 105.96908553240513,
+        "mY": 0.06202709565417052,
+        "sigma_min": 0.5478944569023277,
+        "sigma_min_full": 0.12055792630085464,
+        "travel": 5.873236582264903
+      },
+      "best": {
+        "velocity": 0.3973849929670944,
+        "acceleration": 3.2565917818598713,
+        "jerk": 102.03005256208382,
+        "mY": 0.0745543595031212,
+        "sigma_min": 1.465789808788777,
+        "sigma_min_full": 0.17380807872083479,
+        "travel": 5.302694639632778
+      },
+      "gains_pct": {
+        "velocity": 10.125248540533338,
+        "acceleration": 5.6421686518851715,
+        "mY": 20.196437890298636,
+        "sigma_min": 167.5314178347457
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_9/subtask_00/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+          "full_sha": "548250b52f1c24b547a7b2e04f93da8f902d9eece8b3d6a1143387d7d801fa16",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_9/subtask_00/evaluations/02f5217bd9a3ee1172bbfba32801e2d22c42d5fd331762af1d8de53fc09ccd07/trial.json",
+          "best_sha": "6d22d130e7c5cff0c5c051afe872459a2536c8a22c6c07cdafec0ec51e015f96"
+        },
+        {
+          "index": 1,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_9/subtask_01/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+          "full_sha": "5ef075b6e909e18535271a16a8d64c842402ed5be2db78118cba5f66d35a6595",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_9/subtask_01/evaluations/ba73855adf17d36ca69dc48ffacff72304b7167e0ae118e359f9c2a04d495d1f/trial.json",
+          "best_sha": "df5344a9a132761c61b86aaf160642c75cc764a1831a28a356bd4e94321156e5"
+        }
+      ]
+    }
+  ],
+  "sigma_relative_gain_top5": [
+    {
+      "key": "libero_10/08/demo_30",
+      "task_name": "KITCHEN_SCENE8_put_both_moka_pots_on_the_stove",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.5026428188613878,
+        "acceleration": 3.662633799716236,
+        "jerk": 120.79566028619928,
+        "mY": 0.07749160666612591,
+        "sigma_min": 0.007956763633051388,
+        "sigma_min_full": 0.0007686188030900494,
+        "travel": 10.18429913569718
+      },
+      "best": {
+        "velocity": 0.4692061399735969,
+        "acceleration": 3.1803282910550594,
+        "jerk": 105.02168113523759,
+        "mY": 0.07837941720619125,
+        "sigma_min": 0.49887071732159155,
+        "sigma_min_full": 0.05232288897622736,
+        "travel": 9.510577098515672
+      },
+      "gains_pct": {
+        "velocity": 6.652174791541521,
+        "acceleration": 13.16827002193185,
+        "mY": 1.1456860662219626,
+        "sigma_min": 6169.769221864853
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_30/subtask_00/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+          "full_sha": "4ffed093105eb82159b104b4ed2a206478bcb199e7f494c8c583696119b969f9",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_30/subtask_00/evaluations/4d9691eecf0b59008ddac657ad90b3e499b11ad8deb490cb343c72614760adf4/trial.json",
+          "best_sha": "5ef0e64e7cc2a80e31eeb19227b533d00dcfc601e74706835a3678000945e355"
+        },
+        {
+          "index": 1,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_30/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+          "full_sha": "54a14a209bf061677b52406d3b5b8c1ef5a8b03f2083053da13952f6873df20f",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_30/subtask_01/evaluations/cfd0ce0a1755c709490f2daaaf0a4c3aa67225ed267cfda5fad58cbdee86097d/trial.json",
+          "best_sha": "d947716cc023febff1004f89c90f1f026d4ff1c1769c14a8075d53ad85013a65"
+        }
+      ]
+    },
+    {
+      "key": "libero_spatial/07/demo_34",
+      "task_name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.6191274185158241,
+        "acceleration": 5.218732658401601,
+        "jerk": 166.87745526032063,
+        "mY": 0.0591899180688053,
+        "sigma_min": 0.05517544439064801,
+        "sigma_min_full": 0.005364395441076091,
+        "travel": 4.803499175489879
+      },
+      "best": {
+        "velocity": 0.558416561541358,
+        "acceleration": 4.422734678588229,
+        "jerk": 141.39978456818938,
+        "mY": 0.06978251835948858,
+        "sigma_min": 0.5348782403817708,
+        "sigma_min_full": 0.05237867885867008,
+        "travel": 4.332990033937771
+      },
+      "gains_pct": {
+        "velocity": 9.805874390121916,
+        "acceleration": 15.252706584459741,
+        "mY": 17.895953629079052,
+        "sigma_min": 869.4135612117158
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_34/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+          "full_sha": "1d95881c1233add5bcb384a496b4c1fbe15fcc38b9a84a41c5b006403ad133e0",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_34/subtask_00/evaluations/77ebb6cd56b5198d66ff9c12e22420f09c3e5ede98013f7bf09050e6b682ec96/trial.json",
+          "best_sha": "cb3812c2d5399c5b13bd931673cae92a0799e62d795cf561289f6b73783dc61c"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/04/demo_14",
+      "task_name": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.5486310462479044,
+        "acceleration": 3.3483502901442566,
+        "jerk": 99.18951624563438,
+        "mY": 0.04666162424157381,
+        "sigma_min": 0.08147246746796133,
+        "sigma_min_full": 0.018144349655555957,
+        "travel": 6.3830512286946846
+      },
+      "best": {
+        "velocity": 0.4116855523331883,
+        "acceleration": 2.6115394767063678,
+        "jerk": 80.9246854494528,
+        "mY": 0.061322666505117064,
+        "sigma_min": 0.6330899293785047,
+        "sigma_min_full": 0.14329110108395532,
+        "travel": 4.8177771895901484
+      },
+      "gains_pct": {
+        "velocity": 24.96130958160102,
+        "acceleration": 22.00518911078879,
+        "mY": 31.41991411966496,
+        "sigma_min": 677.0599676847451
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_14/subtask_00/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+          "full_sha": "12b0094771947cb9b238d1480242ee3999c9af802ea3a79f02f72e0ef8b3c337",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_14/subtask_00/evaluations/d9381551000047619c4a053853fe2b11c3054676470b53b6baf79123e6c7546b/trial.json",
+          "best_sha": "a51e67fbb18cb64799a95e9e92357c7092b41afe155c1160077643feed6ebd6c"
+        },
+        {
+          "index": 1,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_14/subtask_01/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+          "full_sha": "35c12a4dae06b35e0b5c735e5114a323294103c836dc6f0b170580c6cd0705a6",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_04/demo_14/subtask_01/evaluations/c1fce0678d8748b4d8a6d7385f2b532a3c71cbc0c60bba33495b6f87b8c51e66/trial.json",
+          "best_sha": "d15ef078153c3d46aaaa7b86902d026f2eb2938cbd2b366054722f9b34b0753c"
+        }
+      ]
+    },
+    {
+      "key": "libero_spatial/07/demo_28",
+      "task_name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.6538709001379966,
+        "acceleration": 4.825483909104923,
+        "jerk": 158.62127572635964,
+        "mY": 0.05989440094873894,
+        "sigma_min": 0.11544622585713937,
+        "sigma_min_full": 0.011249064299248839,
+        "travel": 4.5270637303358106
+      },
+      "best": {
+        "velocity": 0.5630154201580451,
+        "acceleration": 3.2968681411912937,
+        "jerk": 100.02029590954056,
+        "mY": 0.07107777980019833,
+        "sigma_min": 0.8083662961992722,
+        "sigma_min_full": 0.08072516031039065,
+        "travel": 3.900160918474276
+      },
+      "gains_pct": {
+        "velocity": 13.895018108433476,
+        "acceleration": 31.67797876248999,
+        "mY": 18.671826872483056,
+        "sigma_min": 600.2102409130265
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_28/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+          "full_sha": "d42c0437ae654dc41db0df64dc99cc8556907f6487bb26c26de1b882d638d6d8",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_28/subtask_00/evaluations/5bfcc51c9e4a745ba83e948ddced501cae3e7da5ad357f54d930af099ab5baf5/trial.json",
+          "best_sha": "eddfa36ded8cf4c483731115d5fd8a7f4f452eacffda6226a714ba7c5be46482"
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_13",
+      "task_name": "put_the_wine_bottle_on_top_of_the_cabinet",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.8828806233758296,
+        "acceleration": 5.554276892263224,
+        "jerk": 157.29916932674325,
+        "mY": 0.06368631403695572,
+        "sigma_min": 0.0670419231831375,
+        "sigma_min_full": 0.006711545343084172,
+        "travel": 4.025522594097304
+      },
+      "best": {
+        "velocity": 0.772934534729383,
+        "acceleration": 4.535093990991259,
+        "jerk": 132.28438230197546,
+        "mY": 0.06799303022222335,
+        "sigma_min": 0.35011812811609005,
+        "sigma_min_full": 0.035914449752537776,
+        "travel": 3.5320651258148397
+      },
+      "gains_pct": {
+        "velocity": 12.453109257970896,
+        "acceleration": 18.349515536246063,
+        "mY": 6.76238882779201,
+        "sigma_min": 422.2375962570125
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_13/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+          "full_sha": "a2f2cc11d3bb0672ac9c00f3c6283201aa19641f00d8a8ea1d7d6105bf532564",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_13/subtask_00/evaluations/b4171fa550b64047b2279b354afb966801f96732b5606e7edad9f3592669c506/trial.json",
+          "best_sha": "6b19c404e5f3118a8634d2daec1827a3d219e53409eadbb3e87e26a2b9a0ef18"
+        }
+      ]
+    }
+  ],
+  "mY_relative_gain_top5": [
+    {
+      "key": "libero_object/00/demo_47",
+      "task_name": "pick_up_the_alphabet_soup_and_place_it_in_the_basket",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.5236102811991145,
+        "acceleration": 3.6361737098321805,
+        "jerk": 118.23752470869209,
+        "mY": 0.05032127041613648,
+        "sigma_min": 0.8084029923882818,
+        "sigma_min_full": 0.13585248308646747,
+        "travel": 5.1086281369450655
+      },
+      "best": {
+        "velocity": 0.5222475541769421,
+        "acceleration": 3.6668206817873874,
+        "jerk": 121.19804716726952,
+        "mY": 0.07547427426542212,
+        "sigma_min": 1.2277758830097443,
+        "sigma_min_full": 0.16521247102466172,
+        "travel": 5.104783804027655
+      },
+      "gains_pct": {
+        "velocity": 0.26025597111110077,
+        "acceleration": -0.8428357499076,
+        "mY": 49.98483472551569,
+        "sigma_min": 51.87671180960134
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_object/task_00/demo_47/subtask_00/evaluations/8c34460981a66a82264d9bffeabbcaa1bf136550a49cda4923d29239b5ab8b66/trial.json",
+          "full_sha": "61618dfc1c8bb8be7df02cc8bb188312653266f5be2de0baef93dcb93ab0577f",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_object/task_00/demo_47/subtask_00/evaluations/b01d026d9f14456591ab958cef8c94a8b0e95940bcc173dc4a6af965bbfdd4e7/trial.json",
+          "best_sha": "360e6284e05733d4ebb00f52c477254da1dce1dd900dcc96a1dbd802973049e8"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/07/demo_36",
+      "task_name": "LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.44161068050422414,
+        "acceleration": 2.9430665125975626,
+        "jerk": 88.67628473336208,
+        "mY": 0.050512812761045134,
+        "sigma_min": 0.3604063013297245,
+        "sigma_min_full": 0.08269886689483955,
+        "travel": 6.388828612573382
+      },
+      "best": {
+        "velocity": 0.41140760046401914,
+        "acceleration": 2.7755631697001855,
+        "jerk": 83.77918087572328,
+        "mY": 0.07474833965497307,
+        "sigma_min": 1.2427035141837175,
+        "sigma_min_full": 0.1866935674472621,
+        "travel": 5.960555641419333
+      },
+      "gains_pct": {
+        "velocity": 6.8393001740174375,
+        "acceleration": 5.6914562474341786,
+        "mY": 47.97896923415455,
+        "sigma_min": 244.80626714869967
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_36/subtask_00/evaluations/8c34460981a66a82264d9bffeabbcaa1bf136550a49cda4923d29239b5ab8b66/trial.json",
+          "full_sha": "48854c9521b25553e34328955b8b435500e762c88b273ea012e5e1611cfd9817",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_36/subtask_00/evaluations/d8f659c4cbd2d80b8fcbd8007380ccb945842da2a305c8d0c9c27b4d48467388/trial.json",
+          "best_sha": "d6af03973078b03b8d4027f386bfb3825d56726ce00d708d743eee0653dd56ae"
+        },
+        {
+          "index": 1,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_36/subtask_01/evaluations/d6812b2b22162efd2ceb238f6cf5006dac6ee2b810fd9d10dde5fcdbc1d9cd59/trial.json",
+          "full_sha": "4dace25764b575ed790cb0fc7ad6e814f807376e78b00b844ecfb9a2bfbed25f",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_36/subtask_01/evaluations/fb405e86634c76f3f34172496b6aef6daa33e56ec5b28057a87cc79b7398fb2c/trial.json",
+          "best_sha": "c5d4f1d75800fee3ba6c9b4102cb056c2598c0b7522bfdd05449a48c4c54288e"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/00/demo_45",
+      "task_name": "LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.3845257308468286,
+        "acceleration": 2.401299224103938,
+        "jerk": 76.17165489443526,
+        "mY": 0.051159709374063396,
+        "sigma_min": 0.6984166905318172,
+        "sigma_min_full": 0.11923127117261814,
+        "travel": 6.5925840643087925
+      },
+      "best": {
+        "velocity": 0.3575802863185397,
+        "acceleration": 2.2059393896341173,
+        "jerk": 69.98094111640333,
+        "mY": 0.07397007237106155,
+        "sigma_min": 1.116536293494165,
+        "sigma_min_full": 0.18740325164287303,
+        "travel": 6.157832278429955
+      },
+      "gains_pct": {
+        "velocity": 7.0074490123060995,
+        "acceleration": 8.135588955712947,
+        "mY": 44.5865765777051,
+        "sigma_min": 59.86678277175277
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_00/demo_45/subtask_00/evaluations/8c34460981a66a82264d9bffeabbcaa1bf136550a49cda4923d29239b5ab8b66/trial.json",
+          "full_sha": "2de46b5399c8df274cac355ce0f28924fe6c57db360508515250b6354da9f34a",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_00/demo_45/subtask_00/evaluations/839f140ff9577cbc9d01c9783c75a38a938dbdff1ad92a4c6059d8a874f3f9cd/trial.json",
+          "best_sha": "f98e7fe2c304a4114cf62ec8b831e03ff358f2a24648ce246e82b224c2007c17"
+        },
+        {
+          "index": 1,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_00/demo_45/subtask_01/evaluations/8c34460981a66a82264d9bffeabbcaa1bf136550a49cda4923d29239b5ab8b66/trial.json",
+          "full_sha": "2a57ba400c3d2d1145232e8a20313dc8dd835e0709a2481f433a717453edf0b7",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_00/demo_45/subtask_01/evaluations/bb20f0bd768d7ed1222edfab2c5481b7dacc82996c60afc755915e33889fdf46/trial.json",
+          "best_sha": "c6633b065f3a4adf48424507d2125dbdde4a817ca849038c4152d9c2f68a25ba"
+        }
+      ]
+    },
+    {
+      "key": "libero_spatial/05/demo_44",
+      "task_name": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.5700518450121173,
+        "acceleration": 5.363272168029957,
+        "jerk": 174.28279359833215,
+        "mY": 0.05729861161373732,
+        "sigma_min": 0.8595312235537387,
+        "sigma_min_full": 0.15696801419933443,
+        "travel": 4.006772083233419
+      },
+      "best": {
+        "velocity": 0.5675002038634822,
+        "acceleration": 5.29543322318642,
+        "jerk": 171.42776145529467,
+        "mY": 0.08121508690920846,
+        "sigma_min": 1.1604345478550948,
+        "sigma_min_full": 0.14534745754250297,
+        "travel": 4.0492941463712455
+      },
+      "gains_pct": {
+        "velocity": 0.44761562846635794,
+        "acceleration": 1.2648797733577744,
+        "mY": 41.74006074823842,
+        "sigma_min": 35.007841024933214
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_05/demo_44/subtask_00/evaluations/342e0d79fafd2c2b4d3f7bbd4d3bba3a07537cdc1515f0b0aedc149a3e1d3b69/trial.json",
+          "full_sha": "acd530b4a1f9a25a1c4f7b383aa7d5209b996f2d5907c97c927594df2309f843",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_05/demo_44/subtask_00/evaluations/c7346c6aefa23e03ee3ad5d7796369a8d70769360a790b1d3fb8eaed41142717/trial.json",
+          "best_sha": "d38a740292d04371f6084349f97459c500f060c9a30d44c6ddc76d0631a59d5f"
+        }
+      ]
+    },
+    {
+      "key": "libero_object/00/demo_1",
+      "task_name": "pick_up_the_alphabet_soup_and_place_it_in_the_basket",
+      "stratum": "original1851",
+      "full": {
+        "velocity": 0.458045901638646,
+        "acceleration": 3.2884923172301317,
+        "jerk": 104.2223469052559,
+        "mY": 0.06517997882107225,
+        "sigma_min": 1.1996235533955548,
+        "sigma_min_full": 0.18102749144393038,
+        "travel": 4.083460085263418
+      },
+      "best": {
+        "velocity": 0.44931523263159073,
+        "acceleration": 3.27302009267414,
+        "jerk": 104.94635364737744,
+        "mY": 0.0917321453066936,
+        "sigma_min": 1.4505932377026352,
+        "sigma_min_full": 0.17203069639104568,
+        "travel": 4.0303638208573735
+      },
+      "gains_pct": {
+        "velocity": 1.906068578677711,
+        "acceleration": 0.4704959921884133,
+        "mY": 40.73669087636649,
+        "sigma_min": 20.920703298689535
+      },
+      "block_evidence": [
+        {
+          "index": 0,
+          "full_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_object/task_00/demo_1/subtask_00/evaluations/8c34460981a66a82264d9bffeabbcaa1bf136550a49cda4923d29239b5ab8b66/trial.json",
+          "full_sha": "05293aafb515fc48426929ada12a764ed46afa4bb2ef765fc6f3179f3963af3b",
+          "best_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_object/task_00/demo_1/subtask_00/evaluations/232015bad24756df4da54a9ba22c3b964c83eaecffbe40d03f36091b0c5fbe8e/trial.json",
+          "best_sha": "71ba2b80ac5d2b24a2619d54e5127f81a662f05c1799a17f526e9c9c968efeb6"
+        }
+      ]
+    }
+  ],
+  "definitions": "Same verified no-clearance comparison; gains use full as denominator; sample IDs are original demos, not rollout seeds.",
+  "input_sha256": {
+    "episodes.json": "b2ab86c89eb3a9ec0375d80293f6c23113b66cadddba2189e00a52c84d13727a",
+    "full_failure_diagnosis.json": "917afd3243dbaa3bc97dbeb175cd0b685ae9f3cb6330035def8ed9597f3be8a8",
+    "verification.json": "1d0e34f5d2a5268f67ec109cecba8da1ca3d40053adcc2aeede038ff5acf0d8a"
+  }
+}

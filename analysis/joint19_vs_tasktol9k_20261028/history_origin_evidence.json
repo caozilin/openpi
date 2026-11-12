@@ -1,0 +1,638 @@
+{
+  "commits": {
+    "bf0556c": {
+      "sha": "bf0556c00318d03b1e1ab23a3b53f3a7ea193d1d",
+      "parent": "37054c12d84feecd4423794e43d7a3a49d82fa9e",
+      "author_date": "2026-09-12T14:58:40+08:00",
+      "commit_date": "2026-09-12T14:58:40+08:00",
+      "author": "czl",
+      "subject": "feat: replace joint19 with joint15 tolerance descriptor"
+    },
+    "5e0f536": {
+      "sha": "5e0f53646038836babdd36675fcd1bba845e9568",
+      "parent": "bf0556c00318d03b1e1ab23a3b53f3a7ea193d1d",
+      "author_date": "2026-10-27T10:20:08+08:00",
+      "commit_date": "2026-10-27T10:20:08+08:00",
+      "author": "czl",
+      "subject": "feat: migrate tracking to SwanLab and add joint13 LIBERO workflows"
+    }
+  },
+  "wandb_export_manifest": {
+    "project": "1848166725-hit/openpi",
+    "exported_at_utc": "2026-10-26T14:28:10.980264+00:00",
+    "method": "wandb.Api run.scan_history, all keys, no downsampling",
+    "total_runs": 45,
+    "exported_runs": 45,
+    "total_history_rows": 2687,
+    "runs_with_history": 27,
+    "failures": []
+  },
+  "wandb_runs": [
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_lora_v1__d9rcmnzc/metadata.json",
+      "date": "2026-04-14T10:42:13Z",
+      "run": "franka_lora_v1",
+      "run_id": "d9rcmnzc",
+      "action_dim": 32,
+      "config_name": "pi05_franka_lora",
+      "last_logged_step": 5200,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_lora_v1__f3ytimdw/metadata.json",
+      "date": "2026-04-14T10:39:09Z",
+      "run": "franka_lora_v1",
+      "run_id": "f3ytimdw",
+      "action_dim": 32,
+      "config_name": "pi05_franka_lora",
+      "last_logged_step": 0,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_lora_v1__fw8mme3k/metadata.json",
+      "date": "2026-04-14T10:33:29Z",
+      "run": "franka_lora_v1",
+      "run_id": "fw8mme3k",
+      "action_dim": 32,
+      "config_name": "pi05_franka_lora",
+      "last_logged_step": 0,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_lora_v2__9l6k3xsb/metadata.json",
+      "date": "2026-04-17T14:55:30Z",
+      "run": "franka_lora_v2",
+      "run_id": "9l6k3xsb",
+      "action_dim": 32,
+      "config_name": "pi05_franka_lora",
+      "last_logged_step": 20100,
+      "state": "crashed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_bell_tolerance20_joint19_state_lora__4nqdfcm8/metadata.json",
+      "date": "2026-08-28T16:03:09Z",
+      "run": "franka_mujoco_bell_tolerance20_joint19_state_lora",
+      "run_id": "4nqdfcm8",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco_joint19_state",
+      "last_logged_step": 10400,
+      "state": "crashed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_joint19_lora__ny6e2xp6/metadata.json",
+      "date": "2026-08-12T13:18:47Z",
+      "run": "franka_mujoco_joint19_lora",
+      "run_id": "ny6e2xp6",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco_joint19",
+      "last_logged_step": 40200,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_lora__4fv95996/metadata.json",
+      "date": "2026-08-12T04:25:10Z",
+      "run": "franka_mujoco_lora",
+      "run_id": "4fv95996",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco",
+      "last_logged_step": 33600,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_lora__9vj4ryw2/metadata.json",
+      "date": "2026-07-21T13:54:55Z",
+      "run": "franka_mujoco_lora",
+      "run_id": "9vj4ryw2",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco",
+      "last_logged_step": 4900,
+      "state": "finished"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_lora__d3mx3do9/metadata.json",
+      "date": "2026-07-22T12:05:24Z",
+      "run": "franka_mujoco_lora",
+      "run_id": "d3mx3do9",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco",
+      "last_logged_step": 0,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_lora__z33y5ucx/metadata.json",
+      "date": "2026-08-12T03:52:41Z",
+      "run": "franka_mujoco_lora",
+      "run_id": "z33y5ucx",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_lora__zvzkmugk/metadata.json",
+      "date": "2026-07-22T12:13:01Z",
+      "run": "franka_mujoco_lora",
+      "run_id": "zvzkmugk",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco",
+      "last_logged_step": 1900,
+      "state": "crashed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_v2_joint19_lora__ucflosn1/metadata.json",
+      "date": "2026-08-24T13:00:37Z",
+      "run": "franka_mujoco_v2_joint19_lora",
+      "run_id": "ucflosn1",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco_joint19",
+      "last_logged_step": 30100,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_v3_joint19_lora__cqktcpcn/metadata.json",
+      "date": "2026-08-24T11:04:12Z",
+      "run": "franka_mujoco_v3_joint19_lora",
+      "run_id": "cqktcpcn",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco_joint19",
+      "last_logged_step": 30300,
+      "state": "crashed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_v3_joint19_state_lora__8apn6efk/metadata.json",
+      "date": "2026-08-27T03:23:58Z",
+      "run": "franka_mujoco_v3_joint19_state_lora",
+      "run_id": "8apn6efk",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco_joint19_state",
+      "last_logged_step": 11000,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_v4_joint19_state_lora__1tc0n81v/metadata.json",
+      "date": "2026-08-31T02:45:21Z",
+      "run": "franka_mujoco_v4_joint19_state_lora",
+      "run_id": "1tc0n81v",
+      "action_dim": 32,
+      "config_name": "pi05_franka_mujoco_joint19_state",
+      "last_logged_step": 8500,
+      "state": "crashed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/franka_repo__xac4mssq/metadata.json",
+      "date": "2026-02-12T10:42:33Z",
+      "run": "franka_repo",
+      "run_id": "xac4mssq",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi05_libero_lora__bblcn9yy/metadata.json",
+      "date": "2026-02-19T01:28:27Z",
+      "run": "pi05_libero_lora",
+      "run_id": "bblcn9yy",
+      "action_dim": 32,
+      "config_name": "pi05_libero_lora",
+      "last_logged_step": 0,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi05_libero_lora__enmw1z6g/metadata.json",
+      "date": "2026-02-20T10:04:51Z",
+      "run": "pi05_libero_lora",
+      "run_id": "enmw1z6g",
+      "action_dim": 32,
+      "config_name": "pi05_libero_lora",
+      "last_logged_step": 29900,
+      "state": "finished"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi05_libero_lora__ff4n8sph/metadata.json",
+      "date": "2026-02-19T02:03:01Z",
+      "run": "pi05_libero_lora",
+      "run_id": "ff4n8sph",
+      "action_dim": 32,
+      "config_name": "pi05_libero_lora",
+      "last_logged_step": 0,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi05_libero_lora__hk6v8xwg/metadata.json",
+      "date": "2026-02-19T02:08:54Z",
+      "run": "pi05_libero_lora",
+      "run_id": "hk6v8xwg",
+      "action_dim": 32,
+      "config_name": "pi05_libero_lora",
+      "last_logged_step": 0,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi05_libero_lora__i2jfa4fk/metadata.json",
+      "date": "2026-02-19T02:26:44Z",
+      "run": "pi05_libero_lora",
+      "run_id": "i2jfa4fk",
+      "action_dim": 32,
+      "config_name": "pi05_libero_lora",
+      "last_logged_step": 2000,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi05_libero_lora__o078ufcw/metadata.json",
+      "date": "2026-02-19T01:43:34Z",
+      "run": "pi05_libero_lora",
+      "run_id": "o078ufcw",
+      "action_dim": 32,
+      "config_name": "pi05_libero_lora",
+      "last_logged_step": 100,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi05_libero_lora_discrete__aehnefxp/metadata.json",
+      "date": "2026-02-27T12:30:19Z",
+      "run": "pi05_libero_lora_discrete",
+      "run_id": "aehnefxp",
+      "action_dim": 32,
+      "config_name": "pi05_libero_lora_discrete",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi05_libero_lora_discrete__s373hvci/metadata.json",
+      "date": "2026-02-27T12:32:26Z",
+      "run": "pi05_libero_lora_discrete",
+      "run_id": "s373hvci",
+      "action_dim": 32,
+      "config_name": "pi05_libero_lora_discrete",
+      "last_logged_step": 29900,
+      "state": "finished"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi05_libero_lora_discrete__w0pbk3kt/metadata.json",
+      "date": "2026-02-27T06:46:04Z",
+      "run": "pi05_libero_lora_discrete",
+      "run_id": "w0pbk3kt",
+      "action_dim": 32,
+      "config_name": "pi05_libero_lora",
+      "last_logged_step": 5700,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_aloha_robotwin_lora__9xdow54n/metadata.json",
+      "date": "2026-02-07T03:53:54Z",
+      "run": "pi0_base_aloha_robotwin_lora",
+      "run_id": "9xdow54n",
+      "action_dim": 32,
+      "config_name": "pi0_base_aloha_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_aloha_robotwin_lora__ac3dm1j5/metadata.json",
+      "date": "2026-02-06T14:04:35Z",
+      "run": "pi0_base_aloha_robotwin_lora",
+      "run_id": "ac3dm1j5",
+      "action_dim": 32,
+      "config_name": "pi0_base_aloha_robotwin_lora",
+      "last_logged_step": null,
+      "state": "crashed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_aloha_robotwin_lora__alt7j74v/metadata.json",
+      "date": "2026-02-07T04:02:20Z",
+      "run": "pi0_base_aloha_robotwin_lora",
+      "run_id": "alt7j74v",
+      "action_dim": 32,
+      "config_name": "pi0_base_aloha_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_aloha_robotwin_lora__bu4qp65y/metadata.json",
+      "date": "2026-02-07T03:51:18Z",
+      "run": "pi0_base_aloha_robotwin_lora",
+      "run_id": "bu4qp65y",
+      "action_dim": 32,
+      "config_name": "pi0_base_aloha_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_aloha_robotwin_lora__daj8o24r/metadata.json",
+      "date": "2026-02-07T04:09:05Z",
+      "run": "pi0_base_aloha_robotwin_lora",
+      "run_id": "daj8o24r",
+      "action_dim": 32,
+      "config_name": "pi0_base_aloha_robotwin_lora",
+      "last_logged_step": 1200,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_aloha_robotwin_lora__j4ehbrev/metadata.json",
+      "date": "2026-02-06T13:49:19Z",
+      "run": "pi0_base_aloha_robotwin_lora",
+      "run_id": "j4ehbrev",
+      "action_dim": 32,
+      "config_name": "pi0_base_aloha_robotwin_lora",
+      "last_logged_step": null,
+      "state": "crashed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_aloha_robotwin_lora__rtspze9f/metadata.json",
+      "date": "2026-02-07T03:43:12Z",
+      "run": "pi0_base_aloha_robotwin_lora",
+      "run_id": "rtspze9f",
+      "action_dim": 32,
+      "config_name": "pi0_base_aloha_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_aloha_robotwin_lora__sd3jkqm5/metadata.json",
+      "date": "2026-02-06T13:56:58Z",
+      "run": "pi0_base_aloha_robotwin_lora",
+      "run_id": "sd3jkqm5",
+      "action_dim": 32,
+      "config_name": "pi0_base_aloha_robotwin_lora",
+      "last_logged_step": null,
+      "state": "crashed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__5jjl0n60/metadata.json",
+      "date": "2026-02-12T13:49:01Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "5jjl0n60",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__80zzpand/metadata.json",
+      "date": "2026-02-12T13:55:41Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "80zzpand",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__9qizhofy/metadata.json",
+      "date": "2026-02-12T10:57:27Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "9qizhofy",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__bhgz3v1t/metadata.json",
+      "date": "2026-02-12T11:07:01Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "bhgz3v1t",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__dhp0yjcs/metadata.json",
+      "date": "2026-02-12T11:08:50Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "dhp0yjcs",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__fbr5xlw2/metadata.json",
+      "date": "2026-02-12T13:52:26Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "fbr5xlw2",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": 0,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__h09e1uv5/metadata.json",
+      "date": "2026-02-12T11:02:01Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "h09e1uv5",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__ii005jf3/metadata.json",
+      "date": "2026-02-12T10:48:53Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "ii005jf3",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": null,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__kxeuf40p/metadata.json",
+      "date": "2026-02-12T13:59:17Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "kxeuf40p",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": 800,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__opg9tq9f/metadata.json",
+      "date": "2026-02-12T11:12:58Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "opg9tq9f",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": 400,
+      "state": "failed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__p7ggldj1/metadata.json",
+      "date": "2026-02-12T13:35:36Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "p7ggldj1",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": 0,
+      "state": "killed"
+    },
+    {
+      "source": "data/wandb_exports/openpi_2026-10-26/runs/pi0_base_franka_v01__z81tt3qm/metadata.json",
+      "date": "2026-02-12T11:04:34Z",
+      "run": "pi0_base_franka_v01",
+      "run_id": "z81tt3qm",
+      "action_dim": 32,
+      "config_name": "pi0_base_franka_robotwin_lora",
+      "last_logged_step": null,
+      "state": "killed"
+    }
+  ],
+  "local_checkpoints": [
+    {
+      "checkpoint": "checkpoints/pi05_franka_lora/franka_lora_v1/1000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_franka_lora/franka_lora_v1/2000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_franka_lora/franka_lora_v1/3000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_franka_lora/franka_lora_v1/5000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_franka_lora/franka_lora_v2/10000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_franka_lora/franka_lora_v2/15000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_franka_lora/franka_lora_v2/20000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_franka_lora/franka_lora_v2/5000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_libero_lora/pi05_libero_lora/10000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_libero_lora/pi05_libero_lora/20000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_libero_lora/pi05_libero_lora/29999",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_libero_lora/pi05_libero_lora/5000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_libero_lora_discrete/pi05_libero_lora_discrete/10000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_libero_lora_discrete/pi05_libero_lora_discrete/20000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_libero_lora_discrete/pi05_libero_lora_discrete/29999",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_libero_lora_discrete/pi05_libero_lora_discrete/5000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          32
+        ]
+      }
+    },
+    {
+      "checkpoint": "checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/9000",
+      "output_projection_shapes": {
+        "('params', 'action_out_proj', 'kernel', 'value')": [
+          1024,
+          13
+        ]
+      }
+    }
+  ],
+  "limits": "Git commit dates identify earliest committed evidence, not necessarily first uncommitted edit; W&B export covers one project as of 2026-10-26."
+}

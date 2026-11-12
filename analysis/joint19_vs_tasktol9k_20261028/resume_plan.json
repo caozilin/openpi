@@ -1,0 +1,136 @@
+{
+  "source_command": "/mnt/SharedData/czl/runs/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/training_command.json",
+  "checkpoint_dir": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027",
+  "restore_step": 9000,
+  "target_step": 15000,
+  "learning_rate_points": {
+    "0": 4.999999873689376e-06,
+    "9000": 4.999999873689376e-06,
+    "9250": 2.750000021478627e-05,
+    "9500": 5.0000002374872565e-05,
+    "12000": 5.0000002374872565e-05,
+    "15000": 5.0000002374872565e-05
+  },
+  "optimizer_tree_compatible": true,
+  "config": {
+    "name": "pi05_tasktol_mix20_4xloss_7gpu_9k",
+    "project_name": "openpi-tasktol",
+    "exp_name": "TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027",
+    "model": {
+      "action_dim": 13,
+      "action_horizon": 16,
+      "max_token_len": 48,
+      "dtype": "bfloat16",
+      "paligemma_variant": "gemma_2b_lora",
+      "action_expert_variant": "gemma_300m_lora",
+      "pi05": true,
+      "discrete_state_input": false,
+      "action_loss_groups": [
+        [
+          "action",
+          0,
+          7,
+          1.0
+        ],
+        [
+          "rotation_tolerance",
+          7,
+          13,
+          0.5
+        ]
+      ]
+    },
+    "weight_loader": {
+      "params_path": "gs://openpi-assets/checkpoints/pi05_base/params",
+      "skip_mismatched_shapes": true
+    },
+    "pytorch_weight_path": null,
+    "pytorch_training_precision": "bfloat16",
+    "lr_schedule": {
+      "resume_step": 9000,
+      "warmup_steps": 500,
+      "initial_lr": 5e-06,
+      "peak_lr": 5e-05
+    },
+    "optimizer": {
+      "b1": 0.9,
+      "b2": 0.95,
+      "eps": 1e-08,
+      "weight_decay": 1e-10,
+      "clip_gradient_norm": 1.0
+    },
+    "ema_decay": null,
+    "freeze_filter": "All(PathRegex(pattern=re.compile('.*llm.*'), sep='/'), Not(PathRegex(pattern=re.compile('.*lora.*'), sep='/')))",
+    "data": {
+      "repo_id": "caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+      "lerobot_dataset_root": "/mnt/SharedData/czl/lerobot/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+      "hf_datasets_cache_dir": "/mnt/SharedData/czl/hf_datasets/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+      "lerobot_arrow_cache_dir": null,
+      "assets": {
+        "assets_dir": "/mnt/SharedData/czl/assets/pi05_franka_mujoco_joint13",
+        "asset_id": null
+      },
+      "base_config": {
+        "repo_id": null,
+        "lerobot_dataset_root": null,
+        "hf_datasets_cache_dir": null,
+        "lerobot_arrow_cache_dir": null,
+        "source_schema": null,
+        "asset_id": null,
+        "norm_stats": null,
+        "repack_transforms": {
+          "inputs": [],
+          "outputs": []
+        },
+        "data_transforms": {
+          "inputs": [],
+          "outputs": []
+        },
+        "model_transforms": {
+          "inputs": [],
+          "outputs": []
+        },
+        "use_quantile_norm": false,
+        "action_sequence_keys": [
+          "actions"
+        ],
+        "prompt_from_task": true,
+        "rlds_data_dir": null,
+        "action_space": null,
+        "datasets": []
+      },
+      "joint_task_tolerance": true,
+      "tolerance_trajectory_action_loss_weight": 4.0
+    },
+    "validation_name": "val1",
+    "validation_repo_id": null,
+    "validation_lerobot_dataset_root": null,
+    "validation_hf_datasets_cache_dir": null,
+    "validation_lerobot_arrow_cache_dir": null,
+    "validation2_name": "val2",
+    "validation2_repo_id": null,
+    "validation2_lerobot_dataset_root": null,
+    "validation2_hf_datasets_cache_dir": null,
+    "validation2_lerobot_arrow_cache_dir": null,
+    "validation_num_batches": 16,
+    "validation_batch_size_factor": 1.0,
+    "assets_base_dir": "./assets",
+    "checkpoint_base_dir": "/mnt/SharedData/czl/checkpoints",
+    "seed": 42,
+    "batch_size": 84,
+    "num_workers": 8,
+    "num_train_steps": 15000,
+    "log_interval": 10,
+    "save_interval": 1500,
+    "keep_period": 1500,
+    "overwrite": false,
+    "resume": true,
+    "swanlab_enabled": true,
+    "swanlab_mode": "online",
+    "swanlab_workspace": null,
+    "swanlab_log_dir": "/mnt/SharedData/czl/swanlog",
+    "policy_metadata": null,
+    "fsdp_devices": 1
+  },
+  "data_loader_note": "The current loader restarts its shuffled iterator on resume; iterator state is not checkpointed."
+}

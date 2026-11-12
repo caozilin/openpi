@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "start": "2026-11-02T00:37:58+08:00",
+  "end": "2026-11-02T19:09:35+08:00",
+  "wall_seconds": 66697.0,
+  "wall_hours": 18.526944444444446,
+  "wall_seconds_per_step": 6.6697,
+  "scope": "training process wall time including startup/compilation/checkpoints; excludes prior upload/normalization and subsequent audit",
+  "sources": [
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/SERVER_HANDOFF.md",
+      "sha256": "ef7e5420a5e6260da4a2bdf641219a108191d9a1416226c4b23c5dec7ed06675"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/training_completion.json",
+      "sha256": "32237603792a52bc3cdd31000ea040eeb927aa29504adb5da64231a22a3d1884"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/training_independent_final_audit.json",
+      "sha256": "aff3569bde3132688ec0d54e18bfbc63081624d9ad3d4061dac2ea27b7a10a40"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/training_request.json",
+      "sha256": "0bb08bb43bdd217f3738dc673cfe7194f88044e052f1b3fb4c0dbd21a4d783c7"
+    }
+  ]
+}

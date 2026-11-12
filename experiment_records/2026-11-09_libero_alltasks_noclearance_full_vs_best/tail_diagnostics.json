@@ -1,0 +1,75 @@
+{
+  "sigma_min": {
+    "top5": [
+      {
+        "key": "libero_10/08/demo_30",
+        "full": 0.007956763633051388,
+        "best": 0.49887071732159155,
+        "gain_pct": 6169.769221864853
+      },
+      {
+        "key": "libero_spatial/07/demo_34",
+        "full": 0.05517544439064801,
+        "best": 0.5348782403817708,
+        "gain_pct": 869.4135612117158
+      },
+      {
+        "key": "libero_10/04/demo_14",
+        "full": 0.08147246746796133,
+        "best": 0.6330899293785047,
+        "gain_pct": 677.0599676847451
+      },
+      {
+        "key": "libero_spatial/07/demo_28",
+        "full": 0.11544622585713937,
+        "best": 0.8083662961992722,
+        "gain_pct": 600.2102409130265
+      },
+      {
+        "key": "libero_goal/02/demo_13",
+        "full": 0.0670419231831375,
+        "best": 0.35011812811609005,
+        "gain_pct": 422.2375962570125
+      }
+    ],
+    "full_baseline_lt_0_05_count": 4,
+    "ratio_gain_excluding_baseline_lt_0_05_pct": 3.345659922215294
+  },
+  "sigma_min_full": {
+    "top5": [
+      {
+        "key": "libero_10/08/demo_30",
+        "full": 0.0007686188030900494,
+        "best": 0.05232288897622736,
+        "gain_pct": 6707.391227728961
+      },
+      {
+        "key": "libero_spatial/07/demo_34",
+        "full": 0.005364395441076091,
+        "best": 0.05237867885867008,
+        "gain_pct": 876.4134548619887
+      },
+      {
+        "key": "libero_10/04/demo_14",
+        "full": 0.018144349655555957,
+        "best": 0.14329110108395532,
+        "gain_pct": 689.7285039371932
+      },
+      {
+        "key": "libero_spatial/07/demo_28",
+        "full": 0.011249064299248839,
+        "best": 0.08072516031039065,
+        "gain_pct": 617.6166671549837
+      },
+      {
+        "key": "libero_goal/02/demo_13",
+        "full": 0.006711545343084172,
+        "best": 0.035914449752537776,
+        "gain_pct": 435.1144619703027
+      }
+    ],
+    "full_baseline_lt_0_05_count": 65,
+    "ratio_gain_excluding_baseline_lt_0_05_pct": -0.67419132355373
+  },
+  "approx_four_metric_nonregression_1pct_count": 1322
+}

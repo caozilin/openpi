@@ -1,0 +1,188 @@
+--- /media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/benchmark/environment.py
++++ /media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/environment.py
+@@ -1120,6 +1120,7 @@
+                 action,
+                 tolerance=state,
+                 dt=TELEOP_DT,
++                tolerance_frame_mode=self.config.tolerance_frame_mode,
+             )
+             if self.config.tolerance_mode in (
+                 TOLERANCE_MODE_POLICY_PREDICTED, TOLERANCE_MODE_FULL_30,
+--- /media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/counterfactual/runner.py
++++ /media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/runner.py
+@@ -123,9 +123,9 @@
+ # Reference transport and multi-subtask planning are trajectory semantics;
+ # records produced by the former fixed-offset/deferred-replan path must not be
+ # reused by the current controller.
+-# EMA release now uses ordinary squared L2; former Groove-loss trajectories
+-# must not be reused as results from the current objective.
+-COUNTERFACTUAL_CACHE_VERSION = 84
++# Action EMA is sampled in the advanced nominal pose's tolerance axes.
++# Former pre-action-axis trajectories must not be reused for this objective.
++COUNTERFACTUAL_CACHE_VERSION = 85
+ 
+ 
+ @dataclass(frozen=True)
+--- /media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/simulation/libero.py
++++ /media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/libero.py
+@@ -198,8 +198,6 @@
+             self.target.position,
+             self.target.rotation,
+             action,
+-            tolerance=self.tolerance if tolerance_enabled else None,
+-            dt=self.dt if tolerance_enabled else None,
+         )
+         if tolerance_enabled:
+             # Construct this cycle's frame from the advanced independent
+@@ -210,6 +208,10 @@
+                 self.tolerance.ranged[:] = False
+             self.tolerance.frame = np.eye(3) if guarded else box_tolerance_frame(self.target.rotation)
+             self.tolerance.raw_tolerance_frame = self.tolerance.frame.copy()
++            # The native adapter's guarded heading policy must be resolved
++            # before the shared intent filter samples this action. The solve
++            # below preserves these same frozen axes, including strict frames.
++            self.tolerance.update_intent(np.asarray(action[3:6]), self.dt)
+         active = np.ones(6, dtype=bool)
+         if tolerance_enabled:
+             q, diagnostics, _, release_mask, release_step = solve_stage_relative_target(
+--- /media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/teleop/app.py
++++ /media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/app.py
+@@ -272,6 +272,8 @@
+     action: np.ndarray,
+     active_dofs: np.ndarray,
+     rotational_tolerance: RotationalToleranceState,
++    *,
++    tolerance_frame_mode: str = TOLERANCE_FRAME_MODE_REALTIME_NOMINAL,
+ ) -> None:
+     """Apply one already-normalized base-frame command."""
+     base_action = np.asarray(action, dtype=float)
+@@ -288,6 +290,7 @@
+         rotation_only,
+         tolerance=rotational_tolerance,
+         dt=TELEOP_DT,
++        tolerance_frame_mode=tolerance_frame_mode,
+     )
+ 
+ 
+@@ -1768,6 +1771,11 @@
+                             optimized_rotation=accepted_rotation,
+                             nominal_rotation=target.rotation,
+                         )
++                if active_tolerance_frame_mode == TOLERANCE_FRAME_MODE_STAGE_ENDPOINT:
++                    rotational_tolerance.update_tolerance_frame(
++                        rotational_tolerance.raw_tolerance_frame,
++                        stage_key=release_key,
++                    )
+                 if task_action is not None:
+                     # Preset plans are compiled offline into base-frame
+                     # increments. They advance the previous nominal
+@@ -1778,6 +1786,7 @@
+                         task_action.value,
+                         tolerance=rotational_tolerance,
+                         dt=TELEOP_DT,
++                        tolerance_frame_mode=active_tolerance_frame_mode,
+                     )
+                     rotation_action = np.asarray(task_action.value[3:6], dtype=float)
+                     task_gripper_closed = task_action.gripper_closed
+@@ -1797,6 +1806,7 @@
+                     _apply_target_action(
+                         target, replay_step.action, active_dofs,
+                         rotational_tolerance,
++                        tolerance_frame_mode=active_tolerance_frame_mode,
+                     )
+                     rotation_action = np.asarray(replay_step.action[3:6], dtype=float)
+                     gripper_closed = replay_step.gripper_closed
+@@ -1809,6 +1819,7 @@
+                     _apply_target_action(
+                         target, raw_action, active_dofs,
+                         rotational_tolerance,
++                        tolerance_frame_mode=active_tolerance_frame_mode,
+                     )
+                     rotation_action = raw_action[3:6].copy()
+                     evaluation_commanded = bool(np.any(raw_action))
+@@ -1825,14 +1836,6 @@
+                 # and the tolerance-release condition.
+                 cycle_position_target = target.position.copy()
+                 cycle_rotation_target = target.rotation.copy()
+-                if (
+-                    active_tolerance_frame_mode
+-                    == TOLERANCE_FRAME_MODE_STAGE_ENDPOINT
+-                ):
+-                    rotational_tolerance.update_tolerance_frame(
+-                        rotational_tolerance.raw_tolerance_frame,
+-                        stage_key=release_key,
+-                    )
+                 rotational_tolerance.update_tolerance_limits(
+                     rotational_tolerance.raw_negative_limits,
+                     rotational_tolerance.raw_positive_limits,
+--- /media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/tolerance/runtime.py
++++ /media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/runtime.py
+@@ -30,6 +30,7 @@
+     *,
+     tolerance: RotationalToleranceState | None = None,
+     dt: float | None = None,
++    tolerance_frame_mode: str = TOLERANCE_FRAME_MODE_REALTIME_NOMINAL,
+ ) -> tuple[np.ndarray, np.ndarray]:
+     """Advance the independent nominal planner reference by one increment.
+ 
+@@ -37,9 +38,10 @@
+     source-frame switches are intentionally absent from this API. Runtime
+     control, simulation and benchmarks must all integrate the same incremental
+     action from the previous nominal reference. When tolerance is active,
+-    this records rotational intent before applying the nominal increment; the
+-    physical FK feedback remains an observation input and never replaces this
+-    nominal reference.
++    this first advances the nominal orientation, then freezes the cycle's
++    tolerance axes and samples rotational intent in those axes. Constraints
++    and release loss use the same axes. Physical FK feedback remains an
++    observation input and never replaces this nominal reference.
+     """
+     position_array = np.asarray(position, dtype=float)
+     rotation_array = np.asarray(rotation, dtype=float)
+@@ -52,10 +54,15 @@
+     if tolerance is not None:
+         if dt is None or not np.isfinite(dt) or dt <= 0.0:
+             raise ValueError("A positive finite dt is required with tolerance")
+-        tolerance.update_intent(rotation_action, float(dt))
++        if tolerance_frame_mode not in TOLERANCE_FRAME_MODES:
++            raise ValueError(f"Unknown tolerance-frame mode: {tolerance_frame_mode!r}")
+         advanced_rotation = tolerance.apply_increment(
+             rotation_array, rotation_action,
+         )
++        tolerance.frame = cycle_tolerance_frame(
++            tolerance_frame_mode, advanced_rotation, tolerance.frame,
++        )
++        tolerance.update_intent(rotation_action, float(dt))
+     else:
+         delta = rotation_matrix(rotation_action)
+         advanced_rotation = delta @ rotation_array
+@@ -220,11 +227,9 @@
+         for action in future_actions:
+             position, rotation = advance_reference_pose(
+                 position, rotation, action, tolerance=preview_tolerance, dt=TELEOP_DT,
++                tolerance_frame_mode=tolerance_frame_mode,
+             )
+-            frame = cycle_tolerance_frame(
+-                tolerance_frame_mode, rotation, preview_tolerance.frame,
+-            )
+-            preview_tolerance.frame = frame
++            frame = preview_tolerance.frame
+             _, mask = configure_rotation_axis_tasks(preview_tolerance, ())
+             targets.append(TargetPose(position.copy(), rotation.copy()))
+             tasks.append(tuple(controller._resolve_axis_tasks(active_dofs)[:3]) + tuple(
+--- /media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/tolerance/state.py
++++ /media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/state.py
+@@ -299,7 +299,12 @@
+         rotation_action: np.ndarray,
+         dt: float,
+     ) -> None:
+-        """Update intent from a base-frame nominal rotation increment."""
++        """Sample a base-frame nominal increment in this cycle's frozen axes.
++
++        Runtime callers freeze ``frame`` from the advanced nominal pose before
++        sampling. EMA history is retained by semantic axis within a stage;
++        its unsigned per-axis magnitudes are not spatial rotation vectors.
++        """
+         action = np.asarray(rotation_action, dtype=float)
+         if action.shape != (3,) or dt <= 0.0:
+             raise ValueError("Rotation intent requires a 3-vector and positive dt.")

@@ -1,0 +1,7 @@
+{
+  "pid": 17441,
+  "start_ticks": 544729,
+  "command": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/pipeline.py",
+  "pipeline_sha256": "3ffde47ad7ad0d790b909313101dbb09e5add88bac3572b492ea61bf1a6516bd",
+  "at": "2026-11-10T16:24:10.909843+08:00"
+}

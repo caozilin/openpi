@@ -1,0 +1,6 @@
+{
+  "suite": "libero_10",
+  "task_id": 5,
+  "seed": 1,
+  "error": "Traceback (most recent call last):\n  File \"/media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_predicted_libero_local.py\", line 111, in worker\n    tic=time.monotonic();pred=client.infer(packet);infer_times.append(time.monotonic()-tic)\n                              ^^^^^^^^^^^^^^^^^^^^\n  File \"/media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_predicted_libero_local.py\", line 57, in infer\n    self._ws.send(self._packer.pack(packet));response=self._ws.recv(timeout=600)\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/websockets/sync/connection.py\", line 346, in recv\n    raise self.protocol.close_exc from self.recv_exc\nwebsockets.exceptions.ConnectionClosedError: received 1011 (internal error) keepalive ping timeout; then sent 1011 (internal error) keepalive ping timeout\n"
+}

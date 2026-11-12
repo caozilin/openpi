@@ -1,0 +1,121 @@
+{
+  "complete": true,
+  "checked_at": "2026-11-06T21:45:30.483267+08:00",
+  "manifest": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/combined_200_source_manifest.json",
+  "manifest_sha256": "8f22961d8f0433a9baeb95c06c19195631863f2e3364bc05a416bde2b02d9aa2",
+  "task_weighting": "equal weight per task; equal weight per commonly observed eligible signed direction within task",
+  "comparison": "max-minus-min across available demos, in degrees; only nonzero authored eligible directions; actual=observed signed coordinate peak",
+  "repeated_cycle_rule": "Within a demo, max across observed cycles mapped to the same authored semantic subtask and phase; envelope statistics, not a rewritten label",
+  "sample_definition": "First5 successful original demo IDs per task, not rollout seeds0to4; report.seed is not independent sample ID",
+  "all40": {
+    "tasks": 40,
+    "episodes": 199,
+    "eligible_tasks": 38,
+    "eligible_episodes": 189,
+    "mean_search_cap_span_deg": 13.302196692776516,
+    "mean_actual_peak_span_deg": 7.918478137911174,
+    "median_task_search_cap_span_deg": 12.692255649950203,
+    "median_task_actual_peak_span_deg": 6.791937875006944,
+    "mean_search_pairwise_difference_deg": 6.634268853049518,
+    "mean_actual_pairwise_difference_deg": 3.856693217016662,
+    "mean_stage_so3_peak_span_deg": 10.43145860501026
+  },
+  "clean_complete38": {
+    "tasks": 38,
+    "episodes": 190,
+    "eligible_tasks": 36,
+    "eligible_episodes": 180,
+    "mean_search_cap_span_deg": 13.539340934589536,
+    "mean_actual_peak_span_deg": 7.960782277252799,
+    "median_task_search_cap_span_deg": 12.692255649950203,
+    "median_task_actual_peak_span_deg": 6.791937875006944,
+    "mean_search_pairwise_difference_deg": 6.763520764043061,
+    "mean_actual_pairwise_difference_deg": 3.8805362408343385,
+    "mean_stage_so3_peak_span_deg": 10.366184232380085
+  },
+  "suites": {
+    "libero_10": {
+      "tasks": 10,
+      "episodes": 50,
+      "eligible_tasks": 10,
+      "eligible_episodes": 50,
+      "mean_search_cap_span_deg": 14.166030306198442,
+      "mean_actual_peak_span_deg": 10.804583051374433,
+      "median_task_search_cap_span_deg": 13.19979934753309,
+      "median_task_actual_peak_span_deg": 10.082185203218538,
+      "mean_search_pairwise_difference_deg": 7.040760059442974,
+      "mean_actual_pairwise_difference_deg": 5.269433656646333,
+      "mean_stage_so3_peak_span_deg": 14.196910684171309
+    },
+    "libero_goal": {
+      "tasks": 10,
+      "episodes": 50,
+      "eligible_tasks": 8,
+      "eligible_episodes": 40,
+      "mean_search_cap_span_deg": 14.321521545298102,
+      "mean_actual_peak_span_deg": 7.076437990934869,
+      "median_task_search_cap_span_deg": 12.028445000296486,
+      "median_task_actual_peak_span_deg": 5.105403021236979,
+      "mean_search_pairwise_difference_deg": 7.067016594908049,
+      "mean_actual_pairwise_difference_deg": 3.4155376539922035,
+      "mean_stage_so3_peak_span_deg": 8.406773074388568
+    },
+    "libero_object": {
+      "tasks": 10,
+      "episodes": 50,
+      "eligible_tasks": 10,
+      "eligible_episodes": 50,
+      "mean_search_cap_span_deg": 13.925780539349521,
+      "mean_actual_peak_span_deg": 6.920004758109411,
+      "median_task_search_cap_span_deg": 12.995635614675704,
+      "median_task_actual_peak_span_deg": 7.0904570843868555,
+      "mean_search_pairwise_difference_deg": 6.996697675248436,
+      "mean_actual_pairwise_difference_deg": 3.3104735045291784,
+      "mean_stage_so3_peak_span_deg": 9.90063692278152
+    },
+    "libero_spatial": {
+      "tasks": 10,
+      "episodes": 49,
+      "eligible_tasks": 10,
+      "eligible_episodes": 49,
+      "mean_search_cap_span_deg": 10.999319350764313,
+      "mean_actual_peak_span_deg": 6.70447872183072,
+      "median_task_search_cap_span_deg": 11.795168661228871,
+      "median_task_actual_peak_span_deg": 6.6794439520300655,
+      "mean_search_pairwise_difference_deg": 5.519150630970321,
+      "mean_actual_pairwise_difference_deg": 3.343096940294042,
+      "mean_stage_so3_peak_span_deg": 8.816576632575307
+    }
+  },
+  "missing": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_1",
+      "status": "baseline_unavailable"
+    }
+  ],
+  "mixed_protocol_tasks": [
+    [
+      "libero_10",
+      8
+    ]
+  ],
+  "comparable_signed_units": 292,
+  "search_span_gt5_actual_span_lt1_units": 41,
+  "search_span_gt10_units": 155,
+  "actual_span_gt10_units": 86,
+  "strict_tasks": [
+    [
+      "libero_goal",
+      0
+    ],
+    [
+      "libero_goal",
+      5
+    ]
+  ],
+  "tasks_with_search_mean_span_lt1": 0,
+  "tasks_with_actual_mean_span_lt1": 0,
+  "caveat": "Different demo-specific BO seeds, trajectories, grasp histories and a finite query budget confound pure scene sensitivity; no new search or rollout conducted."
+}

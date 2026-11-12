@@ -392,6 +392,8 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
     def create(self, assets_dirs: pathlib.Path, model_config: _model.BaseModelConfig) -> DataConfig:
         if self.tolerance_trajectory_action_loss_weight < 0:
             raise ValueError("tolerance_trajectory_action_loss_weight must be non-negative")
+        if model_config.action_dim != franka_mujoco_policy.MODEL_ACTION_DIM:
+            raise ValueError("Franka MuJoCo requires the pretrained 32-D model interface; pad the effective targets to 32.")
         base_config = self.create_base_config(assets_dirs, model_config)
         if self.joint_task_tolerance and base_config.norm_stats is not None:
             action_stats = base_config.norm_stats["actions"]
@@ -905,6 +907,50 @@ _CONFIGS = [
         num_train_steps=30_000,
     ),
     TrainConfig(
+        name="pi05_libero_reconstructed_nostate_6gpu_bs72",
+        # Original Pi05 architecture with LoRA, initialized from pi05_base.
+        model=pi0_config.Pi0Config(
+            pi05=True,
+            action_horizon=10,
+            discrete_state_input=False,
+            max_token_len=48,
+            paligemma_variant="gemma_2b_lora",
+            action_expert_variant="gemma_300m_lora",
+        ),
+        data=LeRobotLiberoDataConfig(
+            repo_id="caozilin/libero_reconstructed_full_20261101",
+            base_config=DataConfig(prompt_from_task=True),
+            # Reconstructed actions are already physical Cartesian deltas.
+            extra_delta_transform=False,
+        ),
+        batch_size=72,  # Six GPUs, 12 examples per GPU, with two-way FSDP.
+        num_workers=8,
+        num_train_steps=10_000,
+        lr_schedule=_optimizer.CosineDecaySchedule(
+            warmup_steps=333,
+            peak_lr=5e-5,
+            decay_steps=10_000,
+            decay_lr=5e-6,
+        ),
+        optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
+        ema_decay=None,
+        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
+        freeze_filter=pi0_config.Pi0Config(
+            pi05=True,
+            action_horizon=10,
+            discrete_state_input=False,
+            max_token_len=48,
+            paligemma_variant="gemma_2b_lora",
+            action_expert_variant="gemma_300m_lora",
+        ).get_freeze_filter(),
+        fsdp_devices=2,
+        log_interval=10,
+        save_interval=2_000,
+        keep_period=2_000,
+        swanlab_enabled=True,
+        swanlab_mode="online",
+    ),
+    TrainConfig(
         name="pi05_franka_mujoco",
         model=pi0_config.Pi0Config(
             pi05=True,
@@ -942,10 +988,10 @@ _CONFIGS = [
         fsdp_devices=1,
     ),
     TrainConfig(
-        name="pi05_franka_mujoco_joint13",
+        name="pi05_franka_mujoco_joint32",
         model=pi0_config.Pi0Config(
             pi05=True,
-            action_dim=13,
+            action_dim=32,
             action_horizon=16,
             discrete_state_input=False,
             max_token_len=48,
@@ -958,6 +1004,8 @@ _CONFIGS = [
         ),
         data=LeRobotFrankaMujocoDataConfig(
             repo_id="caozilin/franka_mujoco",
+            # Statistics cover the 13 effective targets, before padding to 32.
+            assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_joint13"),
             base_config=DataConfig(prompt_from_task=True),
             joint_task_tolerance=True,
         ),
@@ -971,7 +1019,6 @@ _CONFIGS = [
         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
         weight_loader=weight_loaders.CheckpointWeightLoader(
             "gs://openpi-assets/checkpoints/pi05_base/params",
-            skip_mismatched_shapes=True,
         ),
         freeze_filter=pi0_config.Pi0Config(
             pi05=True,
@@ -988,10 +1035,10 @@ _CONFIGS = [
         fsdp_devices=1,
     ),
     TrainConfig(
-        name="pi05_franka_mujoco_joint13_state",
+        name="pi05_franka_mujoco_joint32_state",
         model=pi0_config.Pi0Config(
             pi05=True,
-            action_dim=13,
+            action_dim=32,
             action_horizon=16,
             discrete_state_input=True,
             max_token_len=64,
@@ -1005,7 +1052,7 @@ _CONFIGS = [
         data=LeRobotFrankaMujocoDataConfig(
             repo_id="caozilin/franka_mujoco",
             # Reuse the same 7-D state and 13-D action normalization stats as
-            # the action-only-input joint13 configuration.
+            # the joint32 configuration; padding happens after normalization.
             assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_joint13"),
             base_config=DataConfig(prompt_from_task=True),
             joint_task_tolerance=True,
@@ -1020,7 +1067,6 @@ _CONFIGS = [
         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
         weight_loader=weight_loaders.CheckpointWeightLoader(
             "gs://openpi-assets/checkpoints/pi05_base/params",
-            skip_mismatched_shapes=True,
         ),
         freeze_filter=pi0_config.Pi0Config(
             pi05=True,
@@ -1244,6 +1290,160 @@ _CONFIGS = [
     *roboarena_config.get_roboarena_configs(),
     *polaris_config.get_polaris_configs(),
 ]
+
+# Action-only baseline: retain pretrained projections, use the official Pi05
+# discrete-state path, and supervise only the seven physical action channels.
+# Seven-GPU run: 12 examples per device, with a fresh warmup/cosine schedule.
+_FRANKA_ACTION7_BASE = next(config for config in _CONFIGS if config.name == "pi05_franka_mujoco")
+_FRANKA_ACTION7_STATE_MODEL = dataclasses.replace(
+    _FRANKA_ACTION7_BASE.model,
+    action_dim=32,
+    discrete_state_input=True,
+    max_token_len=200,
+    action_loss_groups=(("action", 0, 7, 1.0),),
+)
+_CONFIGS.append(
+    dataclasses.replace(
+        _FRANKA_ACTION7_BASE,
+        name="pi05_franka_mujoco_state_action7_lora",
+        project_name="openpi-tasktol",
+        model=_FRANKA_ACTION7_STATE_MODEL,
+        freeze_filter=_FRANKA_ACTION7_STATE_MODEL.get_freeze_filter(),
+        data=dataclasses.replace(
+            _FRANKA_ACTION7_BASE.data,
+            repo_id="caozilin/franka_100_nominal",
+            assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_state_action7"),
+            joint_task_tolerance=False,
+            tolerance_trajectory_action_loss_weight=1.0,
+        ),
+        batch_size=84,
+        num_train_steps=15_000,
+        num_workers=8,
+        lr_schedule=_optimizer.CosineDecaySchedule(
+            warmup_steps=1_000,
+            peak_lr=5e-5,
+            decay_steps=15_000,
+            decay_lr=5e-6,
+        ),
+        log_interval=10,
+        save_interval=1_500,
+        keep_period=1_500,
+        swanlab_mode="online",
+    )
+)
+
+# Batch-size comparison; retain every optimization/model/data setting above.
+# A separate wall-clock supervisor stops the short experiment after 15 minutes.
+_FRANKA_STATE_ACTION7_BASE = next(
+    config for config in _CONFIGS if config.name == "pi05_franka_mujoco_state_action7_lora"
+)
+_CONFIGS.append(
+    dataclasses.replace(
+        _FRANKA_STATE_ACTION7_BASE,
+        name="pi05_franka_mujoco_state_action7_lora_bs24_6gpu",
+        batch_size=24,
+    )
+)
+_CONFIGS.extend(
+    dataclasses.replace(
+        _FRANKA_STATE_ACTION7_BASE,
+        name=f"pi05_franka_mujoco_state_action7_lora_bs24_{devices}gpu",
+        batch_size=24,
+    )
+    for devices in (3, 2)
+)
+
+# Keep the pretrained 32-D model interface and 13-D effective-target statistics.
+# The mix is prepared in the dataset; require its repo_id instead of guessing one.
+_TASKTOL_JOINT32_BASE = next(config for config in _CONFIGS if config.name == "pi05_franka_mujoco_joint32")
+_CONFIGS.append(
+    dataclasses.replace(
+        _TASKTOL_JOINT32_BASE,
+        name="pi05_tasktol_mix20_4xloss_7gpu_9k_joint32",
+        project_name="openpi-tasktol",
+        exp_name="TaskTol_mix20_4xloss_7gpu_bs84_9k_joint32",
+        data=dataclasses.replace(
+            _TASKTOL_JOINT32_BASE.data,
+            repo_id=tyro.MISSING,
+            assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_joint13"),
+            tolerance_trajectory_action_loss_weight=4.0,
+        ),
+        batch_size=84,
+        num_workers=8,
+        num_train_steps=9_000,
+        lr_schedule=_optimizer.CosineDecaySchedule(
+            warmup_steps=300,
+            peak_lr=5e-5,
+            decay_steps=9_000,
+            decay_lr=5e-6,
+        ),
+        log_interval=10,
+        save_interval=1_500,
+        keep_period=1_500,
+        fsdp_devices=1,
+        validation_batch_size_factor=1.0,
+        swanlab_enabled=True,
+        swanlab_mode="online",
+    )
+)
+
+# Paired long runs: original pretrained 32-D heads, state disabled, 3 x 12.
+# Both start from pi05_base. Joint13 denotes the effective targets, not head size.
+_NOMINAL40K_MODEL = dataclasses.replace(
+    _FRANKA_ACTION7_BASE.model,
+    action_dim=32,
+    discrete_state_input=False,
+    max_token_len=48,
+    action_loss_groups=(("action", 0, 7, 1.0),),
+)
+_DUAL40K_COMMON = {
+    "project_name": "openpi-tasktol",
+    "batch_size": 36,
+    "num_train_steps": 40_000,
+    "num_workers": 8,
+    "lr_schedule": _optimizer.CosineDecaySchedule(
+        warmup_steps=1_000,
+        peak_lr=5e-5,
+        decay_steps=40_000,
+        decay_lr=5e-6,
+    ),
+    "log_interval": 10,
+    "save_interval": 5_000,
+    "keep_period": 5_000,
+    "fsdp_devices": 1,
+    "resume": False,
+    "overwrite": False,
+    "swanlab_enabled": True,
+    "swanlab_mode": "online",
+}
+_CONFIGS.extend(
+    [
+        dataclasses.replace(
+            _FRANKA_ACTION7_BASE,
+            name="pi05_franka_nominal100_action7_nostate_3gpu_bs36_40k",
+            model=_NOMINAL40K_MODEL,
+            freeze_filter=_NOMINAL40K_MODEL.get_freeze_filter(),
+            data=dataclasses.replace(
+                _FRANKA_ACTION7_BASE.data,
+                repo_id="caozilin/franka_100_nominal",
+                assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_state_action7"),
+                joint_task_tolerance=False,
+                tolerance_trajectory_action_loss_weight=1.0,
+            ),
+            **_DUAL40K_COMMON,
+        ),
+        dataclasses.replace(
+            _TASKTOL_JOINT32_BASE,
+            name="pi05_tasktol_mix20_joint32_nostate_4xloss_3gpu_bs36_40k",
+            data=dataclasses.replace(
+                _TASKTOL_JOINT32_BASE.data,
+                repo_id="caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+                tolerance_trajectory_action_loss_weight=4.0,
+            ),
+            **_DUAL40K_COMMON,
+        ),
+    ]
+)
 
 if len({config.name for config in _CONFIGS}) != len(_CONFIGS):
     raise ValueError("Config names must be unique.")

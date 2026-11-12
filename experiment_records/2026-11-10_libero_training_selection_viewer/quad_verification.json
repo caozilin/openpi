@@ -1,0 +1,32 @@
+{
+  "complete": true,
+  "layout": [
+    [
+      "nominal_main",
+      "tolerance_main"
+    ],
+    [
+      "nominal_wrist",
+      "tolerance_wrist"
+    ]
+  ],
+  "nominal_wrist": 1875,
+  "tolerance_wrist": 1851,
+  "training_selected": 301,
+  "all_nominal_wrist_sha_verified": true,
+  "tolerance_reuses_original_inodes": true,
+  "all_wrist_fps_resolution_and_frame_counts_verified_during_export": true,
+  "missing_tolerance": 24,
+  "no_source_file_deletion": true,
+  "no_server_or_browser_started": true,
+  "source_export_receipt": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/viewer/wrist_export_verification.json",
+  "viewer": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/viewer",
+  "request_sha256": "92e86f597f84b801299ba80482adf506ea1a989e8b94f7a4cec53619797d8337",
+  "verified_at": "2026-11-10T20:47:57.010639+08:00",
+  "python_tests_passed": 8,
+  "controller_vm_passed": true,
+  "training_membership_node_passed": true,
+  "recorded_release_regression_passed": true,
+  "published_scripts_syntax_passed": true,
+  "export_exit_code": 0
+}

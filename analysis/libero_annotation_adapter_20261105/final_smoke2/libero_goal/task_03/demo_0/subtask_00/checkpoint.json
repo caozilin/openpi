@@ -1,0 +1,817 @@
+{
+  "identity_sha256": "411641bb69e08289dc525ffded91a5dedf96b5982957ee77a4b136106c7231a6",
+  "state": {
+    "configuration": {
+      "version": 1,
+      "maximum": [
+        0.0,
+        0.0,
+        30.0,
+        30.0,
+        0.0,
+        0.0,
+        30.0,
+        30.0,
+        30.0,
+        30.0,
+        30.0,
+        30.0
+      ],
+      "seed": 3100890768,
+      "fit_maxiter": 100,
+      "sobol_points": 1024,
+      "restarts": 8,
+      "optimizer_maxiter": 100,
+      "duplicate_unit_tolerance": 1e-08,
+      "clearance_m": 0.005,
+      "dtype": "float64",
+      "device": "cpu",
+      "kernel": "ARD Matern5/2 + scale; official dimension-scaled LogNormal lengths (Hvarfner ICML2024); Gamma(2,.15) variance; no input warp",
+      "regressors": "exact GP MAP; fixed standardized observation variance 1e-6",
+      "solver": "Bernoulli probit variational GP; all fixed inducing locations; ELBO MAP",
+      "acquisition": "independent-model q=1 logCEI; full domain; Sobol + L-BFGS-B",
+      "fit_start": "cold deterministic per-query; no MCMC; official DSP prior; no warp",
+      "botorch_version": "0.18.1",
+      "gpytorch_version": "1.15.2",
+      "torch_version": "2.14.1+cpu"
+    },
+    "observations": [
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.689825693620261,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.0024231558373285504,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/77b034923b4901221fa6e431d30bdb78a091bd8e430528176c5b8ee1b88e5a6e/trial.json",
+        "raw_trial_sha256": "02156af20cb34e1229d63b22c1ffd17c2a49beb576dc69958db04a9702a87b6d",
+        "index": 0,
+        "query_index": 0
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.5272748489881648,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.00265674902379498,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/d6812b2b22162efd2ceb238f6cf5006dac6ee2b810fd9d10dde5fcdbc1d9cd59/trial.json",
+        "raw_trial_sha256": "4b6270454af246a2942b1c896f2c886bb4098969ded1c0a45dd1b35af72f03ea",
+        "index": 1,
+        "query_index": 1
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.6125768142495209,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.00265674902379498,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+        "raw_trial_sha256": "a97af8489defe2c1c3b4204ced2aaaba0d906482e10cbc9b8c17dbcbc1cf761e",
+        "index": 2,
+        "query_index": 2
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.6088596986628627,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.0024231558373285504,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/ed84637b86dac17591334f222e517fe38b3d831876498f94cb75d96816856fb1/trial.json",
+        "raw_trial_sha256": "c1f1a52cc490231c0c20326b5494ac31cfd2138f580057235f5017dd9b75aa28",
+        "index": 3,
+        "query_index": 3
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.5354473531548445,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.002423155836722257,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/71f1838e23aba2443589e9a6c200fe0a1d74b609010a20d29ce1f30a12f01ab1/trial.json",
+        "raw_trial_sha256": "78153ffa3e6081657922c8fbf1bc37d0d1f899a8976cee4f511f334f5de2ca22",
+        "index": 4,
+        "query_index": 4
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.5065433237087577,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.0014617915389535387,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/fb405e86634c76f3f34172496b6aef6daa33e56ec5b28057a87cc79b7398fb2c/trial.json",
+        "raw_trial_sha256": "2b3691f93867b6dcb27702b2ab8a25961be73e034899c544e5f3fba755b9ace7",
+        "index": 5,
+        "query_index": 5
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.5343002600496218,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.00265674902379498,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/d1b47b6308db91851a9b2a807b46765ab0344c1c394ef2b12dd1c6623ada8400/trial.json",
+        "raw_trial_sha256": "34be83bde6cfac7449afa1ea16282e58723b5cc99d0dbed046fc61d3dd3f68dc",
+        "index": 6,
+        "query_index": 6
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.527274868042275,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.00265674902379498,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          30.0,
+          0.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/0bbd6d9d6cbae94e5576a7f32eb47752e2f995e975943e302bdcef92f9e109ea/trial.json",
+        "raw_trial_sha256": "5dd48eaae6468bcb859b66038cb6eab8704089b29c251393d63a5f5929005ab7",
+        "index": 7,
+        "query_index": 7
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.5272748547595052,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.00265674902379498,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          30.0,
+          30.0,
+          0.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/792551af29a044be9ea2826ae69e9f17da920ecfdfa2fcaecb2edad837b20ae6/trial.json",
+        "raw_trial_sha256": "aac34c72fef0f311789c3f857607dfe77cb24460a32bbc972f6cc59c5cd82567",
+        "index": 8,
+        "query_index": 8
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.5708511320565147,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.00265674902379498,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          30.0,
+          30.0,
+          30.0,
+          0.0,
+          30.0,
+          30.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/31941b1e9ed4b248bdb55cb8c0b4e1e36e694faff300b9b95be417137c590807/trial.json",
+        "raw_trial_sha256": "f0544b5deb8c7d3f0b214090484f43a99b740919f7fd9aeeee753170699c5626",
+        "index": 9,
+        "query_index": 9
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.529204054967414,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.00265674902379498,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          0.0,
+          30.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/7bc30da5befb58c8c19338397ed82ba9fcf680b695d366855850b8e2b585f24b/trial.json",
+        "raw_trial_sha256": "1bb980925ac66efc0fc0c00cce397ce446c0dfdacd66612486614e85c4a24f55",
+        "index": 10,
+        "query_index": 10
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.5288540982806885,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.00265674902379498,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/a650be3c2aec233a3f36498866e029d082579e51024f96b3fa43fd8267b2cb61/trial.json",
+        "raw_trial_sha256": "b940e9d851273191efe8e81999671419c9dbec8b3573b1d5c29721367f527f70",
+        "index": 11,
+        "query_index": 11
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.6128519405305912,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.0026342218718680144,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          15.315938553835398,
+          19.73587147355414,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/28d7b2af2ff31919e330385adb55d03cf0e2ea27609fdded8338655eb0e38003/trial.json",
+        "raw_trial_sha256": "0eadf4900f25910d7cdbea47ab7d7d16cb5deacc8aaf9ef9a693071e262860c5",
+        "index": 12,
+        "query_index": 12,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          15.315938553835398,
+          19.73587147355414,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          15.315938553835398,
+          19.73587147355414,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      },
+      {
+        "success": false,
+        "velocity_rad_s": null,
+        "observed_velocity_rad_s": 0.5418406988845778,
+        "trajectory_complete": true,
+        "raw_trajectory_complete": true,
+        "completion_provenance": "explicit_executor_state",
+        "solver_pass": true,
+        "solver_provenance": "complete_kinematic_admissibility_without_table",
+        "other_pass": true,
+        "clearance_pass": false,
+        "minimum_clearance_m": 0.0024231558367295847,
+        "censored_clearance_upper_bound_m": null,
+        "reason": "robot_table_clearance",
+        "actual_pre_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          14.140558432572533,
+          0.0,
+          0.0
+        ],
+        "actual_post_caps_deg": [
+          30.0,
+          30.0,
+          0.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "raw_trial_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_goal/task_03/demo_0/subtask_00/evaluations/117065b637b586914b16a5f800fbed38b1fc1197fc51fd38fd65d01246d78278/trial.json",
+        "raw_trial_sha256": "9cb6ec38554624c5fdc94d82717754045ef8843402baf8d1f30975e1c9a6e102",
+        "index": 13,
+        "query_index": 13,
+        "pre_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          14.140558432572533,
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "search_caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          14.140558432572533,
+          0.0,
+          0.0,
+          30.0,
+          30.0,
+          0.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "observation_source": "additional_joint_botorch_query"
+      }
+    ],
+    "initial_queries": 12,
+    "normalization": {
+      "velocity_offset": 0.0,
+      "velocity_scale": 1.0,
+      "clearance_offset_mm": 2.498770936724395,
+      "clearance_scale_mm": 1.0
+    },
+    "diagnostics": [
+      {
+        "after_queries": 12,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "log_cei": -44.945487207847364,
+        "screen_best_log_cei": -44.96158302237279,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "SUCCESS",
+            "iterations": 86,
+            "negative_mll": 0.49182421295339357,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 22,
+            "negative_mll": 1.474934292232816,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 32,
+            "negative_mll": 1.856212757262141,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      },
+      {
+        "after_queries": 13,
+        "objective_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "solver_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "clearance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "log_cei": -47.04225905714855,
+        "screen_best_log_cei": -47.242398587374566,
+        "warnings": [],
+        "gp_fits": {
+          "objective": {
+            "status": "STOPPED",
+            "iterations": 100,
+            "negative_mll": 0.2790214232447346,
+            "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT"
+          },
+          "clearance": {
+            "status": "SUCCESS",
+            "iterations": 24,
+            "negative_mll": 1.3768119793402052,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          "solver": {
+            "status": "SUCCESS",
+            "iterations": 33,
+            "negative_mll": 1.7134271697630263,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        },
+        "domain": "full unit box",
+        "optimized_candidate_count": 8
+      }
+    ]
+  },
+  "timings": [
+    {
+      "index": 0,
+      "kind": "initial",
+      "evaluation_seconds": 0.6712128770000163
+    },
+    {
+      "index": 1,
+      "kind": "initial",
+      "evaluation_seconds": 0.7956033270002081
+    },
+    {
+      "index": 2,
+      "kind": "initial",
+      "evaluation_seconds": 0.7299654089997603
+    },
+    {
+      "index": 3,
+      "kind": "initial",
+      "evaluation_seconds": 0.7218204060000062
+    },
+    {
+      "index": 4,
+      "kind": "initial",
+      "evaluation_seconds": 0.8192624799999066
+    },
+    {
+      "index": 5,
+      "kind": "initial",
+      "evaluation_seconds": 0.8600882010000532
+    },
+    {
+      "index": 6,
+      "kind": "initial",
+      "evaluation_seconds": 0.877111134000188
+    },
+    {
+      "index": 7,
+      "kind": "initial",
+      "evaluation_seconds": 0.8238610220000737
+    },
+    {
+      "index": 8,
+      "kind": "initial",
+      "evaluation_seconds": 0.8154169090003052
+    },
+    {
+      "index": 9,
+      "kind": "initial",
+      "evaluation_seconds": 0.8518631529996128
+    },
+    {
+      "index": 10,
+      "kind": "initial",
+      "evaluation_seconds": 0.8434801769999467
+    },
+    {
+      "index": 11,
+      "kind": "initial",
+      "evaluation_seconds": 0.8432905390000087
+    },
+    {
+      "index": 12,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.7597130249996553,
+      "fit_seconds": 0.3967319549997228,
+      "acquisition_seconds": 0.2322344230001363
+    },
+    {
+      "index": 13,
+      "kind": "adaptive",
+      "evaluation_seconds": 0.9287769359998492,
+      "fit_seconds": 0.23076181399983398,
+      "acquisition_seconds": 0.2579730069996913
+    }
+  ]
+}

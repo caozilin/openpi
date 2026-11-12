@@ -1,0 +1,1987 @@
+{
+  "scope": "Descriptive trace analysis, not causal ablation. First action chunks differ from original run. No new simulation or inference.",
+  "episodes": [
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 0,
+      "maximum_solver_failure_streak": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 2,
+      "maximum_solver_failure_streak": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 3,
+      "success": false,
+      "termination": "step_limit",
+      "total_solver_failures": 0,
+      "maximum_solver_failure_streak": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 0,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "total_solver_failures": 23,
+      "maximum_solver_failure_streak": 20
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 4,
+      "success": false,
+      "termination": "step_limit",
+      "total_solver_failures": 17,
+      "maximum_solver_failure_streak": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 9,
+      "maximum_solver_failure_streak": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 14,
+      "maximum_solver_failure_streak": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 4,
+      "maximum_solver_failure_streak": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 10,
+      "maximum_solver_failure_streak": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 6,
+      "maximum_solver_failure_streak": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 1,
+      "maximum_solver_failure_streak": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 0,
+      "maximum_solver_failure_streak": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 4,
+      "maximum_solver_failure_streak": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 2,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "total_solver_failures": 29,
+      "maximum_solver_failure_streak": 20
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 8,
+      "maximum_solver_failure_streak": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 11,
+      "maximum_solver_failure_streak": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "total_solver_failures": 0,
+      "maximum_solver_failure_streak": 0
+    }
+  ],
+  "success_with_solver_failures": 10,
+  "success_without_solver_failures": 3,
+  "all_bursts": {
+    "count": 40,
+    "length_histogram": {
+      "1": 16,
+      "2": 7,
+      "3": 7,
+      "4": 3,
+      "5": 2,
+      "6": 1,
+      "9": 1,
+      "10": 1,
+      "20": 2
+    },
+    "same_first_chunk_recovery": 27,
+    "same_last_chunk_recovery": 33,
+    "error_decreases": {
+      "position_m": 35,
+      "rotation_rad": 34,
+      "joint_max_rad": 36
+    },
+    "median_pre_errors": {
+      "position_m": 0.010962488533775737,
+      "rotation_rad": 0.02129478677124677,
+      "joint_max_rad": 0.05877994752186316
+    },
+    "median_post_errors": {
+      "position_m": 0.004490540893683141,
+      "rotation_rad": 0.01159217274526636,
+      "joint_max_rad": 0.02371468149352146
+    }
+  },
+  "recovered_bursts": {
+    "count": 38,
+    "length_histogram": {
+      "1": 16,
+      "2": 7,
+      "3": 7,
+      "4": 3,
+      "5": 2,
+      "6": 1,
+      "9": 1,
+      "10": 1
+    },
+    "same_first_chunk_recovery": 27,
+    "same_last_chunk_recovery": 33,
+    "error_decreases": {
+      "position_m": 33,
+      "rotation_rad": 32,
+      "joint_max_rad": 34
+    },
+    "median_pre_errors": {
+      "position_m": 0.010962488533775737,
+      "rotation_rad": 0.02129478677124677,
+      "joint_max_rad": 0.05877994752186316
+    },
+    "median_post_errors": {
+      "position_m": 0.004490540893683141,
+      "rotation_rad": 0.01159217274526636,
+      "joint_max_rad": 0.02371468149352146
+    }
+  },
+  "recovered_bursts_in_successful_episodes": {
+    "count": 32,
+    "length_histogram": {
+      "1": 15,
+      "2": 7,
+      "3": 4,
+      "4": 3,
+      "5": 2,
+      "6": 1
+    },
+    "same_first_chunk_recovery": 25,
+    "same_last_chunk_recovery": 29,
+    "error_decreases": {
+      "position_m": 32,
+      "rotation_rad": 30,
+      "joint_max_rad": 32
+    },
+    "median_pre_errors": {
+      "position_m": 0.009036110679431615,
+      "rotation_rad": 0.01851607316246996,
+      "joint_max_rad": 0.041572991295693695
+    },
+    "median_post_errors": {
+      "position_m": 0.003947287322367733,
+      "rotation_rad": 0.010208664028919241,
+      "joint_max_rad": 0.016997855609268364
+    }
+  },
+  "failed_solver_statuses": {
+    "ipopt: Maximum number of iterations exceeded (can be specified by an option).": 135,
+    "ipopt: Algorithm converged to a point of local infeasibility. Problem may be infeasible.": 3
+  },
+  "original_failed_solver_statuses": {
+    "ipopt: Maximum number of iterations exceeded (can be specified by an option).": 14,
+    "ipopt: Algorithm converged to a point of local infeasibility. Problem may be infeasible.": 1
+  },
+  "bursts": [
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 0,
+      "episode_success": true,
+      "start_step_1based": 339,
+      "end_step_1based": 339,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.007613602326510271,
+        "rotation_rad": 0.03542915207654054,
+        "joint_max_rad": 0.06204506853066616
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.003854668556861634,
+        "rotation_rad": 0.020528268567459613,
+        "joint_max_rad": 0.03616809379982766
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        -0.0015057763026258952,
+        -0.00173553519191009,
+        -0.006688446499759078,
+        -0.010378876310233258,
+        0.005613348899972875,
+        0.020589553343348256,
+        1.0
+      ],
+      "first_failed_action": [
+        -0.001069652240135905,
+        -0.0020728327136082785,
+        -0.005822767165920904,
+        -0.009484193851560192,
+        0.0035736063812271956,
+        0.02071363279795773,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.001026340355369828
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 0,
+      "episode_success": true,
+      "start_step_1based": 341,
+      "end_step_1based": 341,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.008723191196326955,
+        "rotation_rad": 0.03448217936617061,
+        "joint_max_rad": 0.07676252279237858
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.005020541550010978,
+        "rotation_rad": 0.021931838329991234,
+        "joint_max_rad": 0.04846892597606123
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        -0.0019030183200893563,
+        -0.0030358633045402296,
+        -0.0016651063777376116,
+        -0.014242607968111812,
+        0.006083472295803152,
+        0.012037528597659379,
+        1.0
+      ],
+      "first_failed_action": [
+        -0.0015980840126397187,
+        -0.0031014019735568967,
+        -0.0016243551701637746,
+        -0.01364268410654194,
+        0.006067691600652538,
+        0.011397948168965777,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.00031454874012621097
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 0,
+      "episode_success": false,
+      "start_step_1based": 460,
+      "end_step_1based": 462,
+      "failure_frames": 3,
+      "hold_seconds": 0.15000000000000002,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.2290736968568801,
+        "rotation_rad": 1.986361660639675,
+        "joint_max_rad": 1.7039816144284308
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.23516439504550007,
+        "rotation_rad": 1.831926785320365,
+        "joint_max_rad": 1.5304493403979798
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 1,
+      "recovery_action": [
+        0.0004449542780910667,
+        -0.0007513605772298936,
+        -0.0032937573780159896,
+        -0.0052148711240191555,
+        -0.01308038275600984,
+        0.01266130595227364,
+        -1.0
+      ],
+      "first_failed_action": [
+        0.0038704692751691198,
+        -0.0008302605973934118,
+        -0.0015571277412440628,
+        -0.002147466150595835,
+        -0.0008336395072933156,
+        0.015448405239942564,
+        -1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0038413878616592413
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 0,
+      "episode_success": false,
+      "start_step_1based": 464,
+      "end_step_1based": 483,
+      "failure_frames": 20,
+      "hold_seconds": 1.0,
+      "recovered": false,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.2382675282763299,
+        "rotation_rad": 1.7841721526635759,
+        "joint_max_rad": 1.459521482663264
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.21469987261897736,
+        "rotation_rad": 0.7716793743357148,
+        "joint_max_rad": 0.6816845962999774
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": false,
+      "model_inferences_since_first_failed_action_before_recovery": null
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 4,
+      "episode_success": false,
+      "start_step_1based": 491,
+      "end_step_1based": 491,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.10040986225875514,
+        "rotation_rad": 2.140400082550112,
+        "joint_max_rad": 2.176842562516038
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.10056258722917984,
+        "rotation_rad": 2.1424741185722134,
+        "joint_max_rad": 2.1803139323414604
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        -7.448973619278085e-05,
+        0.0007963682869613371,
+        -0.0011997083743325952,
+        0.001064964481505743,
+        0.001092472846760461,
+        0.010340276239530787,
+        -1.0
+      ],
+      "first_failed_action": [
+        0.0008680134078602655,
+        -0.00017498742872332392,
+        -0.0010824607660680462,
+        0.002472750897839344,
+        -0.0009246585266947834,
+        0.010379530693862556,
+        -1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0013585253419008878
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 4,
+      "episode_success": false,
+      "start_step_1based": 493,
+      "end_step_1based": 495,
+      "failure_frames": 3,
+      "hold_seconds": 0.15000000000000002,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.09961077045799388,
+        "rotation_rad": 2.154032947623793,
+        "joint_max_rad": 2.1858651391549992
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.10021178857087819,
+        "rotation_rad": 2.157079242725959,
+        "joint_max_rad": 2.19284523788434
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": false,
+      "model_inferences_since_first_failed_action_before_recovery": 1,
+      "recovery_action": [
+        -1.451722539056767e-05,
+        -0.005869261173106014,
+        -0.0005429080281080124,
+        -0.004056634372424001,
+        0.002679746458811194,
+        0.002242547668478489,
+        -1.0
+      ],
+      "first_failed_action": [
+        0.0014835313509547303,
+        -0.0004433077410734964,
+        -0.0010008147721497235,
+        0.0005911178555164653,
+        0.005424836327205994,
+        0.005760214336205383,
+        -1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.005647548031660689
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 4,
+      "episode_success": false,
+      "start_step_1based": 502,
+      "end_step_1based": 504,
+      "failure_frames": 3,
+      "hold_seconds": 0.15000000000000002,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.10732755672060156,
+        "rotation_rad": 2.1896622130987566,
+        "joint_max_rad": 2.2471926763144534
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.107899806463877,
+        "rotation_rad": 2.192506931124117,
+        "joint_max_rad": 2.253837979560665
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.0019073442037984382,
+        -0.008214766869637475,
+        0.001080979709449337,
+        -0.004636756891155535,
+        0.0004166181246403368,
+        -0.0038910507361687545,
+        -1.0
+      ],
+      "first_failed_action": [
+        0.0032918819652938084,
+        -9.764123404437143e-05,
+        0.001603104649001234,
+        -0.0036526580943687034,
+        -0.0013014337457962245,
+        0.004504677349660889,
+        -1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.008250896184628162
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 4,
+      "episode_success": false,
+      "start_step_1based": 506,
+      "end_step_1based": 515,
+      "failure_frames": 10,
+      "hold_seconds": 0.5,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.11176592473880552,
+        "rotation_rad": 2.1899745383296096,
+        "joint_max_rad": 2.259221359684502
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.11357651295819292,
+        "rotation_rad": 2.1916517980203025,
+        "joint_max_rad": 2.276866055663135
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": false,
+      "model_inferences_since_first_failed_action_before_recovery": 2,
+      "recovery_action": [
+        -5.674460003693774e-06,
+        -6.28623755438585e-05,
+        0.0005999390210114364,
+        -0.0029133085416449076,
+        -0.004493886693980691,
+        -0.002039487194975379,
+        -1.0
+      ],
+      "first_failed_action": [
+        0.0019352559233128275,
+        -0.000825117299587716,
+        0.007763659683829683,
+        -0.029308966342849144,
+        0.0010259950327943038,
+        0.0075032390909706495,
+        -1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.007461041285035271
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 0,
+      "episode_success": true,
+      "start_step_1based": 96,
+      "end_step_1based": 99,
+      "failure_frames": 4,
+      "hold_seconds": 0.2,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.021226001413049658,
+        "rotation_rad": 0.02349551430199643,
+        "joint_max_rad": 0.2382128280108433
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.004687760361277175,
+        "rotation_rad": 0.015314362205957006,
+        "joint_max_rad": 0.03451285744459831
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.002813332520525581,
+        -0.004089487919801394,
+        0.006086674444616431,
+        0.0024768449125945648,
+        -0.024907557099538208,
+        -0.00041743339418205336,
+        1.0
+      ],
+      "first_failed_action": [
+        0.004244852753094672,
+        -0.0026655174821560105,
+        0.009612631567568,
+        0.00627661177603191,
+        -0.006282720085377638,
+        0.00019215385687257683,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.004063165713632109
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 0,
+      "episode_success": true,
+      "start_step_1based": 101,
+      "end_step_1based": 102,
+      "failure_frames": 2,
+      "hold_seconds": 0.1,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.007783638892603561,
+        "rotation_rad": 0.02596781199268313,
+        "joint_max_rad": 0.03975938901880116
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0029631291343664937,
+        "rotation_rad": 0.011257784854034034,
+        "joint_max_rad": 0.012962196183248675
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.0009151870058503372,
+        -0.006797951511319728,
+        0.002563130037089122,
+        0.0032546114355764127,
+        -0.015027028332974353,
+        0.0001533251239976552,
+        1.0
+      ],
+      "first_failed_action": [
+        0.004148730892768982,
+        -0.006730115967022639,
+        0.007887714702055081,
+        0.001339602544947402,
+        -0.024039668589837745,
+        -0.0016115270304626582,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.006229896434459312
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 0,
+      "episode_success": true,
+      "start_step_1based": 106,
+      "end_step_1based": 106,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.007948526692433844,
+        "rotation_rad": 0.020156458374353592,
+        "joint_max_rad": 0.041670260294156436
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.004413176685776493,
+        "rotation_rad": 0.011814115545057588,
+        "joint_max_rad": 0.027638295583587102
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.0012065998328981212,
+        -0.006359860445828889,
+        0.0033202445778030658,
+        -4.741658385995495e-05,
+        -0.014547920670734113,
+        0.0033556477975930574,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0021991776298909797,
+        -0.0055497220255219986,
+        0.005754014274577127,
+        0.001024846904402795,
+        -0.008357114707687048,
+        0.002271845378737515,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.002750412674504674
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 0,
+      "episode_success": true,
+      "start_step_1based": 111,
+      "end_step_1based": 112,
+      "failure_frames": 2,
+      "hold_seconds": 0.1,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.01028829229955823,
+        "rotation_rad": 0.02634964156289782,
+        "joint_max_rad": 0.038377095825220975
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.003289099140828143,
+        "rotation_rad": 0.00915954320380445,
+        "joint_max_rad": 0.014826935777618067
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.0027274128831829975,
+        -0.004215055595199133,
+        -0.0015472341278110757,
+        0.0036708090593146094,
+        -0.00693231944695074,
+        0.003215636818464679,
+        1.0
+      ],
+      "first_failed_action": [
+        0.004563591336885088,
+        -0.003729194554941851,
+        0.004136398116929348,
+        0.0014597292263617903,
+        -0.015012520823261676,
+        0.002743311707131685,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.005992602753206071
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 2,
+      "episode_success": true,
+      "start_step_1based": 72,
+      "end_step_1based": 74,
+      "failure_frames": 3,
+      "hold_seconds": 0.15000000000000002,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.020812743190520178,
+        "rotation_rad": 0.035608438988573785,
+        "joint_max_rad": 0.17306001928398418
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.00531704777559694,
+        "rotation_rad": 0.013770247964351816,
+        "joint_max_rad": 0.04076008906479567
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.00041532241632952563,
+        -0.00864855121335146,
+        0.0009706416444979493,
+        0.005847504191654543,
+        -0.010985801667358096,
+        0.001135980161719053,
+        1.0
+      ],
+      "first_failed_action": [
+        0.00010430020732178635,
+        -0.009542313051091884,
+        0.004042277052093431,
+        0.010235720791463326,
+        -0.009756125673403218,
+        0.0006163063833552682,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0032141078255546146
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 2,
+      "episode_success": true,
+      "start_step_1based": 76,
+      "end_step_1based": 79,
+      "failure_frames": 4,
+      "hold_seconds": 0.2,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.007691321386440156,
+        "rotation_rad": 0.017134078038694725,
+        "joint_max_rad": 0.024126671001830746
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0010378985725927434,
+        "rotation_rad": 0.004629168242533923,
+        "joint_max_rad": 0.0034934662271723926
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.0017526787909636233,
+        -0.007100130255036137,
+        -0.002611893655152563,
+        0.007750421505984512,
+        -0.010431326137847113,
+        7.285275861500934e-05,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0049610885896663095,
+        -0.007984540114486521,
+        0.0035637112472072865,
+        0.0047140083917026,
+        -0.012818677068487997,
+        -0.0023641438459755006,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.007015281187946413
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 2,
+      "episode_success": true,
+      "start_step_1based": 81,
+      "end_step_1based": 81,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.0053463416617176756,
+        "rotation_rad": 0.010581997252894626,
+        "joint_max_rad": 0.013541774331316425
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0029658787124393427,
+        "rotation_rad": 0.007050366030503621,
+        "joint_max_rad": 0.009408118526133213
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.001042562610578824,
+        -0.00710205754044414,
+        0.0013398033865386627,
+        0.005262853349342782,
+        -0.011269660519797014,
+        0.004652560505728466,
+        1.0
+      ],
+      "first_failed_action": [
+        0.002038447682111661,
+        -0.006229479716979169,
+        0.004870728038915889,
+        0.004518316160846584,
+        -0.01536406132379101,
+        0.0033583507618428106,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0037710221471732312
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 2,
+      "episode_success": true,
+      "start_step_1based": 83,
+      "end_step_1based": 84,
+      "failure_frames": 2,
+      "hold_seconds": 0.1,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.00649062726594997,
+        "rotation_rad": 0.012257636087916189,
+        "joint_max_rad": 0.01133146129119611
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0021154093214090044,
+        "rotation_rad": 0.005570006609671182,
+        "joint_max_rad": 0.004283332209638224
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.0018369004543847753,
+        -0.006987373738531893,
+        -0.00019496782044622386,
+        0.0043646524659235325,
+        -0.011474160533140198,
+        0.0057528302709365375,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0013995050084574974,
+        -0.006932293237388506,
+        0.002659227160263315,
+        0.005539973775514347,
+        -0.011754284882763205,
+        0.005265023211623122,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0028880404473676223
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 2,
+      "episode_success": true,
+      "start_step_1based": 86,
+      "end_step_1based": 89,
+      "failure_frames": 4,
+      "hold_seconds": 0.2,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.00603421889305413,
+        "rotation_rad": 0.011071999106253779,
+        "joint_max_rad": 0.024805756516739108
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0005993236441058774,
+        "rotation_rad": 0.0021619633614580976,
+        "joint_max_rad": 0.0031155792422791206
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        -0.00032650765100276403,
+        -0.00573747884077852,
+        -0.0042130878058834875,
+        0.0064405314383888,
+        -0.019878778195239415,
+        -0.0002965450154926892,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0036467129799335543,
+        -0.005354692739390231,
+        0.004580103884418683,
+        0.0048038946205692,
+        -0.01316667803498894,
+        -0.0006678273410494692,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.009656771069250447
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 3,
+      "episode_success": true,
+      "start_step_1based": 75,
+      "end_step_1based": 76,
+      "failure_frames": 2,
+      "hold_seconds": 0.1,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.021770061219834814,
+        "rotation_rad": 0.010226248757970027,
+        "joint_max_rad": 0.242754484492832
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.011397636484391304,
+        "rotation_rad": 0.03261048407876136,
+        "joint_max_rad": 0.09472744493051544
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 1,
+      "recovery_action": [
+        0.0014699343784166392,
+        -0.0063898468911495285,
+        0.0045045414858339294,
+        0.005231892886020051,
+        -0.019647738873517725,
+        0.001888204285888078,
+        1.0
+      ],
+      "first_failed_action": [
+        0.006063266589023147,
+        -0.004610712196263223,
+        0.009177963861661819,
+        0.0021388417148483913,
+        -0.004535808908842667,
+        0.002685270458510053,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.006790058745138468
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 3,
+      "episode_success": true,
+      "start_step_1based": 78,
+      "end_step_1based": 78,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.01201432540683673,
+        "rotation_rad": 0.03747697936952312,
+        "joint_max_rad": 0.06758224443207361
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.007412174058474669,
+        "rotation_rad": 0.02527808889000622,
+        "joint_max_rad": 0.040884384271891894
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        -0.0001234146319148005,
+        -0.006830486385237095,
+        0.0011052622840106979,
+        0.002297187572863176,
+        -0.008448812846556438,
+        0.006178760918504098,
+        1.0
+      ],
+      "first_failed_action": [
+        0.002131966861168934,
+        -0.007882102444018834,
+        0.005422548620701864,
+        0.0036610679833070404,
+        -0.014433053959034142,
+        0.0024045897329989414,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.004983131879391949
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 3,
+      "episode_success": true,
+      "start_step_1based": 87,
+      "end_step_1based": 87,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.008216153222861636,
+        "rotation_rad": 0.016813624204755163,
+        "joint_max_rad": 0.1282472637781571
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.004039906087873833,
+        "rotation_rad": 0.006284691951437691,
+        "joint_max_rad": 0.0786366770568745
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.003454879073736039,
+        -0.0040341326450355815,
+        0.003560007803040721,
+        -0.004897391372940844,
+        -0.025452263253427754,
+        0.0030408322852700717,
+        1.0
+      ],
+      "first_failed_action": [
+        0.004391052262079869,
+        -0.0031808541209992804,
+        0.006602215483427765,
+        -0.0016069913182144152,
+        -0.015487110181989887,
+        0.002458663698044223,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0032953804103262
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 4,
+      "episode_success": true,
+      "start_step_1based": 71,
+      "end_step_1based": 73,
+      "failure_frames": 3,
+      "hold_seconds": 0.15000000000000002,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.019239799399745967,
+        "rotation_rad": 0.01980510394537244,
+        "joint_max_rad": 0.19906414972230158
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.005833170447657756,
+        "rotation_rad": 0.015120146278202977,
+        "joint_max_rad": 0.04650092649151982
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.005853714798279213,
+        -0.002775833286483586,
+        0.0033885643895344986,
+        -0.010673398392169102,
+        -0.0283324547149329,
+        -0.005537082564016738,
+        1.0
+      ],
+      "first_failed_action": [
+        0.008901522866005398,
+        -0.0019276367844451615,
+        0.007495339085168539,
+        -0.008928362277737526,
+        0.0026886024907166114,
+        -0.00215492009999569,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.005184030258830369
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 4,
+      "episode_success": true,
+      "start_step_1based": 76,
+      "end_step_1based": 81,
+      "failure_frames": 6,
+      "hold_seconds": 0.30000000000000004,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.009030319565157702,
+        "rotation_rad": 0.03615645072060084,
+        "joint_max_rad": 0.0445709355476146
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0006400802574081205,
+        "rotation_rad": 0.0032320844686335643,
+        "joint_max_rad": 0.0032465870845597156
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 1,
+      "recovery_action": [
+        0.003313518251197377,
+        -0.0018256209495386665,
+        0.0081484789128384,
+        -0.0018844141907725497,
+        -0.03749495400105163,
+        -0.0009592336782644519,
+        1.0
+      ],
+      "first_failed_action": [
+        0.006978003605538834,
+        -0.004576907300602764,
+        0.010743684434785288,
+        0.002145746701902318,
+        -0.021215157073610293,
+        0.0008867642888830997,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0052662245678358945
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 4,
+      "episode_success": true,
+      "start_step_1based": 84,
+      "end_step_1based": 84,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.009887256756932293,
+        "rotation_rad": 0.04190276363046405,
+        "joint_max_rad": 0.02916349073438984
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0060001363966979806,
+        "rotation_rad": 0.025848155622054687,
+        "joint_max_rad": 0.018789235911424118
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.0030314832250734596,
+        -0.003900039247240592,
+        0.0020307044308884876,
+        0.0005190414280569176,
+        -0.019453569588882176,
+        -0.0014394860167250279,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0031537217696740883,
+        -0.004431647515597817,
+        0.00615359991405973,
+        0.0032709372612874273,
+        -0.0203246600356501,
+        0.00046440823354807273,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0041588239657295665
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 5,
+      "episode_success": true,
+      "start_step_1based": 66,
+      "end_step_1based": 66,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.01856753713372458,
+        "rotation_rad": 0.008159980287560308,
+        "joint_max_rad": 0.20208470153945735
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.012736425936326517,
+        "rotation_rad": 0.01768459994429157,
+        "joint_max_rad": 0.12418856298242764
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.003149460657984174,
+        -0.0014059590670054793,
+        0.004375705442565363,
+        -0.00197373424837571,
+        -0.032423669284043666,
+        0.0035206699123114735,
+        1.0
+      ],
+      "first_failed_action": [
+        0.002498614192561841,
+        -0.0043284493801046845,
+        0.009929774869022918,
+        0.0013259516429875023,
+        6.603414883364633e-05,
+        0.001935292382027179,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.006309693966082995
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 5,
+      "episode_success": true,
+      "start_step_1based": 71,
+      "end_step_1based": 72,
+      "failure_frames": 2,
+      "hold_seconds": 0.1,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.012726384784517068,
+        "rotation_rad": 0.049487361890025096,
+        "joint_max_rad": 0.028342438986206142
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.004841830614315778,
+        "rotation_rad": 0.021047834758324876,
+        "joint_max_rad": 0.01497302307983328
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.001543092249871262,
+        -0.0049756702626189775,
+        0.006038181824975786,
+        0.00542693836301136,
+        -0.006128665955902326,
+        -0.0020857403632572914,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0037550573766026423,
+        -0.003630813342951719,
+        0.009490136673304058,
+        -0.00011451572753222103,
+        0.009897611356062135,
+        -0.00473563256139296,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.004314791087775828
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 5,
+      "episode_success": true,
+      "start_step_1based": 77,
+      "end_step_1based": 77,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.00904190179370553,
+        "rotation_rad": 0.02249965478366074,
+        "joint_max_rad": 0.05551482651306017
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.005112682677359937,
+        "rotation_rad": 0.01453661968009888,
+        "joint_max_rad": 0.03329776848473298
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.0011272468131204218,
+        -0.005516874322480508,
+        -0.0008950253418601502,
+        0.008870643153800654,
+        -0.010620109573291953,
+        0.00017459468178372684,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0011554850660812407,
+        -0.005226165119970629,
+        0.0009877393597529493,
+        0.008721153009706807,
+        -0.008505571008484555,
+        0.00026478891043534014,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0019052853227260358
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 5,
+      "episode_success": true,
+      "start_step_1based": 81,
+      "end_step_1based": 82,
+      "failure_frames": 2,
+      "hold_seconds": 0.1,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.007057725874580647,
+        "rotation_rad": 0.017227042379567476,
+        "joint_max_rad": 0.023052660261904334
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0023665085068487724,
+        "rotation_rad": 0.006601916766686507,
+        "joint_max_rad": 0.010353078556804451
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        -0.0008222189747425727,
+        -0.006582200037000906,
+        -0.002487289485134282,
+        0.00796818918347823,
+        0.000837309736000897,
+        0.0017635284542377554,
+        1.0
+      ],
+      "first_failed_action": [
+        0.003540563846654769,
+        -0.003450904346155431,
+        -2.364652290472516e-05,
+        0.0031367494392157864,
+        -0.007295898288722666,
+        0.0013369977596167926,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.005908335069673216
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 0,
+      "episode_success": true,
+      "start_step_1based": 167,
+      "end_step_1based": 167,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.008518560614265274,
+        "rotation_rad": 0.02243311516813995,
+        "joint_max_rad": 0.08609391633629004
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.004585470267088314,
+        "rotation_rad": 0.013063635161815032,
+        "joint_max_rad": 0.052000942921270554
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.0011227748027641902,
+        -0.002246904383449268,
+        -0.0053929544947334835,
+        -0.0017209717448595195,
+        0.004785228788864244,
+        0.013590009970370485,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0012752191890193498,
+        -0.0013943192435540656,
+        -0.0054717274330453695,
+        -0.0018187477429591533,
+        0.007591570260907496,
+        0.014163842124068411,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0008696814862241871
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 1,
+      "episode_success": true,
+      "start_step_1based": 108,
+      "end_step_1based": 110,
+      "failure_frames": 3,
+      "hold_seconds": 0.15000000000000002,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.014312314053143798,
+        "rotation_rad": 0.04402182941156699,
+        "joint_max_rad": 0.13976120622355426
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0030334867192394997,
+        "rotation_rad": 0.011370229945475135,
+        "joint_max_rad": 0.03478630896218282
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": false,
+      "model_inferences_since_first_failed_action_before_recovery": 1,
+      "recovery_action": [
+        0.0004160030438435502,
+        0.00031100196822612253,
+        -0.00910885745008899,
+        0.0035607918315135843,
+        -0.008423555883223337,
+        -0.012720570636467473,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0038722942676054917,
+        -0.00017816216057680266,
+        -0.010939736928532364,
+        0.0003676528834605196,
+        -0.004063661239762137,
+        -0.02605090035388484,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.003941744567186783
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 1,
+      "episode_success": true,
+      "start_step_1based": 139,
+      "end_step_1based": 139,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.003442037166251148,
+        "rotation_rad": 0.010471757689793092,
+        "joint_max_rad": 0.041475722297230955
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.00159188599609983,
+        "rotation_rad": 0.005959278715056481,
+        "joint_max_rad": 0.025919232330442354
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        0.00026600675972070047,
+        0.0006357005388284171,
+        -0.00014861704081718143,
+        -0.00019527205232812428,
+        -0.003035369684096248,
+        -0.011673020601670386,
+        1.0
+      ],
+      "first_failed_action": [
+        -5.585786700811057e-06,
+        0.0016442861453263152,
+        -0.0006813668093969029,
+        -0.0010324792322801094,
+        -0.0010107130388490315,
+        -0.010936825257353084,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0011725313440707126
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 2,
+      "episode_success": false,
+      "start_step_1based": 140,
+      "end_step_1based": 148,
+      "failure_frames": 9,
+      "hold_seconds": 0.45,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.017267279639904137,
+        "rotation_rad": 0.016537310212914588,
+        "joint_max_rad": 0.08335972347876763
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.00019129977730026303,
+        "rotation_rad": 0.0007207227239631073,
+        "joint_max_rad": 0.0008974862212807189
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 2,
+      "recovery_action": [
+        -0.00027367034536297796,
+        0.009896279833926928,
+        0.005267493909758482,
+        -0.0008154169141792907,
+        0.00014774831556380041,
+        -0.00032720613541740995,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0007000206372596383,
+        0.005168847390713969,
+        0.009632436556756111,
+        0.0006431679367705015,
+        -0.006371793342450001,
+        -0.006788087085050784,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.00650764288712599
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 2,
+      "episode_success": false,
+      "start_step_1based": 150,
+      "end_step_1based": 169,
+      "failure_frames": 20,
+      "hold_seconds": 1.0,
+      "recovered": false,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.007731918787610671,
+        "rotation_rad": 0.0019082754689603288,
+        "joint_max_rad": 0.054152768254652706
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 2.3152460561197786e-05,
+        "rotation_rad": 6.0239012756151574e-05,
+        "joint_max_rad": 0.00012701454131092138
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": false,
+      "model_inferences_since_first_failed_action_before_recovery": null
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 5,
+      "episode_success": true,
+      "start_step_1based": 73,
+      "end_step_1based": 77,
+      "failure_frames": 5,
+      "hold_seconds": 0.25,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.01719116782362272,
+        "rotation_rad": 0.004366576500608082,
+        "joint_max_rad": 0.10663466558258072
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0007748958620033993,
+        "rotation_rad": 0.0023544198418380736,
+        "joint_max_rad": 0.005972400675525402
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 1,
+      "recovery_action": [
+        7.254138457891794e-05,
+        0.01083514260124694,
+        -0.00032609520327108246,
+        -0.001796138567403979,
+        -0.002335515481896734,
+        -0.0008687550236395128,
+        1.0
+      ],
+      "first_failed_action": [
+        -0.00013630281717376402,
+        0.010574504985180144,
+        0.00209920186584134,
+        -0.004957427503938518,
+        0.0037420908180093894,
+        -0.0013038258374854228,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0024481858060532466
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 5,
+      "episode_success": true,
+      "start_step_1based": 82,
+      "end_step_1based": 82,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.014150213214389874,
+        "rotation_rad": 0.004151218501063087,
+        "joint_max_rad": 0.02187049395753632
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.007964021460542656,
+        "rotation_rad": 0.004012420918951582,
+        "joint_max_rad": 0.01384776061331544
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        -0.00017270260886349288,
+        0.009928700541339201,
+        -0.0023359389584542214,
+        -0.00042771099588868183,
+        -0.000249951372538762,
+        -0.00668956926791521,
+        1.0
+      ],
+      "first_failed_action": [
+        7.849328046300244e-05,
+        0.010653679778966089,
+        -0.0019754689127148995,
+        0.0010616804788723365,
+        0.0014595140201549874,
+        -0.005743928141858274,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.000847722197232046
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 5,
+      "episode_success": true,
+      "start_step_1based": 86,
+      "end_step_1based": 87,
+      "failure_frames": 2,
+      "hold_seconds": 0.1,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.014393242683156584,
+        "rotation_rad": 0.009083017244352853,
+        "joint_max_rad": 0.02830986848516409
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0045679051015897875,
+        "rotation_rad": 0.004986101982802481,
+        "joint_max_rad": 0.011010034399547675
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        -0.00023471760135171903,
+        0.010764234236439903,
+        -0.0039111712550846285,
+        -0.0010742764856821723,
+        -0.0009500555011705963,
+        -0.002584006958364044,
+        1.0
+      ],
+      "first_failed_action": [
+        0.001007849409075695,
+        0.011030354424785154,
+        -0.0016337159139325052,
+        -0.0005413356032554703,
+        -0.0010090368306825345,
+        -0.00264581547487756,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0026079868789909773
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 2,
+      "episode_success": true,
+      "start_step_1based": 91,
+      "end_step_1based": 91,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.014363208655806495,
+        "rotation_rad": 0.027307470606792863,
+        "joint_max_rad": 0.036675886250555845
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.007984965989360224,
+        "rotation_rad": 0.017109544490307323,
+        "joint_max_rad": 0.021510130656600568
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        -0.0004626421409667462,
+        0.004931039205614666,
+        -0.008472440848715642,
+        0.004455777783100509,
+        0.005782432636786492,
+        -0.007863246624329728,
+        1.0
+      ],
+      "first_failed_action": [
+        -0.00047094687509693575,
+        0.006487968471097651,
+        -0.007556167020450046,
+        0.0028351277161502327,
+        0.006223813184384731,
+        -0.006407684778284725,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0018065590039328158
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 2,
+      "episode_success": true,
+      "start_step_1based": 93,
+      "end_step_1based": 95,
+      "failure_frames": 3,
+      "hold_seconds": 0.15000000000000002,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.011636684767993243,
+        "rotation_rad": 0.015767109499408363,
+        "joint_max_rad": 0.06315954832942372
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.001765304639750187,
+        "rotation_rad": 0.0030593259630404745,
+        "joint_max_rad": 0.01520647530711261
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": false,
+      "model_inferences_since_first_failed_action_before_recovery": 1,
+      "recovery_action": [
+        -0.002293992093669257,
+        0.001261958644983907,
+        -0.006183906259127567,
+        0.006616222439694248,
+        0.008654681410102234,
+        -0.010802730338469919,
+        1.0
+      ],
+      "first_failed_action": [
+        0.0002036903978314599,
+        0.0048110689140089796,
+        -0.008206467096867485,
+        0.00365884097323569,
+        0.0062953732719798275,
+        -0.007885398820136252,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.004788042801856305
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 2,
+      "episode_success": true,
+      "start_step_1based": 97,
+      "end_step_1based": 101,
+      "failure_frames": 5,
+      "hold_seconds": 0.25,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.005008105459954204,
+        "rotation_rad": 0.010538082537605542,
+        "joint_max_rad": 0.005718135667923008
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0004916134466196327,
+        "rotation_rad": 0.0005630541344464496,
+        "joint_max_rad": 0.0015320055632955798
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 1,
+      "recovery_action": [
+        -0.001543455865768051,
+        0.005328004528932048,
+        -0.007359807509559405,
+        0.007874704993791472,
+        0.0032080255109660123,
+        -0.012877313202852635,
+        1.0
+      ],
+      "first_failed_action": [
+        -0.0014862208436203957,
+        0.0025446728654046243,
+        -0.006292177973936457,
+        0.006481584610888266,
+        0.007774979623799798,
+        -0.009726082609098276,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.002981617651928053
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 2,
+      "episode_success": true,
+      "start_step_1based": 103,
+      "end_step_1based": 103,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.006117720379171323,
+        "rotation_rad": 0.00925899927115468,
+        "joint_max_rad": 0.017116255297714322
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0032595818574374298,
+        "rotation_rad": 0.005582633312161246,
+        "joint_max_rad": 0.010944595805546076
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": true,
+      "recovery_uses_same_inference_chunk_as_last_failure": true,
+      "model_inferences_since_first_failed_action_before_recovery": 0,
+      "recovery_action": [
+        -0.001888558580279965,
+        0.003535110512652328,
+        -0.005268165300526225,
+        0.0035068266053203713,
+        0.0049349386473694044,
+        -0.01679086045531345,
+        1.0
+      ],
+      "first_failed_action": [
+        -0.0015551433665744558,
+        0.004186398818788732,
+        -0.006756062479475641,
+        0.0055535828163826816,
+        0.004816465667358067,
+        -0.014261990591325553,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.0016580651909880268
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 2,
+      "episode_success": true,
+      "start_step_1based": 105,
+      "end_step_1based": 105,
+      "failure_frames": 1,
+      "hold_seconds": 0.05,
+      "recovered": true,
+      "pre_errors_to_held_reference": {
+        "position_m": 0.0062900170219173865,
+        "rotation_rad": 0.013862999975240611,
+        "joint_max_rad": 0.01533505530403434
+      },
+      "post_errors_to_held_reference": {
+        "position_m": 0.0034775107919127798,
+        "rotation_rad": 0.008506700728793459,
+        "joint_max_rad": 0.009707783532188374
+      },
+      "reference_exactly_constant": true,
+      "recovery_uses_same_inference_chunk_as_first_failure": false,
+      "recovery_uses_same_inference_chunk_as_last_failure": false,
+      "model_inferences_since_first_failed_action_before_recovery": 1,
+      "recovery_action": [
+        0.00021210717187812936,
+        0.005089877709632089,
+        -0.005523700727729049,
+        0.013689218984624649,
+        -0.018283294957867378,
+        -0.015264102200628842,
+        1.0
+      ],
+      "first_failed_action": [
+        -0.0012438653231050204,
+        0.0028223812765210236,
+        -0.006305912689532608,
+        0.0027744186681056236,
+        0.004514211706094326,
+        -0.017074644176443252,
+        1.0
+      ],
+      "recovery_candidate_distance_from_first_rejected_m": 0.002805931491235594
+    }
+  ],
+  "source_sha256": {
+    "examples/libero/solver_failure_hold.py": "23a053f11a139b4d6b56b9c6e47efb80aa24d30b3efbf2a392972adb01548c5a",
+    "examples/libero/eval_reconstructed_libero_local.py": "20f6531a1f0acf67a104321d4e362d03fed02f185dd2c87cb135254187b37a7d",
+    "data/libero_tasktol_joint_servo/20261025_success10_v1/frozen_shared_runtime/tasktol/simulation/libero.py": "bc29383ac69ca57a8dcbe31c7e78786e0ae2306646f8efee781830a37028734a",
+    "data/libero_tasktol_joint_servo/20261025_success10_v1/frozen_shared_runtime/tasktol/control/ipopt/controller.py": "5b600438acd164c9fc7c399429d01b621108c6c81dd25f33d7e52804c3c86a25"
+  }
+}

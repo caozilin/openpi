@@ -1,0 +1,20 @@
+{
+  "state": "training",
+  "group": "nominal",
+  "launch_unix": 1793284025.6407976,
+  "started_shanghai": "2026-10-29T22:27:05.640827+08:00",
+  "first_completed_step_unix": 1793284221.644837,
+  "last_logged_step": 30,
+  "checkpoint_dir": "/mnt/SharedData/czl/checkpoints/pi05_franka_nominal100_action7_nostate_3gpu_bs36_40k/Pi05_nominal100_action7_NoState_LoRA_3gpu_bs36_40k_20261029",
+  "supervisor_pid": 3585478,
+  "pid": 3585522,
+  "last_metrics": {
+    "grad_norm": 1.0601,
+    "loss": 0.2673,
+    "loss/action": 0.2673,
+    "loss/total": 0.2673,
+    "loss_weighted/action": 0.2673,
+    "param_norm": 1803.7705
+  },
+  "last_metric_unix": 1793284333.1483665
+}

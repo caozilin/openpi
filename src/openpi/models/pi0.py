@@ -58,6 +58,16 @@ def _grouped_action_loss_with_breakdown(
         **{f"loss_weighted/{name}": value for name, value in weighted_losses.items()},
         "loss/total": total,
     }
+    if action_loss_weight is not None and "action" in raw_losses:
+        weight = jnp.broadcast_to(broadcast_weight(raw_losses["action"]), raw_losses["action"].shape)
+        reweighted = weight != 1
+        breakdown.update({
+            # Contributions use the full batch denominator, including zeros in the other group.
+            "loss/action_nominal_contribution": jnp.where(reweighted, 0, raw_losses["action"]),
+            "loss/action_reweighted_contribution": jnp.where(reweighted, raw_losses["action"], 0),
+            "batch/action_loss_weight_mean": weight,
+            "batch/reweighted_action_fraction": reweighted.astype(weight.dtype),
+        })
     return total, breakdown
 
 

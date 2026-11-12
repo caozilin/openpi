@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-11-07T15:24:01.530971+08:00",
+  "scope": "Frozen path listing of committed trial.json during active run; no source/result mutation",
+  "trial_files": 11109,
+  "trial_bytes": 1263805655,
+  "all_run_bytes": 1469266565,
+  "formatter_matches_existing_files": true,
+  "domain_metadata_bytes": 748692513,
+  "unique_domain_objects": 393,
+  "one_copy_metadata_property_bytes": 26486285,
+  "identical_domain_repetition_bytes": 722206228,
+  "duplicate_share_of_trials": 0.5714535499526626,
+  "duplicate_share_of_entire_run": 0.4915420014338923,
+  "conservative_reference_store_net_saving_bytes": 721197244,
+  "reference_store_assumption": "110 bytes per trial reference + one full metadata JSON payload and100 bytes lookup overhead per unique hash; estimate, not a migrated artifact",
+  "fields": {
+    "robot_xml": {
+      "copies": 11109,
+      "bytes": 347311776,
+      "unique_values": 1,
+      "one_copy_bytes": 31264,
+      "identical_repetition_bytes": 347280512
+    },
+    "assets": {
+      "copies": 11109,
+      "bytes": 213092838,
+      "unique_values": 1,
+      "one_copy_bytes": 19182,
+      "identical_repetition_bytes": 213073656
+    },
+    "asset_sha256": {
+      "copies": 11109,
+      "bytes": 180110217,
+      "unique_values": 1,
+      "one_copy_bytes": 16213,
+      "identical_repetition_bytes": 180094004
+    }
+  },
+  "domain_changed_within_same_evaluation_folder": 0,
+  "other_fields_not_assumed_redundant": [
+    "per-frame solver residuals/status",
+    "per-frame clearance",
+    "candidate bounds",
+    "kinematic metrics"
+  ],
+  "snapshot_paths_sha256": "595cd7277dbd5376048475ea80f7a1c664298c20148d8629c903bba52af6c40a",
+  "three_global_fields_repetition_bytes": 740448172,
+  "three_global_fields_share_entire_run": 0.503957681770292,
+  "exact_property_size_crosscheck": {
+    "properties": 40,
+    "passed": true
+  }
+}

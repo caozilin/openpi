@@ -1,0 +1,19 @@
+{
+  "complete": false,
+  "processed": 1,
+  "labeled": 0,
+  "annotation_failed": 0,
+  "adapter_errors": 1,
+  "results": [
+    {
+      "complete": false,
+      "status": "adapter_error",
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "demo": "demo_0",
+      "source_episode_index": 0,
+      "error": "Recorded model FK differs from source: 8.673617379884035e-19m/2.1794938069207827e-07rad",
+      "traceback": "Traceback (most recent call last):\n  File \"/media/czl/sata/franka_my_code/franka_mujoco/annotate_libero_tolerance.py\", line 14, in run_job\n    return annotate_episode(source,**options)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/workflow.py\", line 24, in annotate_episode\n    model,data,handles,scene_metadata=prepare_scene(episode,openpi_root,robosuite_assets)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/scene.py\", line 77, in prepare_scene\n    raise ValueError(f'Recorded model FK differs from source: {position_delta}m/{rotation_delta}rad')\nValueError: Recorded model FK differs from source: 8.673617379884035e-19m/2.1794938069207827e-07rad\n"
+    }
+  ]
+}

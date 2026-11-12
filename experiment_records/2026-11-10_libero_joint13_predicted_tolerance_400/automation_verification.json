@@ -1,0 +1,7 @@
+{
+  "automation_id": "libero-400-15",
+  "status": "ACTIVE",
+  "kind": "heartbeat",
+  "interval_minutes": 15,
+  "user_requested_regular_success_rate_reports": true
+}

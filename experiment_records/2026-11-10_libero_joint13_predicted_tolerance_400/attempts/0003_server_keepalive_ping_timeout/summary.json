@@ -1,0 +1,34 @@
+{
+  "complete": false,
+  "expected_episodes": 400,
+  "completed_episodes": 66,
+  "successes": 57,
+  "infrastructure_errors": 6,
+  "infrastructure_error_files": [
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_0/infrastructure_error.json",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_0/infrastructure_error.json",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_1/infrastructure_error.json",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_1/infrastructure_error.json",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_0/infrastructure_error.json",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_1/infrastructure_error.json"
+  ],
+  "per_suite": {
+    "libero_spatial": {
+      "episodes": 20,
+      "successes": 19
+    },
+    "libero_object": {
+      "episodes": 20,
+      "successes": 17
+    },
+    "libero_goal": {
+      "episodes": 20,
+      "successes": 15
+    },
+    "libero_10": {
+      "episodes": 6,
+      "successes": 6
+    }
+  },
+  "updated_at": "2026-11-10T16:52:11.106778+08:00"
+}

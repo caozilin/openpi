@@ -1,0 +1,65 @@
+{
+  "checked_at": "2026-11-04T20:56:54.220783+08:00",
+  "packet_bytes": 393520,
+  "ssh_command_round_trips": [
+    {
+      "seconds": 0.0994661439981428,
+      "response_bytes": 0
+    },
+    {
+      "seconds": 0.18995161200291477,
+      "response_bytes": 0
+    },
+    {
+      "seconds": 0.1529385559988441,
+      "response_bytes": 0
+    }
+  ],
+  "serial_upload": [
+    {
+      "seconds": 2.227857686004427,
+      "response_bytes": 7
+    },
+    {
+      "seconds": 1.374889851998887,
+      "response_bytes": 7
+    },
+    {
+      "seconds": 0.7549261250023847,
+      "response_bytes": 7
+    }
+  ],
+  "download": {
+    "seconds": 0.2613437769978191,
+    "response_bytes": 393520
+  },
+  "six_parallel_upload": [
+    {
+      "seconds": 5.196882194999489,
+      "response_bytes": 7
+    },
+    {
+      "seconds": 5.1851633330006734,
+      "response_bytes": 7
+    },
+    {
+      "seconds": 5.185078994996729,
+      "response_bytes": 7
+    },
+    {
+      "seconds": 2.2088725670037093,
+      "response_bytes": 7
+    },
+    {
+      "seconds": 5.184707328000513,
+      "response_bytes": 7
+    },
+    {
+      "seconds": 5.184439844000735,
+      "response_bytes": 7
+    }
+  ],
+  "six_parallel_wall_seconds": 5.200219657999696,
+  "six_parallel_aggregate_mbps": 3.632338870713354,
+  "scope": "Current SSH transport-only test, includes channel setup and command launch; not historical GPU inference timing"
+}

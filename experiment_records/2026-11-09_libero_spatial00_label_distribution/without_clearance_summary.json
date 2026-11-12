@@ -1,0 +1,286 @@
+{
+  "scope": "libero_spatial/task_00, all 47 demos, all 28 existing candidates per demo",
+  "changed_definition": "At least one aligned signed phase/direction differs by >=5 degrees",
+  "ignored": "Both baseline-relative table clearance and absolute table contact acceptance",
+  "retained": "Complete trajectory, non-table kinematic admissibility including robot self-collision, finite speed",
+  "sample_weight": "Each demo equal; 8 aligned signed units, exclude authored strict axes",
+  "query_metadata_count": 1316,
+  "eligible_without_clearance": 1314,
+  "ineligible_without_clearance": 2,
+  "original_outcome_counts": {
+    "kinematic_success": 757,
+    "baseline_relative_clearance": 557,
+    "optimizer_infeasible": 2
+  },
+  "counts": {
+    "candidates_changed": 28,
+    "max_cap_change_deg_ge5": {
+      "count": 27,
+      "demos": [
+        "demo_1",
+        "demo_2",
+        "demo_4",
+        "demo_5",
+        "demo_6",
+        "demo_7",
+        "demo_8",
+        "demo_11",
+        "demo_12",
+        "demo_13",
+        "demo_14",
+        "demo_15",
+        "demo_17",
+        "demo_20",
+        "demo_23",
+        "demo_24",
+        "demo_27",
+        "demo_36",
+        "demo_37",
+        "demo_40",
+        "demo_41",
+        "demo_43",
+        "demo_44",
+        "demo_45",
+        "demo_47",
+        "demo_48",
+        "demo_49"
+      ]
+    },
+    "max_actual_change_deg_ge5": {
+      "count": 18,
+      "demos": [
+        "demo_1",
+        "demo_2",
+        "demo_5",
+        "demo_7",
+        "demo_8",
+        "demo_13",
+        "demo_14",
+        "demo_15",
+        "demo_17",
+        "demo_27",
+        "demo_36",
+        "demo_37",
+        "demo_41",
+        "demo_44",
+        "demo_45",
+        "demo_47",
+        "demo_48",
+        "demo_49"
+      ]
+    },
+    "max_pre_cap_change_deg_ge5": {
+      "count": 18,
+      "demos": [
+        "demo_1",
+        "demo_2",
+        "demo_6",
+        "demo_8",
+        "demo_13",
+        "demo_14",
+        "demo_17",
+        "demo_23",
+        "demo_24",
+        "demo_27",
+        "demo_40",
+        "demo_41",
+        "demo_43",
+        "demo_44",
+        "demo_45",
+        "demo_47",
+        "demo_48",
+        "demo_49"
+      ]
+    },
+    "max_pre_actual_change_deg_ge5": {
+      "count": 9,
+      "demos": [
+        "demo_1",
+        "demo_8",
+        "demo_13",
+        "demo_14",
+        "demo_17",
+        "demo_41",
+        "demo_44",
+        "demo_45",
+        "demo_49"
+      ]
+    },
+    "velocity_reduction_ge0.1pct": {
+      "count": 25,
+      "demos": [
+        "demo_1",
+        "demo_2",
+        "demo_5",
+        "demo_6",
+        "demo_7",
+        "demo_8",
+        "demo_12",
+        "demo_13",
+        "demo_14",
+        "demo_15",
+        "demo_17",
+        "demo_18",
+        "demo_20",
+        "demo_23",
+        "demo_27",
+        "demo_36",
+        "demo_37",
+        "demo_40",
+        "demo_41",
+        "demo_43",
+        "demo_44",
+        "demo_45",
+        "demo_47",
+        "demo_48",
+        "demo_49"
+      ]
+    },
+    "velocity_reduction_ge1pct": {
+      "count": 15,
+      "demos": [
+        "demo_2",
+        "demo_5",
+        "demo_7",
+        "demo_8",
+        "demo_13",
+        "demo_14",
+        "demo_15",
+        "demo_18",
+        "demo_27",
+        "demo_36",
+        "demo_41",
+        "demo_44",
+        "demo_45",
+        "demo_47",
+        "demo_49"
+      ]
+    },
+    "velocity_reduction_ge5pct": {
+      "count": 7,
+      "demos": [
+        "demo_2",
+        "demo_8",
+        "demo_15",
+        "demo_41",
+        "demo_44",
+        "demo_45",
+        "demo_49"
+      ]
+    },
+    "velocity_reduction_ge10pct": {
+      "count": 5,
+      "demos": [
+        "demo_8",
+        "demo_15",
+        "demo_44",
+        "demo_45",
+        "demo_49"
+      ]
+    },
+    "original_both_pre_near_zero": {
+      "count": 4,
+      "demos": [
+        "demo_8",
+        "demo_44",
+        "demo_45",
+        "demo_49"
+      ]
+    },
+    "original_either_pre_near_zero": {
+      "count": 15,
+      "demos": [
+        "demo_5",
+        "demo_8",
+        "demo_9",
+        "demo_13",
+        "demo_18",
+        "demo_20",
+        "demo_21",
+        "demo_24",
+        "demo_29",
+        "demo_38",
+        "demo_42",
+        "demo_44",
+        "demo_45",
+        "demo_46",
+        "demo_49"
+      ]
+    },
+    "new_both_pre_near_zero": {
+      "count": 0,
+      "demos": []
+    },
+    "new_either_pre_near_zero": {
+      "count": 13,
+      "demos": [
+        "demo_1",
+        "demo_5",
+        "demo_8",
+        "demo_9",
+        "demo_14",
+        "demo_18",
+        "demo_20",
+        "demo_21",
+        "demo_29",
+        "demo_38",
+        "demo_42",
+        "demo_45",
+        "demo_46"
+      ]
+    }
+  },
+  "all": {
+    "n": 47,
+    "old_mean_velocity_rad_s": 0.7010742921921054,
+    "new_mean_velocity_rad_s": 0.6792359444538517,
+    "zero_mean_velocity_rad_s": 0.8639562224774451,
+    "additional_velocity_reduction_pct": 3.114983387847514,
+    "old_reduction_vs_zero_pct": 18.853030517942937,
+    "new_reduction_vs_zero_pct": 21.380745137050717,
+    "mean_per_demo_additional_reduction_pct": 2.6974426111275,
+    "median_per_demo_additional_reduction_pct": 0.3267976070003719
+  },
+  "old_either_pre_near_zero": {
+    "n": 15,
+    "old_mean_velocity_rad_s": 0.7571807865264041,
+    "new_mean_velocity_rad_s": 0.7141683609153385,
+    "zero_mean_velocity_rad_s": 0.8894092059952889,
+    "additional_velocity_reduction_pct": 5.680601829371124,
+    "old_reduction_vs_zero_pct": 14.866994694631618,
+    "new_reduction_vs_zero_pct": 19.70306175140699,
+    "mean_per_demo_additional_reduction_pct": 5.007647577788519,
+    "median_per_demo_additional_reduction_pct": 0.822496845034242
+  },
+  "old_both_pre_near_zero": {
+    "n": 4,
+    "old_mean_velocity_rad_s": 0.8709801319651213,
+    "new_mean_velocity_rad_s": 0.7261543539311628,
+    "zero_mean_velocity_rad_s": 0.8871185306890399,
+    "additional_velocity_reduction_pct": 16.62790834358069,
+    "old_reduction_vs_zero_pct": 1.8191930577060145,
+    "new_reduction_vs_zero_pct": 18.144607647058564,
+    "mean_per_demo_additional_reduction_pct": 16.511275268425198,
+    "median_per_demo_additional_reduction_pct": 15.840288432478376
+  },
+  "candidate_changed": {
+    "n": 28,
+    "old_mean_velocity_rad_s": 0.7276846512847105,
+    "new_mean_velocity_rad_s": 0.6910274247240704,
+    "zero_mean_velocity_rad_s": 0.8642377678808459,
+    "additional_velocity_reduction_pct": 5.037515425936578,
+    "old_reduction_vs_zero_pct": 15.80041068223279,
+    "new_reduction_vs_zero_pct": 20.04197798269056,
+    "mean_per_demo_additional_reduction_pct": 4.527850097249732,
+    "median_per_demo_additional_reduction_pct": 1.5606154962690506
+  },
+  "top5": [
+    "demo_44",
+    "demo_45",
+    "demo_15",
+    "demo_8",
+    "demo_49"
+  ],
+  "no_new_trials": true,
+  "limitation": "Retrospective selection in a candidate set collected by clearance-aware BO; not a new no-clearance optimization, not physical task success."
+}

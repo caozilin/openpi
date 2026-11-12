@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-09T19:20:58.111463+08:00",
+  "targets": [
+    {
+      "pid": 82812,
+      "command": "/usr/bin/python3 -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/upload_joint_dataset.py ",
+      "state": "S"
+    },
+    {
+      "pid": 120234,
+      "command": "rsync -rlt --checksum --partial --copy-dest=/mnt/SharedData/czl/lerobot/caozilin/libero_reconstructed_full_20261101 --stats --files-from=/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/transfer_files.txt -e ssh -S /tmp/libero_joint13_20261109.sock -o BatchMode=yes /media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109/ czl@100.73.28.99:/mnt/SharedData/czl/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109/ ",
+      "state": "S"
+    },
+    {
+      "pid": 120235,
+      "command": "ssh -S /tmp/libero_joint13_20261109.sock -o BatchMode=yes -l czl 100.73.28.99 rsync --server -ltrcRe.iLsfxCIvu --stats --partial --copy-dest /mnt/SharedData/czl/lerobot/caozilin/libero_reconstructed_full_20261101 . /mnt/SharedData/czl/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109/ ",
+      "state": "S"
+    }
+  ],
+  "preserved_dispatch": {
+    "pid": 82814,
+    "command": "/usr/bin/python3 -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/start_joint_training_when_verified.py ",
+    "state": "S"
+  },
+  "intentional_transport_change": true
+}

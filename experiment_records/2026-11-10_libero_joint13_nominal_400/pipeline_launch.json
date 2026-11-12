@@ -1,0 +1,8 @@
+{
+  "pid": 66337,
+  "start_ticks": 1200157,
+  "started_at": "2026-11-10T18:13:25.388720+08:00",
+  "command": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/pipeline.py",
+  "source_sha256": "b34fdf498b76ae64465c7c14ddffc88d3fa642ad78c3b67b6e4096d24c5fbc0f",
+  "request_sha256": "ccb34c973fca0edc6ac08e1f323e195702bc9a8ec763f38eee37ee75f23c1575"
+}

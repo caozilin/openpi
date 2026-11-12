@@ -1,0 +1,18 @@
+{
+  "initial_native_exit_code": 139,
+  "failure": "Arrow jemalloc native allocator during import, before GPU training",
+  "workaround": "Torch/Arrow imports before JAX; ARROW_DEFAULT_MEMORY_POOL=system; ARROW_JEMALLOC_CONF=background_thread:false",
+  "test_dataset": "caozilin/franka_100_nominal",
+  "test_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6
+  ],
+  "swanlab_enabled": false,
+  "steps": 100,
+  "formal_schedule_steps": 10000,
+  "warmup_steps": 333
+}

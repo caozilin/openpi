@@ -1,0 +1,2217 @@
+{
+  "schema_version": "18.0",
+  "status": "complete",
+  "method": "per_episode_peak_guided_5deg_search",
+  "definition": "Process subtasks from last to first. For each subtask, search Post-grasp with Pre-grasp blocked, then search Pre-grasp while holding the finalized Post-grasp bounds. Each failed stage is diagnosed only on axes enabled by the task mask using bilateral zero trials, then corrected on the unique successful axis using running signed release extrema. Masked-out axes remain zero.",
+  "training_scene_id": "libero_10",
+  "training_task_id": "task_03",
+  "scene": "libero_10",
+  "task": "task_03",
+  "robot_uid": "panda",
+  "execution_mode": "kinematic",
+  "seed": 0,
+  "episode_index": 1565,
+  "trajectory_path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_10/task_03/demo_1/source_frames.json",
+  "search": {
+    "scene": "libero_10",
+    "task": "task_03",
+    "training_scene_id": "libero_10",
+    "training_task_id": "task_03",
+    "robot_uid": "panda",
+    "execution_mode": "kinematic",
+    "maximum_frames": 227,
+    "maximum_tolerance_deg": 30,
+    "tolerance_step_deg": 5,
+    "environment_randomization_probability": 0.0,
+    "scene_variant_index": null,
+    "sqp_loss_profile": "delta_q_squared_conditioning_safeguard",
+    "sqp_loss_weights": [
+      1.0,
+      0.0,
+      10.0
+    ],
+    "ipopt_max_iterations": 20,
+    "control_hz": 20.0
+  },
+  "trial_context": {
+    "adapter": "libero_stored_kinematics_v1",
+    "input_sha256": {
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_10/03/demo_1/trajectory.json": "6055dcf4f84cc7adbce19219ffaf8b61345bea2038c680fc86a0c3f1a07e06e4",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_10/03/demo_1/states.npz": "ce111dd011dbd56ff99e13b9140ffb83cbda38053fee96f6b536e66424b9795f",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_10/03/demo_1/report.json": "1fd9631369fbdf7b3d4e7c633c025df42ccf2dc0a44a59d322cc241e69983d94",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_10/03/demo_1/state_reference.hdf5": "8c70a3ee86c011fc9cc80da18974cdb5a70a035652d4a6f65bb3546d1824813d",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_10/03/demo_1/recording.hdf5": "cb80c6b28b89e6ea7fb4fecc7a491777bfacc8852aef93ae8273241749ac0b33",
+      "source_xml_sha256": "0f1cae3dd6108318d0988d5d03c06b286cd3688a59c84d1d9ce91b0bc1711602"
+    },
+    "source_code_sha256": {
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/__init__.py": "30e9892a772592652a635df328092266a931be607e22c156f3cb2d4781a38bad",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/labels.py": "d32a1b027b9aaf9df35908c1c1b4d81251e570ac6cdac59c3a79fc37ec1519c2",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/scene.py": "c78fee3f89bb13ee6aea3b8ff680ff6d93827563d30ad59331dd9cee2b0e0ef6",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/segmentation.py": "5ff10996a2c037cf9e0e097454c2bc08f9a4a136b5aed9061c9cfcb9a2702217",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/source.py": "791ae4748831d3cabdb2ec32fbb2b8fdd10e04d140357c2ae1a0637d48314c80",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/workflow.py": "69400a36f62ae4536fed112ea360a44f6b2a06cdbefda9bfacaf1a629022d6c0",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/runner.py": "342fa90bfe528c1b28015f6432883105c8af40e402f0fd375b11e88e791b1f04",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/search.py": "ee3b1f8c6f6bca601c7409ae7e533e3656a5838812219014f10d489f1e09982b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/stored.py": "4e7b8a0724ed1cab74847c84b7d3b57f7e63d70e500ed99733d0ff77d1f8ae23"
+    },
+    "mask_table_sha256": "dd05515574e0802d57099e8bca467d32b074f7e303b4ea0368214f9364390031",
+    "authored_angle_use": "enabled-axis mask only; search starts +/-30deg as shared MuJoCo annotator",
+    "control_hz": 20,
+    "scene": {
+      "physics_steps": 0,
+      "scene_source": "original demo MJCF + recorded pre-action snapshot",
+      "assets": {
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/../textures/gray_ceramic_tile.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/textures/gray_ceramic_tile.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/../textures/martin_novak_wood_table.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/textures/martin_novak_wood_table.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/../textures/yellow_linen_wall_texture.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/textures/yellow_linen_wall_texture.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/kitchen_background/kitchen_background.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/scenes/kitchen_background/kitchen_background.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/kitchen_background_pot/kitchen_background_pot.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/scenes/kitchen_background_pot/kitchen_background_pot.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/kitchen_background_stove/kitchen_background_stove.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/scenes/kitchen_background_stove/kitchen_background_stove.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/fridge/metal.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/scenes/fridge/metal.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_scanned_objects/akita_black_bowl/texture.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/stable_scanned_objects/akita_black_bowl/texture.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/turbosquid_objects/wine_bottle/label_wine.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/turbosquid_objects/wine_bottle/label_wine.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/turbosquid_objects/wine_bottle/cork_texture.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/turbosquid_objects/wine_bottle/cork_texture.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/articulated_objects/white_cabinet/white_wood.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/articulated_objects/white_cabinet/white_wood.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/articulated_objects/white_cabinet/metal.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/articulated_objects/white_cabinet/metal.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/turbosquid_objects/wine_rack/mahogany.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/turbosquid_objects/wine_rack/mahogany.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/turbosquid_objects/wine_rack/light-wood.png": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/turbosquid_objects/wine_rack/light-wood.png",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/kitchen_background/visual/kitchen_background_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/scenes/kitchen_background/visual/kitchen_background_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/kitchen_background_pot/visual/kitchen_background_pot_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/scenes/kitchen_background_pot/visual/kitchen_background_pot_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/kitchen_background_hot_pot/visual/kitchen_background_hot_pot_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/scenes/kitchen_background_hot_pot/visual/kitchen_background_hot_pot_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/kitchen_background_stove/visual/kitchen_background_stove_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/scenes/kitchen_background_stove/visual/kitchen_background_stove_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/fridge/visual/fridge_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/scenes/fridge/visual/fridge_vis.msh",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link0.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link0.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link1.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link1.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link2.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link2.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link3.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link3.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link4.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link4.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link5.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link5.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link6.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link6.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link7.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link7.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_3.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_3.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_4.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_4.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_5.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_5.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_6.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_6.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_7.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_7.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_8.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_8.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_9.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_9.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_10.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_10.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_11.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_11.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link1_vis/link1_vis.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link1_vis/link1_vis.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link2_vis/link2_vis.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link2_vis/link2_vis.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_3.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_3.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_3.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_3.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_3.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_3.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_4.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_4.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_5.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_5.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_6.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_6.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_7.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_7.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_8.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_8.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_9.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_9.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_10.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_10.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_11.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_11.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_12.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_12.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_13.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_13.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_14.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_14.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_15.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_15.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_16.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_16.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_3.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_3.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_4.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_4.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_5.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_5.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_6.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_6.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_7.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_7.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/mounts/meshes/rethink_mount/pedestal.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/hand.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/hand.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/hand_vis.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/hand_vis.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/finger.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/finger.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/finger_vis.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/finger_vis.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/finger_longer.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/finger_longer.stl",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_scanned_objects/akita_black_bowl/visual/akita_black_bowl_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/stable_scanned_objects/akita_black_bowl/visual/akita_black_bowl_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/turbosquid_objects/wine_bottle/visual/wine_bottle_red_logo_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/turbosquid_objects/wine_bottle/visual/wine_bottle_red_logo_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/turbosquid_objects/wine_bottle/visual/wine_bottle_red_cork_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/turbosquid_objects/wine_bottle/visual/wine_bottle_red_cork_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/turbosquid_objects/wine_bottle/visual/wine_bottle_red_main_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/turbosquid_objects/wine_bottle/visual/wine_bottle_red_main_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/articulated_objects/white_cabinet/white_cabinet_top/visual/white_cabinet_top_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/articulated_objects/white_cabinet/white_cabinet_top/visual/white_cabinet_top_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/articulated_objects/white_cabinet/white_cabinet_base/visual/white_cabinet_base_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/articulated_objects/white_cabinet/white_cabinet_base/visual/white_cabinet_base_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/articulated_objects/white_cabinet/white_cabinet_top_handle/visual/white_cabinet_top_handle_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/articulated_objects/white_cabinet/white_cabinet_top_handle/visual/white_cabinet_top_handle_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/articulated_objects/white_cabinet/white_cabinet_middle/visual/white_cabinet_middle_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/articulated_objects/white_cabinet/white_cabinet_middle/visual/white_cabinet_middle_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/articulated_objects/white_cabinet/white_cabinet_middle_handle/visual/white_cabinet_middle_handle_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/articulated_objects/white_cabinet/white_cabinet_middle_handle/visual/white_cabinet_middle_handle_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/articulated_objects/white_cabinet/white_cabinet_bottom/visual/white_cabinet_bottom_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/articulated_objects/white_cabinet/white_cabinet_bottom/visual/white_cabinet_bottom_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/articulated_objects/white_cabinet/white_cabinet_bottom_handle/visual/white_cabinet_bottom_handle_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/articulated_objects/white_cabinet/white_cabinet_bottom_handle/visual/white_cabinet_bottom_handle_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/turbosquid_objects/wine_rack/visual/wine_rack_stand_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/turbosquid_objects/wine_rack/visual/wine_rack_stand_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/turbosquid_objects/wine_rack/visual/wine_rack_planes_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/turbosquid_objects/wine_rack/visual/wine_rack_planes_vis.msh",
+        "/home/yifengz/workspace/libero-dev/chiliocosm/assets/turbosquid_objects/wine_rack/visual/wine_rack_stoppers_vis.msh": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/assets/turbosquid_objects/wine_rack/visual/wine_rack_stoppers_vis.msh"
+      },
+      "initial_fk_position_error_m": 0.0,
+      "initial_fk_rotation_error_rad": 2.1794938065119614e-07,
+      "table_bodies": [
+        "table"
+      ],
+      "table_top_world_z_m": 0.9
+    },
+    "source_segmentation": [
+      {
+        "annotation_subtask_index": 0,
+        "source_observed_cycle": 0,
+        "semantic_identity": "black bowl",
+        "authored_subtask_index": 0,
+        "source_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172
+        ],
+        "APP_mask": [
+          0,
+          1,
+          0
+        ],
+        "EXEC_mask": [
+          0,
+          0,
+          0
+        ],
+        "source_frame": 78,
+        "target_bodies": [
+          "akita_black_bowl_1_main",
+          "white_cabinet_1_cabinet_bottom"
+        ],
+        "distances_m": [
+          0.06735626007271997,
+          0.20763806435168108
+        ]
+      },
+      {
+        "annotation_subtask_index": 1,
+        "source_observed_cycle": 1,
+        "semantic_identity": "black bowl",
+        "authored_subtask_index": 0,
+        "source_frames": [
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226
+        ],
+        "APP_mask": [
+          0,
+          1,
+          0
+        ],
+        "EXEC_mask": [
+          0,
+          0,
+          0
+        ],
+        "source_frame": 226,
+        "target_bodies": [
+          "akita_black_bowl_1_main",
+          "white_cabinet_1_cabinet_bottom"
+        ],
+        "distances_m": [
+          0.11319172953789834,
+          0.11854419677040594
+        ]
+      }
+    ]
+  },
+  "rotation_tolerance_bounds_order": [
+    "rx_negative",
+    "rx_positive",
+    "ry_negative",
+    "ry_positive",
+    "rz_negative",
+    "rz_positive"
+  ],
+  "subtasks": [
+    {
+      "index": 0,
+      "label": "Observed cycle 0: black bowl",
+      "pregrasp": {
+        "negative": [
+          0,
+          30,
+          0
+        ],
+        "positive": [
+          0,
+          30,
+          0
+        ]
+      },
+      "postgrasp": {
+        "negative": [
+          0,
+          0,
+          0
+        ],
+        "positive": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "label": "Observed cycle 1: black bowl",
+      "pregrasp": {
+        "negative": [
+          0,
+          30,
+          0
+        ],
+        "positive": [
+          0,
+          30,
+          0
+        ]
+      },
+      "postgrasp": {
+        "negative": [
+          0,
+          0,
+          0
+        ],
+        "positive": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "subtask_bounds_deg": [
+    {
+      "pregrasp": {
+        "negative": [
+          0,
+          30,
+          0
+        ],
+        "positive": [
+          0,
+          30,
+          0
+        ]
+      },
+      "postgrasp": {
+        "negative": [
+          0,
+          0,
+          0
+        ],
+        "positive": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "pregrasp": {
+        "negative": [
+          0,
+          30,
+          0
+        ],
+        "positive": [
+          0,
+          30,
+          0
+        ]
+      },
+      "postgrasp": {
+        "negative": [
+          0,
+          0,
+          0
+        ],
+        "positive": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "declared_subtask_stage_rotation_masks": [
+    [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  ],
+  "search_order": [
+    {
+      "subtask_index": 1,
+      "stages": [
+        "postgrasp",
+        "pregrasp"
+      ]
+    },
+    {
+      "subtask_index": 0,
+      "stages": [
+        "postgrasp",
+        "pregrasp"
+      ]
+    }
+  ],
+  "stage_results": [
+    {
+      "subtask_index": 1,
+      "stage": "postgrasp",
+      "status": "all_masked_axes_30deg_succeeded",
+      "history": [
+        {
+          "kind": "initial",
+          "success": true,
+          "bounds_deg": [
+            {
+              "pregrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "pregrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "release_extrema_deg": [
+            {
+              "subtask_index": 0,
+              "pregrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            {
+              "subtask_index": 1,
+              "pregrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subtask_index": 1,
+      "stage": "pregrasp",
+      "status": "all_masked_axes_30deg_succeeded",
+      "history": [
+        {
+          "kind": "initial",
+          "success": true,
+          "bounds_deg": [
+            {
+              "pregrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "pregrasp": {
+                "negative": [
+                  0,
+                  30,
+                  0
+                ],
+                "positive": [
+                  0,
+                  30,
+                  0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "release_extrema_deg": [
+            {
+              "subtask_index": 0,
+              "pregrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            {
+              "subtask_index": 1,
+              "pregrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  10.624905769574111,
+                  0.0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subtask_index": 0,
+      "stage": "postgrasp",
+      "status": "all_masked_axes_30deg_succeeded",
+      "history": [
+        {
+          "kind": "initial",
+          "success": true,
+          "bounds_deg": [
+            {
+              "pregrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "pregrasp": {
+                "negative": [
+                  0,
+                  30,
+                  0
+                ],
+                "positive": [
+                  0,
+                  30,
+                  0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "release_extrema_deg": [
+            {
+              "subtask_index": 0,
+              "pregrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            {
+              "subtask_index": 1,
+              "pregrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  10.624905769574111,
+                  0.0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subtask_index": 0,
+      "stage": "pregrasp",
+      "status": "all_masked_axes_30deg_succeeded",
+      "history": [
+        {
+          "kind": "initial",
+          "success": true,
+          "bounds_deg": [
+            {
+              "pregrasp": {
+                "negative": [
+                  0,
+                  30,
+                  0
+                ],
+                "positive": [
+                  0,
+                  30,
+                  0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "pregrasp": {
+                "negative": [
+                  0,
+                  30,
+                  0
+                ],
+                "positive": [
+                  0,
+                  30,
+                  0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0,
+                  0,
+                  0
+                ],
+                "positive": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "release_extrema_deg": [
+            {
+              "subtask_index": 0,
+              "pregrasp": {
+                "negative": [
+                  0.0,
+                  3.7142242572602933,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  6.989817569146682,
+                  0.0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            {
+              "subtask_index": 1,
+              "pregrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  10.657584613677017,
+                  0.0
+                ]
+              },
+              "postgrasp": {
+                "negative": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "positive": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_validation": {
+    "purpose": "final_annotation_validation",
+    "success": true,
+    "termination_reason": "kinematic_success",
+    "hard_failure_reasons": [],
+    "hard_failure_details": [],
+    "runner_error": null,
+    "backend": "kinematic_collision_checked",
+    "executed_frames": 227,
+    "expected_frames": 227,
+    "release_extrema_deg": [
+      {
+        "subtask_index": 0,
+        "pregrasp": {
+          "negative": [
+            0.0,
+            3.7142242572602933,
+            0.0
+          ],
+          "positive": [
+            0.0,
+            6.989817569146682,
+            0.0
+          ]
+        },
+        "postgrasp": {
+          "negative": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "subtask_index": 1,
+        "pregrasp": {
+          "negative": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive": [
+            0.0,
+            10.657584613677017,
+            0.0
+          ]
+        },
+        "postgrasp": {
+          "negative": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    ],
+    "declared_subtask_stage_rotation_masks": [
+      [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "bounds_deg": [
+      {
+        "pregrasp": {
+          "negative": [
+            0,
+            30,
+            0
+          ],
+          "positive": [
+            0,
+            30,
+            0
+          ]
+        },
+        "postgrasp": {
+          "negative": [
+            0,
+            0,
+            0
+          ],
+          "positive": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "pregrasp": {
+          "negative": [
+            0,
+            30,
+            0
+          ],
+          "positive": [
+            0,
+            30,
+            0
+          ]
+        },
+        "postgrasp": {
+          "negative": [
+            0,
+            0,
+            0
+          ],
+          "positive": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    ],
+    "trajectory_kinematics": {
+      "samples": 227,
+      "mean_joint_velocity_rad_s": 0.4681044037822422,
+      "mean_joint_acceleration_rad_s2": 3.6936845179272,
+      "mean_joint_jerk_rad_s3": 119.04467691907647,
+      "mean_manipulability": 0.08729114462008095,
+      "total_joint_travel_rad": 5.296030159562294,
+      "minimum_sigma_min_full": 0.11307703997848323,
+      "minimum_sigma_min_velocity_normalized": 1.0527894900658346
+    }
+  },
+  "search_history": [
+    {
+      "purpose": "nominal_zero_tolerance_preflight",
+      "success": true,
+      "termination_reason": "kinematic_success",
+      "hard_failure_reasons": [],
+      "hard_failure_details": [],
+      "runner_error": null,
+      "backend": "kinematic_collision_checked",
+      "executed_frames": 227,
+      "expected_frames": 227,
+      "release_extrema_deg": [
+        {
+          "subtask_index": 0,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "subtask_index": 1,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      ],
+      "declared_subtask_stage_rotation_masks": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "bounds_deg": [
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "trajectory_kinematics": {
+        "samples": 227,
+        "mean_joint_velocity_rad_s": 0.5095950887832705,
+        "mean_joint_acceleration_rad_s2": 4.224753713073056,
+        "mean_joint_jerk_rad_s3": 138.38977263184935,
+        "mean_manipulability": 0.08724613098288285,
+        "total_joint_travel_rad": 5.784614812052813,
+        "minimum_sigma_min_full": 0.10573593499645129,
+        "minimum_sigma_min_velocity_normalized": 0.9740009660077326
+      },
+      "cache_hit": false
+    },
+    {
+      "purpose": "subtask_1_postgrasp_masked_axes_30deg",
+      "success": true,
+      "termination_reason": "kinematic_success",
+      "hard_failure_reasons": [],
+      "hard_failure_details": [],
+      "runner_error": null,
+      "backend": "kinematic_collision_checked",
+      "executed_frames": 227,
+      "expected_frames": 227,
+      "release_extrema_deg": [
+        {
+          "subtask_index": 0,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "subtask_index": 1,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      ],
+      "declared_subtask_stage_rotation_masks": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "bounds_deg": [
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "trajectory_kinematics": {
+        "samples": 227,
+        "mean_joint_velocity_rad_s": 0.5095950887832705,
+        "mean_joint_acceleration_rad_s2": 4.224753713073056,
+        "mean_joint_jerk_rad_s3": 138.38977263184935,
+        "mean_manipulability": 0.08724613098288285,
+        "total_joint_travel_rad": 5.784614812052813,
+        "minimum_sigma_min_full": 0.10573593499645129,
+        "minimum_sigma_min_velocity_normalized": 0.9740009660077326
+      },
+      "cache_hit": true
+    },
+    {
+      "purpose": "subtask_1_pregrasp_masked_axes_30deg",
+      "success": true,
+      "termination_reason": "kinematic_success",
+      "hard_failure_reasons": [],
+      "hard_failure_details": [],
+      "runner_error": null,
+      "backend": "kinematic_collision_checked",
+      "executed_frames": 227,
+      "expected_frames": 227,
+      "release_extrema_deg": [
+        {
+          "subtask_index": 0,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "subtask_index": 1,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              10.624905769574111,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      ],
+      "declared_subtask_stage_rotation_masks": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "bounds_deg": [
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              30,
+              0
+            ],
+            "positive": [
+              0,
+              30,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "trajectory_kinematics": {
+        "samples": 227,
+        "mean_joint_velocity_rad_s": 0.4839468214796356,
+        "mean_joint_acceleration_rad_s2": 4.13386219502225,
+        "mean_joint_jerk_rad_s3": 134.91605160206865,
+        "mean_manipulability": 0.08783194403993186,
+        "total_joint_travel_rad": 5.494789391521739,
+        "minimum_sigma_min_full": 0.11605575272493811,
+        "minimum_sigma_min_velocity_normalized": 1.080591629308872
+      },
+      "cache_hit": false
+    },
+    {
+      "purpose": "subtask_0_postgrasp_masked_axes_30deg",
+      "success": true,
+      "termination_reason": "kinematic_success",
+      "hard_failure_reasons": [],
+      "hard_failure_details": [],
+      "runner_error": null,
+      "backend": "kinematic_collision_checked",
+      "executed_frames": 227,
+      "expected_frames": 227,
+      "release_extrema_deg": [
+        {
+          "subtask_index": 0,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "subtask_index": 1,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              10.624905769574111,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      ],
+      "declared_subtask_stage_rotation_masks": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "bounds_deg": [
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              30,
+              0
+            ],
+            "positive": [
+              0,
+              30,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "trajectory_kinematics": {
+        "samples": 227,
+        "mean_joint_velocity_rad_s": 0.4839468214796356,
+        "mean_joint_acceleration_rad_s2": 4.13386219502225,
+        "mean_joint_jerk_rad_s3": 134.91605160206865,
+        "mean_manipulability": 0.08783194403993186,
+        "total_joint_travel_rad": 5.494789391521739,
+        "minimum_sigma_min_full": 0.11605575272493811,
+        "minimum_sigma_min_velocity_normalized": 1.080591629308872
+      },
+      "cache_hit": true
+    },
+    {
+      "purpose": "subtask_0_pregrasp_masked_axes_30deg",
+      "success": true,
+      "termination_reason": "kinematic_success",
+      "hard_failure_reasons": [],
+      "hard_failure_details": [],
+      "runner_error": null,
+      "backend": "kinematic_collision_checked",
+      "executed_frames": 227,
+      "expected_frames": 227,
+      "release_extrema_deg": [
+        {
+          "subtask_index": 0,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              3.7142242572602933,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              6.989817569146682,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "subtask_index": 1,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              10.657584613677017,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      ],
+      "declared_subtask_stage_rotation_masks": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "bounds_deg": [
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              30,
+              0
+            ],
+            "positive": [
+              0,
+              30,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              30,
+              0
+            ],
+            "positive": [
+              0,
+              30,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "trajectory_kinematics": {
+        "samples": 227,
+        "mean_joint_velocity_rad_s": 0.4681044037822422,
+        "mean_joint_acceleration_rad_s2": 3.6936845179272,
+        "mean_joint_jerk_rad_s3": 119.04467691907647,
+        "mean_manipulability": 0.08729114462008095,
+        "total_joint_travel_rad": 5.296030159562294,
+        "minimum_sigma_min_full": 0.11307703997848323,
+        "minimum_sigma_min_velocity_normalized": 1.0527894900658346
+      },
+      "cache_hit": false
+    },
+    {
+      "purpose": "final_annotation_validation",
+      "success": true,
+      "termination_reason": "kinematic_success",
+      "hard_failure_reasons": [],
+      "hard_failure_details": [],
+      "runner_error": null,
+      "backend": "kinematic_collision_checked",
+      "executed_frames": 227,
+      "expected_frames": 227,
+      "release_extrema_deg": [
+        {
+          "subtask_index": 0,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              3.7142242572602933,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              6.989817569146682,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "subtask_index": 1,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              10.657584613677017,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      ],
+      "declared_subtask_stage_rotation_masks": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "bounds_deg": [
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              30,
+              0
+            ],
+            "positive": [
+              0,
+              30,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "pregrasp": {
+            "negative": [
+              0,
+              30,
+              0
+            ],
+            "positive": [
+              0,
+              30,
+              0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0,
+              0,
+              0
+            ],
+            "positive": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "trajectory_kinematics": {
+        "samples": 227,
+        "mean_joint_velocity_rad_s": 0.4681044037822422,
+        "mean_joint_acceleration_rad_s2": 3.6936845179272,
+        "mean_joint_jerk_rad_s3": 119.04467691907647,
+        "mean_manipulability": 0.08729114462008095,
+        "total_joint_travel_rad": 5.296030159562294,
+        "minimum_sigma_min_full": 0.11307703997848323,
+        "minimum_sigma_min_velocity_normalized": 1.0527894900658346
+      },
+      "cache_hit": true
+    }
+  ],
+  "failure_policy": {
+    "nominal_failure": "exception",
+    "zero_successful_axis_isolations": "exception",
+    "multiple_successful_axis_isolations": "exception",
+    "optimizer_infeasible": "trajectory_failure",
+    "robot_self_collision": "trajectory_failure",
+    "robot_table_collision": "trajectory_failure"
+  },
+  "release_measurement": "per-stage running positive and negative maxima over every 20 Hz optimizer frame; endpoint-only release is not used"
+}

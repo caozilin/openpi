@@ -1,0 +1,10 @@
+{
+  "complete": false,
+  "status": "adapter_error",
+  "suite": "libero_10",
+  "task_id": 6,
+  "demo": "demo_0",
+  "source_episode_index": 1689,
+  "error": "\"Invalid name 'table'. Valid names: ['chocolate_pudding_1_main', 'floor', 'gripper0_eef', 'gripper0_finger_joint1_tip', 'gripper0_finger_joint2_tip', 'gripper0_leftfinger', 'gripper0_right_gripper', 'gripper0_rightfinger', 'living_room_table', 'mount0_base', 'plate_1_main', 'porcelain_mug_1_main', 'red_coffee_mug_1_main', 'robot0_base', 'robot0_link0', 'robot0_link1', 'robot0_link2', 'robot0_link3', 'robot0_link4', 'robot0_link5', 'robot0_link6', 'robot0_link7', 'robot0_right_hand', 'world']\"",
+  "traceback": "Traceback (most recent call last):\n  File \"/media/czl/sata/franka_my_code/franka_mujoco/annotate_libero_tolerance.py\", line 14, in run_job\n    return annotate_episode(source,**options)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/workflow.py\", line 24, in annotate_episode\n    model,data,handles,scene_metadata=prepare_scene(episode,openpi_root,robosuite_assets)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/scene.py\", line 67, in prepare_scene\n    if model.body('table').id < 0:raise ValueError('Recorded native table is missing')\n       ^^^^^^^^^^^^^^^^^^^\nKeyError: \"Invalid name 'table'. Valid names: ['chocolate_pudding_1_main', 'floor', 'gripper0_eef', 'gripper0_finger_joint1_tip', 'gripper0_finger_joint2_tip', 'gripper0_leftfinger', 'gripper0_right_gripper', 'gripper0_rightfinger', 'living_room_table', 'mount0_base', 'plate_1_main', 'porcelain_mug_1_main', 'red_coffee_mug_1_main', 'robot0_base', 'robot0_link0', 'robot0_link1', 'robot0_link2', 'robot0_link3', 'robot0_link4', 'robot0_link5', 'robot0_link6', 'robot0_link7', 'robot0_right_hand', 'world']\"\n"
+}

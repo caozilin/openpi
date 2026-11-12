@@ -1,0 +1,106 @@
+{
+  "complete": true,
+  "checked_at": "2026-11-04T22:23:44.862259+08:00",
+  "task": "Apply edited workbook as default per-axis semantic tolerances in future benchmark control",
+  "tasks": 40,
+  "subtasks": 49,
+  "angles": 294,
+  "source_workbook_sha256": "25f4279618b45239b3f509889999cd33bb908b0f93638ba7c95b46563808b221",
+  "legacy_table_sha256": "7be8607bd4020e9ec9ff37912bfb315e116a6c15c3ff79ad7c3435ce854224f6",
+  "config": "/media/czl/sata/franka_my_code/openpi/examples/libero/configs/libero40_semantic_tolerances_deg.json",
+  "config_sha256": "dd05515574e0802d57099e8bca467d32b074f7e303b4ea0368214f9364390031",
+  "workbook_and_legacy_table_unchanged": true,
+  "pytest": {
+    "passed": 107,
+    "files": [
+      "confirmed_mask_policy_test.py",
+      "import_semantic_tolerances_test.py",
+      "success_continuation_test.py",
+      "solver_failure_hold_test.py",
+      "serve_benchmark_viewer_test.py"
+    ]
+  },
+  "javascript_release_values_test": "passed",
+  "javascript_syntax": "passed",
+  "python_compile": "passed",
+  "native_control_integration": {
+    "complete": true,
+    "scope": "Two zero-action offline checks; no policy inference or benchmark rollout.",
+    "records": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "phase": "APP",
+        "degrees": [
+          0,
+          5,
+          0
+        ],
+        "bounds_rad": [
+          0.0,
+          0.0,
+          0.08726646259971647,
+          0.08726646259971647,
+          0.0,
+          0.0
+        ],
+        "semantic_mask": "010",
+        "effective_mask": "010",
+        "optimizer": {
+          "backend": "ipopt",
+          "solver_called": true,
+          "feasible": true,
+          "status": "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+          "iterations": 6,
+          "elapsed_ms": 4.237825000018347,
+          "position_residual_m": 1.7430501486614958e-13,
+          "strict_rotation_residual_rad": 6.774702997381195e-15
+        },
+        "physics_steps": 25
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "phase": "EXEC",
+        "degrees": [
+          5,
+          5,
+          15
+        ],
+        "bounds_rad": [
+          0.08726646259971647,
+          0.08726646259971647,
+          0.08726646259971647,
+          0.08726646259971647,
+          0.2617993877991494,
+          0.2617993877991494
+        ],
+        "semantic_mask": "111",
+        "effective_mask": "111",
+        "optimizer": {
+          "backend": "ipopt",
+          "solver_called": true,
+          "feasible": true,
+          "status": "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+          "iterations": 6,
+          "elapsed_ms": 4.248336001182906,
+          "position_residual_m": 2.6756374893466273e-14,
+          "strict_rotation_residual_rad": 0.0
+        },
+        "physics_steps": 25
+      }
+    ]
+  },
+  "source_sha256": {
+    "examples/libero/confirmed_mask_policy.py": "ff6d4a26054e85db42efcab9941f8dae3d344a9396cc6ace10f11785ce5d23df",
+    "examples/libero/import_semantic_tolerances.py": "e5101199275aec98ee253bb9fbfd6d957fa74c930999c44cca9bf9e4632c32e6",
+    "examples/libero/eval_confirmed_mask_libero_local.py": "ef37d526fb50fb1558bcc1bcca3a5f283ce00eb4bfb2fb6804521cfa091f22f0",
+    "examples/libero/audit_confirmed_mask_evaluation.py": "db388f5b12f749158541aa8e1053a0cef31f24df5119c62da5533cdfa502a348",
+    "examples/libero/solver_failure_hold.py": "63288307722ed73659fd2a920c1f07642a4f2262eb2efcc11b90c502178d6807",
+    "examples/libero/serve_benchmark_viewer.py": "bdf48be2e0e3ba87815f9c6dc5e1aa5d467674dc6c8e53fb03d31453a8f72b9c",
+    "examples/libero/benchmark_viewer/live.js": "3f38dba5d28a0b526e05fbae935e79a35732ba24284105ede11dbca4b5324d02",
+    "examples/libero/benchmark_viewer/release_values.js": "6f7784730b4e63f7001e642f312f9e76b04d906cf2b98bc6a8e27ab038b4b905"
+  },
+  "evaluation_started": false,
+  "existing_results_modified": false
+}

@@ -1,0 +1,9 @@
+2026-11-07 startup checks
+Command run in /media/czl/sata/franka_my_code/franka_mujoco:
+UV_CACHE_DIR=/tmp/tasktol-full-annotation-uv uv run --offline --no-sync pytest -q tests/test_ema_release_consistency.py tests/test_zero_tolerance_nominal_reference.py tests/test_baseline_relative_clearance.py tests/test_libero_authored_caps.py tests/test_libero_floor_support.py tests/test_libero_annotation_adapter.py
+Result: 79 passed, 1 warning in 5.42s.
+Warning: torch.jit.script FutureWarning in GP resume test; no failed tests.
+Supervisor syntax: python3 -m py_compile passed.
+Host process check: supervisor9702 -> annotation9704 -> six process-pool workers -> six real search subprocesses9755..9760.
+Startup data: first6 prepared inputs and zero baselines checked; cache85, 20Hz, no physics/task scene/objects, epsilon0.1mm, complete zero trajectories.
+All request code hashes verified after startup. No dependencies installed or production source changed by this launch.

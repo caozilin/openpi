@@ -1,0 +1,13 @@
+{
+  "pyarrow": "20.0.0",
+  "pillow": "11.2.1",
+  "parquet_reserialize_same_sha": true,
+  "source_sha256": "98ee06c2071f5e3fb8f8dc0f4c7e9f302e886fc2ec0b20c87bab7b6a07b52008",
+  "reserialized_sha256": "98ee06c2071f5e3fb8f8dc0f4c7e9f302e886fc2ec0b20c87bab7b6a07b52008",
+  "first_png_reencode_same_bytes": true,
+  "imageio_ffmpeg_available": true,
+  "ffmpeg": "/usr/bin/ffmpeg",
+  "production_files_modified": false,
+  "source": "/mnt/SharedData/czl/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109/data/chunk-000/episode_000002.parquet",
+  "probe_output": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/transport_compatibility/episode_000002_reencoded.parquet"
+}

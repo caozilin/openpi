@@ -1,0 +1,10 @@
+{
+  "pid": 30768,
+  "start_ticks": 774657,
+  "command": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/pipeline.py",
+  "at": "2026-11-10T17:02:30.186210+08:00",
+  "pipeline_sha256": "8dc6d567926764e54e8023e86d4cf4203a48d33677552f9cba9b50ccf74d2cad",
+  "continued_committed_episodes": 66,
+  "request_sha256": "604ae8feda0cb6efd441f0c2ab8a7243ab7e000e8180554c30485ae12457f004",
+  "transport_only_amendment": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/transport_recovery_amendment.json"
+}

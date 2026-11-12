@@ -1,0 +1,505 @@
+{
+  "config_source": "/mnt/SharedData/czl/swanlog/run-20261028_001729-iiaue9yel2f2z00b5nozc/files/config.yaml",
+  "config": {
+    "assets_base_dir": "./assets",
+    "batch_size": 84,
+    "checkpoint_base_dir": "/mnt/SharedData/czl/checkpoints",
+    "data": {
+      "assets": {
+        "asset_id": null,
+        "assets_dir": "/mnt/SharedData/czl/assets/pi05_franka_mujoco_joint13"
+      },
+      "base_config": {
+        "action_sequence_keys": [
+          "actions"
+        ],
+        "action_space": null,
+        "asset_id": null,
+        "data_transforms": {
+          "inputs": [],
+          "outputs": []
+        },
+        "datasets": [],
+        "hf_datasets_cache_dir": null,
+        "lerobot_arrow_cache_dir": null,
+        "lerobot_dataset_root": null,
+        "model_transforms": {
+          "inputs": [],
+          "outputs": []
+        },
+        "norm_stats": null,
+        "prompt_from_task": true,
+        "repack_transforms": {
+          "inputs": [],
+          "outputs": []
+        },
+        "repo_id": null,
+        "rlds_data_dir": null,
+        "source_schema": null,
+        "use_quantile_norm": false
+      },
+      "hf_datasets_cache_dir": "/mnt/SharedData/czl/hf_datasets/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+      "joint_task_tolerance": true,
+      "lerobot_arrow_cache_dir": null,
+      "lerobot_dataset_root": "/mnt/SharedData/czl/lerobot/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+      "repo_id": "caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+      "tolerance_trajectory_action_loss_weight": 4.0
+    },
+    "ema_decay": null,
+    "exp_name": "TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027",
+    "freeze_filter": "All(PathRegex(pattern=re.compile('.*llm.*'), sep='/'), Not(PathRegex(pattern=re.compile('.*lora.*'), sep='/')))",
+    "fsdp_devices": 1,
+    "keep_period": 1500,
+    "log_interval": 10,
+    "lr_schedule": {
+      "decay_lr": 5e-06,
+      "decay_steps": 9000,
+      "peak_lr": 5e-05,
+      "warmup_steps": 300
+    },
+    "model": {
+      "action_dim": 13,
+      "action_expert_variant": "gemma_300m_lora",
+      "action_horizon": 16,
+      "action_loss_groups": [
+        [
+          "action",
+          0,
+          7,
+          1.0
+        ],
+        [
+          "rotation_tolerance",
+          7,
+          13,
+          0.5
+        ]
+      ],
+      "discrete_state_input": false,
+      "dtype": "bfloat16",
+      "max_token_len": 48,
+      "paligemma_variant": "gemma_2b_lora",
+      "pi05": true
+    },
+    "name": "pi05_tasktol_mix20_4xloss_7gpu_9k",
+    "num_train_steps": 9000,
+    "num_workers": 8,
+    "optimizer": {
+      "b1": 0.9,
+      "b2": 0.95,
+      "clip_gradient_norm": 1.0,
+      "eps": 1e-08,
+      "weight_decay": 1e-10
+    },
+    "overwrite": false,
+    "policy_metadata": null,
+    "project_name": "openpi-tasktol",
+    "pytorch_training_precision": "bfloat16",
+    "pytorch_weight_path": null,
+    "resume": false,
+    "save_interval": 1500,
+    "seed": 42,
+    "swanlab_enabled": true,
+    "swanlab_log_dir": "/mnt/SharedData/czl/swanlog",
+    "swanlab_mode": "online",
+    "swanlab_workspace": null,
+    "validation2_hf_datasets_cache_dir": null,
+    "validation2_lerobot_arrow_cache_dir": null,
+    "validation2_lerobot_dataset_root": null,
+    "validation2_name": "val2",
+    "validation2_repo_id": null,
+    "validation_batch_size_factor": 1.0,
+    "validation_hf_datasets_cache_dir": null,
+    "validation_lerobot_arrow_cache_dir": null,
+    "validation_lerobot_dataset_root": null,
+    "validation_name": "val1",
+    "validation_num_batches": 16,
+    "validation_repo_id": null,
+    "weight_loader": {
+      "params_path": "gs://openpi-assets/checkpoints/pi05_base/params",
+      "skip_mismatched_shapes": true
+    }
+  },
+  "initialization_log": [
+    "00:19:17.969 [I] Initializing action_in_proj/kernel instead of loading checkpoint shape (32, 1024) into (13, 1024) (1509284:weight_loaders.py:107)",
+    "00:19:17.969 [I] Initializing action_out_proj/bias instead of loading checkpoint shape (32,) into (13,) (1509284:weight_loaders.py:107)",
+    "00:19:17.969 [I] Initializing action_out_proj/kernel instead of loading checkpoint shape (1024, 32) into (1024, 13) (1509284:weight_loaders.py:107)"
+  ],
+  "selected_metrics": [
+    {
+      "step": 10,
+      "grad_norm": 1.916,
+      "loss": 3.1925,
+      "loss/action": 1.3373,
+      "loss/rotation_tolerance": 2.0056,
+      "loss/total": 3.1925,
+      "loss_weighted/action": 2.1897,
+      "loss_weighted/rotation_tolerance": 1.0028,
+      "param_norm": 1803.6649
+    },
+    {
+      "step": 100,
+      "grad_norm": 1.5454,
+      "loss": 2.6267,
+      "loss/action": 1.1513,
+      "loss/rotation_tolerance": 1.7171,
+      "loss/total": 2.6267,
+      "loss_weighted/action": 1.7681,
+      "loss_weighted/rotation_tolerance": 0.8586,
+      "param_norm": 1803.6676
+    },
+    {
+      "step": 1000,
+      "grad_norm": 2.7691,
+      "loss": 0.4254,
+      "loss/action": 0.1407,
+      "loss/rotation_tolerance": 0.3864,
+      "loss/total": 0.4254,
+      "loss_weighted/action": 0.2322,
+      "loss_weighted/rotation_tolerance": 0.1932,
+      "param_norm": 1803.9003
+    },
+    {
+      "step": 3000,
+      "grad_norm": 1.5734,
+      "loss": 0.2076,
+      "loss/action": 0.0668,
+      "loss/rotation_tolerance": 0.2047,
+      "loss/total": 0.2076,
+      "loss_weighted/action": 0.1053,
+      "loss_weighted/rotation_tolerance": 0.1024,
+      "param_norm": 1804.3848
+    },
+    {
+      "step": 6000,
+      "grad_norm": 1.1888,
+      "loss": 0.1039,
+      "loss/action": 0.0356,
+      "loss/rotation_tolerance": 0.1006,
+      "loss/total": 0.1039,
+      "loss_weighted/action": 0.0536,
+      "loss_weighted/rotation_tolerance": 0.0503,
+      "param_norm": 1804.7233
+    },
+    {
+      "step": 8990,
+      "grad_norm": 1.0002,
+      "loss": 0.0775,
+      "loss/action": 0.0241,
+      "loss/rotation_tolerance": 0.0743,
+      "loss/total": 0.0775,
+      "loss_weighted/action": 0.0403,
+      "loss_weighted/rotation_tolerance": 0.0372,
+      "param_norm": 1804.7795
+    },
+    {
+      "step": 9000,
+      "grad_norm": 0.9109,
+      "loss": 0.0799,
+      "loss/action": 0.0267,
+      "loss/rotation_tolerance": 0.0741,
+      "loss/total": 0.0799,
+      "loss_weighted/action": 0.0428,
+      "loss_weighted/rotation_tolerance": 0.0371,
+      "param_norm": 1804.7795
+    }
+  ],
+  "mean_metrics_8500_9000": {
+    "grad_norm": 0.9462215686274508,
+    "loss": 0.08028039215686275,
+    "loss/action": 0.02635098039215687,
+    "loss/rotation_tolerance": 0.07719411764705882,
+    "loss/total": 0.08028039215686275,
+    "loss_weighted/action": 0.04168823529411764,
+    "loss_weighted/rotation_tolerance": 0.03859803921568627,
+    "param_norm": 1804.7775803921575
+  },
+  "data_audit": {
+    "complete": true,
+    "tasks": 25,
+    "episodes": 2500,
+    "frames": 421029,
+    "nominal": 2000,
+    "tolerance": 500,
+    "all_raw_files_verified": true,
+    "all_numeric_columns_exact": true,
+    "all_source_journal_entries_verified": true,
+    "dataset": "/mnt/SharedData/czl/lerobot/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+    "repo_id": "caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+    "raw_manifest_sha256": "8741ae971741c4887a8136b83a4b550f80c883ba90ab2bda0ddce93c58fb83ed"
+  },
+  "dataset_info": {
+    "codebase_version": "v2.1",
+    "robot_type": "tasktol_mujoco",
+    "total_episodes": 2500,
+    "total_frames": 421029,
+    "total_tasks": 75,
+    "total_videos": 0,
+    "total_chunks": 3,
+    "chunks_size": 1000,
+    "fps": 10,
+    "splits": {
+      "train": "0:2500"
+    },
+    "data_path": "data/chunk-{episode_chunk:03d}/episode_{episode_index:06d}.parquet",
+    "video_path": "videos/chunk-{episode_chunk:03d}/{video_key}/episode_{episode_index:06d}.mp4",
+    "features": {
+      "image": {
+        "dtype": "image",
+        "shape": [
+          224,
+          224,
+          3
+        ],
+        "names": [
+          "height",
+          "width",
+          "channel"
+        ]
+      },
+      "wrist_image": {
+        "dtype": "image",
+        "shape": [
+          224,
+          224,
+          3
+        ],
+        "names": [
+          "height",
+          "width",
+          "channel"
+        ]
+      },
+      "state": {
+        "dtype": "float32",
+        "shape": [
+          7
+        ],
+        "names": [
+          "state"
+        ]
+      },
+      "robot_id": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": [
+          "robot_id"
+        ]
+      },
+      "actions": {
+        "dtype": "float32",
+        "shape": [
+          7
+        ],
+        "names": [
+          "actions"
+        ]
+      },
+      "phase": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": [
+          "phase"
+        ]
+      },
+      "subtask_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": [
+          "subtask_index"
+        ]
+      },
+      "trajectory_is_tolerance": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": [
+          "is_tolerance"
+        ]
+      },
+      "rotation_tolerance": {
+        "dtype": "float32",
+        "shape": [
+          6
+        ],
+        "names": [
+          "rx_negative",
+          "rx_positive",
+          "ry_negative",
+          "ry_positive",
+          "rz_negative",
+          "rz_positive"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "task_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "source_schema": "tasktol_mujoco/8.0",
+    "source_dataset_release_version": "5.0",
+    "joint_task_tolerance": true,
+    "tolerance_labels": {
+      "file": "tolerance_labels.json",
+      "schema_version": "1.0",
+      "dimension": 6,
+      "units": "rad",
+      "order": [
+        "rx_negative",
+        "rx_positive",
+        "ry_negative",
+        "ry_positive",
+        "rz_negative",
+        "rz_positive"
+      ],
+      "coordinate_convention": "fixed_axis_xyz_rpy",
+      "rotation_composition": "Rz(yaw) @ Ry(pitch) @ Rx(roll)",
+      "reference": "realtime_nominal",
+      "assignment": "subtask_index_and_phase",
+      "missing_labels": "unlabeled; never substitute zero for Pre/Post",
+      "strict_phases": [
+        "grasp",
+        "release"
+      ]
+    }
+  },
+  "completion_audit": {
+    "complete": true,
+    "config": "pi05_tasktol_mix20_4xloss_7gpu_9k",
+    "experiment": "TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027",
+    "repo_id": "caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+    "total_steps": 9000,
+    "global_batch": 84,
+    "gpu_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "training_exit_code": 0,
+    "finalized_checkpoints": [
+      {
+        "step": 1500,
+        "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/1500",
+        "files": 41,
+        "bytes": 9585741479,
+        "metadata_readable": true
+      },
+      {
+        "step": 3000,
+        "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/3000",
+        "files": 35,
+        "bytes": 9581146164,
+        "metadata_readable": true
+      },
+      {
+        "step": 4500,
+        "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/4500",
+        "files": 32,
+        "bytes": 9581396174,
+        "metadata_readable": true
+      },
+      {
+        "step": 6000,
+        "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/6000",
+        "files": 40,
+        "bytes": 9584500318,
+        "metadata_readable": true
+      },
+      {
+        "step": 7500,
+        "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/7500",
+        "files": 40,
+        "bytes": 9586996864,
+        "metadata_readable": true
+      },
+      {
+        "step": 9000,
+        "path": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_4xloss_7gpu_9k/TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027/9000",
+        "files": 41,
+        "bytes": 9588138897,
+        "metadata_readable": true
+      }
+    ],
+    "all_900_log_steps_present": true,
+    "finite_logged_metrics": true,
+    "raw_and_lerobot_files_unchanged_since_audit": true,
+    "normalization_matches_all_checkpoints": true,
+    "swanlab_id": "iiaue9yel2f2z00b5nozc",
+    "data_audit_sha256": "819e767e9cda1bfac07c0222c3bb9d916d9bf92353087ea0e80053492077d19c",
+    "preflight_audit_sha256": "5403d8e06a7200e51ee46acbab7b8aa595d1534e98809364e4547e7c1071126d"
+  },
+  "training_command": {
+    "argv": [
+      "bash",
+      "examples/franka_mujoco/train_tasktol_mix20_4xloss_7gpu_9k.sh",
+      "--data.repo-id",
+      "caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+      "--data.lerobot-dataset-root",
+      "/mnt/SharedData/czl/lerobot/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+      "--data.hf-datasets-cache-dir",
+      "/mnt/SharedData/czl/hf_datasets/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027",
+      "--data.assets.assets-dir",
+      "/mnt/SharedData/czl/assets/pi05_franka_mujoco_joint13",
+      "--checkpoint-base-dir",
+      "/mnt/SharedData/czl/checkpoints",
+      "--exp-name",
+      "TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027",
+      "--swanlab-log-dir",
+      "/mnt/SharedData/czl/swanlog"
+    ],
+    "config": "pi05_tasktol_mix20_4xloss_7gpu_9k",
+    "experiment": "TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027",
+    "data_audit_sha256": "819e767e9cda1bfac07c0222c3bb9d916d9bf92353087ea0e80053492077d19c",
+    "preflight_sha256": "5403d8e06a7200e51ee46acbab7b8aa595d1534e98809364e4547e7c1071126d"
+  },
+  "norm_log_tail": [
+    "Computing 13-D stats: 100%|██████████| 421029/421029 [00:34<00:00, 12178.78frames/s]",
+    "Joint13 stats (state=7, actions=13): /mnt/SharedData/czl/assets/pi05_franka_mujoco_joint13/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027/norm_stats.json",
+    "Processed 421029 frames from 2500 episodes using lerobot",
+    "pi0.5 stats (state=7, actions=7): /mnt/SharedData/czl/assets/pi05_franka_mujoco/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027/norm_stats.json",
+    "",
+    "NORM_STATS_EXIT=0"
+  ]
+}

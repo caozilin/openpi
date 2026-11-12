@@ -1,0 +1,35 @@
+{
+  "scripts/train.py": {
+    "local_sha256": "cb579a9793941f007d7eaf9cec358db8aa02e0726baca3e5b1c654fc8953d215",
+    "upstream_sha256": "22f98a06aaa6e68e0f725d727ab95398238d1cae8a46bb94e829f330758a9baf",
+    "module_ast_identical": false
+  },
+  "src/openpi/training/sharding.py": {
+    "local_sha256": "c67c4112a126ab097571c8a882fd1ee3f106b15b6e608e7205ac7f29b44ca985",
+    "upstream_sha256": "c67c4112a126ab097571c8a882fd1ee3f106b15b6e608e7205ac7f29b44ca985",
+    "module_ast_identical": true
+  },
+  "src/openpi/training/optimizer.py": {
+    "local_sha256": "cfb5d6f6aec61fbe961287b4015c652260628a0ed4682a0dbdc271b8e65431fa",
+    "upstream_sha256": "cfb5d6f6aec61fbe961287b4015c652260628a0ed4682a0dbdc271b8e65431fa",
+    "module_ast_identical": true
+  },
+  "src/openpi/training/data_loader.py": {
+    "local_sha256": "0feba3d1a9969dc364cf3d7f95e17368bdc708867a35cef1139bf7e22b79fe55",
+    "upstream_sha256": "4d0b055ac28527c1ab1f0ba7496057722c7c748c88564a8de2ff4fac650e97c9",
+    "module_ast_identical": false
+  },
+  "train.init_train_state": {
+    "ast_identical": true
+  },
+  "train.train_step": {
+    "ast_identical": false,
+    "identical_top_level_statements": 14
+  },
+  "main_parallel_assignments": {
+    "mesh": true,
+    "data_sharding": true,
+    "replicated_sharding": true,
+    "ptrain_step": true
+  }
+}

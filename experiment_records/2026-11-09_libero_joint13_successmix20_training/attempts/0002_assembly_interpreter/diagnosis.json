@@ -1,0 +1,5 @@
+{
+  "reason": "Assembly used systemPython missingPyArrow; failed during import before reading/removing files",
+  "repair": "Use existing repository .venv for assembly, no install",
+  "replacements_preserved": 301
+}

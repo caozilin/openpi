@@ -1,0 +1,14 @@
+{
+  "server_nominal": {
+    "tasks": 75,
+    "max_tokens": 32,
+    "all_fit_48": true,
+    "longest_prompt": "Remove the lid from the pot and place it on the table, then place the green pear in the pot, and finally replace the lid on the pot"
+  },
+  "reconstructed_libero": {
+    "tasks": 40,
+    "max_tokens": 21,
+    "all_fit_48": true,
+    "longest_prompt": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate"
+  }
+}

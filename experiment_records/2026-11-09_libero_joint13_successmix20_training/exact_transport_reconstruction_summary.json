@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "episodes_verified": 1875,
+  "preexisting_verified": 802,
+  "rebuilt_exact_sha": 1073,
+  "errors": 0,
+  "original_file_fallbacks": 0,
+  "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+  "scope": "all Parquet files exact to original local SHA; independent upload verification still pending"
+}

@@ -1,0 +1,40 @@
+{
+  "attempts": [
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 30,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 30,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model": "VariationalELBO",
+      "status": "SUCCESS",
+      "iterations": 30,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 30,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 29,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model": "VariationalELBO",
+      "status": "SUCCESS",
+      "iterations": 33,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    }
+  ]
+}

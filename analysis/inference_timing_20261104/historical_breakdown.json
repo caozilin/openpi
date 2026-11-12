@@ -1,0 +1,110 @@
+{
+  "pi05_reconstructed_10000_nominal_hold20_formal_seed0to5_20261104": {
+    "all": {
+      "episodes": 240,
+      "request_mean_seconds": 3.4590843115398675,
+      "non_request_seconds_per_action": 0.023087104191817382
+    },
+    "exclude_first_six": {
+      "episodes": 234,
+      "request_mean_seconds": 3.4412872201312505,
+      "non_request_seconds_per_action": 0.02238844319393442
+    },
+    "per_suite": {
+      "libero_spatial": {
+        "episodes": 60,
+        "request_mean_seconds": 3.202068041558402,
+        "non_request_seconds_per_action": 0.032030684606910685
+      },
+      "libero_object": {
+        "episodes": 60,
+        "request_mean_seconds": 4.296198092106527,
+        "non_request_seconds_per_action": 0.02277233327955148
+      },
+      "libero_goal": {
+        "episodes": 60,
+        "request_mean_seconds": 3.4420968767176388,
+        "non_request_seconds_per_action": 0.023448988828485104
+      },
+      "libero_10": {
+        "episodes": 60,
+        "request_mean_seconds": 3.123690179662259,
+        "non_request_seconds_per_action": 0.019531115698378544
+      }
+    },
+    "first_finished": "2026-11-04T19:27:50.009847+08:00",
+    "last_finished": "2026-11-04T20:45:41.080126+08:00"
+  },
+  "pi05_reconstructed_10000_nominal_hold20_40tasks_10seeds_extension_20261104": {
+    "all": {
+      "episodes": 160,
+      "request_mean_seconds": 0.5554508185581085,
+      "non_request_seconds_per_action": 0.022348905995816477
+    },
+    "exclude_first_six": {
+      "episodes": 154,
+      "request_mean_seconds": 0.4729141279482748,
+      "non_request_seconds_per_action": 0.02157019485906818
+    },
+    "per_suite": {
+      "libero_spatial": {
+        "episodes": 40,
+        "request_mean_seconds": 1.1154854469137023,
+        "non_request_seconds_per_action": 0.032614577866685056
+      },
+      "libero_object": {
+        "episodes": 40,
+        "request_mean_seconds": 0.5197475852370071,
+        "non_request_seconds_per_action": 0.021800702339681854
+      },
+      "libero_goal": {
+        "episodes": 40,
+        "request_mean_seconds": 0.3914153393049867,
+        "non_request_seconds_per_action": 0.021732167250593327
+      },
+      "libero_10": {
+        "episodes": 40,
+        "request_mean_seconds": 0.43896178680597775,
+        "non_request_seconds_per_action": 0.018992374075648546
+      }
+    },
+    "first_finished": "2026-11-04T09:25:35.918864+08:00",
+    "last_finished": "2026-11-04T09:34:42.754294+08:00"
+  },
+  "pi05_reconstructed_10000_tol30_confirmedmask_hold20_40tasks_10seeds_20261104": {
+    "all": {
+      "episodes": 400,
+      "request_mean_seconds": 0.9192742186463668,
+      "non_request_seconds_per_action": 0.02575913065854458
+    },
+    "exclude_first_six": {
+      "episodes": 394,
+      "request_mean_seconds": 0.8850747114761217,
+      "non_request_seconds_per_action": 0.0254891449778599
+    },
+    "per_suite": {
+      "libero_spatial": {
+        "episodes": 100,
+        "request_mean_seconds": 1.092332234114279,
+        "non_request_seconds_per_action": 0.03482357789500591
+      },
+      "libero_object": {
+        "episodes": 100,
+        "request_mean_seconds": 0.8546573787169824,
+        "non_request_seconds_per_action": 0.034353992518641546
+      },
+      "libero_goal": {
+        "episodes": 100,
+        "request_mean_seconds": 0.8954343585991711,
+        "non_request_seconds_per_action": 0.023540442500755154
+      },
+      "libero_10": {
+        "episodes": 100,
+        "request_mean_seconds": 0.8967754292571686,
+        "non_request_seconds_per_action": 0.01873711657646469
+      }
+    },
+    "first_finished": "2026-11-04T10:56:31.205224+08:00",
+    "last_finished": "2026-11-04T11:35:25.037897+08:00"
+  }
+}

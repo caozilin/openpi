@@ -1,0 +1,211 @@
+{
+  "global_batch": 24,
+  "throughput_all_steady": {
+    "6": {
+      "first_step": 22.0,
+      "last_step": 349.0,
+      "points": 67,
+      "seconds": 750.1329998970032,
+      "seconds_per_step": 2.2939847091651475,
+      "regression_seconds_per_step": 2.29704843524833,
+      "interval_seconds_per_step_p25_p50_p75": [
+        1.6394999963896617,
+        2.254000020027161,
+        3.7340833147366843
+      ],
+      "samples_per_second": 10.46214471444073,
+      "samples_per_second_per_gpu": 1.7436907857401216
+    },
+    "3": {
+      "first_step": 25.0,
+      "last_step": 279.0,
+      "points": 69,
+      "seconds": 848.3610000610352,
+      "seconds_per_step": 3.34000393724817,
+      "regression_seconds_per_step": 3.3209693407707066,
+      "interval_seconds_per_step_p25_p50_p75": [
+        3.2630624771118164,
+        3.3106250166893005,
+        3.361500004927317
+      ],
+      "samples_per_second": 7.18562027198495,
+      "samples_per_second_per_gpu": 2.395206757328317
+    },
+    "2": {
+      "first_step": 24.0,
+      "last_step": 239.0,
+      "points": 66,
+      "seconds": 854.3239998817444,
+      "seconds_per_step": 3.973599999449974,
+      "regression_seconds_per_step": 3.93985949356476,
+      "interval_seconds_per_step_p25_p50_p75": [
+        2.452999973297119,
+        3.9536666870117188,
+        7.646999955177307
+      ],
+      "samples_per_second": 6.039863097272519,
+      "samples_per_second_per_gpu": 3.0199315486362597
+    }
+  },
+  "throughput_simultaneous_overlap": {
+    "3": {
+      "first_step": 25.0,
+      "last_step": 279.0,
+      "points": 69,
+      "seconds": 848.3610000610352,
+      "seconds_per_step": 3.34000393724817,
+      "regression_seconds_per_step": 3.3209693407707066,
+      "interval_seconds_per_step_p25_p50_p75": [
+        3.2630624771118164,
+        3.3106250166893005,
+        3.361500004927317
+      ],
+      "samples_per_second": 7.18562027198495,
+      "samples_per_second_per_gpu": 2.395206757328317
+    },
+    "2": {
+      "first_step": 24.0,
+      "last_step": 237.0,
+      "points": 65,
+      "seconds": 839.1710000038147,
+      "seconds_per_step": 3.9397699530695527,
+      "regression_seconds_per_step": 3.9379037529838237,
+      "interval_seconds_per_step_p25_p50_p75": [
+        2.451799988746643,
+        3.948333342870076,
+        7.653374940156937
+      ],
+      "samples_per_second": 6.091726239320427,
+      "samples_per_second_per_gpu": 3.0458631196602135
+    }
+  },
+  "simultaneous_overlap_unix": [
+    1793267414.42,
+    1793268276.767
+  ],
+  "selected_same_step_losses": [
+    {
+      "step": 10,
+      "samples": 240,
+      "6gpu_loss": 0.365,
+      "3gpu_loss": 0.3649,
+      "2gpu_loss": 0.3653
+    },
+    {
+      "step": 50,
+      "samples": 1200,
+      "6gpu_loss": 0.284,
+      "3gpu_loss": 0.284,
+      "2gpu_loss": 0.2849
+    },
+    {
+      "step": 100,
+      "samples": 2400,
+      "6gpu_loss": 0.2445,
+      "3gpu_loss": 0.2439,
+      "2gpu_loss": 0.2472
+    },
+    {
+      "step": 150,
+      "samples": 3600,
+      "6gpu_loss": 0.2446,
+      "3gpu_loss": 0.2463,
+      "2gpu_loss": 0.2496
+    },
+    {
+      "step": 200,
+      "samples": 4800,
+      "6gpu_loss": 0.2028,
+      "3gpu_loss": 0.2033,
+      "2gpu_loss": 0.2034
+    }
+  ],
+  "same_sample_windows": [
+    {
+      "sample_interval": [
+        0,
+        1680
+      ],
+      "6gpu_loss": 0.3206428571428571,
+      "3gpu_loss": 0.32068571428571424,
+      "2gpu_loss": 0.32184285714285715
+    },
+    {
+      "sample_interval": [
+        1680,
+        3360
+      ],
+      "6gpu_loss": 0.23214285714285715,
+      "3gpu_loss": 0.2322857142857143,
+      "2gpu_loss": 0.2336285714285714
+    },
+    {
+      "sample_interval": [
+        3360,
+        5040
+      ],
+      "6gpu_loss": 0.20031428571428572,
+      "3gpu_loss": 0.20084285714285713,
+      "2gpu_loss": 0.20235714285714285
+    }
+  ],
+  "pointwise_loss_differences": {
+    "3gpu_vs_2gpu": {
+      "mean_absolute_loss_difference": 0.001358333333333333,
+      "max_absolute_loss_difference": 0.0032999999999999974,
+      "points": 24
+    },
+    "6gpu_vs_3gpu": {
+      "mean_absolute_loss_difference": 0.0005208333333333315,
+      "max_absolute_loss_difference": 0.0020999999999999908,
+      "points": 24
+    },
+    "6gpu_vs_2gpu": {
+      "mean_absolute_loss_difference": 0.0016875000000000026,
+      "max_absolute_loss_difference": 0.004999999999999977,
+      "points": 24
+    }
+  },
+  "runtimes": {
+    "3": {
+      "final_step": 280,
+      "samples": 6720,
+      "status": "completed_short_run",
+      "returncode": -2,
+      "actual_postcompile_seconds": 922.347158908844,
+      "process_wall_seconds": 1148.022285604151
+    },
+    "2": {
+      "final_step": 240,
+      "samples": 5760,
+      "status": "completed_short_run",
+      "returncode": -2,
+      "actual_postcompile_seconds": 939.2844791412354,
+      "process_wall_seconds": 1157.0605412442237
+    }
+  },
+  "resources_overlap": {
+    "3": {
+      "median_gpu_utilization_percent": 100.0,
+      "median_gpu_power_watts": 275.15,
+      "load_average_1m_min_max": [
+        14.84,
+        22.24
+      ]
+    },
+    "2": {
+      "median_gpu_utilization_percent": 100.0,
+      "median_gpu_power_watts": 324.565,
+      "load_average_1m_min_max": [
+        14.84,
+        22.24
+      ]
+    }
+  },
+  "limits": [
+    "3GPU and 2GPU ran concurrently; shared CPU, memory, storage, and PCIe effects are included.",
+    "6GPU measurement was earlier, not simultaneous.",
+    "GPU subsets/topology differ; this is not an isolated communication profile.",
+    "Loss means are printed to four decimals and measured on training batches, not a common held-out validation set."
+  ]
+}

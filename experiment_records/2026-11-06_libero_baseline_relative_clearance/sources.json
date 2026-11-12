@@ -1,0 +1,6 @@
+{
+  "run": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_pilot_20261106",
+  "request": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_pilot_20261106/annotation_request.json",
+  "audit": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_pilot_20261106/annotation_independent_final_audit.json",
+  "source": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_4"
+}

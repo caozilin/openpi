@@ -1,0 +1,24 @@
+{
+  "matching_fields": [
+    "model",
+    "batch_size",
+    "num_workers",
+    "lr_schedule",
+    "optimizer",
+    "ema_decay",
+    "freeze_filter",
+    "fsdp_devices",
+    "log_interval",
+    "save_interval",
+    "keep_period",
+    "weight_loader"
+  ],
+  "comparison_passed": true,
+  "expected_changes": [
+    "existing nominal dataset and matching norm stats",
+    "100 executed steps; schedule remains 10000",
+    "SwanLab disabled",
+    "isolated output paths; final checkpoint omitted"
+  ],
+  "formal_warmup": 333
+}

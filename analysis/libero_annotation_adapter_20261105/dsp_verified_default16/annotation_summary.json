@@ -1,0 +1,25 @@
+{
+  "complete": true,
+  "processing_complete": true,
+  "all_labeled": true,
+  "processed": 1,
+  "labeled": 1,
+  "no_feasible_label": 0,
+  "adapter_errors": 0,
+  "results": [
+    {
+      "complete": true,
+      "status": "labeled",
+      "source_episode_index": 0,
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "demo": "demo_0",
+      "frames": 97,
+      "semantic_subtasks": 1,
+      "extra": 16,
+      "preflight": false,
+      "label_policy": "speed_best_feasible_search_caps_v1",
+      "labels": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/dsp_verified_default16/libero_spatial/task_00/demo_0/tolerance_labels.json"
+    }
+  ]
+}

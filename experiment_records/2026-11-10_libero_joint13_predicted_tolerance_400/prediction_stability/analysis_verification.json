@@ -1,0 +1,51 @@
+{
+  "complete": true,
+  "scope": "Independent CSV-to-summary arithmetic and source immutability, not final rollout audit",
+  "checks": [
+    {
+      "kind": "raw",
+      "metric": "within_range",
+      "n": 38268,
+      "independent_mean": 0.42406933310946066
+    },
+    {
+      "kind": "raw",
+      "metric": "within_std",
+      "n": 38268,
+      "independent_mean": 0.16666110349978155
+    },
+    {
+      "kind": "raw",
+      "metric": "adjacent_block_mean_delta",
+      "n": 34170,
+      "independent_mean": 2.2856139538907856
+    },
+    {
+      "kind": "clipped",
+      "metric": "within_range",
+      "n": 38268,
+      "independent_mean": 0.35662748971006697
+    },
+    {
+      "kind": "clipped",
+      "metric": "within_std",
+      "n": 38268,
+      "independent_mean": 0.14271192228578072
+    },
+    {
+      "kind": "clipped",
+      "metric": "adjacent_block_mean_delta",
+      "n": 34170,
+      "independent_mean": 2.1337581503050385
+    }
+  ],
+  "source_files": 476,
+  "artifacts_sha256": {
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/prediction_stability/blocks.csv": "b4692e43e82d5bdc47d39806d0564d7f90eba2d30778c3114aae783b92efd6ad",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/prediction_stability/summary.json": "5415e30167d43389eddf7bb1092aac85032ce1be6c9751a20a054624edaff464",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/prediction_stability/continuous_segments.csv": "e617ad60aa69b0d6a62d3f28098037583da72efcfdb485268ad9c013e12cef88",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/prediction_stability/sources.json": "fc97c2a3cc160f169716482897de38003197821e62fb59814ad7cd93b9eb7eb7",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/prediction_stability/adjacent_block_pairs.csv": "18309085afba86d5edb2a6302a31525fd0f74d44265ef8293001ca1d682d59e5",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/prediction_stability/largest_within_block_changes.json": "feecc919c588fb83eea4a731e5423e205293ea589569179d74b3acef4107a87f"
+  }
+}

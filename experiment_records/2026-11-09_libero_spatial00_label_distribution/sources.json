@@ -1,0 +1,855 @@
+{
+  "files": [
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/plan.json",
+      "sha256": "74d53d11bdc604b2b167a007001fe1ac342d9c7253b43aa20d8090fc041f4bcf"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/annotation_request.json",
+      "sha256": "0f568d2b5b0df2a3f0e7876ee6d06be70a2c9fd15c148cb8a22987e1bc34b417"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/selection.json",
+      "sha256": "f2b99a600e6b026a3239e54eea30f6b8053121891972a8093405d3e5e81ba10c"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/annotation_independent_final_audit.json",
+      "sha256": "fda5995f1dd43d96b6861d920761115a8b8b882ff98e6493d87975febbbc56bb"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_0/tolerance_labels.json",
+      "sha256": "4415dc13bab2aa55221e71c022b625209d99497bc3371befab85a4e76d50cb58"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_0/prepared_input.json",
+      "sha256": "d371a27c2bf9a62a23256c420d06861911545df60e91e6bdfb61e481757e4d56"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_0/subtask_00/annotation.json",
+      "sha256": "4e7e708a44c2d2c8b93f99ba4739d4471bb508163a6eafb0dc9e507b07014d20"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_0/subtask_00/evaluations/eb232c1c3762d2621910f9b914c093b276d7dad8133a7d458b78f39c291b9950/trial.json",
+      "sha256": "642c3997e53e07ac8ba08c69dc990e0b1e82e895db659a5f099ca8021f1fc73b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_1/tolerance_labels.json",
+      "sha256": "e4c1e1f17b4846133a7bb92f9441fb6652092a87ea9da3152aab9ab8ddf61f1e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_1/prepared_input.json",
+      "sha256": "3aef5dad8f5cfbf8851a950cd8b0117198f838efeceff2281cd2ccc3629f73cd"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_1/subtask_00/annotation.json",
+      "sha256": "ae67d416a5bba10eaa8b4ea0103423f1f9f3223543200bd4ce44609204491999"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_1/subtask_00/evaluations/3ca96772c5b13b955e1239f8bb58510c9b530567614f209d76b9d0ba29f738a6/trial.json",
+      "sha256": "2b549175653b4c67cb63b0b9fe55ae9d5c40a41502036bc01d9d93fbde63b4b5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_2/tolerance_labels.json",
+      "sha256": "82ef3d1b6c03c9b18b826fc66aefd0b913fcf00ecbabe4b5019896b3695e9e1e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_2/prepared_input.json",
+      "sha256": "cd88cd97b12b9b49c6a0fe628954cfc200693ded647d96d297d2f0b54f980ae6"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_2/subtask_00/annotation.json",
+      "sha256": "147a8035ad2fd3504926cce452b7db858faf50cb7f15fec17f95edf962f0ea5e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_2/subtask_00/evaluations/1a891a7912c78c71f6ffba0e3f308768abc84c5b483bd9d0d58d77f800e342d9/trial.json",
+      "sha256": "5ccbde882eff586558afaf52b81e84e277f453eb6575e91c220d8a24b2dc5ae7"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_3/tolerance_labels.json",
+      "sha256": "1859c862e5944593170f0e918664745a15d0ff6c3f42afcc7bc403873c482110"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_3/prepared_input.json",
+      "sha256": "79a3c443e523e798af5d85b51d425c0621d10b3a7f70a17bde140ebd32a794e1"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_3/subtask_00/annotation.json",
+      "sha256": "6aa3837fb52e61b8dbe6228d0022b9279f5c05709e924a48b0b81c3ceaa64ba1"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_3/subtask_00/evaluations/880f401f5332ac0af5ecd368b62a4d522e9e8226d61225eece2d9f3f07f3e757/trial.json",
+      "sha256": "298a75cdde97d61e0bf86eb45d6d56ede924123b17509c0944c3dac2fbe7cac5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_4/tolerance_labels.json",
+      "sha256": "6e3979891a791f971e634166d414bb446228d178335bf4b215bc481a1b4d6971"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_4/prepared_input.json",
+      "sha256": "e11d2ea70d07e955ae39f37308df55a0b5278987ad56a013b684ab2cf7d9984e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_4/subtask_00/annotation.json",
+      "sha256": "18d899cc8b5fd129763dd362e1315772dcba483a0c446d664d4f029ed6435aab"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_4/subtask_00/evaluations/7e74bd5059d9f971ee4aff67d48987066705c8d9300249d2f29e5d8ca9297ad4/trial.json",
+      "sha256": "7aef21fe3cc382c1a942eeb3adf6ddf7b03ba79769fb16f687a1579d1e3a39c6"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_5/tolerance_labels.json",
+      "sha256": "381a73145e529fa1be29b870e7d34fd8a221f6bd5357ef465142f03bb2a90ecc"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_5/prepared_input.json",
+      "sha256": "eedc045f2e15870013f623aadd52b4b123e0148699de157341897d4a6e00cb14"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_5/subtask_00/annotation.json",
+      "sha256": "97db46cf82e0c9ffa59f7d55874c9fd2b1f8d70367359c87311eee5a77ccc5d2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_5/subtask_00/evaluations/5861fa4a6405758184630acb9700ff623bef1ec0622edca0aac49eb0868126fd/trial.json",
+      "sha256": "2f4a21f0e88efefbbe9552ac72616267bf29abee332f8840fa18b8fb264be29b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_6/tolerance_labels.json",
+      "sha256": "720be499ccea03349b5f638d0d3c7f49bec28ac3258c1e07824bf02bad5120fc"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_6/prepared_input.json",
+      "sha256": "c8f2086cdc8a789c3fe8938cd0de9c5d19cd0a486958748d138ca541116d2cfb"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_6/subtask_00/annotation.json",
+      "sha256": "752db1e05e5ca3f3364c08a527f1ed35d026b0f8b92b1ebe471d13cb4890f78d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_6/subtask_00/evaluations/0fe9df8d8fc3c4297bee4734ab9ceba3c557841f2cb38f6e18db498225d7c9bd/trial.json",
+      "sha256": "11400e91b52ae7bfdc8c7fcfdbd662087a158d318611e12ef33a9edf6ee82ef1"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_7/tolerance_labels.json",
+      "sha256": "043bff1ff0d0514f7c490ca8ae2574ee0587ae81f210e9f1064be13ad37c2735"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_7/prepared_input.json",
+      "sha256": "f3ef676af410284e155338df99e6254ee51ee66b1872a2bc84a829167ee771ac"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_7/subtask_00/annotation.json",
+      "sha256": "9c0ee194ec1d7b05287f87ea2e69339297cfdec19151a6147a8f4bd03fcd1fa1"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_7/subtask_00/evaluations/38c2df396858bf5c287beb451ac06fa71d7b204a2c0906fcc449ba54d8d36078/trial.json",
+      "sha256": "6de9f0e8db62245c408f696a0abdf1d925d5f2caa2a8046a4ffd49b6bec7653e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_8/tolerance_labels.json",
+      "sha256": "b378e87aee60953cf90cf3f49a313332cbd741315333e8c09a3d7abf422e3b44"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_8/prepared_input.json",
+      "sha256": "ad19d1b2e89bea9317fa9ac29469195a8a4614b29e484fe2722766c29293a19d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_8/subtask_00/annotation.json",
+      "sha256": "c461ba65e520fb301fca15771051d714a222ede25f3e8e5160811624f973557e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_8/subtask_00/evaluations/fdd86c9b9695bdf89b354d436e30e0ee37e2d25adcd9ca49d3a70fce7eb07248/trial.json",
+      "sha256": "4eb78f61c1e68b9ee47f8962b729faab10d32bdc236d1f89ce5d96fdddafe9bf"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_9/tolerance_labels.json",
+      "sha256": "70273e8210076109e9dbd4fa14119fa68a90deaea0d593fdcdbad9fb49cbe31f"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_9/prepared_input.json",
+      "sha256": "fdbc97ac1e4249620f9a7a13853ca53f0013c1339f9c2d654b6e0a4e49969d06"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_9/subtask_00/annotation.json",
+      "sha256": "e7fe65c15a02d37fd97aa6ebc62a00f72f29f2c2eec96d35604a7a10c0142cd2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_9/subtask_00/evaluations/24d2d734cdd6cae86bb46356cf55512397545f2869f5c8b24211bd625a0f3a49/trial.json",
+      "sha256": "63dcf042967b75bc378c75c870dd5ab737cf88bc86c7696341199ae4441a0ca0"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_10/tolerance_labels.json",
+      "sha256": "0b8a017bc6b7c88cc685b9d42e1e9d4948426cd8fbf608e995773bef6695b3f3"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_10/prepared_input.json",
+      "sha256": "6a09a8cfb5ade8b9b5508d76cfa8e9ec7b2834cf4394a422c6d3fe1b73b4bea7"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_10/subtask_00/annotation.json",
+      "sha256": "bc799b908de531982bc0c2199a9369da526c5f91e83dc53a5e51001e2beffa8a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_10/subtask_00/evaluations/a18d6c678b5fb0a1f61363920ee5128ce99a28cbdd89dfb983c4f511db78db27/trial.json",
+      "sha256": "37caa2089fd33fceb5ba0a776b310ef30a4fc3920f9fe7d8a8df139a5225ebc8"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_11/tolerance_labels.json",
+      "sha256": "3972e2d22a02a7959c0aace29c12d17be4022bc67a6526df713ec10478a510bd"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_11/prepared_input.json",
+      "sha256": "324476a2970ace2befa89c96a8b6bc28c4058f2ea1b4be8199d3466f06b0ae94"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_11/subtask_00/annotation.json",
+      "sha256": "f0280f71a2e5d38972e800063e4235681cbbd4e374297f101cea7afc202271dd"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_11/subtask_00/evaluations/cb3594293b707b54ce1cea0b933252b9e3247bddcba9dc1ffdf461b5919b8bd1/trial.json",
+      "sha256": "1baef608c7140ad790206d4ffa43e8f93340ea3dbe544edb9dac82250989f3f3"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_12/tolerance_labels.json",
+      "sha256": "49e11a26265f795f222212d62e60ff25e5c5474720640d84cc9ed2d1e3a30948"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_12/prepared_input.json",
+      "sha256": "d1e28d047b748f245aacabfb6d889b2f93f4a4299609a15d64a2d98a14bfa288"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_12/subtask_00/annotation.json",
+      "sha256": "efbf2376e8fabc78852cdfd8f3333796cdb4067b0d419c536aa3b2bfbd5d3e3d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_12/subtask_00/evaluations/86c97ac63ebedbe99570c67cd4673d884d6a70600e14ce43e4c29b08b217a612/trial.json",
+      "sha256": "50256b47618d99f1c26e7562b4e05c43a0078fcbb3038c20f01ca7a64c8e3649"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_13/tolerance_labels.json",
+      "sha256": "89c1ae4540408ad821bf8d4b89c49dd6650055bb292db2798a5f7311a074f372"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_13/prepared_input.json",
+      "sha256": "1b5e781d49a02a6bc04ad3983ac4da62b19d79b5a696a2c8041da80ff785d25a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_13/subtask_00/annotation.json",
+      "sha256": "0bbba964c0728f9e0558ff64e946932fc3002718a431e02e75d5bef0bc28b514"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_13/subtask_00/evaluations/d5f430db9521bc72ff4fde1c015ecc17735bc8bb6653cc775faee97adbd768f2/trial.json",
+      "sha256": "96b764e955ff5c6e835b7051f0ce0c1ff2964cbcf009af98b588e2d43e85796c"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_14/tolerance_labels.json",
+      "sha256": "656369a98caf39cf2aa0422fe5d30708e04db1da38729cb3991ab6e566d8afea"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_14/prepared_input.json",
+      "sha256": "4ffdbb3b84cc48cb7b077c7bca32515d5aecfd9b9ad3d9f9c652fb9ee22d586c"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_14/subtask_00/annotation.json",
+      "sha256": "ef9078cd89103d053b223f364fefd199f093d5a61eed5b8c4d021e8b0ef35801"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_14/subtask_00/evaluations/f8dab05d829c1d4c0f93299947df16190b47b597cc0d6645bdb9f6c42d7b2e4d/trial.json",
+      "sha256": "f6a944b9c842c8a7728d5fab76ebd536f419b45efe559abb27d3e09f761f0f53"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_15/tolerance_labels.json",
+      "sha256": "5a7c16a6d80ece9eddbc1dfe32a9a4b8ab50b56c940d44966cf8b5d289b0ce43"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_15/prepared_input.json",
+      "sha256": "ce97ccf6ee8b23da205a459ed1557157a1bc85903c2e346a08c783d39770e1f0"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_15/subtask_00/annotation.json",
+      "sha256": "73b680c95402dc45c9451ffb5224f6822d2587815a66f1f2a328fbbd42ed6798"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_15/subtask_00/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "7a62936d3aa08e8d9f367d9ebb0523453e998500a8cc96687b2514c5bf901ee6"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_16/tolerance_labels.json",
+      "sha256": "6a0de77b7e824b96d7bb6b36dfe897f65f8dcd2fb662665474c48b6951da20b5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_16/prepared_input.json",
+      "sha256": "cb86ef771a78b1969eeb78050d4a4a3a0bde783ed13c59968b5f1923910f0565"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_16/subtask_00/annotation.json",
+      "sha256": "c5571457da5f0262e20062d1631fc275bf54632024ff1084e42def9f176eaa5c"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_16/subtask_00/evaluations/d13da1f62712af320771e8d6ced2cb9dbabae6092e0ac8efdd7ea9cc7593c1a3/trial.json",
+      "sha256": "fce7a88cacf5b8ac779e4c832da657d44cd05d84e225af661e9ddda05ede89f6"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_17/tolerance_labels.json",
+      "sha256": "8929963c026ebba8af27dd8e1c8e5e42185fbc119a62f19180ddb4d37c4a04a3"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_17/prepared_input.json",
+      "sha256": "4aae5b4d49ad4b0273a5371c486522c1a19e545cd15096410180bab3e8ac9438"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_17/subtask_00/annotation.json",
+      "sha256": "d7c1beceb4ea9d9481bcf4bcb780db9bec6a29b3cdb150903222b2d969d8e8ed"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_17/subtask_00/evaluations/9616379cd1c0b783a70417fc338db529e7d373fc1ad98d79ed9e2566b90cba28/trial.json",
+      "sha256": "4fc0ea3f98241ada5686e511056393faeecc3076a69396a44d0c3ff3a1d53036"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_18/tolerance_labels.json",
+      "sha256": "caefb9e65f28cde4ad633636da2eb6c04b86466dc697ce79927b1e1264130820"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_18/prepared_input.json",
+      "sha256": "90acc6a3afaa1b42a1e6b4bdc4d9acf69b90f495f845239cfc72faa7926a0b4f"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_18/subtask_00/annotation.json",
+      "sha256": "03eacc83e796226a00862b432e076b2f99bb80fac4ab18982f80290f4ced3296"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_18/subtask_00/evaluations/93a3f21a584f054dd8893c748590ec1ef7a7bfe864a9d3213ef35b9e6002d9bb/trial.json",
+      "sha256": "15ad1651997d8c7506f8b91b1c07c31a266e3f65e9288a7dd70b26b06fdb6f4e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_19/tolerance_labels.json",
+      "sha256": "28979013d390f33e7d9b7c27a8faa15307e7b3b1c155715e25c1ce9fe84975bd"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_19/prepared_input.json",
+      "sha256": "47ecb659ca7421f90d14b3bfc4e2c1a1f4148822e220eefa6f820e27216e3bf4"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_19/subtask_00/annotation.json",
+      "sha256": "9d687a0f25965b602ef30f1335c553a209267fab85b37a45540998ef67f72e7d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_19/subtask_00/evaluations/6e0ef30de375c46985059bcd91c66f7aafd7a1b9acba0dd0ecb9a5e18fa60e92/trial.json",
+      "sha256": "8fabbe99c814f7108c3e647d44ab77e8331eb4f83194172f57b0d03a77457844"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_20/tolerance_labels.json",
+      "sha256": "16b20acac4e647da700bdc75eedbcf6f011e150a30fa174b1d36fc808b394999"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_20/prepared_input.json",
+      "sha256": "46ecd469807ed0efc5d0b6c075c80397a06f97fc805a5cd88a9b6c892a7ee9ec"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_20/subtask_00/annotation.json",
+      "sha256": "768c603c9ab54b4af7990c8768773eef60c2ba6dc40d5a824ab9af848f4195c1"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_20/subtask_00/evaluations/7605320cc74786a2df89f5855f316bc0eb1082ddc9493d946303aa0769c43d85/trial.json",
+      "sha256": "35ed69cf40c70ac4c9ad8febd1cc9620bd56d4e3f3f3f83b2f43ce5ab429dc77"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_21/tolerance_labels.json",
+      "sha256": "b4af437df5d13870b6f1e734e891a957d5b6ba1f8367287abd97ef9661569ede"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_21/prepared_input.json",
+      "sha256": "4153a1801adac53a22a4ebddc636910d689d6e569497a621ee5e8ee655e54773"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_21/subtask_00/annotation.json",
+      "sha256": "eab0e7daf00eda998e5bffc0329f535501323f2f60f9c558e3e8f95521d45aa8"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_21/subtask_00/evaluations/ab4ed6fb5148bb8f6e52229afdb7d1af1cd2e52274d8424f8c0f99e128da88e4/trial.json",
+      "sha256": "e3d1213791ae8bb4492b68e2cadbcb2dd21e55dbb86b902c6084932c30a8fee2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_22/tolerance_labels.json",
+      "sha256": "a9a1b19fb198b6bc2497c38cfe9d0e368c3a87256340edd8a5daa2f7d44feebc"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_22/prepared_input.json",
+      "sha256": "67840ffd45c606323aa540b4b463ce87abd6051e8fcaf01544d98a69c687fcf8"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_22/subtask_00/annotation.json",
+      "sha256": "38510034f7582232751fa46b3177a49dc02121e237ec18e31be90f2425a4fa4a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_22/subtask_00/evaluations/e1651095169533381e4b8bd1598c9aedd15beed6d5468378390ce671ae4f0f40/trial.json",
+      "sha256": "e379d65f9f803e1476055632bef35e27b66ad40ceae26e4fbe6aa839d153cf7b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_23/tolerance_labels.json",
+      "sha256": "3bc0ff2855e1ea6f0a0f714a3355c8c170f2659e7df44b728d337e0287e3f019"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_23/prepared_input.json",
+      "sha256": "351c34d08774f495f2aa6a90ef64d6e60ee7e8a4fda1c6bc947e009a282ec6c5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_23/subtask_00/annotation.json",
+      "sha256": "d1883814c27ac8d7c8c6a809a2c6bc3812be2736a976304cb30ffb897024a0d3"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_23/subtask_00/evaluations/beeb8561ad66412d5774ec7dded0a72ef1b4e2b14a5f70961c0af2d913082069/trial.json",
+      "sha256": "a5de98ba120cc49622d15d5e126e0634c00262d41621985e3d6da02982d242c4"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_24/tolerance_labels.json",
+      "sha256": "2c360e6a1b67e356ab1864204fdbf8dc3dcb59a79d0b4978071add08d9625bbd"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_24/prepared_input.json",
+      "sha256": "7fee558a5899fe3eefb5c32ee3f3bae20c0a757eff4a2c6797a20ac06f9f9ee7"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_24/subtask_00/annotation.json",
+      "sha256": "4f718207ca646dd66382a2ddf434e86020feecc87fe7ce9d26dbf4d2db70ecdd"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_24/subtask_00/evaluations/8d50181bb1fc42d3ec8015ad83a7bdd7007681ce4cf345edca3aad1ac0e0bfc2/trial.json",
+      "sha256": "07192e965acaa6f3b11771276bc8e0056d3d6f642e19b453b67daf95ff8a3080"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_26/tolerance_labels.json",
+      "sha256": "078e6722969bac7426da318eaef24fc6960146b4acefe5c40d51e5cd250f2121"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_26/prepared_input.json",
+      "sha256": "864fb945d131f70e92206757953a67117409bf242b27659e6fc4a34e7d50d7c7"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_26/subtask_00/annotation.json",
+      "sha256": "f77b8d6816c1a91afcc364b72871b77b44507529e5db9b5b8f1dfdba650cfc95"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_26/subtask_00/evaluations/daafd7ffbd0c99e8041086e41860a72748e077d622904b1947e2e78d7f102ebd/trial.json",
+      "sha256": "afc24120c46a9e56e8797c2f3ae7681bb8cfdefcdde590a193f941a946014f91"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_27/tolerance_labels.json",
+      "sha256": "33c7a7de7d939fe391192c03adaa2995a95edac22c0d7bea687db221cdc07bbf"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_27/prepared_input.json",
+      "sha256": "1577407978acd71e213642a8826105ac664afca5e8f154a1ac14cb3a9662f60a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_27/subtask_00/annotation.json",
+      "sha256": "580a5241ace90da081ce89644a42aeae5b046b59a557915f08e70b2908f292a8"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_27/subtask_00/evaluations/b216a3a08bcf0d4abde190fd223ef30b3aa0ad20c3beabf257676904e904e8b1/trial.json",
+      "sha256": "2cbaba605c1c0a33cdfc2371f97cff569ae1dd454b6d7be915d22dcaa6a4e803"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_28/tolerance_labels.json",
+      "sha256": "5ce373ec4ccb7db1dc4ab0019a0c1e01699b01fb171446baf917ef57ebcc2f14"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_28/prepared_input.json",
+      "sha256": "94d2c4a4af8eb5231ce97d74f5d3681dca19209a8744745abede346fbbf834bc"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_28/subtask_00/annotation.json",
+      "sha256": "76b124af8c3fb06855da076aacacf18553b767ec7e147c2a9a8ca95d881cd4b0"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_28/subtask_00/evaluations/1d35e0f7c7f9a6a86be40c1f09b005a2b0295767edaeec84ec168595b63bcea9/trial.json",
+      "sha256": "362b8c16f31947d4ace0f5defebe6d890be61751bef8cae8819d6e3c5040bc0d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_29/tolerance_labels.json",
+      "sha256": "5b9e4f90db59c865a94d7ace641625ebf9f679a22f8d84b8458d700949cbf0c4"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_29/prepared_input.json",
+      "sha256": "78f657bd9e313b38463bcc0c2acac320c053c073f31ec910ab33e3e59fc6ed7a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_29/subtask_00/annotation.json",
+      "sha256": "d2b9ab91d436481b3bc1afa806b337655cc1f44adc97f78775fdacf9af140cc9"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_29/subtask_00/evaluations/ab4ed6fb5148bb8f6e52229afdb7d1af1cd2e52274d8424f8c0f99e128da88e4/trial.json",
+      "sha256": "f12fd10d74057e0cdce977e5bdf1e8a0d8ebad2c05f37a34a0f10c2e0e99eabc"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_30/tolerance_labels.json",
+      "sha256": "379a05982e093a07b1412a7c63f5374d924f77634efa7895711f28f4b65e5500"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_30/prepared_input.json",
+      "sha256": "6293775b413870c04b0c640df055cec12aba3d9dc35555b2bbfabde3b8094911"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_30/subtask_00/annotation.json",
+      "sha256": "4ea697be1e322df6a8a14912761644f2d055e78a4ffea6025246cfc81d3a1d42"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_30/subtask_00/evaluations/1d7ba94486cfe3d4e0c6340ccb060fd6a561992ac687e3e74e2463895fc9793c/trial.json",
+      "sha256": "3d06863b26fc3c1aa897a51a453db03fc91344c652dc780c85c6ea499d9fe59c"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_31/tolerance_labels.json",
+      "sha256": "0568c9266f592800edb2218baf391d4caa61b8f5fc67d8de69ee3d2b4f7265a8"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_31/prepared_input.json",
+      "sha256": "d6297fa17dd7b0e0a5773105f4fe5cf01019d8c8505452c853b1e1a2b7ecc64d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_31/subtask_00/annotation.json",
+      "sha256": "8905f0fe30d45e6ecf6da9e8bd415c1cecf5b1046ed0b78f32321460183e7998"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_31/subtask_00/evaluations/7d042a65b19789486121f8f821754c6141febfec740cf54ad7dfe4c565b5c324/trial.json",
+      "sha256": "baa37a21818dcf61384f28e8974ee73f9b848ce22860910fb1bef2b40593b27d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_32/tolerance_labels.json",
+      "sha256": "408ad298bbda349948960e7044d0c0945534453fc391236dec874fd57530390e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_32/prepared_input.json",
+      "sha256": "572c83dad86a36deacced12335035d9c0e99e1003f7482614c1fe19dbf4d1ae2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_32/subtask_00/annotation.json",
+      "sha256": "05951e3db590554d2e61db28e330f8b45025d55282b6ef6bd8e2235426fc80ed"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_32/subtask_00/evaluations/e8be60c8589b5dac5f403838663fce134e4408fee61fe7647b302e175f544286/trial.json",
+      "sha256": "0d1e889b7ee4a08d82416223ed1a1c686fdacb0f59788f1bd209fc7874bd7617"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_33/tolerance_labels.json",
+      "sha256": "d2b40a287754b9663c439ac64a7e1af2cbd451749625b3315182e0e3cf8d4266"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_33/prepared_input.json",
+      "sha256": "bfadf12020acc32f370e5de975b6c6a7f317ae551ac474fab942a53cbc4c20a9"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_33/subtask_00/annotation.json",
+      "sha256": "e63126a1bfeec8f1b3155fbda2cffad9bd232683fbd40703c29ca0a3a050d731"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_33/subtask_00/evaluations/f0055da42b0268952af23e56fd3a47a09b34b692b6445c74be1f1737a3a8b9cd/trial.json",
+      "sha256": "350bb7d0ca534ca7fa721667b3596228e0dea8a84d30950cfe4bb1dc4a73f072"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_36/tolerance_labels.json",
+      "sha256": "35ecfdfefc95b62f786297a3c5f79c68725ee0d406447387763cbd7ad65e7686"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_36/prepared_input.json",
+      "sha256": "55839db156d7b8551322ec142eca7c039dea330ab69424a4873bbefe6b49ba6e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_36/subtask_00/annotation.json",
+      "sha256": "1615f07b4cf83a6ee0cb5cab27d37e94b2f6d402b7fca3e41c36613204fc2a29"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_36/subtask_00/evaluations/3a3264daf3c27fd5a31ec79615190c61fee9137c441ba5ab76887962695730cf/trial.json",
+      "sha256": "edc0c662673f4e37e96a65928e0ceb0225780d8cf4883308a1f0fc96f668e4a5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_37/tolerance_labels.json",
+      "sha256": "81e2180fd6565711159251b5581ef459eaf7c9537dca8b70d390fdf751e2a44e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_37/prepared_input.json",
+      "sha256": "39bd3ada8d312c95d84ac49cfef56e2c549b254ddde7a75def3376f21bef3a9f"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_37/subtask_00/annotation.json",
+      "sha256": "4f159487d02babce20919c23e99cfd3bbaba243e870eabfaf4058ef517c49c1d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_37/subtask_00/evaluations/f69a5ee8d9284f8bab7c6fb6b15a15c22b13f5235c1357e053acd0ed2d282da0/trial.json",
+      "sha256": "f2976386f61a53260a1b82555b9cbf6ef2a4a210dfb7fdbd1151ea2891b5f7e1"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_38/tolerance_labels.json",
+      "sha256": "89576eb24f9718fe492652baeae651bb8673e9f615acb74050b8bda0206c8915"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_38/prepared_input.json",
+      "sha256": "01ca5098dc33e5c5248f66b9dab9ae1f64d4f7ff447f66710fcd39fae9af47bd"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_38/subtask_00/annotation.json",
+      "sha256": "1fc5b0ac0a761fc23c364892413241e8957429110e550b1ff92a6048aa84623a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_38/subtask_00/evaluations/62ceb2aa389db61d4f333a7be8b49f90ec5c38c2ce99e88c4b8de3eb472781e7/trial.json",
+      "sha256": "c60c930b0cd3fc2a89e2595914cdd0117ac07ed678bdec1247888fa01654db55"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_39/tolerance_labels.json",
+      "sha256": "7e3b8e32deed4ed7bae3ddfa90e1eff32d507ba67798b06c001090d37e9c9f8d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_39/prepared_input.json",
+      "sha256": "b0ec78743358054b9d0bd4b1e15f6a64ec8898044bd3d762538c6a0f953c0b11"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_39/subtask_00/annotation.json",
+      "sha256": "937da3d7d5eb37880aa9bec0eda068b01302514d22b27bd9ffee09ef1070af06"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_39/subtask_00/evaluations/b0dc4054fa44dd0e487a21d841cb3b81a001d14299512ea90422c9b61b9866c6/trial.json",
+      "sha256": "73400bc302c583b6af8ef0601c072f48eb9c7cf520d45039a6e44a2d8f4f8ea6"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_40/tolerance_labels.json",
+      "sha256": "a35c1c3370b005114f3c513a056593f2c17134f9c8a5d30a21feed5619d4ebd5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_40/prepared_input.json",
+      "sha256": "025d85972830f7c497f225c936084e00f28833829b7666871761ab894915a2a4"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_40/subtask_00/annotation.json",
+      "sha256": "cea6b44ad1c980501c7ddbf6a27bfac3fe6fade260a66e62dd52edef879d46c9"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_40/subtask_00/evaluations/60c92bc071cdd3ad4cc65bedb745f561225b22e3f6ad4164c530e2f8862f9e78/trial.json",
+      "sha256": "a38ca3496b53a09ae1b10fdd026b80fb26a69a24be29a159786f07a96f11b043"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_41/tolerance_labels.json",
+      "sha256": "f7abadf0583d710ce50ff2d40fdfe86c8c08e41b276df79852cf9f63537f0bf9"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_41/prepared_input.json",
+      "sha256": "b124c69d7bc2347012bb660e2f478d17e2fad5931488b241c7ea7d71f37c003a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_41/subtask_00/annotation.json",
+      "sha256": "83a3ff9066a3fad18688d1eba8693e91ed493613cb673d89ae4b7be88c9fd503"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_41/subtask_00/evaluations/ba0030d4779038cc60b04347347ee56aa39f0e2e5aa180a31593e990ff980c6a/trial.json",
+      "sha256": "bf905023a3d9acfeba2bdf4ae2c6e858842837ef4317336dbbb1384fc0798619"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_42/tolerance_labels.json",
+      "sha256": "e603580d5e56fe45021ada5cffcfc1e0a4dc2f46bee843a14f4141a7609a34a4"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_42/prepared_input.json",
+      "sha256": "6dc12cc0b568a485a31c1b1056e17a66462c270b2802302122f429a9e568e1a2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_42/subtask_00/annotation.json",
+      "sha256": "63767501eed0fcd0df213aff3b61ac6244a1d18e063bb55cf80cca51a1050423"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_42/subtask_00/evaluations/70b5dbed2ac646a6ec02aab6e7f72e3c8ad6740f0f7d8a0b44020116a2f1b9cd/trial.json",
+      "sha256": "026fa6c18eacf9e10519ca541f5594d7760f38e8ac816b31588bd831edbe0b75"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_43/tolerance_labels.json",
+      "sha256": "4000830c9fb0e3eb40fc3a9abd31067755db67268ca0b1295509b1cdbabae169"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_43/prepared_input.json",
+      "sha256": "73cc1d357121903759b875d5de744004ecc15543ea48293b203041475edc1757"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_43/subtask_00/annotation.json",
+      "sha256": "b8be6471a3ccc00b818bbbeafc4934538be109ba87762c423650f8a68ab8250e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_43/subtask_00/evaluations/54b36782692ec990583fcbc81d80dc6aa34468e05c964172d1ef7d92989c5ed5/trial.json",
+      "sha256": "a79a6fc8c93399fbf17cb28b68a603cd6562e0d74b15f51675856ce446d5ac7a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_44/tolerance_labels.json",
+      "sha256": "19215f40f1522b405e86074485d3467d425fc768088b8593f7b316cd2cfe1db2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_44/prepared_input.json",
+      "sha256": "3076d6c8792403dfc9b7d82a44f36a62d09b9b6ff8843870442f339ba7a65a69"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_44/subtask_00/annotation.json",
+      "sha256": "be4c54a7927b77e157aa778c2a2ef2e3ccf325f9650ce0deb2afa4a90a45db94"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_44/subtask_00/evaluations/77b034923b4901221fa6e431d30bdb78a091bd8e430528176c5b8ee1b88e5a6e/trial.json",
+      "sha256": "ea7225a7a2dab65a0a0e35a16c285dc756e16654bbfad27efccbf98299fdfdc9"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_45/tolerance_labels.json",
+      "sha256": "ea5b75f1b65db73bdf7f5eeb5bc9524791b8627cb52a710c4ce864e013768a95"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_45/prepared_input.json",
+      "sha256": "f44df46ebb7ee9aea3ec3c68be91bd2696f2c9676d87c038754ab5b5c481df56"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_45/subtask_00/annotation.json",
+      "sha256": "996216ad80c3f181616953b2bd1e2fe356a951b1bb321a1fd14f856254613072"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_45/subtask_00/evaluations/77b034923b4901221fa6e431d30bdb78a091bd8e430528176c5b8ee1b88e5a6e/trial.json",
+      "sha256": "14756498e6e34f14eeec0effbb199013ed6745991262f0090ddaae2fb2177dce"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_46/tolerance_labels.json",
+      "sha256": "9be3464cd037933e1140dda9ec20cd5c329b8a0c127d9cb87ff8cc49177e6f13"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_46/prepared_input.json",
+      "sha256": "72cde0f13aefc88760746576ff18d5aceda9ad3a94da1c9a6e3da1d5de9039ec"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_46/subtask_00/annotation.json",
+      "sha256": "c222a786636952e31d15fb80e216cbed3d6c9cb7c3b74e1a957aefd6be7b7c07"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_46/subtask_00/evaluations/1c1331fb7c39116d8d405fcca802e2bcc3e61c0114984678033f87c24842da0f/trial.json",
+      "sha256": "43d5ce6e53055ba5ce57be8ba844f509c010169b9c5c407dcfba5bf4c74e4ae1"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_47/tolerance_labels.json",
+      "sha256": "894c618be97925adce47883cc1dc15743ee0fbb5d09ed277d845186ac388f4d9"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_47/prepared_input.json",
+      "sha256": "62b4949896fb47fdb4be9bb272130f134204606e69475a79ba54724b5b4c4eac"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_47/subtask_00/annotation.json",
+      "sha256": "ff86c1f88ee429544df53ce20a6151613b528801d075cc6655b56b3cdcc75fe0"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_47/subtask_00/evaluations/ea25cb013be3dbe129c24c117a0c09ee6feb1e691ef02599fd298f3ef5f3358d/trial.json",
+      "sha256": "9461d0c32df8e57b65153eab01c9237bf68e3920d70ad80f9ecf27e83847bb14"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_48/tolerance_labels.json",
+      "sha256": "39cc411f73e0371dc5cdedd680ec42c344842797c0bd371bfaeb07cd6a0de9cb"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_48/prepared_input.json",
+      "sha256": "d0714842ff3efd458621a9de310c7ea0d88b46bcb6ed681400fe842402d253cb"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_48/subtask_00/annotation.json",
+      "sha256": "ac1d0a5515fe0b9e54e3a1a94cce1944a47a3fa07a6af19c50bbea6b118b74c1"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_48/subtask_00/evaluations/be65bede3eeda6cadafa0b6d18a2fddd0de7a56fdc7654e9db7e7a4f24368993/trial.json",
+      "sha256": "dd0e6c78ffef374319d0e138333ce0bd7ffb9dbf8e4c4d2d17007e7b66e4c356"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_49/tolerance_labels.json",
+      "sha256": "5d948762c34feb0f84f7a78fb4500e72918bf25fc478e4a696ede0738ab2fbe2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_49/prepared_input.json",
+      "sha256": "cdafe912e96194597542dfbe445f03d3c495e4806e61ecea71ffb909526ee068"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_49/subtask_00/annotation.json",
+      "sha256": "d699aee71ea9a5fc67efea1742ad2d600ca542abea758af7a5db39255c43b544"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_00/demo_49/subtask_00/evaluations/77b034923b4901221fa6e431d30bdb78a091bd8e430528176c5b8ee1b88e5a6e/trial.json",
+      "sha256": "fa27ecf5fbe54cf7c088243181b94fe6ba3f5668d1dc49a60492f6864c608af8"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_0/tolerance_labels.json",
+      "sha256": "19ec3550fefc69623c4a5501a6bb9c693eb3f9a5e68c039ed45f45d167907985"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_0/prepared_input.json",
+      "sha256": "2601230c573a9b483f9fd5cdd2f9139e9ad0e5c31e6efa27326092e023c32fa8"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_0/subtask_00/annotation.json",
+      "sha256": "b6b9b26855903c938f22cf49070dcb2cae196797661086ba31c48a3e2516bc9f"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_0/subtask_00/evaluations/af6b837ad4d21b14568751ae3341f190d9dd6b5002ffa4caccd7ca8f71572547/trial.json",
+      "sha256": "c9ab349c79e1d958838adadc944728f9a1a0c85857eaf9c430ffe1fe511e1089"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_1/tolerance_labels.json",
+      "sha256": "d74e3d7777262c939b2bf69f138aada0165c3fd8ada3927b2ff716ac0c7b9e1b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_1/prepared_input.json",
+      "sha256": "df6744cbb833bc555bf4a6d7d35459c145ecb5a1b4db8ac245e250b37eee6a14"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_1/subtask_00/annotation.json",
+      "sha256": "bf80110abfcaf5db50bac7d74051fd3b492d56630739ccee6476ea18f96f2641"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_1/subtask_00/evaluations/67300f79d899630ace7b323d3aa0f7b61dd7cc53644aee2480c19dc70c397883/trial.json",
+      "sha256": "595bb47e2e0790a0b1afcb3f7496f0111114e948641e711ff723aca6b95abbc9"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_2/tolerance_labels.json",
+      "sha256": "968736b71d793632b726693fc24cd5321aa643484bbb7324909a9bfdae14376a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_2/prepared_input.json",
+      "sha256": "c97af411711bd52a942ec4edf639d6142eaf73bb5caa138cc3a58fc0ef6ce51b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_2/subtask_00/annotation.json",
+      "sha256": "4b50f548dda0869342bde52957fd181f7da54bfe5a4b426b067f093e0ff60541"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_2/subtask_00/evaluations/4e11334abfe6dc8ced6bfe79e3d22a8086b4db0da99b3dd471399d804edc15b9/trial.json",
+      "sha256": "57326dc9effcc1db79d7da7c89bfd327b50b91a3149ff1e9599d38b7acc590bb"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_3/tolerance_labels.json",
+      "sha256": "41f3b0f1c5e5d0c39630af9d28ab124ddb629a15295f8848c217fff92e1e89c9"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_3/prepared_input.json",
+      "sha256": "0e1104f173cb95da7342a9e8ac2e3c1a74c14c8d395e21c007f7af181b8b03e0"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_3/subtask_00/annotation.json",
+      "sha256": "373bf05f934e1f468edb6d2d7dc2b3c542cf4762b67e208ad23aa84d8615db03"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_3/subtask_00/evaluations/e8320e15482993c6e3c842527275678dd731e93529fafdb717b5f065d489e862/trial.json",
+      "sha256": "950a5a21e20a29cd8fe95a7004b0cd6091fca352928a4b6402f9da784a2c5b7f"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_4/tolerance_labels.json",
+      "sha256": "f3f9154b2cacc3feeda9d6f1aeefaf29db2169ef91cc3fcc2ec0a94254ee1cfd"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_4/prepared_input.json",
+      "sha256": "b74a85ac0c89e73fa8e8efef49676fe924ae87725d3c6d8bbe284a0baaa3364b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_4/subtask_00/annotation.json",
+      "sha256": "94e194c840a2d4b6ee9f5c742edc92dc4c7a24f962d8b7d136e676d2aef8bd10"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_00/demo_4/subtask_00/evaluations/1f61b621d42e7829bf7e11096536831c85612918aed43df2d86c150b670eb45c/trial.json",
+      "sha256": "6b243f7ae572293250dcd49f43072044c11293c04fc15763c57db5dc2b8afcd5"
+    }
+  ],
+  "original_hdf5": "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/datasets/libero_spatial/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_demo.hdf5",
+  "annotation_root": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107",
+  "old_root": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106"
+}

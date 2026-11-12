@@ -1,0 +1,462 @@
+{
+  "at": "2026-11-10T17:47:03.452260+08:00",
+  "results": {
+    "old_nominal": {
+      "overall": {
+        "success": 380,
+        "completed": 400
+      },
+      "per_seed": {
+        "0": {
+          "success": 36,
+          "completed": 40
+        },
+        "1": {
+          "success": 39,
+          "completed": 40
+        },
+        "2": {
+          "success": 38,
+          "completed": 40
+        },
+        "3": {
+          "success": 38,
+          "completed": 40
+        },
+        "4": {
+          "success": 40,
+          "completed": 40
+        },
+        "5": {
+          "success": 40,
+          "completed": 40
+        },
+        "6": {
+          "success": 39,
+          "completed": 40
+        },
+        "7": {
+          "success": 37,
+          "completed": 40
+        },
+        "8": {
+          "success": 35,
+          "completed": 40
+        },
+        "9": {
+          "success": 38,
+          "completed": 40
+        }
+      },
+      "halves": {
+        "0": {
+          "success": 191,
+          "completed": 200
+        },
+        "5": {
+          "success": 189,
+          "completed": 200
+        }
+      },
+      "per_suite_halves": {
+        "libero_spatial": {
+          "0": {
+            "success": 50,
+            "completed": 50
+          },
+          "5": {
+            "success": 48,
+            "completed": 50
+          }
+        },
+        "libero_object": {
+          "0": {
+            "success": 48,
+            "completed": 50
+          },
+          "5": {
+            "success": 49,
+            "completed": 50
+          }
+        },
+        "libero_goal": {
+          "0": {
+            "success": 47,
+            "completed": 50
+          },
+          "5": {
+            "success": 45,
+            "completed": 50
+          }
+        },
+        "libero_10": {
+          "0": {
+            "success": 46,
+            "completed": 50
+          },
+          "5": {
+            "success": 47,
+            "completed": 50
+          }
+        }
+      },
+      "aligned_cohorts": {
+        "earlier178": {
+          "overall": {
+            "success": 169,
+            "completed": 178
+          },
+          "per_suite": {
+            "libero_spatial": {
+              "success": 54,
+              "completed": 54
+            },
+            "libero_object": {
+              "success": 41,
+              "completed": 43
+            },
+            "libero_goal": {
+              "success": 38,
+              "completed": 41
+            },
+            "libero_10": {
+              "success": 36,
+              "completed": 40
+            }
+          }
+        },
+        "later129": {
+          "overall": {
+            "success": 125,
+            "completed": 129
+          },
+          "per_suite": {
+            "libero_spatial": {
+              "success": 26,
+              "completed": 27
+            },
+            "libero_object": {
+              "success": 36,
+              "completed": 37
+            },
+            "libero_goal": {
+              "success": 36,
+              "completed": 38
+            },
+            "libero_10": {
+              "success": 27,
+              "completed": 27
+            }
+          }
+        }
+      }
+    },
+    "old_preset30": {
+      "overall": {
+        "success": 370,
+        "completed": 400
+      },
+      "per_seed": {
+        "0": {
+          "success": 36,
+          "completed": 40
+        },
+        "1": {
+          "success": 38,
+          "completed": 40
+        },
+        "2": {
+          "success": 35,
+          "completed": 40
+        },
+        "3": {
+          "success": 39,
+          "completed": 40
+        },
+        "4": {
+          "success": 36,
+          "completed": 40
+        },
+        "5": {
+          "success": 39,
+          "completed": 40
+        },
+        "6": {
+          "success": 38,
+          "completed": 40
+        },
+        "7": {
+          "success": 38,
+          "completed": 40
+        },
+        "8": {
+          "success": 36,
+          "completed": 40
+        },
+        "9": {
+          "success": 35,
+          "completed": 40
+        }
+      },
+      "halves": {
+        "0": {
+          "success": 184,
+          "completed": 200
+        },
+        "5": {
+          "success": 186,
+          "completed": 200
+        }
+      },
+      "per_suite_halves": {
+        "libero_spatial": {
+          "0": {
+            "success": 47,
+            "completed": 50
+          },
+          "5": {
+            "success": 48,
+            "completed": 50
+          }
+        },
+        "libero_object": {
+          "0": {
+            "success": 47,
+            "completed": 50
+          },
+          "5": {
+            "success": 48,
+            "completed": 50
+          }
+        },
+        "libero_goal": {
+          "0": {
+            "success": 45,
+            "completed": 50
+          },
+          "5": {
+            "success": 44,
+            "completed": 50
+          }
+        },
+        "libero_10": {
+          "0": {
+            "success": 45,
+            "completed": 50
+          },
+          "5": {
+            "success": 46,
+            "completed": 50
+          }
+        }
+      },
+      "aligned_cohorts": {
+        "earlier178": {
+          "overall": {
+            "success": 165,
+            "completed": 178
+          },
+          "per_suite": {
+            "libero_spatial": {
+              "success": 51,
+              "completed": 54
+            },
+            "libero_object": {
+              "success": 40,
+              "completed": 43
+            },
+            "libero_goal": {
+              "success": 38,
+              "completed": 41
+            },
+            "libero_10": {
+              "success": 36,
+              "completed": 40
+            }
+          }
+        },
+        "later129": {
+          "overall": {
+            "success": 122,
+            "completed": 129
+          },
+          "per_suite": {
+            "libero_spatial": {
+              "success": 27,
+              "completed": 27
+            },
+            "libero_object": {
+              "success": 36,
+              "completed": 37
+            },
+            "libero_goal": {
+              "success": 33,
+              "completed": 38
+            },
+            "libero_10": {
+              "success": 26,
+              "completed": 27
+            }
+          }
+        }
+      }
+    },
+    "joint13_snapshot307": {
+      "overall": {
+        "success": 282,
+        "completed": 307
+      },
+      "per_seed": {
+        "0": {
+          "success": 31,
+          "completed": 40
+        },
+        "1": {
+          "success": 36,
+          "completed": 40
+        },
+        "2": {
+          "success": 36,
+          "completed": 40
+        },
+        "3": {
+          "success": 38,
+          "completed": 40
+        },
+        "4": {
+          "success": 38,
+          "completed": 40
+        },
+        "5": {
+          "success": 38,
+          "completed": 40
+        },
+        "6": {
+          "success": 30,
+          "completed": 30
+        },
+        "7": {
+          "success": 34,
+          "completed": 36
+        },
+        "8": {
+          "success": 0,
+          "completed": 0
+        },
+        "9": {
+          "success": 1,
+          "completed": 1
+        }
+      },
+      "halves": {
+        "0": {
+          "success": 179,
+          "completed": 200
+        },
+        "5": {
+          "success": 103,
+          "completed": 107
+        }
+      },
+      "per_suite_halves": {
+        "libero_spatial": {
+          "0": {
+            "success": 46,
+            "completed": 50
+          },
+          "5": {
+            "success": 29,
+            "completed": 31
+          }
+        },
+        "libero_object": {
+          "0": {
+            "success": 47,
+            "completed": 50
+          },
+          "5": {
+            "success": 29,
+            "completed": 30
+          }
+        },
+        "libero_goal": {
+          "0": {
+            "success": 45,
+            "completed": 50
+          },
+          "5": {
+            "success": 28,
+            "completed": 29
+          }
+        },
+        "libero_10": {
+          "0": {
+            "success": 41,
+            "completed": 50
+          },
+          "5": {
+            "success": 17,
+            "completed": 17
+          }
+        }
+      },
+      "aligned_cohorts": {
+        "earlier178": {
+          "overall": {
+            "success": 157,
+            "completed": 178
+          },
+          "per_suite": {
+            "libero_spatial": {
+              "success": 49,
+              "completed": 54
+            },
+            "libero_object": {
+              "success": 39,
+              "completed": 43
+            },
+            "libero_goal": {
+              "success": 36,
+              "completed": 41
+            },
+            "libero_10": {
+              "success": 33,
+              "completed": 40
+            }
+          }
+        },
+        "later129": {
+          "overall": {
+            "success": 125,
+            "completed": 129
+          },
+          "per_suite": {
+            "libero_spatial": {
+              "success": 26,
+              "completed": 27
+            },
+            "libero_object": {
+              "success": 37,
+              "completed": 37
+            },
+            "libero_goal": {
+              "success": 37,
+              "completed": 38
+            },
+            "libero_10": {
+              "success": 25,
+              "completed": 27
+            }
+          }
+        }
+      }
+    }
+  },
+  "checks": {
+    "historical_unique400_each": true,
+    "historical_totals_match_audited_reports": true,
+    "joint_snapshot307_immutable": true,
+    "all307_official_initial_states_identical": true
+  },
+  "scope": "Historical official400 (not failure-only retests); joint13 fixed307 snapshot incomplete. Matched cohorts follow current run completion order, not historical wallclock order. Runtime/model differences are not isolated."
+}

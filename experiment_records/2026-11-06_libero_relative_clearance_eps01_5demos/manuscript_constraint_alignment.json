@@ -1,0 +1,32 @@
+{
+  "scope": "Read-only manuscript alignment; no source code, manuscript, frozen request or result changed",
+  "sources": [
+    {
+      "path": "/home/czl/桌面/TaskTol/TaskTol.tex",
+      "sha256": "c614e7aebfe14aee61aba02b6c9ac0ed4158a526568130295cf0cd33ccd46e83"
+    },
+    {
+      "path": "/home/czl/桌面/TaskTol/TaskTol_zh.tex",
+      "sha256": "ebc9abd9b7200408675a5f1bff89c48b5516cb46c53e44c69681666f0a0e8219"
+    }
+  ],
+  "definition": "stage-relative fixed-XYZ/RPY coordinates of F.T R_fk R_ref.T F; Specific coordinates equal zero; tolerant coordinates obey signed bounds",
+  "references": {
+    "TaskTol.tex": [
+      168,
+      178,
+      185,
+      424,
+      433
+    ],
+    "TaskTol_zh.tex": [
+      178,
+      449,
+      458,
+      264,
+      534
+    ]
+  },
+  "decision": "Unify nominal baseline/zero-bound replay and tolerance-aware execution under the manuscript stage-relative RPY formulation. Do not replace mixed-mask RPY bounds with SO3-log component bounds solely to rescue this example. Keep nominal action increments as rotation vectors and retain frozen historical reconstruction provenance.",
+  "correction": "Earlier recommendation to revert the unified zero-tolerance path to absolute SO3 was premature before manuscript review; it is not the most direct uniform implementation of the current manuscript."
+}

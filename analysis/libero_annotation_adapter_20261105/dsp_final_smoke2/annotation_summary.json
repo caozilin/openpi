@@ -1,0 +1,67 @@
+{
+  "complete": true,
+  "processing_complete": true,
+  "all_labeled": false,
+  "processed": 4,
+  "labeled": 1,
+  "no_feasible_label": 3,
+  "adapter_errors": 0,
+  "results": [
+    {
+      "complete": true,
+      "status": "labeled",
+      "source_episode_index": 187,
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_0",
+      "frames": 152,
+      "semantic_subtasks": 1,
+      "extra": 2,
+      "preflight": false,
+      "label_policy": "speed_best_feasible_search_caps_v1",
+      "labels": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/dsp_final_smoke2/libero_spatial/task_04/demo_0/tolerance_labels.json"
+    },
+    {
+      "complete": true,
+      "status": "no_feasible_label",
+      "source_episode_index": 1101,
+      "suite": "libero_goal",
+      "task_id": 3,
+      "demo": "demo_0",
+      "frames": 169,
+      "semantic_subtasks": 1,
+      "extra": 2,
+      "preflight": false,
+      "label_policy": "speed_best_feasible_search_caps_v1",
+      "labels": null
+    },
+    {
+      "complete": true,
+      "status": "no_feasible_label",
+      "source_episode_index": 1689,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_0",
+      "frames": 202,
+      "semantic_subtasks": 2,
+      "extra": 2,
+      "preflight": false,
+      "label_policy": "speed_best_feasible_search_caps_v1",
+      "labels": null
+    },
+    {
+      "complete": true,
+      "status": "no_feasible_label",
+      "source_episode_index": 1734,
+      "suite": "libero_10",
+      "task_id": 7,
+      "demo": "demo_0",
+      "frames": 241,
+      "semantic_subtasks": 2,
+      "extra": 2,
+      "preflight": false,
+      "label_policy": "speed_best_feasible_search_caps_v1",
+      "labels": null
+    }
+  ]
+}

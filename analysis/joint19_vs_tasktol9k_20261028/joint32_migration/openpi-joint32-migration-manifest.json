@@ -1,0 +1,28 @@
+{
+  "files": {
+    "src/openpi/policies/franka_mujoco_policy.py": "a11a13d9fa2c74b3247cf37f2c509b0e46999aefd60f6b5eacebe11e0b1cf1d6",
+    "src/openpi/training/weight_loaders.py": "fa63189f02ad437c5aa70b587a61299e48bc479cba4dce5407037fbc5c94e7fe",
+    "src/openpi/training/config.py": "b5566d61508b1734cf6e111ddfdeb4d46012bd50daa899b9b9ae4bd5dd458375",
+    "src/openpi/policies/franka_mujoco_policy_test.py": "80e14700bc90e86976d4496abbf253f17182891d17c82e9bbfcd7423d2d3d8e4",
+    "src/openpi/training/franka_mujoco_joint32_test.py": "aa4072f8adb44013be01c7dc04d396cbc4f6ccba4c4c7e2cdc749b88f2410e21",
+    "src/openpi/training/data_loader_test.py": "6c7729b6d7864bffb3275e6ab9c2e8b36ed7484ca461033a07a1a8aeb7c8b64c",
+    "scripts/serve_policy_franka_test.py": "452fd71838cf54104dd788db00b29f43d56f6ca3cd6b76bd8a0829549a50f016",
+    "scripts/train_test.py": "5ce79796f0c2fa443a6eee13865840f40c6a61c3543f3b3dabbf24773e05fcbb",
+    "examples/franka_mujoco/convert_franka_mujoco_data_to_lerobot_test.py": "979089f130d9506e641c23fce697adab824662e4da732a1fcc596853ccf80e24",
+    "examples/franka_mujoco/README.md": "3f207da2321f1c8ef2edaf995ad7d4ff3b9c4f25e861c89ffd9db01bb432552f",
+    "examples/franka_mujoco/JOINT32_MIGRATION_ZH.md": "c4811d190c15317d21a4dd31247776f7101cdb635a5dd959fa004b05c5abaccf",
+    "examples/franka_mujoco/HANDOFF_TASKTOL_7GPU_9K_ZH.md": "5a61add1995465435753a583191f71fecb57b2e947cdb8d3b5575e7c1c2429b0",
+    "examples/franka_mujoco/TRAIN_TASKTOL_MIX20_9K.md": "0d193be05307669bd2d1a2ed9e05e59662fdeaa180ecd77b5a86f3714e81742e",
+    "examples/franka_mujoco/train_tasktol_mix20_4xloss_7gpu_9k.sh": "43fb215439442a7eeee63c731967e29385e953dfe2bf813e3d4ec13789703c45"
+  },
+  "expected_before": {
+    "src/openpi/training/config.py": "528c8cb2aae2f0d0385c027f1320ee79b90254721ba145a9bcb4f9bf88f966dd",
+    "src/openpi/policies/franka_mujoco_policy.py": "90078214a19a2d7057c3daad17696b54affbb7d20792e534b9476eaff4404bf0",
+    "src/openpi/training/weight_loaders.py": "b3e3d4040adb1f53acca1bf2d5ff7b33545e41e2bf23a7112560e5536e0cd0f0"
+  },
+  "remove": [
+    "src/openpi/training/franka_mujoco_joint13_test.py",
+    "examples/franka_mujoco/resume_tasktol_mix20_to15k.py"
+  ],
+  "preserve_checkpoints": true
+}

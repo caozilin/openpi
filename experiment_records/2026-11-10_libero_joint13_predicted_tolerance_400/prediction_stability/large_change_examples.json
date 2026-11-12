@@ -1,0 +1,50 @@
+[
+  {
+    "suite": "libero_object",
+    "task_id": 0,
+    "seed": 1,
+    "phase": "EXEC",
+    "chunk": 11,
+    "axis": "ry+",
+    "five_values_deg": [
+      -0.9860421894487519,
+      31.723121718645743,
+      31.8150353303321,
+      31.370981671694423,
+      31.713349684850566
+    ],
+    "all_frames_same_phase": true
+  },
+  {
+    "suite": "libero_object",
+    "task_id": 5,
+    "seed": 1,
+    "phase": "EXEC",
+    "chunk": 13,
+    "axis": "rx-",
+    "five_values_deg": [
+      0.2804677390756135,
+      0.08807434301179605,
+      -0.18047333837458587,
+      31.673589342442092,
+      32.241407793537235
+    ],
+    "all_frames_same_phase": true
+  },
+  {
+    "suite": "libero_10",
+    "task_id": 7,
+    "seed": 2,
+    "phase": "EXEC",
+    "chunk": 38,
+    "axis": "ry-",
+    "five_values_deg": [
+      -0.4049369188940886,
+      -0.21258017242646596,
+      31.317923783115344,
+      31.688370750312295,
+      31.60899308830976
+    ],
+    "all_frames_same_phase": true
+  }
+]

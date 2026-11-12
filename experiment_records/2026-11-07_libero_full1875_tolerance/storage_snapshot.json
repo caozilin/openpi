@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-11-07T15:21:14.303042+08:00",
+  "snapshot_processed": 369,
+  "labeled": 360,
+  "baseline_unavailable": 9,
+  "total_bytes": 1394901358,
+  "total_GiB": 1.2991031240671873,
+  "media_files": 0,
+  "trial_files": 10541,
+  "trial_MiB": 1143.6323499679565,
+  "prepared_MiB": 88.05428695678711,
+  "labels_MiB": 23.627519607543945,
+  "logs_MiB": 0.5451555252075195,
+  "other_MiB": 74.42228698730469,
+  "free_GiB": 51.56269836425781,
+  "main_cause": "All search candidates preserved, each repeats robot XML, asset paths and SHA metadata plus solver statuses and per-frame clearance; zero video files",
+  "no_data_rewritten": true
+}

@@ -1,0 +1,20 @@
+{
+  "pid": 21170,
+  "command": [
+    "/media/czl/sata/franka_my_code/openpi/.venv/bin/python",
+    "-u",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/enrich_nominal_joint13_dataset.py",
+    "--source",
+    "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_full_20261101",
+    "--output",
+    "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_nominal_joint13_20261109",
+    "--labels",
+    "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107",
+    "--labels",
+    "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109"
+  ],
+  "script_sha256": "d2ad9c1c8de6fa23e040a329130c8ee5f92d917c0200c7c7139f676ad0c429fb",
+  "host_process": true,
+  "previous_sandbox_launch_terminated_before_request": true,
+  "restart_reason": "Parquet list child name item/element serialization; first file rejected before commit; strict roundtrip verified"
+}

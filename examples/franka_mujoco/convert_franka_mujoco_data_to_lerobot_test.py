@@ -221,7 +221,7 @@ def test_conversion_export_and_resume(tmp_path, monkeypatch, mode, variant):
     cache.mkdir()
     monkeypatch.setattr(datasets.config, "HF_DATASETS_CACHE", str(cache))
     monkeypatch.setenv("HF_DATASETS_CACHE", str(cache))
-    cfg = config.get_config("pi05_franka_mujoco_joint13" if mode else "pi05_franka_mujoco")
+    cfg = config.get_config("pi05_franka_mujoco_joint32" if mode else "pi05_franka_mujoco")
     factory = dataclasses.replace(
         cfg.data,
         repo_id="owner/test",

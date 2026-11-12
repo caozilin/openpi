@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "batch_size": 12,
+  "action_dim": 32,
+  "max_token_len": 200,
+  "discrete_state_input": true,
+  "action_horizon": 16,
+  "loss_groups": [
+    [
+      "action",
+      0,
+      7,
+      1.0
+    ]
+  ],
+  "pretrained_weights_loaded": true,
+  "init_seconds": 39.801758078858256,
+  "steps": [
+    {
+      "step": 1,
+      "seconds": 97.99773330311291,
+      "loss": 0.08303465694189072
+    },
+    {
+      "step": 2,
+      "seconds": 3.546166338957846,
+      "loss": 0.08253265917301178
+    },
+    {
+      "step": 3,
+      "seconds": 3.5451294782105833,
+      "loss": 0.10647425055503845
+    },
+    {
+      "step": 4,
+      "seconds": 3.5534406260121614,
+      "loss": 0.052893541753292084
+    }
+  ],
+  "memory_bytes": {
+    "bytes_in_use": 11498132480,
+    "peak_bytes_in_use": 18834772736,
+    "bytes_limit": 24159246442
+  },
+  "note": "Synthetic observations, real pretrained initialization and train_step; no checkpoint written."
+}

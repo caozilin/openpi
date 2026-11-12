@@ -1,0 +1,18 @@
+{
+  "free_bytes": 107765645312,
+  "dataset_parquet_bytes": 38376235155,
+  "old_checkpoint_bytes": 9567313920,
+  "overlay_manifest_sha256": "fba5db2f02583ba1707d38264ce1b2346ed237060d527bbc753454e2543dea7a",
+  "overlay_preparation": {
+    "complete": true,
+    "repository_unchanged": true,
+    "files": 77,
+    "overlay_manifest_sha256": "fba5db2f02583ba1707d38264ce1b2346ed237060d527bbc753454e2543dea7a"
+  },
+  "server_script_sha256": "73f1e55d84cbc076f6760f971cdbca0ad126767a371c299d85d8f60a5a7124cc",
+  "existing_process": null,
+  "remaining_required_bytes": 98345854881,
+  "cache_factor": 1.03,
+  "checkpoint_factor": 1.05,
+  "reserve_bytes": 8589934592
+}

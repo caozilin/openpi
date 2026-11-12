@@ -1,0 +1,88 @@
+{
+  "observed_at": "2026-11-10T18:24:29.853214+08:00",
+  "completed_episodes": 6,
+  "expected_episodes": 400,
+  "successes": 6,
+  "per_suite": {
+    "libero_spatial": {
+      "completed": 6,
+      "successes": 6
+    },
+    "libero_object": {
+      "completed": 0,
+      "successes": 0
+    },
+    "libero_goal": {
+      "completed": 0,
+      "successes": 0
+    },
+    "libero_10": {
+      "completed": 0,
+      "successes": 0
+    }
+  },
+  "local_processes": [
+    {
+      "pid": 71157,
+      "ppid": 2688,
+      "state": "S",
+      "start_ticks": 1258864,
+      "command": "python3 -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/pipeline_v2.py "
+    },
+    {
+      "pid": 71186,
+      "ppid": 71157,
+      "state": "S",
+      "start_ticks": 1258976,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110 "
+    },
+    {
+      "pid": 71197,
+      "ppid": 71186,
+      "state": "S",
+      "start_ticks": 1259113,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110 --worker 0 "
+    },
+    {
+      "pid": 71198,
+      "ppid": 71186,
+      "state": "S",
+      "start_ticks": 1259113,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110 --worker 1 "
+    },
+    {
+      "pid": 71199,
+      "ppid": 71186,
+      "state": "S",
+      "start_ticks": 1259113,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110 --worker 2 "
+    },
+    {
+      "pid": 71200,
+      "ppid": 71186,
+      "state": "S",
+      "start_ticks": 1259113,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110 --worker 3 "
+    },
+    {
+      "pid": 71201,
+      "ppid": 71186,
+      "state": "S",
+      "start_ticks": 1259113,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110 --worker 4 "
+    },
+    {
+      "pid": 71202,
+      "ppid": 71186,
+      "state": "S",
+      "start_ticks": 1259113,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/run_client.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110 --worker 5 "
+    }
+  ],
+  "original6_artifacts_unchanged": true,
+  "frozen490_sources_unchanged": true,
+  "infrastructure_errors": 0,
+  "historical_audit_implementation_interruptions": 1,
+  "initial_audit_complete": true,
+  "stage": "evaluating"
+}

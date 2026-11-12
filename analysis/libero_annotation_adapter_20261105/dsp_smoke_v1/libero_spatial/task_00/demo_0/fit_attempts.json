@@ -1,0 +1,40 @@
+{
+  "attempts": [
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 48,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 81,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model": "VariationalELBO",
+      "status": "SUCCESS",
+      "iterations": 30,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "SUCCESS",
+      "iterations": 44,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "status": "STOPPED",
+      "iterations": 100,
+      "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT"
+    },
+    {
+      "model": "VariationalELBO",
+      "status": "SUCCESS",
+      "iterations": 33,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    }
+  ]
+}

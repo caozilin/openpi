@@ -1,0 +1,21 @@
+{
+  "primary_project": "/media/czl/sata/franka_my_code/franka_mujoco",
+  "primary_report": "/media/czl/sata/franka_my_code/franka_mujoco/experiment_records/2026-11-06_libero_reconstructed_authoredcaps_5demos/README.md",
+  "run": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_reconstructed_authoredcaps_dsp16_first5pertask_20261106",
+  "selection": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_reconstructed_authoredcaps_dsp16_first5pertask_20261106/selection.json",
+  "frozen_mask_table": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_reconstructed_authoredcaps_dsp16_first5pertask_20261106/authored_tolerances_deg.json",
+  "request": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_reconstructed_authoredcaps_dsp16_first5pertask_20261106/annotation_request.json",
+  "progress": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_reconstructed_authoredcaps_dsp16_first5pertask_20261106/pipeline_state.json",
+  "final_audit": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_reconstructed_authoredcaps_dsp16_first5pertask_20261106/annotation_independent_final_audit.json",
+  "completion": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_reconstructed_authoredcaps_dsp16_first5pertask_20261106/task_completion.json",
+  "scope": {
+    "tasks": 40,
+    "demos_per_task": 5,
+    "episodes": 200,
+    "extra_queries_per_subtask": 16,
+    "workers": 6,
+    "upper_bounds": "authored per-axis0/5/15/30degrees",
+    "minimum_clearance_m": 0.005,
+    "physics_steps": 0
+  }
+}

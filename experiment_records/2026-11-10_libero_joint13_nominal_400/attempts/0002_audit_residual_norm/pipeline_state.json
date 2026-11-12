@@ -1,0 +1,5 @@
+{
+  "stage": "failed_or_interrupted",
+  "at": "2026-11-10T19:24:24.610747+08:00",
+  "error": "Traceback (most recent call last):\n  File \"/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/pipeline_v2.py\", line 176, in main\n    assert audit.wait()==0,'Full evaluation audit failed'\n           ^^^^^^^^^^^^^^^\nAssertionError: Full evaluation audit failed\n"
+}

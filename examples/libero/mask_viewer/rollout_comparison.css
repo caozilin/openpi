@@ -1,0 +1,33 @@
+.libero-viewer .video-grid.rollout-comparison{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:var(--line)}
+.libero-viewer .video-grid.rollout-comparison figure{min-width:0;height:auto;aspect-ratio:1}
+.libero-viewer .rollout-comparison video{width:100%;height:100%;object-fit:contain}
+.libero-viewer .video-grid.rollout-comparison.source-hidden{grid-template-columns:minmax(0,1fr)}
+.libero-viewer .video-grid.rollout-comparison.source-hidden #sourceFigure{display:none}
+.libero-viewer .comparison-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.libero-viewer .comparison-toolbar label{display:flex;align-items:center;gap:7px;color:var(--text)}
+.libero-viewer .comparison-toolbar input{accent-color:#48d9dc}
+.libero-viewer .rollout-comparison figcaption{max-width:calc(100% - 12px);left:6px;top:6px;font-size:9px;letter-spacing:0;white-space:normal}
+.libero-viewer .video-grid.triple-comparison{grid-template-columns:repeat(3,minmax(0,1fr))}
+.libero-viewer .triple-comparison #sourceFigure{order:0}
+.libero-viewer .triple-comparison figure:first-child{order:1}
+.libero-viewer .triple-comparison #toleranceFigure{order:2;position:relative}
+.libero-viewer .video-grid.triple-comparison.source-hidden{grid-template-columns:repeat(2,minmax(0,1fr))}
+.libero-viewer #toleranceVideoState{position:absolute;bottom:10px;left:8px;color:#ff999f;background:#12151bd9;font-size:11px;padding:3px 6px}
+.libero-viewer #toleranceVideoState:empty{display:none}
+
+/* One row of four cameras; contain keeps each camera image intact. */
+.libero-viewer .content{--rollout-video-gutter:18px}
+.libero-viewer .content>.video-panel{
+  margin-left:calc(-1 * var(--rollout-video-gutter));
+  margin-right:calc(-1 * var(--rollout-video-gutter));
+  border-left:0;border-right:0;
+}
+@media(max-width:1050px){.libero-viewer .content{--rollout-video-gutter:12px}}
+.libero-viewer .video-grid.quad-comparison{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-rows:minmax(0,1fr);
+  width:100%;aspect-ratio:4/1;height:auto;max-height:none;
+}
+.libero-viewer .video-grid.quad-comparison figure{
+  order:0;position:relative;margin:0;min-height:0;height:100%;aspect-ratio:auto;
+}

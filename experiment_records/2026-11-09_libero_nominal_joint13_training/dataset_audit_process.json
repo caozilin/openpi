@@ -1,0 +1,10 @@
+{
+  "pid": 26532,
+  "command": [
+    "/media/czl/sata/franka_my_code/openpi/.venv/bin/python",
+    "-u",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/audit_nominal_joint13_dataset.py",
+    "--dataset",
+    "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_nominal_joint13_20261109"
+  ]
+}

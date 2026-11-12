@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "finished_at": "2026-11-07T18:16:38.218249+08:00",
+  "processed": 1875,
+  "labeled": 1851,
+  "baseline_unavailable": 24,
+  "historical_infrastructure_errors": 1,
+  "independent_audit_complete": true,
+  "metrics_complete": true,
+  "future_storage_default_applied": true,
+  "postapply_tests_passed": 89,
+  "report": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-07_libero_full1875_tolerance/README.md",
+  "heartbeat_cleanup": "deleted",
+  "automation_id": "libero-1875"
+}

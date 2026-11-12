@@ -1,0 +1,285 @@
+{
+  "complete": true,
+  "manifest": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/combined_200_source_manifest.json",
+  "manifest_sha256": "8f22961d8f0433a9baeb95c06c19195631863f2e3364bc05a416bde2b02d9aa2",
+  "protocol": "20Hz ideal kinematic command replay; paired disjoint blocks; valid N-1/N-2 differences pooled, mY weighted by N, sigma_min minimum over blocks; episode-equal mean",
+  "selected_best_objective": "minimum observed mean joint velocity among accepted candidates, not proven global optimum or four-objective optimization",
+  "all199": {
+    "episodes": 199,
+    "tasks": 40,
+    "metrics": {
+      "velocity": {
+        "zero_mean": 0.6548807043795508,
+        "best_mean": 0.5286608729233272,
+        "improvement_percent_of_means": 19.273713611062526,
+        "mean_paired_improvement_percent": 18.89749588040692,
+        "improved_episodes": 188,
+        "worsened_episodes": 0
+      },
+      "acceleration": {
+        "zero_mean": 5.435390740532584,
+        "best_mean": 4.02051986238324,
+        "improvement_percent_of_means": 26.030711418747213,
+        "mean_paired_improvement_percent": 24.45043271072497,
+        "improved_episodes": 188,
+        "worsened_episodes": 0
+      },
+      "mY": {
+        "zero_mean": 0.07925511656899271,
+        "best_mean": 0.07729039595620288,
+        "improvement_percent_of_means": -2.478982680038731,
+        "mean_paired_improvement_percent": -1.0675277634902787,
+        "improved_episodes": 89,
+        "worsened_episodes": 99
+      },
+      "sigma_min": {
+        "zero_mean": 0.9005812748170833,
+        "best_mean": 1.1024951776653524,
+        "improvement_percent_of_means": 22.420397635880207,
+        "mean_paired_improvement_percent": 12322.917432677918,
+        "improved_episodes": 145,
+        "worsened_episodes": 37
+      }
+    }
+  },
+  "original_protocol198": {
+    "episodes": 198,
+    "tasks": 40,
+    "metrics": {
+      "velocity": {
+        "zero_mean": 0.655334907742322,
+        "best_mean": 0.5289506773889788,
+        "improvement_percent_of_means": 19.285441513980434,
+        "mean_paired_improvement_percent": 18.90920004861382,
+        "improved_episodes": 187,
+        "worsened_episodes": 0
+      },
+      "acceleration": {
+        "zero_mean": 5.4405532719745135,
+        "best_mean": 4.026794521521048,
+        "improvement_percent_of_means": 25.985569477575886,
+        "mean_paired_improvement_percent": 24.386801046000095,
+        "improved_episodes": 187,
+        "worsened_episodes": 0
+      },
+      "mY": {
+        "zero_mean": 0.07924202812049293,
+        "best_mean": 0.07723968794628001,
+        "improvement_percent_of_means": -2.526866388588916,
+        "mean_paired_improvement_percent": -1.1067591109593502,
+        "improved_episodes": 88,
+        "worsened_episodes": 99
+      },
+      "sigma_min": {
+        "zero_mean": 0.9051269412554355,
+        "best_mean": 1.1040957681710224,
+        "improvement_percent_of_means": 21.982422337314567,
+        "mean_paired_improvement_percent": 11649.998462114861,
+        "improved_episodes": 144,
+        "worsened_episodes": 37
+      }
+    }
+  },
+  "excluding_strict_tasks189": {
+    "episodes": 189,
+    "tasks": 38,
+    "metrics": {
+      "velocity": {
+        "zero_mean": 0.656021796828932,
+        "best_mean": 0.5231236674120616,
+        "improvement_percent_of_means": 20.258188075346172,
+        "mean_paired_improvement_percent": 19.897363387306758,
+        "improved_episodes": 188,
+        "worsened_episodes": 0
+      },
+      "acceleration": {
+        "zero_mean": 5.457760580961249,
+        "best_mean": 3.9680288097881298,
+        "improvement_percent_of_means": 27.295659988638423,
+        "mean_paired_improvement_percent": 25.74410639912312,
+        "improved_episodes": 188,
+        "worsened_episodes": 0
+      },
+      "mY": {
+        "zero_mean": 0.07837081345843978,
+        "best_mean": 0.07630213937407376,
+        "improvement_percent_of_means": -2.6395975658247353,
+        "mean_paired_improvement_percent": -1.1240107139394997,
+        "improved_episodes": 89,
+        "worsened_episodes": 99
+      },
+      "sigma_min": {
+        "zero_mean": 0.9010408084341014,
+        "best_mean": 1.1136379865653476,
+        "improvement_percent_of_means": 23.59462258992621,
+        "mean_paired_improvement_percent": 12974.92364604712,
+        "improved_episodes": 145,
+        "worsened_episodes": 37
+      }
+    }
+  },
+  "suites": {
+    "libero_10": {
+      "episodes": 50,
+      "tasks": 10,
+      "metrics": {
+        "velocity": {
+          "zero_mean": 0.5616486896322538,
+          "best_mean": 0.4740709784218325,
+          "improvement_percent_of_means": 15.592969916437239,
+          "mean_paired_improvement_percent": 15.15562567177966,
+          "improved_episodes": 49,
+          "worsened_episodes": 0
+        },
+        "acceleration": {
+          "zero_mean": 4.140708988983394,
+          "best_mean": 3.3735516259922322,
+          "improvement_percent_of_means": 18.52719824146614,
+          "mean_paired_improvement_percent": 17.32814885025979,
+          "improved_episodes": 49,
+          "worsened_episodes": 0
+        },
+        "mY": {
+          "zero_mean": 0.07422775938011117,
+          "best_mean": 0.07597710312704735,
+          "improvement_percent_of_means": 2.356724440485947,
+          "mean_paired_improvement_percent": 2.6667284614217737,
+          "improved_episodes": 30,
+          "worsened_episodes": 19
+        },
+        "sigma_min": {
+          "zero_mean": 0.7991533409442875,
+          "best_mean": 0.9612228065837458,
+          "improvement_percent_of_means": 20.28014616668629,
+          "mean_paired_improvement_percent": 3047.8823736120034,
+          "improved_episodes": 29,
+          "worsened_episodes": 14
+        }
+      }
+    },
+    "libero_goal": {
+      "episodes": 50,
+      "tasks": 10,
+      "metrics": {
+        "velocity": {
+          "zero_mean": 0.7074857372639035,
+          "best_mean": 0.6151960855823979,
+          "improvement_percent_of_means": 13.044736709240555,
+          "mean_paired_improvement_percent": 12.413165148821772,
+          "improved_episodes": 40,
+          "worsened_episodes": 0
+        },
+        "acceleration": {
+          "zero_mean": 5.5164715910963205,
+          "best_mean": 4.541543962843083,
+          "improvement_percent_of_means": 17.673029075809744,
+          "mean_paired_improvement_percent": 16.46678125399921,
+          "improved_episodes": 40,
+          "worsened_episodes": 0
+        },
+        "mY": {
+          "zero_mean": 0.07843618502005578,
+          "best_mean": 0.07944120427649445,
+          "improvement_percent_of_means": 1.28132093138096,
+          "mean_paired_improvement_percent": 2.8369046448177944,
+          "improved_episodes": 22,
+          "worsened_episodes": 18
+        },
+        "sigma_min": {
+          "zero_mean": 0.9361614704011498,
+          "best_mean": 1.1061495150000389,
+          "improvement_percent_of_means": 18.15798342203171,
+          "mean_paired_improvement_percent": 45865.47595025766,
+          "improved_episodes": 32,
+          "worsened_episodes": 8
+        }
+      }
+    },
+    "libero_object": {
+      "episodes": 50,
+      "tasks": 10,
+      "metrics": {
+        "velocity": {
+          "zero_mean": 0.5746015167127749,
+          "best_mean": 0.4262615958013184,
+          "improvement_percent_of_means": 25.816138070795756,
+          "mean_paired_improvement_percent": 25.468358034941062,
+          "improved_episodes": 50,
+          "worsened_episodes": 0
+        },
+        "acceleration": {
+          "zero_mean": 4.30494542136068,
+          "best_mean": 2.9051445161071707,
+          "improvement_percent_of_means": 32.51611270860361,
+          "mean_paired_improvement_percent": 32.14409958047352,
+          "improved_episodes": 50,
+          "worsened_episodes": 0
+        },
+        "mY": {
+          "zero_mean": 0.08681477615430501,
+          "best_mean": 0.07493562756275841,
+          "improvement_percent_of_means": -13.683325716848637,
+          "mean_paired_improvement_percent": -12.713788109715432,
+          "improved_episodes": 8,
+          "worsened_episodes": 42
+        },
+        "sigma_min": {
+          "zero_mean": 1.1205761947808057,
+          "best_mean": 1.2587501321906065,
+          "improvement_percent_of_means": 12.330615093677656,
+          "mean_paired_improvement_percent": 18.05127098775251,
+          "improved_episodes": 38,
+          "worsened_episodes": 12
+        }
+      }
+    },
+    "libero_spatial": {
+      "episodes": 49,
+      "tasks": 10,
+      "metrics": {
+        "velocity": {
+          "zero_mean": 0.7782543467568165,
+          "best_mean": 0.600552667784993,
+          "improvement_percent_of_means": 22.83336800010838,
+          "mean_paired_improvement_percent": 22.627433416813318,
+          "improved_episodes": 49,
+          "worsened_episodes": 0
+        },
+        "acceleration": {
+          "zero_mean": 7.827274638652338,
+          "best_mean": 5.287172395247762,
+          "improvement_percent_of_means": 32.45193711309354,
+          "mean_paired_improvement_percent": 32.013971942809036,
+          "improved_episodes": 49,
+          "worsened_episodes": 0
+        },
+        "mY": {
+          "zero_mean": 0.07750677896950924,
+          "best_mean": 0.07883861320345636,
+          "improvement_percent_of_means": 1.7183454810721346,
+          "mean_paired_improvement_percent": 3.021831127331181,
+          "improved_episodes": 29,
+          "worsened_episodes": 20
+        },
+        "sigma_min": {
+          "zero_mean": 0.7432882322915803,
+          "best_mean": 1.0834779115650117,
+          "improvement_percent_of_means": 45.768204647155024,
+          "mean_paired_improvement_percent": 116.12427265376549,
+          "improved_episodes": 46,
+          "worsened_episodes": 3
+        }
+      }
+    }
+  },
+  "missing": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_1",
+      "status": "baseline_unavailable"
+    }
+  ],
+  "verified_label_files": 199,
+  "verified_trial_pairs": 245
+}

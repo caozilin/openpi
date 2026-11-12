@@ -1,0 +1,8 @@
+{
+  "stage": "complete_local_dataset",
+  "episodes": 1875,
+  "nominal": 1574,
+  "tolerance": 301,
+  "frames": 312374,
+  "upload_training_pending": true
+}

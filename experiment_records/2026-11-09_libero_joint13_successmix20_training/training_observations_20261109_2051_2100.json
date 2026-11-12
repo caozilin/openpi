@@ -1,0 +1,1668 @@
+[
+  {
+    "observed_at": "2026-11-09T20:51:53.278354+08:00",
+    "local": {
+      "upload": {
+        "stage": "complete",
+        "method": "exact_compact_transport",
+        "files": 1890,
+        "bytes": 38388719043,
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "training_pending": true
+      },
+      "upload_process": {
+        "pid": 136691,
+        "exists": false
+      },
+      "training_dispatch": {
+        "stage": "launched_four_x",
+        "pid": 3339995,
+        "command": [
+          "/home/czl/openpi/.venv/bin/python",
+          "-u",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+          "--run-dir",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+        ],
+        "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+        "at": "2026-11-09T20:37:36.056858+08:00",
+        "normalization_reused": true,
+        "tolerance_action_loss_multiplier": 4,
+        "full_training_and_final_audit_pending": true
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "exists": false
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n"
+    },
+    "remote": {
+      "parquets": 1875,
+      "parquet_bytes": 38376235155,
+      "free_gib": 64.61101150512695,
+      "compact_present_files": 2479,
+      "compact_present_file_bytes": 240203401,
+      "normalization_progress": "Computing stats: 100%|██████████| 4338/4338 [49:11<00:00,  1.47it/s]",
+      "latest_training_metric": "Step 60: batch/action_loss_weight_mean=1.3792, batch/reweighted_action_fraction=0.1264, grad_norm=1.3437, loss=0.8408, loss/action=0.3466, loss/action_nominal_contribution=0.2978, loss/action_reweighted_contribution=0.0488, loss/rotation_tolerance=0.6956, loss/total=0.8408, loss_weighted/action=0.4930, loss_weighted/rotation_tolerance=0.3478, param_norm=1803.7708",
+      "exact_transport_reconstruction_state": {
+        "stage": "complete",
+        "episodes_verified": 1875,
+        "errors": 0,
+        "total": 1875
+      },
+      "upload_verification_state": {
+        "stage": "complete",
+        "complete": true,
+        "episodes": 1875,
+        "frames": 312374,
+        "tasks": 40,
+        "fps": 20,
+        "files": 1890,
+        "all_uploaded_sha256_equal": true,
+        "all_nominal_actions_unchanged": true,
+        "all_unselected_nominal_columns_equal": true,
+        "portable_lerobot_reader_passed": true,
+        "nominal_episodes": 1574,
+        "tolerance_episodes": 301,
+        "all_trajectory_flags_verified": true,
+        "missing_labels": 0,
+        "reader_episodes": [
+          0,
+          465,
+          958,
+          1416
+        ],
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "local_independent_audit_sha256": "b896b31444b2990224680033ddd4926baf25b7c0d194f3f105382c32b9c3c194"
+      },
+      "training_state": {
+        "stage": "training",
+        "pid": 3339995,
+        "updated_at": "2026-11-09T20:37:36.251828+08:00",
+        "expected_steps": 10000,
+        "global_batch": 72,
+        "per_gpu_batch": 12
+      },
+      "normalization_completion": {
+        "complete": true,
+        "inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+        "stats_path": "/mnt/SharedData/czl/assets/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/caozilin/libero_reconstructed_joint13_successmix20_20261109/norm_stats.json",
+        "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42"
+      },
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "training",
+        "at": "2026-11-09T20:51:39.308219+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "four_x_protocol_update": {
+        "transition_state": {
+          "stage": "complete",
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "transition_completion": {
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "normalization_reuse_verification": {
+          "complete": true,
+          "at": "2026-11-09T20:37:17.177439+08:00",
+          "only_loss_weight_changed_in_normalization_inputs": true,
+          "reason": "RunningStats consumes only state/actions; per-sample loss weight is excluded from normalization fingerprint",
+          "original_request_sha256": "9077cac73ceae17e0e9226af65d5221cd1b0089b6a681ba978bee22a6bcb9917",
+          "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+          "original_inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+          "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "normalization_receipt_unchanged": true,
+          "receipt_sha256": "e0205a31767a04b28d8b7ff62569e12be364e79587641b52c462179fff1d7c34"
+        },
+        "training_preflight_verification": {
+          "complete": true,
+          "scope": "CPU actual LeRobot horizon10/repack/state8/target13/normalize/pad32/Observation/JIT loss; no optimizer step",
+          "checks": [
+            {
+              "episode": 0,
+              "frame": 0,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "be401ef786569e058794a91d7139a0a60da883293c77e3e9bd603de95ed49730"
+            },
+            {
+              "episode": 0,
+              "frame": 5,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "68ff20e83f4b5794a1d094aa0ea773ba286b5be3d48836eb55e4dd1797f5bdf2"
+            },
+            {
+              "episode": 2,
+              "frame": 0,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "fcc356910fda313d5eb9bc82a24b922820adff7a669c48edba36e3ceca5aa264"
+            },
+            {
+              "episode": 2,
+              "frame": 5,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "c98cf0853fa9775b1c0762936c0c2314e42c48f1cf2ce223c49c1fa9381d2e98"
+            }
+          ],
+          "nominal_actions_and_labels_unchanged": true,
+          "normalization_targets_equal_before_after": true,
+          "swanlab_enabled": true,
+          "swanlab_mode": "online",
+          "config_weight": 4,
+          "metrics": {
+            "batch/action_loss_weight_mean": 2.5,
+            "batch/reweighted_action_fraction": 0.5,
+            "loss/action": 1,
+            "loss/action_nominal_contribution": 0.5,
+            "loss/action_reweighted_contribution": 0.5,
+            "loss/rotation_tolerance": 1,
+            "loss/total": 3,
+            "loss_weighted/action": 2.5,
+            "loss_weighted/rotation_tolerance": 0.5
+          },
+          "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0"
+        }
+      },
+      "live_owned_processes": [
+        {
+          "role": "exact_transport_reconstruction_process",
+          "pid": 3267870,
+          "exists": false
+        },
+        {
+          "role": "training_process",
+          "pid": 3339995,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852143
+        },
+        {
+          "role": "finish_training_process",
+          "pid": 3339996,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852144
+        },
+        {
+          "role": "four_x_protocol_update/transition_process",
+          "pid": 3334760,
+          "exists": false
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T20:53:27.175785+08:00",
+    "local": {
+      "upload": {
+        "stage": "complete",
+        "method": "exact_compact_transport",
+        "files": 1890,
+        "bytes": 38388719043,
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "training_pending": true
+      },
+      "upload_process": {
+        "pid": 136691,
+        "exists": false
+      },
+      "training_dispatch": {
+        "stage": "launched_four_x",
+        "pid": 3339995,
+        "command": [
+          "/home/czl/openpi/.venv/bin/python",
+          "-u",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+          "--run-dir",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+        ],
+        "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+        "at": "2026-11-09T20:37:36.056858+08:00",
+        "normalization_reused": true,
+        "tolerance_action_loss_multiplier": 4,
+        "full_training_and_final_audit_pending": true
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "exists": false
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n"
+    },
+    "remote": {
+      "parquets": 1875,
+      "parquet_bytes": 38376235155,
+      "free_gib": 64.61097717285156,
+      "compact_present_files": 2479,
+      "compact_present_file_bytes": 240203401,
+      "normalization_progress": "Computing stats: 100%|██████████| 4338/4338 [49:11<00:00,  1.47it/s]",
+      "latest_training_metric": "Step 70: batch/action_loss_weight_mean=1.4125, batch/reweighted_action_fraction=0.1375, grad_norm=1.5604, loss=0.8050, loss/action=0.3370, loss/action_nominal_contribution=0.2871, loss/action_reweighted_contribution=0.0498, loss/rotation_tolerance=0.6370, loss/total=0.8050, loss_weighted/action=0.4865, loss_weighted/rotation_tolerance=0.3185, param_norm=1803.7711",
+      "exact_transport_reconstruction_state": {
+        "stage": "complete",
+        "episodes_verified": 1875,
+        "errors": 0,
+        "total": 1875
+      },
+      "upload_verification_state": {
+        "stage": "complete",
+        "complete": true,
+        "episodes": 1875,
+        "frames": 312374,
+        "tasks": 40,
+        "fps": 20,
+        "files": 1890,
+        "all_uploaded_sha256_equal": true,
+        "all_nominal_actions_unchanged": true,
+        "all_unselected_nominal_columns_equal": true,
+        "portable_lerobot_reader_passed": true,
+        "nominal_episodes": 1574,
+        "tolerance_episodes": 301,
+        "all_trajectory_flags_verified": true,
+        "missing_labels": 0,
+        "reader_episodes": [
+          0,
+          465,
+          958,
+          1416
+        ],
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "local_independent_audit_sha256": "b896b31444b2990224680033ddd4926baf25b7c0d194f3f105382c32b9c3c194"
+      },
+      "training_state": {
+        "stage": "training",
+        "pid": 3339995,
+        "updated_at": "2026-11-09T20:37:36.251828+08:00",
+        "expected_steps": 10000,
+        "global_batch": 72,
+        "per_gpu_batch": 12
+      },
+      "normalization_completion": {
+        "complete": true,
+        "inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+        "stats_path": "/mnt/SharedData/czl/assets/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/caozilin/libero_reconstructed_joint13_successmix20_20261109/norm_stats.json",
+        "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42"
+      },
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "training",
+        "at": "2026-11-09T20:53:09.641490+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "four_x_protocol_update": {
+        "transition_state": {
+          "stage": "complete",
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "transition_completion": {
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "normalization_reuse_verification": {
+          "complete": true,
+          "at": "2026-11-09T20:37:17.177439+08:00",
+          "only_loss_weight_changed_in_normalization_inputs": true,
+          "reason": "RunningStats consumes only state/actions; per-sample loss weight is excluded from normalization fingerprint",
+          "original_request_sha256": "9077cac73ceae17e0e9226af65d5221cd1b0089b6a681ba978bee22a6bcb9917",
+          "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+          "original_inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+          "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "normalization_receipt_unchanged": true,
+          "receipt_sha256": "e0205a31767a04b28d8b7ff62569e12be364e79587641b52c462179fff1d7c34"
+        },
+        "training_preflight_verification": {
+          "complete": true,
+          "scope": "CPU actual LeRobot horizon10/repack/state8/target13/normalize/pad32/Observation/JIT loss; no optimizer step",
+          "checks": [
+            {
+              "episode": 0,
+              "frame": 0,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "be401ef786569e058794a91d7139a0a60da883293c77e3e9bd603de95ed49730"
+            },
+            {
+              "episode": 0,
+              "frame": 5,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "68ff20e83f4b5794a1d094aa0ea773ba286b5be3d48836eb55e4dd1797f5bdf2"
+            },
+            {
+              "episode": 2,
+              "frame": 0,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "fcc356910fda313d5eb9bc82a24b922820adff7a669c48edba36e3ceca5aa264"
+            },
+            {
+              "episode": 2,
+              "frame": 5,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "c98cf0853fa9775b1c0762936c0c2314e42c48f1cf2ce223c49c1fa9381d2e98"
+            }
+          ],
+          "nominal_actions_and_labels_unchanged": true,
+          "normalization_targets_equal_before_after": true,
+          "swanlab_enabled": true,
+          "swanlab_mode": "online",
+          "config_weight": 4,
+          "metrics": {
+            "batch/action_loss_weight_mean": 2.5,
+            "batch/reweighted_action_fraction": 0.5,
+            "loss/action": 1,
+            "loss/action_nominal_contribution": 0.5,
+            "loss/action_reweighted_contribution": 0.5,
+            "loss/rotation_tolerance": 1,
+            "loss/total": 3,
+            "loss_weighted/action": 2.5,
+            "loss_weighted/rotation_tolerance": 0.5
+          },
+          "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0"
+        }
+      },
+      "live_owned_processes": [
+        {
+          "role": "exact_transport_reconstruction_process",
+          "pid": 3267870,
+          "exists": false
+        },
+        {
+          "role": "training_process",
+          "pid": 3339995,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852143
+        },
+        {
+          "role": "finish_training_process",
+          "pid": 3339996,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852144
+        },
+        {
+          "role": "four_x_protocol_update/transition_process",
+          "pid": 3334760,
+          "exists": false
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T20:54:15.508481+08:00",
+    "local": {
+      "upload": {
+        "stage": "complete",
+        "method": "exact_compact_transport",
+        "files": 1890,
+        "bytes": 38388719043,
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "training_pending": true
+      },
+      "upload_process": {
+        "pid": 136691,
+        "exists": false
+      },
+      "training_dispatch": {
+        "stage": "launched_four_x",
+        "pid": 3339995,
+        "command": [
+          "/home/czl/openpi/.venv/bin/python",
+          "-u",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+          "--run-dir",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+        ],
+        "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+        "at": "2026-11-09T20:37:36.056858+08:00",
+        "normalization_reused": true,
+        "tolerance_action_loss_multiplier": 4,
+        "full_training_and_final_audit_pending": true
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "exists": false
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n"
+    },
+    "remote": {
+      "parquets": 1875,
+      "parquet_bytes": 38376235155,
+      "free_gib": 64.61094665527344,
+      "compact_present_files": 2479,
+      "compact_present_file_bytes": 240203401,
+      "normalization_progress": "Computing stats: 100%|██████████| 4338/4338 [49:11<00:00,  1.47it/s]",
+      "latest_training_metric": "Step 80: batch/action_loss_weight_mean=1.4125, batch/reweighted_action_fraction=0.1375, grad_norm=1.3416, loss=0.7610, loss/action=0.3297, loss/action_nominal_contribution=0.2844, loss/action_reweighted_contribution=0.0454, loss/rotation_tolerance=0.5904, loss/total=0.7610, loss_weighted/action=0.4658, loss_weighted/rotation_tolerance=0.2952, param_norm=1803.7714",
+      "exact_transport_reconstruction_state": {
+        "stage": "complete",
+        "episodes_verified": 1875,
+        "errors": 0,
+        "total": 1875
+      },
+      "upload_verification_state": {
+        "stage": "complete",
+        "complete": true,
+        "episodes": 1875,
+        "frames": 312374,
+        "tasks": 40,
+        "fps": 20,
+        "files": 1890,
+        "all_uploaded_sha256_equal": true,
+        "all_nominal_actions_unchanged": true,
+        "all_unselected_nominal_columns_equal": true,
+        "portable_lerobot_reader_passed": true,
+        "nominal_episodes": 1574,
+        "tolerance_episodes": 301,
+        "all_trajectory_flags_verified": true,
+        "missing_labels": 0,
+        "reader_episodes": [
+          0,
+          465,
+          958,
+          1416
+        ],
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "local_independent_audit_sha256": "b896b31444b2990224680033ddd4926baf25b7c0d194f3f105382c32b9c3c194"
+      },
+      "training_state": {
+        "stage": "training",
+        "pid": 3339995,
+        "updated_at": "2026-11-09T20:37:36.251828+08:00",
+        "expected_steps": 10000,
+        "global_batch": 72,
+        "per_gpu_batch": 12
+      },
+      "normalization_completion": {
+        "complete": true,
+        "inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+        "stats_path": "/mnt/SharedData/czl/assets/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/caozilin/libero_reconstructed_joint13_successmix20_20261109/norm_stats.json",
+        "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42"
+      },
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "training",
+        "at": "2026-11-09T20:54:09.910666+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "four_x_protocol_update": {
+        "transition_state": {
+          "stage": "complete",
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "transition_completion": {
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "normalization_reuse_verification": {
+          "complete": true,
+          "at": "2026-11-09T20:37:17.177439+08:00",
+          "only_loss_weight_changed_in_normalization_inputs": true,
+          "reason": "RunningStats consumes only state/actions; per-sample loss weight is excluded from normalization fingerprint",
+          "original_request_sha256": "9077cac73ceae17e0e9226af65d5221cd1b0089b6a681ba978bee22a6bcb9917",
+          "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+          "original_inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+          "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "normalization_receipt_unchanged": true,
+          "receipt_sha256": "e0205a31767a04b28d8b7ff62569e12be364e79587641b52c462179fff1d7c34"
+        },
+        "training_preflight_verification": {
+          "complete": true,
+          "scope": "CPU actual LeRobot horizon10/repack/state8/target13/normalize/pad32/Observation/JIT loss; no optimizer step",
+          "checks": [
+            {
+              "episode": 0,
+              "frame": 0,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "be401ef786569e058794a91d7139a0a60da883293c77e3e9bd603de95ed49730"
+            },
+            {
+              "episode": 0,
+              "frame": 5,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "68ff20e83f4b5794a1d094aa0ea773ba286b5be3d48836eb55e4dd1797f5bdf2"
+            },
+            {
+              "episode": 2,
+              "frame": 0,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "fcc356910fda313d5eb9bc82a24b922820adff7a669c48edba36e3ceca5aa264"
+            },
+            {
+              "episode": 2,
+              "frame": 5,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "c98cf0853fa9775b1c0762936c0c2314e42c48f1cf2ce223c49c1fa9381d2e98"
+            }
+          ],
+          "nominal_actions_and_labels_unchanged": true,
+          "normalization_targets_equal_before_after": true,
+          "swanlab_enabled": true,
+          "swanlab_mode": "online",
+          "config_weight": 4,
+          "metrics": {
+            "batch/action_loss_weight_mean": 2.5,
+            "batch/reweighted_action_fraction": 0.5,
+            "loss/action": 1,
+            "loss/action_nominal_contribution": 0.5,
+            "loss/action_reweighted_contribution": 0.5,
+            "loss/rotation_tolerance": 1,
+            "loss/total": 3,
+            "loss_weighted/action": 2.5,
+            "loss_weighted/rotation_tolerance": 0.5
+          },
+          "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0"
+        }
+      },
+      "live_owned_processes": [
+        {
+          "role": "exact_transport_reconstruction_process",
+          "pid": 3267870,
+          "exists": false
+        },
+        {
+          "role": "training_process",
+          "pid": 3339995,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852143
+        },
+        {
+          "role": "finish_training_process",
+          "pid": 3339996,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852144
+        },
+        {
+          "role": "four_x_protocol_update/transition_process",
+          "pid": 3334760,
+          "exists": false
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T20:55:03.861227+08:00",
+    "local": {
+      "upload": {
+        "stage": "complete",
+        "method": "exact_compact_transport",
+        "files": 1890,
+        "bytes": 38388719043,
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "training_pending": true
+      },
+      "upload_process": {
+        "pid": 136691,
+        "exists": false
+      },
+      "training_dispatch": {
+        "stage": "launched_four_x",
+        "pid": 3339995,
+        "command": [
+          "/home/czl/openpi/.venv/bin/python",
+          "-u",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+          "--run-dir",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+        ],
+        "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+        "at": "2026-11-09T20:37:36.056858+08:00",
+        "normalization_reused": true,
+        "tolerance_action_loss_multiplier": 4,
+        "full_training_and_final_audit_pending": true
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "exists": false
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n"
+    },
+    "remote": {
+      "parquets": 1875,
+      "parquet_bytes": 38376235155,
+      "free_gib": 64.6109390258789,
+      "compact_present_files": 2479,
+      "compact_present_file_bytes": 240203401,
+      "normalization_progress": "Computing stats: 100%|██████████| 4338/4338 [49:11<00:00,  1.47it/s]",
+      "latest_training_metric": "Step 80: batch/action_loss_weight_mean=1.4125, batch/reweighted_action_fraction=0.1375, grad_norm=1.3416, loss=0.7610, loss/action=0.3297, loss/action_nominal_contribution=0.2844, loss/action_reweighted_contribution=0.0454, loss/rotation_tolerance=0.5904, loss/total=0.7610, loss_weighted/action=0.4658, loss_weighted/rotation_tolerance=0.2952, param_norm=1803.7714",
+      "exact_transport_reconstruction_state": {
+        "stage": "complete",
+        "episodes_verified": 1875,
+        "errors": 0,
+        "total": 1875
+      },
+      "upload_verification_state": {
+        "stage": "complete",
+        "complete": true,
+        "episodes": 1875,
+        "frames": 312374,
+        "tasks": 40,
+        "fps": 20,
+        "files": 1890,
+        "all_uploaded_sha256_equal": true,
+        "all_nominal_actions_unchanged": true,
+        "all_unselected_nominal_columns_equal": true,
+        "portable_lerobot_reader_passed": true,
+        "nominal_episodes": 1574,
+        "tolerance_episodes": 301,
+        "all_trajectory_flags_verified": true,
+        "missing_labels": 0,
+        "reader_episodes": [
+          0,
+          465,
+          958,
+          1416
+        ],
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "local_independent_audit_sha256": "b896b31444b2990224680033ddd4926baf25b7c0d194f3f105382c32b9c3c194"
+      },
+      "training_state": {
+        "stage": "training",
+        "pid": 3339995,
+        "updated_at": "2026-11-09T20:37:36.251828+08:00",
+        "expected_steps": 10000,
+        "global_batch": 72,
+        "per_gpu_batch": 12
+      },
+      "normalization_completion": {
+        "complete": true,
+        "inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+        "stats_path": "/mnt/SharedData/czl/assets/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/caozilin/libero_reconstructed_joint13_successmix20_20261109/norm_stats.json",
+        "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42"
+      },
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "training",
+        "at": "2026-11-09T20:54:40.044320+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "four_x_protocol_update": {
+        "transition_state": {
+          "stage": "complete",
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "transition_completion": {
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "normalization_reuse_verification": {
+          "complete": true,
+          "at": "2026-11-09T20:37:17.177439+08:00",
+          "only_loss_weight_changed_in_normalization_inputs": true,
+          "reason": "RunningStats consumes only state/actions; per-sample loss weight is excluded from normalization fingerprint",
+          "original_request_sha256": "9077cac73ceae17e0e9226af65d5221cd1b0089b6a681ba978bee22a6bcb9917",
+          "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+          "original_inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+          "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "normalization_receipt_unchanged": true,
+          "receipt_sha256": "e0205a31767a04b28d8b7ff62569e12be364e79587641b52c462179fff1d7c34"
+        },
+        "training_preflight_verification": {
+          "complete": true,
+          "scope": "CPU actual LeRobot horizon10/repack/state8/target13/normalize/pad32/Observation/JIT loss; no optimizer step",
+          "checks": [
+            {
+              "episode": 0,
+              "frame": 0,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "be401ef786569e058794a91d7139a0a60da883293c77e3e9bd603de95ed49730"
+            },
+            {
+              "episode": 0,
+              "frame": 5,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "68ff20e83f4b5794a1d094aa0ea773ba286b5be3d48836eb55e4dd1797f5bdf2"
+            },
+            {
+              "episode": 2,
+              "frame": 0,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "fcc356910fda313d5eb9bc82a24b922820adff7a669c48edba36e3ceca5aa264"
+            },
+            {
+              "episode": 2,
+              "frame": 5,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "c98cf0853fa9775b1c0762936c0c2314e42c48f1cf2ce223c49c1fa9381d2e98"
+            }
+          ],
+          "nominal_actions_and_labels_unchanged": true,
+          "normalization_targets_equal_before_after": true,
+          "swanlab_enabled": true,
+          "swanlab_mode": "online",
+          "config_weight": 4,
+          "metrics": {
+            "batch/action_loss_weight_mean": 2.5,
+            "batch/reweighted_action_fraction": 0.5,
+            "loss/action": 1,
+            "loss/action_nominal_contribution": 0.5,
+            "loss/action_reweighted_contribution": 0.5,
+            "loss/rotation_tolerance": 1,
+            "loss/total": 3,
+            "loss_weighted/action": 2.5,
+            "loss_weighted/rotation_tolerance": 0.5
+          },
+          "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0"
+        }
+      },
+      "live_owned_processes": [
+        {
+          "role": "exact_transport_reconstruction_process",
+          "pid": 3267870,
+          "exists": false
+        },
+        {
+          "role": "training_process",
+          "pid": 3339995,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852143
+        },
+        {
+          "role": "finish_training_process",
+          "pid": 3339996,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852144
+        },
+        {
+          "role": "four_x_protocol_update/transition_process",
+          "pid": 3334760,
+          "exists": false
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T20:55:52.083144+08:00",
+    "local": {
+      "upload": {
+        "stage": "complete",
+        "method": "exact_compact_transport",
+        "files": 1890,
+        "bytes": 38388719043,
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "training_pending": true
+      },
+      "upload_process": {
+        "pid": 136691,
+        "exists": false
+      },
+      "training_dispatch": {
+        "stage": "launched_four_x",
+        "pid": 3339995,
+        "command": [
+          "/home/czl/openpi/.venv/bin/python",
+          "-u",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+          "--run-dir",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+        ],
+        "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+        "at": "2026-11-09T20:37:36.056858+08:00",
+        "normalization_reused": true,
+        "tolerance_action_loss_multiplier": 4,
+        "full_training_and_final_audit_pending": true
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "exists": false
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n"
+    },
+    "remote": {
+      "parquets": 1875,
+      "parquet_bytes": 38376235155,
+      "free_gib": 64.61091613769531,
+      "compact_present_files": 2479,
+      "compact_present_file_bytes": 240203401,
+      "normalization_progress": "Computing stats: 100%|██████████| 4338/4338 [49:11<00:00,  1.47it/s]",
+      "latest_training_metric": "Step 90: batch/action_loss_weight_mean=1.4750, batch/reweighted_action_fraction=0.1583, grad_norm=1.3037, loss=0.7077, loss/action=0.3110, loss/action_nominal_contribution=0.2664, loss/action_reweighted_contribution=0.0446, loss/rotation_tolerance=0.5259, loss/total=0.7077, loss_weighted/action=0.4448, loss_weighted/rotation_tolerance=0.2630, param_norm=1803.7715",
+      "exact_transport_reconstruction_state": {
+        "stage": "complete",
+        "episodes_verified": 1875,
+        "errors": 0,
+        "total": 1875
+      },
+      "upload_verification_state": {
+        "stage": "complete",
+        "complete": true,
+        "episodes": 1875,
+        "frames": 312374,
+        "tasks": 40,
+        "fps": 20,
+        "files": 1890,
+        "all_uploaded_sha256_equal": true,
+        "all_nominal_actions_unchanged": true,
+        "all_unselected_nominal_columns_equal": true,
+        "portable_lerobot_reader_passed": true,
+        "nominal_episodes": 1574,
+        "tolerance_episodes": 301,
+        "all_trajectory_flags_verified": true,
+        "missing_labels": 0,
+        "reader_episodes": [
+          0,
+          465,
+          958,
+          1416
+        ],
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "local_independent_audit_sha256": "b896b31444b2990224680033ddd4926baf25b7c0d194f3f105382c32b9c3c194"
+      },
+      "training_state": {
+        "stage": "training",
+        "pid": 3339995,
+        "updated_at": "2026-11-09T20:37:36.251828+08:00",
+        "expected_steps": 10000,
+        "global_batch": 72,
+        "per_gpu_batch": 12
+      },
+      "normalization_completion": {
+        "complete": true,
+        "inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+        "stats_path": "/mnt/SharedData/czl/assets/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/caozilin/libero_reconstructed_joint13_successmix20_20261109/norm_stats.json",
+        "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42"
+      },
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "training",
+        "at": "2026-11-09T20:55:40.277733+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "four_x_protocol_update": {
+        "transition_state": {
+          "stage": "complete",
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "transition_completion": {
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "normalization_reuse_verification": {
+          "complete": true,
+          "at": "2026-11-09T20:37:17.177439+08:00",
+          "only_loss_weight_changed_in_normalization_inputs": true,
+          "reason": "RunningStats consumes only state/actions; per-sample loss weight is excluded from normalization fingerprint",
+          "original_request_sha256": "9077cac73ceae17e0e9226af65d5221cd1b0089b6a681ba978bee22a6bcb9917",
+          "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+          "original_inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+          "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "normalization_receipt_unchanged": true,
+          "receipt_sha256": "e0205a31767a04b28d8b7ff62569e12be364e79587641b52c462179fff1d7c34"
+        },
+        "training_preflight_verification": {
+          "complete": true,
+          "scope": "CPU actual LeRobot horizon10/repack/state8/target13/normalize/pad32/Observation/JIT loss; no optimizer step",
+          "checks": [
+            {
+              "episode": 0,
+              "frame": 0,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "be401ef786569e058794a91d7139a0a60da883293c77e3e9bd603de95ed49730"
+            },
+            {
+              "episode": 0,
+              "frame": 5,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "68ff20e83f4b5794a1d094aa0ea773ba286b5be3d48836eb55e4dd1797f5bdf2"
+            },
+            {
+              "episode": 2,
+              "frame": 0,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "fcc356910fda313d5eb9bc82a24b922820adff7a669c48edba36e3ceca5aa264"
+            },
+            {
+              "episode": 2,
+              "frame": 5,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "c98cf0853fa9775b1c0762936c0c2314e42c48f1cf2ce223c49c1fa9381d2e98"
+            }
+          ],
+          "nominal_actions_and_labels_unchanged": true,
+          "normalization_targets_equal_before_after": true,
+          "swanlab_enabled": true,
+          "swanlab_mode": "online",
+          "config_weight": 4,
+          "metrics": {
+            "batch/action_loss_weight_mean": 2.5,
+            "batch/reweighted_action_fraction": 0.5,
+            "loss/action": 1,
+            "loss/action_nominal_contribution": 0.5,
+            "loss/action_reweighted_contribution": 0.5,
+            "loss/rotation_tolerance": 1,
+            "loss/total": 3,
+            "loss_weighted/action": 2.5,
+            "loss_weighted/rotation_tolerance": 0.5
+          },
+          "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0"
+        }
+      },
+      "live_owned_processes": [
+        {
+          "role": "exact_transport_reconstruction_process",
+          "pid": 3267870,
+          "exists": false
+        },
+        {
+          "role": "training_process",
+          "pid": 3339995,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852143
+        },
+        {
+          "role": "finish_training_process",
+          "pid": 3339996,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852144
+        },
+        {
+          "role": "four_x_protocol_update/transition_process",
+          "pid": 3334760,
+          "exists": false
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T20:56:40.447540+08:00",
+    "local": {
+      "upload": {
+        "stage": "complete",
+        "method": "exact_compact_transport",
+        "files": 1890,
+        "bytes": 38388719043,
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "training_pending": true
+      },
+      "upload_process": {
+        "pid": 136691,
+        "exists": false
+      },
+      "training_dispatch": {
+        "stage": "launched_four_x",
+        "pid": 3339995,
+        "command": [
+          "/home/czl/openpi/.venv/bin/python",
+          "-u",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+          "--run-dir",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+        ],
+        "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+        "at": "2026-11-09T20:37:36.056858+08:00",
+        "normalization_reused": true,
+        "tolerance_action_loss_multiplier": 4,
+        "full_training_and_final_audit_pending": true
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "exists": false
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n"
+    },
+    "remote": {
+      "parquets": 1875,
+      "parquet_bytes": 38376235155,
+      "free_gib": 64.61090469360352,
+      "compact_present_files": 2479,
+      "compact_present_file_bytes": 240203401,
+      "normalization_progress": "Computing stats: 100%|██████████| 4338/4338 [49:11<00:00,  1.47it/s]",
+      "latest_training_metric": "Step 100: batch/action_loss_weight_mean=1.4167, batch/reweighted_action_fraction=0.1389, grad_norm=1.5626, loss=0.6765, loss/action=0.3100, loss/action_nominal_contribution=0.2700, loss/action_reweighted_contribution=0.0399, loss/rotation_tolerance=0.4937, loss/total=0.6765, loss_weighted/action=0.4297, loss_weighted/rotation_tolerance=0.2469, param_norm=1803.7721",
+      "exact_transport_reconstruction_state": {
+        "stage": "complete",
+        "episodes_verified": 1875,
+        "errors": 0,
+        "total": 1875
+      },
+      "upload_verification_state": {
+        "stage": "complete",
+        "complete": true,
+        "episodes": 1875,
+        "frames": 312374,
+        "tasks": 40,
+        "fps": 20,
+        "files": 1890,
+        "all_uploaded_sha256_equal": true,
+        "all_nominal_actions_unchanged": true,
+        "all_unselected_nominal_columns_equal": true,
+        "portable_lerobot_reader_passed": true,
+        "nominal_episodes": 1574,
+        "tolerance_episodes": 301,
+        "all_trajectory_flags_verified": true,
+        "missing_labels": 0,
+        "reader_episodes": [
+          0,
+          465,
+          958,
+          1416
+        ],
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "local_independent_audit_sha256": "b896b31444b2990224680033ddd4926baf25b7c0d194f3f105382c32b9c3c194"
+      },
+      "training_state": {
+        "stage": "training",
+        "pid": 3339995,
+        "updated_at": "2026-11-09T20:37:36.251828+08:00",
+        "expected_steps": 10000,
+        "global_batch": 72,
+        "per_gpu_batch": 12
+      },
+      "normalization_completion": {
+        "complete": true,
+        "inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+        "stats_path": "/mnt/SharedData/czl/assets/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/caozilin/libero_reconstructed_joint13_successmix20_20261109/norm_stats.json",
+        "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42"
+      },
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "training",
+        "at": "2026-11-09T20:56:40.463767+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "four_x_protocol_update": {
+        "transition_state": {
+          "stage": "complete",
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "transition_completion": {
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "normalization_reuse_verification": {
+          "complete": true,
+          "at": "2026-11-09T20:37:17.177439+08:00",
+          "only_loss_weight_changed_in_normalization_inputs": true,
+          "reason": "RunningStats consumes only state/actions; per-sample loss weight is excluded from normalization fingerprint",
+          "original_request_sha256": "9077cac73ceae17e0e9226af65d5221cd1b0089b6a681ba978bee22a6bcb9917",
+          "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+          "original_inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+          "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "normalization_receipt_unchanged": true,
+          "receipt_sha256": "e0205a31767a04b28d8b7ff62569e12be364e79587641b52c462179fff1d7c34"
+        },
+        "training_preflight_verification": {
+          "complete": true,
+          "scope": "CPU actual LeRobot horizon10/repack/state8/target13/normalize/pad32/Observation/JIT loss; no optimizer step",
+          "checks": [
+            {
+              "episode": 0,
+              "frame": 0,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "be401ef786569e058794a91d7139a0a60da883293c77e3e9bd603de95ed49730"
+            },
+            {
+              "episode": 0,
+              "frame": 5,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "68ff20e83f4b5794a1d094aa0ea773ba286b5be3d48836eb55e4dd1797f5bdf2"
+            },
+            {
+              "episode": 2,
+              "frame": 0,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "fcc356910fda313d5eb9bc82a24b922820adff7a669c48edba36e3ceca5aa264"
+            },
+            {
+              "episode": 2,
+              "frame": 5,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "c98cf0853fa9775b1c0762936c0c2314e42c48f1cf2ce223c49c1fa9381d2e98"
+            }
+          ],
+          "nominal_actions_and_labels_unchanged": true,
+          "normalization_targets_equal_before_after": true,
+          "swanlab_enabled": true,
+          "swanlab_mode": "online",
+          "config_weight": 4,
+          "metrics": {
+            "batch/action_loss_weight_mean": 2.5,
+            "batch/reweighted_action_fraction": 0.5,
+            "loss/action": 1,
+            "loss/action_nominal_contribution": 0.5,
+            "loss/action_reweighted_contribution": 0.5,
+            "loss/rotation_tolerance": 1,
+            "loss/total": 3,
+            "loss_weighted/action": 2.5,
+            "loss_weighted/rotation_tolerance": 0.5
+          },
+          "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0"
+        }
+      },
+      "live_owned_processes": [
+        {
+          "role": "exact_transport_reconstruction_process",
+          "pid": 3267870,
+          "exists": false
+        },
+        {
+          "role": "training_process",
+          "pid": 3339995,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852143
+        },
+        {
+          "role": "finish_training_process",
+          "pid": 3339996,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852144
+        },
+        {
+          "role": "four_x_protocol_update/transition_process",
+          "pid": 3334760,
+          "exists": false
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T21:00:27.540646+08:00",
+    "local": {
+      "upload": {
+        "stage": "complete",
+        "method": "exact_compact_transport",
+        "files": 1890,
+        "bytes": 38388719043,
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "training_pending": true
+      },
+      "upload_process": {
+        "pid": 136691,
+        "exists": false
+      },
+      "training_dispatch": {
+        "stage": "launched_four_x",
+        "pid": 3339995,
+        "command": [
+          "/home/czl/openpi/.venv/bin/python",
+          "-u",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+          "--run-dir",
+          "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+        ],
+        "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+        "at": "2026-11-09T20:37:36.056858+08:00",
+        "normalization_reused": true,
+        "tolerance_action_loss_multiplier": 4,
+        "full_training_and_final_audit_pending": true
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "exists": false
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n"
+    },
+    "remote": {
+      "parquets": 1875,
+      "parquet_bytes": 38376235155,
+      "free_gib": 64.61080932617188,
+      "compact_present_files": 2479,
+      "compact_present_file_bytes": 240203401,
+      "normalization_progress": "Computing stats: 100%|██████████| 4338/4338 [49:11<00:00,  1.47it/s]",
+      "latest_training_metric": "Step 130: batch/action_loss_weight_mean=1.4958, batch/reweighted_action_fraction=0.1653, grad_norm=1.7312, loss=0.6040, loss/action=0.2715, loss/action_nominal_contribution=0.2273, loss/action_reweighted_contribution=0.0442, loss/rotation_tolerance=0.3998, loss/total=0.6040, loss_weighted/action=0.4041, loss_weighted/rotation_tolerance=0.1999, param_norm=1803.7734",
+      "exact_transport_reconstruction_state": {
+        "stage": "complete",
+        "episodes_verified": 1875,
+        "errors": 0,
+        "total": 1875
+      },
+      "upload_verification_state": {
+        "stage": "complete",
+        "complete": true,
+        "episodes": 1875,
+        "frames": 312374,
+        "tasks": 40,
+        "fps": 20,
+        "files": 1890,
+        "all_uploaded_sha256_equal": true,
+        "all_nominal_actions_unchanged": true,
+        "all_unselected_nominal_columns_equal": true,
+        "portable_lerobot_reader_passed": true,
+        "nominal_episodes": 1574,
+        "tolerance_episodes": 301,
+        "all_trajectory_flags_verified": true,
+        "missing_labels": 0,
+        "reader_episodes": [
+          0,
+          465,
+          958,
+          1416
+        ],
+        "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+        "local_independent_audit_sha256": "b896b31444b2990224680033ddd4926baf25b7c0d194f3f105382c32b9c3c194"
+      },
+      "training_state": {
+        "stage": "training",
+        "pid": 3339995,
+        "updated_at": "2026-11-09T20:37:36.251828+08:00",
+        "expected_steps": 10000,
+        "global_batch": 72,
+        "per_gpu_batch": 12
+      },
+      "normalization_completion": {
+        "complete": true,
+        "inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+        "stats_path": "/mnt/SharedData/czl/assets/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/caozilin/libero_reconstructed_joint13_successmix20_20261109/norm_stats.json",
+        "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42"
+      },
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "training",
+        "at": "2026-11-09T21:00:11.198105+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "four_x_protocol_update": {
+        "transition_state": {
+          "stage": "complete",
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "transition_completion": {
+          "complete": true,
+          "at": "2026-11-09T20:37:36.057894+08:00",
+          "training_launch": {
+            "pid": 3339995,
+            "command": [
+              "/home/czl/openpi/.venv/bin/python",
+              "-u",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+              "--run-dir",
+              "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+            ],
+            "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+            "at": "2026-11-09T20:37:36.056858+08:00",
+            "normalization_reused": true,
+            "tolerance_action_loss_multiplier": 4
+          },
+          "finisher_pid": 3339996,
+          "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "preflight_complete": true,
+          "training_full10000_pending": true
+        },
+        "normalization_reuse_verification": {
+          "complete": true,
+          "at": "2026-11-09T20:37:17.177439+08:00",
+          "only_loss_weight_changed_in_normalization_inputs": true,
+          "reason": "RunningStats consumes only state/actions; per-sample loss weight is excluded from normalization fingerprint",
+          "original_request_sha256": "9077cac73ceae17e0e9226af65d5221cd1b0089b6a681ba978bee22a6bcb9917",
+          "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+          "original_inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+          "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+          "normalization_receipt_unchanged": true,
+          "receipt_sha256": "e0205a31767a04b28d8b7ff62569e12be364e79587641b52c462179fff1d7c34"
+        },
+        "training_preflight_verification": {
+          "complete": true,
+          "scope": "CPU actual LeRobot horizon10/repack/state8/target13/normalize/pad32/Observation/JIT loss; no optimizer step",
+          "checks": [
+            {
+              "episode": 0,
+              "frame": 0,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "be401ef786569e058794a91d7139a0a60da883293c77e3e9bd603de95ed49730"
+            },
+            {
+              "episode": 0,
+              "frame": 5,
+              "flag": 0,
+              "weight": 1,
+              "normalized_action_sha256": "68ff20e83f4b5794a1d094aa0ea773ba286b5be3d48836eb55e4dd1797f5bdf2"
+            },
+            {
+              "episode": 2,
+              "frame": 0,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "fcc356910fda313d5eb9bc82a24b922820adff7a669c48edba36e3ceca5aa264"
+            },
+            {
+              "episode": 2,
+              "frame": 5,
+              "flag": 1,
+              "weight": 4,
+              "normalized_action_sha256": "c98cf0853fa9775b1c0762936c0c2314e42c48f1cf2ce223c49c1fa9381d2e98"
+            }
+          ],
+          "nominal_actions_and_labels_unchanged": true,
+          "normalization_targets_equal_before_after": true,
+          "swanlab_enabled": true,
+          "swanlab_mode": "online",
+          "config_weight": 4,
+          "metrics": {
+            "batch/action_loss_weight_mean": 2.5,
+            "batch/reweighted_action_fraction": 0.5,
+            "loss/action": 1,
+            "loss/action_nominal_contribution": 0.5,
+            "loss/action_reweighted_contribution": 0.5,
+            "loss/rotation_tolerance": 1,
+            "loss/total": 3,
+            "loss_weighted/action": 2.5,
+            "loss_weighted/rotation_tolerance": 0.5
+          },
+          "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0"
+        }
+      },
+      "live_owned_processes": [
+        {
+          "role": "exact_transport_reconstruction_process",
+          "pid": 3267870,
+          "exists": false
+        },
+        {
+          "role": "training_process",
+          "pid": 3339995,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852143
+        },
+        {
+          "role": "finish_training_process",
+          "pid": 3339996,
+          "matches_this_run": true,
+          "process_state": "S",
+          "ppid": 1,
+          "start_ticks": 218852144
+        },
+        {
+          "role": "four_x_protocol_update/transition_process",
+          "pid": 3334760,
+          "exists": false
+        }
+      ]
+    }
+  }
+]

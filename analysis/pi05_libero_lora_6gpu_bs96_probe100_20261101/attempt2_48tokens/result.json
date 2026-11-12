@@ -1,0 +1,14 @@
+{
+  "complete": false,
+  "exit_code": 1,
+  "error": "XlaRuntimeError('RESOURCE_EXHAUSTED: Out of memory while trying to allocate 7409911920 bytes.: while running replica 0 and partition 0 of a replicated computation (other replicas may have failed as well).')",
+  "peak_nvidia_mib": {
+    "0": 16837.0,
+    "1": 16797.0,
+    "2": 16797.0,
+    "3": 16797.0,
+    "4": 16797.0,
+    "6": 16812.0
+  },
+  "completed_intervals": 0
+}

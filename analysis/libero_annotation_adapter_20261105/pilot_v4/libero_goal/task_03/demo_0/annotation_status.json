@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "status": "labeled",
+  "source_episode_index": 1101,
+  "suite": "libero_goal",
+  "task_id": 3,
+  "demo": "demo_0",
+  "frames": 169,
+  "subtasks": 1,
+  "annotation": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v4/libero_goal/task_03/demo_0/tolerance_annotation.json",
+  "labels": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v4/libero_goal/task_03/demo_0/tolerance_labels.json"
+}

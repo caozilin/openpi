@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "pairs": 400,
+  "both_success": 356,
+  "recorded_result_and_trajectory_sha_bound_to_original_audits": 1600,
+  "original_source_audits_verified": true,
+  "aggregates_recomputed": true,
+  "new_rollouts": 0,
+  "physical_manipulability_or_sigma_recomputed": false
+}

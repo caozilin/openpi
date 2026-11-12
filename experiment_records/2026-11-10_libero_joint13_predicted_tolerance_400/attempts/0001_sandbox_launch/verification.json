@@ -1,0 +1,5 @@
+{
+  "reason": "sandbox namespace background process did not persist; hostps verified no matching process and lock free",
+  "evaluation_started": false,
+  "committed_results": 0
+}

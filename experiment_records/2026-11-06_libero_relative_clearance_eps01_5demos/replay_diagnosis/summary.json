@@ -1,0 +1,411 @@
+{
+  "complete": true,
+  "scope": "One diagnosed source demo only; no modification or replacement of formal annotation results",
+  "case": {
+    "episode_index": 188,
+    "suite": "libero_spatial",
+    "task_id": 4,
+    "demo": "demo_1",
+    "frames": 141,
+    "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/04/demo_1",
+    "recording_sha256": "4f03cdeaff00890e5bc2f2f9740be14a2b17e2f74ae7097d01d6d808b9eacfe7"
+  },
+  "frames": 141,
+  "physics_steps": 0,
+  "controls": [
+    {
+      "mode": "absolute",
+      "attempted_frames": 141,
+      "all141_feasible": true,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 4.448935928325071e-06,
+        "strict_rotation_residual": 9.049683643757411e-06,
+        "inequality_violation": 0.0,
+        "feasible": true
+      },
+      "frame135_command_validation": {
+        "feasible": true,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 4.448935928325071e-06,
+        "rotation_residual": 9.049683643757411e-06
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/absolute.json",
+      "sha256": "86c1331d24f656139afba9eb2f312bc39e8acb1affeca8a2106bedbe56138169"
+    },
+    {
+      "mode": "absolute_source_history",
+      "attempted_frames": 141,
+      "all141_feasible": true,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 4.448972282578012e-06,
+        "strict_rotation_residual": 9.049734302272862e-06,
+        "inequality_violation": 0.0,
+        "feasible": true
+      },
+      "frame135_command_validation": {
+        "feasible": true,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 4.448972282578012e-06,
+        "rotation_residual": 9.049734302272862e-06
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/absolute_source_history.json",
+      "sha256": "a5cea52ef2e83456f5c9d3f6f11ec4aea8348fc35d7773a706f60ae72d3f909a"
+    },
+    {
+      "mode": "absolute_source_history_source_target",
+      "attempted_frames": 141,
+      "all141_feasible": true,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 4.4489722798024545e-06,
+        "strict_rotation_residual": 9.049734298784013e-06,
+        "inequality_violation": 0.0,
+        "feasible": true
+      },
+      "frame135_command_validation": {
+        "feasible": true,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 4.4489722798024545e-06,
+        "rotation_residual": 9.049734298784013e-06
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/absolute_source_history_source_target.json",
+      "sha256": "658165a3fa030317ce752ddc3f51becdd31ec81a1f74e5214cbf5badde2f9f96"
+    },
+    {
+      "mode": "offline",
+      "attempted_frames": 136,
+      "all141_feasible": false,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 1.4067355565638984e-05,
+        "strict_rotation_residual": 2.9921422143788367e-05,
+        "inequality_violation": 0.0,
+        "feasible": false
+      },
+      "frame135_command_validation": {
+        "feasible": false,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 0.002634951823014653,
+        "rotation_residual": 0.010554567170751901
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline.json",
+      "sha256": "4313331c2e359481e7143c2a156312b10e63cd7635b0dc62085d047681ed33fb"
+    },
+    {
+      "mode": "offline_align_handoff",
+      "attempted_frames": 136,
+      "all141_feasible": false,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 1.4067146427543253e-05,
+        "strict_rotation_residual": 2.9920920055044983e-05,
+        "inequality_violation": 0.0,
+        "feasible": false
+      },
+      "frame135_command_validation": {
+        "feasible": false,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 0.0026349518230145974,
+        "rotation_residual": 0.010554567170752175
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_align_handoff.json",
+      "sha256": "491c9f67f6ed7cb794a0151ce14f2df73257e9ea61f17f079652184bacbe09d0"
+    },
+    {
+      "mode": "offline_derivatives",
+      "attempted_frames": 136,
+      "all141_feasible": false,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 1.4067355565638984e-05,
+        "strict_rotation_residual": 2.9921422143788367e-05,
+        "inequality_violation": 0.0,
+        "feasible": false
+      },
+      "frame135_command_validation": {
+        "feasible": false,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 0.002634951823014653,
+        "rotation_residual": 0.010554567170751901
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_derivatives.json",
+      "sha256": "c391e87b365e50041a204b89ba24b2626517ad7d8d4cb6989b0ad4beefe6a605"
+    },
+    {
+      "mode": "offline_iter100",
+      "attempted_frames": 141,
+      "all141_feasible": true,
+      "frame135_iterations": 89,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 4.163336342344337e-16,
+        "strict_rotation_residual": 1.09972558070111e-15,
+        "inequality_violation": 0.0,
+        "feasible": true
+      },
+      "frame135_command_validation": {
+        "feasible": true,
+        "status": "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "iterations": 89,
+        "position_residual": 4.163336342344337e-16,
+        "rotation_residual": 1.09972558070111e-15
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_iter100.json",
+      "sha256": "6f68989007ba039074b6501911a63a68af7f949679e4e7368370d7fe007eac1d"
+    },
+    {
+      "mode": "offline_iter21",
+      "attempted_frames": 141,
+      "all141_feasible": true,
+      "frame135_iterations": 21,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 3.6492936505289064e-06,
+        "strict_rotation_residual": 3.867539469203308e-06,
+        "inequality_violation": 0.0,
+        "feasible": true
+      },
+      "frame135_command_validation": {
+        "feasible": true,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 21,
+        "position_residual": 3.6492936505289064e-06,
+        "rotation_residual": 3.867539469203308e-06
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_iter21.json",
+      "sha256": "99cc2ad0e18a58af024d4ad505a30bd8ccdc16d0f60b25c7ab5a9c51645e5a8a"
+    },
+    {
+      "mode": "offline_repeat",
+      "attempted_frames": 136,
+      "all141_feasible": false,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 1.4067355565638984e-05,
+        "strict_rotation_residual": 2.9921422143788367e-05,
+        "inequality_violation": 0.0,
+        "feasible": false
+      },
+      "frame135_command_validation": {
+        "feasible": false,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 0.002634951823014653,
+        "rotation_residual": 0.010554567170751901
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_repeat.json",
+      "sha256": "9b3fedfd1e292ccb44710aef6e6b621f1598284040d4aed91ebc95664e51fc64"
+    },
+    {
+      "mode": "offline_so3_chart",
+      "attempted_frames": 141,
+      "all141_feasible": true,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 4.448968281667298e-06,
+        "strict_rotation_residual": 9.049727235199995e-06,
+        "inequality_violation": 0.0,
+        "feasible": true
+      },
+      "frame135_command_validation": {
+        "feasible": true,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 4.448968281667298e-06,
+        "rotation_residual": 9.049727235199995e-06
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_so3_chart.json",
+      "sha256": "c3d3008faddbfe86ca17fd522081454f9e648c2bc02fb74e08674d62029a33cd"
+    },
+    {
+      "mode": "offline_so3_chart_align_handoff",
+      "attempted_frames": 141,
+      "all141_feasible": true,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 4.448935931766762e-06,
+        "strict_rotation_residual": 9.049683648458557e-06,
+        "inequality_violation": 0.0,
+        "feasible": true
+      },
+      "frame135_command_validation": {
+        "feasible": true,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 4.448935931766762e-06,
+        "rotation_residual": 9.049683648458557e-06
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_so3_chart_align_handoff.json",
+      "sha256": "e1ef653e0fd96cc75cc84cc61b5ff5bbe9802893e4cac1cf30cd38fefc816fe4"
+    },
+    {
+      "mode": "offline_so3_chart_at135",
+      "attempted_frames": 141,
+      "all141_feasible": true,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 4.448970807091612e-06,
+        "strict_rotation_residual": 9.04973064969736e-06,
+        "inequality_violation": 0.0,
+        "feasible": true
+      },
+      "frame135_command_validation": {
+        "feasible": true,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 4.448970807091612e-06,
+        "rotation_residual": 9.04973064969736e-06
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_so3_chart_at135.json",
+      "sha256": "dc7e2c13ae729a404cf4af555fb7291649991fb662ee313a1572b8c3a1e30e8f"
+    },
+    {
+      "mode": "offline_so3_chart_at135_derivatives",
+      "attempted_frames": 141,
+      "all141_feasible": true,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 4.448970807091612e-06,
+        "strict_rotation_residual": 9.04973064969736e-06,
+        "inequality_violation": 0.0,
+        "feasible": true
+      },
+      "frame135_command_validation": {
+        "feasible": true,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 4.448970807091612e-06,
+        "rotation_residual": 9.04973064969736e-06
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_so3_chart_at135_derivatives.json",
+      "sha256": "bc87941cff8be97616e030fdf53fce211533fc5133266dfe729a9cf8d05abd56"
+    },
+    {
+      "mode": "offline_source_history",
+      "attempted_frames": 136,
+      "all141_feasible": false,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 1.4067342387596993e-05,
+        "strict_rotation_residual": 2.9921390711110777e-05,
+        "inequality_violation": 0.0,
+        "feasible": false
+      },
+      "frame135_command_validation": {
+        "feasible": false,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 0.002634951824487919,
+        "rotation_residual": 0.010554567178390583
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_source_history.json",
+      "sha256": "507a404277a27f73075fd2ce1f68ea569e5480164304a0234855da71b745d6a4"
+    },
+    {
+      "mode": "offline_source_state",
+      "attempted_frames": 136,
+      "all141_feasible": false,
+      "frame135_iterations": 20,
+      "frame135_raw_validation": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 1.4067355565638984e-05,
+        "strict_rotation_residual": 2.9921422143788367e-05,
+        "inequality_violation": 0.0,
+        "feasible": false
+      },
+      "frame135_command_validation": {
+        "feasible": false,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "iterations": 20,
+        "position_residual": 0.002634951823014653,
+        "rotation_residual": 0.010554567170751901
+      },
+      "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/replay_diagnosis/offline_source_state.json",
+      "sha256": "f247cb82855687493ca619a7d09d92ea9721ffb5de6d29f6d01dc73bbd54d118"
+    }
+  ],
+  "original_frame135": {
+    "index": 135,
+    "ik_wall_ms": 21.625986002618447,
+    "ik_cpu_ms": 21.60143900000122,
+    "solver_called": true,
+    "published": true,
+    "status_code": -1,
+    "status": "Maximum number of iterations exceeded (can be specified by an option).",
+    "iterations": 20,
+    "adapter_wrapper_wall_ms": 21.293847003107658,
+    "adapter_wrapper_cpu_ms": 21.27033699999714,
+    "problem_solve_wall_ms": 20.781025999895064,
+    "raw_candidate_q_rad": [
+      0.3353007201360105,
+      1.425380884182358,
+      -0.016402805608913138,
+      -0.468878414859713,
+      -0.050907103059847074,
+      1.7205473681186538,
+      0.9779520356813269
+    ],
+    "raw_candidate_validation": {
+      "finite": true,
+      "within_joint_bounds": true,
+      "position_residual": 4.448944430635038e-06,
+      "strict_rotation_residual": 9.04969564407152e-06,
+      "inequality_violation": 0.0,
+      "feasible": true
+    },
+    "raw_optimality": 0.021088682008301052
+  },
+  "verified": {
+    "prefix135_commands_bitwise_equal": true,
+    "frame135_seed_bitwise_equal": true,
+    "frame135_target_bitwise_equal": true,
+    "offline_repeat_raw_results_bitwise_equal": true,
+    "frozen_batch_code_all_unchanged": true,
+    "checked_source_files": 188,
+    "jacobian_max_absolute_error": 5.500249283807435e-09
+  },
+  "quantities": {
+    "raw_candidate_max_joint_difference_rad": 0.0005505747872542668,
+    "raw_candidate_max_joint_difference_deg": 0.03154561161598268,
+    "held_command_max_joint_difference_rad": 0.08853695213297458,
+    "position_acceptance_m": 1e-05
+  },
+  "finding": "Changing only the rotational constraint residual/Jacobian from stage XYZ to SO3 log at frame135 restores admissibility under identical prefix, seed and target. Restoring source history/state or aligning stage reference alone does not. One extra iteration also suffices. Analytic Jacobians agree with finite differences; no derivative bug found at tested points.",
+  "script": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/diagnose_zero_replay.py",
+  "script_sha256": "7ca7f46e85672054cc5b3c2bad39fe270b4156d7ac610e9a09d83b7dfdac1345"
+}

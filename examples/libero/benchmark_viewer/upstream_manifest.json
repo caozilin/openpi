@@ -1,0 +1,16 @@
+{
+  "source": "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/viewer/static",
+  "reused": [
+    "layout",
+    "CSS",
+    "video synchronization",
+    "frame seeking",
+    "3D spatial canvas",
+    "chart interaction"
+  ],
+  "sha256": {
+    "index.html": "ac303053364028fff0c8bc5100275a5af118bf82fad36c1b6797fb3cf8c85cc5",
+    "app.js": "6899833e88f12dab59a748758f491cc6636670d29d595df04e3680a37e9f66a2",
+    "styles.css": "f7b87db7e1adf0aa4b4eec74dac4baeb8d737e7eb573e6aa80a4b5dde1decd9a"
+  }
+}

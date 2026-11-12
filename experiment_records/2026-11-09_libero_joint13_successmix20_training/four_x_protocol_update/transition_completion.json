@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "at": "2026-11-09T20:37:36.057894+08:00",
+  "training_launch": {
+    "pid": 3339995,
+    "command": [
+      "/home/czl/openpi/.venv/bin/python",
+      "-u",
+      "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+      "--run-dir",
+      "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+    ],
+    "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+    "at": "2026-11-09T20:37:36.056858+08:00",
+    "normalization_reused": true,
+    "tolerance_action_loss_multiplier": 4.0
+  },
+  "finisher_pid": 3339996,
+  "normalization_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+  "preflight_complete": true,
+  "training_full10000_pending": true
+}

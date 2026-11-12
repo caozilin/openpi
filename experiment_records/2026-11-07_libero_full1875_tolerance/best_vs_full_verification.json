@@ -1,0 +1,49 @@
+{
+  "complete": true,
+  "checked_at": "2026-11-07T18:33:00.962966+08:00",
+  "episodes": 1851,
+  "blocks": 2275,
+  "excluded_baseline_unavailable": 24,
+  "checks": {
+    "aggregate": {
+      "episodes": 1851,
+      "full_success": 1238,
+      "solver_failure": 33,
+      "clearance_only_failure": 580,
+      "paired_speed_gain_percent": 0.8450340583404214
+    },
+    "libero_spatial": {
+      "episodes": 455,
+      "full_success": 298,
+      "solver_failure": 4,
+      "clearance_only_failure": 153,
+      "paired_speed_gain_percent": 0.8053356831834835
+    },
+    "libero_object": {
+      "episodes": 493,
+      "full_success": 369,
+      "solver_failure": 0,
+      "clearance_only_failure": 124,
+      "paired_speed_gain_percent": 0.3633741723517936
+    },
+    "libero_goal": {
+      "episodes": 448,
+      "full_success": 298,
+      "solver_failure": 4,
+      "clearance_only_failure": 146,
+      "paired_speed_gain_percent": 0.9268492562229724
+    },
+    "libero_10": {
+      "episodes": 455,
+      "full_success": 273,
+      "solver_failure": 25,
+      "clearance_only_failure": 157,
+      "paired_speed_gain_percent": 1.3579139671483942
+    }
+  },
+  "source_feedback_recomputed_from_raw_kinematic_and_per_frame_clearance": true,
+  "common_subset_only_for_speed": true,
+  "partial_failed_speed_excluded": true,
+  "summary_sha256": "61ade6a34fa1348a8d04371d35047cfc20d02baa47aa445c453ebfdb51deb91d",
+  "episode_pairs_sha256": "7b5341a2c9a0f0635581ae69743f393d47ceec960e210185e34b674e1010f567"
+}

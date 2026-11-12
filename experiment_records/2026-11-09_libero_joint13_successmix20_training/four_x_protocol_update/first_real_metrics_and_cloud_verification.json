@@ -1,0 +1,35 @@
+{
+  "complete": true,
+  "scope": "First logged real training step and cloud loss identities; does not prove full10000 steps",
+  "first_logged_step": 10,
+  "metrics": {
+    "batch/action_loss_weight_mean": 1.4667,
+    "batch/reweighted_action_fraction": 0.1556,
+    "grad_norm": 2.5589,
+    "loss": 1.065,
+    "loss/action": 0.4343,
+    "loss/action_nominal_contribution": 0.3652,
+    "loss/action_reweighted_contribution": 0.069,
+    "loss/rotation_tolerance": 0.8473,
+    "loss/total": 1.065,
+    "loss_weighted/action": 0.6414,
+    "loss_weighted/rotation_tolerance": 0.4236,
+    "param_norm": 1803.7705
+  },
+  "swanlab_id": "kl28cdu6bv1mywr8n5wv0",
+  "cloud_state": "RUNNING",
+  "cloud_values": {
+    "loss": 1.0650304555892944,
+    "loss/action": 0.4342585206031799,
+    "loss/rotation_tolerance": 0.8472604751586914,
+    "loss_weighted/action": 0.6414002776145935,
+    "loss_weighted/rotation_tolerance": 0.4236302375793457,
+    "loss/total": 1.0650304555892944,
+    "loss/action_nominal_contribution": 0.3652112483978271,
+    "loss/action_reweighted_contribution": 0.0690472424030304,
+    "batch/action_loss_weight_mean": 1.4666668176651,
+    "batch/reweighted_action_fraction": 0.1555555611848831
+  },
+  "all_four_x_identities_verified": true,
+  "observed_at": "2026-11-09T20:46:07.012789+08:00"
+}

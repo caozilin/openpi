@@ -1,0 +1,27 @@
+{
+  "recorded_unix": 1793194076.4726574,
+  "loss_records": [
+    [
+      "10",
+      "grad_norm=0.8777, loss=0.3808, loss/action=0.3808, loss/total=0.3808, loss_weighted/action=0.3808, param_norm=1803.7705"
+    ],
+    [
+      "20",
+      "grad_norm=0.8788, loss=0.3500, loss/action=0.3500, loss/total=0.3500, loss_weighted/action=0.3500, param_norm=1803.7705"
+    ],
+    [
+      "30",
+      "grad_norm=1.5162, loss=0.3415, loss/action=0.3415, loss/total=0.3415, loss_weighted/action=0.3415, param_norm=1803.7705"
+    ],
+    [
+      "40",
+      "grad_norm=1.1164, loss=0.2981, loss/action=0.2981, loss/total=0.2981, loss_weighted/action=0.2981, param_norm=1803.7705"
+    ]
+  ],
+  "progress": [
+    "21:27:01.706 [I] Progress on: 37.0it/15.0kit rate:4.5s/it remaining:18:42:50 elapsed:04:25 postfix:- (2305661:tqdm_logging.py:145)",
+    "21:27:19.564 [I] Progress on: 39.0it/15.0kit rate:4.5s/it remaining:18:47:51 elapsed:04:43 postfix:- (2305661:tqdm_logging.py:145)",
+    "21:27:33.482 [I] Progress on: 44.0it/15.0kit rate:4.4s/it remaining:18:08:56 elapsed:04:57 postfix:- (2305661:tqdm_logging.py:145)",
+    "21:27:47.101 [I] Progress on: 47.0it/15.0kit rate:4.5s/it remaining:18:36:47 elapsed:05:11 postfix:- (2305661:tqdm_logging.py:145)"
+  ]
+}

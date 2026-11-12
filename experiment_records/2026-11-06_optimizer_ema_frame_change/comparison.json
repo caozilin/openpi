@@ -1,0 +1,62 @@
+{
+  "complete": true,
+  "comparison": "current working tree versus last annotation source_after snapshot",
+  "changed_python_files": [
+    {
+      "file": "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/environment.py",
+      "snapshot": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/benchmark/environment.py",
+      "snapshot_sha256": "7f554944e50584fbaf27b6d2d21a076b0fcfe1f945b3d10c7d8335aa328ad1c5",
+      "current_sha256": "6c137deecc8fba4612f7328d24042af16ff6107d590cf75fcd9176ce84e4c2d9"
+    },
+    {
+      "file": "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/runner.py",
+      "snapshot": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/counterfactual/runner.py",
+      "snapshot_sha256": "f1d495350b4e795edea7b82bf3bdf88124fe5fe816fed4a392750e1dc767e851",
+      "current_sha256": "14c5e78026d709b0c3e8bf0d73eb8d8950173502bcdd177ee14b30d183d52297"
+    },
+    {
+      "file": "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/libero.py",
+      "snapshot": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/simulation/libero.py",
+      "snapshot_sha256": "bc29383ac69ca57a8dcbe31c7e78786e0ae2306646f8efee781830a37028734a",
+      "current_sha256": "b2f396ede1af209b2c90ccad0c2e9f9dde99ac7982210b3784914f00d6c47027"
+    },
+    {
+      "file": "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/app.py",
+      "snapshot": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/teleop/app.py",
+      "snapshot_sha256": "b0d407f93f99524aa8599e32da500c94e0643573bd4e50385e8094f1b58e92f3",
+      "current_sha256": "d43d74dd46134483e21b7418e7ebf09a672d2fc10978e49f8906c0f620596aea"
+    },
+    {
+      "file": "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/runtime.py",
+      "snapshot": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/tolerance/runtime.py",
+      "snapshot_sha256": "5bf791a31329604aae7072a6da97b3192ad345a08823f1a5ba690e55cd198e44",
+      "current_sha256": "eadc9dd6d21f9e3b39aa178d2f2e8212c3d7d119bc81e683772d5002581bd30f"
+    },
+    {
+      "file": "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/state.py",
+      "snapshot": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106/source_after/tasktol/tolerance/state.py",
+      "snapshot_sha256": "9a36682b2af31404db4dcdd59df5d34009ac9cb894dd314886b01f28be4d2e2c",
+      "current_sha256": "d55a0c3fe4dfe11137c43dd63d1dce581b45378f6dada88da2fd3bee3450c566"
+    }
+  ],
+  "unchanged_python_count": 182,
+  "core_unchanged": [
+    "tasktol/control/ipopt/controller.py",
+    "tasktol/control/task_space/objective.py",
+    "tasktol/control/task_space/kinematics.py",
+    "tasktol/tolerance/release_state.py"
+  ],
+  "existing_post_fix_audit_manifest": "/media/czl/sata/franka_my_code/franka_mujoco/experiment_records/2026-11-06_ema_release_consistency/post_fix/manifest.json",
+  "existing_post_fix_source_hash_match": {
+    "tasktol/tolerance/runtime.py": true,
+    "tasktol/tolerance/state.py": true,
+    "tasktol/tolerance/release_state.py": true,
+    "tasktol/tolerance/projection.py": true,
+    "tasktol/control/task_space/objective.py": true,
+    "tasktol/benchmark/environment.py": true,
+    "tasktol/simulation/preset_runtime.py": true,
+    "tasktol/simulation/libero.py": true,
+    "uv.lock": true
+  },
+  "new_test_or_rollout_run": false
+}

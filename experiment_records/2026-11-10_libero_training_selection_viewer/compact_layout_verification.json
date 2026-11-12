@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "verified_at": "2026-11-10T20:51:46.783574+08:00",
+  "grid_height": "min(56dvh,560px)",
+  "row_count": 2,
+  "object_fit": "contain",
+  "video_first": true,
+  "installation_idempotent": true,
+  "python_tests_passed": 2,
+  "published_css_sha256": "82df3ca15726598142703639902ae497d662a5146a44a4640d29575922ce6cc6",
+  "no_service_started": true,
+  "browser_render_check": false
+}

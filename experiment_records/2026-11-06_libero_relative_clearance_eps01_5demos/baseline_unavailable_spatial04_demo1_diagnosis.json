@@ -1,0 +1,73 @@
+{
+  "case": "libero_spatial/task_04/demo_1",
+  "frame_index": 135,
+  "time_s": 6.75,
+  "physics_steps": 0,
+  "solver_calls": 0,
+  "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/04/demo_1",
+  "prepared_input": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_04/demo_1/prepared_input.json",
+  "zero_trial": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106/libero_spatial/task_04/demo_1/zero_baselines/subtask_00/evaluations/77b034923b4901221fa6e431d30bdb78a091bd8e430528176c5b8ee1b88e5a6e/trial.json",
+  "source_optimizer": {
+    "backend": "ipopt",
+    "solver_called": true,
+    "feasible": true,
+    "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+    "iterations": 20,
+    "elapsed_ms": 20.781025999895064,
+    "position_residual_m": 4.448944430635038e-06,
+    "strict_rotation_residual_rad": 9.04969564407152e-06
+  },
+  "joint_target_rad": [
+    0.3353007201360105,
+    1.425380884182358,
+    -0.016402805608913138,
+    -0.468878414859713,
+    -0.050907103059847074,
+    1.7205473681186538,
+    0.9779520356813269
+  ],
+  "saved_target_position_matches_prepared": true,
+  "saved_target_rotation_matches_prepared": true,
+  "witness_fk_position_error_m": 5.429923117010833e-06,
+  "witness_fk_rotation_error_rad": 9.916500657157308e-06,
+  "witness_within_joint_limits": true,
+  "zero_trial_result": {
+    "result.evaluation.hard_failure_reasons": [
+      "optimizer_infeasible"
+    ],
+    "result.evaluation.hard_failure_details": [
+      {
+        "frame": 135,
+        "phase": "release",
+        "subtask_index": 0,
+        "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+        "position_residual": 0.0026349518230149305,
+        "rotation_residual": 0.010554567170752016,
+        "constraint_violation": 0.0
+      }
+    ],
+    "result.evaluation.motion_failure_reasons": [
+      "optimizer_infeasible"
+    ],
+    "result.hard_failure_reasons": [
+      "optimizer_infeasible"
+    ]
+  },
+  "interpretation": "Saved original accepted joint target satisfies the same offline target FK; baseline-unavailable is a finite-budget replay failure, not evidence of target unreachability. Original physical pre-state and ideal chained offline state differ; their causal contribution was not isolated.",
+  "zero_trial_sha256": "725d4a3e19ce7e68cc4eb4ac21c75f557974207cdbb1d334a84a0373a80ced81",
+  "followup_code_audit": {
+    "initial_seed_rule": "_prepare_single_step_nlp uses measured_q only if _xopt is None; otherwise previous accepted command (_xopt), unless explicit warm start. Same rule in frozen reconstruction controller and current controller.",
+    "original_constraint_path": "simulation/libero.py with bounds=None -> ik.solve(...), rotation_release_step=None -> absolute target SO3 pose_error and Jacobian.",
+    "offline_constraint_path": "counterfactual/runner.py -> solve_stage_relative_target even with zero caps -> rotation_release_step -> stage-relative fixed XYZ coordinates and analytic Jacobian, stage handoff rotation/history.",
+    "failed_residual_semantics": "Diagnostics use command_constraints. On rejected solve the command is last_command, so 2.635mm/0.01055rad are residuals of held command, not necessarily final IPOPT iterate.",
+    "iteration_limit": "Both 20; original CPU deadline .095s vs offline 1e6s. Observed original frame 20.78ms, so deadline is not the evidenced cause for this frame.",
+    "causal_scope": "Confirmed differing problem representation/entry and histories; first divergence and dominant causal contribution not isolated. Do not attribute discrepancy solely to actual-vs-ideal feedback or random optimizer behavior.",
+    "code_paths": [
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/controller.py:659",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/controller.py:546",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/controller.py:906",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/runtime.py:182",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/frozen_shared_runtime/tasktol/simulation/libero.py:226"
+    ]
+  }
+}

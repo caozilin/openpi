@@ -1,0 +1,10 @@
+{
+  "complete": false,
+  "status": "annotation_failed",
+  "source_episode_index": 1734,
+  "suite": "libero_10",
+  "task_id": 7,
+  "demo": "demo_0",
+  "error": "Nominal zero-tolerance trajectory failed",
+  "failure": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v5/libero_10/task_07/demo_0/tolerance_annotation_failure.json"
+}

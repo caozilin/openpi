@@ -72,12 +72,16 @@ uv run scripts/compute_franka_mujoco_norm_stats.py \
   --dataset-root /path/to/lerobot/caozilin/franka_mujoco
 
 CUDA_VISIBLE_DEVICES=0 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 \
-uv run scripts/train.py pi05_franka_mujoco_joint13 --exp-name=franka_mujoco_joint13_lora
+uv run scripts/train.py pi05_franka_mujoco_joint32 --exp-name=franka_mujoco_joint32_lora
 ```
 
-`pi05_franka_mujoco_joint13` and `pi05_franka_mujoco_joint13_state` pack seven
-physical actions followed by six tolerances into a native 13-dimensional model
-interface. Both fields are sequenced over the same 16-step action horizon.
+`pi05_franka_mujoco_joint32` and `pi05_franka_mujoco_joint32_state` retain the
+pretrained 32-dimensional model interface. Seven physical actions followed by six
+tolerances are normalized as 13 effective targets, then padded with 19 zeros.
+The existing `assets/pi05_franka_mujoco_joint13` path stores these 13-dimensional
+statistics; its name does not select a 13-dimensional model. Both fields are
+sequenced over the same 16-step action horizon. Native 13/15-dimensional Franka
+model interfaces and shape-mismatch reinitialization have been removed.
 The loss is `1.0 × action MSE + 0.5 × rotation_tolerance MSE`; tolerance-trajectory
 weighting changes only the physical action term. Metrics include `loss/total`,
 `loss/action`, `loss/rotation_tolerance`, and the corresponding `loss_weighted/*`.

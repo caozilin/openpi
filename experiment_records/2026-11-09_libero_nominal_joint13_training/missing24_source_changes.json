@@ -1,0 +1,11 @@
+{
+  "original_snapshot": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/source_snapshot",
+  "new_snapshot": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/source_snapshot",
+  "modified_files": [
+    "tasktol/counterfactual/runner.py",
+    "tasktol/tolerance/clearance_policy.py",
+    "tasktol/data/libero_annotation/dsp.py",
+    "label_franka_nominal_dsp.py",
+    "tasktol/data/libero_annotation/audit.py"
+  ]
+}

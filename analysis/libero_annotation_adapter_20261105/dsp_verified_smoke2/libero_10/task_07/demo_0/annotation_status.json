@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "status": "no_feasible_label",
+  "source_episode_index": 1734,
+  "suite": "libero_10",
+  "task_id": 7,
+  "demo": "demo_0",
+  "frames": 241,
+  "semantic_subtasks": 2,
+  "extra": 2,
+  "preflight": false,
+  "label_policy": "speed_best_feasible_search_caps_v1",
+  "labels": null
+}

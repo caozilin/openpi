@@ -2,6 +2,90 @@
 
 This example runs the LIBERO benchmark: https://github.com/Lifelong-Robot-Learning/LIBERO
 
+## 默认逐轴语义容差配置
+
+`configs/libero40_semantic_tolerances_deg.json` 保存用户编辑表格中的40任务、49子任务
+APP／EXEC三轴角度；顺序为 **xF、yF、zF**，单位为度、含义为正负对称半宽。
+0为严格轴，其余数值直接转为弧度传入求解器；ENG／DIS固定三轴0，heading退化保护保留。
+Long06白杯与巧克力布丁分别使用各自角度，按当前物体距离选择并在抓取／执行期间锁存。
+
+再次编辑工作簿后运行以下命令更新默认配置（只读表格，不启动测评）：
+
+```bash
+python3 examples/libero/import_semantic_tolerances.py
+```
+
+准备新的容差测评run时，用 `confirmed_mask_policy.freeze_default_config(new_run_dir)`
+生成该run的 `confirmed_masks.json` 并将返回字段合入新 `evaluation_request.json`。
+请求同时冻结当前客户端、`confirmed_mask_policy.py`、`solver_failure_hold.py`、
+`success_continuation.py` 等执行源码SHA。worker只读该run的冻结副本，拒绝角度或SHA不一致的续跑；
+既有run里的旧表与结果保持原值。逐帧日志和回放保留当前请求的分轴角度，失败保持时另记上一接受参考边界。
+
+新测评默认首次原生成功后继续闭环20帧（1秒），连续20帧求解失败提前终止策略仍有效。
+新请求须合入 `success_continuation.request_fields()`；首次成功和延长后末态成功分别记录。
+
+## 本地 benchmark 求解失败策略
+
+本地重构模型评测客户端使用 `solver_failure_hold.py`：求解成功才提交新的名义位置、
+姿态及容差释放状态；失败帧丢弃本帧增量，回滚到上一帧已接受参考，继续用上一帧的
+关节目标和夹爪命令执行完整控制周期。首次求解尚未成功时保持初始实测关节位置，
+夹爪沿用初始化的打开命令。不使用失败的关节候选，也不把失败动作累积到下一帧。
+
+默认 **连续20帧失败** 才提前终止（20 Hz下为1秒仿真控制时间，不是求解墙钟耗时）；
+任何一帧成功会把连续失败计数清零。终止的第20帧也执行50 ms保持控制。
+若保持期间原生任务成功谓词变为真，仍记录任务成功。
+可通过 `--max-consecutive-solver-failures` 修改阈值，必须与新run请求中记录的值一致。
+模型仍按既有重规划周期消费动作，失败动作不会重放或排队。
+
+每帧分别记录 `solver_failed`、`reference_held`、`nominal_reference_updated`、
+`consecutive_solver_failures`、`solver_failure_limit_reached`；`aborted`仅表示实际提前终止。
+失败候选另存为 `rejected_nominal_target` / `rejected_joint_target_rad`，
+`nominal_target` / `joint_target_rad` 保持实际采用的参考。结果记录终止原因
+`ik_failure_streak`、失败总帧数、最长连续失败数及配置阈值。
+
+历史数据与冻结runtime不修改。新请求须记录
+`solver_failure_policy="hold_last_accepted_reference"`、
+`max_consecutive_solver_failures=20`，并把新适配器与客户端SHA加入 `source_sha256`。
+旧请求无法使用新策略静默续跑。已标记配置错误的全111容差run保持禁用；此改动
+不修正或启用其任务mask，也不启动评测、推理或自动监督。
+
+验证：`.venv/bin/python -m pytest -q examples/libero/solver_failure_hold_test.py`。
+
+## Benchmark测评回放（含最新400回合）
+
+```bash
+python3 examples/libero/serve_mask_annotation_viewer.py --benchmark --port 8768
+```
+
+打开 <http://127.0.0.1:8768>。当前终端持续运行，`Ctrl+C` 结束进程并释放端口。
+目录可选“无容差 · 40任务×10次（含失败重测）”，每任务seed0–9；也可单独查看
+新增seed6–9、原240和17条失败重测。回合详情标明实际记录来源，原数据不复制或覆盖。
+旧 `--background` 参数保留兼容，但不再启动后台进程。
+
+## 重构后的 Rollout 可视化（当前默认）
+
+在项目根目录运行 `python3 examples/libero/serve_mask_annotation_viewer.py --port 8768`，
+打开 <http://127.0.0.1:8768/index.html>。默认仅展示共享 MuJoCo 关节运动生成器
+重构后的成功 rollout；任务显示已保存条数 / 10，不加载旧 B10/OSC 录制。
+
+数据目录为 `data/libero_tasktol_joint_servo/20261025_success10_v1`。
+新增成功数据后，先更新页面目录：
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+../franka_mujoco/experiments/libero_closed_loop/.venv/bin/python \
+examples/libero/build_reconstructed_rollout_viewer.py
+```
+
+页面保留逐帧视频、在线阶段、关节/动作曲线、参考修正记录，以及分别相对原始
+state 和补偿参考的误差。启动查看器不会恢复数据录制。
+
+默认并排显示左侧重构 rollout 与右侧同 demo 的原始数据集视频，播放、暂停、
+倍速和定位共用时间轴；取消“并排对比原始数据”即可隐藏右侧。
+右侧从原始 HDF5 的 `obs/agentview_rgb` 直接编码，保留全部原始帧，
+仅按显示约定旋转180°；它不是 OSC 重录或 state 回放。原始分辨率128×128，
+重构分辨率256×256。两侧按帧号对应，原始额外的最后一帧可用“打开原始视频”查看。
+
 Note: When updating requirements.txt in this directory, there is an additional flag `--extra-index-url https://download.pytorch.org/whl/cu113` that must be added to the `uv pip compile` command.
 
 This example requires git submodules to be initialized. Don't forget to run:

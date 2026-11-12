@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "episode": 0,
+  "frames": 97,
+  "checked_indices": [
+    0,
+    40,
+    96
+  ],
+  "action_horizon": 10,
+  "state_dim": 8,
+  "effective_target_dim": 13,
+  "source_png_bytes_unchanged": true,
+  "cache": "/tmp/libero_joint13_real_reader_smoke_20261109",
+  "all_nominal": true
+}

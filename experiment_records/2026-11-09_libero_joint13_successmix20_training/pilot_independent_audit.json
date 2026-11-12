@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "episode_index": 2,
+  "frames": 89,
+  "actions_unchanged": true,
+  "identity_time_language_indices_unchanged": true,
+  "preaction_states_equal": true,
+  "all_dual_video_frames_equal_decoded_mp4": true,
+  "rotation_not_applied_twice": true,
+  "trajectory_is_tolerance": 1,
+  "scope": "one independent pilot; full301/1875 audit still required"
+}

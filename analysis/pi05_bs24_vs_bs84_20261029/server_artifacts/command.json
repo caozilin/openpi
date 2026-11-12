@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "/home/czl/openpi/.venv/bin/python",
+    "-u",
+    "scripts/train.py",
+    "pi05_franka_mujoco_state_action7_lora_bs24_6gpu",
+    "--exp-name",
+    "Pi05_nominal100_state_action7_LoRA_6gpu_bs24_15min_20261029",
+    "--data.lerobot-dataset-root",
+    "/mnt/SharedData/czl/lerobot/caozilin/franka_100_nominal",
+    "--data.hf-datasets-cache-dir",
+    "/mnt/SharedData/czl/hf_datasets/caozilin/franka_100_nominal",
+    "--data.assets.assets-dir",
+    "/mnt/SharedData/czl/assets/pi05_franka_mujoco_state_action7",
+    "--checkpoint-base-dir",
+    "/mnt/SharedData/czl/checkpoints",
+    "--swanlab-log-dir",
+    "/mnt/SharedData/czl/swanlog"
+  ],
+  "global_batch": 24,
+  "num_gpus": 6,
+  "per_gpu_batch": 4,
+  "unchanged_from": "/mnt/SharedData/czl/runs/pi05_state_action7_bs84_15k_20261028",
+  "norm_sha256": "e1e3c4e7630f6ee524d99ae99cb0dfe8f61306d83c3feebbfa564edc0c5b7a07",
+  "timer_policy": "900 seconds after first compiled progress event; stop at next 10-step metric boundary"
+}

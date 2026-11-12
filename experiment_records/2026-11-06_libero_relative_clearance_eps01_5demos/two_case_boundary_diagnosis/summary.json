@@ -1,0 +1,308 @@
+{
+  "complete": true,
+  "scope": "Two blocked annotation baselines only; diagnostic-only iterations and reference interventions; no labels, solver budgets or frozen source files modified",
+  "cases": [
+    {
+      "case": "libero_spatial/task_04/demo_1",
+      "annotation_subtask": 0,
+      "local_frame": 135,
+      "source_frame": 135,
+      "time_s": 6.75,
+      "source_frame_count": 141,
+      "first_native_success_source_frame": 108,
+      "original_success_at_diagnosed_frame": true,
+      "raw_candidate": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 1.4067355565638984e-05,
+        "strict_rotation_residual": 2.9921422143788367e-05,
+        "inequality_violation": 0.0,
+        "feasible": false
+      },
+      "nearest_joint_limit_deg": 19.331680110929994,
+      "nearest_joint": 2,
+      "normalized_sigma_min": 0.0031286942099836984,
+      "prefix_median_normalized_sigma_min": 1.10861312454403,
+      "reference_offset_deg": 1.248729589100904e-05,
+      "original_witness_current_constraints": {
+        "equality": [
+          -2.9389523857337174e-06,
+          1.0264099493673129e-06,
+          4.448944430635038e-06,
+          -2.0729273926310844e-06,
+          8.694725233002425e-06,
+          4.105148048861764e-06
+        ],
+        "inequality": [],
+        "position_residual": 4.448944430635038e-06,
+        "rotation_residual": 8.694725233002425e-06,
+        "inequality_violation": 0.0
+      },
+      "variants": [
+        {
+          "mode": "absolute",
+          "complete": true,
+          "tested_block_frames": 141,
+          "iterations": 20,
+          "failure_frame_raw_position_residual_m": 4.448935928325071e-06,
+          "failure_frame_raw_rotation_residual_rad": 9.049683643757411e-06,
+          "frame_feasible": true,
+          "stage_offset_rad": null,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_spatial/task_04/demo_1/absolute.json",
+          "sha256": "8e5788fc6e89020cd693d4d47678063eb300b42acf2c2c7d5e3e3acc3f92562a"
+        },
+        {
+          "mode": "align_handoff",
+          "complete": false,
+          "tested_block_frames": 141,
+          "iterations": 20,
+          "failure_frame_raw_position_residual_m": 1.4067146427543253e-05,
+          "failure_frame_raw_rotation_residual_rad": 2.9920920055044983e-05,
+          "frame_feasible": false,
+          "stage_offset_rad": 1.5506124129658058e-17,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_spatial/task_04/demo_1/align_handoff.json",
+          "sha256": "20ea691e1f05b4263e27bad4ce820363c251dc420b9077f81ca528b11979bce4"
+        },
+        {
+          "mode": "baseline",
+          "complete": false,
+          "tested_block_frames": 141,
+          "iterations": 20,
+          "failure_frame_raw_position_residual_m": 1.4067355565638984e-05,
+          "failure_frame_raw_rotation_residual_rad": 2.9921422143788367e-05,
+          "frame_feasible": false,
+          "stage_offset_rad": 2.1794442796886675e-07,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_spatial/task_04/demo_1/baseline.json",
+          "sha256": "0a26596b7b70bedb7c321e75f15486918108393172a180b5881de61822cbeb2b"
+        },
+        {
+          "mode": "iter100",
+          "complete": true,
+          "tested_block_frames": 141,
+          "iterations": 89,
+          "failure_frame_raw_position_residual_m": 4.163336342344337e-16,
+          "failure_frame_raw_rotation_residual_rad": 1.09972558070111e-15,
+          "frame_feasible": true,
+          "stage_offset_rad": 2.1794442796886675e-07,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_spatial/task_04/demo_1/iter100.json",
+          "sha256": "d1779f51f17b7f4392e653c4f9c98c23c7f8c178b5d99ad3506c1604f56ae88f"
+        },
+        {
+          "mode": "iter21",
+          "complete": true,
+          "tested_block_frames": 141,
+          "iterations": 21,
+          "failure_frame_raw_position_residual_m": 3.6492936505289064e-06,
+          "failure_frame_raw_rotation_residual_rad": 3.867539469203308e-06,
+          "frame_feasible": true,
+          "stage_offset_rad": 2.1794442796886675e-07,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_spatial/task_04/demo_1/iter21.json",
+          "sha256": "820d2623f0e0529a384ebe03fda5e5118c8f182761143d4cd7c9bff39968e97a"
+        },
+        {
+          "mode": "same_frame_log",
+          "complete": false,
+          "tested_block_frames": 141,
+          "iterations": 20,
+          "failure_frame_raw_position_residual_m": 1.1779292345331926e-05,
+          "failure_frame_raw_rotation_residual_rad": 2.4479271681186392e-05,
+          "frame_feasible": false,
+          "stage_offset_rad": 2.1794471356460419e-07,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_spatial/task_04/demo_1/same_frame_log.json",
+          "sha256": "c47a29ee74727f660c5ed53374fc78a7595ad24236320675ae30283b3f0b202d"
+        },
+        {
+          "mode": "source_history",
+          "complete": false,
+          "tested_block_frames": 141,
+          "iterations": 20,
+          "failure_frame_raw_position_residual_m": 1.4067342387596993e-05,
+          "failure_frame_raw_rotation_residual_rad": 2.9921390711110777e-05,
+          "frame_feasible": false,
+          "stage_offset_rad": 2.1794442794693272e-07,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_spatial/task_04/demo_1/source_history.json",
+          "sha256": "bead1298a165c37930c09a384dfdc0bda810e49434a4976e5235f3346e94b6b1"
+        }
+      ],
+      "source_trajectory": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/04/demo_1/trajectory.json",
+      "source_trajectory_sha256": "500912f1036be357478446ae0705b2df15c01629dc6ce0a93e7437ec7c57a417"
+    },
+    {
+      "case": "libero_10/task_08/demo_4",
+      "annotation_subtask": 1,
+      "local_frame": 200,
+      "source_frame": 413,
+      "time_s": 20.650000000000002,
+      "source_frame_count": 420,
+      "first_native_success_source_frame": 409,
+      "original_success_at_diagnosed_frame": true,
+      "raw_candidate": {
+        "finite": true,
+        "within_joint_bounds": true,
+        "position_residual": 0.0007646804695448928,
+        "strict_rotation_residual": 0.0006473333242467899,
+        "inequality_violation": 0.0,
+        "feasible": false
+      },
+      "nearest_joint_limit_deg": 22.69908263727656,
+      "nearest_joint": 4,
+      "normalized_sigma_min": 0.004348758273677151,
+      "prefix_median_normalized_sigma_min": 1.017590296852641,
+      "reference_offset_deg": 0.5314139897038535,
+      "original_witness_current_constraints": {
+        "equality": [
+          2.866595849582154e-13,
+          8.884559754562815e-14,
+          5.639932965095795e-13,
+          -0.0026102041058742994,
+          0.006183190137165866,
+          -0.006409408653519832
+        ],
+        "inequality": [],
+        "position_residual": 5.639932965095795e-13,
+        "rotation_residual": 0.006409408653519832,
+        "inequality_violation": 0.0
+      },
+      "variants": [
+        {
+          "mode": "absolute",
+          "complete": true,
+          "tested_block_frames": 207,
+          "iterations": 5,
+          "failure_frame_raw_position_residual_m": 5.655476087440547e-13,
+          "failure_frame_raw_rotation_residual_rad": 1.1652895833597346e-12,
+          "frame_feasible": true,
+          "stage_offset_rad": null,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_10/task_08/demo_4/absolute.json",
+          "sha256": "ccaab4ebe3be68de37e4795e8501baabc0bae64b393adc73efaeae705ffc5b6d"
+        },
+        {
+          "mode": "align_handoff",
+          "complete": true,
+          "tested_block_frames": 207,
+          "iterations": 5,
+          "failure_frame_raw_position_residual_m": 5.682121440031551e-13,
+          "failure_frame_raw_rotation_residual_rad": 1.1367368310089256e-12,
+          "frame_feasible": true,
+          "stage_offset_rad": 3.297833623281348e-17,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_10/task_08/demo_4/align_handoff.json",
+          "sha256": "ce581f08f6170fd29c87e8dbdb9f0e72893e19d2bcc63b963a5b2929d78f2d9e"
+        },
+        {
+          "mode": "baseline",
+          "complete": false,
+          "tested_block_frames": 207,
+          "iterations": 20,
+          "failure_frame_raw_position_residual_m": 0.0007646804695448928,
+          "failure_frame_raw_rotation_residual_rad": 0.0006473333242467899,
+          "frame_feasible": false,
+          "stage_offset_rad": 0.00927492381149149,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_10/task_08/demo_4/baseline.json",
+          "sha256": "7973ee132bbff7d8d8503d7519b87fd01c0833d44d81e9ba343073ceaa8e2854"
+        },
+        {
+          "mode": "iter100",
+          "complete": false,
+          "tested_block_frames": 207,
+          "iterations": 100,
+          "failure_frame_raw_position_residual_m": 0.0006773651979611675,
+          "failure_frame_raw_rotation_residual_rad": 0.0005010438841864391,
+          "frame_feasible": false,
+          "stage_offset_rad": 0.00927492381149149,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_10/task_08/demo_4/iter100.json",
+          "sha256": "edf8fad56952db675dc3e150feeb4e80513b1316a95253b60d5dee212189e807"
+        },
+        {
+          "mode": "iter21",
+          "complete": false,
+          "tested_block_frames": 207,
+          "iterations": 21,
+          "failure_frame_raw_position_residual_m": 0.0007629393193564621,
+          "failure_frame_raw_rotation_residual_rad": 0.0006460092040495764,
+          "frame_feasible": false,
+          "stage_offset_rad": 0.00927492381149149,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_10/task_08/demo_4/iter21.json",
+          "sha256": "fe19b49fd5c91157f5f4738ec10896087ca61bf1d5a46654ab076fbec7e42d4c"
+        },
+        {
+          "mode": "multistart",
+          "complete": false,
+          "tested_block_frames": 207,
+          "iterations": 20,
+          "failure_frame_raw_position_residual_m": 0.0007646804695448928,
+          "failure_frame_raw_rotation_residual_rad": 0.0006473333242467899,
+          "frame_feasible": false,
+          "stage_offset_rad": 0.00927492381149149,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_10/task_08/demo_4/multistart.json",
+          "sha256": "4c262ceefec579ce35b90ef58cb8d0b385e121215f9ec1bae2686cf10597b863"
+        },
+        {
+          "mode": "multistart_raw",
+          "complete": false,
+          "tested_block_frames": 207,
+          "iterations": 20,
+          "failure_frame_raw_position_residual_m": 0.0007646804695448928,
+          "failure_frame_raw_rotation_residual_rad": 0.0006473333242467899,
+          "frame_feasible": false,
+          "stage_offset_rad": 0.00927492381149149,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_10/task_08/demo_4/multistart_raw.json",
+          "sha256": "9c2fcc4e7584b0df3a7f0a467a57af993db59f6b1f124d2203d36149f1ac9471"
+        },
+        {
+          "mode": "same_frame_log",
+          "complete": false,
+          "tested_block_frames": 207,
+          "iterations": 20,
+          "failure_frame_raw_position_residual_m": 0.0007646309140654645,
+          "failure_frame_raw_rotation_residual_rad": 0.0006468975261555276,
+          "frame_feasible": false,
+          "stage_offset_rad": 0.00927492371382154,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_10/task_08/demo_4/same_frame_log.json",
+          "sha256": "4306e2ad972779357b87eeed323ca553fc567b7323707c0f0820f9dde1ebffeb"
+        },
+        {
+          "mode": "source_history",
+          "complete": false,
+          "tested_block_frames": 207,
+          "iterations": 20,
+          "failure_frame_raw_position_residual_m": 0.2663672069320884,
+          "failure_frame_raw_rotation_residual_rad": 0.34121468728796234,
+          "frame_feasible": false,
+          "stage_offset_rad": 0.009274923316197291,
+          "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/two_case_boundary_diagnosis/libero_10/task_08/demo_4/source_history.json",
+          "sha256": "8389f79e1c00de9931d2a7a6cf668ae029cf459899b102fe299d3e80368b2b22"
+        }
+      ],
+      "source_trajectory": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_10/08/demo_4/trajectory.json",
+      "source_trajectory_sha256": "2302e7a1aa84894cc8a8d2fe6be1a851f7584af1241fa6194b1beab2c049b191",
+      "multistart_summary": {
+        "seeds": 12,
+        "max_iterations": 300,
+        "feasible": 0,
+        "local_infeasibility_count": 10,
+        "common_local_position_residual_m": [
+          0.0007226084510553454,
+          0.0007226084510557895,
+          0.0011655295275752806,
+          0.000722608451055623,
+          0.0007226084510562475,
+          0.0007226084510551234,
+          0.0007226084510551511,
+          0.0007226084510552205,
+          0.0007226084510549846,
+          0.0007226084510545128
+        ],
+        "scope": "Local searches do not prove global unreachability; reported values are raw iterates, not held commands."
+      }
+    }
+  ],
+  "script": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-06_libero_relative_clearance_eps01_5demos/diagnose_baseline_boundaries.py",
+  "script_sha256": "74ae6d997ae3991b6875ddac82d5fc32086179e203358741eb96296d8b2c3f34",
+  "physics_steps": 0,
+  "frozen_source_unchanged": true,
+  "notes": [
+    "same_frame_log keeps tolerance frame and stage reference; unlike earlier body-SO3 comparison, isolates parameterization",
+    "Removing handoff offset changes the requested physical reference and is diagnostic only, not an authorized repair",
+    "Both failures occur after original native success; retained full source frames are not truncated"
+  ]
+}

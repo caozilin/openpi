@@ -1,0 +1,8 @@
+{
+  "step": 9000,
+  "optimizer_counts": {
+    "[1][0].count": 9000,
+    "[1][2].count": 9000
+  },
+  "learning_rate": 4.999999873689376e-06
+}

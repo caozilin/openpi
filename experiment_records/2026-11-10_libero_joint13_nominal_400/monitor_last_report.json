@@ -1,0 +1,67 @@
+{
+  "observed_at": "2026-11-10T20:17:13.891065+08:00",
+  "completed_episodes": 400,
+  "expected_episodes": 400,
+  "successes": 368,
+  "per_suite": {
+    "libero_spatial": {
+      "completed": 100,
+      "successes": 96
+    },
+    "libero_object": {
+      "completed": 100,
+      "successes": 97
+    },
+    "libero_goal": {
+      "completed": 100,
+      "successes": 88
+    },
+    "libero_10": {
+      "completed": 100,
+      "successes": 87
+    }
+  },
+  "terminations": {
+    "task_success": 368,
+    "step_limit": 22,
+    "ik_failure_streak": 10
+  },
+  "infrastructure_errors": 0,
+  "delta_completed": 0,
+  "delta_successes": 0,
+  "historical_audit_implementation_interruptions": 2,
+  "active_audit_finish_processes": [
+    {
+      "pid": 113851,
+      "ppid": 2688,
+      "state": "S",
+      "start_ticks": 1927457,
+      "command": "python3 -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/finish_existing400.py "
+    },
+    {
+      "pid": 113857,
+      "ppid": 113851,
+      "state": "R",
+      "start_ticks": 1927492,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_evaluation_v3.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110 "
+    }
+  ],
+  "all400x4_artifact_sha_unchanged": true,
+  "frozen490_sources_and_v3_amendment_unchanged": true,
+  "audit_state": {
+    "stage": "auditing",
+    "checked_episodes": 253,
+    "expected_episodes": 400
+  },
+  "pipeline_state": {
+    "stage": "auditing",
+    "at": "2026-11-10T20:14:38.061760+08:00",
+    "audit_version": 3
+  },
+  "locks": {
+    "evaluation.lock": "released",
+    "independent_audit.lock": "held",
+    "pipeline.lock": "held",
+    "initial_audit.lock": "released"
+  }
+}

@@ -1,0 +1,2300 @@
+{
+  "user_authorization": "之前全名义轨迹的容差数据集半成品直接删除",
+  "scope": "/mnt/SharedData/czl/lerobot/caozilin/libero_reconstructed_nominal_joint13_20261109",
+  "files": [
+    {
+      "path": "conversion_completion.json",
+      "bytes": 262
+    },
+    {
+      "path": "conversion_manifest.json",
+      "bytes": 894905
+    },
+    {
+      "path": "conversion_request.json",
+      "bytes": 1987994
+    },
+    {
+      "path": "data/chunk-000/episode_000000.parquet",
+      "bytes": 12112485
+    },
+    {
+      "path": "data/chunk-000/episode_000001.parquet",
+      "bytes": 10491544
+    },
+    {
+      "path": "data/chunk-000/episode_000002.parquet",
+      "bytes": 11073419
+    },
+    {
+      "path": "data/chunk-000/episode_000003.parquet",
+      "bytes": 11752141
+    },
+    {
+      "path": "data/chunk-000/episode_000004.parquet",
+      "bytes": 12827597
+    },
+    {
+      "path": "data/chunk-000/episode_000005.parquet",
+      "bytes": 16788071
+    },
+    {
+      "path": "data/chunk-000/episode_000006.parquet",
+      "bytes": 11101331
+    },
+    {
+      "path": "data/chunk-000/episode_000007.parquet",
+      "bytes": 11346618
+    },
+    {
+      "path": "data/chunk-000/episode_000008.parquet",
+      "bytes": 9592689
+    },
+    {
+      "path": "data/chunk-000/episode_000009.parquet",
+      "bytes": 10772648
+    },
+    {
+      "path": "data/chunk-000/episode_000010.parquet",
+      "bytes": 11122523
+    },
+    {
+      "path": "data/chunk-000/episode_000011.parquet",
+      "bytes": 15654623
+    },
+    {
+      "path": "data/chunk-000/episode_000012.parquet",
+      "bytes": 10291202
+    },
+    {
+      "path": "data/chunk-000/episode_000013.parquet",
+      "bytes": 10338735
+    },
+    {
+      "path": "data/chunk-000/episode_000014.parquet",
+      "bytes": 13485342
+    },
+    {
+      "path": "data/chunk-000/episode_000015.parquet",
+      "bytes": 10174578
+    },
+    {
+      "path": "data/chunk-000/episode_000016.parquet",
+      "bytes": 10889109
+    },
+    {
+      "path": "data/chunk-000/episode_000017.parquet",
+      "bytes": 11870755
+    },
+    {
+      "path": "data/chunk-000/episode_000018.parquet",
+      "bytes": 9014999
+    },
+    {
+      "path": "data/chunk-000/episode_000019.parquet",
+      "bytes": 12290651
+    },
+    {
+      "path": "data/chunk-000/episode_000020.parquet",
+      "bytes": 11105066
+    },
+    {
+      "path": "data/chunk-000/episode_000021.parquet",
+      "bytes": 14442198
+    },
+    {
+      "path": "data/chunk-000/episode_000022.parquet",
+      "bytes": 11735007
+    },
+    {
+      "path": "data/chunk-000/episode_000023.parquet",
+      "bytes": 10472912
+    },
+    {
+      "path": "data/chunk-000/episode_000024.parquet",
+      "bytes": 12511785
+    },
+    {
+      "path": "data/chunk-000/episode_000025.parquet",
+      "bytes": 12833045
+    },
+    {
+      "path": "data/chunk-000/episode_000026.parquet",
+      "bytes": 13395057
+    },
+    {
+      "path": "data/chunk-000/episode_000027.parquet",
+      "bytes": 11235391
+    },
+    {
+      "path": "data/chunk-000/episode_000028.parquet",
+      "bytes": 15094174
+    },
+    {
+      "path": "data/chunk-000/episode_000029.parquet",
+      "bytes": 15777487
+    },
+    {
+      "path": "data/chunk-000/episode_000030.parquet",
+      "bytes": 18505983
+    },
+    {
+      "path": "data/chunk-000/episode_000031.parquet",
+      "bytes": 11235110
+    },
+    {
+      "path": "data/chunk-000/episode_000032.parquet",
+      "bytes": 13696556
+    },
+    {
+      "path": "data/chunk-000/episode_000033.parquet",
+      "bytes": 12345312
+    },
+    {
+      "path": "data/chunk-000/episode_000034.parquet",
+      "bytes": 20754788
+    },
+    {
+      "path": "data/chunk-000/episode_000035.parquet",
+      "bytes": 10839508
+    },
+    {
+      "path": "data/chunk-000/episode_000036.parquet",
+      "bytes": 13214899
+    },
+    {
+      "path": "data/chunk-000/episode_000037.parquet",
+      "bytes": 11562340
+    },
+    {
+      "path": "data/chunk-000/episode_000038.parquet",
+      "bytes": 11268056
+    },
+    {
+      "path": "data/chunk-000/episode_000039.parquet",
+      "bytes": 13207334
+    },
+    {
+      "path": "data/chunk-000/episode_000040.parquet",
+      "bytes": 11440223
+    },
+    {
+      "path": "data/chunk-000/episode_000041.parquet",
+      "bytes": 11368788
+    },
+    {
+      "path": "data/chunk-000/episode_000042.parquet",
+      "bytes": 10837399
+    },
+    {
+      "path": "data/chunk-000/episode_000043.parquet",
+      "bytes": 10470821
+    },
+    {
+      "path": "data/chunk-000/episode_000044.parquet",
+      "bytes": 11291252
+    },
+    {
+      "path": "data/chunk-000/episode_000045.parquet",
+      "bytes": 11926759
+    },
+    {
+      "path": "data/chunk-000/episode_000046.parquet",
+      "bytes": 12007976
+    },
+    {
+      "path": "data/chunk-000/episode_000047.parquet",
+      "bytes": 18717626
+    },
+    {
+      "path": "data/chunk-000/episode_000048.parquet",
+      "bytes": 14724335
+    },
+    {
+      "path": "data/chunk-000/episode_000049.parquet",
+      "bytes": 17019646
+    },
+    {
+      "path": "data/chunk-000/episode_000050.parquet",
+      "bytes": 21426083
+    },
+    {
+      "path": "data/chunk-000/episode_000051.parquet",
+      "bytes": 17734370
+    },
+    {
+      "path": "data/chunk-000/episode_000052.parquet",
+      "bytes": 18404897
+    },
+    {
+      "path": "data/chunk-000/episode_000053.parquet",
+      "bytes": 19064910
+    },
+    {
+      "path": "data/chunk-000/episode_000054.parquet",
+      "bytes": 15536098
+    },
+    {
+      "path": "data/chunk-000/episode_000055.parquet",
+      "bytes": 19015912
+    },
+    {
+      "path": "data/chunk-000/episode_000056.parquet",
+      "bytes": 15419065
+    },
+    {
+      "path": "data/chunk-000/episode_000057.parquet",
+      "bytes": 13365184
+    },
+    {
+      "path": "data/chunk-000/episode_000058.parquet",
+      "bytes": 13695584
+    },
+    {
+      "path": "data/chunk-000/episode_000059.parquet",
+      "bytes": 15536217
+    },
+    {
+      "path": "data/chunk-000/episode_000060.parquet",
+      "bytes": 17966786
+    },
+    {
+      "path": "data/chunk-000/episode_000061.parquet",
+      "bytes": 15110117
+    },
+    {
+      "path": "data/chunk-000/episode_000062.parquet",
+      "bytes": 16587162
+    },
+    {
+      "path": "data/chunk-000/episode_000063.parquet",
+      "bytes": 13476266
+    },
+    {
+      "path": "data/chunk-000/episode_000064.parquet",
+      "bytes": 13260882
+    },
+    {
+      "path": "data/chunk-000/episode_000065.parquet",
+      "bytes": 15352951
+    },
+    {
+      "path": "data/chunk-000/episode_000066.parquet",
+      "bytes": 16272688
+    },
+    {
+      "path": "data/chunk-000/episode_000067.parquet",
+      "bytes": 16255338
+    },
+    {
+      "path": "data/chunk-000/episode_000068.parquet",
+      "bytes": 13028098
+    },
+    {
+      "path": "data/chunk-000/episode_000069.parquet",
+      "bytes": 22902536
+    },
+    {
+      "path": "data/chunk-000/episode_000070.parquet",
+      "bytes": 17839757
+    },
+    {
+      "path": "data/chunk-000/episode_000071.parquet",
+      "bytes": 18013264
+    },
+    {
+      "path": "data/chunk-000/episode_000072.parquet",
+      "bytes": 14123558
+    },
+    {
+      "path": "data/chunk-000/episode_000073.parquet",
+      "bytes": 14238596
+    },
+    {
+      "path": "data/chunk-000/episode_000074.parquet",
+      "bytes": 19217740
+    },
+    {
+      "path": "data/chunk-000/episode_000075.parquet",
+      "bytes": 14010651
+    },
+    {
+      "path": "data/chunk-000/episode_000076.parquet",
+      "bytes": 18583472
+    },
+    {
+      "path": "data/chunk-000/episode_000077.parquet",
+      "bytes": 14224540
+    },
+    {
+      "path": "data/chunk-000/episode_000078.parquet",
+      "bytes": 14713425
+    },
+    {
+      "path": "data/chunk-000/episode_000079.parquet",
+      "bytes": 16700780
+    },
+    {
+      "path": "data/chunk-000/episode_000080.parquet",
+      "bytes": 14580811
+    },
+    {
+      "path": "data/chunk-000/episode_000081.parquet",
+      "bytes": 15542307
+    },
+    {
+      "path": "data/chunk-000/episode_000082.parquet",
+      "bytes": 17323673
+    },
+    {
+      "path": "data/chunk-000/episode_000083.parquet",
+      "bytes": 14854206
+    },
+    {
+      "path": "data/chunk-000/episode_000084.parquet",
+      "bytes": 15234704
+    },
+    {
+      "path": "data/chunk-000/episode_000085.parquet",
+      "bytes": 13352249
+    },
+    {
+      "path": "data/chunk-000/episode_000086.parquet",
+      "bytes": 16855632
+    },
+    {
+      "path": "data/chunk-000/episode_000087.parquet",
+      "bytes": 16318555
+    },
+    {
+      "path": "data/chunk-000/episode_000088.parquet",
+      "bytes": 14915159
+    },
+    {
+      "path": "data/chunk-000/episode_000089.parquet",
+      "bytes": 16167275
+    },
+    {
+      "path": "data/chunk-000/episode_000090.parquet",
+      "bytes": 16200234
+    },
+    {
+      "path": "data/chunk-000/episode_000091.parquet",
+      "bytes": 16488031
+    },
+    {
+      "path": "data/chunk-000/episode_000092.parquet",
+      "bytes": 17525681
+    },
+    {
+      "path": "data/chunk-000/episode_000093.parquet",
+      "bytes": 15329235
+    },
+    {
+      "path": "data/chunk-000/episode_000094.parquet",
+      "bytes": 13612020
+    },
+    {
+      "path": "data/chunk-000/episode_000095.parquet",
+      "bytes": 15127187
+    },
+    {
+      "path": "data/chunk-000/episode_000096.parquet",
+      "bytes": 15134013
+    },
+    {
+      "path": "data/chunk-000/episode_000097.parquet",
+      "bytes": 12481402
+    },
+    {
+      "path": "data/chunk-000/episode_000098.parquet",
+      "bytes": 13792738
+    },
+    {
+      "path": "data/chunk-000/episode_000099.parquet",
+      "bytes": 13965025
+    },
+    {
+      "path": "data/chunk-000/episode_000100.parquet",
+      "bytes": 13458097
+    },
+    {
+      "path": "data/chunk-000/episode_000101.parquet",
+      "bytes": 15701425
+    },
+    {
+      "path": "data/chunk-000/episode_000102.parquet",
+      "bytes": 13721288
+    },
+    {
+      "path": "data/chunk-000/episode_000103.parquet",
+      "bytes": 13589951
+    },
+    {
+      "path": "data/chunk-000/episode_000104.parquet",
+      "bytes": 13711108
+    },
+    {
+      "path": "data/chunk-000/episode_000105.parquet",
+      "bytes": 15483396
+    },
+    {
+      "path": "data/chunk-000/episode_000106.parquet",
+      "bytes": 15318581
+    },
+    {
+      "path": "data/chunk-000/episode_000107.parquet",
+      "bytes": 14553781
+    },
+    {
+      "path": "data/chunk-000/episode_000108.parquet",
+      "bytes": 16868747
+    },
+    {
+      "path": "data/chunk-000/episode_000109.parquet",
+      "bytes": 12727261
+    },
+    {
+      "path": "data/chunk-000/episode_000110.parquet",
+      "bytes": 13196267
+    },
+    {
+      "path": "data/chunk-000/episode_000111.parquet",
+      "bytes": 12417326
+    },
+    {
+      "path": "data/chunk-000/episode_000112.parquet",
+      "bytes": 14890346
+    },
+    {
+      "path": "data/chunk-000/episode_000113.parquet",
+      "bytes": 13478085
+    },
+    {
+      "path": "data/chunk-000/episode_000114.parquet",
+      "bytes": 14871783
+    },
+    {
+      "path": "data/chunk-000/episode_000115.parquet",
+      "bytes": 14566526
+    },
+    {
+      "path": "data/chunk-000/episode_000116.parquet",
+      "bytes": 13578646
+    },
+    {
+      "path": "data/chunk-000/episode_000117.parquet",
+      "bytes": 14544864
+    },
+    {
+      "path": "data/chunk-000/episode_000118.parquet",
+      "bytes": 17441909
+    },
+    {
+      "path": "data/chunk-000/episode_000119.parquet",
+      "bytes": 15298439
+    },
+    {
+      "path": "data/chunk-000/episode_000120.parquet",
+      "bytes": 13958832
+    },
+    {
+      "path": "data/chunk-000/episode_000121.parquet",
+      "bytes": 13502826
+    },
+    {
+      "path": "data/chunk-000/episode_000122.parquet",
+      "bytes": 14559234
+    },
+    {
+      "path": "data/chunk-000/episode_000123.parquet",
+      "bytes": 15073849
+    },
+    {
+      "path": "data/chunk-000/episode_000124.parquet",
+      "bytes": 14902564
+    },
+    {
+      "path": "data/chunk-000/episode_000125.parquet",
+      "bytes": 14946936
+    },
+    {
+      "path": "data/chunk-000/episode_000126.parquet",
+      "bytes": 16202594
+    },
+    {
+      "path": "data/chunk-000/episode_000127.parquet",
+      "bytes": 17539497
+    },
+    {
+      "path": "data/chunk-000/episode_000128.parquet",
+      "bytes": 15200175
+    },
+    {
+      "path": "data/chunk-000/episode_000129.parquet",
+      "bytes": 15816336
+    },
+    {
+      "path": "data/chunk-000/episode_000130.parquet",
+      "bytes": 14213115
+    },
+    {
+      "path": "data/chunk-000/episode_000131.parquet",
+      "bytes": 14122751
+    },
+    {
+      "path": "data/chunk-000/episode_000132.parquet",
+      "bytes": 13126689
+    },
+    {
+      "path": "data/chunk-000/episode_000133.parquet",
+      "bytes": 12958219
+    },
+    {
+      "path": "data/chunk-000/episode_000134.parquet",
+      "bytes": 17184997
+    },
+    {
+      "path": "data/chunk-000/episode_000135.parquet",
+      "bytes": 11697515
+    },
+    {
+      "path": "data/chunk-000/episode_000136.parquet",
+      "bytes": 12313419
+    },
+    {
+      "path": "data/chunk-000/episode_000137.parquet",
+      "bytes": 16539712
+    },
+    {
+      "path": "data/chunk-000/episode_000138.parquet",
+      "bytes": 15468116
+    },
+    {
+      "path": "data/chunk-000/episode_000139.parquet",
+      "bytes": 14639006
+    },
+    {
+      "path": "data/chunk-000/episode_000140.parquet",
+      "bytes": 16256552
+    },
+    {
+      "path": "data/chunk-000/episode_000141.parquet",
+      "bytes": 16560894
+    },
+    {
+      "path": "data/chunk-000/episode_000142.parquet",
+      "bytes": 11611440
+    },
+    {
+      "path": "data/chunk-000/episode_000143.parquet",
+      "bytes": 11151060
+    },
+    {
+      "path": "data/chunk-000/episode_000144.parquet",
+      "bytes": 13774104
+    },
+    {
+      "path": "data/chunk-000/episode_000145.parquet",
+      "bytes": 11792861
+    },
+    {
+      "path": "data/chunk-000/episode_000146.parquet",
+      "bytes": 11767007
+    },
+    {
+      "path": "data/chunk-000/episode_000147.parquet",
+      "bytes": 12910027
+    },
+    {
+      "path": "data/chunk-000/episode_000148.parquet",
+      "bytes": 11363347
+    },
+    {
+      "path": "data/chunk-000/episode_000149.parquet",
+      "bytes": 14531690
+    },
+    {
+      "path": "data/chunk-000/episode_000150.parquet",
+      "bytes": 15079774
+    },
+    {
+      "path": "data/chunk-000/episode_000151.parquet",
+      "bytes": 10583196
+    },
+    {
+      "path": "data/chunk-000/episode_000152.parquet",
+      "bytes": 11992264
+    },
+    {
+      "path": "data/chunk-000/episode_000153.parquet",
+      "bytes": 10895163
+    },
+    {
+      "path": "data/chunk-000/episode_000154.parquet",
+      "bytes": 11711239
+    },
+    {
+      "path": "data/chunk-000/episode_000155.parquet",
+      "bytes": 11648881
+    },
+    {
+      "path": "data/chunk-000/episode_000156.parquet",
+      "bytes": 13900124
+    },
+    {
+      "path": "data/chunk-000/episode_000157.parquet",
+      "bytes": 11852412
+    },
+    {
+      "path": "data/chunk-000/episode_000158.parquet",
+      "bytes": 11122371
+    },
+    {
+      "path": "data/chunk-000/episode_000159.parquet",
+      "bytes": 11902453
+    },
+    {
+      "path": "data/chunk-000/episode_000160.parquet",
+      "bytes": 11167804
+    },
+    {
+      "path": "data/chunk-000/episode_000161.parquet",
+      "bytes": 11152449
+    },
+    {
+      "path": "data/chunk-000/episode_000162.parquet",
+      "bytes": 11550934
+    },
+    {
+      "path": "data/chunk-000/episode_000163.parquet",
+      "bytes": 11209537
+    },
+    {
+      "path": "data/chunk-000/episode_000164.parquet",
+      "bytes": 11226008
+    },
+    {
+      "path": "data/chunk-000/episode_000165.parquet",
+      "bytes": 11891651
+    },
+    {
+      "path": "data/chunk-000/episode_000166.parquet",
+      "bytes": 10992803
+    },
+    {
+      "path": "data/chunk-000/episode_000167.parquet",
+      "bytes": 12142956
+    },
+    {
+      "path": "data/chunk-000/episode_000168.parquet",
+      "bytes": 11860663
+    },
+    {
+      "path": "data/chunk-000/episode_000169.parquet",
+      "bytes": 12922394
+    },
+    {
+      "path": "data/chunk-000/episode_000170.parquet",
+      "bytes": 10346922
+    },
+    {
+      "path": "data/chunk-000/episode_000171.parquet",
+      "bytes": 12054548
+    },
+    {
+      "path": "data/chunk-000/episode_000172.parquet",
+      "bytes": 11531370
+    },
+    {
+      "path": "data/chunk-000/episode_000173.parquet",
+      "bytes": 10705987
+    },
+    {
+      "path": "data/chunk-000/episode_000174.parquet",
+      "bytes": 11957286
+    },
+    {
+      "path": "data/chunk-000/episode_000175.parquet",
+      "bytes": 10850957
+    },
+    {
+      "path": "data/chunk-000/episode_000176.parquet",
+      "bytes": 11578653
+    },
+    {
+      "path": "data/chunk-000/episode_000177.parquet",
+      "bytes": 11704069
+    },
+    {
+      "path": "data/chunk-000/episode_000178.parquet",
+      "bytes": 11143898
+    },
+    {
+      "path": "data/chunk-000/episode_000179.parquet",
+      "bytes": 14813628
+    },
+    {
+      "path": "data/chunk-000/episode_000180.parquet",
+      "bytes": 10967561
+    },
+    {
+      "path": "data/chunk-000/episode_000181.parquet",
+      "bytes": 11747216
+    },
+    {
+      "path": "data/chunk-000/episode_000182.parquet",
+      "bytes": 13565241
+    },
+    {
+      "path": "data/chunk-000/episode_000183.parquet",
+      "bytes": 11631474
+    },
+    {
+      "path": "data/chunk-000/episode_000184.parquet",
+      "bytes": 12167160
+    },
+    {
+      "path": "data/chunk-000/episode_000185.parquet",
+      "bytes": 10783882
+    },
+    {
+      "path": "data/chunk-000/episode_000186.parquet",
+      "bytes": 12089601
+    },
+    {
+      "path": "data/chunk-000/episode_000187.parquet",
+      "bytes": 18369087
+    },
+    {
+      "path": "data/chunk-000/episode_000188.parquet",
+      "bytes": 17574464
+    },
+    {
+      "path": "data/chunk-000/episode_000189.parquet",
+      "bytes": 19068398
+    },
+    {
+      "path": "data/chunk-000/episode_000190.parquet",
+      "bytes": 15955395
+    },
+    {
+      "path": "data/chunk-000/episode_000191.parquet",
+      "bytes": 17627902
+    },
+    {
+      "path": "data/chunk-000/episode_000192.parquet",
+      "bytes": 20447732
+    },
+    {
+      "path": "data/chunk-000/episode_000193.parquet",
+      "bytes": 18656325
+    },
+    {
+      "path": "data/chunk-000/episode_000194.parquet",
+      "bytes": 19546420
+    },
+    {
+      "path": "data/chunk-000/episode_000195.parquet",
+      "bytes": 16115325
+    },
+    {
+      "path": "data/chunk-000/episode_000196.parquet",
+      "bytes": 17215576
+    },
+    {
+      "path": "data/chunk-000/episode_000197.parquet",
+      "bytes": 16654894
+    },
+    {
+      "path": "data/chunk-000/episode_000198.parquet",
+      "bytes": 18012201
+    },
+    {
+      "path": "data/chunk-000/episode_000199.parquet",
+      "bytes": 15921245
+    },
+    {
+      "path": "data/chunk-000/episode_000200.parquet",
+      "bytes": 18599970
+    },
+    {
+      "path": "data/chunk-000/episode_000201.parquet",
+      "bytes": 19807832
+    },
+    {
+      "path": "data/chunk-000/episode_000202.parquet",
+      "bytes": 18659203
+    },
+    {
+      "path": "data/chunk-000/episode_000203.parquet",
+      "bytes": 18976789
+    },
+    {
+      "path": "data/chunk-000/episode_000204.parquet",
+      "bytes": 18299703
+    },
+    {
+      "path": "data/chunk-000/episode_000205.parquet",
+      "bytes": 20259867
+    },
+    {
+      "path": "data/chunk-000/episode_000206.parquet",
+      "bytes": 17350417
+    },
+    {
+      "path": "data/chunk-000/episode_000207.parquet",
+      "bytes": 18115599
+    },
+    {
+      "path": "data/chunk-000/episode_000208.parquet",
+      "bytes": 16338670
+    },
+    {
+      "path": "data/chunk-000/episode_000209.parquet",
+      "bytes": 18023226
+    },
+    {
+      "path": "data/chunk-000/episode_000210.parquet",
+      "bytes": 20797970
+    },
+    {
+      "path": "data/chunk-000/episode_000211.parquet",
+      "bytes": 23193606
+    },
+    {
+      "path": "data/chunk-000/episode_000212.parquet",
+      "bytes": 18660653
+    },
+    {
+      "path": "data/chunk-000/episode_000213.parquet",
+      "bytes": 15816776
+    },
+    {
+      "path": "data/chunk-000/episode_000214.parquet",
+      "bytes": 20803198
+    },
+    {
+      "path": "data/chunk-000/episode_000215.parquet",
+      "bytes": 19541178
+    },
+    {
+      "path": "data/chunk-000/episode_000216.parquet",
+      "bytes": 16692157
+    },
+    {
+      "path": "data/chunk-000/episode_000217.parquet",
+      "bytes": 16902561
+    },
+    {
+      "path": "data/chunk-000/episode_000218.parquet",
+      "bytes": 19096050
+    },
+    {
+      "path": "data/chunk-000/episode_000219.parquet",
+      "bytes": 16316719
+    },
+    {
+      "path": "data/chunk-000/episode_000220.parquet",
+      "bytes": 15536089
+    },
+    {
+      "path": "data/chunk-000/episode_000221.parquet",
+      "bytes": 16700499
+    },
+    {
+      "path": "data/chunk-000/episode_000222.parquet",
+      "bytes": 16628455
+    },
+    {
+      "path": "data/chunk-000/episode_000223.parquet",
+      "bytes": 20179772
+    },
+    {
+      "path": "data/chunk-000/episode_000224.parquet",
+      "bytes": 17566795
+    },
+    {
+      "path": "data/chunk-000/episode_000225.parquet",
+      "bytes": 18531897
+    },
+    {
+      "path": "data/chunk-000/episode_000226.parquet",
+      "bytes": 16502359
+    },
+    {
+      "path": "data/chunk-000/episode_000227.parquet",
+      "bytes": 16944989
+    },
+    {
+      "path": "data/chunk-000/episode_000228.parquet",
+      "bytes": 16545202
+    },
+    {
+      "path": "data/chunk-000/episode_000229.parquet",
+      "bytes": 15631674
+    },
+    {
+      "path": "data/chunk-000/episode_000230.parquet",
+      "bytes": 15417274
+    },
+    {
+      "path": "data/chunk-000/episode_000231.parquet",
+      "bytes": 12401980
+    },
+    {
+      "path": "data/chunk-000/episode_000232.parquet",
+      "bytes": 12761021
+    },
+    {
+      "path": "data/chunk-000/episode_000233.parquet",
+      "bytes": 15951859
+    },
+    {
+      "path": "data/chunk-000/episode_000234.parquet",
+      "bytes": 16021992
+    },
+    {
+      "path": "data/chunk-000/episode_000235.parquet",
+      "bytes": 14631435
+    },
+    {
+      "path": "data/chunk-000/episode_000236.parquet",
+      "bytes": 17084456
+    },
+    {
+      "path": "data/chunk-000/episode_000237.parquet",
+      "bytes": 12520624
+    },
+    {
+      "path": "data/chunk-000/episode_000238.parquet",
+      "bytes": 11731336
+    },
+    {
+      "path": "data/chunk-000/episode_000239.parquet",
+      "bytes": 15880167
+    },
+    {
+      "path": "data/chunk-000/episode_000240.parquet",
+      "bytes": 19663029
+    },
+    {
+      "path": "data/chunk-000/episode_000241.parquet",
+      "bytes": 12804541
+    },
+    {
+      "path": "data/chunk-000/episode_000242.parquet",
+      "bytes": 14623422
+    },
+    {
+      "path": "data/chunk-000/episode_000243.parquet",
+      "bytes": 15098429
+    },
+    {
+      "path": "data/chunk-000/episode_000244.parquet",
+      "bytes": 13899851
+    },
+    {
+      "path": "data/chunk-000/episode_000245.parquet",
+      "bytes": 12040574
+    },
+    {
+      "path": "data/chunk-000/episode_000246.parquet",
+      "bytes": 16091863
+    },
+    {
+      "path": "data/chunk-000/episode_000247.parquet",
+      "bytes": 13196531
+    },
+    {
+      "path": "data/chunk-000/episode_000248.parquet",
+      "bytes": 16963259
+    },
+    {
+      "path": "data/chunk-000/episode_000249.parquet",
+      "bytes": 12292249
+    },
+    {
+      "path": "data/chunk-000/episode_000250.parquet",
+      "bytes": 11286432
+    },
+    {
+      "path": "data/chunk-000/episode_000251.parquet",
+      "bytes": 12328969
+    },
+    {
+      "path": "data/chunk-000/episode_000252.parquet",
+      "bytes": 18205381
+    },
+    {
+      "path": "data/chunk-000/episode_000253.parquet",
+      "bytes": 13465603
+    },
+    {
+      "path": "data/chunk-000/episode_000254.parquet",
+      "bytes": 13893157
+    },
+    {
+      "path": "data/chunk-000/episode_000255.parquet",
+      "bytes": 15082808
+    },
+    {
+      "path": "data/chunk-000/episode_000256.parquet",
+      "bytes": 15131936
+    },
+    {
+      "path": "data/chunk-000/episode_000257.parquet",
+      "bytes": 14153098
+    },
+    {
+      "path": "data/chunk-000/episode_000258.parquet",
+      "bytes": 13851475
+    },
+    {
+      "path": "data/chunk-000/episode_000259.parquet",
+      "bytes": 14283605
+    },
+    {
+      "path": "data/chunk-000/episode_000260.parquet",
+      "bytes": 16338833
+    },
+    {
+      "path": "data/chunk-000/episode_000261.parquet",
+      "bytes": 13888213
+    },
+    {
+      "path": "data/chunk-000/episode_000262.parquet",
+      "bytes": 12823112
+    },
+    {
+      "path": "data/chunk-000/episode_000263.parquet",
+      "bytes": 12373448
+    },
+    {
+      "path": "data/chunk-000/episode_000264.parquet",
+      "bytes": 10789319
+    },
+    {
+      "path": "data/chunk-000/episode_000265.parquet",
+      "bytes": 14744350
+    },
+    {
+      "path": "data/chunk-000/episode_000266.parquet",
+      "bytes": 16077505
+    },
+    {
+      "path": "data/chunk-000/episode_000267.parquet",
+      "bytes": 17388825
+    },
+    {
+      "path": "data/chunk-000/episode_000268.parquet",
+      "bytes": 14250748
+    },
+    {
+      "path": "data/chunk-000/episode_000269.parquet",
+      "bytes": 17436763
+    },
+    {
+      "path": "data/chunk-000/episode_000270.parquet",
+      "bytes": 13889208
+    },
+    {
+      "path": "data/chunk-000/episode_000271.parquet",
+      "bytes": 13812181
+    },
+    {
+      "path": "data/chunk-000/episode_000272.parquet",
+      "bytes": 13706217
+    },
+    {
+      "path": "data/chunk-000/episode_000273.parquet",
+      "bytes": 13476062
+    },
+    {
+      "path": "data/chunk-000/episode_000274.parquet",
+      "bytes": 13189914
+    },
+    {
+      "path": "data/chunk-000/episode_000275.parquet",
+      "bytes": 16263034
+    },
+    {
+      "path": "data/chunk-000/episode_000276.parquet",
+      "bytes": 15123817
+    },
+    {
+      "path": "data/chunk-000/episode_000277.parquet",
+      "bytes": 12807203
+    },
+    {
+      "path": "data/chunk-000/episode_000278.parquet",
+      "bytes": 14337118
+    },
+    {
+      "path": "data/chunk-000/episode_000279.parquet",
+      "bytes": 15505912
+    },
+    {
+      "path": "data/chunk-000/episode_000280.parquet",
+      "bytes": 15332652
+    },
+    {
+      "path": "data/chunk-000/episode_000281.parquet",
+      "bytes": 14499738
+    },
+    {
+      "path": "data/chunk-000/episode_000282.parquet",
+      "bytes": 15771612
+    },
+    {
+      "path": "data/chunk-000/episode_000283.parquet",
+      "bytes": 13227745
+    },
+    {
+      "path": "data/chunk-000/episode_000284.parquet",
+      "bytes": 14988794
+    },
+    {
+      "path": "data/chunk-000/episode_000285.parquet",
+      "bytes": 13363363
+    },
+    {
+      "path": "data/chunk-000/episode_000286.parquet",
+      "bytes": 14663273
+    },
+    {
+      "path": "data/chunk-000/episode_000287.parquet",
+      "bytes": 14496118
+    },
+    {
+      "path": "data/chunk-000/episode_000288.parquet",
+      "bytes": 16932361
+    },
+    {
+      "path": "data/chunk-000/episode_000289.parquet",
+      "bytes": 12331585
+    },
+    {
+      "path": "data/chunk-000/episode_000290.parquet",
+      "bytes": 13857460
+    },
+    {
+      "path": "data/chunk-000/episode_000291.parquet",
+      "bytes": 15482571
+    },
+    {
+      "path": "data/chunk-000/episode_000292.parquet",
+      "bytes": 13343454
+    },
+    {
+      "path": "data/chunk-000/episode_000293.parquet",
+      "bytes": 14328069
+    },
+    {
+      "path": "data/chunk-000/episode_000294.parquet",
+      "bytes": 12955483
+    },
+    {
+      "path": "data/chunk-000/episode_000295.parquet",
+      "bytes": 14740625
+    },
+    {
+      "path": "data/chunk-000/episode_000296.parquet",
+      "bytes": 14080736
+    },
+    {
+      "path": "data/chunk-000/episode_000297.parquet",
+      "bytes": 15507447
+    },
+    {
+      "path": "data/chunk-000/episode_000298.parquet",
+      "bytes": 16822845
+    },
+    {
+      "path": "data/chunk-000/episode_000299.parquet",
+      "bytes": 14327732
+    },
+    {
+      "path": "data/chunk-000/episode_000300.parquet",
+      "bytes": 15231545
+    },
+    {
+      "path": "data/chunk-000/episode_000301.parquet",
+      "bytes": 18120005
+    },
+    {
+      "path": "data/chunk-000/episode_000302.parquet",
+      "bytes": 14427070
+    },
+    {
+      "path": "data/chunk-000/episode_000303.parquet",
+      "bytes": 15995355
+    },
+    {
+      "path": "data/chunk-000/episode_000304.parquet",
+      "bytes": 16641610
+    },
+    {
+      "path": "data/chunk-000/episode_000305.parquet",
+      "bytes": 14611383
+    },
+    {
+      "path": "data/chunk-000/episode_000306.parquet",
+      "bytes": 13435200
+    },
+    {
+      "path": "data/chunk-000/episode_000307.parquet",
+      "bytes": 13937899
+    },
+    {
+      "path": "data/chunk-000/episode_000308.parquet",
+      "bytes": 14676663
+    },
+    {
+      "path": "data/chunk-000/episode_000309.parquet",
+      "bytes": 15458723
+    },
+    {
+      "path": "data/chunk-000/episode_000310.parquet",
+      "bytes": 14494843
+    },
+    {
+      "path": "data/chunk-000/episode_000311.parquet",
+      "bytes": 16141803
+    },
+    {
+      "path": "data/chunk-000/episode_000312.parquet",
+      "bytes": 13596825
+    },
+    {
+      "path": "data/chunk-000/episode_000313.parquet",
+      "bytes": 13045359
+    },
+    {
+      "path": "data/chunk-000/episode_000314.parquet",
+      "bytes": 15500330
+    },
+    {
+      "path": "data/chunk-000/episode_000315.parquet",
+      "bytes": 13528689
+    },
+    {
+      "path": "data/chunk-000/episode_000316.parquet",
+      "bytes": 12658631
+    },
+    {
+      "path": "data/chunk-000/episode_000317.parquet",
+      "bytes": 16106797
+    },
+    {
+      "path": "data/chunk-000/episode_000318.parquet",
+      "bytes": 19089974
+    },
+    {
+      "path": "data/chunk-000/episode_000319.parquet",
+      "bytes": 14188640
+    },
+    {
+      "path": "data/chunk-000/episode_000320.parquet",
+      "bytes": 14128642
+    },
+    {
+      "path": "data/chunk-000/episode_000321.parquet",
+      "bytes": 19044441
+    },
+    {
+      "path": "data/chunk-000/episode_000322.parquet",
+      "bytes": 18111734
+    },
+    {
+      "path": "data/chunk-000/episode_000323.parquet",
+      "bytes": 19101703
+    },
+    {
+      "path": "data/chunk-000/episode_000324.parquet",
+      "bytes": 16150152
+    },
+    {
+      "path": "data/chunk-000/episode_000325.parquet",
+      "bytes": 15472517
+    },
+    {
+      "path": "data/chunk-000/episode_000326.parquet",
+      "bytes": 16981968
+    },
+    {
+      "path": "data/chunk-000/episode_000327.parquet",
+      "bytes": 17342788
+    },
+    {
+      "path": "data/chunk-000/episode_000328.parquet",
+      "bytes": 16573160
+    },
+    {
+      "path": "data/chunk-000/episode_000329.parquet",
+      "bytes": 15622944
+    },
+    {
+      "path": "data/chunk-000/episode_000330.parquet",
+      "bytes": 16820923
+    },
+    {
+      "path": "data/chunk-000/episode_000331.parquet",
+      "bytes": 17896691
+    },
+    {
+      "path": "data/chunk-000/episode_000332.parquet",
+      "bytes": 17093649
+    },
+    {
+      "path": "data/chunk-000/episode_000333.parquet",
+      "bytes": 20908034
+    },
+    {
+      "path": "data/chunk-000/episode_000334.parquet",
+      "bytes": 15427002
+    },
+    {
+      "path": "data/chunk-000/episode_000335.parquet",
+      "bytes": 18487631
+    },
+    {
+      "path": "data/chunk-000/episode_000336.parquet",
+      "bytes": 15214844
+    },
+    {
+      "path": "data/chunk-000/episode_000337.parquet",
+      "bytes": 17477536
+    },
+    {
+      "path": "data/chunk-000/episode_000338.parquet",
+      "bytes": 17062144
+    },
+    {
+      "path": "data/chunk-000/episode_000339.parquet",
+      "bytes": 17950045
+    },
+    {
+      "path": "data/chunk-000/episode_000340.parquet",
+      "bytes": 16760952
+    },
+    {
+      "path": "data/chunk-000/episode_000341.parquet",
+      "bytes": 15997851
+    },
+    {
+      "path": "data/chunk-000/episode_000342.parquet",
+      "bytes": 15593461
+    },
+    {
+      "path": "data/chunk-000/episode_000343.parquet",
+      "bytes": 15623450
+    },
+    {
+      "path": "data/chunk-000/episode_000344.parquet",
+      "bytes": 15854090
+    },
+    {
+      "path": "data/chunk-000/episode_000345.parquet",
+      "bytes": 18208062
+    },
+    {
+      "path": "data/chunk-000/episode_000346.parquet",
+      "bytes": 16072369
+    },
+    {
+      "path": "data/chunk-000/episode_000347.parquet",
+      "bytes": 21119721
+    },
+    {
+      "path": "data/chunk-000/episode_000348.parquet",
+      "bytes": 16666657
+    },
+    {
+      "path": "data/chunk-000/episode_000349.parquet",
+      "bytes": 16991610
+    },
+    {
+      "path": "data/chunk-000/episode_000350.parquet",
+      "bytes": 16100037
+    },
+    {
+      "path": "data/chunk-000/episode_000351.parquet",
+      "bytes": 16391171
+    },
+    {
+      "path": "data/chunk-000/episode_000352.parquet",
+      "bytes": 17409392
+    },
+    {
+      "path": "data/chunk-000/episode_000353.parquet",
+      "bytes": 17204895
+    },
+    {
+      "path": "data/chunk-000/episode_000354.parquet",
+      "bytes": 17308454
+    },
+    {
+      "path": "data/chunk-000/episode_000355.parquet",
+      "bytes": 19763660
+    },
+    {
+      "path": "data/chunk-000/episode_000356.parquet",
+      "bytes": 18097705
+    },
+    {
+      "path": "data/chunk-000/episode_000357.parquet",
+      "bytes": 16216065
+    },
+    {
+      "path": "data/chunk-000/episode_000358.parquet",
+      "bytes": 17697099
+    },
+    {
+      "path": "data/chunk-000/episode_000359.parquet",
+      "bytes": 15689144
+    },
+    {
+      "path": "data/chunk-000/episode_000360.parquet",
+      "bytes": 16512175
+    },
+    {
+      "path": "data/chunk-000/episode_000361.parquet",
+      "bytes": 16079296
+    },
+    {
+      "path": "data/chunk-000/episode_000362.parquet",
+      "bytes": 18649442
+    },
+    {
+      "path": "data/chunk-000/episode_000363.parquet",
+      "bytes": 17439687
+    },
+    {
+      "path": "data/chunk-000/episode_000364.parquet",
+      "bytes": 15365994
+    },
+    {
+      "path": "data/chunk-000/episode_000365.parquet",
+      "bytes": 16902046
+    },
+    {
+      "path": "data/chunk-000/episode_000366.parquet",
+      "bytes": 19358245
+    },
+    {
+      "path": "data/chunk-000/episode_000367.parquet",
+      "bytes": 13555254
+    },
+    {
+      "path": "data/chunk-000/episode_000368.parquet",
+      "bytes": 12954711
+    },
+    {
+      "path": "data/chunk-000/episode_000369.parquet",
+      "bytes": 16287831
+    },
+    {
+      "path": "data/chunk-000/episode_000370.parquet",
+      "bytes": 17061998
+    },
+    {
+      "path": "data/chunk-000/episode_000371.parquet",
+      "bytes": 13357345
+    },
+    {
+      "path": "data/chunk-000/episode_000372.parquet",
+      "bytes": 12971171
+    },
+    {
+      "path": "data/chunk-000/episode_000373.parquet",
+      "bytes": 12728694
+    },
+    {
+      "path": "data/chunk-000/episode_000374.parquet",
+      "bytes": 13050655
+    },
+    {
+      "path": "data/chunk-000/episode_000375.parquet",
+      "bytes": 15128334
+    },
+    {
+      "path": "data/chunk-000/episode_000376.parquet",
+      "bytes": 14547697
+    },
+    {
+      "path": "data/chunk-000/episode_000377.parquet",
+      "bytes": 15660195
+    },
+    {
+      "path": "data/chunk-000/episode_000378.parquet",
+      "bytes": 12974658
+    },
+    {
+      "path": "data/chunk-000/episode_000379.parquet",
+      "bytes": 17819694
+    },
+    {
+      "path": "data/chunk-000/episode_000380.parquet",
+      "bytes": 12174036
+    },
+    {
+      "path": "data/chunk-000/episode_000381.parquet",
+      "bytes": 18330421
+    },
+    {
+      "path": "data/chunk-000/episode_000382.parquet",
+      "bytes": 13610410
+    },
+    {
+      "path": "data/chunk-000/episode_000383.parquet",
+      "bytes": 20325399
+    },
+    {
+      "path": "data/chunk-000/episode_000384.parquet",
+      "bytes": 12636353
+    },
+    {
+      "path": "data/chunk-000/episode_000385.parquet",
+      "bytes": 12437611
+    },
+    {
+      "path": "data/chunk-000/episode_000386.parquet",
+      "bytes": 14950674
+    },
+    {
+      "path": "data/chunk-000/episode_000387.parquet",
+      "bytes": 17459090
+    },
+    {
+      "path": "data/chunk-000/episode_000388.parquet",
+      "bytes": 11957670
+    },
+    {
+      "path": "data/chunk-000/episode_000389.parquet",
+      "bytes": 13380852
+    },
+    {
+      "path": "data/chunk-000/episode_000390.parquet",
+      "bytes": 13593225
+    },
+    {
+      "path": "data/chunk-000/episode_000391.parquet",
+      "bytes": 16851420
+    },
+    {
+      "path": "data/chunk-000/episode_000392.parquet",
+      "bytes": 12962019
+    },
+    {
+      "path": "data/chunk-000/episode_000393.parquet",
+      "bytes": 14552778
+    },
+    {
+      "path": "data/chunk-000/episode_000394.parquet",
+      "bytes": 15044318
+    },
+    {
+      "path": "data/chunk-000/episode_000395.parquet",
+      "bytes": 21895892
+    },
+    {
+      "path": "data/chunk-000/episode_000396.parquet",
+      "bytes": 12396162
+    },
+    {
+      "path": "data/chunk-000/episode_000397.parquet",
+      "bytes": 14247321
+    },
+    {
+      "path": "data/chunk-000/episode_000398.parquet",
+      "bytes": 11909577
+    },
+    {
+      "path": "data/chunk-000/episode_000399.parquet",
+      "bytes": 13274137
+    },
+    {
+      "path": "data/chunk-000/episode_000400.parquet",
+      "bytes": 15425186
+    },
+    {
+      "path": "data/chunk-000/episode_000401.parquet",
+      "bytes": 13600668
+    },
+    {
+      "path": "data/chunk-000/episode_000402.parquet",
+      "bytes": 14888395
+    },
+    {
+      "path": "data/chunk-000/episode_000403.parquet",
+      "bytes": 13881829
+    },
+    {
+      "path": "data/chunk-000/episode_000404.parquet",
+      "bytes": 12885029
+    },
+    {
+      "path": "data/chunk-000/episode_000405.parquet",
+      "bytes": 15193722
+    },
+    {
+      "path": "data/chunk-000/episode_000406.parquet",
+      "bytes": 13778679
+    },
+    {
+      "path": "data/chunk-000/episode_000407.parquet",
+      "bytes": 14791615
+    },
+    {
+      "path": "data/chunk-000/episode_000408.parquet",
+      "bytes": 12388751
+    },
+    {
+      "path": "data/chunk-000/episode_000409.parquet",
+      "bytes": 12570184
+    },
+    {
+      "path": "data/chunk-000/episode_000410.parquet",
+      "bytes": 14391472
+    },
+    {
+      "path": "data/chunk-000/episode_000411.parquet",
+      "bytes": 14270655
+    },
+    {
+      "path": "data/chunk-000/episode_000412.parquet",
+      "bytes": 16990613
+    },
+    {
+      "path": "data/chunk-000/episode_000413.parquet",
+      "bytes": 13677198
+    },
+    {
+      "path": "data/chunk-000/episode_000414.parquet",
+      "bytes": 20311772
+    },
+    {
+      "path": "data/chunk-000/episode_000415.parquet",
+      "bytes": 14145997
+    },
+    {
+      "path": "data/chunk-000/episode_000416.parquet",
+      "bytes": 16284417
+    },
+    {
+      "path": "data/chunk-000/episode_000417.parquet",
+      "bytes": 16564119
+    },
+    {
+      "path": "data/chunk-000/episode_000418.parquet",
+      "bytes": 15795930
+    },
+    {
+      "path": "data/chunk-000/episode_000419.parquet",
+      "bytes": 16230201
+    },
+    {
+      "path": "data/chunk-000/episode_000420.parquet",
+      "bytes": 17137467
+    },
+    {
+      "path": "data/chunk-000/episode_000421.parquet",
+      "bytes": 16870483
+    },
+    {
+      "path": "data/chunk-000/episode_000422.parquet",
+      "bytes": 14254878
+    },
+    {
+      "path": "data/chunk-000/episode_000423.parquet",
+      "bytes": 15776770
+    },
+    {
+      "path": "data/chunk-000/episode_000424.parquet",
+      "bytes": 20551027
+    },
+    {
+      "path": "data/chunk-000/episode_000425.parquet",
+      "bytes": 17038791
+    },
+    {
+      "path": "data/chunk-000/episode_000426.parquet",
+      "bytes": 15884042
+    },
+    {
+      "path": "data/chunk-000/episode_000427.parquet",
+      "bytes": 15502819
+    },
+    {
+      "path": "data/chunk-000/episode_000428.parquet",
+      "bytes": 15790036
+    },
+    {
+      "path": "data/chunk-000/episode_000429.parquet",
+      "bytes": 16403508
+    },
+    {
+      "path": "data/chunk-000/episode_000430.parquet",
+      "bytes": 24338182
+    },
+    {
+      "path": "data/chunk-000/episode_000431.parquet",
+      "bytes": 16866865
+    },
+    {
+      "path": "data/chunk-000/episode_000432.parquet",
+      "bytes": 22865047
+    },
+    {
+      "path": "data/chunk-000/episode_000433.parquet",
+      "bytes": 15581846
+    },
+    {
+      "path": "data/chunk-000/episode_000434.parquet",
+      "bytes": 16517136
+    },
+    {
+      "path": "data/chunk-000/episode_000435.parquet",
+      "bytes": 16210085
+    },
+    {
+      "path": "data/chunk-000/episode_000436.parquet",
+      "bytes": 16910916
+    },
+    {
+      "path": "data/chunk-000/episode_000437.parquet",
+      "bytes": 17731673
+    },
+    {
+      "path": "data/chunk-000/episode_000438.parquet",
+      "bytes": 17160518
+    },
+    {
+      "path": "data/chunk-000/episode_000439.parquet",
+      "bytes": 15107130
+    },
+    {
+      "path": "data/chunk-000/episode_000440.parquet",
+      "bytes": 17033553
+    },
+    {
+      "path": "data/chunk-000/episode_000441.parquet",
+      "bytes": 17318976
+    },
+    {
+      "path": "data/chunk-000/episode_000442.parquet",
+      "bytes": 14765600
+    },
+    {
+      "path": "data/chunk-000/episode_000443.parquet",
+      "bytes": 16661593
+    },
+    {
+      "path": "data/chunk-000/episode_000444.parquet",
+      "bytes": 14596781
+    },
+    {
+      "path": "data/chunk-000/episode_000445.parquet",
+      "bytes": 15556267
+    },
+    {
+      "path": "data/chunk-000/episode_000446.parquet",
+      "bytes": 14925397
+    },
+    {
+      "path": "data/chunk-000/episode_000447.parquet",
+      "bytes": 15350976
+    },
+    {
+      "path": "data/chunk-000/episode_000448.parquet",
+      "bytes": 17440204
+    },
+    {
+      "path": "data/chunk-000/episode_000449.parquet",
+      "bytes": 17210857
+    },
+    {
+      "path": "data/chunk-000/episode_000450.parquet",
+      "bytes": 16662789
+    },
+    {
+      "path": "data/chunk-000/episode_000451.parquet",
+      "bytes": 16270507
+    },
+    {
+      "path": "data/chunk-000/episode_000452.parquet",
+      "bytes": 16300467
+    },
+    {
+      "path": "data/chunk-000/episode_000453.parquet",
+      "bytes": 17005902
+    },
+    {
+      "path": "data/chunk-000/episode_000454.parquet",
+      "bytes": 14928768
+    },
+    {
+      "path": "data/chunk-000/episode_000455.parquet",
+      "bytes": 16639874
+    },
+    {
+      "path": "data/chunk-000/episode_000456.parquet",
+      "bytes": 15118110
+    },
+    {
+      "path": "data/chunk-000/episode_000457.parquet",
+      "bytes": 15848618
+    },
+    {
+      "path": "data/chunk-000/episode_000458.parquet",
+      "bytes": 15401079
+    },
+    {
+      "path": "data/chunk-000/episode_000459.parquet",
+      "bytes": 16411877
+    },
+    {
+      "path": "data/chunk-000/episode_000460.parquet",
+      "bytes": 15498095
+    },
+    {
+      "path": "data/chunk-000/episode_000461.parquet",
+      "bytes": 16722685
+    },
+    {
+      "path": "data/chunk-000/episode_000462.parquet",
+      "bytes": 16518576
+    },
+    {
+      "path": "data/chunk-000/episode_000463.parquet",
+      "bytes": 14033169
+    },
+    {
+      "path": "data/chunk-000/episode_000464.parquet",
+      "bytes": 16357765
+    },
+    {
+      "path": "data/chunk-000/episode_000465.parquet",
+      "bytes": 20592740
+    },
+    {
+      "path": "data/chunk-000/episode_000466.parquet",
+      "bytes": 25249931
+    },
+    {
+      "path": "data/chunk-000/episode_000467.parquet",
+      "bytes": 19249771
+    },
+    {
+      "path": "data/chunk-000/episode_000468.parquet",
+      "bytes": 19747887
+    },
+    {
+      "path": "data/chunk-000/episode_000469.parquet",
+      "bytes": 21209248
+    },
+    {
+      "path": "data/chunk-000/episode_000470.parquet",
+      "bytes": 21458709
+    },
+    {
+      "path": "data/chunk-000/episode_000471.parquet",
+      "bytes": 21756342
+    },
+    {
+      "path": "data/chunk-000/episode_000472.parquet",
+      "bytes": 21461813
+    },
+    {
+      "path": "data/chunk-000/episode_000473.parquet",
+      "bytes": 27250199
+    },
+    {
+      "path": "data/chunk-000/episode_000474.parquet",
+      "bytes": 20432100
+    },
+    {
+      "path": "data/chunk-000/episode_000475.parquet",
+      "bytes": 22015635
+    },
+    {
+      "path": "data/chunk-000/episode_000476.parquet",
+      "bytes": 21379363
+    },
+    {
+      "path": "data/chunk-000/episode_000477.parquet",
+      "bytes": 24181141
+    },
+    {
+      "path": "data/chunk-000/episode_000478.parquet",
+      "bytes": 20999680
+    },
+    {
+      "path": "data/chunk-000/episode_000479.parquet",
+      "bytes": 20798620
+    },
+    {
+      "path": "data/chunk-000/episode_000480.parquet",
+      "bytes": 21560603
+    },
+    {
+      "path": "data/chunk-000/episode_000481.parquet",
+      "bytes": 21855890
+    },
+    {
+      "path": "data/chunk-000/episode_000482.parquet",
+      "bytes": 21478744
+    },
+    {
+      "path": "data/chunk-000/episode_000483.parquet",
+      "bytes": 21374668
+    },
+    {
+      "path": "data/chunk-000/episode_000484.parquet",
+      "bytes": 21918651
+    },
+    {
+      "path": "data/chunk-000/episode_000485.parquet",
+      "bytes": 21361081
+    },
+    {
+      "path": "data/chunk-000/episode_000486.parquet",
+      "bytes": 22365386
+    },
+    {
+      "path": "data/chunk-000/episode_000487.parquet",
+      "bytes": 20312202
+    },
+    {
+      "path": "data/chunk-000/episode_000488.parquet",
+      "bytes": 22666108
+    },
+    {
+      "path": "data/chunk-000/episode_000489.parquet",
+      "bytes": 24625823
+    },
+    {
+      "path": "data/chunk-000/episode_000490.parquet",
+      "bytes": 19932806
+    },
+    {
+      "path": "data/chunk-000/episode_000491.parquet",
+      "bytes": 19044466
+    },
+    {
+      "path": "data/chunk-000/episode_000492.parquet",
+      "bytes": 21749719
+    },
+    {
+      "path": "data/chunk-000/episode_000493.parquet",
+      "bytes": 18924666
+    },
+    {
+      "path": "data/chunk-000/episode_000494.parquet",
+      "bytes": 25003226
+    },
+    {
+      "path": "data/chunk-000/episode_000495.parquet",
+      "bytes": 21761318
+    },
+    {
+      "path": "data/chunk-000/episode_000496.parquet",
+      "bytes": 24481472
+    },
+    {
+      "path": "data/chunk-000/episode_000497.parquet",
+      "bytes": 21280675
+    },
+    {
+      "path": "data/chunk-000/episode_000498.parquet",
+      "bytes": 21063615
+    },
+    {
+      "path": "data/chunk-000/episode_000499.parquet",
+      "bytes": 22530412
+    },
+    {
+      "path": "data/chunk-000/episode_000500.parquet",
+      "bytes": 21323578
+    },
+    {
+      "path": "data/chunk-000/episode_000501.parquet",
+      "bytes": 21437334
+    },
+    {
+      "path": "data/chunk-000/episode_000502.parquet",
+      "bytes": 21148343
+    },
+    {
+      "path": "data/chunk-000/episode_000503.parquet",
+      "bytes": 22046666
+    },
+    {
+      "path": "data/chunk-000/episode_000504.parquet",
+      "bytes": 23500860
+    },
+    {
+      "path": "data/chunk-000/episode_000505.parquet",
+      "bytes": 18981823
+    },
+    {
+      "path": "data/chunk-000/episode_000506.parquet",
+      "bytes": 21174974
+    },
+    {
+      "path": "data/chunk-000/episode_000507.parquet",
+      "bytes": 22908468
+    },
+    {
+      "path": "data/chunk-000/episode_000508.parquet",
+      "bytes": 20611474
+    },
+    {
+      "path": "data/chunk-000/episode_000509.parquet",
+      "bytes": 21195989
+    },
+    {
+      "path": "data/chunk-000/episode_000510.parquet",
+      "bytes": 20719547
+    },
+    {
+      "path": "data/chunk-000/episode_000511.parquet",
+      "bytes": 26079608
+    },
+    {
+      "path": "data/chunk-000/episode_000512.parquet",
+      "bytes": 27382478
+    },
+    {
+      "path": "data/chunk-000/episode_000513.parquet",
+      "bytes": 21592885
+    },
+    {
+      "path": "data/chunk-000/episode_000514.parquet",
+      "bytes": 20733902
+    },
+    {
+      "path": "data/chunk-000/episode_000515.parquet",
+      "bytes": 19748359
+    },
+    {
+      "path": "data/chunk-000/episode_000516.parquet",
+      "bytes": 26304887
+    },
+    {
+      "path": "data/chunk-000/episode_000517.parquet",
+      "bytes": 17754036
+    },
+    {
+      "path": "data/chunk-000/episode_000518.parquet",
+      "bytes": 18935559
+    },
+    {
+      "path": "data/chunk-000/episode_000519.parquet",
+      "bytes": 17926845
+    },
+    {
+      "path": "data/chunk-000/episode_000520.parquet",
+      "bytes": 21949393
+    },
+    {
+      "path": "data/chunk-000/episode_000521.parquet",
+      "bytes": 23823168
+    },
+    {
+      "path": "data/chunk-000/episode_000522.parquet",
+      "bytes": 20265892
+    },
+    {
+      "path": "data/chunk-000/episode_000523.parquet",
+      "bytes": 24790424
+    },
+    {
+      "path": "data/chunk-000/episode_000524.parquet",
+      "bytes": 21447280
+    },
+    {
+      "path": "data/chunk-000/episode_000525.parquet",
+      "bytes": 18758328
+    },
+    {
+      "path": "data/chunk-000/episode_000526.parquet",
+      "bytes": 23231977
+    },
+    {
+      "path": "data/chunk-000/episode_000527.parquet",
+      "bytes": 18593904
+    },
+    {
+      "path": "data/chunk-000/episode_000528.parquet",
+      "bytes": 20448554
+    },
+    {
+      "path": "data/chunk-000/episode_000529.parquet",
+      "bytes": 21813909
+    },
+    {
+      "path": "data/chunk-000/episode_000530.parquet",
+      "bytes": 18420694
+    },
+    {
+      "path": "data/chunk-000/episode_000531.parquet",
+      "bytes": 17118348
+    },
+    {
+      "path": "data/chunk-000/episode_000532.parquet",
+      "bytes": 19624574
+    },
+    {
+      "path": "data/chunk-000/episode_000533.parquet",
+      "bytes": 24010955
+    },
+    {
+      "path": "data/chunk-000/episode_000534.parquet",
+      "bytes": 18136310
+    },
+    {
+      "path": "data/chunk-000/episode_000535.parquet",
+      "bytes": 17680646
+    },
+    {
+      "path": "data/chunk-000/episode_000536.parquet",
+      "bytes": 20986955
+    },
+    {
+      "path": "data/chunk-000/episode_000537.parquet",
+      "bytes": 17807864
+    },
+    {
+      "path": "data/chunk-000/episode_000538.parquet",
+      "bytes": 20062772
+    },
+    {
+      "path": "data/chunk-000/episode_000539.parquet",
+      "bytes": 18090206
+    },
+    {
+      "path": "data/chunk-000/episode_000540.parquet",
+      "bytes": 18339293
+    },
+    {
+      "path": "data/chunk-000/episode_000541.parquet",
+      "bytes": 19749398
+    },
+    {
+      "path": "data/chunk-000/episode_000542.parquet",
+      "bytes": 17478069
+    },
+    {
+      "path": "data/chunk-000/episode_000543.parquet",
+      "bytes": 19712891
+    },
+    {
+      "path": "data/chunk-000/episode_000544.parquet",
+      "bytes": 24315891
+    },
+    {
+      "path": "data/chunk-000/episode_000545.parquet",
+      "bytes": 23513255
+    },
+    {
+      "path": "data/chunk-000/episode_000546.parquet",
+      "bytes": 21267311
+    },
+    {
+      "path": "data/chunk-000/episode_000547.parquet",
+      "bytes": 23417791
+    },
+    {
+      "path": "data/chunk-000/episode_000548.parquet",
+      "bytes": 20320565
+    },
+    {
+      "path": "data/chunk-000/episode_000549.parquet",
+      "bytes": 17577649
+    },
+    {
+      "path": "data/chunk-000/episode_000550.parquet",
+      "bytes": 19299826
+    },
+    {
+      "path": "data/chunk-000/episode_000551.parquet",
+      "bytes": 20003689
+    },
+    {
+      "path": "data/chunk-000/episode_000552.parquet",
+      "bytes": 19109594
+    },
+    {
+      "path": "data/chunk-000/episode_000553.parquet",
+      "bytes": 18575439
+    },
+    {
+      "path": "data/chunk-000/episode_000554.parquet",
+      "bytes": 22419486
+    },
+    {
+      "path": "data/chunk-000/episode_000555.parquet",
+      "bytes": 20442091
+    },
+    {
+      "path": "data/chunk-000/episode_000556.parquet",
+      "bytes": 19663559
+    },
+    {
+      "path": "data/chunk-000/episode_000557.parquet",
+      "bytes": 19982958
+    },
+    {
+      "path": "data/chunk-000/episode_000558.parquet",
+      "bytes": 20109623
+    },
+    {
+      "path": "data/chunk-000/episode_000559.parquet",
+      "bytes": 19644342
+    },
+    {
+      "path": "data/chunk-000/episode_000560.parquet",
+      "bytes": 18989211
+    },
+    {
+      "path": "data/chunk-000/episode_000561.parquet",
+      "bytes": 21640162
+    },
+    {
+      "path": "data/chunk-000/episode_000562.parquet",
+      "bytes": 19604850
+    },
+    {
+      "path": "data/chunk-000/episode_000563.parquet",
+      "bytes": 18415329
+    },
+    {
+      "path": "data/chunk-000/episode_000564.parquet",
+      "bytes": 17613102
+    },
+    {
+      "path": "data/chunk-000/episode_000565.parquet",
+      "bytes": 18435173
+    },
+    {
+      "path": "data/chunk-000/episode_000566.parquet",
+      "bytes": 17308084
+    },
+    {
+      "path": "data/chunk-000/episode_000567.parquet",
+      "bytes": 29173562
+    },
+    {
+      "path": "transfer_manifest.json",
+      "bytes": 332008
+    }
+  ],
+  "bytes": 9162713516,
+  "old_training_never_launched": true,
+  "metadata_archive": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/retired_nominal_upload_metadata",
+  "original_dataset_info_sha256": "0c1962a6ce49a812e7681b2ef8b8fc8248fb998e1cff599fe90a408c8d85a6db",
+  "complete": true,
+  "original_dataset_unchanged": true
+}

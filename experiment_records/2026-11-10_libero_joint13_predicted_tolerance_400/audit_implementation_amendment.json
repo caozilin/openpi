@@ -1,0 +1,14 @@
+{
+  "kind": "read-only audit correction only; evaluation request and physical protocol unchanged",
+  "reason": "old fixed-bound audit compared instantaneous clipped predictions to stage-local EMA limits and ignored canonical contraction recovery; predicted_violation is descriptive relative to EMA requested limits, not the effective recovered hard box",
+  "original_request_sha256": "604ae8feda0cb6efd441f0c2ab8a7243ab7e000e8180554c30485ae12457f004",
+  "original_auditor": "/media/czl/sata/franka_my_code/openpi/examples/libero/audit_joint13_predicted_evaluation.py",
+  "original_auditor_sha256": "743d6854ad5b9eee08a012f3c74f68a22627d3f52532b6d91a82ed4c98482f59",
+  "new_auditor": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/audit_evaluation.py",
+  "new_auditor_sha256": "3f0dc4826067d4327f8a2d98d39def17982ef58040813a3584e1795e3bffa932",
+  "canonical_replay_source": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/audit_bound_replay.py",
+  "canonical_replay_sha256": "ec58fcdae8a8fa5f0fba1e5e29cff6624a653bd003ff89cafa79ff088e4cf54d",
+  "all_evaluation_sources_unchanged": true,
+  "completed_rollouts_retested": false,
+  "preserved_committed_manifest": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/attempts/0002_initial_audit_bounds_ema/preserved_committed_sha256.json"
+}

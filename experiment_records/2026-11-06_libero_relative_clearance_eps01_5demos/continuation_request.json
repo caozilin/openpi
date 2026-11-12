@@ -1,0 +1,18 @@
+{
+  "status": "zero_reference_fix_and_supplement_complete",
+  "user_instruction": "继续标注。名义轨迹不一定需要保证求解。",
+  "parent_run": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_dsp16_first5pertask_20261106",
+  "keep_existing_198": true,
+  "unsearched_cases": [
+    "libero_spatial/task_04/demo_1",
+    "libero_10/task_08/demo_4"
+  ],
+  "candidate_acceptance_unchanged": true,
+  "pending_question": "Define complete per-frame c0 for zero-tolerance replay failure",
+  "user_refinement": "针对0容差额外不采用转阶段偏置",
+  "supplement_run": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_zero_nominal_continuation_20261106",
+  "baseline_fallback": "Not selected; Spatial numeric failure retained without fabricated c0",
+  "supplement_labeled": 1,
+  "total_labeled": 199,
+  "remaining_unavailable": 1
+}

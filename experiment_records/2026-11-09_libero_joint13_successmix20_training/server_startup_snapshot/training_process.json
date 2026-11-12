@@ -1,0 +1,8 @@
+{
+  "pid": 3312670,
+  "command": [
+    "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+    "--run-dir",
+    "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+  ]
+}

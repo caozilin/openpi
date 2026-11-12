@@ -1,0 +1,5 @@
+{
+  "state": "running",
+  "pid": 2305661,
+  "checkpoint_dir": "/mnt/SharedData/czl/checkpoints/pi05_franka_mujoco_state_action7_lora/Pi05_nominal100_state_action7_LoRA_7gpu_bs84_15k_lr5e-5_20261028"
+}

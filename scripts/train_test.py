@@ -209,7 +209,7 @@ def test_validation_batch_size(train_batch_size, factor, num_devices, expected):
 
 
 def test_default_validation_batch_size_factor():
-    cfg = _config.get_config("pi05_franka_mujoco_joint13_state")
+    cfg = _config.get_config("pi05_franka_mujoco_joint32_state")
     assert cfg.validation_batch_size_factor == 2.5
     val_batch_size = train.validation_batch_size(cfg.batch_size, cfg.validation_batch_size_factor, 1)
     assert val_batch_size == 60

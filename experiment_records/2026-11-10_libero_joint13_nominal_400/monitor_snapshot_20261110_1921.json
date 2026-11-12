@@ -1,0 +1,75 @@
+{
+  "observed_at": "2026-11-10T19:21:15.758124+08:00",
+  "completed_episodes": 400,
+  "expected_episodes": 400,
+  "successes": 368,
+  "per_suite": {
+    "libero_spatial": {
+      "completed": 100,
+      "successes": 96
+    },
+    "libero_object": {
+      "completed": 100,
+      "successes": 97
+    },
+    "libero_goal": {
+      "completed": 100,
+      "successes": 88
+    },
+    "libero_10": {
+      "completed": 100,
+      "successes": 87
+    }
+  },
+  "terminations": {
+    "task_success": 368,
+    "step_limit": 22,
+    "ik_failure_streak": 10
+  },
+  "infrastructure_errors": 0,
+  "delta_completed": 54,
+  "delta_successes": 49,
+  "historical_audit_implementation_interruptions": 1,
+  "active_pipeline_audit_processes": [
+    {
+      "pid": 71157,
+      "ppid": 2688,
+      "state": "S",
+      "start_ticks": 1258864,
+      "command": "python3 -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/pipeline_v2.py "
+    },
+    {
+      "pid": 102066,
+      "ppid": 71157,
+      "state": "D",
+      "start_ticks": 1569094,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_evaluation_v2.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110 "
+    }
+  ],
+  "clients_really_exited": true,
+  "evaluation_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "locks": {
+    "evaluation.lock": "released",
+    "independent_audit.lock": "held",
+    "pipeline.lock": "held",
+    "initial_audit.lock": "released"
+  },
+  "original6_artifacts_unchanged": true,
+  "frozen490_sources_and_v2_amendment_unchanged": true,
+  "pipeline_state": {
+    "stage": "auditing",
+    "at": "2026-11-10T19:14:54.558545+08:00"
+  },
+  "audit_state": {
+    "stage": "auditing",
+    "checked_episodes": 303,
+    "expected_episodes": 400
+  }
+}

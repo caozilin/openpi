@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "bundle": "/tmp/libero_successmix20_exact_transport_20261109",
+  "files": 2479,
+  "transport_bytes": 240203401,
+  "original_dataset_bytes": 38388719043,
+  "episodes": 1875,
+  "tolerance_videos": 602,
+  "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+  "transport_request_sha256": "bcaebae5f311a0aba41c3223319c69e9fbc84f997381a35f88d0baae7d07ac56",
+  "reconstructor_sha256": "1501fdec7479db6ccab9de96ba30aafe060c7f556881959eee9d81e3b91c5dd1",
+  "dataset_modified": false
+}

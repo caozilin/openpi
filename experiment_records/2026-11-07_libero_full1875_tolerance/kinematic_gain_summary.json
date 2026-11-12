@@ -1,0 +1,451 @@
+{
+  "complete": true,
+  "manifest": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-07_libero_full1875_tolerance/kinematic_gain_sources.json",
+  "manifest_sha256": "36db8e94d46be874a2bfa0f9c7c18b0a0f800b632f86824651ce53d78a3abb55",
+  "protocol": "20Hz ideal kinematic command replay; paired disjoint blocks; valid N-1/N-2 differences pooled, mY weighted by N, sigma_min minimum over blocks; episode-equal mean",
+  "selected_best_objective": "minimum observed mean joint velocity among accepted candidates, not proven global optimum or four-objective optimization",
+  "all_labeled": {
+    "episodes": 1851,
+    "tasks": 40,
+    "metrics": {
+      "velocity": {
+        "zero_mean": 0.660007143801675,
+        "best_mean": 0.5313131618525051,
+        "improvement_percent_of_means": 19.49887711940298,
+        "mean_paired_improvement_percent": 19.147794650312846,
+        "paired_percentage_denominators_above_1e_minus_12": 1851,
+        "improved_episodes": 1716,
+        "worsened_episodes": 0
+      },
+      "acceleration": {
+        "zero_mean": 5.4916854926469405,
+        "best_mean": 4.04829656736324,
+        "improvement_percent_of_means": 26.283168022209534,
+        "mean_paired_improvement_percent": 24.593294892863433,
+        "paired_percentage_denominators_above_1e_minus_12": 1851,
+        "improved_episodes": 1713,
+        "worsened_episodes": 3
+      },
+      "mY": {
+        "zero_mean": 0.07917755071812244,
+        "best_mean": 0.0771620802620714,
+        "improvement_percent_of_means": -2.545507454791384,
+        "mean_paired_improvement_percent": -1.014280538346477,
+        "paired_percentage_denominators_above_1e_minus_12": 1851,
+        "improved_episodes": 786,
+        "worsened_episodes": 930
+      },
+      "sigma_min": {
+        "zero_mean": 0.8981523842490654,
+        "best_mean": 1.102212046293942,
+        "improvement_percent_of_means": 22.719937688022558,
+        "mean_paired_improvement_percent": 22086.6186420985,
+        "paired_percentage_denominators_above_1e_minus_12": 1851,
+        "improved_episodes": 1366,
+        "worsened_episodes": 286
+      }
+    }
+  },
+  "excluding_gp_recovered_case": {
+    "episodes": 1850,
+    "tasks": 40,
+    "metrics": {
+      "velocity": {
+        "zero_mean": 0.6600291740667431,
+        "best_mean": 0.5312937848874995,
+        "improvement_percent_of_means": 19.504499836885355,
+        "mean_paired_improvement_percent": 19.153597852450073,
+        "paired_percentage_denominators_above_1e_minus_12": 1850,
+        "improved_episodes": 1715,
+        "worsened_episodes": 0
+      },
+      "acceleration": {
+        "zero_mean": 5.492166809178846,
+        "best_mean": 4.048261760589888,
+        "improvement_percent_of_means": 26.290262090652732,
+        "mean_paired_improvement_percent": 24.60084910519993,
+        "paired_percentage_denominators_above_1e_minus_12": 1850,
+        "improved_episodes": 1712,
+        "worsened_episodes": 3
+      },
+      "mY": {
+        "zero_mean": 0.07917951193745328,
+        "best_mean": 0.07716199054499816,
+        "improvement_percent_of_means": -2.5480346406388947,
+        "mean_paired_improvement_percent": -1.0161014677027747,
+        "paired_percentage_denominators_above_1e_minus_12": 1850,
+        "improved_episodes": 785,
+        "worsened_episodes": 930
+      },
+      "sigma_min": {
+        "zero_mean": 0.898208969635518,
+        "best_mean": 1.1023255865517902,
+        "improvement_percent_of_means": 22.724847314662224,
+        "mean_paired_improvement_percent": 22098.550631537786,
+        "paired_percentage_denominators_above_1e_minus_12": 1850,
+        "improved_episodes": 1365,
+        "worsened_episodes": 286
+      }
+    }
+  },
+  "excluding_strict_tasks": {
+    "episodes": 1768,
+    "tasks": 38,
+    "metrics": {
+      "velocity": {
+        "zero_mean": 0.6617676584804373,
+        "best_mean": 0.5270320472881787,
+        "improvement_percent_of_means": 20.35995707339959,
+        "mean_paired_improvement_percent": 20.04670129962052,
+        "paired_percentage_denominators_above_1e_minus_12": 1768,
+        "improved_episodes": 1716,
+        "worsened_episodes": 0
+      },
+      "acceleration": {
+        "zero_mean": 5.529321438993814,
+        "best_mean": 4.018171608281071,
+        "improvement_percent_of_means": 27.3297518942529,
+        "mean_paired_improvement_percent": 25.747844370299894,
+        "paired_percentage_denominators_above_1e_minus_12": 1768,
+        "improved_episodes": 1713,
+        "worsened_episodes": 3
+      },
+      "mY": {
+        "zero_mean": 0.07833152834645168,
+        "best_mean": 0.07622144021627608,
+        "improvement_percent_of_means": -2.693791599268836,
+        "mean_paired_improvement_percent": -1.0618966495923805,
+        "paired_percentage_denominators_above_1e_minus_12": 1768,
+        "improved_episodes": 786,
+        "worsened_episodes": 930
+      },
+      "sigma_min": {
+        "zero_mean": 0.8967972463416022,
+        "best_mean": 1.110436632339943,
+        "improvement_percent_of_means": 23.822484610636586,
+        "mean_paired_improvement_percent": 23123.4904448667,
+        "paired_percentage_denominators_above_1e_minus_12": 1768,
+        "improved_episodes": 1366,
+        "worsened_episodes": 286
+      }
+    }
+  },
+  "suites": {
+    "libero_10": {
+      "episodes": 455,
+      "tasks": 10,
+      "metrics": {
+        "velocity": {
+          "zero_mean": 0.567643211631408,
+          "best_mean": 0.4769149449383057,
+          "improvement_percent_of_means": 15.983326292645865,
+          "mean_paired_improvement_percent": 15.656195140906686,
+          "paired_percentage_denominators_above_1e_minus_12": 455,
+          "improved_episodes": 451,
+          "worsened_episodes": 0
+        },
+        "acceleration": {
+          "zero_mean": 4.216059187756186,
+          "best_mean": 3.3987398929685178,
+          "improvement_percent_of_means": 19.385859125536875,
+          "mean_paired_improvement_percent": 18.274933619456444,
+          "paired_percentage_denominators_above_1e_minus_12": 455,
+          "improved_episodes": 448,
+          "worsened_episodes": 3
+        },
+        "mY": {
+          "zero_mean": 0.07388755692996438,
+          "best_mean": 0.07643820916315586,
+          "improvement_percent_of_means": 3.452072769991788,
+          "mean_paired_improvement_percent": 4.538972658978687,
+          "paired_percentage_denominators_above_1e_minus_12": 455,
+          "improved_episodes": 264,
+          "worsened_episodes": 187
+        },
+        "sigma_min": {
+          "zero_mean": 0.8030429594859517,
+          "best_mean": 0.9828396746979415,
+          "improvement_percent_of_means": 22.389426753343592,
+          "mean_paired_improvement_percent": 7331.742021809742,
+          "paired_percentage_denominators_above_1e_minus_12": 455,
+          "improved_episodes": 305,
+          "worsened_episodes": 84
+        }
+      }
+    },
+    "libero_goal": {
+      "episodes": 448,
+      "tasks": 10,
+      "metrics": {
+        "velocity": {
+          "zero_mean": 0.7137705087365499,
+          "best_mean": 0.6205716737860387,
+          "improvement_percent_of_means": 13.057254931348043,
+          "mean_paired_improvement_percent": 12.311434687403361,
+          "paired_percentage_denominators_above_1e_minus_12": 448,
+          "improved_episodes": 336,
+          "worsened_episodes": 0
+        },
+        "acceleration": {
+          "zero_mean": 5.544335416622062,
+          "best_mean": 4.598923416779307,
+          "improvement_percent_of_means": 17.05185434864538,
+          "mean_paired_improvement_percent": 15.515471737700441,
+          "paired_percentage_denominators_above_1e_minus_12": 448,
+          "improved_episodes": 336,
+          "worsened_episodes": 0
+        },
+        "mY": {
+          "zero_mean": 0.07855631485947653,
+          "best_mean": 0.0790278712319271,
+          "improvement_percent_of_means": 0.6002781231452875,
+          "mean_paired_improvement_percent": 1.4013372827772954,
+          "paired_percentage_denominators_above_1e_minus_12": 448,
+          "improved_episodes": 183,
+          "worsened_episodes": 153
+        },
+        "sigma_min": {
+          "zero_mean": 0.9251822701993699,
+          "best_mean": 1.0873204570706778,
+          "improvement_percent_of_means": 17.524999353518556,
+          "mean_paired_improvement_percent": 46383.86463046011,
+          "paired_percentage_denominators_above_1e_minus_12": 448,
+          "improved_episodes": 290,
+          "worsened_episodes": 45
+        }
+      }
+    },
+    "libero_object": {
+      "episodes": 493,
+      "tasks": 10,
+      "metrics": {
+        "velocity": {
+          "zero_mean": 0.5745492106861264,
+          "best_mean": 0.42633018967178193,
+          "improvement_percent_of_means": 25.797445764017567,
+          "mean_paired_improvement_percent": 25.449365954133974,
+          "paired_percentage_denominators_above_1e_minus_12": 493,
+          "improved_episodes": 491,
+          "worsened_episodes": 0
+        },
+        "acceleration": {
+          "zero_mean": 4.274750032471184,
+          "best_mean": 2.8682204961417472,
+          "improvement_percent_of_means": 32.90319961741338,
+          "mean_paired_improvement_percent": 32.50246434710309,
+          "paired_percentage_denominators_above_1e_minus_12": 493,
+          "improved_episodes": 491,
+          "worsened_episodes": 0
+        },
+        "mY": {
+          "zero_mean": 0.08733851172980117,
+          "best_mean": 0.0746108384196624,
+          "improvement_percent_of_means": -14.572807640132828,
+          "mean_paired_improvement_percent": -13.79669709511684,
+          "paired_percentage_denominators_above_1e_minus_12": 493,
+          "improved_episodes": 67,
+          "worsened_episodes": 424
+        },
+        "sigma_min": {
+          "zero_mean": 1.1268205818325778,
+          "best_mean": 1.2697852419315945,
+          "improvement_percent_of_means": 12.687437769951758,
+          "mean_paired_improvement_percent": 604.3376207602707,
+          "paired_percentage_denominators_above_1e_minus_12": 493,
+          "improved_episodes": 362,
+          "worsened_episodes": 128
+        }
+      }
+    },
+    "libero_spatial": {
+      "episodes": 455,
+      "tasks": 10,
+      "metrics": {
+        "velocity": {
+          "zero_mean": 0.7920299189063185,
+          "best_mean": 0.6115768555554376,
+          "improvement_percent_of_means": 22.783617012859953,
+          "mean_paired_improvement_percent": 22.542722974223704,
+          "paired_percentage_denominators_above_1e_minus_12": 455,
+          "improved_episodes": 438,
+          "worsened_episodes": 0
+        },
+        "acceleration": {
+          "zero_mean": 8.03404150286911,
+          "best_mean": 5.434329449612464,
+          "improvement_percent_of_means": 32.3587082831006,
+          "mean_paired_improvement_percent": 31.280105029067933,
+          "paired_percentage_denominators_above_1e_minus_12": 455,
+          "improved_episodes": 438,
+          "worsened_episodes": 0
+        },
+        "mY": {
+          "zero_mean": 0.07623668711268879,
+          "best_mean": 0.07881317745727767,
+          "improvement_percent_of_means": 3.3795937916091012,
+          "mean_paired_improvement_percent": 4.9039708327335,
+          "paired_percentage_denominators_above_1e_minus_12": 455,
+          "improved_episodes": 272,
+          "worsened_episodes": 166
+        },
+        "sigma_min": {
+          "zero_mean": 0.7188820061233703,
+          "best_mean": 1.054678586071612,
+          "improvement_percent_of_means": 46.7109452021274,
+          "mean_paired_improvement_percent": 36194.45864861526,
+          "paired_percentage_denominators_above_1e_minus_12": 455,
+          "improved_episodes": 409,
+          "worsened_episodes": 29
+        }
+      }
+    }
+  },
+  "missing": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "demo": "demo_37",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_1",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_20",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_21",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_24",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_37",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_42",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "demo": "demo_14",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "demo": "demo_49",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "demo": "demo_39",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_11",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_17",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_19",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_20",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_21",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_23",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_24",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_25",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_27",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_45",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "demo": "demo_15",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "demo": "demo_43",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "demo": "demo_27",
+      "status": "baseline_unavailable"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "demo": "demo_36",
+      "status": "baseline_unavailable"
+    }
+  ],
+  "verified_label_files": 1851,
+  "verified_trial_pairs": 2275
+}

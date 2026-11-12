@@ -4,6 +4,7 @@ import logging
 import time
 import traceback
 
+import numpy as np
 from openpi_client import base_policy as _base_policy
 from openpi_client import msgpack_numpy
 import websockets.asyncio.server as _server
@@ -58,7 +59,18 @@ class WebsocketPolicyServer:
                 obs = msgpack_numpy.unpackb(await websocket.recv())
 
                 infer_time = time.monotonic()
-                action = self._policy.infer(obs)
+                seed = obs.pop("_tasktol_sampling_seed", None)
+                if seed is None:
+                    action = self._policy.infer(obs)
+                else:
+                    protocol = self._metadata.get("tasktol_sampling", {})
+                    if (type(seed) is not int or not 0 <= seed < 2**32
+                            or protocol.get("version") != 1):
+                        raise ValueError("Invalid or unsupported TaskTol sampling seed")
+                    noise = np.random.default_rng(seed).standard_normal(
+                        (protocol["action_horizon"], protocol["action_dim"]), dtype=np.float32,
+                    )
+                    action = self._policy.infer(obs, noise=noise)
                 infer_time = time.monotonic() - infer_time
 
                 action["server_timing"] = {

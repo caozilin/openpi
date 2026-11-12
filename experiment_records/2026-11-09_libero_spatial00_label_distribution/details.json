@@ -1,0 +1,3352 @@
+{
+  "units": [
+    "APP Ry-",
+    "APP Ry+",
+    "EXEC Rx-",
+    "EXEC Rx+",
+    "EXEC Ry-",
+    "EXEC Ry+",
+    "EXEC Rz-",
+    "EXEC Rz+"
+  ],
+  "demos": [
+    {
+      "demo": "demo_0",
+      "episode_index": 0,
+      "caps_deg": [
+        30.0,
+        30.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        7.389322899047286
+      ],
+      "actual_peak_deg": [
+        0.0,
+        11.467058321037824,
+        8.986123347519715,
+        0.3962984555605274,
+        0.0,
+        14.99999999551165,
+        0.0,
+        3.2037825034386453
+      ],
+      "frames": 97,
+      "phase_counts": {
+        "pregrasp": 36,
+        "grasp": 13,
+        "postgrasp": 36,
+        "release": 12
+      },
+      "best_velocity": 0.5992422368354745,
+      "full_velocity": 0.5992423877532942,
+      "full_pass": true,
+      "selected_query": 16,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0"
+    },
+    {
+      "demo": "demo_1",
+      "episode_index": 1,
+      "caps_deg": [
+        1.471207469543282,
+        30.0,
+        11.741387058496523,
+        0.0,
+        0.2787206435633312,
+        14.86350586933047,
+        14.585673732281354,
+        7.061583117975199
+      ],
+      "actual_peak_deg": [
+        1.4712074471246863,
+        10.657761414548709,
+        9.343162839864425,
+        0.0,
+        0.0,
+        14.863505855710695,
+        5.378601221263645,
+        1.3889141514049526
+      ],
+      "frames": 83,
+      "phase_counts": {
+        "pregrasp": 35,
+        "grasp": 14,
+        "postgrasp": 24,
+        "release": 10
+      },
+      "best_velocity": 0.7272298471701722,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 21,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_1"
+    },
+    {
+      "demo": "demo_2",
+      "episode_index": 2,
+      "caps_deg": [
+        17.04572045280815,
+        30.0,
+        1.9178680497894565,
+        0.0,
+        2.214230360732126,
+        0.7882927986639526,
+        14.441669457791633,
+        1.5395360121126587
+      ],
+      "actual_peak_deg": [
+        0.0,
+        12.549209579236091,
+        1.9178680438659497,
+        0.0,
+        0.0,
+        0.7882927963199666,
+        1.1350240838998176,
+        1.5395359959078476
+      ],
+      "frames": 89,
+      "phase_counts": {
+        "pregrasp": 39,
+        "grasp": 14,
+        "postgrasp": 30,
+        "release": 6
+      },
+      "best_velocity": 0.7891547640975998,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 27,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_2"
+    },
+    {
+      "demo": "demo_3",
+      "episode_index": 3,
+      "caps_deg": [
+        30.0,
+        19.25319475736183,
+        15.0,
+        8.130773505002496,
+        7.078686270067539,
+        15.0,
+        9.456183221112212,
+        15.0
+      ],
+      "actual_peak_deg": [
+        9.94140591096548,
+        6.643709617051394,
+        6.449697192148288,
+        1.9173971536004335,
+        0.0,
+        14.881368220791376,
+        0.25829510919508586,
+        3.2119922896228528
+      ],
+      "frames": 96,
+      "phase_counts": {
+        "pregrasp": 40,
+        "grasp": 15,
+        "postgrasp": 29,
+        "release": 12
+      },
+      "best_velocity": 0.6339203208530165,
+      "full_velocity": 0.6339203407530603,
+      "full_pass": true,
+      "selected_query": 13,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_3"
+    },
+    {
+      "demo": "demo_4",
+      "episode_index": 4,
+      "caps_deg": [
+        30.0,
+        10.542483254837364,
+        0.616443691666181,
+        15.0,
+        0.0,
+        15.0,
+        0.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.5564166816178494,
+        10.54248324944865,
+        0.6164436610836816,
+        0.288910738021851,
+        0.0,
+        14.999999994334598,
+        0.0,
+        4.5818507897975715
+      ],
+      "frames": 104,
+      "phase_counts": {
+        "pregrasp": 50,
+        "grasp": 17,
+        "postgrasp": 25,
+        "release": 12
+      },
+      "best_velocity": 0.6042833002396429,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 27,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_4"
+    },
+    {
+      "demo": "demo_5",
+      "episode_index": 5,
+      "caps_deg": [
+        30.0,
+        0.0,
+        0.0,
+        15.0,
+        13.755808422614994,
+        15.0,
+        15.0,
+        4.391428992718517
+      ],
+      "actual_peak_deg": [
+        12.175366200715139,
+        0.0,
+        0.0,
+        0.8320895366041225,
+        0.0,
+        12.93254506571938,
+        0.0,
+        4.391428984910895
+      ],
+      "frames": 133,
+      "phase_counts": {
+        "pregrasp": 65,
+        "grasp": 15,
+        "postgrasp": 36,
+        "release": 17
+      },
+      "best_velocity": 0.7023059727033071,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 16,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_5"
+    },
+    {
+      "demo": "demo_6",
+      "episode_index": 6,
+      "caps_deg": [
+        30.0,
+        20.923179463901718,
+        2.5395027228789675,
+        7.418414071911762,
+        1.4160990869046266,
+        15.0,
+        15.0,
+        0.43701555031769423
+      ],
+      "actual_peak_deg": [
+        0.0,
+        12.403143870238557,
+        2.5395027092234947,
+        0.11738031162863093,
+        0.0,
+        14.99999999618547,
+        4.461247273040258,
+        0.4369466924704925
+      ],
+      "frames": 91,
+      "phase_counts": {
+        "pregrasp": 32,
+        "grasp": 15,
+        "postgrasp": 31,
+        "release": 13
+      },
+      "best_velocity": 0.672989325051597,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 26,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_6"
+    },
+    {
+      "demo": "demo_7",
+      "episode_index": 7,
+      "caps_deg": [
+        30.0,
+        30.0,
+        3.9935734563744636,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        16.79459654185899,
+        3.9935734531669573,
+        0.0,
+        0.0,
+        9.240709805948445,
+        0.0,
+        11.644443471749602
+      ],
+      "frames": 91,
+      "phase_counts": {
+        "pregrasp": 33,
+        "grasp": 14,
+        "postgrasp": 31,
+        "release": 13
+      },
+      "best_velocity": 0.6419506497950921,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 13,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_7"
+    },
+    {
+      "demo": "demo_8",
+      "episode_index": 8,
+      "caps_deg": [
+        0.04671824319262576,
+        0.12919502504702376,
+        0.005064870363668806,
+        15.0,
+        15.0,
+        0.014738122512962094,
+        0.0,
+        0.0
+      ],
+      "actual_peak_deg": [
+        0.04671824094625935,
+        0.12919501161998012,
+        0.005064863915628341,
+        3.536535362273774,
+        7.603187177097233,
+        0.014738194955606614,
+        0.0,
+        0.0
+      ],
+      "frames": 78,
+      "phase_counts": {
+        "pregrasp": 31,
+        "grasp": 17,
+        "postgrasp": 24,
+        "release": 6
+      },
+      "best_velocity": 0.9696818181631734,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 19,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_8"
+    },
+    {
+      "demo": "demo_9",
+      "episode_index": 9,
+      "caps_deg": [
+        30.0,
+        0.0,
+        13.722011789491736,
+        0.0,
+        15.0,
+        15.0,
+        15.0,
+        0.0
+      ],
+      "actual_peak_deg": [
+        12.764382573342655,
+        0.0,
+        11.896046800341095,
+        0.0,
+        0.0,
+        14.999999993156958,
+        10.432020489077955,
+        0.0
+      ],
+      "frames": 88,
+      "phase_counts": {
+        "pregrasp": 36,
+        "grasp": 15,
+        "postgrasp": 27,
+        "release": 10
+      },
+      "best_velocity": 0.7096882522902878,
+      "full_velocity": 0.7134145891911797,
+      "full_pass": true,
+      "selected_query": 26,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_9"
+    },
+    {
+      "demo": "demo_10",
+      "episode_index": 10,
+      "caps_deg": [
+        30.0,
+        17.91910512428434,
+        15.0,
+        5.074830497845645,
+        15.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        17.919105110937647,
+        2.810608114620349,
+        2.7333249119613883,
+        0.0,
+        14.99999999709377,
+        0.0354718287107256,
+        2.3261733048431856
+      ],
+      "frames": 92,
+      "phase_counts": {
+        "pregrasp": 43,
+        "grasp": 15,
+        "postgrasp": 26,
+        "release": 8
+      },
+      "best_velocity": 0.7157160449217943,
+      "full_velocity": 0.715978244992597,
+      "full_pass": true,
+      "selected_query": 21,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_10"
+    },
+    {
+      "demo": "demo_11",
+      "episode_index": 11,
+      "caps_deg": [
+        30.0,
+        3.032728819869409,
+        14.711986364565023,
+        12.082461510706578,
+        15.0,
+        14.648991196814391,
+        14.991979288941936,
+        9.403123034817469
+      ],
+      "actual_peak_deg": [
+        9.289821179832487,
+        3.032728809967557,
+        7.835454027494415,
+        3.8261697721702257,
+        0.0,
+        13.1276892275582,
+        0.5658911005652282,
+        3.216431641542375
+      ],
+      "frames": 127,
+      "phase_counts": {
+        "pregrasp": 39,
+        "grasp": 32,
+        "postgrasp": 32,
+        "release": 24
+      },
+      "best_velocity": 0.6961681445031378,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 23,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_11"
+    },
+    {
+      "demo": "demo_12",
+      "episode_index": 12,
+      "caps_deg": [
+        16.390161069085906,
+        10.043732625996096,
+        3.221232052950799,
+        2.9846369751268993,
+        7.988724612394072,
+        9.852575120102122,
+        0.17848531778061688,
+        3.8296288167801125
+      ],
+      "actual_peak_deg": [
+        0.6217199149811368,
+        10.043732620112708,
+        3.2212320596146053,
+        0.0,
+        0.0,
+        9.852575199487042,
+        0.0,
+        3.8296288014328237
+      ],
+      "frames": 85,
+      "phase_counts": {
+        "pregrasp": 39,
+        "grasp": 14,
+        "postgrasp": 24,
+        "release": 8
+      },
+      "best_velocity": 0.7017801939490179,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 26,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_12"
+    },
+    {
+      "demo": "demo_13",
+      "episode_index": 13,
+      "caps_deg": [
+        0.7432297718717233,
+        9.433945833520461,
+        0.0007718693346307111,
+        15.0,
+        15.0,
+        10.031639373481976,
+        15.0,
+        0.0
+      ],
+      "actual_peak_deg": [
+        0.7432079329458404,
+        9.433945829450302,
+        0.000771877270280367,
+        2.668732471176588,
+        0.0,
+        10.03163940537348,
+        1.775826295613545,
+        0.0
+      ],
+      "frames": 87,
+      "phase_counts": {
+        "pregrasp": 37,
+        "grasp": 17,
+        "postgrasp": 23,
+        "release": 10
+      },
+      "best_velocity": 0.7588186219352754,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 25,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_13"
+    },
+    {
+      "demo": "demo_14",
+      "episode_index": 14,
+      "caps_deg": [
+        30.0,
+        25.127102762934076,
+        5.551239131530049,
+        0.0,
+        15.0,
+        15.0,
+        0.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        5.488482024734684,
+        21.924166827993457,
+        5.551239127923698,
+        0.0,
+        0.128118406438504,
+        2.1266915649000473,
+        0.0,
+        8.093282640028221
+      ],
+      "frames": 111,
+      "phase_counts": {
+        "pregrasp": 51,
+        "grasp": 20,
+        "release": 15,
+        "postgrasp": 25
+      },
+      "best_velocity": 0.831925113179131,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 23,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_14"
+    },
+    {
+      "demo": "demo_15",
+      "episode_index": 15,
+      "caps_deg": [
+        30.0,
+        30.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "actual_peak_deg": [
+        0.8034559225353921,
+        10.016662119902833,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "frames": 83,
+      "phase_counts": {
+        "pregrasp": 36,
+        "grasp": 16,
+        "postgrasp": 23,
+        "release": 8
+      },
+      "best_velocity": 0.7498342294079609,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 2,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_15"
+    },
+    {
+      "demo": "demo_16",
+      "episode_index": 16,
+      "caps_deg": [
+        30.0,
+        20.756774908603504,
+        15.0,
+        13.850189965332738,
+        13.849745089587046,
+        15.0,
+        13.849207277169143,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        15.807022240461567,
+        6.652161598467023,
+        0.0,
+        0.0,
+        13.885694162537508,
+        0.0,
+        3.229721572128682
+      ],
+      "frames": 88,
+      "phase_counts": {
+        "pregrasp": 36,
+        "grasp": 14,
+        "postgrasp": 31,
+        "release": 7
+      },
+      "best_velocity": 0.6113789943298567,
+      "full_velocity": 0.6113790051662379,
+      "full_pass": true,
+      "selected_query": 16,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_16"
+    },
+    {
+      "demo": "demo_17",
+      "episode_index": 17,
+      "caps_deg": [
+        30.0,
+        10.298769863602004,
+        15.0,
+        15.0,
+        0.0,
+        12.672567512540056,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        10.298769860775023,
+        6.534969510662815,
+        0.7231464342033652,
+        0.0,
+        10.70561337528352,
+        0.0,
+        3.8405317970934854
+      ],
+      "frames": 96,
+      "phase_counts": {
+        "pregrasp": 38,
+        "grasp": 23,
+        "postgrasp": 31,
+        "release": 4
+      },
+      "best_velocity": 0.7583938226756728,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 25,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_17"
+    },
+    {
+      "demo": "demo_18",
+      "episode_index": 18,
+      "caps_deg": [
+        30.0,
+        0.0,
+        3.01260002284428,
+        15.0,
+        15.0,
+        13.222533243047604,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        8.450541009971575,
+        0.0,
+        3.0126000172190315,
+        0.0,
+        0.0,
+        7.606059445274501,
+        0.0,
+        9.27665654740644
+      ],
+      "frames": 74,
+      "phase_counts": {
+        "pregrasp": 29,
+        "grasp": 15,
+        "postgrasp": 22,
+        "release": 8
+      },
+      "best_velocity": 0.6820174811370502,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 26,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_18"
+    },
+    {
+      "demo": "demo_19",
+      "episode_index": 19,
+      "caps_deg": [
+        30.0,
+        11.209541227998477,
+        9.435100169709248,
+        15.0,
+        15.0,
+        15.0,
+        0.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        11.209541222142875,
+        6.769134993774839,
+        0.0,
+        0.0,
+        13.115043757402388,
+        0.0,
+        1.1170876102706395
+      ],
+      "frames": 98,
+      "phase_counts": {
+        "pregrasp": 47,
+        "grasp": 15,
+        "postgrasp": 24,
+        "release": 12
+      },
+      "best_velocity": 0.6457214514242026,
+      "full_velocity": 0.6492016570102911,
+      "full_pass": true,
+      "selected_query": 25,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_19"
+    },
+    {
+      "demo": "demo_20",
+      "episode_index": 20,
+      "caps_deg": [
+        28.38338580515247,
+        0.0,
+        7.428732547849325,
+        13.09566120625888,
+        12.91731985947609,
+        14.306674674559272,
+        5.647409406560535,
+        13.863077501075642
+      ],
+      "actual_peak_deg": [
+        12.996567995893637,
+        0.0,
+        7.428732544694282,
+        0.5396896735731662,
+        0.0,
+        12.223452434199789,
+        0.0,
+        5.235038239577433
+      ],
+      "frames": 86,
+      "phase_counts": {
+        "pregrasp": 38,
+        "grasp": 17,
+        "postgrasp": 23,
+        "release": 8
+      },
+      "best_velocity": 0.7387326077877154,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 24,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_20"
+    },
+    {
+      "demo": "demo_21",
+      "episode_index": 21,
+      "caps_deg": [
+        30.0,
+        0.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        9.757415897930779,
+        0.0,
+        5.049512906324177,
+        4.473669287982989,
+        0.0,
+        14.061729059363126,
+        14.210305737111469,
+        1.6113940665926885
+      ],
+      "frames": 120,
+      "phase_counts": {
+        "pregrasp": 38,
+        "grasp": 15,
+        "postgrasp": 53,
+        "release": 14
+      },
+      "best_velocity": 0.6959536350943536,
+      "full_velocity": 0.7003630421297434,
+      "full_pass": true,
+      "selected_query": 5,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_21"
+    },
+    {
+      "demo": "demo_22",
+      "episode_index": 22,
+      "caps_deg": [
+        30.0,
+        30.0,
+        15.0,
+        0.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        2.676669059852895,
+        14.195706254162868,
+        5.819682740397179,
+        0.0,
+        0.0,
+        9.101104440858792,
+        0.0,
+        4.16886950967493
+      ],
+      "frames": 95,
+      "phase_counts": {
+        "pregrasp": 42,
+        "grasp": 15,
+        "postgrasp": 25,
+        "release": 13
+      },
+      "best_velocity": 0.6235528333298174,
+      "full_velocity": 0.623552930066669,
+      "full_pass": true,
+      "selected_query": 7,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_22"
+    },
+    {
+      "demo": "demo_23",
+      "episode_index": 23,
+      "caps_deg": [
+        30.0,
+        7.8340896520194265,
+        1.6235359734202326,
+        15.0,
+        4.557807813431251,
+        15.0,
+        0.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        7.8340896398153195,
+        1.6235359652677852,
+        2.573566373269641,
+        0.0,
+        5.382022365571448,
+        0.0,
+        7.138815847353522
+      ],
+      "frames": 84,
+      "phase_counts": {
+        "pregrasp": 34,
+        "grasp": 17,
+        "postgrasp": 27,
+        "release": 6
+      },
+      "best_velocity": 0.6297829784565787,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 25,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_23"
+    },
+    {
+      "demo": "demo_24",
+      "episode_index": 24,
+      "caps_deg": [
+        0.0,
+        29.524827123520122,
+        14.980509641540353,
+        6.707414527722688,
+        15.0,
+        0.2393349473439068,
+        0.0,
+        5.482117065677649
+      ],
+      "actual_peak_deg": [
+        0.0,
+        8.814579150163365,
+        3.494164860295061,
+        1.0981192078581168,
+        5.75871268145019,
+        0.06290525398507389,
+        0.0,
+        5.482117029149639
+      ],
+      "frames": 99,
+      "phase_counts": {
+        "pregrasp": 34,
+        "grasp": 33,
+        "postgrasp": 15,
+        "release": 17
+      },
+      "best_velocity": 0.7929709102128703,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 27,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_24"
+    },
+    {
+      "demo": "demo_26",
+      "episode_index": 25,
+      "caps_deg": [
+        30.0,
+        17.459099832260375,
+        15.0,
+        11.419713283014657,
+        11.41973927765878,
+        15.0,
+        11.41993662560662,
+        15.0
+      ],
+      "actual_peak_deg": [
+        1.3755860767303667,
+        14.886544337635033,
+        9.026976367719127,
+        0.0,
+        0.0,
+        14.274758160962834,
+        0.0,
+        3.977498447937109
+      ],
+      "frames": 104,
+      "phase_counts": {
+        "pregrasp": 41,
+        "grasp": 15,
+        "postgrasp": 34,
+        "release": 14
+      },
+      "best_velocity": 0.6350618210716855,
+      "full_velocity": 0.6350618503543002,
+      "full_pass": true,
+      "selected_query": 14,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_26"
+    },
+    {
+      "demo": "demo_27",
+      "episode_index": 26,
+      "caps_deg": [
+        20.540779187799146,
+        30.0,
+        0.19779484033964434,
+        14.608628546402308,
+        14.347317602173252,
+        15.0,
+        7.412564670296515,
+        12.293331532747843
+      ],
+      "actual_peak_deg": [
+        3.2446329490983277,
+        8.353486949304436,
+        0.19779483092311181,
+        7.9638243585928965,
+        0.0,
+        14.999999995886501,
+        0.0,
+        10.774830045688297
+      ],
+      "frames": 112,
+      "phase_counts": {
+        "pregrasp": 43,
+        "grasp": 16,
+        "postgrasp": 38,
+        "release": 15
+      },
+      "best_velocity": 0.638200921984439,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 21,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_27"
+    },
+    {
+      "demo": "demo_28",
+      "episode_index": 27,
+      "caps_deg": [
+        29.81180092065781,
+        29.36494750163114,
+        8.678773956909113,
+        8.405229488394806,
+        9.99033172516391,
+        15.0,
+        15.0,
+        0.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        9.432633424894368,
+        8.678773854787135,
+        0.0,
+        0.0,
+        14.999999995797147,
+        14.999999881646929,
+        0.0
+      ],
+      "frames": 91,
+      "phase_counts": {
+        "pregrasp": 31,
+        "grasp": 16,
+        "postgrasp": 30,
+        "release": 14
+      },
+      "best_velocity": 0.6404364611275954,
+      "full_velocity": 0.6405791179554102,
+      "full_pass": true,
+      "selected_query": 22,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_28"
+    },
+    {
+      "demo": "demo_29",
+      "episode_index": 28,
+      "caps_deg": [
+        30.0,
+        0.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        5.435966384417699,
+        0.0,
+        14.99999999622274,
+        0.0,
+        12.919929941918472,
+        0.33705965335454413,
+        0.0,
+        8.13492247039144
+      ],
+      "frames": 123,
+      "phase_counts": {
+        "pregrasp": 33,
+        "grasp": 17,
+        "postgrasp": 56,
+        "release": 17
+      },
+      "best_velocity": 0.6580297808462504,
+      "full_velocity": 0.6658910276036952,
+      "full_pass": true,
+      "selected_query": 5,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_29"
+    },
+    {
+      "demo": "demo_30",
+      "episode_index": 29,
+      "caps_deg": [
+        30.0,
+        30.0,
+        15.0,
+        15.0,
+        0.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.10026066008877849,
+        9.488819432554418,
+        11.737870343516942,
+        0.25022181496958956,
+        0.0,
+        14.999999993812631,
+        0.6968091365189073,
+        2.9203447826135225
+      ],
+      "frames": 126,
+      "phase_counts": {
+        "pregrasp": 32,
+        "grasp": 33,
+        "postgrasp": 36,
+        "release": 25
+      },
+      "best_velocity": 0.7686159697992491,
+      "full_velocity": 0.7686160049278853,
+      "full_pass": true,
+      "selected_query": 8,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_30"
+    },
+    {
+      "demo": "demo_31",
+      "episode_index": 30,
+      "caps_deg": [
+        30.0,
+        30.0,
+        14.248846846940388,
+        12.906811876008213,
+        12.84580130993866,
+        12.952716281744367,
+        11.562014201123546,
+        13.268078439119586
+      ],
+      "actual_peak_deg": [
+        0.14424244425705673,
+        8.92745997412364,
+        5.564411131517649,
+        2.936774368610798,
+        1.3640590332787046,
+        6.352527064106248,
+        0.0,
+        7.912341607462696
+      ],
+      "frames": 150,
+      "phase_counts": {
+        "pregrasp": 53,
+        "grasp": 33,
+        "postgrasp": 39,
+        "release": 25
+      },
+      "best_velocity": 0.618149136653289,
+      "full_velocity": 0.6181491818165817,
+      "full_pass": true,
+      "selected_query": 20,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_31"
+    },
+    {
+      "demo": "demo_32",
+      "episode_index": 31,
+      "caps_deg": [
+        30.0,
+        10.195515569745183,
+        7.883923629582779,
+        0.0,
+        0.0,
+        15.0,
+        0.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        2.636378969301792,
+        10.195515565444767,
+        4.395286084088598,
+        0.0,
+        0.0,
+        11.467643301177368,
+        0.0,
+        4.111475873403916
+      ],
+      "frames": 92,
+      "phase_counts": {
+        "pregrasp": 40,
+        "grasp": 18,
+        "postgrasp": 26,
+        "release": 8
+      },
+      "best_velocity": 0.6319587718929739,
+      "full_velocity": 0.6339365948379889,
+      "full_pass": true,
+      "selected_query": 22,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_32"
+    },
+    {
+      "demo": "demo_33",
+      "episode_index": 32,
+      "caps_deg": [
+        30.0,
+        10.664688588062985,
+        15.0,
+        0.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.4015833285841623,
+        10.66468858445694,
+        14.999999993570562,
+        0.0,
+        0.0,
+        14.103464734972386,
+        0.0,
+        13.75003192847861
+      ],
+      "frames": 110,
+      "phase_counts": {
+        "pregrasp": 37,
+        "grasp": 14,
+        "postgrasp": 44,
+        "release": 15
+      },
+      "best_velocity": 0.6553922375465563,
+      "full_velocity": 0.6591046063735134,
+      "full_pass": true,
+      "selected_query": 27,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_33"
+    },
+    {
+      "demo": "demo_36",
+      "episode_index": 33,
+      "caps_deg": [
+        28.853714127859373,
+        28.600827529932634,
+        0.7145097727494601,
+        13.468754660175842,
+        3.681589298921596,
+        15.0,
+        15.0,
+        14.429265911586114
+      ],
+      "actual_peak_deg": [
+        1.3447028262299525,
+        14.816675235397295,
+        0.7145097694910966,
+        0.0,
+        0.0,
+        14.999999996508784,
+        0.0,
+        8.219728465754304
+      ],
+      "frames": 101,
+      "phase_counts": {
+        "pregrasp": 36,
+        "grasp": 15,
+        "postgrasp": 37,
+        "release": 13
+      },
+      "best_velocity": 0.6682325837532251,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 24,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_36"
+    },
+    {
+      "demo": "demo_37",
+      "episode_index": 34,
+      "caps_deg": [
+        25.502637476503004,
+        30.0,
+        1.6388356362561955,
+        14.716440876099165,
+        0.7093492262676568,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        7.041207823096473,
+        10.434220590941532,
+        1.6388356269861746,
+        11.86948600736969,
+        0.0,
+        14.999999997329306,
+        1.0061609257662978,
+        6.704422384609396
+      ],
+      "frames": 167,
+      "phase_counts": {
+        "pregrasp": 47,
+        "grasp": 30,
+        "postgrasp": 63,
+        "release": 27
+      },
+      "best_velocity": 0.6543719080108448,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 27,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_37"
+    },
+    {
+      "demo": "demo_38",
+      "episode_index": 35,
+      "caps_deg": [
+        0.0,
+        30.0,
+        15.0,
+        3.2302084144010945,
+        15.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        11.665895338120603,
+        2.687638587502991,
+        0.7525347793209607,
+        0.0,
+        12.605315717246869,
+        5.2127827629704955,
+        0.9328048375160414
+      ],
+      "frames": 88,
+      "phase_counts": {
+        "pregrasp": 33,
+        "grasp": 21,
+        "postgrasp": 25,
+        "release": 9
+      },
+      "best_velocity": 0.7057771559396694,
+      "full_velocity": 0.705777196621441,
+      "full_pass": true,
+      "selected_query": 24,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_38"
+    },
+    {
+      "demo": "demo_39",
+      "episode_index": 36,
+      "caps_deg": [
+        30.0,
+        13.678029326054222,
+        15.0,
+        10.336455850515895,
+        15.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.4166715529384218,
+        13.678029305957313,
+        1.3687627304874552,
+        8.078465127035031,
+        0.0,
+        14.585395506829883,
+        9.409576095334245,
+        2.075284443501507
+      ],
+      "frames": 107,
+      "phase_counts": {
+        "pregrasp": 38,
+        "grasp": 15,
+        "postgrasp": 44,
+        "release": 10
+      },
+      "best_velocity": 0.5972295410121896,
+      "full_velocity": 0.5977693333245466,
+      "full_pass": true,
+      "selected_query": 17,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_39"
+    },
+    {
+      "demo": "demo_40",
+      "episode_index": 37,
+      "caps_deg": [
+        27.100509064114025,
+        22.87206253511505,
+        3.958572513401259,
+        15.0,
+        4.798972990623155,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        19.74363023932711,
+        3.958572504560039,
+        0.7809238173671786,
+        0.3398824134716911,
+        14.999999995707576,
+        0.0,
+        5.837675282222254
+      ],
+      "frames": 94,
+      "phase_counts": {
+        "pregrasp": 40,
+        "grasp": 14,
+        "postgrasp": 31,
+        "release": 9
+      },
+      "best_velocity": 0.6691423607655381,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 24,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_40"
+    },
+    {
+      "demo": "demo_41",
+      "episode_index": 38,
+      "caps_deg": [
+        7.764152839905796,
+        14.46277233458656,
+        0.18691242148309467,
+        0.0,
+        3.987030803056347,
+        4.524874541430149,
+        15.0,
+        1.8163167946454912
+      ],
+      "actual_peak_deg": [
+        0.0,
+        14.462772327777213,
+        0.18691241825189486,
+        0.0,
+        3.987030728479248,
+        4.52487453950888,
+        1.6287903406152877,
+        1.8163167873685464
+      ],
+      "frames": 94,
+      "phase_counts": {
+        "pregrasp": 43,
+        "grasp": 13,
+        "postgrasp": 29,
+        "release": 9
+      },
+      "best_velocity": 0.7626923923114898,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 23,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_41"
+    },
+    {
+      "demo": "demo_42",
+      "episode_index": 39,
+      "caps_deg": [
+        28.218398287564924,
+        0.0,
+        15.0,
+        12.116277433849389,
+        15.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        6.471952627609097,
+        0.0,
+        0.0,
+        10.903590746659171,
+        0.0,
+        14.1964730412268,
+        12.813844317120648,
+        0.0
+      ],
+      "frames": 108,
+      "phase_counts": {
+        "pregrasp": 37,
+        "grasp": 20,
+        "postgrasp": 39,
+        "release": 12
+      },
+      "best_velocity": 0.6864340443344326,
+      "full_velocity": 0.6958521940314061,
+      "full_pass": true,
+      "selected_query": 27,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_42"
+    },
+    {
+      "demo": "demo_43",
+      "episode_index": 40,
+      "caps_deg": [
+        10.648640463715774,
+        15.27111244712658,
+        0.0,
+        15.0,
+        0.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.7024949247616551,
+        15.271112429471914,
+        0.0,
+        5.49032250003528,
+        0.0,
+        10.485075510037207,
+        1.7455923305038723,
+        2.042858499601068
+      ],
+      "frames": 95,
+      "phase_counts": {
+        "pregrasp": 43,
+        "grasp": 19,
+        "postgrasp": 18,
+        "release": 15
+      },
+      "best_velocity": 0.6402214386127352,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 25,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_43"
+    },
+    {
+      "demo": "demo_44",
+      "episode_index": 41,
+      "caps_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "frames": 87,
+      "phase_counts": {
+        "pregrasp": 35,
+        "grasp": 15,
+        "postgrasp": 23,
+        "release": 14
+      },
+      "best_velocity": 0.9062825590978981,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 0,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_44"
+    },
+    {
+      "demo": "demo_45",
+      "episode_index": 42,
+      "caps_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "frames": 89,
+      "phase_counts": {
+        "pregrasp": 35,
+        "grasp": 14,
+        "postgrasp": 32,
+        "release": 8
+      },
+      "best_velocity": 0.8539322666662553,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 0,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_45"
+    },
+    {
+      "demo": "demo_46",
+      "episode_index": 43,
+      "caps_deg": [
+        0.0,
+        26.11873191109733,
+        8.906179083642773,
+        0.0,
+        15.0,
+        15.0,
+        9.891997760854224,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        19.256134177842267,
+        4.117982249960352,
+        0.0,
+        0.0,
+        14.999999992442842,
+        5.236167262640274,
+        2.3380354308392017
+      ],
+      "frames": 84,
+      "phase_counts": {
+        "pregrasp": 31,
+        "grasp": 18,
+        "postgrasp": 23,
+        "release": 12
+      },
+      "best_velocity": 0.7430628077543626,
+      "full_velocity": 0.7430736154933587,
+      "full_pass": true,
+      "selected_query": 27,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_46"
+    },
+    {
+      "demo": "demo_47",
+      "episode_index": 44,
+      "caps_deg": [
+        30.0,
+        20.942406327763646,
+        1.7989631631516945,
+        15.0,
+        5.352467079948503,
+        15.0,
+        0.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.118856218071925,
+        13.136237809634814,
+        1.7989631560801607,
+        0.0,
+        0.0,
+        14.999999995583035,
+        0.0,
+        7.7151360369742354
+      ],
+      "frames": 91,
+      "phase_counts": {
+        "pregrasp": 39,
+        "grasp": 17,
+        "postgrasp": 24,
+        "release": 11
+      },
+      "best_velocity": 0.7256417268894525,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 27,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_47"
+    },
+    {
+      "demo": "demo_48",
+      "episode_index": 45,
+      "caps_deg": [
+        14.463685660133919,
+        30.0,
+        4.186691048452021,
+        15.0,
+        0.0,
+        15.0,
+        15.0,
+        9.462541827738944
+      ],
+      "actual_peak_deg": [
+        0.0,
+        18.925722520766175,
+        4.186691041144238,
+        0.0,
+        0.0,
+        12.37758683476233,
+        0.0,
+        9.462541485576953
+      ],
+      "frames": 95,
+      "phase_counts": {
+        "pregrasp": 35,
+        "grasp": 14,
+        "postgrasp": 33,
+        "release": 13
+      },
+      "best_velocity": 0.6544084134818632,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 22,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_48"
+    },
+    {
+      "demo": "demo_49",
+      "episode_index": 46,
+      "caps_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "frames": 91,
+      "phase_counts": {
+        "pregrasp": 37,
+        "grasp": 14,
+        "postgrasp": 27,
+        "release": 13
+      },
+      "best_velocity": 0.7540238839331582,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 0,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_49"
+    }
+  ],
+  "old_first5": [
+    {
+      "demo": "demo_0",
+      "episode_index": 0,
+      "caps_deg": [
+        30.0,
+        30.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        7.39000014718396
+      ],
+      "actual_peak_deg": [
+        0.0,
+        11.467088671714647,
+        8.982917486396536,
+        0.39630490926848283,
+        0.0,
+        14.99999999551157,
+        0.0,
+        3.2003597923300036
+      ],
+      "frames": 97,
+      "phase_counts": {
+        "pregrasp": 36,
+        "grasp": 13,
+        "postgrasp": 36,
+        "release": 12
+      },
+      "best_velocity": 0.5992325699127584,
+      "full_velocity": 0.5992327449991709,
+      "full_pass": true,
+      "selected_query": 16,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0"
+    },
+    {
+      "demo": "demo_1",
+      "episode_index": 1,
+      "caps_deg": [
+        27.70373281688849,
+        22.95862378634852,
+        15.0,
+        6.336655502232463,
+        6.407776621959489,
+        15.0,
+        15.0,
+        10.689607187904107
+      ],
+      "actual_peak_deg": [
+        2.1480729498308766,
+        10.658075264277693,
+        9.359112527349064,
+        0.0,
+        0.0,
+        14.999999986484072,
+        5.468394808828886,
+        1.3802493631601898
+      ],
+      "frames": 83,
+      "phase_counts": {
+        "pregrasp": 35,
+        "grasp": 14,
+        "postgrasp": 24,
+        "release": 10
+      },
+      "best_velocity": 0.7248591326646228,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 17,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_1"
+    },
+    {
+      "demo": "demo_2",
+      "episode_index": 2,
+      "caps_deg": [
+        30.0,
+        30.0,
+        2.431609807714332,
+        0.0,
+        15.0,
+        0.58199562278817,
+        15.0,
+        3.179652867562577
+      ],
+      "actual_peak_deg": [
+        0.0,
+        12.546555732383432,
+        2.431609799957649,
+        0.0,
+        0.0,
+        0.5819956206329625,
+        0.0,
+        2.9130213515653076
+      ],
+      "frames": 89,
+      "phase_counts": {
+        "pregrasp": 39,
+        "grasp": 14,
+        "postgrasp": 30,
+        "release": 6
+      },
+      "best_velocity": 0.7870354941266698,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 26,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_2"
+    },
+    {
+      "demo": "demo_3",
+      "episode_index": 3,
+      "caps_deg": [
+        30.0,
+        14.057791132797641,
+        12.791037333314472,
+        15.0,
+        0.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "actual_peak_deg": [
+        9.941075711762487,
+        6.649627839995612,
+        6.4499567039633545,
+        1.910039062526307,
+        0.0,
+        14.881141513057068,
+        0.25740663970270217,
+        3.2157378577484454
+      ],
+      "frames": 96,
+      "phase_counts": {
+        "pregrasp": 40,
+        "grasp": 15,
+        "postgrasp": 29,
+        "release": 12
+      },
+      "best_velocity": 0.6339451934549334,
+      "full_velocity": 0.633945230743633,
+      "full_pass": true,
+      "selected_query": 21,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_3"
+    },
+    {
+      "demo": "demo_4",
+      "episode_index": 4,
+      "caps_deg": [
+        14.67401668631124,
+        30.0,
+        0.16866523719434992,
+        14.995347260051707,
+        15.0,
+        15.0,
+        15.0,
+        14.916147615568208
+      ],
+      "actual_peak_deg": [
+        0.057042326232938215,
+        14.750574648642951,
+        0.16866521484294697,
+        1.1303014797073123,
+        0.0,
+        14.999999994502932,
+        0.0,
+        5.352107024391618
+      ],
+      "frames": 104,
+      "phase_counts": {
+        "pregrasp": 50,
+        "grasp": 17,
+        "postgrasp": 25,
+        "release": 12
+      },
+      "best_velocity": 0.6057778701024444,
+      "full_velocity": null,
+      "full_pass": false,
+      "selected_query": 12,
+      "full_caps": false,
+      "source_folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_spatial/00/demo_4"
+    }
+  ],
+  "scene": [
+    {
+      "demo": "demo_0",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.0508518704165359,
+          0.20632919230309657,
+          0.8982497088884221
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18368891273205193,
+          0.3334826502030125,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.05507679066941424,
+          0.016311004296964728,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.1874222727543386,
+          0.2058558447026561,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.08441362086504602,
+          0.19687207103884172,
+          0.9024714419263586
+        ]
+      }
+    },
+    {
+      "demo": "demo_1",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.057505701955291616,
+          0.1865541207008236,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.17612327509485232,
+          0.31610455187097286,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.0633898535197018,
+          0.03802794504068111,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.19415186624063682,
+          0.20587027759972681,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07227960459413489,
+          0.18833406618514278,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_2",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.059230754163846086,
+          0.19876675931749616,
+          0.8982537222101831
+        ],
+        "akita_black_bowl_2_main": [
+          -0.1944191262737778,
+          0.325112374795975,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.056928203745086114,
+          0.033765787491068726,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.18946912382347025,
+          0.20413217978124765,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.0694672479190024,
+          0.20581364911243638,
+          0.9024204939140597
+        ]
+      }
+    },
+    {
+      "demo": "demo_3",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.04890869525366148,
+          0.1991609082653823,
+          0.8982445840009899
+        ],
+        "akita_black_bowl_2_main": [
+          -0.17925992982490316,
+          0.30622615278633103,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.057012247719639655,
+          0.019930907241451447,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.21053085796631696,
+          0.19973398885709384,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07111787914620152,
+          0.2088056225300115,
+          0.9023490385462892
+        ]
+      }
+    },
+    {
+      "demo": "demo_4",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.04889275849003253,
+          0.1958409788354627,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.1828539146449001,
+          0.3134361792986351,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.060171461607586844,
+          0.018897895210105313,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.20967485743452466,
+          0.18745684328147713,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07401605443366521,
+          0.19411873132674506,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_5",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.06401325702847425,
+          0.20569221792968836,
+          0.8981934204765248
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18669073286871407,
+          0.33099172387179016,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.08231413610591187,
+          0.03653702234690282,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.20263003426052975,
+          0.21249349261391323,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06657920703334423,
+          0.20891415067079114,
+          0.9024222953691959
+        ]
+      }
+    },
+    {
+      "demo": "demo_6",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.06454772792187558,
+          0.213699640064425,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.1727272777905348,
+          0.3244834818853838,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07750841922309862,
+          0.01649907491432974,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.19863829284106296,
+          0.1974818357510683,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.05265293466156982,
+          0.2082048553339365,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_7",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.06087189248053795,
+          0.2058421326748416,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.19314216122073113,
+          0.3182147525023084,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.0659106843850864,
+          0.02239987353150982,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.19653700543367147,
+          0.21058993283524108,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.0724594185312512,
+          0.18930625250985877,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_8",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.04943770929627245,
+          0.18939319215529066,
+          0.8982299420840885
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18834577312790216,
+          0.3214796627016607,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07650679035885084,
+          0.019045328308230313,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.2073295215540006,
+          0.19845844853891056,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06852638619678744,
+          0.19908921778713995,
+          0.9023703161999739
+        ]
+      }
+    },
+    {
+      "demo": "demo_9",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05874533794378432,
+          0.19072080684731743,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18560944550223182,
+          0.32750757843937367,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.06936074153606328,
+          0.03124828192948901,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.19068407945170343,
+          0.21005457914700007,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07494346603003443,
+          0.1960053074746355,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_10",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.04476332040541651,
+          0.20830579752210898,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.1696100845495946,
+          0.3115996438880363,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07276106883959639,
+          0.016005404861956757,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.21087971811425202,
+          0.210325902479436,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06747873773266946,
+          0.19957934650015216,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_11",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.07002852924685615,
+          0.1908237388115045,
+          0.8982444534663002
+        ],
+        "akita_black_bowl_2_main": [
+          -0.17243098951813002,
+          0.3149854941060439,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.08475557797479559,
+          0.043711097819000726,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.21021616951594066,
+          0.18640434856937194,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06805205456190683,
+          0.1985840703672707,
+          0.9024482178818837
+        ]
+      }
+    },
+    {
+      "demo": "demo_12",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.059146862477783335,
+          0.20178144225671604,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.19249516841440326,
+          0.3153846757125077,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.06907624065156591,
+          0.016029100785066145,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.20933900727811275,
+          0.1920869022366609,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06657239285983664,
+          0.20184683860844904,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_13",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.0637988774014718,
+          0.19773292278771723,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.1911678456631452,
+          0.3256259621051869,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.0803296353329002,
+          0.025282727032969583,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.19704542155327057,
+          0.1910224651323865,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07397641979547996,
+          0.20188409641066268,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_14",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05540371172173082,
+          0.18683505493043118,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.16633488497528076,
+          0.3129743907844687,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.06702945512653152,
+          0.025822593418014794,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.19538670424897103,
+          0.1870338456583009,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06832195829601907,
+          0.20049074004665435,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_15",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.06549177622305252,
+          0.18965746401036246,
+          0.8982502680063342
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18542551573841023,
+          0.32407800076183424,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.08371271873369124,
+          0.028595811609650062,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.20650868465163744,
+          0.20549960969833084,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.059749130368105835,
+          0.19458838715897878,
+          0.9024094287943
+        ]
+      }
+    },
+    {
+      "demo": "demo_16",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.054107372466016546,
+          0.21148982745766567,
+          0.8982662053892363
+        ],
+        "akita_black_bowl_2_main": [
+          -0.16911447061260063,
+          0.3314592210813663,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.0687185043627842,
+          0.026653040888809237,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.21041100458385487,
+          0.21291358921097625,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07266671619204644,
+          0.19750295622654904,
+          0.902434176713873
+        ]
+      }
+    },
+    {
+      "demo": "demo_17",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.0732232168047955,
+          0.20298143403021168,
+          0.8981785431981129
+        ],
+        "akita_black_bowl_2_main": [
+          -0.16959691126180487,
+          0.32255529202594685,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.08072568530443835,
+          0.04313606640679824,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.18565077296139712,
+          0.18783931636749518,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07253084221042587,
+          0.21516300193528567,
+          0.9024603192345977
+        ]
+      }
+    },
+    {
+      "demo": "demo_18",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05778155910256557,
+          0.1938727020005808,
+          0.9010974042312911
+        ],
+        "akita_black_bowl_2_main": [
+          -0.17119744555286445,
+          0.3160828045288024,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.059735859795168364,
+          0.024183556182704777,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.19448883882315265,
+          0.20169901121801784,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.05595399106698195,
+          0.20624639096987427,
+          0.9015518960799486
+        ]
+      }
+    },
+    {
+      "demo": "demo_19",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05168180729697035,
+          0.21687729477407694,
+          0.8982382166613005
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18893964011829062,
+          0.3250962751910544,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07403697907352133,
+          0.018284787908956983,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.18580245008360646,
+          0.19031192590896243,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.09033176449272039,
+          0.18717809973448166,
+          0.9024220383511454
+        ]
+      }
+    },
+    {
+      "demo": "demo_20",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.039943614333877706,
+          0.20722405848174322,
+          0.8984784313809584
+        ],
+        "akita_black_bowl_2_main": [
+          -0.17661171642059256,
+          0.31135575536384824,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.05757840030552468,
+          0.01611447287462705,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.1860178030949082,
+          0.2137482410766413,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07264703012133814,
+          0.18495860032665876,
+          0.9023100112913922
+        ]
+      }
+    },
+    {
+      "demo": "demo_21",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.03701717515542551,
+          0.20602367359757232,
+          0.8981736151840272
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18044392193937114,
+          0.3163321948993303,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07010912836678117,
+          0.015699023376042447,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.21017598179576014,
+          0.2010303855886073,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07696398550743004,
+          0.20134182102191528,
+          0.9022980908138452
+        ]
+      }
+    },
+    {
+      "demo": "demo_22",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05743059121921128,
+          0.21319184260719212,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.19056348136282733,
+          0.31498954186677713,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.06921085436579981,
+          0.028467675517481802,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.18672007798508572,
+          0.19817490549124664,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.056010323987879335,
+          0.2135113573528733,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_23",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.060000628446026334,
+          0.2143373508180387,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.17969918218193065,
+          0.3296404561342122,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.06749141774702383,
+          0.03886556506276719,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.21054102925896695,
+          0.19757490573262282,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07074654954780603,
+          0.20583670921600372,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_24",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.0807894102500452,
+          0.2243215026828663,
+          0.8982651869741504
+        ],
+        "akita_black_bowl_2_main": [
+          -0.1939486145937559,
+          0.3210965845460688,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.05601819372639194,
+          0.030728500535691816,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.19280280300395736,
+          0.2004160701982441,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07137266682151987,
+          0.18359856373779007,
+          0.9024615396330573
+        ]
+      }
+    },
+    {
+      "demo": "demo_26",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05612919546489025,
+          0.19810734403379715,
+          0.8982543514653737
+        ],
+        "akita_black_bowl_2_main": [
+          -0.19362670836480234,
+          0.3342554546324827,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07328905813232017,
+          0.034373461251882106,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.2031722372250805,
+          0.1937480813564948,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.09137756505662285,
+          0.19161580098278527,
+          0.9024754160689457
+        ]
+      }
+    },
+    {
+      "demo": "demo_27",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.04863331737426614,
+          0.19175533905153538,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.1651373580572057,
+          0.3293544584704556,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07514977691525453,
+          0.0184415913210856,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.18658261329815776,
+          0.20526671161235263,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06542678243564133,
+          0.21189729221049286,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_28",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05227240590494305,
+          0.19462205099673283,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.16737481231423926,
+          0.33069497990947794,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.059738870251725945,
+          0.019626334056838304,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.19612662374143658,
+          0.1935180737411936,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07254948581090132,
+          0.20518776594875557,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_29",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.08554938049627848,
+          0.22485796674060157,
+          0.8995597668418027
+        ],
+        "akita_black_bowl_2_main": [
+          -0.1678366515209261,
+          0.3340384568599421,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07623083664219975,
+          0.02457454957552308,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.1869017058616348,
+          0.1876812667904625,
+          0.8991662718858234
+        ],
+        "plate_1_main": [
+          0.08546759779337892,
+          0.20230562745074082,
+          0.9024518841154541
+        ]
+      }
+    },
+    {
+      "demo": "demo_30",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.06362551403980737,
+          0.21243782763229696,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18436410142096893,
+          0.31817646686402506,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.057863590232450156,
+          0.031199920263183606,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.1946637208802379,
+          0.21239368308323897,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07381656912229838,
+          0.18548024356882184,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_31",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.0649648347798138,
+          0.19827102908059574,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.19355530129193335,
+          0.3105669443405401,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07806682207722918,
+          0.0196820316201688,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.21123553585623708,
+          0.21111256333701967,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06808150169051297,
+          0.18716336637624237,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_32",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05465016955747558,
+          0.20404731745807075,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.16837237515862194,
+          0.33092576986739336,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07014706995951044,
+          0.01739160427175246,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.1992988766056462,
+          0.1935439692559026,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07019273917954041,
+          0.19531466982251489,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_33",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.06336683871284686,
+          0.20624693615564893,
+          0.8982716118071058
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18816991822266543,
+          0.31421032285950307,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07549447382951957,
+          0.02888313347356595,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.1931163630918256,
+          0.2003904657234542,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07104667772196965,
+          0.21251418174712064,
+          0.9024094790107978
+        ]
+      }
+    },
+    {
+      "demo": "demo_36",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.07267676734049675,
+          0.20024331892282288,
+          0.8983697417161083
+        ],
+        "akita_black_bowl_2_main": [
+          -0.1769156506609106,
+          0.3136716151680164,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.06694725285210998,
+          0.03990107993877054,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.20692052663132451,
+          0.19819012998054233,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.09232224635935075,
+          0.19819581058067476,
+          0.9024376611282399
+        ]
+      }
+    },
+    {
+      "demo": "demo_37",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.0671865013956122,
+          0.19547292241444225,
+          0.8982675550270809
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18200073557784283,
+          0.3303067777960761,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07587872798448363,
+          0.033994479480965775,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.2107614608858838,
+          0.20510839281943413,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.08950865620024641,
+          0.20382787581849934,
+          0.90243276553842
+        ]
+      }
+    },
+    {
+      "demo": "demo_38",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.060851155092515576,
+          0.19686392619505477,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.17188004835508713,
+          0.3262552797401864,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.0764517754661898,
+          0.03268561767548206,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.2048644875373355,
+          0.20710791003684165,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06848702801798005,
+          0.21464001033900884,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_39",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.06208046568026347,
+          0.19876931094032474,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.17147637362703794,
+          0.33367007359535583,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.08417349691826805,
+          0.033489363842660644,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.204413813280296,
+          0.19729977598698806,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06858856066532965,
+          0.19289848993157493,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_40",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.04881707913745493,
+          0.19783301392308358,
+          0.8982569784797476
+        ],
+        "akita_black_bowl_2_main": [
+          -0.17945297894884554,
+          0.31967065386742183,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.06655057998881714,
+          0.033086476557273585,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.202871058917401,
+          0.19398333428606834,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07575794377322942,
+          0.19699256717650984,
+          0.902422659708506
+        ]
+      }
+    },
+    {
+      "demo": "demo_41",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.058343245781020285,
+          0.21388971463999656,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.16810648773042888,
+          0.3135658565809857,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07339432111807025,
+          0.02447770741224879,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.2106564579987978,
+          0.21048338729052163,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.05851453454732852,
+          0.2117593960332459,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_42",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.049624748262303245,
+          0.20620594536628928,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.19230284031287287,
+          0.3312998667574217,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07090320516388396,
+          0.0438511939775392,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.2078633353379632,
+          0.2000255023779071,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06572489535287573,
+          0.211813969429521,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_43",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.04325277945767926,
+          0.19269673829636422,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.17658461715224116,
+          0.3290025352914193,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07458599588726304,
+          0.031334641790171334,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.20121930616025985,
+          0.20777148435305415,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.07244779303402227,
+          0.2015440836052614,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_44",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05058261364184681,
+          0.19316825853712646,
+          0.8982775278157565
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18513019832983882,
+          0.32631717292166385,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07786160107791036,
+          0.029474746470050113,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.20762009233508275,
+          0.1949227053235512,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.0891407699042686,
+          0.20209475887062467,
+          0.9024305489344948
+        ]
+      }
+    },
+    {
+      "demo": "demo_45",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.08041096447859039,
+          0.21029233447145634,
+          0.9001304232739586
+        ],
+        "akita_black_bowl_2_main": [
+          -0.16561406470018317,
+          0.31941566737017574,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.05501719134192662,
+          0.018783749842175533,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.20029149522695425,
+          0.18649296944312302,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.09682734079903617,
+          0.19920674694088109,
+          0.902430809036203
+        ]
+      }
+    },
+    {
+      "demo": "demo_46",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05901689338752,
+          0.18985762894989522,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.1737166586232758,
+          0.3131215637845083,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.07833656056067763,
+          0.04237556402314671,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.20358017528212446,
+          0.19722772174452682,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.061676157540679684,
+          0.18698100951255126,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_47",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.07377339207183796,
+          0.18990982464583595,
+          0.8982033091939746
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18884467521855255,
+          0.3220701375053402,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.05723252784677696,
+          0.043011293539737545,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.21420460077332093,
+          0.19044449825198453,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.08183630959241037,
+          0.19884379844125688,
+          0.9024219961557478
+        ]
+      }
+    },
+    {
+      "demo": "demo_48",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05321686870881109,
+          0.19229280999088952,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18015823181655954,
+          0.3112725556270187,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.06637200461477157,
+          0.028837506092832987,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.18556783889550418,
+          0.19569276030446633,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06545500187331364,
+          0.19314923121876018,
+          0.9023145976636144
+        ]
+      }
+    },
+    {
+      "demo": "demo_49",
+      "positions_m": {
+        "akita_black_bowl_1_main": [
+          -0.05925222462661292,
+          0.1865950500544166,
+          0.8981585151399347
+        ],
+        "akita_black_bowl_2_main": [
+          -0.18505627585604079,
+          0.33492817387592694,
+          0.8981585151399347
+        ],
+        "cookies_1_main": [
+          0.05655997378269048,
+          0.019943447993988245,
+          0.9092097974085793
+        ],
+        "glazed_rim_porcelain_ramekin_1_main": [
+          -0.19953073302439328,
+          0.20789094662891414,
+          0.8991595343682753
+        ],
+        "plate_1_main": [
+          0.06060724171044539,
+          0.20997861115548247,
+          0.9023145976636144
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "dataset_bytes_identical_to_frozen_manifest": true,
+  "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+  "preexisting_verified": 802,
+  "rebuilt_verified": 1073,
+  "original_file_fallbacks": 0,
+  "verification_sha256": "2e881e8be381071ce9de2642022d3df6890ed259c3b1b1d65b341b96c6c699d8"
+}

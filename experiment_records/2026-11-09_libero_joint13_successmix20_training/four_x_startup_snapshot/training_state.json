@@ -1,0 +1,8 @@
+{
+  "stage": "training",
+  "pid": 3339995,
+  "updated_at": "2026-11-09T20:37:36.251828+08:00",
+  "expected_steps": 10000,
+  "global_batch": 72,
+  "per_gpu_batch": 12
+}

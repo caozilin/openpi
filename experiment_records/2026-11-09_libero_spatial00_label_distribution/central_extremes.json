@@ -1,0 +1,3448 @@
+{
+  "n": 47,
+  "units": [
+    "APP Ry-",
+    "APP Ry+",
+    "EXEC Rx-",
+    "EXEC Rx+",
+    "EXEC Ry-",
+    "EXEC Ry+",
+    "EXEC Rz-",
+    "EXEC Rz+"
+  ],
+  "upper_deg": [
+    30.0,
+    30.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0
+  ],
+  "definitions": {
+    "center": "Coordinate-wise median across all 47 demos",
+    "central_interval": "Q25 to Q75, NumPy linear quantile interpolation",
+    "neighborhood": "Absolute deviation from coordinate median <=5 degrees, with 1e-8 degree numerical tolerance",
+    "extremeness": "Mean over 8 coordinates of absolute deviation from coordinate median divided by authored upper bound (30 APP, 15 EXEC)",
+    "modal_value": "Most frequent value after rounding to 6 decimal degrees; report all ties",
+    "actual": "Maximum directional release in each phase of the selected OFFLINE candidate; not the subsequent physical rollout or SO(3) peak"
+  },
+  "inputs": [
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_spatial00_label_distribution/details.json",
+      "sha256": "e4bd4f5a25ca1b9fdb3e0197070f3b951c63ee556fddd6bf5bd161783a06fdc2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_0/report.json",
+      "sha256": "b699ecb6bc69e65af0bf0a1f65983ac5e0ccfc2533b3f6b04971083629546ae9"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_1/report.json",
+      "sha256": "1977f0bd8612a379cd074bf79d36ae18c3271c5c77cb499227fc4dfd175efa59"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_2/report.json",
+      "sha256": "4b4f925ac44bcb3c19a15c6678476cea42b79f8563e49f948b3c7d9c03ac84de"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_3/report.json",
+      "sha256": "28505ea33705ad1b10cb459ba4c7b1d15e304dbe38fa3035daa7d1a7bea70cb1"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_4/report.json",
+      "sha256": "e3425b8c887dc78b87bc9566b35e2dfd827f5b8df71f00a3850978079a203e50"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_5/report.json",
+      "sha256": "6ab0b2c2bdeeb73555e5b0c25318e3b37458a7014a30d68d3f69fa423bff31f4"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_6/report.json",
+      "sha256": "eb84745f92048d191117d1116afd2073a2dec17ee89cfb27c79b02a4b353cef8"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_7/report.json",
+      "sha256": "65a6380739a504b173b8965ca3b808c42daf7acbbcc9add3f42b768c9b34fe63"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_8/report.json",
+      "sha256": "fbf18fc16e52ae6d4f76257d7920210008645e4f27f7fce07dd3ca86668066d6"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_9/report.json",
+      "sha256": "f1634f41a2e0fbb4cf427bc4586458e4e7941d5f3e4abf3879b93c36729fe3c7"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_10/report.json",
+      "sha256": "a9d624a5817ddf089ebdd88c303dffb614e0975e04939a6bcfdde17e707141a0"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_11/report.json",
+      "sha256": "675a7646c231a6f55d0257605e4d7151247bf82e1cafdc344b76d24b242404ea"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_12/report.json",
+      "sha256": "94ac7023aaf78fa1539dad9c867cfdd9bb56543859a64b4f8ecce76c7df814bc"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_13/report.json",
+      "sha256": "7fa06bd7eb41986237aac0a7136953de41f6e3f13fb6a81afecd48b12fa0c1c5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_14/report.json",
+      "sha256": "821965316f5e277416a7e2a1c05e215411763feee68ed6b7dd646508659af66d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_15/report.json",
+      "sha256": "e2c5ca4c604e79c4b4348556a1d20b7e85c2e393fbe333483efdeefe17b81de5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_16/report.json",
+      "sha256": "043a2d3a8c78bb5b26076d849ae3c930d014181829b5cf29f80dc54ef36b39ec"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_17/report.json",
+      "sha256": "4813bc1f12a060f13c1b6630ace5335a34bf5f0b3a2196d3232ca986dd8aef96"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_18/report.json",
+      "sha256": "640ef9c89c43b73651e3bf173474b432b5e15cb1af3c0e92899ee1f421841746"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_19/report.json",
+      "sha256": "fae07dc47238453376eaf08eae00079be9520a987e52d7ff724dec48b9cfb9ea"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_20/report.json",
+      "sha256": "9235dc2d24b661400e1f550effd27ac7904ddc9878e525acedc267216d1206b5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_21/report.json",
+      "sha256": "02785c7d9ff5fe22010eeb9abc35357b68ece92ef180659f8c2e74414208dd6a"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_22/report.json",
+      "sha256": "705fa361f32c03760e700ab644ea2b142e8ceabf17ff682f8a5f28898fae1f92"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_23/report.json",
+      "sha256": "b64ba9f69e4e2a7746595a3761034bd98acbb715c7f67a808ee22eab685d7a7e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_24/report.json",
+      "sha256": "988021cece16447e987339fb5423ea3f42ddcb0b37420bd2ae39b564cec1317d"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_26/report.json",
+      "sha256": "5286b0d90b7442b5813e48445d324ff4ca90af8b0d842c8847b6117f66b53ce5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_27/report.json",
+      "sha256": "ca9077c6f57a53bcde6c1280a49a8cf2a8a476954eb4cee43edb38d3ffad46f5"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_28/report.json",
+      "sha256": "e4c2097757f9c3e64a040161eb5621d58e308552242859f0270720141b3cae2f"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_29/report.json",
+      "sha256": "32e776ec29f81d9c1a35cbf74d45e5cefef35a669d60f656b1ef0416ac89bb8b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_30/report.json",
+      "sha256": "3013404a6233b900356d3db61ea31925130827985d9dac0f0869416d23d6365c"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_31/report.json",
+      "sha256": "81582b0ea9eb9400e664e234f90358270323aa4c4454e8d34fd9ced7dfaaee3b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_32/report.json",
+      "sha256": "15958a459f830cfb589fb5dff8ce2b19162c0e2963645ef642d1a2f6b279e5ae"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_33/report.json",
+      "sha256": "618611a15cdd5fe3cf629b026a80fcd3864d41097043587a188473bc04469a33"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_36/report.json",
+      "sha256": "064df6d0c85441488bbc8de2aa4f7081ba41cefcb67f33c30e7e66ad7d66996e"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_37/report.json",
+      "sha256": "257adca8c7fb2f8a492322bd04a30143fc1f7fec1f52e4b9a77394d2998c78f2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_38/report.json",
+      "sha256": "b8c3215be61b937d9a89393403937709d407a6b2f82c1a5b08dcb32e824558d6"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_39/report.json",
+      "sha256": "1454b3f67d1a7f67aada90d8af4c88679f4aae6894008e1be0293d53ff984633"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_40/report.json",
+      "sha256": "baf95d306923b4ca624eb7828c821c75c8742662d4a614081b039bb100cf5b92"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_41/report.json",
+      "sha256": "4c4345ec665b6d699be85eafbe0938c4ffb5600a8c75f80aea36f85709e2a53f"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_42/report.json",
+      "sha256": "9b2cd836b948047ec651621f6f612b8ecc59a6e9fd74079079d9c22d997d83ac"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_43/report.json",
+      "sha256": "a1c8048c776becf69578189b241b1e1adc55e8e42dc1a019ee9fb88c022b3968"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_44/report.json",
+      "sha256": "8af982197345f544be53aabf0880a350978ae40913ab7cee24642548a3eab9d4"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_45/report.json",
+      "sha256": "cbd4c9a5219178b7136ad624aa411f705e6a85382b7e70a70b83fbf6c0176222"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_46/report.json",
+      "sha256": "f9cdbcca3794f9ef57de1098be5bb6beb2d483239facbad0b868329754acc0b2"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_47/report.json",
+      "sha256": "861f86ddfd176a2ad4242c4038e57c6bfa242e1bd931e5e5f781118e24c4762b"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_48/report.json",
+      "sha256": "0e7ec1e2f87f651fdc411d3c6eff5d74a35ee479185060f6cdc84dbc27fbf126"
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1/episodes/libero_spatial/00/demo_49/report.json",
+      "sha256": "03e4f7d90f9a6f3a65e3f89332deb8b9814b4b30e303cb9308d26855de3e266e"
+    }
+  ],
+  "physical_report_seed_by_demo": {
+    "demo_0": 0,
+    "demo_1": 0,
+    "demo_2": 0,
+    "demo_3": 0,
+    "demo_4": 0,
+    "demo_5": 0,
+    "demo_6": 0,
+    "demo_7": 0,
+    "demo_8": 0,
+    "demo_9": 0,
+    "demo_10": 0,
+    "demo_11": 0,
+    "demo_12": 0,
+    "demo_13": 0,
+    "demo_14": 0,
+    "demo_15": 0,
+    "demo_16": 0,
+    "demo_17": 0,
+    "demo_18": 0,
+    "demo_19": 0,
+    "demo_20": 0,
+    "demo_21": 0,
+    "demo_22": 0,
+    "demo_23": 0,
+    "demo_24": 0,
+    "demo_26": 0,
+    "demo_27": 0,
+    "demo_28": 0,
+    "demo_29": 0,
+    "demo_30": 0,
+    "demo_31": 0,
+    "demo_32": 0,
+    "demo_33": 0,
+    "demo_36": 0,
+    "demo_37": 0,
+    "demo_38": 0,
+    "demo_39": 0,
+    "demo_40": 0,
+    "demo_41": 0,
+    "demo_42": 0,
+    "demo_43": 0,
+    "demo_44": 0,
+    "demo_45": 0,
+    "demo_46": 0,
+    "demo_47": 0,
+    "demo_48": 0,
+    "demo_49": 0
+  },
+  "annotation": {
+    "marginals": [
+      {
+        "unit": "APP Ry-",
+        "median_deg": 30.0,
+        "q25_deg": 15.426923364609912,
+        "q75_deg": 30.0,
+        "iqr_deg": 14.573076635390088,
+        "iqr_over_authored_upper": 0.4857692211796696,
+        "within5_count": 32,
+        "within5_fraction": 0.6808510638297872,
+        "modes_deg": [
+          30.0
+        ],
+        "mode_count": 26
+      },
+      {
+        "unit": "APP Ry+",
+        "median_deg": 17.459099832260375,
+        "q25_deg": 5.433409235944418,
+        "q75_deg": 29.762413561760063,
+        "iqr_deg": 24.329004325815646,
+        "iqr_over_authored_upper": 0.8109668108605216,
+        "within5_count": 9,
+        "within5_fraction": 0.19148936170212766,
+        "modes_deg": [
+          30.0
+        ],
+        "mode_count": 12
+      },
+      {
+        "unit": "EXEC Rx-",
+        "median_deg": 7.428732547849325,
+        "q25_deg": 1.1690228730848464,
+        "q75_deg": 15.0,
+        "iqr_deg": 13.830977126915153,
+        "iqr_over_authored_upper": 0.9220651417943435,
+        "within5_count": 13,
+        "within5_fraction": 0.2765957446808511,
+        "modes_deg": [
+          15.0
+        ],
+        "mode_count": 14
+      },
+      {
+        "unit": "EXEC Rx+",
+        "median_deg": 12.116277433849389,
+        "q25_deg": 0.0,
+        "q75_deg": 15.0,
+        "iqr_deg": 15.0,
+        "iqr_over_authored_upper": 1.0,
+        "within5_count": 30,
+        "within5_fraction": 0.6382978723404256,
+        "modes_deg": [
+          15.0
+        ],
+        "mode_count": 17
+      },
+      {
+        "unit": "EXEC Ry-",
+        "median_deg": 12.84580130993866,
+        "q25_deg": 1.0627241565861416,
+        "q75_deg": 15.0,
+        "iqr_deg": 13.937275843413858,
+        "iqr_over_authored_upper": 0.9291517228942572,
+        "within5_count": 27,
+        "within5_fraction": 0.574468085106383,
+        "modes_deg": [
+          15.0
+        ],
+        "mode_count": 19
+      },
+      {
+        "unit": "EXEC Ry+",
+        "median_deg": 15.0,
+        "q25_deg": 13.087624762395986,
+        "q75_deg": 15.0,
+        "iqr_deg": 1.9123752376040137,
+        "iqr_over_authored_upper": 0.12749168250693424,
+        "within5_count": 38,
+        "within5_fraction": 0.8085106382978723,
+        "modes_deg": [
+          15.0
+        ],
+        "mode_count": 31
+      },
+      {
+        "unit": "EXEC Rz-",
+        "median_deg": 15.0,
+        "q25_deg": 0.08924265889030844,
+        "q75_deg": 15.0,
+        "iqr_deg": 14.910757341109692,
+        "iqr_over_authored_upper": 0.9940504894073128,
+        "within5_count": 30,
+        "within5_fraction": 0.6382978723404256,
+        "modes_deg": [
+          15.0
+        ],
+        "mode_count": 24
+      },
+      {
+        "unit": "EXEC Rz+",
+        "median_deg": 15.0,
+        "q25_deg": 4.110528904749314,
+        "q75_deg": 15.0,
+        "iqr_deg": 10.889471095250686,
+        "iqr_over_authored_upper": 0.725964739683379,
+        "within5_count": 29,
+        "within5_fraction": 0.6170212765957447,
+        "modes_deg": [
+          15.0
+        ],
+        "mode_count": 25
+      }
+    ],
+    "median_vector_deg": [
+      30.0,
+      17.459099832260375,
+      7.428732547849325,
+      12.116277433849389,
+      12.84580130993866,
+      15.0,
+      15.0,
+      15.0
+    ],
+    "mean_normalized_iqr": 0.7494324760408022,
+    "within5_coordinate_count": 208,
+    "coordinate_count": 376,
+    "within5_all_coordinates_count": 0,
+    "median_of_per_demo_maximum_direction_deg": 30.0,
+    "top5": [
+      {
+        "demo": "demo_44",
+        "normalized_mean_absolute_deviation": 0.8426696767313964,
+        "mean_absolute_deviation_deg": 15.60623889048722,
+        "caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_45",
+        "normalized_mean_absolute_deviation": 0.8426696767313964,
+        "mean_absolute_deviation_deg": 15.60623889048722,
+        "caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_49",
+        "normalized_mean_absolute_deviation": 0.8426696767313964,
+        "mean_absolute_deviation_deg": 15.60623889048722,
+        "caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_15",
+        "normalized_mean_absolute_deviation": 0.6971771781292265,
+        "mean_absolute_deviation_deg": 11.241463932422125,
+        "caps_deg": [
+          30.0,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.8034559225353921,
+          10.016662119902833,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_8",
+        "normalized_mean_absolute_deviation": 0.6757370341099584,
+        "mean_absolute_deviation_deg": 13.091254671900671,
+        "caps_deg": [
+          0.04671824319262576,
+          0.12919502504702376,
+          0.005064870363668806,
+          15.0,
+          15.0,
+          0.014738122512962094,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.04671824094625935,
+          0.12919501161998012,
+          0.005064863915628341,
+          3.536535362273774,
+          7.603187177097233,
+          0.014738194955606614,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "nearest_to_median": {
+      "demo": "demo_16",
+      "normalized_mean_absolute_deviation": 0.10923961686904027,
+      "mean_absolute_deviation_deg": 1.8446989453070497,
+      "caps_deg": [
+        30.0,
+        20.756774908603504,
+        15.0,
+        13.850189965332738,
+        13.849745089587046,
+        15.0,
+        13.849207277169143,
+        15.0
+      ],
+      "actual_peak_deg": [
+        0.0,
+        15.807022240461567,
+        6.652161598467023,
+        0.0,
+        0.0,
+        13.885694162537508,
+        0.0,
+        3.229721572128682
+      ]
+    },
+    "ranking": [
+      {
+        "demo": "demo_44",
+        "normalized_mean_absolute_deviation": 0.8426696767313964,
+        "mean_absolute_deviation_deg": 15.60623889048722,
+        "caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_45",
+        "normalized_mean_absolute_deviation": 0.8426696767313964,
+        "mean_absolute_deviation_deg": 15.60623889048722,
+        "caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_49",
+        "normalized_mean_absolute_deviation": 0.8426696767313964,
+        "mean_absolute_deviation_deg": 15.60623889048722,
+        "caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_15",
+        "normalized_mean_absolute_deviation": 0.6971771781292265,
+        "mean_absolute_deviation_deg": 11.241463932422125,
+        "caps_deg": [
+          30.0,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.8034559225353921,
+          10.016662119902833,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_8",
+        "normalized_mean_absolute_deviation": 0.6757370341099584,
+        "mean_absolute_deviation_deg": 13.091254671900671,
+        "caps_deg": [
+          0.04671824319262576,
+          0.12919502504702376,
+          0.005064870363668806,
+          15.0,
+          15.0,
+          0.014738122512962094,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.04671824094625935,
+          0.12919501161998012,
+          0.005064863915628341,
+          3.536535362273774,
+          7.603187177097233,
+          0.014738194955606614,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_24",
+        "normalized_mean_absolute_deviation": 0.6285520860207283,
+        "mean_absolute_deviation_deg": 12.057389246014658,
+        "caps_deg": [
+          0.0,
+          29.524827123520122,
+          14.980509641540353,
+          6.707414527722688,
+          15.0,
+          0.2393349473439068,
+          0.0,
+          5.482117065677649
+        ],
+        "actual_peak_deg": [
+          0.0,
+          8.814579150163365,
+          3.494164860295061,
+          1.0981192078581168,
+          5.75871268145019,
+          0.06290525398507389,
+          0.0,
+          5.482117029149639
+        ]
+      },
+      {
+        "demo": "demo_2",
+        "normalized_mean_absolute_deviation": 0.576973370583444,
+        "mean_absolute_deviation_deg": 10.248049290934878,
+        "caps_deg": [
+          17.04572045280815,
+          30.0,
+          1.9178680497894565,
+          0.0,
+          2.214230360732126,
+          0.7882927986639526,
+          14.441669457791633,
+          1.5395360121126587
+        ],
+        "actual_peak_deg": [
+          0.0,
+          12.549209579236091,
+          1.9178680438659497,
+          0.0,
+          0.0,
+          0.7882927963199666,
+          1.1350240838998176,
+          1.5395359959078476
+        ]
+      },
+      {
+        "demo": "demo_41",
+        "normalized_mean_absolute_deviation": 0.5374313671658858,
+        "mean_absolute_deviation_deg": 9.638481423598789,
+        "caps_deg": [
+          7.764152839905796,
+          14.46277233458656,
+          0.18691242148309467,
+          0.0,
+          3.987030803056347,
+          4.524874541430149,
+          15.0,
+          1.8163167946454912
+        ],
+        "actual_peak_deg": [
+          0.0,
+          14.462772327777213,
+          0.18691241825189486,
+          0.0,
+          3.987030728479248,
+          4.52487453950888,
+          1.6287903406152877,
+          1.8163167873685464
+        ]
+      },
+      {
+        "demo": "demo_12",
+        "normalized_mean_absolute_deviation": 0.49873442887576613,
+        "mean_absolute_deviation_deg": 8.79509181671014,
+        "caps_deg": [
+          16.390161069085906,
+          10.043732625996096,
+          3.221232052950799,
+          2.9846369751268993,
+          7.988724612394072,
+          9.852575120102122,
+          0.17848531778061688,
+          3.8296288167801125
+        ],
+        "actual_peak_deg": [
+          0.6217199149811368,
+          10.043732620112708,
+          3.2212320596146053,
+          0.0,
+          0.0,
+          9.852575199487042,
+          0.0,
+          3.8296288014328237
+        ]
+      },
+      {
+        "demo": "demo_1",
+        "normalized_mean_absolute_deviation": 0.48350080200319223,
+        "mean_absolute_deviation_deg": 9.819367823685155,
+        "caps_deg": [
+          1.471207469543282,
+          30.0,
+          11.741387058496523,
+          0.0,
+          0.2787206435633312,
+          14.86350586933047,
+          14.585673732281354,
+          7.061583117975199
+        ],
+        "actual_peak_deg": [
+          1.4712074471246863,
+          10.657761414548709,
+          9.343162839864425,
+          0.0,
+          0.0,
+          14.863505855710695,
+          5.378601221263645,
+          1.3889141514049526
+        ]
+      },
+      {
+        "demo": "demo_13",
+        "normalized_mean_absolute_deviation": 0.4256267056223231,
+        "mean_absolute_deviation_deg": 8.714520848514105,
+        "caps_deg": [
+          0.7432297718717233,
+          9.433945833520461,
+          0.0007718693346307111,
+          15.0,
+          15.0,
+          10.031639373481976,
+          15.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.7432079329458404,
+          9.433945829450302,
+          0.000771877270280367,
+          2.668732471176588,
+          0.0,
+          10.03163940537348,
+          1.775826295613545,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_9",
+        "normalized_mean_absolute_deviation": 0.36911087734736103,
+        "mean_absolute_deviation_deg": 6.62785689972669,
+        "caps_deg": [
+          30.0,
+          0.0,
+          13.722011789491736,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          12.764382573342655,
+          0.0,
+          11.896046800341095,
+          0.0,
+          0.0,
+          14.999999993156958,
+          10.432020489077955,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_32",
+        "normalized_mean_absolute_deviation": 0.3670755163064925,
+        "mean_absolute_deviation_deg": 5.960106761004587,
+        "caps_deg": [
+          30.0,
+          10.195515569745183,
+          7.883923629582779,
+          0.0,
+          0.0,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          2.636378969301792,
+          10.195515565444767,
+          4.395286084088598,
+          0.0,
+          0.0,
+          11.467643301177368,
+          0.0,
+          4.111475873403916
+        ]
+      },
+      {
+        "demo": "demo_4",
+        "normalized_mean_absolute_deviation": 0.341667675174866,
+        "mean_absolute_deviation_deg": 5.557303663711928,
+        "caps_deg": [
+          30.0,
+          10.542483254837364,
+          0.616443691666181,
+          15.0,
+          0.0,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.5564166816178494,
+          10.54248324944865,
+          0.6164436610836816,
+          0.288910738021851,
+          0.0,
+          14.999999994334598,
+          0.0,
+          4.5818507897975715
+        ]
+      },
+      {
+        "demo": "demo_46",
+        "normalized_mean_absolute_deviation": 0.33488117448557025,
+        "mean_absolute_deviation_deg": 7.439444622210864,
+        "caps_deg": [
+          0.0,
+          26.11873191109733,
+          8.906179083642773,
+          0.0,
+          15.0,
+          15.0,
+          9.891997760854224,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          19.256134177842267,
+          4.117982249960352,
+          0.0,
+          0.0,
+          14.999999992442842,
+          5.236167262640274,
+          2.3380354308392017
+        ]
+      },
+      {
+        "demo": "demo_38",
+        "normalized_mean_absolute_deviation": 0.3323498770460843,
+        "mean_absolute_deviation_deg": 7.644054416174992,
+        "caps_deg": [
+          0.0,
+          30.0,
+          15.0,
+          3.2302084144010945,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          11.665895338120603,
+          2.687638587502991,
+          0.7525347793209607,
+          0.0,
+          12.605315717246869,
+          5.2127827629704955,
+          0.9328048375160414
+        ]
+      },
+      {
+        "demo": "demo_48",
+        "normalized_mean_absolute_deviation": 0.3212302566795874,
+        "mean_absolute_deviation_deg": 6.573279756919167,
+        "caps_deg": [
+          14.463685660133919,
+          30.0,
+          4.186691048452021,
+          15.0,
+          0.0,
+          15.0,
+          15.0,
+          9.462541827738944
+        ],
+        "actual_peak_deg": [
+          0.0,
+          18.925722520766175,
+          4.186691041144238,
+          0.0,
+          0.0,
+          12.37758683476233,
+          0.0,
+          9.462541485576953
+        ]
+      },
+      {
+        "demo": "demo_6",
+        "normalized_mean_absolute_deviation": 0.3109318306287083,
+        "mean_absolute_deviation_deg": 4.880482436408208,
+        "caps_deg": [
+          30.0,
+          20.923179463901718,
+          2.5395027228789675,
+          7.418414071911762,
+          1.4160990869046266,
+          15.0,
+          15.0,
+          0.43701555031769423
+        ],
+        "actual_peak_deg": [
+          0.0,
+          12.403143870238557,
+          2.5395027092234947,
+          0.11738031162863093,
+          0.0,
+          14.99999999618547,
+          4.461247273040258,
+          0.4369466924704925
+        ]
+      },
+      {
+        "demo": "demo_23",
+        "normalized_mean_absolute_deviation": 0.30657848106006325,
+        "mean_absolute_deviation_deg": 5.200240352166007,
+        "caps_deg": [
+          30.0,
+          7.8340896520194265,
+          1.6235359734202326,
+          15.0,
+          4.557807813431251,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          7.8340896398153195,
+          1.6235359652677852,
+          2.573566373269641,
+          0.0,
+          5.382022365571448,
+          0.0,
+          7.138815847353522
+        ]
+      },
+      {
+        "demo": "demo_14",
+        "normalized_mean_absolute_deviation": 0.29151642504639047,
+        "mean_absolute_deviation_deg": 4.851996558862964,
+        "caps_deg": [
+          30.0,
+          25.127102762934076,
+          5.551239131530049,
+          0.0,
+          15.0,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          5.488482024734684,
+          21.924166827993457,
+          5.551239127923698,
+          0.0,
+          0.128118406438504,
+          2.1266915649000473,
+          0.0,
+          8.093282640028221
+        ]
+      },
+      {
+        "demo": "demo_43",
+        "normalized_mean_absolute_deviation": 0.2827327490387301,
+        "mean_absolute_deviation_deg": 5.587200418169577,
+        "caps_deg": [
+          10.648640463715774,
+          15.27111244712658,
+          0.0,
+          15.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.7024949247616551,
+          15.271112429471914,
+          0.0,
+          5.49032250003528,
+          0.0,
+          10.485075510037207,
+          1.7455923305038723,
+          2.042858499601068
+        ]
+      },
+      {
+        "demo": "demo_47",
+        "normalized_mean_absolute_deviation": 0.27290399523825026,
+        "mean_absolute_deviation_deg": 4.311266584542709,
+        "caps_deg": [
+          30.0,
+          20.942406327763646,
+          1.7989631631516945,
+          15.0,
+          5.352467079948503,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.118856218071925,
+          13.136237809634814,
+          1.7989631560801607,
+          0.0,
+          0.0,
+          14.999999995583035,
+          0.0,
+          7.7151360369742354
+        ]
+      },
+      {
+        "demo": "demo_27",
+        "normalized_mean_absolute_deviation": 0.2709914116601923,
+        "mean_absolute_deviation_deg": 5.439878736149164,
+        "caps_deg": [
+          20.540779187799146,
+          30.0,
+          0.19779484033964434,
+          14.608628546402308,
+          14.347317602173252,
+          15.0,
+          7.412564670296515,
+          12.293331532747843
+        ],
+        "actual_peak_deg": [
+          3.2446329490983277,
+          8.353486949304436,
+          0.19779483092311181,
+          7.9638243585928965,
+          0.0,
+          14.999999995886501,
+          0.0,
+          10.774830045688297
+        ]
+      },
+      {
+        "demo": "demo_5",
+        "normalized_mean_absolute_deviation": 0.25467152625073286,
+        "mean_absolute_deviation_deg": 4.911266633277266,
+        "caps_deg": [
+          30.0,
+          0.0,
+          0.0,
+          15.0,
+          13.755808422614994,
+          15.0,
+          15.0,
+          4.391428992718517
+        ],
+        "actual_peak_deg": [
+          12.175366200715139,
+          0.0,
+          0.0,
+          0.8320895366041225,
+          0.0,
+          12.93254506571938,
+          0.0,
+          4.391428984910895
+        ]
+      },
+      {
+        "demo": "demo_30",
+        "normalized_mean_absolute_deviation": 0.2464270117675813,
+        "mean_absolute_deviation_deg": 4.480211436997446,
+        "caps_deg": [
+          30.0,
+          30.0,
+          15.0,
+          15.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.10026066008877849,
+          9.488819432554418,
+          11.737870343516942,
+          0.25022181496958956,
+          0.0,
+          14.999999993812631,
+          0.6968091365189073,
+          2.9203447826135225
+        ]
+      },
+      {
+        "demo": "demo_17",
+        "normalized_mean_absolute_deviation": 0.24340324000024227,
+        "mean_absolute_deviation_deg": 4.098569223044782,
+        "caps_deg": [
+          30.0,
+          10.298769863602004,
+          15.0,
+          15.0,
+          0.0,
+          12.672567512540056,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          10.298769860775023,
+          6.534969510662815,
+          0.7231464342033652,
+          0.0,
+          10.70561337528352,
+          0.0,
+          3.8405317970934854
+        ]
+      },
+      {
+        "demo": "demo_37",
+        "normalized_mean_absolute_deviation": 0.2420470315261018,
+        "mean_absolute_deviation_deg": 4.695596891093816,
+        "caps_deg": [
+          25.502637476503004,
+          30.0,
+          1.6388356362561955,
+          14.716440876099165,
+          0.7093492262676568,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          7.041207823096473,
+          10.434220590941532,
+          1.6388356269861746,
+          11.86948600736969,
+          0.0,
+          14.999999997329306,
+          1.0061609257662978,
+          6.704422384609396
+        ]
+      },
+      {
+        "demo": "demo_28",
+        "normalized_mean_absolute_deviation": 0.24052985261371332,
+        "mean_absolute_deviation_deg": 4.36382571100026,
+        "caps_deg": [
+          29.81180092065781,
+          29.36494750163114,
+          8.678773956909113,
+          8.405229488394806,
+          9.99033172516391,
+          15.0,
+          15.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          9.432633424894368,
+          8.678773854787135,
+          0.0,
+          0.0,
+          14.999999995797147,
+          14.999999881646929,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_22",
+        "normalized_mean_absolute_deviation": 0.2342682804994268,
+        "mean_absolute_deviation_deg": 4.297830467975129,
+        "caps_deg": [
+          30.0,
+          30.0,
+          15.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          2.676669059852895,
+          14.195706254162868,
+          5.819682740397179,
+          0.0,
+          0.0,
+          9.101104440858792,
+          0.0,
+          4.16886950967493
+        ]
+      },
+      {
+        "demo": "demo_0",
+        "normalized_mean_absolute_deviation": 0.2207526324432096,
+        "mean_absolute_deviation_deg": 4.095095747131871,
+        "caps_deg": [
+          30.0,
+          30.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          7.389322899047286
+        ],
+        "actual_peak_deg": [
+          0.0,
+          11.467058321037824,
+          8.986123347519715,
+          0.3962984555605274,
+          0.0,
+          14.99999999551165,
+          0.0,
+          3.2037825034386453
+        ]
+      },
+      {
+        "demo": "demo_33",
+        "normalized_mean_absolute_deviation": 0.21032457665133414,
+        "mean_absolute_deviation_deg": 3.5795193525323494,
+        "caps_deg": [
+          30.0,
+          10.664688588062985,
+          15.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.4015833285841623,
+          10.66468858445694,
+          14.999999993570562,
+          0.0,
+          0.0,
+          14.103464734972386,
+          0.0,
+          13.75003192847861
+        ]
+      },
+      {
+        "demo": "demo_19",
+        "normalized_mean_absolute_deviation": 0.20974223483502352,
+        "mean_absolute_deviation_deg": 3.536730935291722,
+        "caps_deg": [
+          30.0,
+          11.209541227998477,
+          9.435100169709248,
+          15.0,
+          15.0,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          11.209541222142875,
+          6.769134993774839,
+          0.0,
+          0.0,
+          13.115043757402388,
+          0.0,
+          1.1170876102706395
+        ]
+      },
+      {
+        "demo": "demo_36",
+        "normalized_mean_absolute_deviation": 0.19954710738136425,
+        "mean_absolute_deviation_deg": 3.761207458833769,
+        "caps_deg": [
+          28.853714127859373,
+          28.600827529932634,
+          0.7145097727494601,
+          13.468754660175842,
+          3.681589298921596,
+          15.0,
+          15.0,
+          14.429265911586114
+        ],
+        "actual_peak_deg": [
+          1.3447028262299525,
+          14.816675235397295,
+          0.7145097694910966,
+          0.0,
+          0.0,
+          14.999999996508784,
+          0.0,
+          8.219728465754304
+        ]
+      },
+      {
+        "demo": "demo_3",
+        "normalized_mean_absolute_deviation": 0.19803958885256,
+        "mean_absolute_deviation_deg": 3.0827247656072414,
+        "caps_deg": [
+          30.0,
+          19.25319475736183,
+          15.0,
+          8.130773505002496,
+          7.078686270067539,
+          15.0,
+          9.456183221112212,
+          15.0
+        ],
+        "actual_peak_deg": [
+          9.94140591096548,
+          6.643709617051394,
+          6.449697192148288,
+          1.9173971536004335,
+          0.0,
+          14.881368220791376,
+          0.25829510919508586,
+          3.2119922896228528
+        ]
+      },
+      {
+        "demo": "demo_11",
+        "normalized_mean_absolute_deviation": 0.1886696701295128,
+        "mean_absolute_deviation_deg": 3.731693240217128,
+        "caps_deg": [
+          30.0,
+          3.032728819869409,
+          14.711986364565023,
+          12.082461510706578,
+          15.0,
+          14.648991196814391,
+          14.991979288941936,
+          9.403123034817469
+        ],
+        "actual_peak_deg": [
+          9.289821179832487,
+          3.032728809967557,
+          7.835454027494415,
+          3.8261697721702257,
+          0.0,
+          13.1276892275582,
+          0.5658911005652282,
+          3.216431641542375
+        ]
+      },
+      {
+        "demo": "demo_20",
+        "normalized_mean_absolute_deviation": 0.18142998127754523,
+        "mean_absolute_deviation_deg": 3.913681845857422,
+        "caps_deg": [
+          28.38338580515247,
+          0.0,
+          7.428732547849325,
+          13.09566120625888,
+          12.91731985947609,
+          14.306674674559272,
+          5.647409406560535,
+          13.863077501075642
+        ],
+        "actual_peak_deg": [
+          12.996567995893637,
+          0.0,
+          7.428732544694282,
+          0.5396896735731662,
+          0.0,
+          12.223452434199789,
+          0.0,
+          5.235038239577433
+        ]
+      },
+      {
+        "demo": "demo_21",
+        "normalized_mean_absolute_deviation": 0.17782282187077345,
+        "mean_absolute_deviation_deg": 3.758536067577875,
+        "caps_deg": [
+          30.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          9.757415897930779,
+          0.0,
+          5.049512906324177,
+          4.473669287982989,
+          0.0,
+          14.061729059363126,
+          14.210305737111469,
+          1.6113940665926885
+        ]
+      },
+      {
+        "demo": "demo_29",
+        "normalized_mean_absolute_deviation": 0.17782282187077345,
+        "mean_absolute_deviation_deg": 3.758536067577875,
+        "caps_deg": [
+          30.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          5.435966384417699,
+          0.0,
+          14.99999999622274,
+          0.0,
+          12.919929941918472,
+          0.33705965335454413,
+          0.0,
+          8.13492247039144
+        ]
+      },
+      {
+        "demo": "demo_31",
+        "normalized_mean_absolute_deviation": 0.17581908252610168,
+        "mean_absolute_deviation_deg": 3.4210924983752515,
+        "caps_deg": [
+          30.0,
+          30.0,
+          14.248846846940388,
+          12.906811876008213,
+          12.84580130993866,
+          12.952716281744367,
+          11.562014201123546,
+          13.268078439119586
+        ],
+        "actual_peak_deg": [
+          0.14424244425705673,
+          8.92745997412364,
+          5.564411131517649,
+          2.936774368610798,
+          1.3640590332787046,
+          6.352527064106248,
+          0.0,
+          7.912341607462696
+        ]
+      },
+      {
+        "demo": "demo_18",
+        "normalized_mean_absolute_deviation": 0.1663422537858298,
+        "mean_absolute_deviation_deg": 3.586327546303721,
+        "caps_deg": [
+          30.0,
+          0.0,
+          3.01260002284428,
+          15.0,
+          15.0,
+          13.222533243047604,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          8.450541009971575,
+          0.0,
+          3.0126000172190315,
+          0.0,
+          0.0,
+          7.606059445274501,
+          0.0,
+          9.27665654740644
+        ]
+      },
+      {
+        "demo": "demo_42",
+        "normalized_mean_absolute_deviation": 0.1612151409546645,
+        "mean_absolute_deviation_deg": 3.6207709608634335,
+        "caps_deg": [
+          28.218398287564924,
+          0.0,
+          15.0,
+          12.116277433849389,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          6.471952627609097,
+          0.0,
+          0.0,
+          10.903590746659171,
+          0.0,
+          14.1964730412268,
+          12.813844317120648,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_40",
+        "normalized_mean_absolute_deviation": 0.1546411478273709,
+        "mean_absolute_deviation_deg": 2.839145569831854,
+        "caps_deg": [
+          27.100509064114025,
+          22.87206253511505,
+          3.958572513401259,
+          15.0,
+          4.798972990623155,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          19.74363023932711,
+          3.958572504560039,
+          0.7809238173671786,
+          0.3398824134716911,
+          14.999999995707576,
+          0.0,
+          5.837675282222254
+        ]
+      },
+      {
+        "demo": "demo_10",
+        "normalized_mean_absolute_deviation": 0.14164096436856452,
+        "mean_absolute_deviation_deg": 2.1533647962799654,
+        "caps_deg": [
+          30.0,
+          17.91910512428434,
+          15.0,
+          5.074830497845645,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          17.919105110937647,
+          2.810608114620349,
+          2.7333249119613883,
+          0.0,
+          14.99999999709377,
+          0.0354718287107256,
+          2.3261733048431856
+        ]
+      },
+      {
+        "demo": "demo_7",
+        "normalized_mean_absolute_deviation": 0.12286275359630522,
+        "mean_absolute_deviation_deg": 2.626747564428305,
+        "caps_deg": [
+          30.0,
+          30.0,
+          3.9935734563744636,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          16.79459654185899,
+          3.9935734531669573,
+          0.0,
+          0.0,
+          9.240709805948445,
+          0.0,
+          11.644443471749602
+        ]
+      },
+      {
+        "demo": "demo_39",
+        "normalized_mean_absolute_deviation": 0.11163185815540488,
+        "mean_absolute_deviation_deg": 1.9107947789689577,
+        "caps_deg": [
+          30.0,
+          13.678029326054222,
+          15.0,
+          10.336455850515895,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.4166715529384218,
+          13.678029305957313,
+          1.3687627304874552,
+          8.078465127035031,
+          0.0,
+          14.585395506829883,
+          9.409576095334245,
+          2.075284443501507
+        ]
+      },
+      {
+        "demo": "demo_26",
+        "normalized_mean_absolute_deviation": 0.11061630841382222,
+        "mean_absolute_deviation_deg": 1.6592446262073333,
+        "caps_deg": [
+          30.0,
+          17.459099832260375,
+          15.0,
+          11.419713283014657,
+          11.41973927765878,
+          15.0,
+          11.41993662560662,
+          15.0
+        ],
+        "actual_peak_deg": [
+          1.3755860767303667,
+          14.886544337635033,
+          9.026976367719127,
+          0.0,
+          0.0,
+          14.274758160962834,
+          0.0,
+          3.977498447937109
+        ]
+      },
+      {
+        "demo": "demo_16",
+        "normalized_mean_absolute_deviation": 0.10923961686904027,
+        "mean_absolute_deviation_deg": 1.8446989453070497,
+        "caps_deg": [
+          30.0,
+          20.756774908603504,
+          15.0,
+          13.850189965332738,
+          13.849745089587046,
+          15.0,
+          13.849207277169143,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          15.807022240461567,
+          6.652161598467023,
+          0.0,
+          0.0,
+          13.885694162537508,
+          0.0,
+          3.229721572128682
+        ]
+      }
+    ],
+    "top5_distinct_vectors": [
+      {
+        "demo": "demo_44",
+        "normalized_mean_absolute_deviation": 0.8426696767313964,
+        "mean_absolute_deviation_deg": 15.60623889048722,
+        "caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_15",
+        "normalized_mean_absolute_deviation": 0.6971771781292265,
+        "mean_absolute_deviation_deg": 11.241463932422125,
+        "caps_deg": [
+          30.0,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.8034559225353921,
+          10.016662119902833,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_8",
+        "normalized_mean_absolute_deviation": 0.6757370341099584,
+        "mean_absolute_deviation_deg": 13.091254671900671,
+        "caps_deg": [
+          0.04671824319262576,
+          0.12919502504702376,
+          0.005064870363668806,
+          15.0,
+          15.0,
+          0.014738122512962094,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.04671824094625935,
+          0.12919501161998012,
+          0.005064863915628341,
+          3.536535362273774,
+          7.603187177097233,
+          0.014738194955606614,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_24",
+        "normalized_mean_absolute_deviation": 0.6285520860207283,
+        "mean_absolute_deviation_deg": 12.057389246014658,
+        "caps_deg": [
+          0.0,
+          29.524827123520122,
+          14.980509641540353,
+          6.707414527722688,
+          15.0,
+          0.2393349473439068,
+          0.0,
+          5.482117065677649
+        ],
+        "actual_peak_deg": [
+          0.0,
+          8.814579150163365,
+          3.494164860295061,
+          1.0981192078581168,
+          5.75871268145019,
+          0.06290525398507389,
+          0.0,
+          5.482117029149639
+        ]
+      },
+      {
+        "demo": "demo_2",
+        "normalized_mean_absolute_deviation": 0.576973370583444,
+        "mean_absolute_deviation_deg": 10.248049290934878,
+        "caps_deg": [
+          17.04572045280815,
+          30.0,
+          1.9178680497894565,
+          0.0,
+          2.214230360732126,
+          0.7882927986639526,
+          14.441669457791633,
+          1.5395360121126587
+        ],
+        "actual_peak_deg": [
+          0.0,
+          12.549209579236091,
+          1.9178680438659497,
+          0.0,
+          0.0,
+          0.7882927963199666,
+          1.1350240838998176,
+          1.5395359959078476
+        ]
+      }
+    ]
+  },
+  "actual": {
+    "marginals": [
+      {
+        "unit": "APP Ry-",
+        "median_deg": 0.4015833285841623,
+        "q25_deg": 0.0,
+        "q75_deg": 2.9606510044756114,
+        "iqr_deg": 2.9606510044756114,
+        "iqr_over_authored_upper": 0.09868836681585372,
+        "within5_count": 36,
+        "within5_fraction": 0.7659574468085106,
+        "modes_deg": [
+          0.0
+        ],
+        "mode_count": 19
+      },
+      {
+        "unit": "APP Ry+",
+        "median_deg": 10.298769860775023,
+        "q25_deg": 4.8382192135094755,
+        "q75_deg": 13.93686778006009,
+        "iqr_deg": 9.098648566550615,
+        "iqr_over_authored_upper": 0.3032882855516872,
+        "within5_count": 28,
+        "within5_fraction": 0.5957446808510638,
+        "modes_deg": [
+          0.0
+        ],
+        "mode_count": 10
+      },
+      {
+        "unit": "EXEC Rx-",
+        "median_deg": 3.494164860295061,
+        "q25_deg": 0.665476715287389,
+        "q75_deg": 6.593565554564919,
+        "iqr_deg": 5.92808883927753,
+        "iqr_over_authored_upper": 0.395205922618502,
+        "within5_count": 39,
+        "within5_fraction": 0.8297872340425532,
+        "modes_deg": [
+          0.0
+        ],
+        "mode_count": 7
+      },
+      {
+        "unit": "EXEC Rx+",
+        "median_deg": 0.0,
+        "q25_deg": 0.0,
+        "q75_deg": 2.2454817634350372,
+        "iqr_deg": 2.2454817634350372,
+        "iqr_over_authored_upper": 0.14969878422900249,
+        "within5_count": 42,
+        "within5_fraction": 0.8936170212765957,
+        "modes_deg": [
+          0.0
+        ],
+        "mode_count": 24
+      },
+      {
+        "unit": "EXEC Ry-",
+        "median_deg": 0.0,
+        "q25_deg": 0.0,
+        "q75_deg": 0.0,
+        "iqr_deg": 0.0,
+        "iqr_over_authored_upper": 0.0,
+        "within5_count": 44,
+        "within5_fraction": 0.9361702127659575,
+        "modes_deg": [
+          0.0
+        ],
+        "mode_count": 40
+      },
+      {
+        "unit": "EXEC Ry+",
+        "median_deg": 12.93254506571938,
+        "q25_deg": 6.979293254690374,
+        "q75_deg": 14.9999999927999,
+        "iqr_deg": 8.020706738109526,
+        "iqr_over_authored_upper": 0.5347137825406351,
+        "within5_count": 34,
+        "within5_fraction": 0.723404255319149,
+        "modes_deg": [
+          15.0
+        ],
+        "mode_count": 13
+      },
+      {
+        "unit": "EXEC Rz-",
+        "median_deg": 0.0,
+        "q25_deg": 0.0,
+        "q75_deg": 1.3819072122575526,
+        "iqr_deg": 1.3819072122575526,
+        "iqr_over_authored_upper": 0.09212714748383684,
+        "within5_count": 39,
+        "within5_fraction": 0.8297872340425532,
+        "modes_deg": [
+          0.0
+        ],
+        "mode_count": 29
+      },
+      {
+        "unit": "EXEC Rz+",
+        "median_deg": 3.216431641542375,
+        "q25_deg": 1.2530008808377961,
+        "q75_deg": 6.271048833415826,
+        "iqr_deg": 5.01804795257803,
+        "iqr_over_authored_upper": 0.3345365301718687,
+        "within5_count": 41,
+        "within5_fraction": 0.8723404255319149,
+        "modes_deg": [
+          0.0
+        ],
+        "mode_count": 9
+      }
+    ],
+    "median_vector_deg": [
+      0.4015833285841623,
+      10.298769860775023,
+      3.494164860295061,
+      0.0,
+      0.0,
+      12.93254506571938,
+      0.0,
+      3.216431641542375
+    ],
+    "mean_normalized_iqr": 0.23853235242642323,
+    "within5_coordinate_count": 303,
+    "coordinate_count": 376,
+    "within5_all_coordinates_count": 9,
+    "median_of_per_demo_maximum_direction_deg": 14.585395506829883,
+    "top5": [
+      {
+        "demo": "demo_29",
+        "normalized_mean_absolute_deviation": 0.41338598147803607,
+        "mean_absolute_deviation_deg": 7.159111779458576,
+        "caps_deg": [
+          30.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          5.435966384417699,
+          0.0,
+          14.99999999622274,
+          0.0,
+          12.919929941918472,
+          0.33705965335454413,
+          0.0,
+          8.13492247039144
+        ]
+      },
+      {
+        "demo": "demo_42",
+        "normalized_mean_absolute_deviation": 0.3323044093418721,
+        "mean_absolute_deviation_deg": 6.007637337615579,
+        "caps_deg": [
+          28.218398287564924,
+          0.0,
+          15.0,
+          12.116277433849389,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          6.471952627609097,
+          0.0,
+          0.0,
+          10.903590746659171,
+          0.0,
+          14.1964730412268,
+          12.813844317120648,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_8",
+        "normalized_mean_absolute_deviation": 0.30021067513710886,
+        "mean_absolute_deviation_deg": 5.160937623106191,
+        "caps_deg": [
+          0.04671824319262576,
+          0.12919502504702376,
+          0.005064870363668806,
+          15.0,
+          15.0,
+          0.014738122512962094,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.04671824094625935,
+          0.12919501161998012,
+          0.005064863915628341,
+          3.536535362273774,
+          7.603187177097233,
+          0.014738194955606614,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_9",
+        "normalized_mean_absolute_deviation": 0.2954047795905892,
+        "mean_absolute_deviation_deg": 5.847419762954682,
+        "caps_deg": [
+          30.0,
+          0.0,
+          13.722011789491736,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          12.764382573342655,
+          0.0,
+          11.896046800341095,
+          0.0,
+          0.0,
+          14.999999993156958,
+          10.432020489077955,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_21",
+        "normalized_mean_absolute_deviation": 0.27334038212314854,
+        "mean_absolute_deviation_deg": 5.328518383729831,
+        "caps_deg": [
+          30.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          9.757415897930779,
+          0.0,
+          5.049512906324177,
+          4.473669287982989,
+          0.0,
+          14.061729059363126,
+          14.210305737111469,
+          1.6113940665926885
+        ]
+      }
+    ],
+    "nearest_to_median": {
+      "demo": "demo_12",
+      "normalized_mean_absolute_deviation": 0.03503072283610739,
+      "mean_absolute_deviation_deg": 0.5551592067328164,
+      "caps_deg": [
+        16.390161069085906,
+        10.043732625996096,
+        3.221232052950799,
+        2.9846369751268993,
+        7.988724612394072,
+        9.852575120102122,
+        0.17848531778061688,
+        3.8296288167801125
+      ],
+      "actual_peak_deg": [
+        0.6217199149811368,
+        10.043732620112708,
+        3.2212320596146053,
+        0.0,
+        0.0,
+        9.852575199487042,
+        0.0,
+        3.8296288014328237
+      ]
+    },
+    "ranking": [
+      {
+        "demo": "demo_29",
+        "normalized_mean_absolute_deviation": 0.41338598147803607,
+        "mean_absolute_deviation_deg": 7.159111779458576,
+        "caps_deg": [
+          30.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          5.435966384417699,
+          0.0,
+          14.99999999622274,
+          0.0,
+          12.919929941918472,
+          0.33705965335454413,
+          0.0,
+          8.13492247039144
+        ]
+      },
+      {
+        "demo": "demo_42",
+        "normalized_mean_absolute_deviation": 0.3323044093418721,
+        "mean_absolute_deviation_deg": 6.007637337615579,
+        "caps_deg": [
+          28.218398287564924,
+          0.0,
+          15.0,
+          12.116277433849389,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          6.471952627609097,
+          0.0,
+          0.0,
+          10.903590746659171,
+          0.0,
+          14.1964730412268,
+          12.813844317120648,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_8",
+        "normalized_mean_absolute_deviation": 0.30021067513710886,
+        "mean_absolute_deviation_deg": 5.160937623106191,
+        "caps_deg": [
+          0.04671824319262576,
+          0.12919502504702376,
+          0.005064870363668806,
+          15.0,
+          15.0,
+          0.014738122512962094,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.04671824094625935,
+          0.12919501161998012,
+          0.005064863915628341,
+          3.536535362273774,
+          7.603187177097233,
+          0.014738194955606614,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_9",
+        "normalized_mean_absolute_deviation": 0.2954047795905892,
+        "mean_absolute_deviation_deg": 5.847419762954682,
+        "caps_deg": [
+          30.0,
+          0.0,
+          13.722011789491736,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          12.764382573342655,
+          0.0,
+          11.896046800341095,
+          0.0,
+          0.0,
+          14.999999993156958,
+          10.432020489077955,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_21",
+        "normalized_mean_absolute_deviation": 0.27334038212314854,
+        "mean_absolute_deviation_deg": 5.328518383729831,
+        "caps_deg": [
+          30.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          9.757415897930779,
+          0.0,
+          5.049512906324177,
+          4.473669287982989,
+          0.0,
+          14.061729059363126,
+          14.210305737111469,
+          1.6113940665926885
+        ]
+      },
+      {
+        "demo": "demo_14",
+        "normalized_mean_absolute_deviation": 0.2185337083754733,
+        "mean_absolute_deviation_deg": 4.3225241045926595,
+        "caps_deg": [
+          30.0,
+          25.127102762934076,
+          5.551239131530049,
+          0.0,
+          15.0,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          5.488482024734684,
+          21.924166827993457,
+          5.551239127923698,
+          0.0,
+          0.128118406438504,
+          2.1266915649000473,
+          0.0,
+          8.093282640028221
+        ]
+      },
+      {
+        "demo": "demo_28",
+        "normalized_mean_absolute_deviation": 0.2175196277499296,
+        "mean_absolute_deviation_deg": 3.3420269015279955,
+        "caps_deg": [
+          29.81180092065781,
+          29.36494750163114,
+          8.678773956909113,
+          8.405229488394806,
+          9.99033172516391,
+          15.0,
+          15.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          9.432633424894368,
+          8.678773854787135,
+          0.0,
+          0.0,
+          14.999999995797147,
+          14.999999881646929,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_44",
+        "normalized_mean_absolute_deviation": 0.20827765135197007,
+        "mean_absolute_deviation_deg": 3.7929368446145,
+        "caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_45",
+        "normalized_mean_absolute_deviation": 0.20827765135197007,
+        "mean_absolute_deviation_deg": 3.7929368446145,
+        "caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_49",
+        "normalized_mean_absolute_deviation": 0.20827765135197007,
+        "mean_absolute_deviation_deg": 3.7929368446145,
+        "caps_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_39",
+        "normalized_mean_absolute_deviation": 0.20087179021747104,
+        "mean_absolute_deviation_deg": 3.2252235826081,
+        "caps_deg": [
+          30.0,
+          13.678029326054222,
+          15.0,
+          10.336455850515895,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.4166715529384218,
+          13.678029305957313,
+          1.3687627304874552,
+          8.078465127035031,
+          0.0,
+          14.585395506829883,
+          9.409576095334245,
+          2.075284443501507
+        ]
+      },
+      {
+        "demo": "demo_37",
+        "normalized_mean_absolute_deviation": 0.19728299544551028,
+        "mean_absolute_deviation_deg": 3.38268713322508,
+        "caps_deg": [
+          25.502637476503004,
+          30.0,
+          1.6388356362561955,
+          14.716440876099165,
+          0.7093492262676568,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          7.041207823096473,
+          10.434220590941532,
+          1.6388356269861746,
+          11.86948600736969,
+          0.0,
+          14.999999997329306,
+          1.0061609257662978,
+          6.704422384609396
+        ]
+      },
+      {
+        "demo": "demo_33",
+        "normalized_mean_absolute_deviation": 0.19494428709421419,
+        "mean_absolute_deviation_deg": 2.947034226643332,
+        "caps_deg": [
+          30.0,
+          10.664688588062985,
+          15.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.4015833285841623,
+          10.66468858445694,
+          14.999999993570562,
+          0.0,
+          0.0,
+          14.103464734972386,
+          0.0,
+          13.75003192847861
+        ]
+      },
+      {
+        "demo": "demo_27",
+        "normalized_mean_absolute_deviation": 0.19400178323558556,
+        "mean_absolute_deviation_deg": 3.2092975317828305,
+        "caps_deg": [
+          20.540779187799146,
+          30.0,
+          0.19779484033964434,
+          14.608628546402308,
+          14.347317602173252,
+          15.0,
+          7.412564670296515,
+          12.293331532747843
+        ],
+        "actual_peak_deg": [
+          3.2446329490983277,
+          8.353486949304436,
+          0.19779483092311181,
+          7.9638243585928965,
+          0.0,
+          14.999999995886501,
+          0.0,
+          10.774830045688297
+        ]
+      },
+      {
+        "demo": "demo_24",
+        "normalized_mean_absolute_deviation": 0.19112536756873155,
+        "mean_absolute_deviation_deg": 2.984741390980712,
+        "caps_deg": [
+          0.0,
+          29.524827123520122,
+          14.980509641540353,
+          6.707414527722688,
+          15.0,
+          0.2393349473439068,
+          0.0,
+          5.482117065677649
+        ],
+        "actual_peak_deg": [
+          0.0,
+          8.814579150163365,
+          3.494164860295061,
+          1.0981192078581168,
+          5.75871268145019,
+          0.06290525398507389,
+          0.0,
+          5.482117029149639
+        ]
+      },
+      {
+        "demo": "demo_18",
+        "normalized_mean_absolute_deviation": 0.1753511595038849,
+        "mean_absolute_deviation_deg": 3.7770003639434258,
+        "caps_deg": [
+          30.0,
+          0.0,
+          3.01260002284428,
+          15.0,
+          15.0,
+          13.222533243047604,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          8.450541009971575,
+          0.0,
+          3.0126000172190315,
+          0.0,
+          0.0,
+          7.606059445274501,
+          0.0,
+          9.27665654740644
+        ]
+      },
+      {
+        "demo": "demo_41",
+        "normalized_mean_absolute_deviation": 0.17511376491096003,
+        "mean_absolute_deviation_deg": 2.9120555858885475,
+        "caps_deg": [
+          7.764152839905796,
+          14.46277233458656,
+          0.18691242148309467,
+          0.0,
+          3.987030803056347,
+          4.524874541430149,
+          15.0,
+          1.8163167946454912
+        ],
+        "actual_peak_deg": [
+          0.0,
+          14.462772327777213,
+          0.18691241825189486,
+          0.0,
+          3.987030728479248,
+          4.52487453950888,
+          1.6287903406152877,
+          1.8163167873685464
+        ]
+      },
+      {
+        "demo": "demo_15",
+        "normalized_mean_absolute_deviation": 0.16654276445807104,
+        "mean_absolute_deviation_deg": 2.5408902377975293,
+        "caps_deg": [
+          30.0,
+          30.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.8034559225353921,
+          10.016662119902833,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_20",
+        "normalized_mean_absolute_deviation": 0.15540694876307737,
+        "mean_absolute_deviation_deg": 3.7619638894514416,
+        "caps_deg": [
+          28.38338580515247,
+          0.0,
+          7.428732547849325,
+          13.09566120625888,
+          12.91731985947609,
+          14.306674674559272,
+          5.647409406560535,
+          13.863077501075642
+        ],
+        "actual_peak_deg": [
+          12.996567995893637,
+          0.0,
+          7.428732544694282,
+          0.5396896735731662,
+          0.0,
+          12.223452434199789,
+          0.0,
+          5.235038239577433
+        ]
+      },
+      {
+        "demo": "demo_31",
+        "normalized_mean_absolute_deviation": 0.15384444188445656,
+        "mean_absolute_deviation_deg": 2.409457301453004,
+        "caps_deg": [
+          30.0,
+          30.0,
+          14.248846846940388,
+          12.906811876008213,
+          12.84580130993866,
+          12.952716281744367,
+          11.562014201123546,
+          13.268078439119586
+        ],
+        "actual_peak_deg": [
+          0.14424244425705673,
+          8.92745997412364,
+          5.564411131517649,
+          2.936774368610798,
+          1.3640590332787046,
+          6.352527064106248,
+          0.0,
+          7.912341607462696
+        ]
+      },
+      {
+        "demo": "demo_2",
+        "normalized_mean_absolute_deviation": 0.14882066949071238,
+        "mean_absolute_deviation_deg": 2.3980614828010127,
+        "caps_deg": [
+          17.04572045280815,
+          30.0,
+          1.9178680497894565,
+          0.0,
+          2.214230360732126,
+          0.7882927986639526,
+          14.441669457791633,
+          1.5395360121126587
+        ],
+        "actual_peak_deg": [
+          0.0,
+          12.549209579236091,
+          1.9178680438659497,
+          0.0,
+          0.0,
+          0.7882927963199666,
+          1.1350240838998176,
+          1.5395359959078476
+        ]
+      },
+      {
+        "demo": "demo_23",
+        "normalized_mean_absolute_deviation": 0.14458528290856607,
+        "mean_absolute_deviation_deg": 2.3479207154749826,
+        "caps_deg": [
+          30.0,
+          7.8340896520194265,
+          1.6235359734202326,
+          15.0,
+          4.557807813431251,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          7.8340896398153195,
+          1.6235359652677852,
+          2.573566373269641,
+          0.0,
+          5.382022365571448,
+          0.0,
+          7.138815847353522
+        ]
+      },
+      {
+        "demo": "demo_11",
+        "normalized_mean_absolute_deviation": 0.14171361377334604,
+        "mean_absolute_deviation_deg": 3.1353466379786776,
+        "caps_deg": [
+          30.0,
+          3.032728819869409,
+          14.711986364565023,
+          12.082461510706578,
+          15.0,
+          14.648991196814391,
+          14.991979288941936,
+          9.403123034817469
+        ],
+        "actual_peak_deg": [
+          9.289821179832487,
+          3.032728809967557,
+          7.835454027494415,
+          3.8261697721702257,
+          0.0,
+          13.1276892275582,
+          0.5658911005652282,
+          3.216431641542375
+        ]
+      },
+      {
+        "demo": "demo_43",
+        "normalized_mean_absolute_deviation": 0.14156457892412405,
+        "mean_absolute_deviation_deg": 2.4530470691665096,
+        "caps_deg": [
+          10.648640463715774,
+          15.27111244712658,
+          0.0,
+          15.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.7024949247616551,
+          15.271112429471914,
+          0.0,
+          5.49032250003528,
+          0.0,
+          10.485075510037207,
+          1.7455923305038723,
+          2.042858499601068
+        ]
+      },
+      {
+        "demo": "demo_5",
+        "normalized_mean_absolute_deviation": 0.1378127342226725,
+        "mean_absolute_deviation_deg": 3.4467255591467127,
+        "caps_deg": [
+          30.0,
+          0.0,
+          0.0,
+          15.0,
+          13.755808422614994,
+          15.0,
+          15.0,
+          4.391428992718517
+        ],
+        "actual_peak_deg": [
+          12.175366200715139,
+          0.0,
+          0.0,
+          0.8320895366041225,
+          0.0,
+          12.93254506571938,
+          0.0,
+          4.391428984910895
+        ]
+      },
+      {
+        "demo": "demo_7",
+        "normalized_mean_absolute_deviation": 0.1338996723973677,
+        "mean_absolute_deviation_deg": 2.4395832115647735,
+        "caps_deg": [
+          30.0,
+          30.0,
+          3.9935734563744636,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          16.79459654185899,
+          3.9935734531669573,
+          0.0,
+          0.0,
+          9.240709805948445,
+          0.0,
+          11.644443471749602
+        ]
+      },
+      {
+        "demo": "demo_1",
+        "normalized_mean_absolute_deviation": 0.13083654430932376,
+        "mean_absolute_deviation_deg": 2.0518366441594944,
+        "caps_deg": [
+          1.471207469543282,
+          30.0,
+          11.741387058496523,
+          0.0,
+          0.2787206435633312,
+          14.86350586933047,
+          14.585673732281354,
+          7.061583117975199
+        ],
+        "actual_peak_deg": [
+          1.4712074471246863,
+          10.657761414548709,
+          9.343162839864425,
+          0.0,
+          0.0,
+          14.863505855710695,
+          5.378601221263645,
+          1.3889141514049526
+        ]
+      },
+      {
+        "demo": "demo_13",
+        "normalized_mean_absolute_deviation": 0.12215427807955323,
+        "mean_absolute_deviation_deg": 1.9077172109236984,
+        "caps_deg": [
+          0.7432297718717233,
+          9.433945833520461,
+          0.0007718693346307111,
+          15.0,
+          15.0,
+          10.031639373481976,
+          15.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.7432079329458404,
+          9.433945829450302,
+          0.000771877270280367,
+          2.668732471176588,
+          0.0,
+          10.03163940537348,
+          1.775826295613545,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_3",
+        "normalized_mean_absolute_deviation": 0.11401607095577282,
+        "mean_absolute_deviation_deg": 2.534921240968151,
+        "caps_deg": [
+          30.0,
+          19.25319475736183,
+          15.0,
+          8.130773505002496,
+          7.078686270067539,
+          15.0,
+          9.456183221112212,
+          15.0
+        ],
+        "actual_peak_deg": [
+          9.94140591096548,
+          6.643709617051394,
+          6.449697192148288,
+          1.9173971536004335,
+          0.0,
+          14.881368220791376,
+          0.25829510919508586,
+          3.2119922896228528
+        ]
+      },
+      {
+        "demo": "demo_46",
+        "normalized_mean_absolute_deviation": 0.11237758010464918,
+        "mean_absolute_deviation_deg": 2.2705979294229506,
+        "caps_deg": [
+          0.0,
+          26.11873191109733,
+          8.906179083642773,
+          0.0,
+          15.0,
+          15.0,
+          9.891997760854224,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          19.256134177842267,
+          4.117982249960352,
+          0.0,
+          0.0,
+          14.999999992442842,
+          5.236167262640274,
+          2.3380354308392017
+        ]
+      },
+      {
+        "demo": "demo_36",
+        "normalized_mean_absolute_deviation": 0.10484099401616108,
+        "mean_absolute_deviation_deg": 1.91392896475917,
+        "caps_deg": [
+          28.853714127859373,
+          28.600827529932634,
+          0.7145097727494601,
+          13.468754660175842,
+          3.681589298921596,
+          15.0,
+          15.0,
+          14.429265911586114
+        ],
+        "actual_peak_deg": [
+          1.3447028262299525,
+          14.816675235397295,
+          0.7145097694910966,
+          0.0,
+          0.0,
+          14.999999996508784,
+          0.0,
+          8.219728465754304
+        ]
+      },
+      {
+        "demo": "demo_30",
+        "normalized_mean_absolute_deviation": 0.10091595641742063,
+        "mean_absolute_deviation_deg": 1.583193914806059,
+        "caps_deg": [
+          30.0,
+          30.0,
+          15.0,
+          15.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.10026066008877849,
+          9.488819432554418,
+          11.737870343516942,
+          0.25022181496958956,
+          0.0,
+          14.999999993812631,
+          0.6968091365189073,
+          2.9203447826135225
+        ]
+      },
+      {
+        "demo": "demo_48",
+        "normalized_mean_absolute_deviation": 0.10006551875107053,
+        "mean_absolute_deviation_deg": 2.0652662805520148,
+        "caps_deg": [
+          14.463685660133919,
+          30.0,
+          4.186691048452021,
+          15.0,
+          0.0,
+          15.0,
+          15.0,
+          9.462541827738944
+        ],
+        "actual_peak_deg": [
+          0.0,
+          18.925722520766175,
+          4.186691041144238,
+          0.0,
+          0.0,
+          12.37758683476233,
+          0.0,
+          9.462541485576953
+        ]
+      },
+      {
+        "demo": "demo_6",
+        "normalized_mean_absolute_deviation": 0.09694340236918564,
+        "mean_absolute_deviation_deg": 1.6107733691657655,
+        "caps_deg": [
+          30.0,
+          20.923179463901718,
+          2.5395027228789675,
+          7.418414071911762,
+          1.4160990869046266,
+          15.0,
+          15.0,
+          0.43701555031769423
+        ],
+        "actual_peak_deg": [
+          0.0,
+          12.403143870238557,
+          2.5395027092234947,
+          0.11738031162863093,
+          0.0,
+          14.99999999618547,
+          4.461247273040258,
+          0.4369466924704925
+        ]
+      },
+      {
+        "demo": "demo_40",
+        "normalized_mean_absolute_deviation": 0.0933094524945004,
+        "mean_absolute_deviation_deg": 2.0150445191135216,
+        "caps_deg": [
+          27.100509064114025,
+          22.87206253511505,
+          3.958572513401259,
+          15.0,
+          4.798972990623155,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          19.74363023932711,
+          3.958572504560039,
+          0.7809238173671786,
+          0.3398824134716911,
+          14.999999995707576,
+          0.0,
+          5.837675282222254
+        ]
+      },
+      {
+        "demo": "demo_10",
+        "normalized_mean_absolute_deviation": 0.08684188369828165,
+        "mean_absolute_deviation_deg": 1.803998166645899,
+        "caps_deg": [
+          30.0,
+          17.91910512428434,
+          15.0,
+          5.074830497845645,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          17.919105110937647,
+          2.810608114620349,
+          2.7333249119613883,
+          0.0,
+          14.99999999709377,
+          0.0354718287107256,
+          2.3261733048431856
+        ]
+      },
+      {
+        "demo": "demo_26",
+        "normalized_mean_absolute_deviation": 0.08680816684637802,
+        "mean_absolute_deviation_deg": 1.6497335792585588,
+        "caps_deg": [
+          30.0,
+          17.459099832260375,
+          15.0,
+          11.419713283014657,
+          11.41973927765878,
+          15.0,
+          11.41993662560662,
+          15.0
+        ],
+        "actual_peak_deg": [
+          1.3755860767303667,
+          14.886544337635033,
+          9.026976367719127,
+          0.0,
+          0.0,
+          14.274758160962834,
+          0.0,
+          3.977498447937109
+        ]
+      },
+      {
+        "demo": "demo_38",
+        "normalized_mean_absolute_deviation": 0.085558786421227,
+        "mean_absolute_deviation_deg": 1.3939260966890141,
+        "caps_deg": [
+          0.0,
+          30.0,
+          15.0,
+          3.2302084144010945,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          11.665895338120603,
+          2.687638587502991,
+          0.7525347793209607,
+          0.0,
+          12.605315717246869,
+          5.2127827629704955,
+          0.9328048375160414
+        ]
+      },
+      {
+        "demo": "demo_22",
+        "normalized_mean_absolute_deviation": 0.08496172862852958,
+        "mean_absolute_deviation_deg": 1.66017731221898,
+        "caps_deg": [
+          30.0,
+          30.0,
+          15.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          2.676669059852895,
+          14.195706254162868,
+          5.819682740397179,
+          0.0,
+          0.0,
+          9.101104440858792,
+          0.0,
+          4.16886950967493
+        ]
+      },
+      {
+        "demo": "demo_47",
+        "normalized_mean_absolute_deviation": 0.08184548799330359,
+        "mean_absolute_deviation_deg": 1.4226945111103055,
+        "caps_deg": [
+          30.0,
+          20.942406327763646,
+          1.7989631631516945,
+          15.0,
+          5.352467079948503,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.118856218071925,
+          13.136237809634814,
+          1.7989631560801607,
+          0.0,
+          0.0,
+          14.999999995583035,
+          0.0,
+          7.7151360369742354
+        ]
+      },
+      {
+        "demo": "demo_0",
+        "normalized_mean_absolute_deviation": 0.0729441408758722,
+        "mean_absolute_deviation_deg": 1.1922790999410182,
+        "caps_deg": [
+          30.0,
+          30.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          7.389322899047286
+        ],
+        "actual_peak_deg": [
+          0.0,
+          11.467058321037824,
+          8.986123347519715,
+          0.3962984555605274,
+          0.0,
+          14.99999999551165,
+          0.0,
+          3.2037825034386453
+        ]
+      },
+      {
+        "demo": "demo_16",
+        "normalized_mean_absolute_deviation": 0.05899461349759792,
+        "mean_absolute_deviation_deg": 1.254283934230888,
+        "caps_deg": [
+          30.0,
+          20.756774908603504,
+          15.0,
+          13.850189965332738,
+          13.849745089587046,
+          15.0,
+          13.849207277169143,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          15.807022240461567,
+          6.652161598467023,
+          0.0,
+          0.0,
+          13.885694162537508,
+          0.0,
+          3.229721572128682
+        ]
+      },
+      {
+        "demo": "demo_17",
+        "normalized_mean_absolute_deviation": 0.056798121623751426,
+        "mean_absolute_deviation_deg": 0.8770707823927815,
+        "caps_deg": [
+          30.0,
+          10.298769863602004,
+          15.0,
+          15.0,
+          0.0,
+          12.672567512540056,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          10.298769860775023,
+          6.534969510662815,
+          0.7231464342033652,
+          0.0,
+          10.70561337528352,
+          0.0,
+          3.8405317970934854
+        ]
+      },
+      {
+        "demo": "demo_4",
+        "normalized_mean_absolute_deviation": 0.05665649487464418,
+        "mean_absolute_deviation_deg": 0.8747565944763698,
+        "caps_deg": [
+          30.0,
+          10.542483254837364,
+          0.616443691666181,
+          15.0,
+          0.0,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.5564166816178494,
+          10.54248324944865,
+          0.6164436610836816,
+          0.288910738021851,
+          0.0,
+          14.999999994334598,
+          0.0,
+          4.5818507897975715
+        ]
+      },
+      {
+        "demo": "demo_19",
+        "normalized_mean_absolute_deviation": 0.05177491834508773,
+        "mean_absolute_deviation_deg": 0.8586459432983169,
+        "caps_deg": [
+          30.0,
+          11.209541227998477,
+          9.435100169709248,
+          15.0,
+          15.0,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          0.0,
+          11.209541222142875,
+          6.769134993774839,
+          0.0,
+          0.0,
+          13.115043757402388,
+          0.0,
+          1.1170876102706395
+        ]
+      },
+      {
+        "demo": "demo_32",
+        "normalized_mean_absolute_deviation": 0.03691743490184193,
+        "mean_absolute_deviation_deg": 0.6998896445306219,
+        "caps_deg": [
+          30.0,
+          10.195515569745183,
+          7.883923629582779,
+          0.0,
+          0.0,
+          15.0,
+          0.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          2.636378969301792,
+          10.195515565444767,
+          4.395286084088598,
+          0.0,
+          0.0,
+          11.467643301177368,
+          0.0,
+          4.111475873403916
+        ]
+      },
+      {
+        "demo": "demo_12",
+        "normalized_mean_absolute_deviation": 0.03503072283610739,
+        "mean_absolute_deviation_deg": 0.5551592067328164,
+        "caps_deg": [
+          16.390161069085906,
+          10.043732625996096,
+          3.221232052950799,
+          2.9846369751268993,
+          7.988724612394072,
+          9.852575120102122,
+          0.17848531778061688,
+          3.8296288167801125
+        ],
+        "actual_peak_deg": [
+          0.6217199149811368,
+          10.043732620112708,
+          3.2212320596146053,
+          0.0,
+          0.0,
+          9.852575199487042,
+          0.0,
+          3.8296288014328237
+        ]
+      }
+    ],
+    "top5_distinct_vectors": [
+      {
+        "demo": "demo_29",
+        "normalized_mean_absolute_deviation": 0.41338598147803607,
+        "mean_absolute_deviation_deg": 7.159111779458576,
+        "caps_deg": [
+          30.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          5.435966384417699,
+          0.0,
+          14.99999999622274,
+          0.0,
+          12.919929941918472,
+          0.33705965335454413,
+          0.0,
+          8.13492247039144
+        ]
+      },
+      {
+        "demo": "demo_42",
+        "normalized_mean_absolute_deviation": 0.3323044093418721,
+        "mean_absolute_deviation_deg": 6.007637337615579,
+        "caps_deg": [
+          28.218398287564924,
+          0.0,
+          15.0,
+          12.116277433849389,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          6.471952627609097,
+          0.0,
+          0.0,
+          10.903590746659171,
+          0.0,
+          14.1964730412268,
+          12.813844317120648,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_8",
+        "normalized_mean_absolute_deviation": 0.30021067513710886,
+        "mean_absolute_deviation_deg": 5.160937623106191,
+        "caps_deg": [
+          0.04671824319262576,
+          0.12919502504702376,
+          0.005064870363668806,
+          15.0,
+          15.0,
+          0.014738122512962094,
+          0.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          0.04671824094625935,
+          0.12919501161998012,
+          0.005064863915628341,
+          3.536535362273774,
+          7.603187177097233,
+          0.014738194955606614,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_9",
+        "normalized_mean_absolute_deviation": 0.2954047795905892,
+        "mean_absolute_deviation_deg": 5.847419762954682,
+        "caps_deg": [
+          30.0,
+          0.0,
+          13.722011789491736,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          0.0
+        ],
+        "actual_peak_deg": [
+          12.764382573342655,
+          0.0,
+          11.896046800341095,
+          0.0,
+          0.0,
+          14.999999993156958,
+          10.432020489077955,
+          0.0
+        ]
+      },
+      {
+        "demo": "demo_21",
+        "normalized_mean_absolute_deviation": 0.27334038212314854,
+        "mean_absolute_deviation_deg": 5.328518383729831,
+        "caps_deg": [
+          30.0,
+          0.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "actual_peak_deg": [
+          9.757415897930779,
+          0.0,
+          5.049512906324177,
+          4.473669287982989,
+          0.0,
+          14.061729059363126,
+          14.210305737111469,
+          1.6113940665926885
+        ]
+      }
+    ]
+  }
+}

@@ -247,7 +247,7 @@ def test_franka_dataset_schema_and_label_mode_are_checked_before_reading(monkeyp
         source_schema=dataset_format.SOURCE_SCHEMA,
         action_sequence_keys=("actions", "rotation_tolerance") if joint else ("actions",),
     )
-    model = pi0_config.Pi0Config(action_dim=13 if joint else 7)
+    model = pi0_config.Pi0Config(action_dim=32)
     if joint:
         with pytest.raises(ValueError, match="labeled"):
             _data_loader.create_torch_dataset(cfg, 3, model)

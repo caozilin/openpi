@@ -1,0 +1,274 @@
+--- a/label_franka_nominal_dsp.py
++++ b/label_franka_nominal_dsp.py
+@@ -27,6 +27,7 @@
+ 
+ import numpy as np
+ from tasktol.data.collector import _atomic_write_json as write
++from tasktol.data.trial_io import compact_trial, read_json
+ from tasktol.data.task_sets import training_tasks
+ from tasktol.data.tolerance_labels import trajectory_sha256, write_tolerance_labels, load_rotation_tolerance
+ from tasktol.counterfactual.runner import CounterfactualTrialSpec, prepare_dataset_nominal_trial, run_counterfactual_trial
+@@ -45,7 +46,7 @@
+ 
+ 
+ def read(path):
+-    return json.loads(Path(path).read_text())
++    return read_json(path)
+ 
+ 
+ def sha(path):
+@@ -253,7 +254,7 @@
+         raw = dict(identity_sha256=expected, point=point, row=row,
+                    result=result, seconds=time.monotonic()-start)
+         path.parent.mkdir(parents=True, exist_ok=True)
+-        write(path, raw)
++        write(path, compact_trial(raw, path))
+     return dict(raw['row'], raw_trial_path=str(path), raw_trial_sha256=sha(path)), raw['seconds']
+ 
+ 
+--- a/tasktol/data/libero_annotation/README.md
++++ b/tasktol/data/libero_annotation/README.md
+@@ -72,3 +72,10 @@
+ 整段回放的所有有效方向上限均为零时，仍使用同一RPY硬约束及雅可比，但硬参考始终为独立名义姿态；初始化、阶段切换和子任务切换不再把实际跟踪误差或上一命令的数值残差继承为转阶段偏置。实际关节状态仍作为初始构型，名义动作和目标不重写。
+ 
+ 此策略按完整回放描述符一次确定，不由当前帧是否严格触发。有容差回放的ENG/DIS阶段及临时零宽区间继续保留原交接机制。结果显式记录zero_tolerance_nominal_reference和stage_handoff_policy。协议变更后的请求使用新输出目录和源码SHA，旧198条标签及原候选保留原位。
++
++
++## 候选文件的静态元数据绑定
++
++新写入的LIBERO候选默认不重复保存robot_xml、assets路径表及asset_sha256；三项静态字段通过libero.prepared_static_metadata_ref.v1引用本demo的prepared_input.json/metadata；其他候选专有元数据继续内嵌保存。绑定为suite/task_id/demo/episode_index及源文件SHA，不以单独的随机seed数字查找。引用路径相对trial，源demo目录整体移动后仍可读取；读取时校验SHA及身份，源缺失、变更、错配均明确报错，禁止静默使用当前全局模型。
++
++label_franka_nominal_dsp.read和libero_annotation.source.read会自动还原相同的内存result结构，兼容旧内嵌记录；直接json.load只能看到引用。逐候选运动学指标、净空、状态、上限与耗时仍完整保存；不改优化器或搜索算法。prepared_input保留一份可复现的静态记录，不把所有模型凭空隐式化。当前冻结运行不会被迁移/压缩/重写，新存储格式从之后新请求生效，旧请求以原源码快照和SHA审计。
+--- a/tasktol/data/libero_annotation/source.py
++++ b/tasktol/data/libero_annotation/source.py
+@@ -6,6 +6,8 @@
+ from pathlib import Path
+ 
+ import numpy as np
++
++from ..trial_io import read_json
+ 
+ 
+ def sha(path):
+@@ -17,7 +19,7 @@
+ 
+ 
+ def read(path):
+-    return json.loads(Path(path).read_text())
++    return read_json(path)
+ 
+ 
+ def write(path, value):
+--- /dev/null
++++ b/tasktol/data/trial_io.py
+@@ -0,0 +1,93 @@
++"""Store LIBERO trial metadata once in its immutable source-demo input."""
++from copy import deepcopy
++import hashlib
++import json
++import os
++from pathlib import Path
++
++REFERENCE_KEY = 'domain_randomization_ref'
++SCHEMA = 'libero.prepared_static_metadata_ref.v1'
++IDENTITY_KEYS = ('suite', 'task_id', 'demo', 'episode_index')
++STATIC_KEYS = ('robot_xml', 'assets', 'asset_sha256')
++
++
++def _document(path):
++    data = Path(path).read_bytes()
++    return json.loads(data), hashlib.sha256(data).hexdigest()
++
++
++def _identity(document, path):
++    source = document['source']
++    identity = {key: source[key] for key in IDENTITY_KEYS}
++    folder = Path(path).parent
++    if (folder.name != identity['demo']
++            or folder.parent.name != f"task_{identity['task_id']:02d}"
++            or folder.parent.parent.name != identity['suite']):
++        raise ValueError('Prepared metadata does not match its suite/task/demo folder')
++    return identity
++
++
++def compact_trial(payload, trial_path):
++    """Omit repeated metadata only when it exactly matches the bound demo.
++
++    Non-LIBERO callers keep the original representation. No shared input is
++    created, changed or inferred from a bare seed number.
++    """
++    result = payload.get('result') if isinstance(payload, dict) else None
++    if not isinstance(result, dict) or 'domain_randomization' not in result:
++        return payload
++    trial_path = Path(trial_path).resolve()
++    source_path = None
++    for folder in trial_path.parents:
++        if folder.name.startswith('demo_') and folder.parent.name.startswith('task_'):
++            candidate = folder / 'prepared_input.json'
++            if candidate.is_file():
++                source_path = candidate
++            break
++    if source_path is None:
++        return payload
++    document, digest = _document(source_path)
++    identity = _identity(document, source_path)
++    metadata = result['domain_randomization']
++    if any(metadata[key] != document['metadata'][key] for key in STATIC_KEYS):
++        raise ValueError('Candidate metadata differs from its prepared source demo')
++    if REFERENCE_KEY in result:
++        raise ValueError('Candidate contains both inline metadata and a reference')
++    packed = dict(payload)
++    packed_result = dict(result)
++    packed_result['domain_randomization'] = {k: v for k, v in metadata.items() if k not in STATIC_KEYS}
++    packed_result[REFERENCE_KEY] = dict(
++        schema=SCHEMA, source=identity,
++        path=os.path.relpath(source_path, trial_path.parent), sha256=digest,
++    )
++    packed['result'] = packed_result
++    return packed
++
++
++def read_json(path):
++    """Read old inline JSON or hydrate the exact metadata of a bound demo."""
++    path = Path(path).resolve()
++    payload = json.loads(path.read_bytes())
++    result = payload.get('result') if isinstance(payload, dict) else None
++    if not isinstance(result, dict) or REFERENCE_KEY not in result:
++        return payload
++    remaining = result.get('domain_randomization')
++    if not isinstance(remaining, dict) or any(key in remaining for key in STATIC_KEYS):
++        raise ValueError('Trial has conflicting inline static metadata and reference')
++    reference = result[REFERENCE_KEY]
++    if reference.get('schema') != SCHEMA:
++        raise ValueError('Unknown trial metadata reference schema')
++    relative = Path(reference['path'])
++    if relative.is_absolute():
++        raise ValueError('Trial metadata reference must be relative')
++    target = (path.parent / relative).resolve()
++    if target.name != 'prepared_input.json' or not path.is_relative_to(target.parent):
++        raise ValueError('Trial metadata reference is outside its source-demo tree')
++    document, digest = _document(target)
++    if digest != reference['sha256']:
++        raise ValueError('Prepared metadata checksum changed')
++    if _identity(document, target) != reference['source']:
++        raise ValueError('Trial metadata source identity changed')
++    del result[REFERENCE_KEY]
++    result['domain_randomization'] = dict(remaining, **{key: deepcopy(document['metadata'][key]) for key in STATIC_KEYS})
++    return payload
+--- /dev/null
++++ b/tests/test_trial_metadata_reference.py
+@@ -0,0 +1,114 @@
++import copy
++import json
++import shutil
++
++import pytest
++
++from tasktol.data.trial_io import compact_trial, read_json, REFERENCE_KEY, STATIC_KEYS
++
++
++def save(path, value):
++    path.parent.mkdir(parents=True, exist_ok=True)
++    path.write_text(json.dumps(value, indent=2))
++
++
++def fixture(tmp_path, suite='libero_spatial', task=0, demo='demo_0'):
++    folder = tmp_path / suite / f'task_{task:02d}' / demo
++    metadata = dict(robot_xml='<robot/>', assets=['mesh.obj'], asset_sha256={'mesh.obj': 'abc'})
++    source = dict(suite=suite, task_id=task, demo=demo, episode_index=task)
++    prepared = dict(source=source, metadata=metadata)
++    save(folder / 'prepared_input.json', prepared)
++    payload = dict(identity_sha256='identity', point=[0, 30], row={'success': True},
++                   result=dict(domain_randomization=metadata, trajectory_kinematics={'speed': 2},
++                               evaluation={'solver_statuses': ['accepted'], 'clearance': [.1, .2]}))
++    return folder, prepared, payload
++
++
++@pytest.mark.parametrize('segment', ['subtask_00', 'zero_baselines/subtask_00'])
++def test_trial_roundtrip_preserves_all_results_without_inline_metadata(tmp_path, segment):
++    folder, prepared, payload = fixture(tmp_path)
++    path = folder / segment / 'evaluations/digest/trial.json'
++    original = copy.deepcopy(payload)
++    packed = compact_trial(payload, path)
++    assert payload == original
++    assert not any(k in packed['result']['domain_randomization'] for k in STATIC_KEYS)
++    assert packed['result'][REFERENCE_KEY]['source'] == prepared['source']
++    save(path, packed)
++    assert read_json(path) == original
++    assert json.loads(path.read_text()) == packed
++
++
++def test_same_seed_number_in_different_tasks_has_distinct_binding(tmp_path):
++    bindings = []
++    for task in (0, 1):
++        folder, prepared, payload = fixture(tmp_path, task=task)
++        path = folder / 'subtask_00/evaluations/digest/trial.json'
++        bindings.append(compact_trial(payload, path)['result'][REFERENCE_KEY]['source'])
++    assert bindings[0] != bindings[1]
++
++
++def test_changed_source_fails_instead_of_silently_reconstructing(tmp_path):
++    folder, prepared, payload = fixture(tmp_path)
++    path = folder / 'subtask_00/evaluations/digest/trial.json'
++    save(path, compact_trial(payload, path))
++    prepared['metadata']['robot_xml'] = '<changed/>'
++    save(folder / 'prepared_input.json', prepared)
++    with pytest.raises(ValueError, match='checksum'):
++        read_json(path)
++
++
++def test_changed_candidate_metadata_is_never_discarded(tmp_path):
++    folder, prepared, payload = fixture(tmp_path)
++    payload['result']['domain_randomization']['robot_xml'] = '<different/>'
++    with pytest.raises(ValueError, match='differs'):
++        compact_trial(payload, folder / 'subtask_00/evaluations/digest/trial.json')
++
++
++def test_reference_cannot_switch_source_identity(tmp_path):
++    folder, prepared, payload = fixture(tmp_path)
++    path = folder / 'subtask_00/evaluations/digest/trial.json'
++    packed = compact_trial(payload, path)
++    packed['result'][REFERENCE_KEY]['source']['demo'] = 'demo_1'
++    save(path, packed)
++    with pytest.raises(ValueError, match='identity'):
++        read_json(path)
++
++
++def test_reference_is_portable_with_the_source_demo_tree(tmp_path):
++    folder, prepared, payload = fixture(tmp_path / 'original')
++    path = folder / 'subtask_00/evaluations/digest/trial.json'
++    save(path, compact_trial(payload, path))
++    shutil.copytree(tmp_path / 'original', tmp_path / 'moved')
++    assert read_json(tmp_path / 'moved' / path.relative_to(tmp_path / 'original')) == payload
++
++
++def test_non_libero_inline_trials_and_other_json_remain_compatible(tmp_path):
++    path = tmp_path / 'other/trial.json'
++    payload = dict(result=dict(domain_randomization={'seed': 42}))
++    assert compact_trial(payload, path) is payload
++    save(path, payload)
++    assert read_json(path) == payload
++    save(tmp_path / 'other/list.json', [1, 2])
++    assert read_json(tmp_path / 'other/list.json') == [1, 2]
++
++
++def test_reference_cannot_point_outside_demo_tree(tmp_path):
++    folder, prepared, payload = fixture(tmp_path)
++    path = folder / 'subtask_00/evaluations/digest/trial.json'
++    packed = compact_trial(payload, path)
++    other, _, _ = fixture(tmp_path, task=1)
++    import os
++    packed['result'][REFERENCE_KEY]['path'] = os.path.relpath(other / 'prepared_input.json', path.parent)
++    save(path, packed)
++    with pytest.raises(ValueError, match='outside'):
++        read_json(path)
++
++
++def test_candidate_specific_extra_metadata_is_kept_inline(tmp_path):
++    folder, prepared, payload = fixture(tmp_path)
++    payload['result']['domain_randomization'].update(execution_mode='kinematic', task_interaction=False)
++    path = folder / 'subtask_00/evaluations/digest/trial.json'
++    packed = compact_trial(payload, path)
++    assert packed['result']['domain_randomization'] == dict(execution_mode='kinematic', task_interaction=False)
++    save(path, packed)
++    assert read_json(path) == payload

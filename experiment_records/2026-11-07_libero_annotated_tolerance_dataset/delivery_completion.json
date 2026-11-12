@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "checked_at": "2026-11-07T21:14:53.122554+08:00",
+  "episodes": 1851,
+  "success": 1503,
+  "failed": 348,
+  "independent_audit_complete": true,
+  "postpublication_integrity_verified": true,
+  "legacy_deleted": true,
+  "viewer_updated": true,
+  "processes_exited": true,
+  "locks_released": true,
+  "heartbeat_deleted": true,
+  "verification": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-07_libero_annotated_tolerance_dataset/final_delivery_verification.json"
+}

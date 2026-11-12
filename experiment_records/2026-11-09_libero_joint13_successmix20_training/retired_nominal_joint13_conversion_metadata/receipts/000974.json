@@ -1,0 +1,10 @@
+{
+  "episode_index": 974,
+  "frames": 184,
+  "source_sha256": "e356c3d70c6ae2fa3f6753a5fe88942f366ddff6b04621b432dbdcd551c5df6f",
+  "label_sha256": "7a95783f7830dfbe9702b0396aacd61f1423fb16b701766c06b56bb878342c93",
+  "output_path": "data/chunk-000/episode_000974.parquet",
+  "output_sha256": "d0921d61399f3f77c298c4e0f43c6c51c2042e52a516ecf15a382fa866240a2a",
+  "all_original_columns_identical": true,
+  "trajectory_is_tolerance": 0
+}

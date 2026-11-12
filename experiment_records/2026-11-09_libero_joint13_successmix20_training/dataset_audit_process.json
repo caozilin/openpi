@@ -1,0 +1,10 @@
+{
+  "pid": 83257,
+  "command": [
+    "/media/czl/sata/franka_my_code/openpi/.venv/bin/python",
+    "-u",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/audit_successmix20_joint13.py",
+    "--dataset",
+    "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109"
+  ]
+}

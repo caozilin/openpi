@@ -1,0 +1,11 @@
+{
+  "pid": 3906177,
+  "command": [
+    "/home/czl/openpi/.venv/bin/python",
+    "-u",
+    "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/audit_successmix20_joint13_training_server.py",
+    "--run-dir",
+    "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+  ],
+  "audit_script_sha256": "ffeeb6fa4ea99cbc6ff9eba96659671647e95623a25617f6af31c66b482af096"
+}

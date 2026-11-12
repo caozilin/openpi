@@ -1,0 +1,8 @@
+{
+  "config_before_sha256": "73c12416b8ad450d4b78e52431d465be763035e9c63c0efc3777e1ebed3b1435",
+  "files": {
+    "src/openpi/training/config.py": "44c090e3ea45b8253c365162a31622f33de1220564424edcc0ada6fd10b39c6e",
+    "analysis/dual40k_nostate_bs36_20261029/preflight.py": "cfde787462651d8545d9d35e7b0b45bc07f5b0a3595c9e5bdc1bd4e66cddb2fc",
+    "analysis/dual40k_nostate_bs36_20261029/run_group.py": "060dc186186174c57872f283ba3452cc67849f44f33bca828229615d3fb74601"
+  }
+}

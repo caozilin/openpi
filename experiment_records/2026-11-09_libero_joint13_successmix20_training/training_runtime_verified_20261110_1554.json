@@ -1,0 +1,106 @@
+{
+  "training_process": {
+    "pid": 3339995,
+    "command": [
+      "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py",
+      "--run-dir",
+      "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+    ]
+  },
+  "training_runtime_verified": {
+    "complete": true,
+    "at": "2026-11-10T15:53:26.751082+08:00",
+    "parent": 3339995,
+    "trainer": {
+      "pid": 3339998,
+      "ppid": 3339995,
+      "state": "R",
+      "start_ticks": 218852163,
+      "command": "/home/czl/openpi/.venv/bin/python -u /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py --run-dir /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109 --stage train "
+    },
+    "workers": [
+      {
+        "pid": 3340589,
+        "ppid": 3339998,
+        "state": "S",
+        "start_ticks": 218855558,
+        "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=168) --multiprocessing-fork "
+      },
+      {
+        "pid": 3340720,
+        "ppid": 3339998,
+        "state": "S",
+        "start_ticks": 218856787,
+        "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=172) --multiprocessing-fork "
+      },
+      {
+        "pid": 3340821,
+        "ppid": 3339998,
+        "state": "R",
+        "start_ticks": 218857998,
+        "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=176) --multiprocessing-fork "
+      },
+      {
+        "pid": 3340919,
+        "ppid": 3339998,
+        "state": "S",
+        "start_ticks": 218859220,
+        "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=180) --multiprocessing-fork "
+      },
+      {
+        "pid": 3341007,
+        "ppid": 3339998,
+        "state": "S",
+        "start_ticks": 218860447,
+        "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=184) --multiprocessing-fork "
+      },
+      {
+        "pid": 3341115,
+        "ppid": 3339998,
+        "state": "S",
+        "start_ticks": 218861666,
+        "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=188) --multiprocessing-fork "
+      },
+      {
+        "pid": 3341253,
+        "ppid": 3339998,
+        "state": "S",
+        "start_ticks": 218862958,
+        "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=192) --multiprocessing-fork "
+      },
+      {
+        "pid": 3341416,
+        "ppid": 3339998,
+        "state": "S",
+        "start_ticks": 218864214,
+        "command": "/home/czl/openpi/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=162, pipe_handle=196) --multiprocessing-fork "
+      }
+    ],
+    "num_workers": 8,
+    "environment": {
+      "CUDA_VISIBLE_DEVICES": "0,1,2,3,4,6"
+    }
+  },
+  "finish_training_process": {
+    "pid": 3339996,
+    "started_at": "2026-11-09T20:37:36.125714+08:00"
+  },
+  "processes": "    PID    PPID     SID TT       STAT     ELAPSED %CPU COMMAND\n3339995       1 3339995 ?        Ss      19:16:07  0.0 /home/czl/openpi/.venv/bin/python -u /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py --run-dir /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109\n3339996       1 3339996 ?        Ss      19:16:07  0.3 /home/czl/openpi/.venv/bin/python -u /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/finish_successmix20_joint13_training_server.py --run-dir /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109\n3339998 3339995 3339995 ?        Sl      19:16:07  568 /home/czl/openpi/.venv/bin/python -u /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py --run-dir /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109 --stage train\n",
+  "gpus": "0, 23629 MiB, 100 %\n1, 23621 MiB, 100 %\n2, 23621 MiB, 100 %\n3, 23621 MiB, 100 %\n4, 23621 MiB, 100 %\n5, 309 MiB, 0 %\n6, 23636 MiB, 100 %\n",
+  "checkpoint_entries": [
+    "2000",
+    "4000",
+    "6000",
+    "8000",
+    "swanlab_id.txt"
+  ],
+  "checkpoint_metadata_present": {
+    "2000": true,
+    "4000": true,
+    "6000": true,
+    "8000": true,
+    "10000": false
+  },
+  "training_lock_held": true,
+  "observed_at": "2026-11-10T15:53:41.197895+08:00"
+}

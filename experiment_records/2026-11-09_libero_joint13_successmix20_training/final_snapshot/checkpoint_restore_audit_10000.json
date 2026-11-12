@@ -1,0 +1,44 @@
+{
+  "step": 10000,
+  "commit_metadata": {
+    "item_handlers": {
+      "assets": "openpi.training.checkpoints.CallbackHandler",
+      "params": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler",
+      "train_state": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler"
+    },
+    "metrics": {},
+    "performance_metrics": {},
+    "init_timestamp_nsecs": 1794298205006601954,
+    "commit_timestamp_nsecs": 1794298235833471183,
+    "custom_metadata": {}
+  },
+  "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+  "items": {
+    "params": {
+      "array_leaves": 71,
+      "elements": 3403421456,
+      "restored_bytes": 7740757056,
+      "all_finite": true,
+      "values_sha256": "32bdc6bc91f99c0ce46cda90e4d99fe5132a1309d7e9a045814ef0a91f0d65d5"
+    },
+    "train_state": {
+      "array_leaves": 105,
+      "elements": 933914147,
+      "restored_bytes": 3735656588,
+      "all_finite": true,
+      "values_sha256": "b3e3b08a4eeb8da9f948154d251234d89a0faa084651fdd0edb99c1add51bc6c"
+    }
+  },
+  "projection_shapes": {
+    "params/action_in_proj/kernel/value": [
+      32,
+      1024
+    ],
+    "params/action_out_proj/kernel/value": [
+      1024,
+      32
+    ]
+  },
+  "actual_train_state_step": 10000,
+  "complete": true
+}

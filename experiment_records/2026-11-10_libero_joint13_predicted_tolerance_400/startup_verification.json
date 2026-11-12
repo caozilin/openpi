@@ -1,0 +1,222 @@
+{
+  "complete": true,
+  "scope": "startup and first6 audited; full400 still pending",
+  "at": "2026-11-10T16:35:29.464743+08:00",
+  "client_processes": [
+    {
+      "pid": 19496,
+      "ppid": 2688,
+      "state": "S",
+      "start_ticks": 602033,
+      "command": "python3 -u /media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/pipeline.py "
+    },
+    {
+      "pid": 19521,
+      "ppid": 19496,
+      "state": "R",
+      "start_ticks": 602115,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u -m examples.libero.eval_joint13_predicted_libero_local --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 "
+    },
+    {
+      "pid": 19528,
+      "ppid": 19521,
+      "state": "S",
+      "start_ticks": 602136,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_predicted_libero_local.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 0 "
+    },
+    {
+      "pid": 19530,
+      "ppid": 19521,
+      "state": "R",
+      "start_ticks": 602136,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_predicted_libero_local.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 1 "
+    },
+    {
+      "pid": 19531,
+      "ppid": 19521,
+      "state": "S",
+      "start_ticks": 602136,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_predicted_libero_local.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 2 "
+    },
+    {
+      "pid": 19532,
+      "ppid": 19521,
+      "state": "S",
+      "start_ticks": 602136,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_predicted_libero_local.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 3 "
+    },
+    {
+      "pid": 19533,
+      "ppid": 19521,
+      "state": "S",
+      "start_ticks": 602136,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_predicted_libero_local.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 4 "
+    },
+    {
+      "pid": 19534,
+      "ppid": 19521,
+      "state": "S",
+      "start_ticks": 602136,
+      "command": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/bin/python -u /media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_predicted_libero_local.py --run-dir /media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110 --worker 5 "
+    }
+  ],
+  "server_identity_verified": true,
+  "checkpoint_step": 10000,
+  "only_this_checkpoint_evaluated": true,
+  "replicas": [
+    {
+      "eval_identity": "libero_joint13_successmix20_step10000_predtol_seed0to9_20261110",
+      "checkpoint": "/mnt/SharedData/czl/checkpoints/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109/10000",
+      "gpu": 0,
+      "replica": 0,
+      "action_units": "xyz metres/world rotvec radians/native gripper",
+      "state_enabled": false,
+      "model_action_horizon": 10,
+      "replan_steps": 5,
+      "noise_seed_protocol": "_libero_eval_noise_seed.v1",
+      "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+      "params_values_sha256": "32bdc6bc91f99c0ce46cda90e4d99fe5132a1309d7e9a045814ef0a91f0d65d5",
+      "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+      "effective_output_dimensions": 13,
+      "tolerance_order": [
+        "rx-",
+        "rx+",
+        "ry-",
+        "ry+",
+        "rz-",
+        "rz+"
+      ],
+      "tolerance_units": "radians"
+    },
+    {
+      "eval_identity": "libero_joint13_successmix20_step10000_predtol_seed0to9_20261110",
+      "checkpoint": "/mnt/SharedData/czl/checkpoints/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109/10000",
+      "gpu": 1,
+      "replica": 1,
+      "action_units": "xyz metres/world rotvec radians/native gripper",
+      "state_enabled": false,
+      "model_action_horizon": 10,
+      "replan_steps": 5,
+      "noise_seed_protocol": "_libero_eval_noise_seed.v1",
+      "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+      "params_values_sha256": "32bdc6bc91f99c0ce46cda90e4d99fe5132a1309d7e9a045814ef0a91f0d65d5",
+      "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+      "effective_output_dimensions": 13,
+      "tolerance_order": [
+        "rx-",
+        "rx+",
+        "ry-",
+        "ry+",
+        "rz-",
+        "rz+"
+      ],
+      "tolerance_units": "radians"
+    },
+    {
+      "eval_identity": "libero_joint13_successmix20_step10000_predtol_seed0to9_20261110",
+      "checkpoint": "/mnt/SharedData/czl/checkpoints/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109/10000",
+      "gpu": 2,
+      "replica": 2,
+      "action_units": "xyz metres/world rotvec radians/native gripper",
+      "state_enabled": false,
+      "model_action_horizon": 10,
+      "replan_steps": 5,
+      "noise_seed_protocol": "_libero_eval_noise_seed.v1",
+      "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+      "params_values_sha256": "32bdc6bc91f99c0ce46cda90e4d99fe5132a1309d7e9a045814ef0a91f0d65d5",
+      "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+      "effective_output_dimensions": 13,
+      "tolerance_order": [
+        "rx-",
+        "rx+",
+        "ry-",
+        "ry+",
+        "rz-",
+        "rz+"
+      ],
+      "tolerance_units": "radians"
+    },
+    {
+      "eval_identity": "libero_joint13_successmix20_step10000_predtol_seed0to9_20261110",
+      "checkpoint": "/mnt/SharedData/czl/checkpoints/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109/10000",
+      "gpu": 3,
+      "replica": 3,
+      "action_units": "xyz metres/world rotvec radians/native gripper",
+      "state_enabled": false,
+      "model_action_horizon": 10,
+      "replan_steps": 5,
+      "noise_seed_protocol": "_libero_eval_noise_seed.v1",
+      "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+      "params_values_sha256": "32bdc6bc91f99c0ce46cda90e4d99fe5132a1309d7e9a045814ef0a91f0d65d5",
+      "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+      "effective_output_dimensions": 13,
+      "tolerance_order": [
+        "rx-",
+        "rx+",
+        "ry-",
+        "ry+",
+        "rz-",
+        "rz+"
+      ],
+      "tolerance_units": "radians"
+    },
+    {
+      "eval_identity": "libero_joint13_successmix20_step10000_predtol_seed0to9_20261110",
+      "checkpoint": "/mnt/SharedData/czl/checkpoints/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109/10000",
+      "gpu": 4,
+      "replica": 4,
+      "action_units": "xyz metres/world rotvec radians/native gripper",
+      "state_enabled": false,
+      "model_action_horizon": 10,
+      "replan_steps": 5,
+      "noise_seed_protocol": "_libero_eval_noise_seed.v1",
+      "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+      "params_values_sha256": "32bdc6bc91f99c0ce46cda90e4d99fe5132a1309d7e9a045814ef0a91f0d65d5",
+      "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+      "effective_output_dimensions": 13,
+      "tolerance_order": [
+        "rx-",
+        "rx+",
+        "ry-",
+        "ry+",
+        "rz-",
+        "rz+"
+      ],
+      "tolerance_units": "radians"
+    },
+    {
+      "eval_identity": "libero_joint13_successmix20_step10000_predtol_seed0to9_20261110",
+      "checkpoint": "/mnt/SharedData/czl/checkpoints/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109/10000",
+      "gpu": 6,
+      "replica": 5,
+      "action_units": "xyz metres/world rotvec radians/native gripper",
+      "state_enabled": false,
+      "model_action_horizon": 10,
+      "replan_steps": 5,
+      "noise_seed_protocol": "_libero_eval_noise_seed.v1",
+      "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+      "params_values_sha256": "32bdc6bc91f99c0ce46cda90e4d99fe5132a1309d7e9a045814ef0a91f0d65d5",
+      "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+      "effective_output_dimensions": 13,
+      "tolerance_order": [
+        "rx-",
+        "rx+",
+        "ry-",
+        "ry+",
+        "rz-",
+        "rz+"
+      ],
+      "tolerance_units": "radians"
+    }
+  ],
+  "committed_results": 11,
+  "infrastructure_error_files": [],
+  "unit_tests": {
+    "passed": 29,
+    "scope": "prediction pairing, physical units, signed clipping, phase guard, hold20, success continuation"
+  },
+  "source_manifest_file_count": 479,
+  "first6_audit_complete": true,
+  "physical_protocol_unchanged": true,
+  "read_only_audit_amendment": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/audit_implementation_amendment.json"
+}

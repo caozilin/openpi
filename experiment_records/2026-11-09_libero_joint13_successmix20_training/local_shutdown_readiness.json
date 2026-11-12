@@ -1,0 +1,58 @@
+{
+  "processes": [
+    {
+      "pid": 3339995,
+      "ppid": 1,
+      "session": 3339995,
+      "process_group": 3339995,
+      "terminal": 0,
+      "state": "S",
+      "start_ticks": 218852143,
+      "stdout": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/pipeline.log",
+      "stderr": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/pipeline.log",
+      "proxy_endpoints": []
+    },
+    {
+      "pid": 3339998,
+      "ppid": 3339995,
+      "session": 3339995,
+      "process_group": 3339995,
+      "terminal": 0,
+      "state": "S",
+      "start_ticks": 218852163,
+      "stdout": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train.log",
+      "stderr": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train.log",
+      "proxy_endpoints": []
+    },
+    {
+      "pid": 3339996,
+      "ppid": 1,
+      "session": 3339996,
+      "process_group": 3339996,
+      "terminal": 0,
+      "state": "S",
+      "start_ticks": 218852144,
+      "stdout": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/finish_training.log",
+      "stderr": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/finish_training.log",
+      "proxy_endpoints": []
+    }
+  ],
+  "mount": "SOURCE    FSTYPE TARGET\n/dev/sdc1 ext4   /mnt/SharedData\n",
+  "upload_complete": true,
+  "training_state": {
+    "stage": "training",
+    "pid": 3339995,
+    "updated_at": "2026-11-09T20:37:36.251828+08:00",
+    "expected_steps": 10000,
+    "global_batch": 72,
+    "per_gpu_batch": 12
+  },
+  "finish_state": {
+    "stage": "waiting",
+    "training_stage": "training",
+    "at": "2026-11-09T21:06:42.650599+08:00"
+  },
+  "observed_at": "2026-11-09T21:06:43.045339+08:00",
+  "complete": true,
+  "scope": "Server training/checkpoint/cloud logging/final audit are independent of local workstation shutdown; local Codex monitoring pauses when local host is off"
+}

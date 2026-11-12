@@ -1,0 +1,24 @@
+{
+  "scope": "pure offline kinematics; self and table geometry; no physics or policy inference",
+  "planned_episodes": 2,
+  "control_hz": 20,
+  "workers": 2,
+  "sources": [
+    {
+      "episode_index": 0,
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "demo": "demo_0",
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0",
+      "frames": 97
+    },
+    {
+      "episode_index": 1689,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_0",
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_10/06/demo_0",
+      "frames": 202
+    }
+  ]
+}

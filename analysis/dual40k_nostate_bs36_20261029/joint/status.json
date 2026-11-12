@@ -1,0 +1,22 @@
+{
+  "state": "training",
+  "group": "joint",
+  "launch_unix": 1793284025.6212606,
+  "started_shanghai": "2026-10-29T22:27:05.621295+08:00",
+  "first_completed_step_unix": 1793284220.0042346,
+  "last_logged_step": 40,
+  "checkpoint_dir": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_joint32_nostate_4xloss_3gpu_bs36_40k/TaskTol_mix20_joint13_4xActionLoss_NoState_LoRA_3gpu_bs36_40k_20261029",
+  "supervisor_pid": 3585479,
+  "pid": 3585519,
+  "last_metrics": {
+    "grad_norm": 2.963,
+    "loss": 0.9553,
+    "loss/action": 0.2992,
+    "loss/rotation_tolerance": 0.8781,
+    "loss/total": 0.9553,
+    "loss_weighted/action": 0.5162,
+    "loss_weighted/rotation_tolerance": 0.4391,
+    "param_norm": 1803.7705
+  },
+  "last_metric_unix": 1793284365.2394753
+}

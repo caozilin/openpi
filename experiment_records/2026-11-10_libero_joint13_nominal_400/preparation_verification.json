@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "request_sha256": "ccb34c973fca0edc6ac08e1f323e195702bc9a8ec763f38eee37ee75f23c1575",
+  "frozen_sources": 490,
+  "paired_protocol_fields_equal": [
+    "checkpoint_step",
+    "selected_episodes",
+    "worker_assignments",
+    "max_steps",
+    "max_consecutive_solver_failures",
+    "post_success_steps",
+    "success_criterion",
+    "training_request_sha256",
+    "norm_stats_sha256"
+  ],
+  "runtime_all_files_same_sha": true,
+  "bounds_none_selects_canonical_strict_branch": true,
+  "prior400_audit_complete": true,
+  "tests": {
+    "nominal_adapter_transport": 11,
+    "hold_and_continuation": 22,
+    "total": 33
+  },
+  "local_free_gib": 136.6073226928711,
+  "output_budget_gib": 1.5,
+  "remote_scope": "six inference replicas only; no model or dataset copy"
+}

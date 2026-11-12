@@ -1,0 +1,20 @@
+{
+  "complete": true,
+  "scope": "Implementation only; no new benchmark rollout or inference server started",
+  "default_post_success_seconds": 1.0,
+  "extra_control_frames": 20,
+  "control_hz": 20,
+  "success_criterion": "first_native_success",
+  "final_native_success_recorded_separately": true,
+  "solver_failure_stop_retained": true,
+  "tests_passed": 40,
+  "verification": "pytest success continuation / solver hold / nominal request selection / benchmark HTTP suite; Python compile and live.js syntax check",
+  "source_sha256": {
+    "examples/libero/success_continuation.py": "05af0dbbfa18a62b17ad98f36a3bb0c1b27a1d444371acc6795bce576327c4eb",
+    "examples/libero/eval_reconstructed_libero_local.py": "61ea2289c4e2768fd0cf7143cb52855d70c43af47077dcdef979768f8994e558",
+    "examples/libero/eval_confirmed_mask_libero_local.py": "1a953a45fdfca9dc1158dc94e140ce37359e10403a412cfbd2963453b69158b6",
+    "examples/libero/audit_formal_nominal.py": "407768559bf6f57147a3f4b25428199054dee4ff24d8aa8dc8d38f4dd146b3f1",
+    "examples/libero/audit_confirmed_mask_evaluation.py": "3e66b8a52308e564c0a6f9314a61c30451df588d4e12debef899039aab863171"
+  },
+  "checked_at": "2026-11-04T21:48:01.088983+08:00"
+}

@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "frames": 421102,
+  "dataset_cache_seconds": 92.24545371113345,
+  "sample_checks": [
+    {
+      "index": 0,
+      "tokens": 42
+    },
+    {
+      "index": 105275,
+      "tokens": 44
+    },
+    {
+      "index": 210551,
+      "tokens": 41
+    },
+    {
+      "index": 421101,
+      "tokens": 38
+    }
+  ],
+  "norm_sha256": "e1e3c4e7630f6ee524d99ae99cb0dfe8f61306d83c3feebbfa564edc0c5b7a07",
+  "cache_dir": "/mnt/SharedData/czl/hf_datasets/caozilin/franka_100_nominal",
+  "dataset_root": "/mnt/SharedData/czl/lerobot/caozilin/franka_100_nominal",
+  "norm_path": "/mnt/SharedData/czl/assets/pi05_franka_mujoco_state_action7/caozilin/franka_100_nominal/norm_stats.json"
+}

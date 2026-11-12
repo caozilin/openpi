@@ -1,0 +1,54 @@
+{
+  "complete": true,
+  "checks": [
+    {
+      "source": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_03/demo_25/subtask_00/evaluations/df569415b7b8c64bf48c8deec5e98f1563dfd80eb8e4928f536a5565dbd548eb/trial.json",
+      "sha256": "763303d6e2bdb43df5d85ebe2cc29e003092513f289373b138e73d7eb69a3101",
+      "old_read_equal": true,
+      "new_roundtrip_equal": true,
+      "static_keys_omitted": true
+    },
+    {
+      "source": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_03/demo_25/subtask_00/evaluations/7d22974be17d1b11265adbc402176b698f64feffb54aedc3410ab3a21972fda9/trial.json",
+      "sha256": "a551b4a6f3058516b053982807bb7050f3830fd5f6ad96163ddf8ca51b813e1a",
+      "old_read_equal": true,
+      "new_roundtrip_equal": true,
+      "static_keys_omitted": true
+    },
+    {
+      "source": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_03/demo_25/subtask_00/evaluations/62e9b5ed6b3dd136e11fa909aa70f7069c119da3276579a7bbdbbf9155ac9a8f/trial.json",
+      "sha256": "97a3aeb82be948fa49550c00d7595619700cfd2e708a1740f7453154495caa91",
+      "old_read_equal": true,
+      "new_roundtrip_equal": true,
+      "static_keys_omitted": true
+    },
+    {
+      "source": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_03/demo_25/zero_baselines/subtask_00/evaluations/77b034923b4901221fa6e431d30bdb78a091bd8e430528176c5b8ee1b88e5a6e/trial.json",
+      "sha256": "02c0662e0a9b9a8dac4f56cd0fc19eb5601dc0729b18f740f3a644689a5a9ed0",
+      "old_read_equal": true,
+      "new_roundtrip_equal": true,
+      "static_keys_omitted": true
+    },
+    {
+      "source": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_03/demo_16/zero_baselines/subtask_00/evaluations/77b034923b4901221fa6e431d30bdb78a091bd8e430528176c5b8ee1b88e5a6e/trial.json",
+      "sha256": "e9a48ed5214bc9fe12d120df2b1004b82c34a16ac90234a5b326ccb91014b576",
+      "old_read_equal": true,
+      "new_roundtrip_equal": true,
+      "static_keys_omitted": true
+    },
+    {
+      "source": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_03/demo_34/zero_baselines/subtask_00/evaluations/77b034923b4901221fa6e431d30bdb78a091bd8e430528176c5b8ee1b88e5a6e/trial.json",
+      "sha256": "c036551620473a78e3837a42ff23b7d4ae45a90d6cb6758d9ed9189fc6f14371",
+      "old_read_equal": true,
+      "new_roundtrip_equal": true,
+      "static_keys_omitted": true
+    }
+  ],
+  "new_trial_files_only_in_temporary_directory": true,
+  "existing_trials_unchanged": true,
+  "production_reader_integration": true,
+  "pytest_tests_passed": 89,
+  "pytest_seconds": 2.61,
+  "compileall_exit_code": 0,
+  "checked_at": "2026-11-07T18:16:38.218249+08:00"
+}

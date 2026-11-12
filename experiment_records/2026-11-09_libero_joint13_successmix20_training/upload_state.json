@@ -1,0 +1,8 @@
+{
+  "stage": "complete",
+  "method": "exact_compact_transport",
+  "files": 1890,
+  "bytes": 38388719043,
+  "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+  "training_pending": true
+}

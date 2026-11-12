@@ -1,0 +1,232 @@
+{
+  "old_run_name": "franka_mujoco_v2_joint19_lora",
+  "old_run_id": "ucflosn1",
+  "old_actual_last_step": 30100,
+  "current_run_name": "Pi05_nominal100_state_action7_LoRA_7gpu_bs84_15k_lr5e-5_20261028",
+  "current_actual_last_record": {
+    "step": 15000,
+    "grad_norm": 0.1401,
+    "loss": 0.0095,
+    "loss/action": 0.0095,
+    "loss/total": 0.0095,
+    "loss_weighted/action": 0.0095,
+    "param_norm": 1805.2928
+  },
+  "changed_shared_fields": {
+    "assets_base_dir": {
+      "joint19": "/root/gpufree-share/openpi-assets",
+      "state_action7": "./assets"
+    },
+    "batch_size": {
+      "joint19": 24,
+      "state_action7": 84
+    },
+    "checkpoint_base_dir": {
+      "joint19": "/root/gpufree-share/checkpoints",
+      "state_action7": "/mnt/SharedData/czl/checkpoints"
+    },
+    "data.assets.assets_dir": {
+      "joint19": null,
+      "state_action7": "/mnt/SharedData/czl/assets/pi05_franka_mujoco_state_action7"
+    },
+    "data.hf_datasets_cache_dir": {
+      "joint19": null,
+      "state_action7": "/mnt/SharedData/czl/hf_datasets/caozilin/franka_100_nominal"
+    },
+    "data.joint_task_tolerance": {
+      "joint19": true,
+      "state_action7": false
+    },
+    "data.lerobot_dataset_root": {
+      "joint19": null,
+      "state_action7": "/mnt/SharedData/czl/lerobot/caozilin/franka_100_nominal"
+    },
+    "data.repo_id": {
+      "joint19": "caozilin/franka_mujoco",
+      "state_action7": "caozilin/franka_100_nominal"
+    },
+    "exp_name": {
+      "joint19": "franka_mujoco_v2_joint19_lora",
+      "state_action7": "Pi05_nominal100_state_action7_LoRA_7gpu_bs84_15k_lr5e-5_20261028"
+    },
+    "keep_period": {
+      "joint19": 5000,
+      "state_action7": 1500
+    },
+    "log_interval": {
+      "joint19": 100,
+      "state_action7": 10
+    },
+    "lr_schedule.decay_steps": {
+      "joint19": 30000,
+      "state_action7": 15000
+    },
+    "model.action_loss_groups": {
+      "joint19": [
+        [
+          "action",
+          0,
+          7,
+          1
+        ],
+        [
+          "stage_target_pose",
+          7,
+          13,
+          0.5
+        ],
+        [
+          "rotation_tolerance",
+          13,
+          19,
+          0.5
+        ]
+      ],
+      "state_action7": [
+        [
+          "action",
+          0,
+          7,
+          1.0
+        ]
+      ]
+    },
+    "model.discrete_state_input": {
+      "joint19": false,
+      "state_action7": true
+    },
+    "model.max_token_len": {
+      "joint19": 48,
+      "state_action7": 200
+    },
+    "name": {
+      "joint19": "pi05_franka_mujoco_joint19",
+      "state_action7": "pi05_franka_mujoco_state_action7_lora"
+    },
+    "num_train_steps": {
+      "joint19": 50000,
+      "state_action7": 15000
+    },
+    "num_workers": {
+      "joint19": 2,
+      "state_action7": 8
+    },
+    "project_name": {
+      "joint19": "openpi",
+      "state_action7": "openpi-tasktol"
+    },
+    "resume": {
+      "joint19": true,
+      "state_action7": false
+    },
+    "save_interval": {
+      "joint19": 1000,
+      "state_action7": 1500
+    }
+  },
+  "unchanged_shared_fields": {
+    "data.assets.asset_id": null,
+    "data.base_config.action_sequence_keys": [
+      "actions"
+    ],
+    "data.base_config.action_space": null,
+    "data.base_config.asset_id": null,
+    "data.base_config.data_transforms.inputs": [],
+    "data.base_config.data_transforms.outputs": [],
+    "data.base_config.datasets": [],
+    "data.base_config.hf_datasets_cache_dir": null,
+    "data.base_config.lerobot_arrow_cache_dir": null,
+    "data.base_config.lerobot_dataset_root": null,
+    "data.base_config.model_transforms.inputs": [],
+    "data.base_config.model_transforms.outputs": [],
+    "data.base_config.norm_stats": null,
+    "data.base_config.prompt_from_task": true,
+    "data.base_config.repack_transforms.inputs": [],
+    "data.base_config.repack_transforms.outputs": [],
+    "data.base_config.repo_id": null,
+    "data.base_config.rlds_data_dir": null,
+    "data.base_config.use_quantile_norm": false,
+    "data.lerobot_arrow_cache_dir": null,
+    "ema_decay": null,
+    "freeze_filter": "All(PathRegex(pattern=re.compile('.*llm.*'), sep='/'), Not(PathRegex(pattern=re.compile('.*lora.*'), sep='/')))",
+    "fsdp_devices": 1,
+    "lr_schedule.decay_lr": 5e-06,
+    "lr_schedule.peak_lr": 5e-05,
+    "lr_schedule.warmup_steps": 1000,
+    "model.action_dim": 32,
+    "model.action_expert_variant": "gemma_300m_lora",
+    "model.action_horizon": 16,
+    "model.dtype": "bfloat16",
+    "model.paligemma_variant": "gemma_2b_lora",
+    "model.pi05": true,
+    "optimizer.b1": 0.9,
+    "optimizer.b2": 0.95,
+    "optimizer.clip_gradient_norm": 1,
+    "optimizer.eps": 1e-08,
+    "optimizer.weight_decay": 1e-10,
+    "overwrite": false,
+    "policy_metadata": null,
+    "pytorch_training_precision": "bfloat16",
+    "pytorch_weight_path": null,
+    "seed": 42,
+    "weight_loader.params_path": "gs://openpi-assets/checkpoints/pi05_base/params"
+  },
+  "old_only_fields": {
+    "data.sequence_keys": [
+      "actions",
+      "stage_target_pose",
+      "rotation_tolerance"
+    ],
+    "wandb_enabled": true
+  },
+  "current_only_fields": {
+    "checkpoint_dir_actual": "/mnt/SharedData/czl/checkpoints/pi05_franka_mujoco_state_action7_lora/Pi05_nominal100_state_action7_LoRA_7gpu_bs84_15k_lr5e-5_20261028",
+    "data.base_config.source_schema": null,
+    "data.tolerance_trajectory_action_loss_weight": 1.0,
+    "swanlab_enabled": true,
+    "swanlab_log_dir": "/mnt/SharedData/czl/swanlog",
+    "swanlab_mode": "online",
+    "swanlab_workspace": null,
+    "validation2_hf_datasets_cache_dir": null,
+    "validation2_lerobot_arrow_cache_dir": null,
+    "validation2_lerobot_dataset_root": null,
+    "validation2_name": "val2",
+    "validation2_repo_id": null,
+    "validation_batch_size_factor": 2.5,
+    "validation_hf_datasets_cache_dir": null,
+    "validation_lerobot_arrow_cache_dir": null,
+    "validation_lerobot_dataset_root": null,
+    "validation_name": "val1",
+    "validation_num_batches": 16,
+    "validation_repo_id": null
+  },
+  "loss_windows": {
+    "old_14500_15000": {
+      "points": 6,
+      "loss/action": 0.021274132654070854,
+      "loss/stage_target_pose": 0.010732912458479404,
+      "loss/rotation_tolerance": 0.022619560671349365,
+      "loss": 0.03795036859810352
+    },
+    "old_29600_30100": {
+      "points": 6,
+      "loss/action": 0.01114195492118597,
+      "loss/stage_target_pose": 0.006638062264149387,
+      "loss/rotation_tolerance": 0.012787747972955307,
+      "loss": 0.020854860544204712
+    },
+    "current_14500_15000": {
+      "points": 51,
+      "loss/action": 0.009054901960784314
+    }
+  },
+  "training_samples_at_30k_old": 720000,
+  "training_samples_actual_old": 722400,
+  "training_samples_current": 1260000,
+  "evidence_limits": [
+    "Old exact dataset snapshot, norm statistics and code SHA are unavailable.",
+    "Old resume=True; restoration checkpoint source is not established by metadata.",
+    "Training losses use different data, targets and norm statistics; not common-set evaluation.",
+    "Current comparison means the completed 7GPU batch84 15k run; bs24 short runs are separate."
+  ]
+}

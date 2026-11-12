@@ -1,0 +1,20 @@
+{
+  "complete": true,
+  "verified_at": "2026-11-10T20:53:59.728312+08:00",
+  "rows": 1,
+  "columns": 4,
+  "order": [
+    "nominal_main",
+    "tolerance_main",
+    "nominal_wrist",
+    "tolerance_wrist"
+  ],
+  "max_height": "min(48dvh,420px)",
+  "aspect_ratio": "4/1",
+  "object_fit": "contain",
+  "published_assets_match": true,
+  "js_syntax_passed": true,
+  "no_service_started": true,
+  "browser_render_check": false,
+  "css_sha256": "dac31cb6fe8031036f45aec5a7ef5bb15f32d50085eb3c09b282c071147ff42d"
+}

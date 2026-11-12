@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "episodes": 1875,
+  "frames": 312374,
+  "tasks": 40,
+  "fps": 20,
+  "files": 1890,
+  "all_uploaded_sha256_equal": true,
+  "all_nominal_actions_unchanged": true,
+  "all_unselected_nominal_columns_equal": true,
+  "portable_lerobot_reader_passed": true,
+  "nominal_episodes": 1574,
+  "tolerance_episodes": 301,
+  "all_trajectory_flags_verified": true,
+  "missing_labels": 0,
+  "reader_episodes": [
+    0,
+    465,
+    958,
+    1416
+  ],
+  "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+  "local_independent_audit_sha256": "b896b31444b2990224680033ddd4926baf25b7c0d194f3f105382c32b9c3c194"
+}

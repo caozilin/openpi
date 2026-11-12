@@ -1,0 +1,1728 @@
+{
+  "schema_version": "libero.dsp.1",
+  "label_policy": "speed_best_feasible_search_caps_v1",
+  "units": "rad",
+  "order": [
+    "rx_negative",
+    "rx_positive",
+    "ry_negative",
+    "ry_positive",
+    "rz_negative",
+    "rz_positive"
+  ],
+  "control_hz": 20,
+  "source": {
+    "episode_index": 0,
+    "suite": "libero_spatial",
+    "task_id": 0,
+    "demo": "demo_0",
+    "frames": 97,
+    "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0",
+    "recording_sha256": "ee6a2f3c430fa43ca158506365fefda29c197ffb925b0c22a08bbf6c012d9cce"
+  },
+  "provenance": {
+    "adapter": "libero_robot_table_dsp_v1",
+    "input_sha256": {
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0/trajectory.json": "7a140db50afd27fc4984b8d2af72c8a8ccc10f597a35de7fe0e2dbb42d71777d",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0/states.npz": "1a964d6e6d9d87971e49d7223e1788639d6f366356245b3ab0357d5210a3cd90",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0/report.json": "259caaef54baa30dce554b43b65a3507a18ab2c58047cc55ad010161fa47856f",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0/state_reference.hdf5": "271a1c8738860417864a256921bca9d53bc46a25d77907dc5f54072722bbfde3",
+      "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0/recording.hdf5": "ee6a2f3c430fa43ca158506365fefda29c197ffb925b0c22a08bbf6c012d9cce",
+      "source_xml_sha256": "1442a29d61f2ab2ea6045406d44544ba5899223bb81902a3fa01a28e7edb8846"
+    },
+    "source_code_sha256": {
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/__init__.py": "c7df9f18109ae9637c08f180b7f4cf3eca039f93466a8a469abfa0bc08ce11c5",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/analysis/__init__.py": "462adb6fa598df721fa540e393b5a890c7e6fda59d70e931d599cc618e8bd1e3",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/analysis/sqp_weight_search.py": "f7d465c709eb8cd730137635403abfd6bc803dfb63bb5bad8a087f92ade00ee1",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/__init__.py": "1773ba42fde832da69d3b61fd4cec62720a5f72bacb9e35c7c579c9f0af599b5",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/catalog.py": "7809a756d0d93a405f7638f3cd40664bcbdb3d1148b07527c66d75d7c9b54847",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/environment.py": "7f554944e50584fbaf27b6d2d21a076b0fcfe1f945b3d10c7d8335aa328ad1c5",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/libero.py": "c5bb6b383e3a9f5ace87274b5f81fb26dff62bfb94e2c4b174abab7770585346",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/libero_reference_actions.py": "b831c1b745ac799af19b7861c37753ca9b814ab118be1fbfa90ddf53da27e9df",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/libero_replay_state.py": "e0bf675931eaef382b5914e75daab779a3baf3a45059db266b9bc61632558606",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/metrics.py": "4fe01fcf4d85da0440e23282b422abb83e4755bab9f99b6fd5693bca4d2d081c",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/offline_observation_runner.py": "904cf8341fb7ccd780dc0b4df07d7a9928f3a8e0e86115a8aa9f099d90177d0c",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/openpi_parallel.py": "712db9850498f2fe47abe395dc5de667fa9796cf979a7f4d3802d81e4ab6c083",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/openpi_runner.py": "ff3fe85d9d8a56e54ed0f61ddb86002145cef322f531e966d1a04887e56e6065",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/openpi_services.py": "39cda76c9785085c134478adb762a6f1e3ea19d146aea4e0194cf81cb6f2206b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/preset_handoff_runner.py": "4a226e8f9ac2479d101e7b7de3c7fd3e2442f888d7ccaeeb2babcd0f06b09ab2",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/runner.py": "78564089110b67b7ed0e6989505c7e27a8bb2bcf050fcc0b2d29bb2274ca1929",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/wrist_frame_matching.py": "7fabc8b5eb31f2455f3f8aacfb53ebbe61af1e6fd2c575dce1fc7bef043c28bc",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/wrist_match_analysis.py": "77d8c4287d5fe452793a7ec2e9b8c4eb0a494e6379b9c35a77e4c0b17d838a86",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/wrist_match_viewer.py": "b5457390ec9e8d1f48116d3ee598dbc93436e29e5eaae9851c0ac1f8b9e4263a",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/config.py": "9d65510b096248f8be43a8aeb39f606364becc5c2acd1ce8eb3bc4fe35df58f5",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/__init__.py": "4126cca3aaeace7cdd40ad52ee6c4f94b898291fcbf155469cb5381304a8f2cb",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/block_sqp/__init__.py": "8d4e4964ee5a4903a618fa6a978ea6e09caca8b4bba695066b53d8b1458290bf",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/block_sqp/controller.py": "4cddea3c6aeb7a03906b4aab7577b385aa3779588ac877d2fabd8ab03adb6aa5",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/block_sqp/objective.py": "d79ef7d02257c0f6d9f3aca62a745ca360a09ec45cc537166f646d6916d2851b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/block_sqp/types.py": "5e4bf1b9f976796681c11e45edd38e1be8c9dac1d69dfb846e4919744fcc30dc",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/impedance.py": "7888391f1effa34e2036ab3dd89e07bac50f640bb3582176a0aa8f6db6dfcd4b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/__init__.py": "8e6135d6f8b3651f5c74de325755f6c7c25f43e7ee5571dfe536af9f79dee7b8",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/adapter.py": "ad863a00f077f69a127b85e339b10d111e8edacf53256e4d858743643bb5fc68",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/controller.py": "5b600438acd164c9fc7c399429d01b621108c6c81dd25f33d7e52804c3c86a25",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/validation.py": "74ea18391c23558c47b9385a1481fc1f577593cbb58982d7ff64df4781da1f4a",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/joint_tracker.py": "0fb63a7e1a3a85dac54a8ea0b645d1b711106552fa5dbd77f2c3cec6b315d1a7",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/pose.py": "a07bbe0e31b32ace4899f7346264d984f72abda71813137227d27a9bb5bb355c",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/__init__.py": "21baa455e0bd9c1b903ed2f38ca0b93d120963d9548278f297d54c742da75918",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/conditioning.py": "e308cbfc7d47a85a998c593c287dfa02b6881b1f42a444a4dc77d57cee25bfb3",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/kinematics.py": "e831fe05f99a221457d6979239843666eab48a6803e8d15d6910a885ae3b570d",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/losses.py": "f443815afdc8cda85c723a50fce006c2e877bdc195c52a8942d37556512381cd",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/objective.py": "375232d679ef02d5a96103878a60df21f417e2350840088184d3614e3dda8859",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/singularity.py": "522a50e21b5bcc1be8594134770fc55eeccf96357f7b2241ff87f8545030a87b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/types.py": "9f9cf7235459a7cebf9eef4b59834530bda3ae288761c263677520b5d11b3fbb",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/__init__.py": "c1dba202c841ee563e12fd8daef3d784b538b57603c86a52ad849c4b63b08e50",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/intervention.py": "ba940bd002c6c0d3d2ceb5fd7f68ecc46fb2c3bba76a4a6ad96d15549ea10961",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/kinematic.py": "6ac2ce05484572d93df9eaab9ca0ee4a972d446cbdd1480306406f7ec5c7cd29",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/replay_cases.py": "0f7db2f81fb1e060f035f53e86fec7f4fad42d4e56cebc377d9271cd4025cbb4",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/runner.py": "7d0ef40d5c58155a519ce460b52d27292d95522688fa455df6dd3982607204dc",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/stored.py": "83d1254ebedb7a8e47099584453a46648ffb48ed413e80faa18f3da6426b2198",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/video.py": "1d764b3af32e4a7e3cee9ba2e666828d0a628ba91fd4593f386e73260328347e",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/__init__.py": "e851368957b77283337b29024a12cfda00fec6264fbf29e2d437df518680a6b8",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/annotation_io.py": "29a64096b7a2c7908b088f917b51ebbb5d242574765ebe98c9151505033a4033",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/collector.py": "d25ddb338fabd5d5a7170f76ad466eb6f481dde5857a8ac33ed48e31eb9e84bd",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/frame_filter.py": "429d4565f385d99196cf4ce7077f827654280b27ee444af11c24c05bac0f8898",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/instructions.py": "27534c7beb24e0d69753ca3b51ef01603be3f6271248546481c6b57887c63ebb",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/__init__.py": "30e9892a772592652a635df328092266a931be607e22c156f3cb2d4781a38bad",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/dsp.py": "434de6a2877325ceb08d0601a9d9940a4d31f8ce02f03249baf2ed606041f116",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/recorded_geometry.py": "6838d57427572c3596730569ddbac213a04c22362dbf41b46f15748a7657d3fb",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/scene.py": "10287853118580a4a1cb318217696419a9c3d498059a1594f6cd4de9859ffb91",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/segmentation.py": "03a61f4ecbcf786be15fa634043498df9787458031daeaa9835835fee81fb0f1",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/source.py": "8fdd14d163cd293e468a921b18a1abff5582d0781d61aa66a78a5c4efc64f41b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/workflow.py": "69da1b5c535d59bdc40d5e82adf9466ca082ece13b7a453841a862fcc93f9f35",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/seeding.py": "900d71a273f02bd6ab22ca831999feca23a3d1d07b8f7e4328b19f38401242a8",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/task_sets.py": "f3669985b0276f11a41bfc9fe6a8458e28ac0dd3b053af49a4c97d4268d79e0e",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/tolerance_labels.py": "a01cc565cd06cf9a6c30be3d4df841dea08da077dd38d3fa27306ea47a18820f",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/viewer/__init__.py": "da868ccfbbe9833de3ccccb81d1792e701da1dee50581c995a099a3982b714e0",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/viewer/server.py": "fc0b0cfd6c807fad06bf868df58917ece81cc40ec36b807e8590826cc2d6c751",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/geometry.py": "779c7200d0fbe80e818a527fd50c49dca6e2f0fb6921fdc270a9b11ee1f671e9",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/__init__.py": "4c2ce56326b9aecb27b6ceaa0cfb9e4cc00a2f7c9cfcdb696323eae86eaba2e0",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/base.py": "b7e760e3d5dea0c9ae8c834d86cdfa8ed4336d0a2461b1b334c81963f26d8a65",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/__init__.py": "a688d3969b9812f0c462d293f2d42b2cb0a782638a261d0654b59abf4f8a90f0",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/client.py": "75aac1deb090506594a2638c6cd908bffad2b94ac9cd0294ad5e8b65727f33a9",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/__init__.py": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/action_chunk_broker.py": "cbfb128e6d08c0e309a1a454812384603cae75aea824301a09acbec8572e6b1f",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/base_policy.py": "88e98e0f06293f3c4767db675061664c4bba12f87242ba1e64377d1b8de8069e",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/image_tools.py": "d48b4bd7f44e79fe6db8a8e07c9161144fa250be686e1245014a8b47e6171977",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/msgpack_numpy.py": "c04568948fcee52b691e3be4b6cffb759f7e79ad67530fcd5d23095a0d13c057",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/__init__.py": "84b3776f25020b142851950a5bff2890ba10c53ed1ad4d7b881a73c4574e7825",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/agent.py": "b559885afd9645a91b9b6ee12a28513295474f987d11b16610fc0479dbe6de5b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/agents/__init__.py": "583e97fc4f5aba0ec722c12f83b8b0294e6f33f6f24b17322ce4e982176b70a9",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/agents/policy_agent.py": "5303089f2178dd87d4aa74b22541a9a6bccf3cbfabb77b0bbf6600a0eb7e994b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/environment.py": "1c12e5054b3401dec5f1f8b71eef0f625cb60e2b50784dcf19afa32c77107a7e",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/runtime.py": "418748972c3a80d24fef9092a95a8e576d1393d02ccb3af82790c16a648e8912",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/subscriber.py": "d269a2af8ec4056beb310e5c3c97d4468af01549c7ef80dd905652d8ac64f85b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/websocket_client_policy.py": "7e71bc6bf79a0932f7a1b3e13ea32652d185c66adfdd843176842616fa7ea4a9",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/legacy_franka.py": "e3f2627194a4a1939845b6e738979ab25ee1039f140292b6fa6f5c00f3718614",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/__init__.py": "e72859735906005ca4d511c7568794690f966d5b01c83733a78b89b5241efaa0",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/boundary_builder.py": "a5c7c09016d70862101601f6d0f02cbf30d4abfe9d0d17c5c9333ab3d1980d5f",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/boundary_surface.py": "e6395e02c61cb71ec10805056bda44e3a2579cd75e4441ea53e66131aef0fee1",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/builder.py": "4f2f86a783a8164789eac8908877a46d4b9a39e12a9241f0bba2bf2b3edd73d3",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/layout.py": "a7935c85c79c09369be957147be018e6c888c884e8c1eb3a22c0091968fa7a0a",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/map.py": "b56c6f6dbca44aa93ebe03f842d3db145035a92cfa45903297012f0e7fed0781",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/metric.py": "ea9ea01e2ed39f1b57e88a21ad165b8ebc722ce191a8c67c5640a7b99f38a0e1",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/visualization.py": "864e0a99d1f78bf00a22e3e0513a46dfece18bbe91dbb8dd757dc6a5ed48232b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/__init__.py": "1e844f55b60a54e53a17b1e398d93d18a20cff2cc01e460043163f994c913ee3",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/cameras.py": "3f8ac28e2f1aadc770c0028e11d3990d87429b4ab3a7fc4d6a0badb9d131eb3b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/contact_materials.py": "2f7d315cfcefd20929bb70fca57a6bf8dbcd70e6d1c937e170fbf202cabc5f39",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/layouts.py": "e28cf5f5874333740811f916611aacefa320c139f742be0a59c6f76f1d694ea7",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/libero.py": "bc29383ac69ca57a8dcbe31c7e78786e0ae2306646f8efee781830a37028734a",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/libero_joint_controller.py": "da12c76b5d9d30071c15d061f48947dd0b5e834f99904902ae37b4464b76a020",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/loader.py": "b51fd45b61bf9130afb87c447e86c6ef5c31b3ac98303d87194ad628cd494baa",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/nominal_plan_table.py": "69c677b25c15a84808c00db4cf3c4e4cc28f2cbaf2f98c3f76e94ae75e798203",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/preset_runtime.py": "a43d36313a9b133df6121dda9d108b1a67be3f995ca3d862a91e1a0cc50f9cf8",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/__init__.py": "b06b09d3c66389e4972e0eb9adac9f86fe5605827263818b11dc62320f39ffc9",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/camera.py": "97377274caa457369d36a694b71b1f364a10c07850fde273e15b8a90946267e8",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/light.py": "7e005b440acf6511dd37d9e50aaa14efac3be70e006a4af11e3fc2b9dc7c0edd",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/objects.py": "d60feee0216cb81cd1dd85b7206d73f6b5bfc8c86910a0559924240d64640bfa",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/routing.py": "2219459598379c2a0dd0c36dbd572da7b65900b3771b93d03f51affcd15d27f2",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/table.py": "30b971670cc4815914fab5cde52e138c23b23c4820945d79bb9b620547f38119",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/robot.py": "9e8f85463ccdc7711e10c17afb7c48b7bc75180a091f84106b26ad9a7951c74f",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/robots.py": "5052b6432b9f98cce5d11efddb4c8ccd1f9ba9f93cc3b13ecaa8a55a7ba6f143",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/scenes.py": "961db1ccef7dbd6b9ebbd3889b86a909e989ca8c74f439c223c141b2c6a006bf",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/__init__.py": "f1bd471e1286c8bbdefa7ab655471eb6cb86a6f02d3afe92631b765c7933a153",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/catalog.py": "1851e6e3495a9710d9fc39cbcf9185c7399ba936efe17bfeae9f41bd49460e7e",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/__init__.py": "614a3f1a7c1c01b53f70cd2c1f430caa5b96bff0e60dade642a10d1537d8414f",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/adjust_bottle.py": "a1a339d9dac33ac16d16c7154f88ab0abe9252c4c0ab2f63abc8f77d1d28d83b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/ball_paper_sequence.py": "ed8cc65682ec5cac410b631f7369a6140618a732d40000e07892c6d1c6c12296",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/color_block_stack.py": "6c077785e14e9f3351a0f3f9f3dc004819716e01e619d54955bab644e361e12f",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/cylinder_narrow_box.py": "40c18fd6cf7b4f00b465b8053200758d2e94421dfba84b3d8340948f634f8f10",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/fruit_receptacles.py": "42ec15dc38de97ea04f875b6ea7e9334c8206fa38423840fe258f8f9bf934c73",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/insert_charger.py": "f93ef0e2fe3fe79a7f3d3f15268a83d5f18af4e27544b797ee96f5197348f424",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/insert_object.py": "d993802d67dff3d294c9ee38cf6672883ab826067b2da79ad15bb40b8306d18a",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/paper_placement.py": "ca6a35a32599663873175b04e001eebbe6addb1f30db4213929ca3a87e5a18e5",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/pick_place.py": "d6e18ac48229602562bc60d4e3742f61e950440915142492d030665ac29575a8",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/pot_fruit_sequence.py": "e3de8fb812d43062f2a849039c5e38785da4d103c80896ce16d16b8c318cdd35",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/pot_lid.py": "57fa37aec612e2310e8c97d6c7d1aad67521471ff5b3114bd9c3bf4085343ff2",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/predicates/__init__.py": "5b90758f8271a7cf2bcc7e73239b343f09b6d26eb57e1b25a27eb25214d5e1ca",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/predicates/contact.py": "1f1aac0371409f0b03143a96d28be9971f1c283e2261eb8220c710ea56f420e0",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/predicates/geometry.py": "1d0b485618f8e56476a9cbf4c4057e7a22ab4d92cf740d74b91d07240d260808",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/predicates/stability.py": "6babd5146374eb49f60d2f8924df3814acf8a55de83c1e2a274b18fb1941218f",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/press_device.py": "436b7742547333ca2252895efe44fd9525ef387da37448c43e6b2f895342343a",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/rotate_knob.py": "dab14583795ed8deb48d7c00858b2f830fe500cadbfd9384f49266b21638e4a4",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/types.py": "a11588a39c8bd95f5add03fa82de8ecf069ca61ddaff483963b7de58cae4b775",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/unseen_objects.py": "bb68b5a0c6e2409515cf9a5f12629d2fb0754c9660bbbe2a3565082e801be697",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/wipe_whiteboard.py": "47313e98a1ad7d9801a16b1beaf11c2a74df3a7036e7ce3e97acdd465d08b910",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/phases.py": "2b9f1d1163d350d9c74164ec41feca7591a3d00d8f2cd579c8e488bfc5124383",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/__init__.py": "93c2514d7b677a827a50995ba07aa5443a7e664b710d8f1450c111d076f915a7",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/adjust_bottle.py": "0717b208a700819de824256641704368ac7cfa708fcc43372c30326a16819cf9",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/ball_paper_sequence.py": "6d8a02e5528fc4602b217ef7e8a919da652eb1c8cd2c38c0453816efa5871bcc",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/color_block_stack.py": "903e68a5d559a0436e8056261daee20f62517587a87fddfc08def915affa8d9b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/cylinder_narrow_box.py": "d502f175d404b83ecf0904d78ac3635c5f223d91da5129c12993da34a0778a65",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/fruit_receptacles.py": "0d03b1e42385e6b17d77fabf6338295d206f9449e8de4c05751b34e9f54cd0ca",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/insert_charger.py": "720563a6f0e54b8694ea729afc9f62b3bdcd585ccdc0486c7df95de941e40a54",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/insert_object.py": "1c3f0435cfdfa84dd71e613256d113472d1e1a9281cc02995961e80bb3fc244b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/nominal_candidates.py": "1d3ebfb24277c00c04151b71c2f0ec5f7c8024020fa0aaba3359361d4bb20f6a",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/paper_placement.py": "9f3ef1be9fe17333ef45be6464ed1f087126d47c8c7672502e281f0e8608ac1b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/perturbations.py": "0c4215da5b1b188cae6a602bc15e88ee27e5a2212f8345ed318914f113f34914",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/pick_place.py": "39d7db06796fa5c970cfc20d682ca4fe5e9a41b285394697e99871af05e2ccc1",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/pot_fruit_sequence.py": "d11485578f9e6eb2575288474b292a9b28f1afc61069c31d8f437643d5b28f35",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/pot_lid.py": "2b48bf03d55fced51623779d8c456361ac97569dfb24a669a368b9a7f0c55ee5",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/presets.py": "c68ee81e38790cb9a787ac950e516a9ecd3248618224f7b3effe4d5258fc3e8c",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/press_device.py": "aae7a2c348c65f903f59ffc568b6a9c4dc9c03c15969a800934317528ea409a8",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/rotate_knob.py": "8e0d1f4b737e146616338207f5c24d787387e37aef0ee776430a9da0232105a2",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/types.py": "86af00eed503948a5306b2b813c995522138fc016187657ba851de25dff59097",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/wipe_whiteboard.py": "c639673d686f248c66186703390a92a880742f73dc4fad4e2c3ce4ee1df1f289",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/registry.py": "1698b63175ad24d34b25791282534705b2946568b304c31ae75472d74cf5fbe4",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/subtasks.py": "ef1b2936479857bea347182aeaeeec8b366cbabf22e10e408605c75ae2ba4d7a",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/__init__.py": "63a525602afa9094017b91505e49f168e3f08cf8209bd261277de7787bb83731",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/app.py": "b0d407f93f99524aa8599e32da500c94e0643573bd4e50385e8094f1b58e92f3",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/capture_window_layout.py": "d659df3647aa02ee3c4c0db0ee9200032ef19c1dfbe29c02dea53695811c8e90",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/contact_markers.py": "f1c874ae1a40bd8fac54ec342696ccd03200b0f196764ff051f19c7fb773bf33",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/layout_visualization.py": "3362ebae4a026d64010fb8f9733328221010d7603b11f9d233a96fd1070b6e18",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/nominal_preparation.py": "fd84b88436a43d3beacf78701e50a8620c714a8d6bab671042afbdd03bb62d17",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/playback.py": "96eb7e98317a9ede55221bf0b77bf408f34ca03c5ef0e053048016db986ee3a9",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/recording.py": "54997ee70acd3341d63e99ad87952a61acd2f64638951a64dbe251365d23517f",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/ui.py": "2fff7ac224bc868484ef1aea4a97a0a5eeeb7b60f8b621201c08da83d3afba2c",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/window_layout.py": "591dec53d08e1383957e20d3f4a0c3d7b0d665de940b66fb91edb3b5ec3d5120",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/windows.py": "6031a74556b4aeef2c02d3e2b11e0804bc05972fbe908e2eab87c3077e22ffd2",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/__init__.py": "c2164b659bae499e142292506b12e7cc17360be2a70498260597414bf3b1fa6d",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/annotations.py": "87cd6f42393a76289e0f3c4d42032bb3e747e27bd87bda4acd725c6336d9e223",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/boundary_governor.py": "7efba34eb401ee44c87e796dc40736a1e6632688f4f0a3639d0bdf754913cd04",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/context.py": "95d23d89523024699327700e58c1fffc2a7e8da90117b1a594089ab3c43a5574",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/counterfactual.py": "6bbb8efc32fa4dc8af6f85c67a96c6a48e2ea7c6be9f912f1526dff7a1295be2",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/frame.py": "e36d07bfdd8dabdb7c2ccf8fc5196067aee5d22ae054263ca5f1e63970dfef3f",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/grid.py": "d0776338a8953ae82daf146360cb3ef099470a482d4b17132ed9b99c09b51ba2",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/labeling.py": "8501652c00a8eef152c899be58453f836c405b0c6a4a787f4be1b5a916b59f1c",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/metrics.py": "297341ee7e7570f0cf7f1a08748a128c85f7212c6970f112d9c4309c16e28a1b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/oracle.py": "c4aeab659332bcbafa8495e6cc1720e0a003c657d550bce6142a546d3757da71",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/prediction.py": "eb8be5017dc5139c378f70a5559e23dc97c3e93f86da5fcb0f3603b33fef9290",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/projection.py": "ad1e001a1c68af33db3ecd8b1b1dbd798bd9cebc73c11f13157051f95a5be84f",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/release_state.py": "6d6e51a73c74ceb4948cc602642e809161ede0fe2f7daab35340edbc359a1cab",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/runtime.py": "27d2d1e9cd1a6078a5760aacda297e7b7e35c29cd96b39345ede88fe47d405e0",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/so3_preprocessor.py": "e20c6c58b6a40452a614e728e48c9cdb9a0aece733b1770416fdecb056ba54ea",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/specification.py": "ba1cae21ff613c479aa49cd56cc30030b12ef5e349af461927c9f4719bba0f16",
+      "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/state.py": "9a36682b2af31404db4dcdd59df5d34009ac9cb894dd314886b01f28be4d2e2c",
+      "/media/czl/sata/franka_my_code/franka_mujoco/label_franka_nominal_dsp.py": "88fa7ad26a2d92d4e6af902d59a730385c7afd9cd25ccc53d75d16235fd58b7b",
+      "/media/czl/sata/franka_my_code/franka_mujoco/literature_botorch_search.py": "221d5ca4c9ae7123190db2fd94b47e1460aa63e32b23fd2236d3e1ac25508dad",
+      "/media/czl/sata/franka_my_code/franka_mujoco/botorch_joint_search.py": "790cb131b7d77d6f566e86b683c193fc39132e19e1e070bef28b66251cfebd9c",
+      "/media/czl/sata/franka_my_code/franka_mujoco/benchmark_reduced_joint_init_t1_60.py": "e3846602093fe86c07d603f4becd6f4c54923b53401b650b6ea9c220e47deb2d",
+      "/media/czl/sata/franka_my_code/franka_mujoco/recover_dsp_random_fit.py": "95c0601c0c30e67927faa4a7b22ffd0477ba8e3fd7844af420e092782c65233b"
+    },
+    "mask_table_sha256": "dd05515574e0802d57099e8bca467d32b074f7e303b4ea0368214f9364390031",
+    "authored_angle_use": "axis eligibility only; full continuous signed [0,30] degree DSP domain",
+    "control_hz": 20,
+    "source_segmentation": [
+      {
+        "annotation_subtask_index": 0,
+        "source_observed_cycle": 0,
+        "semantic_identity": "shared authored mask; semantic identity not inferred",
+        "authored_subtask_index": 0,
+        "source_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96
+        ],
+        "APP_mask": [
+          0,
+          1,
+          0
+        ],
+        "EXEC_mask": [
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "subtasks": [
+    {
+      "pregrasp": [
+        0.0,
+        0.0,
+        30.0,
+        13.629639196241746,
+        0.0,
+        0.0
+      ],
+      "postgrasp": [
+        22.215171380502596,
+        30.0,
+        30.0,
+        30.0,
+        30.0,
+        30.0
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "source_frame_index": 0,
+      "time_s": 0.0,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 1,
+      "time_s": 0.05,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 2,
+      "time_s": 0.1,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 3,
+      "time_s": 0.15,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 4,
+      "time_s": 0.2,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 5,
+      "time_s": 0.25,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 6,
+      "time_s": 0.3,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 7,
+      "time_s": 0.35,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 8,
+      "time_s": 0.4,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 9,
+      "time_s": 0.45,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 10,
+      "time_s": 0.5,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 11,
+      "time_s": 0.55,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 12,
+      "time_s": 0.6,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 13,
+      "time_s": 0.65,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 14,
+      "time_s": 0.7,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 15,
+      "time_s": 0.75,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 16,
+      "time_s": 0.8,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 17,
+      "time_s": 0.85,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 18,
+      "time_s": 0.9,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 19,
+      "time_s": 0.95,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 20,
+      "time_s": 1.0,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 21,
+      "time_s": 1.05,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 22,
+      "time_s": 1.1,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 23,
+      "time_s": 1.15,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 24,
+      "time_s": 1.2,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 25,
+      "time_s": 1.25,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 26,
+      "time_s": 1.3,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 27,
+      "time_s": 1.35,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 28,
+      "time_s": 1.4,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 29,
+      "time_s": 1.45,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 30,
+      "time_s": 1.5,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 31,
+      "time_s": 1.55,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 32,
+      "time_s": 1.6,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 33,
+      "time_s": 1.65,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 34,
+      "time_s": 1.7,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 35,
+      "time_s": 1.75,
+      "subtask_index": 0,
+      "phase": "pregrasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.5235987755982988,
+        0.23788207983329202,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 36,
+      "time_s": 1.8,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 37,
+      "time_s": 1.85,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 38,
+      "time_s": 1.9,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 39,
+      "time_s": 1.95,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 40,
+      "time_s": 2.0,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 41,
+      "time_s": 2.05,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 42,
+      "time_s": 2.1,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 43,
+      "time_s": 2.15,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 44,
+      "time_s": 2.2,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 45,
+      "time_s": 2.25,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 46,
+      "time_s": 2.3,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 47,
+      "time_s": 2.35,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 48,
+      "time_s": 2.4,
+      "subtask_index": 0,
+      "phase": "grasp",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 49,
+      "time_s": 2.45,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 50,
+      "time_s": 2.5,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 51,
+      "time_s": 2.55,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 52,
+      "time_s": 2.6,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 53,
+      "time_s": 2.65,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 54,
+      "time_s": 2.7,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 55,
+      "time_s": 2.75,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 56,
+      "time_s": 2.8,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 57,
+      "time_s": 2.85,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 58,
+      "time_s": 2.9,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 59,
+      "time_s": 2.95,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 60,
+      "time_s": 3.0,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 61,
+      "time_s": 3.05,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 62,
+      "time_s": 3.1,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 63,
+      "time_s": 3.15,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 64,
+      "time_s": 3.2,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 65,
+      "time_s": 3.25,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 66,
+      "time_s": 3.3,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 67,
+      "time_s": 3.35,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 68,
+      "time_s": 3.4,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 69,
+      "time_s": 3.45,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 70,
+      "time_s": 3.5,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 71,
+      "time_s": 3.55,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 72,
+      "time_s": 3.6,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 73,
+      "time_s": 3.65,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 74,
+      "time_s": 3.7,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 75,
+      "time_s": 3.75,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 76,
+      "time_s": 3.8,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 77,
+      "time_s": 3.85,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 78,
+      "time_s": 3.9,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 79,
+      "time_s": 3.95,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 80,
+      "time_s": 4.0,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 81,
+      "time_s": 4.05,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 82,
+      "time_s": 4.1,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 83,
+      "time_s": 4.15,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 84,
+      "time_s": 4.2,
+      "subtask_index": 0,
+      "phase": "postgrasp",
+      "rotation_tolerance_rad": [
+        0.38772788448458434,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988,
+        0.5235987755982988
+      ]
+    },
+    {
+      "source_frame_index": 85,
+      "time_s": 4.25,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 86,
+      "time_s": 4.3,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 87,
+      "time_s": 4.35,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 88,
+      "time_s": 4.4,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 89,
+      "time_s": 4.45,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 90,
+      "time_s": 4.5,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 91,
+      "time_s": 4.55,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 92,
+      "time_s": 4.6,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 93,
+      "time_s": 4.65,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 94,
+      "time_s": 4.7,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 95,
+      "time_s": 4.75,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "source_frame_index": 96,
+      "time_s": 4.8,
+      "subtask_index": 0,
+      "phase": "release",
+      "rotation_tolerance_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "selected_trials": [
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/dsp_final_default16/libero_spatial/task_00/demo_0/subtask_00/evaluations/807d81f7dda67dbfb5ddcbc2b19b3764ca2e98155fb8640f6f004056925bc5b1/trial.json",
+      "sha256": "2be85a2d565278f60054d4195d302fcc152daa3108c9d0d89db7d1d5ce73cfdd"
+    }
+  ]
+}

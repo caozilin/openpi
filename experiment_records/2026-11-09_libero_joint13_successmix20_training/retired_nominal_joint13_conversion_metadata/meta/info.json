@@ -1,0 +1,143 @@
+{
+  "codebase_version": "v2.1",
+  "robot_type": "panda_shared_joint_servo",
+  "total_episodes": 1875,
+  "total_frames": 312374,
+  "total_tasks": 40,
+  "total_videos": 0,
+  "total_chunks": 2,
+  "chunks_size": 1000,
+  "fps": 20,
+  "splits": {
+    "train": "0:1875"
+  },
+  "data_path": "data/chunk-{episode_chunk:03d}/episode_{episode_index:06d}.parquet",
+  "video_path": null,
+  "features": {
+    "image": {
+      "dtype": "image",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "names": [
+        "height",
+        "width",
+        "channel"
+      ]
+    },
+    "wrist_image": {
+      "dtype": "image",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "names": [
+        "height",
+        "width",
+        "channel"
+      ]
+    },
+    "state": {
+      "dtype": "float32",
+      "shape": [
+        8
+      ],
+      "names": [
+        "state"
+      ]
+    },
+    "actions": {
+      "dtype": "float32",
+      "shape": [
+        7
+      ],
+      "names": [
+        "actions"
+      ]
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "task_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "rotation_tolerance": {
+      "dtype": "float32",
+      "shape": [
+        6
+      ],
+      "names": [
+        "rx_negative",
+        "rx_positive",
+        "ry_negative",
+        "ry_positive",
+        "rz_negative",
+        "rz_positive"
+      ]
+    },
+    "trajectory_is_tolerance": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": [
+        "trajectory_is_tolerance"
+      ]
+    }
+  },
+  "source_schema": "libero_joint13/1.0",
+  "joint13_contract": {
+    "rotation_tolerance_units": "rad",
+    "rotation_tolerance_order": [
+      "rx_negative",
+      "rx_positive",
+      "ry_negative",
+      "ry_positive",
+      "rz_negative",
+      "rz_positive"
+    ],
+    "trajectory_types": {
+      "0": "nominal",
+      "1": "tolerance"
+    },
+    "trajectory_counts": {
+      "nominal": 1875,
+      "tolerance": 0
+    },
+    "physical_action_units": "meters/world_rotation_vector_radians/gripper; no OSC scaling or extra delta",
+    "effective_training_dimensions": 13,
+    "model_interface_dimensions": 32
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "stage": "failed",
+  "error": "Traceback (most recent call last):\n  File \"/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_evaluation_v2.py\", line 331, in <module>\n    main()\n  File \"/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_evaluation_v2.py\", line 190, in main\n    replay.verify(actions[i],selection,row)\n  File \"/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_nominal_reference.py\", line 24, in verify\n    assert np.linalg.norm(fk.position - position) <= s.ik.settings.position_tolerance + 1e-9\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

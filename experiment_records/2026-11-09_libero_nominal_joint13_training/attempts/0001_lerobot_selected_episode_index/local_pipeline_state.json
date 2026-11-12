@@ -1,0 +1,4 @@
+{
+  "stage": "failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_nominal_joint13_training/finish_local_dataset.py\", line 27, in <module>\n    try:main()\n        ^^^^^^\n  File \"/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_nominal_joint13_training/finish_local_dataset.py\", line 23, in main\n    assert code==0,('Audit failed',code)\n           ^^^^^^^\nAssertionError: ('Audit failed', 1)\n"
+}

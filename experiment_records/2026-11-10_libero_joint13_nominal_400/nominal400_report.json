@@ -1,0 +1,4274 @@
+{
+  "historical_infrastructure_errors": 0,
+  "complete": true,
+  "episodes": 400,
+  "successes": 368,
+  "per_suite": {
+    "libero_spatial": {
+      "episodes": 100,
+      "successes": 96
+    },
+    "libero_object": {
+      "episodes": 100,
+      "successes": 97
+    },
+    "libero_goal": {
+      "episodes": 100,
+      "successes": 88
+    },
+    "libero_10": {
+      "episodes": 100,
+      "successes": 87
+    }
+  },
+  "per_task": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "successes": 6,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "successes": 8,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "successes": 8,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "successes": 8,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "successes": 8,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "successes": 7,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "successes": 10,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "successes": 9,
+      "episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "successes": 6,
+      "episodes": 10
+    }
+  ],
+  "terminations": {
+    "task_success": 368,
+    "ik_failure_streak": 10,
+    "step_limit": 22
+  },
+  "results": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 96,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_00/seed_0/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 89,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_00/seed_1/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 105,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_00/seed_2/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 94,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_00/seed_3/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 98,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_00/seed_4/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 93,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_00/seed_5/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 96,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_00/seed_6/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 99,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_00/seed_7/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 100,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_00/seed_8/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 87,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_00/seed_9/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 129,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_01/seed_0/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 116,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_01/seed_1/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 128,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_01/seed_2/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 133,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_01/seed_3/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 4,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "steps": 184,
+      "solver_failed_frames": 20,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_01/seed_4/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 123,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_01/seed_5/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 122,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_01/seed_6/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 130,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_01/seed_7/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 118,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_01/seed_8/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 132,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_01/seed_9/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 127,
+      "solver_failed_frames": 1,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_02/seed_0/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 117,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_02/seed_1/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 120,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_02/seed_2/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 116,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_02/seed_3/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 130,
+      "solver_failed_frames": 2,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_02/seed_4/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 116,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_02/seed_5/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 123,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_02/seed_6/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 118,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_02/seed_7/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 117,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_02/seed_8/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 111,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_02/seed_9/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 107,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_03/seed_0/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 108,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_03/seed_1/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 103,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_03/seed_2/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 104,
+      "solver_failed_frames": 5,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_03/seed_3/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 102,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_03/seed_4/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 102,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_03/seed_5/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 100,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_03/seed_6/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 117,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_03/seed_7/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 96,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_03/seed_8/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 99,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_03/seed_9/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 135,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_04/seed_0/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 186,
+      "solver_failed_frames": 32,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_04/seed_1/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 2,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "steps": 166,
+      "solver_failed_frames": 29,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_04/seed_2/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 137,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_04/seed_3/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 148,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_04/seed_4/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 160,
+      "solver_failed_frames": 23,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_04/seed_5/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 139,
+      "solver_failed_frames": 3,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_04/seed_6/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 153,
+      "solver_failed_frames": 3,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_04/seed_7/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 143,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_04/seed_8/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 138,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_04/seed_9/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 122,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_05/seed_0/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 125,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_05/seed_1/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 108,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_05/seed_2/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 3,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 220,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_05/seed_3/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 116,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_05/seed_4/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 121,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_05/seed_5/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 113,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_05/seed_6/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 121,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_05/seed_7/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 118,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_05/seed_8/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 117,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_05/seed_9/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 127,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_06/seed_0/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 127,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_06/seed_1/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 119,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_06/seed_2/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 138,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_06/seed_3/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 112,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_06/seed_4/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 122,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_06/seed_5/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 133,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_06/seed_6/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 126,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_06/seed_7/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 171,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_06/seed_8/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 119,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_06/seed_9/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 134,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_07/seed_0/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 122,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_07/seed_1/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 132,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_07/seed_2/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 137,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_07/seed_3/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 130,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_07/seed_4/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 144,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_07/seed_5/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 123,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_07/seed_6/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 138,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_07/seed_7/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 134,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_07/seed_8/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 149,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_07/seed_9/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 125,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_08/seed_0/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 130,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_08/seed_1/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 120,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_08/seed_2/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 120,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_08/seed_3/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 113,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_08/seed_4/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 111,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_08/seed_5/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 111,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_08/seed_6/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 114,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_08/seed_7/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 118,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_08/seed_8/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 112,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_08/seed_9/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 134,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_09/seed_0/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 139,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_09/seed_1/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 139,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_09/seed_2/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 135,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_09/seed_3/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 124,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_09/seed_4/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 137,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_09/seed_5/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 144,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_09/seed_6/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 134,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_09/seed_7/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 158,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_09/seed_8/result.json"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 9,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 220,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_spatial/task_09/seed_9/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 152,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_00/seed_0/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 164,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_00/seed_1/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 158,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_00/seed_2/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 3,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 280,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_00/seed_3/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 149,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_00/seed_4/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 272,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_00/seed_5/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 179,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_00/seed_6/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 159,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_00/seed_7/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 194,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_00/seed_8/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 153,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_00/seed_9/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 148,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_01/seed_0/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 148,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_01/seed_1/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 128,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_01/seed_2/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 164,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_01/seed_3/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 139,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_01/seed_4/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 138,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_01/seed_5/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 126,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_01/seed_6/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 144,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_01/seed_7/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 131,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_01/seed_8/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 149,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_01/seed_9/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 0,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 280,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_02/seed_0/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 136,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_02/seed_1/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 121,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_02/seed_2/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 137,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_02/seed_3/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 137,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_02/seed_4/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 129,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_02/seed_5/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 144,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_02/seed_6/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 133,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_02/seed_7/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 140,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_02/seed_8/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 141,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_02/seed_9/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 136,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_03/seed_0/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 131,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_03/seed_1/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 251,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_03/seed_2/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 152,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_03/seed_3/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 146,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_03/seed_4/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 193,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_03/seed_5/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 145,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_03/seed_6/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 7,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 280,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_03/seed_7/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 189,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_03/seed_8/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 163,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_03/seed_9/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 156,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_04/seed_0/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 161,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_04/seed_1/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 151,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_04/seed_2/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 175,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_04/seed_3/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 153,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_04/seed_4/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 157,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_04/seed_5/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 148,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_04/seed_6/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 152,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_04/seed_7/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 165,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_04/seed_8/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 155,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_04/seed_9/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 237,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_05/seed_0/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 146,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_05/seed_1/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 139,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_05/seed_2/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 149,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_05/seed_3/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 144,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_05/seed_4/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 154,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_05/seed_5/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 187,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_05/seed_6/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 130,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_05/seed_7/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 143,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_05/seed_8/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 156,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_05/seed_9/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 164,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_06/seed_0/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 168,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_06/seed_1/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 215,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_06/seed_2/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 159,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_06/seed_3/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 168,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_06/seed_4/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 155,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_06/seed_5/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 182,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_06/seed_6/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 173,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_06/seed_7/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 164,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_06/seed_8/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 184,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_06/seed_9/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 153,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_07/seed_0/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 141,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_07/seed_1/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 155,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_07/seed_2/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 139,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_07/seed_3/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 140,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_07/seed_4/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 141,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_07/seed_5/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 153,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_07/seed_6/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 138,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_07/seed_7/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 143,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_07/seed_8/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 137,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_07/seed_9/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 241,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_08/seed_0/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 165,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_08/seed_1/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 158,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_08/seed_2/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 163,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_08/seed_3/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 153,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_08/seed_4/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 167,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_08/seed_5/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 163,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_08/seed_6/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 153,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_08/seed_7/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 162,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_08/seed_8/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 252,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_08/seed_9/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 179,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_09/seed_0/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 136,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_09/seed_1/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 137,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_09/seed_2/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 135,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_09/seed_3/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 139,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_09/seed_4/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 124,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_09/seed_5/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 142,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_09/seed_6/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 133,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_09/seed_7/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 132,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_09/seed_8/result.json"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 138,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_object/task_09/seed_9/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 156,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_00/seed_0/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 1,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 300,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_00/seed_1/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 137,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_00/seed_2/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 136,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_00/seed_3/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 128,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_00/seed_4/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 135,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_00/seed_5/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 143,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_00/seed_6/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 126,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_00/seed_7/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 138,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_00/seed_8/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 156,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_00/seed_9/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 104,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_01/seed_0/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 111,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_01/seed_1/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 102,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_01/seed_2/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 115,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_01/seed_3/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 108,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_01/seed_4/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 104,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_01/seed_5/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 108,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_01/seed_6/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 110,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_01/seed_7/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 106,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_01/seed_8/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 115,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_01/seed_9/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 107,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_02/seed_0/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 191,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_02/seed_1/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 114,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_02/seed_2/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 121,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_02/seed_3/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 133,
+      "solver_failed_frames": 21,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_02/seed_4/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 127,
+      "solver_failed_frames": 28,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_02/seed_5/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 107,
+      "solver_failed_frames": 5,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_02/seed_6/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 7,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "steps": 104,
+      "solver_failed_frames": 26,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_02/seed_7/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 159,
+      "solver_failed_frames": 43,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_02/seed_8/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 158,
+      "solver_failed_frames": 38,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_02/seed_9/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 190,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_03/seed_0/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 190,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_03/seed_1/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 192,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_03/seed_2/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 197,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_03/seed_3/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 273,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_03/seed_4/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 195,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_03/seed_5/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 225,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_03/seed_6/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 200,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_03/seed_7/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 8,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 300,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_03/seed_8/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 176,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_03/seed_9/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 133,
+      "solver_failed_frames": 1,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_04/seed_0/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 135,
+      "solver_failed_frames": 18,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_04/seed_1/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 120,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_04/seed_2/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 110,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_04/seed_3/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 111,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_04/seed_4/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 99,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_04/seed_5/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 109,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_04/seed_6/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 105,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_04/seed_7/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 97,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_04/seed_8/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 93,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_04/seed_9/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 0,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "steps": 162,
+      "solver_failed_frames": 21,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_05/seed_0/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 161,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_05/seed_1/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 2,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 300,
+      "solver_failed_frames": 56,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_05/seed_2/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 125,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_05/seed_3/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 143,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_05/seed_4/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 137,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_05/seed_5/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 162,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_05/seed_6/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 7,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 300,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_05/seed_7/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 157,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_05/seed_8/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 9,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 300,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_05/seed_9/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 103,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_06/seed_0/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 107,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_06/seed_1/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 2,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 300,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_06/seed_2/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 96,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_06/seed_3/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 146,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_06/seed_4/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 113,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_06/seed_5/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 97,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_06/seed_6/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 7,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 300,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_06/seed_7/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 103,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_06/seed_8/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 106,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_06/seed_9/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 96,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_07/seed_0/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 88,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_07/seed_1/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 99,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_07/seed_2/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 95,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_07/seed_3/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 116,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_07/seed_4/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 96,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_07/seed_5/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 94,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_07/seed_6/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 88,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_07/seed_7/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 97,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_07/seed_8/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 87,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_07/seed_9/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 98,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_08/seed_0/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 99,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_08/seed_1/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 90,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_08/seed_2/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 88,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_08/seed_3/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 89,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_08/seed_4/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 97,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_08/seed_5/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 120,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_08/seed_6/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 105,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_08/seed_7/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 8,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 300,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_08/seed_8/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 91,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_08/seed_9/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 185,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_09/seed_0/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 218,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_09/seed_1/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 2,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 300,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_09/seed_2/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 162,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_09/seed_3/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 154,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_09/seed_4/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 143,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_09/seed_5/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 140,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_09/seed_6/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 7,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 300,
+      "solver_failed_frames": 4,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_09/seed_7/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 202,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_09/seed_8/result.json"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 168,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_goal/task_09/seed_9/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 326,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_00/seed_0/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 272,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_00/seed_1/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 279,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_00/seed_2/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 275,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_00/seed_3/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 4,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 520,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_00/seed_4/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 269,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_00/seed_5/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 6,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 520,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_00/seed_6/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 258,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_00/seed_7/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 263,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_00/seed_8/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 249,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_00/seed_9/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 257,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_0/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 409,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_1/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 305,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_2/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 257,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_3/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 252,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_4/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 307,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_5/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 269,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_6/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 260,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_7/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 270,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_8/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 301,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_9/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 241,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_0/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 239,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_1/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 289,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_2/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 260,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_3/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 256,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_4/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 282,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_5/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 278,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_6/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 257,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_7/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 270,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_8/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 268,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_9/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 244,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_03/seed_0/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 245,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_03/seed_1/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 236,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_03/seed_2/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 231,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_03/seed_3/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 242,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_03/seed_4/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 217,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_03/seed_5/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 252,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_03/seed_6/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 223,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_03/seed_7/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 231,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_03/seed_8/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 230,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_03/seed_9/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 253,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_04/seed_0/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 216,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_04/seed_1/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 2,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 520,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_04/seed_2/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 3,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 520,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_04/seed_3/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 260,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_04/seed_4/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 242,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_04/seed_5/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 262,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_04/seed_6/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 369,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_04/seed_7/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 356,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_04/seed_8/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 262,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_04/seed_9/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 178,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_0/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 214,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_1/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 189,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_2/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 197,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_3/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 193,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_4/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 187,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_5/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 171,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_6/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 189,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_7/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 179,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_8/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 9,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "steps": 252,
+      "solver_failed_frames": 39,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_9/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 260,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_0/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 1,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 520,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_1/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 2,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 520,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_2/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 3,
+      "success": false,
+      "termination": "step_limit",
+      "steps": 520,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_3/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 223,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_4/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 288,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_5/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 271,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_6/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 301,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_7/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 525,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_8/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 245,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_9/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 263,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_07/seed_0/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 252,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_07/seed_1/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 238,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_07/seed_2/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 272,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_07/seed_3/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 317,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_07/seed_4/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 255,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_07/seed_5/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 268,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_07/seed_6/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 257,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_07/seed_7/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 259,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_07/seed_8/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 255,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_07/seed_9/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 0,
+      "success": true,
+      "termination": "task_success",
+      "steps": 425,
+      "solver_failed_frames": 6,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_08/seed_0/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 386,
+      "solver_failed_frames": 1,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_08/seed_1/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 441,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_08/seed_2/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 3,
+      "success": true,
+      "termination": "task_success",
+      "steps": 383,
+      "solver_failed_frames": 26,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_08/seed_3/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 4,
+      "success": true,
+      "termination": "task_success",
+      "steps": 416,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_08/seed_4/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 522,
+      "solver_failed_frames": 3,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_08/seed_5/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 6,
+      "success": true,
+      "termination": "task_success",
+      "steps": 389,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_08/seed_6/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 7,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "steps": 410,
+      "solver_failed_frames": 20,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_08/seed_7/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 424,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_08/seed_8/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 426,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_08/seed_9/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 0,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "steps": 435,
+      "solver_failed_frames": 125,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_0/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 1,
+      "success": true,
+      "termination": "task_success",
+      "steps": 328,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_1/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 2,
+      "success": true,
+      "termination": "task_success",
+      "steps": 272,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_2/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 3,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "steps": 283,
+      "solver_failed_frames": 30,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_3/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 4,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "steps": 398,
+      "solver_failed_frames": 69,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_4/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 5,
+      "success": true,
+      "termination": "task_success",
+      "steps": 271,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_5/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 6,
+      "success": false,
+      "termination": "ik_failure_streak",
+      "steps": 517,
+      "solver_failed_frames": 50,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_6/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 7,
+      "success": true,
+      "termination": "task_success",
+      "steps": 289,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_7/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 8,
+      "success": true,
+      "termination": "task_success",
+      "steps": 289,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_8/result.json"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 9,
+      "success": true,
+      "termination": "task_success",
+      "steps": 302,
+      "solver_failed_frames": 0,
+      "source_result": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_9/result.json"
+    }
+  ],
+  "infrastructure_errors": 0
+}

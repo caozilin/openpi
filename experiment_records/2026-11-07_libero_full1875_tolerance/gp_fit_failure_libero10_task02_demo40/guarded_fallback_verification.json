@@ -1,0 +1,78 @@
+{
+  "checkpoint": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_02/demo_40/subtask_01/checkpoint.json",
+  "checkpoint_sha256": "da54c1e41e34024783c41b936ccaf45bf8871398533bf1a663570ad4385aeef7",
+  "observations": 17,
+  "existing_raw_trials_unchanged": true,
+  "query_or_rollout_executed": false,
+  "fit_complete": true,
+  "warnings": [
+    "`scipy_minimize` terminated with status OptimizationStatus.FAILURE, displaying original message from `scipy.optimize.minimize`: ABNORMAL: ",
+    "`scipy_minimize` terminated with status OptimizationStatus.FAILURE, displaying original message from `scipy.optimize.minimize`: ABNORMAL: ",
+    "`scipy_minimize` terminated with status OptimizationStatus.FAILURE, displaying original message from `scipy.optimize.minimize`: ABNORMAL: ",
+    "`scipy_minimize` terminated with status OptimizationStatus.FAILURE, displaying original message from `scipy.optimize.minimize`: ABNORMAL: "
+  ],
+  "attempts": [
+    {
+      "model_number": 1,
+      "status": "SUCCESS",
+      "iterations": 21,
+      "fval": -1.9600902225052177,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "model_number": 2,
+      "status": "FAILURE",
+      "iterations": 35,
+      "fval": 3750.249208022533,
+      "message": "ABNORMAL: "
+    },
+    {
+      "model_number": 2,
+      "status": "FAILURE",
+      "iterations": 15,
+      "fval": 6055.717015669738,
+      "message": "ABNORMAL: "
+    },
+    {
+      "model_number": 2,
+      "status": "FAILURE",
+      "iterations": 17,
+      "fval": 3750.320391635111,
+      "message": "ABNORMAL: "
+    },
+    {
+      "model_number": 2,
+      "status": "FAILURE",
+      "iterations": 21,
+      "fval": 3781.5053830300526,
+      "message": "ABNORMAL: "
+    },
+    {
+      "model_number": 2,
+      "status": "SUCCESS",
+      "iterations": 35,
+      "fval": 3750.2501384335865,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "model_number": 3,
+      "status": "SUCCESS",
+      "iterations": 37,
+      "fval": 0.3738343472223894,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    }
+  ],
+  "fallback_events": [
+    {
+      "model": "ExactMarginalLogLikelihood",
+      "default_error": "All attempts to fit the model have failed.",
+      "default_maxls": 20,
+      "fallback_maxls": 100,
+      "maxiter": 100,
+      "default_max_attempts": 5,
+      "started_at": "2026-11-07T18:05:36.189776+08:00",
+      "success": true,
+      "finished_at": "2026-11-07T18:05:36.342943+08:00"
+    }
+  ]
+}

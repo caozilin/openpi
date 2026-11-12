@@ -1,0 +1,314 @@
+{
+  "old_source": "data/wandb_exports/openpi_2026-10-26/runs/franka_mujoco_v2_joint19_lora__ucflosn1/metadata.json",
+  "config_differences": [
+    {
+      "path": "assets_base_dir",
+      "kind": "changed",
+      "old": "/root/gpufree-share/openpi-assets",
+      "new": "./assets"
+    },
+    {
+      "path": "batch_size",
+      "kind": "changed",
+      "old": 24,
+      "new": 84
+    },
+    {
+      "path": "checkpoint_base_dir",
+      "kind": "changed",
+      "old": "/root/gpufree-share/checkpoints",
+      "new": "/mnt/SharedData/czl/checkpoints"
+    },
+    {
+      "path": "data.assets.assets_dir",
+      "kind": "changed",
+      "old": null,
+      "new": "/mnt/SharedData/czl/assets/pi05_franka_mujoco_joint13"
+    },
+    {
+      "path": "data.base_config.source_schema",
+      "kind": "new_only",
+      "new": null
+    },
+    {
+      "path": "data.hf_datasets_cache_dir",
+      "kind": "changed",
+      "old": null,
+      "new": "/mnt/SharedData/czl/hf_datasets/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027"
+    },
+    {
+      "path": "data.lerobot_dataset_root",
+      "kind": "changed",
+      "old": null,
+      "new": "/mnt/SharedData/czl/lerobot/caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027"
+    },
+    {
+      "path": "data.repo_id",
+      "kind": "changed",
+      "old": "caozilin/franka_mujoco",
+      "new": "caozilin/franka_nominal80_tolerance20_potpost001_dsp16_20261027"
+    },
+    {
+      "path": "data.sequence_keys",
+      "kind": "old_only",
+      "old": [
+        "actions",
+        "stage_target_pose",
+        "rotation_tolerance"
+      ]
+    },
+    {
+      "path": "data.tolerance_trajectory_action_loss_weight",
+      "kind": "new_only",
+      "new": 4.0
+    },
+    {
+      "path": "exp_name",
+      "kind": "changed",
+      "old": "franka_mujoco_v2_joint19_lora",
+      "new": "TaskTol_mix20_4xloss_7gpu_bs84_9k_potpost001_dsp16_20261027"
+    },
+    {
+      "path": "keep_period",
+      "kind": "changed",
+      "old": 5000,
+      "new": 1500
+    },
+    {
+      "path": "log_interval",
+      "kind": "changed",
+      "old": 100,
+      "new": 10
+    },
+    {
+      "path": "lr_schedule.decay_steps",
+      "kind": "changed",
+      "old": 30000,
+      "new": 9000
+    },
+    {
+      "path": "lr_schedule.warmup_steps",
+      "kind": "changed",
+      "old": 1000,
+      "new": 300
+    },
+    {
+      "path": "model.action_dim",
+      "kind": "changed",
+      "old": 32,
+      "new": 13
+    },
+    {
+      "path": "model.action_loss_groups",
+      "kind": "changed",
+      "old": [
+        [
+          "action",
+          0,
+          7,
+          1
+        ],
+        [
+          "stage_target_pose",
+          7,
+          13,
+          0.5
+        ],
+        [
+          "rotation_tolerance",
+          13,
+          19,
+          0.5
+        ]
+      ],
+      "new": [
+        [
+          "action",
+          0,
+          7,
+          1.0
+        ],
+        [
+          "rotation_tolerance",
+          7,
+          13,
+          0.5
+        ]
+      ]
+    },
+    {
+      "path": "name",
+      "kind": "changed",
+      "old": "pi05_franka_mujoco_joint19",
+      "new": "pi05_tasktol_mix20_4xloss_7gpu_9k"
+    },
+    {
+      "path": "num_train_steps",
+      "kind": "changed",
+      "old": 50000,
+      "new": 9000
+    },
+    {
+      "path": "num_workers",
+      "kind": "changed",
+      "old": 2,
+      "new": 8
+    },
+    {
+      "path": "project_name",
+      "kind": "changed",
+      "old": "openpi",
+      "new": "openpi-tasktol"
+    },
+    {
+      "path": "resume",
+      "kind": "changed",
+      "old": true,
+      "new": false
+    },
+    {
+      "path": "save_interval",
+      "kind": "changed",
+      "old": 1000,
+      "new": 1500
+    },
+    {
+      "path": "swanlab_enabled",
+      "kind": "new_only",
+      "new": true
+    },
+    {
+      "path": "swanlab_log_dir",
+      "kind": "new_only",
+      "new": "/mnt/SharedData/czl/swanlog"
+    },
+    {
+      "path": "swanlab_mode",
+      "kind": "new_only",
+      "new": "online"
+    },
+    {
+      "path": "swanlab_workspace",
+      "kind": "new_only",
+      "new": null
+    },
+    {
+      "path": "validation2_hf_datasets_cache_dir",
+      "kind": "new_only",
+      "new": null
+    },
+    {
+      "path": "validation2_lerobot_arrow_cache_dir",
+      "kind": "new_only",
+      "new": null
+    },
+    {
+      "path": "validation2_lerobot_dataset_root",
+      "kind": "new_only",
+      "new": null
+    },
+    {
+      "path": "validation2_name",
+      "kind": "new_only",
+      "new": "val2"
+    },
+    {
+      "path": "validation2_repo_id",
+      "kind": "new_only",
+      "new": null
+    },
+    {
+      "path": "validation_batch_size_factor",
+      "kind": "new_only",
+      "new": 1.0
+    },
+    {
+      "path": "validation_hf_datasets_cache_dir",
+      "kind": "new_only",
+      "new": null
+    },
+    {
+      "path": "validation_lerobot_arrow_cache_dir",
+      "kind": "new_only",
+      "new": null
+    },
+    {
+      "path": "validation_lerobot_dataset_root",
+      "kind": "new_only",
+      "new": null
+    },
+    {
+      "path": "validation_name",
+      "kind": "new_only",
+      "new": "val1"
+    },
+    {
+      "path": "validation_num_batches",
+      "kind": "new_only",
+      "new": 16
+    },
+    {
+      "path": "validation_repo_id",
+      "kind": "new_only",
+      "new": null
+    },
+    {
+      "path": "wandb_enabled",
+      "kind": "old_only",
+      "old": true
+    },
+    {
+      "path": "weight_loader.skip_mismatched_shapes",
+      "kind": "new_only",
+      "new": true
+    }
+  ],
+  "old_loss_windows": [
+    {
+      "start": 8500,
+      "end": 9000,
+      "n_logged_points": 6,
+      "mean": {
+        "loss": 0.052247204507390656,
+        "loss/action": 0.02952022012323141,
+        "loss/rotation_tolerance": 0.030419358673195045,
+        "loss/stage_target_pose": 0.015034610716005167,
+        "grad_norm": 0.38736356298128766
+      }
+    },
+    {
+      "start": 29000,
+      "end": 30000,
+      "n_logged_points": 11,
+      "mean": {
+        "loss": 0.020949565720829098,
+        "loss/action": 0.01120601086453958,
+        "loss/rotation_tolerance": 0.012796529653397474,
+        "loss/stage_target_pose": 0.0066905797205188055,
+        "grad_norm": 0.31063834645531396
+      }
+    },
+    {
+      "start": 29600,
+      "end": 30100,
+      "n_logged_points": 6,
+      "mean": {
+        "loss": 0.020854860544204712,
+        "loss/action": 0.01114195492118597,
+        "loss/rotation_tolerance": 0.012787747972955307,
+        "loss/stage_target_pose": 0.006638062264149387,
+        "grad_norm": 0.3154796014229457
+      }
+    }
+  ],
+  "new_loss_window": {
+    "grad_norm": 0.9462215686274508,
+    "loss": 0.08028039215686275,
+    "loss/action": 0.02635098039215687,
+    "loss/rotation_tolerance": 0.07719411764705882,
+    "loss/total": 0.08028039215686275,
+    "loss_weighted/action": 0.04168823529411764,
+    "loss_weighted/rotation_tolerance": 0.03859803921568627,
+    "param_norm": 1804.7775803921575
+  }
+}

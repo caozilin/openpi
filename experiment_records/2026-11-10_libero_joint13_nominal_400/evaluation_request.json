@@ -1,0 +1,4598 @@
+{
+  "authorized": true,
+  "protocol": "joint13.nominal400.paired_predtol.v1",
+  "client_location": "local",
+  "server_role": "six inference replicas only",
+  "eval_identity": "libero_joint13_successmix20_step10000_nominal_seed0to9_20261110",
+  "server_eval_identity": "libero_joint13_successmix20_step10000_nominal_seed0to9_20261110",
+  "expected_episodes": 400,
+  "tasks": 40,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "gpu_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6
+  ],
+  "ports": [
+    18760,
+    18761,
+    18762,
+    18763,
+    18764,
+    18765
+  ],
+  "checkpoint_step": 10000,
+  "replan_steps": 5,
+  "action_horizon": 10,
+  "state_enabled": false,
+  "max_steps": {
+    "libero_spatial": 220,
+    "libero_object": 280,
+    "libero_goal": 300,
+    "libero_10": 520
+  },
+  "gripper_deadband": 0.5,
+  "tolerance_enabled": false,
+  "tolerance_bounds_policy": "disabled_model_bounds_diagnostic_only",
+  "tolerance_order": [
+    "rx-",
+    "rx+",
+    "ry-",
+    "ry+",
+    "rz-",
+    "rz+"
+  ],
+  "tolerance_units": "rad",
+  "tolerance_clip_rad": [
+    0.0,
+    0.5235987755982988
+  ],
+  "phase_policy": "strict APP/no tolerance; predicted bounds are diagnostic only",
+  "runtime": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime",
+  "runtime_version": "current shared runtime frozen20261110; distinct from historical20261025 benchmark snapshot",
+  "solver_failure_policy": "hold_last_accepted_reference",
+  "max_consecutive_solver_failures": 20,
+  "solver_failure_timeout_seconds": 1.0,
+  "connection_policy": "bounded3 samepacket/sameseed/samemetadata retries within original600s deadline",
+  "remote_inference_run": "/mnt/SharedData/czl/runs/libero_eval_joint13_successmix20_nominal_400_20261110",
+  "training_run": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109",
+  "training_request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+  "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+  "selected_episodes": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 2
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 4
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 7
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 8
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "seed": 9
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 2
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 4
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 7
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 8
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "seed": 9
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 2
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 4
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 7
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 8
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "seed": 9
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 2
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 4
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 7
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 8
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "seed": 9
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 2
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 4
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 7
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 8
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "seed": 9
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 2
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 4
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 7
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 8
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "seed": 9
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 2
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 4
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 7
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 8
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "seed": 9
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 2
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 4
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 7
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 8
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "seed": 9
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 2
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 4
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 7
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 8
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "seed": 9
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 2
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 3
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 4
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 5
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 7
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 8
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "seed": 9
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 2
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 3
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 4
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 5
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 7
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 8
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "seed": 9
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 2
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 3
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 4
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 5
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 7
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 8
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "seed": 9
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 2
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 3
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 4
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 5
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 7
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 8
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "seed": 9
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 2
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 3
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 4
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 5
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 7
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 8
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "seed": 9
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 2
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 3
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 4
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 5
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 7
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 8
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "seed": 9
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 2
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 3
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 4
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 5
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 7
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 8
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "seed": 9
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 2
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 3
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 4
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 5
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 7
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 8
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "seed": 9
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 2
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 3
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 4
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 5
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 7
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 8
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "seed": 9
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 2
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 3
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 4
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 5
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 7
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 8
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "seed": 9
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 2
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 3
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 4
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 5
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 7
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 8
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "seed": 9
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 3
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 5
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 7
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 8
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "seed": 9
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 3
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 5
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 7
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 8
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "seed": 9
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 3
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 5
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 7
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 8
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "seed": 9
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 3
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 5
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 7
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 8
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "seed": 9
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 3
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 5
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 7
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 8
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "seed": 9
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 3
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 5
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 7
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 8
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "seed": 9
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 3
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 5
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 7
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 8
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "seed": 9
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 3
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 5
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 7
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 8
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "seed": 9
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 3
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 5
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 7
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 8
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "seed": 9
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 2
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 3
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 4
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 5
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 7
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 8
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "seed": 9
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 2
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 3
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 4
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 5
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 6
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 7
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 8
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "seed": 9
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 2
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 3
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 4
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 5
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 6
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 7
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 8
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "seed": 9
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 2
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 3
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 4
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 5
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 6
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 7
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 8
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "seed": 9
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 2
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 3
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 4
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 5
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 6
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 7
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 8
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "seed": 9
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 2
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 3
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 4
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 5
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 6
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 7
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 8
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "seed": 9
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 2
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 3
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 4
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 5
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 6
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 7
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 8
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "seed": 9
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 2
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 3
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 4
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 5
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 6
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 7
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 8
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "seed": 9
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 2
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 3
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 4
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 5
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 6
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 7
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 8
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "seed": 9
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 2
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 3
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 4
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 5
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 6
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 7
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 8
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "seed": 9
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 2
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 3
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 4
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 5
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 6
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 7
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 8
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "seed": 9
+    }
+  ],
+  "worker_assignments": {
+    "0": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 0
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 6
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 2
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 8
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 2,
+        "seed": 4
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 3,
+        "seed": 0
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 3,
+        "seed": 6
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "seed": 2
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "seed": 8
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 5,
+        "seed": 4
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "seed": 0
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "seed": 6
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 7,
+        "seed": 2
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 7,
+        "seed": 8
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 8,
+        "seed": 4
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 9,
+        "seed": 0
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 9,
+        "seed": 6
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 2
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 8
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 4
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 0
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 6
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 2
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 8
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 4
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 0
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 6
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 2
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 8
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 4
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 0
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 6
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 2
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 8
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 4
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 0
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 6
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 2
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 8
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 4
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 0
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 6
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 2
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 8
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 4
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "seed": 0
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "seed": 6
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 2
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 8
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 4
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 0
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 6
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "seed": 2
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "seed": 8
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 4
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 3,
+        "seed": 0
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 3,
+        "seed": 6
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "seed": 2
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "seed": 8
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 4
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "seed": 0
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "seed": 6
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "seed": 2
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "seed": 8
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 8,
+        "seed": 4
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 9,
+        "seed": 0
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 9,
+        "seed": 6
+      }
+    ],
+    "1": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 1
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 7
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 3
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 9
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 2,
+        "seed": 5
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 3,
+        "seed": 1
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 3,
+        "seed": 7
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "seed": 3
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "seed": 9
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 5,
+        "seed": 5
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "seed": 1
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "seed": 7
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 7,
+        "seed": 3
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 7,
+        "seed": 9
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 8,
+        "seed": 5
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 9,
+        "seed": 1
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 9,
+        "seed": 7
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 3
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 9
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 5
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 1
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 7
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 3
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 9
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 5
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 1
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 7
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 3
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 9
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 5
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 1
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 7
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 3
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 9
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 5
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 1
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 7
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 3
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 9
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 5
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 1
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 7
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 3
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 9
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 5
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "seed": 1
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "seed": 7
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 3
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 9
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 5
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 1
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 7
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "seed": 3
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "seed": 9
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 5
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 3,
+        "seed": 1
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 3,
+        "seed": 7
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "seed": 3
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "seed": 9
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 5
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "seed": 1
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "seed": 7
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "seed": 3
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "seed": 9
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 8,
+        "seed": 5
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 9,
+        "seed": 1
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 9,
+        "seed": 7
+      }
+    ],
+    "2": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 2
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 8
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 4
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 2,
+        "seed": 0
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 2,
+        "seed": 6
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 3,
+        "seed": 2
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 3,
+        "seed": 8
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "seed": 4
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 5,
+        "seed": 0
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 5,
+        "seed": 6
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "seed": 2
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "seed": 8
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 7,
+        "seed": 4
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 8,
+        "seed": 0
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 8,
+        "seed": 6
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 9,
+        "seed": 2
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 9,
+        "seed": 8
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 4
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 0
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 6
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 2
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 8
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 4
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 0
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 6
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 2
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 8
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 4
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 0
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 6
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 2
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 8
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 4
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 0
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 6
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 2
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 8
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 4
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 0
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 6
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 2
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 8
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 4
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 0
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 6
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "seed": 2
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "seed": 8
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 4
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 0
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 6
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 2
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 8
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "seed": 4
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 0
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 6
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 3,
+        "seed": 2
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 3,
+        "seed": 8
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "seed": 4
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 0
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 6
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "seed": 2
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "seed": 8
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "seed": 4
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 8,
+        "seed": 0
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 8,
+        "seed": 6
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 9,
+        "seed": 2
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 9,
+        "seed": 8
+      }
+    ],
+    "3": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 3
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 9
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 5
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 2,
+        "seed": 1
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 2,
+        "seed": 7
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 3,
+        "seed": 3
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 3,
+        "seed": 9
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "seed": 5
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 5,
+        "seed": 1
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 5,
+        "seed": 7
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "seed": 3
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "seed": 9
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 7,
+        "seed": 5
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 8,
+        "seed": 1
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 8,
+        "seed": 7
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 9,
+        "seed": 3
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 9,
+        "seed": 9
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 5
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 1
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 7
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 3
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 9
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 5
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 1
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 7
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 3
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 9
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 5
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 1
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 7
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 3
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 9
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 5
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 1
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 7
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 3
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 9
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 5
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 1
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 7
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 3
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 9
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 5
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 1
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 7
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "seed": 3
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "seed": 9
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 5
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 1
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 7
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 3
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 9
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "seed": 5
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 1
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 7
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 3,
+        "seed": 3
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 3,
+        "seed": 9
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "seed": 5
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 1
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 7
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "seed": 3
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "seed": 9
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "seed": 5
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 8,
+        "seed": 1
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 8,
+        "seed": 7
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 9,
+        "seed": 3
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 9,
+        "seed": 9
+      }
+    ],
+    "4": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 4
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 0
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 6
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 2,
+        "seed": 2
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 2,
+        "seed": 8
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 3,
+        "seed": 4
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "seed": 0
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "seed": 6
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 5,
+        "seed": 2
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 5,
+        "seed": 8
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "seed": 4
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 7,
+        "seed": 0
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 7,
+        "seed": 6
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 8,
+        "seed": 2
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 8,
+        "seed": 8
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 9,
+        "seed": 4
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 0
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 6
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 2
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 8
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 4
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 0
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 6
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 2
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 8
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 4
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 0
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 6
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 2
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 8
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 4
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 0
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 6
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 2
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 8
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 4
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 0
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 6
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 2
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 8
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 4
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 0
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 6
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 2
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 8
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "seed": 4
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 0
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 6
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 2
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 8
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 4
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "seed": 0
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "seed": 6
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 2
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 8
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 3,
+        "seed": 4
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "seed": 0
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "seed": 6
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 2
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 8
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "seed": 4
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "seed": 0
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "seed": 6
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 8,
+        "seed": 2
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 8,
+        "seed": 8
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 9,
+        "seed": 4
+      }
+    ],
+    "5": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 5
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 1
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 7
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 2,
+        "seed": 3
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 2,
+        "seed": 9
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 3,
+        "seed": 5
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "seed": 1
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "seed": 7
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 5,
+        "seed": 3
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 5,
+        "seed": 9
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "seed": 5
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 7,
+        "seed": 1
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 7,
+        "seed": 7
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 8,
+        "seed": 3
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 8,
+        "seed": 9
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 9,
+        "seed": 5
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 1
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 7
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 3
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 9
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 5
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 1
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 7
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 3
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 9
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 5
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 1
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 7
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 3
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 9
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 5
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 1
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 7
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 3
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 9
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 5
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 1
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 7
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 3
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 9
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 5
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 1
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 7
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 3
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 9
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "seed": 5
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 1
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 7
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 3
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 9
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 5
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "seed": 1
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "seed": 7
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 3
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 9
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 3,
+        "seed": 5
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "seed": 1
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "seed": 7
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 3
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 9
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "seed": 5
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "seed": 1
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "seed": 7
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 8,
+        "seed": 3
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 8,
+        "seed": 9
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 9,
+        "seed": 5
+      }
+    ]
+  },
+  "source_sha256": {
+    "/media/czl/sata/franka_my_code/franka_mujoco/assets/mujoco_menagerie/franka_emika_panda/hand.xml": "d2a6539d0fd7c55c75c14f11c78f04505ee33f31d93e6112e3ad7120e5ee786a",
+    "/media/czl/sata/franka_my_code/franka_mujoco/assets/mujoco_menagerie/franka_emika_panda/mjx_hand.xml": "cf1d16467d4bd5c69f77cdcc5af2e7e1ad957416661f20d3c4029b73622b4068",
+    "/media/czl/sata/franka_my_code/franka_mujoco/assets/mujoco_menagerie/franka_emika_panda/mjx_panda.xml": "8c0f15b755f686a09f04a2cae4afa3b8444d61d3318ea36cee87cc8bb98f9098",
+    "/media/czl/sata/franka_my_code/franka_mujoco/assets/mujoco_menagerie/franka_emika_panda/mjx_panda_nohand.xml": "92a6ff0be23a90f3a5888e57067f0ecad1b2bda95c58aa30c4284750da97d075",
+    "/media/czl/sata/franka_my_code/franka_mujoco/assets/mujoco_menagerie/franka_emika_panda/mjx_scene.xml": "7877363e91409da51973cc042209b34257354c17c8e7b4eccde8353e88398af7",
+    "/media/czl/sata/franka_my_code/franka_mujoco/assets/mujoco_menagerie/franka_emika_panda/mjx_single_cube.xml": "333997ddcb065ff94871247fb2b96e1847119549bfba7a6db645fdb6cdc5199b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/assets/mujoco_menagerie/franka_emika_panda/panda.xml": "59ae9944299af0b99cc8391e7be4ccec484712ac19e4c50c4ff3f1adf320ff51",
+    "/media/czl/sata/franka_my_code/franka_mujoco/assets/mujoco_menagerie/franka_emika_panda/panda_nohand.xml": "e7090a5e2384b18a223ef532d98bf914f7f9a6b74dc8bc9f74c8291201074071",
+    "/media/czl/sata/franka_my_code/franka_mujoco/assets/mujoco_menagerie/franka_emika_panda/scene.xml": "4b08c2e5108f0ed67fa689e096e58850210130c3e6ef889b1e22822d369fd8c3",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/__init__.py": "c7df9f18109ae9637c08f180b7f4cf3eca039f93466a8a469abfa0bc08ce11c5",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/analysis/__init__.py": "462adb6fa598df721fa540e393b5a890c7e6fda59d70e931d599cc618e8bd1e3",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/analysis/sqp_weight_search.py": "f7d465c709eb8cd730137635403abfd6bc803dfb63bb5bad8a087f92ade00ee1",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/__init__.py": "1773ba42fde832da69d3b61fd4cec62720a5f72bacb9e35c7c579c9f0af599b5",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/catalog.py": "7809a756d0d93a405f7638f3cd40664bcbdb3d1148b07527c66d75d7c9b54847",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/environment.py": "6c137deecc8fba4612f7328d24042af16ff6107d590cf75fcd9176ce84e4c2d9",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/libero.py": "c5bb6b383e3a9f5ace87274b5f81fb26dff62bfb94e2c4b174abab7770585346",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/libero_reference_actions.py": "b831c1b745ac799af19b7861c37753ca9b814ab118be1fbfa90ddf53da27e9df",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/libero_replay_state.py": "e0bf675931eaef382b5914e75daab779a3baf3a45059db266b9bc61632558606",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/metrics.py": "4fe01fcf4d85da0440e23282b422abb83e4755bab9f99b6fd5693bca4d2d081c",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/offline_observation_runner.py": "904cf8341fb7ccd780dc0b4df07d7a9928f3a8e0e86115a8aa9f099d90177d0c",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/openpi_parallel.py": "712db9850498f2fe47abe395dc5de667fa9796cf979a7f4d3802d81e4ab6c083",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/openpi_runner.py": "ff3fe85d9d8a56e54ed0f61ddb86002145cef322f531e966d1a04887e56e6065",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/openpi_services.py": "39cda76c9785085c134478adb762a6f1e3ea19d146aea4e0194cf81cb6f2206b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/preset_handoff_runner.py": "4a226e8f9ac2479d101e7b7de3c7fd3e2442f888d7ccaeeb2babcd0f06b09ab2",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/runner.py": "78564089110b67b7ed0e6989505c7e27a8bb2bcf050fcc0b2d29bb2274ca1929",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/wrist_frame_matching.py": "7fabc8b5eb31f2455f3f8aacfb53ebbe61af1e6fd2c575dce1fc7bef043c28bc",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/wrist_match_analysis.py": "77d8c4287d5fe452793a7ec2e9b8c4eb0a494e6379b9c35a77e4c0b17d838a86",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/benchmark/wrist_match_viewer.py": "b5457390ec9e8d1f48116d3ee598dbc93436e29e5eaae9851c0ac1f8b9e4263a",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/config.py": "9d65510b096248f8be43a8aeb39f606364becc5c2acd1ce8eb3bc4fe35df58f5",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/__init__.py": "4126cca3aaeace7cdd40ad52ee6c4f94b898291fcbf155469cb5381304a8f2cb",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/block_sqp/__init__.py": "8d4e4964ee5a4903a618fa6a978ea6e09caca8b4bba695066b53d8b1458290bf",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/block_sqp/controller.py": "4cddea3c6aeb7a03906b4aab7577b385aa3779588ac877d2fabd8ab03adb6aa5",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/block_sqp/objective.py": "d79ef7d02257c0f6d9f3aca62a745ca360a09ec45cc537166f646d6916d2851b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/block_sqp/types.py": "5e4bf1b9f976796681c11e45edd38e1be8c9dac1d69dfb846e4919744fcc30dc",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/impedance.py": "7888391f1effa34e2036ab3dd89e07bac50f640bb3582176a0aa8f6db6dfcd4b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/__init__.py": "8e6135d6f8b3651f5c74de325755f6c7c25f43e7ee5571dfe536af9f79dee7b8",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/adapter.py": "ad863a00f077f69a127b85e339b10d111e8edacf53256e4d858743643bb5fc68",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/controller.py": "5b600438acd164c9fc7c399429d01b621108c6c81dd25f33d7e52804c3c86a25",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/ipopt/validation.py": "74ea18391c23558c47b9385a1481fc1f577593cbb58982d7ff64df4781da1f4a",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/joint_tracker.py": "0fb63a7e1a3a85dac54a8ea0b645d1b711106552fa5dbd77f2c3cec6b315d1a7",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/pose.py": "a07bbe0e31b32ace4899f7346264d984f72abda71813137227d27a9bb5bb355c",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/__init__.py": "21baa455e0bd9c1b903ed2f38ca0b93d120963d9548278f297d54c742da75918",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/conditioning.py": "e308cbfc7d47a85a998c593c287dfa02b6881b1f42a444a4dc77d57cee25bfb3",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/kinematics.py": "e831fe05f99a221457d6979239843666eab48a6803e8d15d6910a885ae3b570d",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/losses.py": "f443815afdc8cda85c723a50fce006c2e877bdc195c52a8942d37556512381cd",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/objective.py": "375232d679ef02d5a96103878a60df21f417e2350840088184d3614e3dda8859",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/singularity.py": "522a50e21b5bcc1be8594134770fc55eeccf96357f7b2241ff87f8545030a87b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/control/task_space/types.py": "9f9cf7235459a7cebf9eef4b59834530bda3ae288761c263677520b5d11b3fbb",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/__init__.py": "c1dba202c841ee563e12fd8daef3d784b538b57603c86a52ad849c4b63b08e50",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/intervention.py": "ba940bd002c6c0d3d2ceb5fd7f68ecc46fb2c3bba76a4a6ad96d15549ea10961",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/kinematic.py": "6ac2ce05484572d93df9eaab9ca0ee4a972d446cbdd1480306406f7ec5c7cd29",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/replay_cases.py": "0f7db2f81fb1e060f035f53e86fec7f4fad42d4e56cebc377d9271cd4025cbb4",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/runner.py": "14c5e78026d709b0c3e8bf0d73eb8d8950173502bcdd177ee14b30d183d52297",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/stored.py": "83d1254ebedb7a8e47099584453a46648ffb48ed413e80faa18f3da6426b2198",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/counterfactual/video.py": "1d764b3af32e4a7e3cee9ba2e666828d0a628ba91fd4593f386e73260328347e",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/__init__.py": "e851368957b77283337b29024a12cfda00fec6264fbf29e2d437df518680a6b8",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/annotation_io.py": "d3bb1360d58ccba871d568725e196a34102d08b3cf891bebedeb8b6518bdc5e2",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/collector.py": "d25ddb338fabd5d5a7170f76ad466eb6f481dde5857a8ac33ed48e31eb9e84bd",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/frame_filter.py": "429d4565f385d99196cf4ce7077f827654280b27ee444af11c24c05bac0f8898",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/instructions.py": "27534c7beb24e0d69753ca3b51ef01603be3f6271248546481c6b57887c63ebb",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/__init__.py": "30e9892a772592652a635df328092266a931be607e22c156f3cb2d4781a38bad",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/audit.py": "b429b52c0a02d03bbc8569c9aaf8fad29218d61bdcf6617507299752fbe39c56",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/dsp.py": "3ddf4428e779699d7ba0a22c9ee1f4896f3dea71efbd6653c30aa242340fbdd8",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/recorded_geometry.py": "b65d3f4673cab86dd5d9eee9de327a1a66adb630a62a580b5a6d1fbc30ea8bb0",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/scene.py": "58eba2d288515ea91cdbac47753dcd1e2ded053d1376c666c340633da5daec11",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/segmentation.py": "9dc031cabc4718af9b9383fd91f5d2b7e7d6739b1f6c8218ee2d4461b09a066f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/source.py": "cde0746d039c6f71974dc47909cc5be57d7e29b718c59fe3acfec001ba5eed6f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/libero_annotation/workflow.py": "95a691637f881058c4610d24ab3949a4f9be3711cd07d395bdc07b6a59e2d1b6",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/seeding.py": "900d71a273f02bd6ab22ca831999feca23a3d1d07b8f7e4328b19f38401242a8",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/task_sets.py": "f3669985b0276f11a41bfc9fe6a8458e28ac0dd3b053af49a4c97d4268d79e0e",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/tolerance_labels.py": "a01cc565cd06cf9a6c30be3d4df841dea08da077dd38d3fa27306ea47a18820f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/trial_io.py": "6fbe635a2eae4d3e3209ed9c2ec2093635087fb4c5496563c85866eb1aa2d115",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/viewer/__init__.py": "da868ccfbbe9833de3ccccb81d1792e701da1dee50581c995a099a3982b714e0",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/data/viewer/server.py": "fc0b0cfd6c807fad06bf868df58917ece81cc40ec36b807e8590826cc2d6c751",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/geometry.py": "779c7200d0fbe80e818a527fd50c49dca6e2f0fb6921fdc270a9b11ee1f671e9",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/__init__.py": "4c2ce56326b9aecb27b6ceaa0cfb9e4cc00a2f7c9cfcdb696323eae86eaba2e0",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/base.py": "b7e760e3d5dea0c9ae8c834d86cdfa8ed4336d0a2461b1b334c81963f26d8a65",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/__init__.py": "a688d3969b9812f0c462d293f2d42b2cb0a782638a261d0654b59abf4f8a90f0",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/client.py": "75aac1deb090506594a2638c6cd908bffad2b94ac9cd0294ad5e8b65727f33a9",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/__init__.py": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/action_chunk_broker.py": "cbfb128e6d08c0e309a1a454812384603cae75aea824301a09acbec8572e6b1f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/base_policy.py": "88e98e0f06293f3c4767db675061664c4bba12f87242ba1e64377d1b8de8069e",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/image_tools.py": "d48b4bd7f44e79fe6db8a8e07c9161144fa250be686e1245014a8b47e6171977",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/msgpack_numpy.py": "c04568948fcee52b691e3be4b6cffb759f7e79ad67530fcd5d23095a0d13c057",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/__init__.py": "84b3776f25020b142851950a5bff2890ba10c53ed1ad4d7b881a73c4574e7825",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/agent.py": "b559885afd9645a91b9b6ee12a28513295474f987d11b16610fc0479dbe6de5b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/agents/__init__.py": "583e97fc4f5aba0ec722c12f83b8b0294e6f33f6f24b17322ce4e982176b70a9",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/agents/policy_agent.py": "5303089f2178dd87d4aa74b22541a9a6bccf3cbfabb77b0bbf6600a0eb7e994b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/environment.py": "1c12e5054b3401dec5f1f8b71eef0f625cb60e2b50784dcf19afa32c77107a7e",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/runtime.py": "418748972c3a80d24fef9092a95a8e576d1393d02ccb3af82790c16a648e8912",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/runtime/subscriber.py": "d269a2af8ec4056beb310e5c3c97d4468af01549c7ef80dd905652d8ac64f85b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/clientlib/websocket_client_policy.py": "7e71bc6bf79a0932f7a1b3e13ea32652d185c66adfdd843176842616fa7ea4a9",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/policies/openpi/legacy_franka.py": "e3f2627194a4a1939845b6e738979ab25ee1039f140292b6fa6f5c00f3718614",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/__init__.py": "e72859735906005ca4d511c7568794690f966d5b01c83733a78b89b5241efaa0",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/boundary_builder.py": "a5c7c09016d70862101601f6d0f02cbf30d4abfe9d0d17c5c9333ab3d1980d5f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/boundary_surface.py": "e6395e02c61cb71ec10805056bda44e3a2579cd75e4441ea53e66131aef0fee1",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/builder.py": "4f2f86a783a8164789eac8908877a46d4b9a39e12a9241f0bba2bf2b3edd73d3",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/layout.py": "a7935c85c79c09369be957147be018e6c888c884e8c1eb3a22c0091968fa7a0a",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/map.py": "b56c6f6dbca44aa93ebe03f842d3db145035a92cfa45903297012f0e7fed0781",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/metric.py": "ea9ea01e2ed39f1b57e88a21ad165b8ebc722ce191a8c67c5640a7b99f38a0e1",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/reachability/visualization.py": "864e0a99d1f78bf00a22e3e0513a46dfece18bbe91dbb8dd757dc6a5ed48232b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/__init__.py": "1e844f55b60a54e53a17b1e398d93d18a20cff2cc01e460043163f994c913ee3",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/cameras.py": "3f8ac28e2f1aadc770c0028e11d3990d87429b4ab3a7fc4d6a0badb9d131eb3b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/contact_materials.py": "2f7d315cfcefd20929bb70fca57a6bf8dbcd70e6d1c937e170fbf202cabc5f39",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/layouts.py": "e28cf5f5874333740811f916611aacefa320c139f742be0a59c6f76f1d694ea7",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/libero.py": "b2f396ede1af209b2c90ccad0c2e9f9dde99ac7982210b3784914f00d6c47027",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/libero_joint_controller.py": "da12c76b5d9d30071c15d061f48947dd0b5e834f99904902ae37b4464b76a020",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/loader.py": "b51fd45b61bf9130afb87c447e86c6ef5c31b3ac98303d87194ad628cd494baa",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/nominal_plan_table.py": "69c677b25c15a84808c00db4cf3c4e4cc28f2cbaf2f98c3f76e94ae75e798203",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/preset_runtime.py": "a43d36313a9b133df6121dda9d108b1a67be3f995ca3d862a91e1a0cc50f9cf8",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/__init__.py": "b06b09d3c66389e4972e0eb9adac9f86fe5605827263818b11dc62320f39ffc9",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/camera.py": "97377274caa457369d36a694b71b1f364a10c07850fde273e15b8a90946267e8",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/light.py": "7e005b440acf6511dd37d9e50aaa14efac3be70e006a4af11e3fc2b9dc7c0edd",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/objects.py": "d60feee0216cb81cd1dd85b7206d73f6b5bfc8c86910a0559924240d64640bfa",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/routing.py": "2219459598379c2a0dd0c36dbd572da7b65900b3771b93d03f51affcd15d27f2",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/randomization/table.py": "30b971670cc4815914fab5cde52e138c23b23c4820945d79bb9b620547f38119",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/robot.py": "9e8f85463ccdc7711e10c17afb7c48b7bc75180a091f84106b26ad9a7951c74f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/robots.py": "5052b6432b9f98cce5d11efddb4c8ccd1f9ba9f93cc3b13ecaa8a55a7ba6f143",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/simulation/scenes.py": "961db1ccef7dbd6b9ebbd3889b86a909e989ca8c74f439c223c141b2c6a006bf",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/__init__.py": "f1bd471e1286c8bbdefa7ab655471eb6cb86a6f02d3afe92631b765c7933a153",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/catalog.py": "1851e6e3495a9710d9fc39cbcf9185c7399ba936efe17bfeae9f41bd49460e7e",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/__init__.py": "614a3f1a7c1c01b53f70cd2c1f430caa5b96bff0e60dade642a10d1537d8414f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/adjust_bottle.py": "a1a339d9dac33ac16d16c7154f88ab0abe9252c4c0ab2f63abc8f77d1d28d83b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/ball_paper_sequence.py": "ed8cc65682ec5cac410b631f7369a6140618a732d40000e07892c6d1c6c12296",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/color_block_stack.py": "6c077785e14e9f3351a0f3f9f3dc004819716e01e619d54955bab644e361e12f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/cylinder_narrow_box.py": "40c18fd6cf7b4f00b465b8053200758d2e94421dfba84b3d8340948f634f8f10",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/fruit_receptacles.py": "42ec15dc38de97ea04f875b6ea7e9334c8206fa38423840fe258f8f9bf934c73",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/insert_charger.py": "f93ef0e2fe3fe79a7f3d3f15268a83d5f18af4e27544b797ee96f5197348f424",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/insert_object.py": "d993802d67dff3d294c9ee38cf6672883ab826067b2da79ad15bb40b8306d18a",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/paper_placement.py": "ca6a35a32599663873175b04e001eebbe6addb1f30db4213929ca3a87e5a18e5",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/pick_place.py": "d6e18ac48229602562bc60d4e3742f61e950440915142492d030665ac29575a8",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/pot_fruit_sequence.py": "e3de8fb812d43062f2a849039c5e38785da4d103c80896ce16d16b8c318cdd35",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/pot_lid.py": "57fa37aec612e2310e8c97d6c7d1aad67521471ff5b3114bd9c3bf4085343ff2",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/predicates/__init__.py": "5b90758f8271a7cf2bcc7e73239b343f09b6d26eb57e1b25a27eb25214d5e1ca",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/predicates/contact.py": "fe61651a18bf0473de54d93128dd4073c74914413d28c76932eeecc590e71d0b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/predicates/geometry.py": "1d0b485618f8e56476a9cbf4c4057e7a22ab4d92cf740d74b91d07240d260808",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/predicates/stability.py": "6babd5146374eb49f60d2f8924df3814acf8a55de83c1e2a274b18fb1941218f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/press_device.py": "436b7742547333ca2252895efe44fd9525ef387da37448c43e6b2f895342343a",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/rotate_knob.py": "dab14583795ed8deb48d7c00858b2f830fe500cadbfd9384f49266b21638e4a4",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/types.py": "a11588a39c8bd95f5add03fa82de8ecf069ca61ddaff483963b7de58cae4b775",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/unseen_objects.py": "bb68b5a0c6e2409515cf9a5f12629d2fb0754c9660bbbe2a3565082e801be697",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/evaluation/wipe_whiteboard.py": "47313e98a1ad7d9801a16b1beaf11c2a74df3a7036e7ce3e97acdd465d08b910",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/phases.py": "2b9f1d1163d350d9c74164ec41feca7591a3d00d8f2cd579c8e488bfc5124383",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/__init__.py": "93c2514d7b677a827a50995ba07aa5443a7e664b710d8f1450c111d076f915a7",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/adjust_bottle.py": "0717b208a700819de824256641704368ac7cfa708fcc43372c30326a16819cf9",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/ball_paper_sequence.py": "6d8a02e5528fc4602b217ef7e8a919da652eb1c8cd2c38c0453816efa5871bcc",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/color_block_stack.py": "903e68a5d559a0436e8056261daee20f62517587a87fddfc08def915affa8d9b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/cylinder_narrow_box.py": "d502f175d404b83ecf0904d78ac3635c5f223d91da5129c12993da34a0778a65",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/fruit_receptacles.py": "0d03b1e42385e6b17d77fabf6338295d206f9449e8de4c05751b34e9f54cd0ca",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/insert_charger.py": "720563a6f0e54b8694ea729afc9f62b3bdcd585ccdc0486c7df95de941e40a54",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/insert_object.py": "1c3f0435cfdfa84dd71e613256d113472d1e1a9281cc02995961e80bb3fc244b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/nominal_candidates.py": "1d3ebfb24277c00c04151b71c2f0ec5f7c8024020fa0aaba3359361d4bb20f6a",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/paper_placement.py": "9f3ef1be9fe17333ef45be6464ed1f087126d47c8c7672502e281f0e8608ac1b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/perturbations.py": "0c4215da5b1b188cae6a602bc15e88ee27e5a2212f8345ed318914f113f34914",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/pick_place.py": "39d7db06796fa5c970cfc20d682ca4fe5e9a41b285394697e99871af05e2ccc1",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/pot_fruit_sequence.py": "d11485578f9e6eb2575288474b292a9b28f1afc61069c31d8f437643d5b28f35",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/pot_lid.py": "2b48bf03d55fced51623779d8c456361ac97569dfb24a669a368b9a7f0c55ee5",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/presets.py": "c68ee81e38790cb9a787ac950e516a9ecd3248618224f7b3effe4d5258fc3e8c",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/press_device.py": "aae7a2c348c65f903f59ffc568b6a9c4dc9c03c15969a800934317528ea409a8",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/rotate_knob.py": "8e0d1f4b737e146616338207f5c24d787387e37aef0ee776430a9da0232105a2",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/types.py": "86af00eed503948a5306b2b813c995522138fc016187657ba851de25dff59097",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/planning/wipe_whiteboard.py": "c639673d686f248c66186703390a92a880742f73dc4fad4e2c3ce4ee1df1f289",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/registry.py": "1698b63175ad24d34b25791282534705b2946568b304c31ae75472d74cf5fbe4",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tasks/subtasks.py": "ef1b2936479857bea347182aeaeeec8b366cbabf22e10e408605c75ae2ba4d7a",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/__init__.py": "63a525602afa9094017b91505e49f168e3f08cf8209bd261277de7787bb83731",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/app.py": "d43d74dd46134483e21b7418e7ebf09a672d2fc10978e49f8906c0f620596aea",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/capture_window_layout.py": "d659df3647aa02ee3c4c0db0ee9200032ef19c1dfbe29c02dea53695811c8e90",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/contact_markers.py": "f1c874ae1a40bd8fac54ec342696ccd03200b0f196764ff051f19c7fb773bf33",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/layout_visualization.py": "3362ebae4a026d64010fb8f9733328221010d7603b11f9d233a96fd1070b6e18",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/nominal_preparation.py": "fd84b88436a43d3beacf78701e50a8620c714a8d6bab671042afbdd03bb62d17",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/playback.py": "96eb7e98317a9ede55221bf0b77bf408f34ca03c5ef0e053048016db986ee3a9",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/recording.py": "54997ee70acd3341d63e99ad87952a61acd2f64638951a64dbe251365d23517f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/ui.py": "2fff7ac224bc868484ef1aea4a97a0a5eeeb7b60f8b621201c08da83d3afba2c",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/window_layout.py": "591dec53d08e1383957e20d3f4a0c3d7b0d665de940b66fb91edb3b5ec3d5120",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/teleop/windows.py": "6031a74556b4aeef2c02d3e2b11e0804bc05972fbe908e2eab87c3077e22ffd2",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/__init__.py": "c2164b659bae499e142292506b12e7cc17360be2a70498260597414bf3b1fa6d",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/annotations.py": "87cd6f42393a76289e0f3c4d42032bb3e747e27bd87bda4acd725c6336d9e223",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/boundary_governor.py": "7efba34eb401ee44c87e796dc40736a1e6632688f4f0a3639d0bdf754913cd04",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/clearance_policy.py": "6750e1f43ad4bfd5b4725e7fa96fe52a3dc88e889f5881b95edcd07bd59aeab7",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/context.py": "95d23d89523024699327700e58c1fffc2a7e8da90117b1a594089ab3c43a5574",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/counterfactual.py": "6bbb8efc32fa4dc8af6f85c67a96c6a48e2ea7c6be9f912f1526dff7a1295be2",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/frame.py": "e36d07bfdd8dabdb7c2ccf8fc5196067aee5d22ae054263ca5f1e63970dfef3f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/grid.py": "d0776338a8953ae82daf146360cb3ef099470a482d4b17132ed9b99c09b51ba2",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/labeling.py": "8501652c00a8eef152c899be58453f836c405b0c6a4a787f4be1b5a916b59f1c",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/metrics.py": "297341ee7e7570f0cf7f1a08748a128c85f7212c6970f112d9c4309c16e28a1b",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/oracle.py": "c4aeab659332bcbafa8495e6cc1720e0a003c657d550bce6142a546d3757da71",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/prediction.py": "eb8be5017dc5139c378f70a5559e23dc97c3e93f86da5fcb0f3603b33fef9290",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/projection.py": "ad1e001a1c68af33db3ecd8b1b1dbd798bd9cebc73c11f13157051f95a5be84f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/release_state.py": "c216b861b950b193604cd4527c05860e57a548120aea8fbe12f00e1cf4fe9e86",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/runtime.py": "eadc9dd6d21f9e3b39aa178d2f2e8212c3d7d119bc81e683772d5002581bd30f",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/so3_preprocessor.py": "e20c6c58b6a40452a614e728e48c9cdb9a0aece733b1770416fdecb056ba54ea",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/specification.py": "ba1cae21ff613c479aa49cd56cc30030b12ef5e349af461927c9f4719bba0f16",
+    "/media/czl/sata/franka_my_code/franka_mujoco/tasktol/tolerance/state.py": "d55a0c3fe4dfe11137c43dd63d1dce581b45378f6dada88da2fd3bee3450c566",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/__init__.py": "c7df9f18109ae9637c08f180b7f4cf3eca039f93466a8a469abfa0bc08ce11c5",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/analysis/__init__.py": "462adb6fa598df721fa540e393b5a890c7e6fda59d70e931d599cc618e8bd1e3",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/analysis/sqp_weight_search.py": "f7d465c709eb8cd730137635403abfd6bc803dfb63bb5bad8a087f92ade00ee1",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/__init__.py": "1773ba42fde832da69d3b61fd4cec62720a5f72bacb9e35c7c579c9f0af599b5",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/catalog.py": "7809a756d0d93a405f7638f3cd40664bcbdb3d1148b07527c66d75d7c9b54847",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/environment.py": "6c137deecc8fba4612f7328d24042af16ff6107d590cf75fcd9176ce84e4c2d9",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/libero.py": "c5bb6b383e3a9f5ace87274b5f81fb26dff62bfb94e2c4b174abab7770585346",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/libero_reference_actions.py": "b831c1b745ac799af19b7861c37753ca9b814ab118be1fbfa90ddf53da27e9df",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/libero_replay_state.py": "e0bf675931eaef382b5914e75daab779a3baf3a45059db266b9bc61632558606",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/metrics.py": "4fe01fcf4d85da0440e23282b422abb83e4755bab9f99b6fd5693bca4d2d081c",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/offline_observation_runner.py": "904cf8341fb7ccd780dc0b4df07d7a9928f3a8e0e86115a8aa9f099d90177d0c",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/openpi_parallel.py": "712db9850498f2fe47abe395dc5de667fa9796cf979a7f4d3802d81e4ab6c083",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/openpi_runner.py": "ff3fe85d9d8a56e54ed0f61ddb86002145cef322f531e966d1a04887e56e6065",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/openpi_services.py": "39cda76c9785085c134478adb762a6f1e3ea19d146aea4e0194cf81cb6f2206b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/preset_handoff_runner.py": "4a226e8f9ac2479d101e7b7de3c7fd3e2442f888d7ccaeeb2babcd0f06b09ab2",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/runner.py": "78564089110b67b7ed0e6989505c7e27a8bb2bcf050fcc0b2d29bb2274ca1929",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/wrist_frame_matching.py": "7fabc8b5eb31f2455f3f8aacfb53ebbe61af1e6fd2c575dce1fc7bef043c28bc",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/wrist_match_analysis.py": "77d8c4287d5fe452793a7ec2e9b8c4eb0a494e6379b9c35a77e4c0b17d838a86",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/benchmark/wrist_match_viewer.py": "b5457390ec9e8d1f48116d3ee598dbc93436e29e5eaae9851c0ac1f8b9e4263a",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/config.py": "9d65510b096248f8be43a8aeb39f606364becc5c2acd1ce8eb3bc4fe35df58f5",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/__init__.py": "4126cca3aaeace7cdd40ad52ee6c4f94b898291fcbf155469cb5381304a8f2cb",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/block_sqp/__init__.py": "8d4e4964ee5a4903a618fa6a978ea6e09caca8b4bba695066b53d8b1458290bf",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/block_sqp/controller.py": "4cddea3c6aeb7a03906b4aab7577b385aa3779588ac877d2fabd8ab03adb6aa5",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/block_sqp/objective.py": "d79ef7d02257c0f6d9f3aca62a745ca360a09ec45cc537166f646d6916d2851b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/block_sqp/types.py": "5e4bf1b9f976796681c11e45edd38e1be8c9dac1d69dfb846e4919744fcc30dc",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/impedance.py": "7888391f1effa34e2036ab3dd89e07bac50f640bb3582176a0aa8f6db6dfcd4b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/ipopt/__init__.py": "8e6135d6f8b3651f5c74de325755f6c7c25f43e7ee5571dfe536af9f79dee7b8",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/ipopt/adapter.py": "ad863a00f077f69a127b85e339b10d111e8edacf53256e4d858743643bb5fc68",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/ipopt/controller.py": "5b600438acd164c9fc7c399429d01b621108c6c81dd25f33d7e52804c3c86a25",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/ipopt/validation.py": "74ea18391c23558c47b9385a1481fc1f577593cbb58982d7ff64df4781da1f4a",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/joint_tracker.py": "0fb63a7e1a3a85dac54a8ea0b645d1b711106552fa5dbd77f2c3cec6b315d1a7",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/pose.py": "a07bbe0e31b32ace4899f7346264d984f72abda71813137227d27a9bb5bb355c",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/task_space/__init__.py": "21baa455e0bd9c1b903ed2f38ca0b93d120963d9548278f297d54c742da75918",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/task_space/conditioning.py": "e308cbfc7d47a85a998c593c287dfa02b6881b1f42a444a4dc77d57cee25bfb3",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/task_space/kinematics.py": "e831fe05f99a221457d6979239843666eab48a6803e8d15d6910a885ae3b570d",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/task_space/losses.py": "f443815afdc8cda85c723a50fce006c2e877bdc195c52a8942d37556512381cd",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/task_space/objective.py": "375232d679ef02d5a96103878a60df21f417e2350840088184d3614e3dda8859",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/task_space/singularity.py": "522a50e21b5bcc1be8594134770fc55eeccf96357f7b2241ff87f8545030a87b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/control/task_space/types.py": "9f9cf7235459a7cebf9eef4b59834530bda3ae288761c263677520b5d11b3fbb",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/counterfactual/__init__.py": "c1dba202c841ee563e12fd8daef3d784b538b57603c86a52ad849c4b63b08e50",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/counterfactual/intervention.py": "ba940bd002c6c0d3d2ceb5fd7f68ecc46fb2c3bba76a4a6ad96d15549ea10961",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/counterfactual/kinematic.py": "6ac2ce05484572d93df9eaab9ca0ee4a972d446cbdd1480306406f7ec5c7cd29",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/counterfactual/replay_cases.py": "0f7db2f81fb1e060f035f53e86fec7f4fad42d4e56cebc377d9271cd4025cbb4",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/counterfactual/runner.py": "14c5e78026d709b0c3e8bf0d73eb8d8950173502bcdd177ee14b30d183d52297",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/counterfactual/stored.py": "83d1254ebedb7a8e47099584453a46648ffb48ed413e80faa18f3da6426b2198",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/counterfactual/video.py": "1d764b3af32e4a7e3cee9ba2e666828d0a628ba91fd4593f386e73260328347e",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/__init__.py": "e851368957b77283337b29024a12cfda00fec6264fbf29e2d437df518680a6b8",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/annotation_io.py": "d3bb1360d58ccba871d568725e196a34102d08b3cf891bebedeb8b6518bdc5e2",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/collector.py": "d25ddb338fabd5d5a7170f76ad466eb6f481dde5857a8ac33ed48e31eb9e84bd",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/frame_filter.py": "429d4565f385d99196cf4ce7077f827654280b27ee444af11c24c05bac0f8898",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/instructions.py": "27534c7beb24e0d69753ca3b51ef01603be3f6271248546481c6b57887c63ebb",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/libero_annotation/__init__.py": "30e9892a772592652a635df328092266a931be607e22c156f3cb2d4781a38bad",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/libero_annotation/audit.py": "b429b52c0a02d03bbc8569c9aaf8fad29218d61bdcf6617507299752fbe39c56",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/libero_annotation/dsp.py": "3ddf4428e779699d7ba0a22c9ee1f4896f3dea71efbd6653c30aa242340fbdd8",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/libero_annotation/recorded_geometry.py": "b65d3f4673cab86dd5d9eee9de327a1a66adb630a62a580b5a6d1fbc30ea8bb0",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/libero_annotation/scene.py": "58eba2d288515ea91cdbac47753dcd1e2ded053d1376c666c340633da5daec11",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/libero_annotation/segmentation.py": "9dc031cabc4718af9b9383fd91f5d2b7e7d6739b1f6c8218ee2d4461b09a066f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/libero_annotation/source.py": "cde0746d039c6f71974dc47909cc5be57d7e29b718c59fe3acfec001ba5eed6f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/libero_annotation/workflow.py": "95a691637f881058c4610d24ab3949a4f9be3711cd07d395bdc07b6a59e2d1b6",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/seeding.py": "900d71a273f02bd6ab22ca831999feca23a3d1d07b8f7e4328b19f38401242a8",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/task_sets.py": "f3669985b0276f11a41bfc9fe6a8458e28ac0dd3b053af49a4c97d4268d79e0e",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/tolerance_labels.py": "a01cc565cd06cf9a6c30be3d4df841dea08da077dd38d3fa27306ea47a18820f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/trial_io.py": "6fbe635a2eae4d3e3209ed9c2ec2093635087fb4c5496563c85866eb1aa2d115",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/viewer/__init__.py": "da868ccfbbe9833de3ccccb81d1792e701da1dee50581c995a099a3982b714e0",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/data/viewer/server.py": "fc0b0cfd6c807fad06bf868df58917ece81cc40ec36b807e8590826cc2d6c751",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/geometry.py": "779c7200d0fbe80e818a527fd50c49dca6e2f0fb6921fdc270a9b11ee1f671e9",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/__init__.py": "4c2ce56326b9aecb27b6ceaa0cfb9e4cc00a2f7c9cfcdb696323eae86eaba2e0",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/base.py": "b7e760e3d5dea0c9ae8c834d86cdfa8ed4336d0a2461b1b334c81963f26d8a65",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/__init__.py": "a688d3969b9812f0c462d293f2d42b2cb0a782638a261d0654b59abf4f8a90f0",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/client.py": "75aac1deb090506594a2638c6cd908bffad2b94ac9cd0294ad5e8b65727f33a9",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/__init__.py": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/action_chunk_broker.py": "cbfb128e6d08c0e309a1a454812384603cae75aea824301a09acbec8572e6b1f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/base_policy.py": "88e98e0f06293f3c4767db675061664c4bba12f87242ba1e64377d1b8de8069e",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/image_tools.py": "d48b4bd7f44e79fe6db8a8e07c9161144fa250be686e1245014a8b47e6171977",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/msgpack_numpy.py": "c04568948fcee52b691e3be4b6cffb759f7e79ad67530fcd5d23095a0d13c057",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/runtime/__init__.py": "84b3776f25020b142851950a5bff2890ba10c53ed1ad4d7b881a73c4574e7825",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/runtime/agent.py": "b559885afd9645a91b9b6ee12a28513295474f987d11b16610fc0479dbe6de5b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/runtime/agents/__init__.py": "583e97fc4f5aba0ec722c12f83b8b0294e6f33f6f24b17322ce4e982176b70a9",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/runtime/agents/policy_agent.py": "5303089f2178dd87d4aa74b22541a9a6bccf3cbfabb77b0bbf6600a0eb7e994b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/runtime/environment.py": "1c12e5054b3401dec5f1f8b71eef0f625cb60e2b50784dcf19afa32c77107a7e",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/runtime/runtime.py": "418748972c3a80d24fef9092a95a8e576d1393d02ccb3af82790c16a648e8912",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/runtime/subscriber.py": "d269a2af8ec4056beb310e5c3c97d4468af01549c7ef80dd905652d8ac64f85b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/clientlib/websocket_client_policy.py": "7e71bc6bf79a0932f7a1b3e13ea32652d185c66adfdd843176842616fa7ea4a9",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/policies/openpi/legacy_franka.py": "e3f2627194a4a1939845b6e738979ab25ee1039f140292b6fa6f5c00f3718614",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/reachability/__init__.py": "e72859735906005ca4d511c7568794690f966d5b01c83733a78b89b5241efaa0",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/reachability/boundary_builder.py": "a5c7c09016d70862101601f6d0f02cbf30d4abfe9d0d17c5c9333ab3d1980d5f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/reachability/boundary_surface.py": "e6395e02c61cb71ec10805056bda44e3a2579cd75e4441ea53e66131aef0fee1",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/reachability/builder.py": "4f2f86a783a8164789eac8908877a46d4b9a39e12a9241f0bba2bf2b3edd73d3",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/reachability/layout.py": "a7935c85c79c09369be957147be018e6c888c884e8c1eb3a22c0091968fa7a0a",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/reachability/map.py": "b56c6f6dbca44aa93ebe03f842d3db145035a92cfa45903297012f0e7fed0781",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/reachability/metric.py": "ea9ea01e2ed39f1b57e88a21ad165b8ebc722ce191a8c67c5640a7b99f38a0e1",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/reachability/visualization.py": "864e0a99d1f78bf00a22e3e0513a46dfece18bbe91dbb8dd757dc6a5ed48232b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/__init__.py": "1e844f55b60a54e53a17b1e398d93d18a20cff2cc01e460043163f994c913ee3",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/cameras.py": "3f8ac28e2f1aadc770c0028e11d3990d87429b4ab3a7fc4d6a0badb9d131eb3b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/contact_materials.py": "2f7d315cfcefd20929bb70fca57a6bf8dbcd70e6d1c937e170fbf202cabc5f39",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/layouts.py": "e28cf5f5874333740811f916611aacefa320c139f742be0a59c6f76f1d694ea7",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/libero.py": "b2f396ede1af209b2c90ccad0c2e9f9dde99ac7982210b3784914f00d6c47027",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/libero_joint_controller.py": "da12c76b5d9d30071c15d061f48947dd0b5e834f99904902ae37b4464b76a020",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/loader.py": "b51fd45b61bf9130afb87c447e86c6ef5c31b3ac98303d87194ad628cd494baa",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/nominal_plan_table.py": "69c677b25c15a84808c00db4cf3c4e4cc28f2cbaf2f98c3f76e94ae75e798203",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/preset_runtime.py": "a43d36313a9b133df6121dda9d108b1a67be3f995ca3d862a91e1a0cc50f9cf8",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/randomization/__init__.py": "b06b09d3c66389e4972e0eb9adac9f86fe5605827263818b11dc62320f39ffc9",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/randomization/camera.py": "97377274caa457369d36a694b71b1f364a10c07850fde273e15b8a90946267e8",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/randomization/light.py": "7e005b440acf6511dd37d9e50aaa14efac3be70e006a4af11e3fc2b9dc7c0edd",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/randomization/objects.py": "d60feee0216cb81cd1dd85b7206d73f6b5bfc8c86910a0559924240d64640bfa",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/randomization/routing.py": "2219459598379c2a0dd0c36dbd572da7b65900b3771b93d03f51affcd15d27f2",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/randomization/table.py": "30b971670cc4815914fab5cde52e138c23b23c4820945d79bb9b620547f38119",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/robot.py": "9e8f85463ccdc7711e10c17afb7c48b7bc75180a091f84106b26ad9a7951c74f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/robots.py": "5052b6432b9f98cce5d11efddb4c8ccd1f9ba9f93cc3b13ecaa8a55a7ba6f143",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/simulation/scenes.py": "961db1ccef7dbd6b9ebbd3889b86a909e989ca8c74f439c223c141b2c6a006bf",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/__init__.py": "f1bd471e1286c8bbdefa7ab655471eb6cb86a6f02d3afe92631b765c7933a153",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/catalog.py": "1851e6e3495a9710d9fc39cbcf9185c7399ba936efe17bfeae9f41bd49460e7e",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/__init__.py": "614a3f1a7c1c01b53f70cd2c1f430caa5b96bff0e60dade642a10d1537d8414f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/adjust_bottle.py": "a1a339d9dac33ac16d16c7154f88ab0abe9252c4c0ab2f63abc8f77d1d28d83b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/ball_paper_sequence.py": "ed8cc65682ec5cac410b631f7369a6140618a732d40000e07892c6d1c6c12296",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/color_block_stack.py": "6c077785e14e9f3351a0f3f9f3dc004819716e01e619d54955bab644e361e12f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/cylinder_narrow_box.py": "40c18fd6cf7b4f00b465b8053200758d2e94421dfba84b3d8340948f634f8f10",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/fruit_receptacles.py": "42ec15dc38de97ea04f875b6ea7e9334c8206fa38423840fe258f8f9bf934c73",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/insert_charger.py": "f93ef0e2fe3fe79a7f3d3f15268a83d5f18af4e27544b797ee96f5197348f424",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/insert_object.py": "d993802d67dff3d294c9ee38cf6672883ab826067b2da79ad15bb40b8306d18a",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/paper_placement.py": "ca6a35a32599663873175b04e001eebbe6addb1f30db4213929ca3a87e5a18e5",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/pick_place.py": "d6e18ac48229602562bc60d4e3742f61e950440915142492d030665ac29575a8",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/pot_fruit_sequence.py": "e3de8fb812d43062f2a849039c5e38785da4d103c80896ce16d16b8c318cdd35",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/pot_lid.py": "57fa37aec612e2310e8c97d6c7d1aad67521471ff5b3114bd9c3bf4085343ff2",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/predicates/__init__.py": "5b90758f8271a7cf2bcc7e73239b343f09b6d26eb57e1b25a27eb25214d5e1ca",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/predicates/contact.py": "fe61651a18bf0473de54d93128dd4073c74914413d28c76932eeecc590e71d0b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/predicates/geometry.py": "1d0b485618f8e56476a9cbf4c4057e7a22ab4d92cf740d74b91d07240d260808",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/predicates/stability.py": "6babd5146374eb49f60d2f8924df3814acf8a55de83c1e2a274b18fb1941218f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/press_device.py": "436b7742547333ca2252895efe44fd9525ef387da37448c43e6b2f895342343a",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/rotate_knob.py": "dab14583795ed8deb48d7c00858b2f830fe500cadbfd9384f49266b21638e4a4",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/types.py": "a11588a39c8bd95f5add03fa82de8ecf069ca61ddaff483963b7de58cae4b775",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/unseen_objects.py": "bb68b5a0c6e2409515cf9a5f12629d2fb0754c9660bbbe2a3565082e801be697",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/evaluation/wipe_whiteboard.py": "47313e98a1ad7d9801a16b1beaf11c2a74df3a7036e7ce3e97acdd465d08b910",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/phases.py": "2b9f1d1163d350d9c74164ec41feca7591a3d00d8f2cd579c8e488bfc5124383",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/__init__.py": "93c2514d7b677a827a50995ba07aa5443a7e664b710d8f1450c111d076f915a7",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/adjust_bottle.py": "0717b208a700819de824256641704368ac7cfa708fcc43372c30326a16819cf9",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/ball_paper_sequence.py": "6d8a02e5528fc4602b217ef7e8a919da652eb1c8cd2c38c0453816efa5871bcc",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/color_block_stack.py": "903e68a5d559a0436e8056261daee20f62517587a87fddfc08def915affa8d9b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/cylinder_narrow_box.py": "d502f175d404b83ecf0904d78ac3635c5f223d91da5129c12993da34a0778a65",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/fruit_receptacles.py": "0d03b1e42385e6b17d77fabf6338295d206f9449e8de4c05751b34e9f54cd0ca",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/insert_charger.py": "720563a6f0e54b8694ea729afc9f62b3bdcd585ccdc0486c7df95de941e40a54",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/insert_object.py": "1c3f0435cfdfa84dd71e613256d113472d1e1a9281cc02995961e80bb3fc244b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/nominal_candidates.py": "1d3ebfb24277c00c04151b71c2f0ec5f7c8024020fa0aaba3359361d4bb20f6a",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/paper_placement.py": "9f3ef1be9fe17333ef45be6464ed1f087126d47c8c7672502e281f0e8608ac1b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/perturbations.py": "0c4215da5b1b188cae6a602bc15e88ee27e5a2212f8345ed318914f113f34914",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/pick_place.py": "39d7db06796fa5c970cfc20d682ca4fe5e9a41b285394697e99871af05e2ccc1",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/pot_fruit_sequence.py": "d11485578f9e6eb2575288474b292a9b28f1afc61069c31d8f437643d5b28f35",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/pot_lid.py": "2b48bf03d55fced51623779d8c456361ac97569dfb24a669a368b9a7f0c55ee5",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/presets.py": "c68ee81e38790cb9a787ac950e516a9ecd3248618224f7b3effe4d5258fc3e8c",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/press_device.py": "aae7a2c348c65f903f59ffc568b6a9c4dc9c03c15969a800934317528ea409a8",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/rotate_knob.py": "8e0d1f4b737e146616338207f5c24d787387e37aef0ee776430a9da0232105a2",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/types.py": "86af00eed503948a5306b2b813c995522138fc016187657ba851de25dff59097",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/planning/wipe_whiteboard.py": "c639673d686f248c66186703390a92a880742f73dc4fad4e2c3ce4ee1df1f289",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/registry.py": "1698b63175ad24d34b25791282534705b2946568b304c31ae75472d74cf5fbe4",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tasks/subtasks.py": "ef1b2936479857bea347182aeaeeec8b366cbabf22e10e408605c75ae2ba4d7a",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/__init__.py": "63a525602afa9094017b91505e49f168e3f08cf8209bd261277de7787bb83731",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/app.py": "d43d74dd46134483e21b7418e7ebf09a672d2fc10978e49f8906c0f620596aea",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/capture_window_layout.py": "d659df3647aa02ee3c4c0db0ee9200032ef19c1dfbe29c02dea53695811c8e90",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/contact_markers.py": "f1c874ae1a40bd8fac54ec342696ccd03200b0f196764ff051f19c7fb773bf33",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/layout_visualization.py": "3362ebae4a026d64010fb8f9733328221010d7603b11f9d233a96fd1070b6e18",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/nominal_preparation.py": "fd84b88436a43d3beacf78701e50a8620c714a8d6bab671042afbdd03bb62d17",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/playback.py": "96eb7e98317a9ede55221bf0b77bf408f34ca03c5ef0e053048016db986ee3a9",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/recording.py": "54997ee70acd3341d63e99ad87952a61acd2f64638951a64dbe251365d23517f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/ui.py": "2fff7ac224bc868484ef1aea4a97a0a5eeeb7b60f8b621201c08da83d3afba2c",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/window_layout.py": "591dec53d08e1383957e20d3f4a0c3d7b0d665de940b66fb91edb3b5ec3d5120",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/teleop/windows.py": "6031a74556b4aeef2c02d3e2b11e0804bc05972fbe908e2eab87c3077e22ffd2",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/__init__.py": "c2164b659bae499e142292506b12e7cc17360be2a70498260597414bf3b1fa6d",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/annotations.py": "87cd6f42393a76289e0f3c4d42032bb3e747e27bd87bda4acd725c6336d9e223",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/boundary_governor.py": "7efba34eb401ee44c87e796dc40736a1e6632688f4f0a3639d0bdf754913cd04",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/clearance_policy.py": "6750e1f43ad4bfd5b4725e7fa96fe52a3dc88e889f5881b95edcd07bd59aeab7",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/context.py": "95d23d89523024699327700e58c1fffc2a7e8da90117b1a594089ab3c43a5574",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/counterfactual.py": "6bbb8efc32fa4dc8af6f85c67a96c6a48e2ea7c6be9f912f1526dff7a1295be2",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/frame.py": "e36d07bfdd8dabdb7c2ccf8fc5196067aee5d22ae054263ca5f1e63970dfef3f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/grid.py": "d0776338a8953ae82daf146360cb3ef099470a482d4b17132ed9b99c09b51ba2",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/labeling.py": "8501652c00a8eef152c899be58453f836c405b0c6a4a787f4be1b5a916b59f1c",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/metrics.py": "297341ee7e7570f0cf7f1a08748a128c85f7212c6970f112d9c4309c16e28a1b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/oracle.py": "c4aeab659332bcbafa8495e6cc1720e0a003c657d550bce6142a546d3757da71",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/prediction.py": "eb8be5017dc5139c378f70a5559e23dc97c3e93f86da5fcb0f3603b33fef9290",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/projection.py": "ad1e001a1c68af33db3ecd8b1b1dbd798bd9cebc73c11f13157051f95a5be84f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/release_state.py": "c216b861b950b193604cd4527c05860e57a548120aea8fbe12f00e1cf4fe9e86",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/runtime.py": "eadc9dd6d21f9e3b39aa178d2f2e8212c3d7d119bc81e683772d5002581bd30f",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/so3_preprocessor.py": "e20c6c58b6a40452a614e728e48c9cdb9a0aece733b1770416fdecb056ba54ea",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/specification.py": "ba1cae21ff613c479aa49cd56cc30030b12ef5e349af461927c9f4719bba0f16",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/frozen_shared_runtime/tasktol/tolerance/state.py": "d55a0c3fe4dfe11137c43dd63d1dce581b45378f6dada88da2fd3bee3450c566",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/audit_joint13_predicted_evaluation.py": "743d6854ad5b9eee08a012f3c74f68a22627d3f52532b6d91a82ed4c98482f59",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_predicted_libero_local.py": "b5481a117517a6f7c2383d9828e32750ce9b0933b70520d77ec165fb0531bc0a",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/mask_viewer/phase_adapter.py": "247672ad120fa2c077183de54698015534c2965d9d1a33f189cbd4533c927c9c",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/predicted_tolerance_policy.py": "71bf875d4c2ad821c0397105f08566f49a66911d54e87ae465943f25b04c06ab",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/solver_failure_hold.py": "63288307722ed73659fd2a920c1f07642a4f2262eb2efcc11b90c502178d6807",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/success_continuation.py": "05af0dbbfa18a62b17ad98f36a3bb0c1b27a1d444371acc6795bce576327c4eb",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/tasktol_actions.py": "a507731b0e3bb7eb416a93b4c9886714b08435d341e3f0da7729e18e7c2d616a",
+    "/media/czl/sata/franka_my_code/openpi/experiments/libero_tasktol_compat/mujoco_joint_servo.py": "a5b34f567e67be7765c53672693dcec7adc2eec47db7bc47f372a6595dd32c8a",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/__init__.py": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/action_chunk_broker.py": "019b9d69cb26cc681331a2f95dbe60a2cc7b02d6d309c5d15b6457ab39798234",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/base_policy.py": "88e98e0f06293f3c4767db675061664c4bba12f87242ba1e64377d1b8de8069e",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/image_tools.py": "d48b4bd7f44e79fe6db8a8e07c9161144fa250be686e1245014a8b47e6171977",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/image_tools_test.py": "4df4b0ba0b95ba5e47160039c3e837a64d50c802b419a588211dffbaa732589c",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/msgpack_numpy.py": "c04568948fcee52b691e3be4b6cffb759f7e79ad67530fcd5d23095a0d13c057",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/msgpack_numpy_test.py": "2c6dd236720dae716d7bdf842b7d506a165e9563bf9d4376c95289269adcb973",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/runtime/agent.py": "b559885afd9645a91b9b6ee12a28513295474f987d11b16610fc0479dbe6de5b",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/runtime/agents/policy_agent.py": "c4d63952d1954bd4b72a3122223df36794812fea74cf1c7023433b5a90473c1c",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/runtime/environment.py": "1c12e5054b3401dec5f1f8b71eef0f625cb60e2b50784dcf19afa32c77107a7e",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/runtime/runtime.py": "3daa242a9ce61ffb210789ef3ba6b1e3cade9de757fcd36af7b174c530345ea8",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/runtime/subscriber.py": "d269a2af8ec4056beb310e5c3c97d4468af01549c7ef80dd905652d8ac64f85b",
+    "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/websocket_client_policy.py": "36557cb0b91ccf31cd4fb4b508306850d76ed0feb4028dac5182d0f5a5d88005",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl": "491835cc2eb6956f7ce3d1ee4e266377116168fe453e6529fe105e3b0333635d",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it.bddl": "5255fe54d7f25fad4dee8fa30a30033d8cb908f1708d953c91ab609264fb4fb8",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it.bddl": "456d145f92be049f445fc77673dc583d9d17ea7afe92f6ffcb2fd1fa5565d420",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove.bddl": "ae1299a707d3e810096ad648948c517de40474bcdacca93a15e17d191e34454a",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.bddl": "e27ab37f512fe42e35771d6130f531e6a9656929e7b4c60b348b81360cf5675d",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket.bddl": "2e661058917f683a25bce480015197f0a2c1911bcbc2b9dd9d947199069c9618",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket.bddl": "3f552805c7ab34c44debcf38a48b8131d6fee3011dd86c039650b84e0f77d058",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate.bddl": "0c6749b920bff1e1efe47ffb0e0b801a3e6959a650e710f376dd2b812c74e865",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl": "dbc9464b424cdc9b771b92d0b8a8c185b1b539f6a4133b323dc858bcf8f6a9c2",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl": "07ca32c940d70c065e870452ef9c63e6dfa1d8506e6a86cf9b3763f652ba2d9f",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/open_the_middle_drawer_of_the_cabinet.bddl": "832ab48ec476807c767e8985666e295700f92d1f8daeae1c34eee1e75293769b",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/open_the_top_drawer_and_put_the_bowl_inside.bddl": "3056e4dc72ee590432cfb18c610fd077a572c8b8f256e45328031005dd0b6757",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/push_the_plate_to_the_front_of_the_stove.bddl": "26f22f8ad39a4b2b344b049115c45661a877fa0b4821fb78246725e7e87d8c0b",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_bowl_on_the_plate.bddl": "358b7781437e412c67d6a7648c1c28796b6b1bf117a25e61316cb8dfeb940e5b",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_bowl_on_the_stove.bddl": "c6812d6c988be830412aa6fc4801af04d60f8c4565d2625763b6a0f2b843a87f",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_bowl_on_top_of_the_cabinet.bddl": "2ffba859a154f50c3c99ffb3420743fa5aa65c70bf7d4cd26f5bc81d07be5713",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl": "81c54eace32b92466598103b3b6e8435ce90f10996ef18cec4a35fe6c4d31a98",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_wine_bottle_on_the_rack.bddl": "3d3ee18139056aa3780572cde17b1c50dc20ae0d299403f65e514e8471ba0e8e",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet.bddl": "2ef6f403a8451e216af44158c1a6c975cf8e5058ad02d78367ac0be443d096fe",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/turn_on_the_stove.bddl": "cbd2a0514d53226c5d09e17af40b22935d4cb6ff8fdaff0d55f555de1adecc13",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket.bddl": "df088984da13131f8332ee0f13a7896c6a97afd02ee5007a42e8fc5e0893571e",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket.bddl": "8a7e37b76fce5621e649e260dbcfcec7ce2f9a055ca09a4f1ebaf5ca74a739c2",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_butter_and_place_it_in_the_basket.bddl": "5d8053b40ff33246fdbcc38548db84032c6bb647b4b88b6646d9cf6b73a5006c",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket.bddl": "674ceabc400b7b16d46e8eaf678709d4a633235c7e0a80233775044fe38b19b0",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket.bddl": "7019f37ee158d67a21338a6df0c441dd8f84979b946b5e20bb49463ef0508ea2",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket.bddl": "4a4e545483a3fe30cf0ef3dc05bfe5e6ad5e37c94b4376dfa73fe1b60e75b319",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_milk_and_place_it_in_the_basket.bddl": "9910aabf6717e8ba3e24a3f8500d9bce9ee075346ea6961e8fd766f1257d2996",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket.bddl": "6298533e7bcfb83e40779a77fda39216e8cd53f22bf1af6388585dad0abb0b50",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket.bddl": "024978e9e8f43a49b49d0965f4f426d364ce056307f0fcf5733dc4682fac437a",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_tomato_sauce_and_place_it_in_the_basket.bddl": "b1f4bb69d256a05f693838de46182bb0d3de0de68eec350df1b5b1e76f6c136d",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate.bddl": "9b59eb1287802868ad9bc78d58e6d36d4ba31134e679cfdbdf4b0feb660c959b",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate.bddl": "5e19880ebc844f86b89f63b172aab0b7a89f85b6e6955891f544f0ea7d0795d5",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate.bddl": "4371189e11d9fd29bb548ab9a8adcd741bb0ce41bb66c612672d0e8cb29a52a9",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate.bddl": "566c65596f3472e752e6522817bff51bbf3ce5159d7bec1d3554e5ead46b1e55",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate.bddl": "c8fbb9effa27b947d04d26862d75273d93cac1806734e53836cd472a08aec1fe",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate.bddl": "53a7516571412a2f46a27cbf8482d3b76dbad4221858c8f6b565d506c274e61d",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate.bddl": "3d4ccf070c3d9883ae0676f2d888588f98c696ddad71b7694f47c379fc99ef36",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate.bddl": "10239815a9d18ad53e09365d453a362ee54d29ca276e04eef411cf1db8d72940",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate.bddl": "dd11837141a30d874ebbbfaae20e91ecc67ec85ab3872ceb4cff3abfcbef7cb0",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate.bddl": "5293e759381b477e126beaf83d738542bbd4d93f522a3eead1066e612bad4a8c",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.pruned_init": "02a8401f8d59f5447fc8c5a16f4c158dd8c426c3eaed6779927a2a53e9abf3c5",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it.pruned_init": "e98ded151f64a036c74c872336dd09b968c379f3c9db7bc333aba37e7c235b86",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it.pruned_init": "6b75c8d4d1e1c40b5d99c78ceea380d99ccffb0a484a4cb2d3153488a0afbbe2",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove.pruned_init": "44f992e911c84a1340589510ecdaf947a4872966f7678c8364d8bb5d13dc4dac",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.pruned_init": "2113ea5923fcbbe1b57b428383934496072f062729d0b72d3021573d55d25abc",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_10/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket.pruned_init": "1899fe54c51e24a41d5f9e32254730d6777f4894ab68e0e873f1fa7ae2062030",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket.pruned_init": "f8ac06ea8f43bb328d40cba1e6a9767da2f8f5386fd7ff3f845c64a96bf6d2ce",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate.pruned_init": "b6f20784b381c75d715f4fdaadda1fb460cbe24adcbad76f381a009419b8474e",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.pruned_init": "6e811394c4ff9a43ae23515d8512e9b657c04344b94dd5baed121b595490514f",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.pruned_init": "6cd3937ba18d64e72223222af36888d26ea201840415adbc4dae590454d0a5a8",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_goal/open_the_middle_drawer_of_the_cabinet.pruned_init": "977efe1216bee72bb4e9fa9ec4be1bcfe37fb00ece815eac117feba019b34b9f",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_goal/open_the_top_drawer_and_put_the_bowl_inside.pruned_init": "1cd5354ade9ab9f323a518515f961df96123b7daeca017df1f62d3e9ff18794f",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_goal/push_the_plate_to_the_front_of_the_stove.pruned_init": "794beed679b18bbd7d9fb851c81877a974915ad63addff2d5ac5af0607fafac9",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_goal/put_the_bowl_on_the_plate.pruned_init": "ef3466ffad734754dc40eba1f6f5712e37aa46b9692c595e0da34f16d3a0c668",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_goal/put_the_bowl_on_the_stove.pruned_init": "7c1819725af8d08988078d6efb98ddb6dbefadb2e6d20df4ed23a2074f4d9ed1",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_goal/put_the_bowl_on_top_of_the_cabinet.pruned_init": "c0b7baf82f36f5304488bac91d788800a1c93d0a9fd19a73f448992d5366e145",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_goal/put_the_cream_cheese_in_the_bowl.pruned_init": "524de11d240f33b93d5218b1779a1ded1037950fcf865f07d0c0029cc48cf3f5",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_goal/put_the_wine_bottle_on_the_rack.pruned_init": "fa09aa4ade871c1c6be3dd8c93eb3437ea15190fd7dc73b8c986c8d2d3cfb062",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet.pruned_init": "b8c659d17c722bf848065bec6b4d088ab8e90f48b5ae991b2f118b0f2b5bbe4b",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_goal/turn_on_the_stove.pruned_init": "ed121db31d749647d70741c4c4ef0bd8e0876663986578795968e962d9b91340",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket.pruned_init": "b9023e5546b239cacb2aaa3c76df3b73c3de6f97500fea5e27a0db9827002a19",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket.pruned_init": "c524077b0c23006f28fc06760a5b5ab37eee67287b5329e84a34b0a8bd599b4a",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_object/pick_up_the_butter_and_place_it_in_the_basket.pruned_init": "f0925a8653c5902c5a4d78a2053365382ad7d05be7f059abe19c2004ffc5dc59",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket.pruned_init": "1124189363e76609da182dd92217cd02c41be58e88c42e3949d23ba160da75a5",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket.pruned_init": "5ea5483bca8abd80a8f1935e2c60570d60eaaf6a985c283d62805b46fb76aa94",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket.pruned_init": "b987f7b11e8f9b47353cd7882e1da38ecdf6ec9715ad8a84346583ea71049fd3",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_object/pick_up_the_milk_and_place_it_in_the_basket.pruned_init": "4a86269faf4c98baff4c1428997ac828d00c56922a9a131be94e19b6027e1db2",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket.pruned_init": "35b19ffab1fe08c6457ebd732c37d04b9bc0d22b7ce7de015986092ddddea151",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket.pruned_init": "6f6793ee550419a4a79dcb6ac83a9ba7bbf5e76e92fef26b82b6a7a10f72b04a",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_object/pick_up_the_tomato_sauce_and_place_it_in_the_basket.pruned_init": "2326da7ccacd3ebc75d80847f92d2e310b537b8dbbd8a76840a29b13f00f9a65",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate.pruned_init": "cbbc73792ce546c9bec181fd328a411d3183074840b282671dee481511381d0a",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate.pruned_init": "27d5b81d739f969e40c72b6c88699e57a91ea61209946b21c593aae5990689cb",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate.pruned_init": "deef3df529e0bb57658b973bbb3baf02b02922db065c025a73ebfcd11eb54d46",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate.pruned_init": "ab86fb7b5942dc0fec762eae57e72bf636106b1c10ad8ce57227723d8eb9a81b",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate.pruned_init": "f43df2d80042130ac8770590d83f1a1e6fd4df7479aebc392aa2ed6e3bd0b83e",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate.pruned_init": "9b6927b6ef03460ab055141e1a1154ad85e5e290058d8ed3a8a314aff911f864",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate.pruned_init": "0627f5f5ce3ef23be546571012be8ef603d93bcb4032bc80feb34937ba580140",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate.pruned_init": "2d2c50b7dcbf861fffa94d576f217ed34153e57487010d7a109a220d4d97189b",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate.pruned_init": "ea9cba2814bc166f3682f3f5a97329467839bcf584069cd419191b6c17adae25",
+    "/media/czl/sata/franka_my_code/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate.pruned_init": "08b0ac928dcc524a66d963851a6a4eece9aeb782b38466006e403a70e3287867",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_nominal_libero_local.py": "e9f737dc096f7cce7c42af3ef75f4c4bebbdfaeeb417da590baa9412f3217b97",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/nominal_joint13_policy.py": "7e6f1c6d295d974e993ad78108daa6cba1a424b5c5d7c35519976c08894923f7",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_evaluation.py": "8b823a3a79b93dbc385be69b45392e8f079fd268ba4f075062bf031c962ba444",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/test_nominal_policy.py": "2561bb9098c92f9785c8ab6bcbb0642e4ab085a706d683df4d602c3153b94400",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/serve_joint13_libero_eval_server.py": "09ad962ae9ccee3bc134829f619f09b956276de55bac6b241f523afbd9a6279a",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/transport_reconnect.py": "d3ad14bfcee71845aecac81ea04a125fa5ca2b83d3e8a466471c37b3e8e01826",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/audit_nominal_reference.py": "c84e1fbe718c2edc98914034afab6fe8ca34f11d9d7983f51733b4de7a526273",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/pipeline.py": "b34fdf498b76ae64465c7c14ddffc88d3fa642ad78c3b67b6e4096d24c5fbc0f",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_nominal_400/run_client.py": "8e2c56602285b5e3c59eb4f5cefb04950da4bbacec41da06d224bec0dff92a84",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/serve_joint13_libero_eval_server.py": "09ad962ae9ccee3bc134829f619f09b956276de55bac6b241f523afbd9a6279a",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/official_tasks.json": "2370d43f22af4ede3e1777b1fec15bd47a550bdb681986e74125a35bc0a41ba2",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110/official_initial_states.npz": "da7597734fd2eac338d2b4190295bccc8bffacd55ab22cd55cee9bcd233e238b"
+  },
+  "preserved_artifact_sha256": {
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/official_tasks.json": "2370d43f22af4ede3e1777b1fec15bd47a550bdb681986e74125a35bc0a41ba2",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/official_initial_states.npz": "da7597734fd2eac338d2b4190295bccc8bffacd55ab22cd55cee9bcd233e238b",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/serve_joint13_libero_eval_server.py": "e3d1f575db32733a96ecfcefaa91fabbeb1e0b1209db10579500f5bb166e0d38",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/evaluation_independent_final_audit.json": "7960ee3ab194a6d39c4e4b485236845f906ee9ddea932cc47c6235e81a843041",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/evaluation_request.json": "604ae8feda0cb6efd441f0c2ab8a7243ab7e000e8180554c30485ae12457f004"
+  },
+  "server_entry_sha256": "09ad962ae9ccee3bc134829f619f09b956276de55bac6b241f523afbd9a6279a",
+  "server_entry_name": "serve_joint13_libero_eval_server.py",
+  "created_at": "2026-11-10T18:12:11.607004+08:00",
+  "post_success_seconds": 1.0,
+  "post_success_steps": 20,
+  "success_criterion": "first_native_success",
+  "paired_predicted_tolerance_run": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110",
+  "paired_baseline_manifest_sha256": "7960ee3ab194a6d39c4e4b485236845f906ee9ddea932cc47c6235e81a843041"
+}

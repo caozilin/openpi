@@ -1,0 +1,7 @@
+{
+  "stage": "complete",
+  "pid": 3339995,
+  "updated_at": "2026-11-10T16:11:00.479379+08:00",
+  "steps": 10000,
+  "checkpoint_dir": "/mnt/SharedData/czl/checkpoints/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109"
+}

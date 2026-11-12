@@ -4,8 +4,10 @@
 cd /root/openpi
 
 uv sync
-
-
+#============================================================
+可视化
+python3 examples/libero/serve_mask_annotation_viewer.py --port 8768 --background
+python3 examples/libero/serve_mask_annotation_viewer.py --benchmark --port 8768
 # ============================================================
 # Linux：将 schema 8.0 / release 5.0 原始数据集转换为 LeRobot 格式
 # 联合转换前每条 episode 必须具有完整的 tolerance_labels.json；未标注的七维动作导出加 --no-joint-task-tolerance。

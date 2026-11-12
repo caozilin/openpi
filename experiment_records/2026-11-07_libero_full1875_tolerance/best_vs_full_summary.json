@@ -1,0 +1,1588 @@
+{
+  "complete": true,
+  "checked_at": "2026-11-07T18:32:22.474064+08:00",
+  "protocol": "read-only audited cache85 existing initial maximum-cap candidates; per-episode conjunction across original independently initialized blocks; no new execution or rollout",
+  "maximum_definition": "Both PRE/APP and POST/EXEC use each authored 5/15/30 degree cap in both signed directions; authored strict zeros stay zero; not unrestricted 111x30deg",
+  "success_definition": "Every original block has complete admissible kinematic trajectory and min_t[c_t-min(5mm,c0_t)] >= -0.1mm; not LIBERO physical task success",
+  "conditional_population": "1851 labeled episodes with usable frozen zero baseline; 24 baseline-unavailable sources excluded from both arms, not counted as maximum failures",
+  "speed_definition": "Pool within each demo independent-block N-1 velocity samples; episode-equal mean on common accepted subset; no partial failed speed",
+  "selection_scope": "Search best selected from same initial+16 candidate set including maximum; in-sample selection, not held-out generalization",
+  "aggregate": {
+    "episodes": 1851,
+    "search_success": 1851,
+    "full_success": 1238,
+    "search_success_rate_percent": 100.0,
+    "full_success_rate_percent": 66.8827660723933,
+    "full_failure_solver": 33,
+    "full_failure_clearance_only": 580,
+    "full_failure_any_clearance_block": 580,
+    "paired_both_accepted": {
+      "episodes": 1238,
+      "full_mean_velocity_rad_s": 0.5179663699803,
+      "best_mean_velocity_rad_s": 0.5135893777432169,
+      "best_reduction_percent": 0.845034058340423,
+      "best_faster": 1134,
+      "equal": 104,
+      "best_slower": 0
+    },
+    "paired_kinematic_complete_including_clearance_rejections": {
+      "episodes": 1818,
+      "full_mean_velocity_rad_s": 0.5195682467093875,
+      "best_mean_velocity_rad_s": 0.5305986579858274,
+      "best_reduction_percent": -2.122995650003527,
+      "best_faster": 1218,
+      "equal": 104,
+      "best_slower": 496
+    }
+  },
+  "suites": {
+    "libero_spatial": {
+      "episodes": 455,
+      "search_success": 455,
+      "full_success": 298,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 65.49450549450549,
+      "full_failure_solver": 4,
+      "full_failure_clearance_only": 153,
+      "full_failure_any_clearance_block": 153,
+      "paired_both_accepted": {
+        "episodes": 298,
+        "full_mean_velocity_rad_s": 0.5977351587330392,
+        "best_mean_velocity_rad_s": 0.5929213842088286,
+        "best_reduction_percent": 0.8053356831834855,
+        "best_faster": 290,
+        "equal": 8,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 451,
+        "full_mean_velocity_rad_s": 0.6015512269288121,
+        "best_mean_velocity_rad_s": 0.6110345893660711,
+        "best_reduction_percent": -1.5764845972762462,
+        "best_faster": 321,
+        "equal": 8,
+        "best_slower": 122
+      }
+    },
+    "libero_object": {
+      "episodes": 493,
+      "search_success": 493,
+      "full_success": 369,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 74.84787018255578,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 124,
+      "full_failure_any_clearance_block": 124,
+      "paired_both_accepted": {
+        "episodes": 369,
+        "full_mean_velocity_rad_s": 0.4120194983362068,
+        "best_mean_velocity_rad_s": 0.4105223258941996,
+        "best_reduction_percent": 0.36337417235179265,
+        "best_faster": 366,
+        "equal": 3,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 493,
+        "full_mean_velocity_rad_s": 0.42161748198741944,
+        "best_mean_velocity_rad_s": 0.42633018967178193,
+        "best_reduction_percent": -1.1177685664616523,
+        "best_faster": 387,
+        "equal": 3,
+        "best_slower": 103
+      }
+    },
+    "libero_goal": {
+      "episodes": 448,
+      "search_success": 448,
+      "full_success": 298,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 66.51785714285714,
+      "full_failure_solver": 4,
+      "full_failure_clearance_only": 146,
+      "full_failure_any_clearance_block": 146,
+      "paired_both_accepted": {
+        "episodes": 298,
+        "full_mean_velocity_rad_s": 0.6169149990310141,
+        "best_mean_velocity_rad_s": 0.6111971269509672,
+        "best_reduction_percent": 0.9268492562229748,
+        "best_faster": 208,
+        "equal": 90,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 444,
+        "full_mean_velocity_rad_s": 0.6004235701919265,
+        "best_mean_velocity_rad_s": 0.6193628907225714,
+        "best_reduction_percent": -3.154326623885029,
+        "best_faster": 224,
+        "equal": 90,
+        "best_slower": 130
+      }
+    },
+    "libero_10": {
+      "episodes": 455,
+      "search_success": 455,
+      "full_success": 273,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 60.0,
+      "full_failure_solver": 25,
+      "full_failure_clearance_only": 157,
+      "full_failure_any_clearance_block": 157,
+      "paired_both_accepted": {
+        "episodes": 273,
+        "full_mean_velocity_rad_s": 0.4660858026954695,
+        "best_mean_velocity_rad_s": 0.459756758481772,
+        "best_reduction_percent": 1.357913967148399,
+        "best_faster": 270,
+        "equal": 3,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 430,
+        "full_mean_velocity_rad_s": 0.4623953148552537,
+        "best_mean_velocity_rad_s": 0.47412524052354854,
+        "best_reduction_percent": -2.5367743338763553,
+        "best_faster": 286,
+        "equal": 3,
+        "best_slower": 141
+      }
+    }
+  },
+  "tasks": [
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "episodes": 49,
+      "search_success": 49,
+      "full_success": 49,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.38196385931291327,
+        "best_mean_velocity_rad_s": 0.37490393999960936,
+        "best_reduction_percent": 1.8483212851612398,
+        "best_faster": 49,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.38196385931291327,
+        "best_mean_velocity_rad_s": 0.37490393999960936,
+        "best_reduction_percent": 1.8483212851612398,
+        "best_faster": 49,
+        "equal": 0,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "episodes": 50,
+      "search_success": 50,
+      "full_success": 14,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 28.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 36,
+      "full_failure_any_clearance_block": 36,
+      "paired_both_accepted": {
+        "episodes": 14,
+        "full_mean_velocity_rad_s": 0.43728400282413277,
+        "best_mean_velocity_rad_s": 0.43353390852930496,
+        "best_reduction_percent": 0.8575878080625845,
+        "best_faster": 14,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 50,
+        "full_mean_velocity_rad_s": 0.4410368810351091,
+        "best_mean_velocity_rad_s": 0.456412198216822,
+        "best_reduction_percent": -3.4861749306831684,
+        "best_faster": 24,
+        "equal": 0,
+        "best_slower": 26
+      }
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "episodes": 50,
+      "search_success": 50,
+      "full_success": 7,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 14.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 43,
+      "full_failure_any_clearance_block": 43,
+      "paired_both_accepted": {
+        "episodes": 7,
+        "full_mean_velocity_rad_s": 0.47125972529669385,
+        "best_mean_velocity_rad_s": 0.46933874984753204,
+        "best_reduction_percent": 0.4076256353017246,
+        "best_faster": 7,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 50,
+        "full_mean_velocity_rad_s": 0.4960906069854053,
+        "best_mean_velocity_rad_s": 0.5335328728352716,
+        "best_reduction_percent": -7.547465185320037,
+        "best_faster": 7,
+        "equal": 0,
+        "best_slower": 43
+      }
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "episodes": 40,
+      "search_success": 40,
+      "full_success": 26,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 65.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 14,
+      "full_failure_any_clearance_block": 14,
+      "paired_both_accepted": {
+        "episodes": 26,
+        "full_mean_velocity_rad_s": 0.5159008009080024,
+        "best_mean_velocity_rad_s": 0.5134192712625212,
+        "best_reduction_percent": 0.4810090701765984,
+        "best_faster": 26,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 40,
+        "full_mean_velocity_rad_s": 0.5225435265358807,
+        "best_mean_velocity_rad_s": 0.5222381130073187,
+        "best_reduction_percent": 0.05844748103313787,
+        "best_faster": 31,
+        "equal": 0,
+        "best_slower": 9
+      }
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "episodes": 46,
+      "search_success": 46,
+      "full_success": 46,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 46,
+        "full_mean_velocity_rad_s": 0.3988106786606931,
+        "best_mean_velocity_rad_s": 0.38774688628568227,
+        "best_reduction_percent": 2.7741966218572243,
+        "best_faster": 46,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 46,
+        "full_mean_velocity_rad_s": 0.3988106786606931,
+        "best_mean_velocity_rad_s": 0.38774688628568227,
+        "best_reduction_percent": 2.7741966218572243,
+        "best_faster": 46,
+        "equal": 0,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "episodes": 36,
+      "search_success": 36,
+      "full_success": 36,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 36,
+        "full_mean_velocity_rad_s": 0.4854018631269192,
+        "best_mean_velocity_rad_s": 0.4801898890997964,
+        "best_reduction_percent": 1.0737441330669193,
+        "best_faster": 36,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 36,
+        "full_mean_velocity_rad_s": 0.4854018631269192,
+        "best_mean_velocity_rad_s": 0.4801898890997964,
+        "best_reduction_percent": 1.0737441330669193,
+        "best_faster": 36,
+        "equal": 0,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "episodes": 45,
+      "search_success": 45,
+      "full_success": 15,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 33.333333333333336,
+      "full_failure_solver": 1,
+      "full_failure_clearance_only": 29,
+      "full_failure_any_clearance_block": 29,
+      "paired_both_accepted": {
+        "episodes": 15,
+        "full_mean_velocity_rad_s": 0.404164701407829,
+        "best_mean_velocity_rad_s": 0.40134597364234353,
+        "best_reduction_percent": 0.6974205702939877,
+        "best_faster": 15,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 44,
+        "full_mean_velocity_rad_s": 0.38681683239093717,
+        "best_mean_velocity_rad_s": 0.4209554399953197,
+        "best_reduction_percent": -8.82552276574156,
+        "best_faster": 15,
+        "equal": 0,
+        "best_slower": 29
+      }
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "episodes": 50,
+      "search_success": 50,
+      "full_success": 13,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 26.0,
+      "full_failure_solver": 2,
+      "full_failure_clearance_only": 35,
+      "full_failure_any_clearance_block": 35,
+      "paired_both_accepted": {
+        "episodes": 13,
+        "full_mean_velocity_rad_s": 0.42954228967280783,
+        "best_mean_velocity_rad_s": 0.4238484575782524,
+        "best_reduction_percent": 1.325557979143928,
+        "best_faster": 13,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 48,
+        "full_mean_velocity_rad_s": 0.44356750815250917,
+        "best_mean_velocity_rad_s": 0.4934459896089913,
+        "best_reduction_percent": -11.244845607431797,
+        "best_faster": 14,
+        "equal": 0,
+        "best_slower": 34
+      }
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "episodes": 43,
+      "search_success": 43,
+      "full_success": 21,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 48.83720930232558,
+      "full_failure_solver": 22,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 21,
+        "full_mean_velocity_rad_s": 0.4688097352722937,
+        "best_mean_velocity_rad_s": 0.4556426277377272,
+        "best_reduction_percent": 2.808625022882429,
+        "best_faster": 21,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 21,
+        "full_mean_velocity_rad_s": 0.4688097352722937,
+        "best_mean_velocity_rad_s": 0.4556426277377272,
+        "best_reduction_percent": 2.808625022882429,
+        "best_faster": 21,
+        "equal": 0,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "episodes": 46,
+      "search_success": 46,
+      "full_success": 46,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 46,
+        "full_mean_velocity_rad_s": 0.6169499363209686,
+        "best_mean_velocity_rad_s": 0.613427118956426,
+        "best_reduction_percent": 0.5710053858745974,
+        "best_faster": 43,
+        "equal": 3,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 46,
+        "full_mean_velocity_rad_s": 0.6169499363209686,
+        "best_mean_velocity_rad_s": 0.613427118956426,
+        "best_reduction_percent": 0.5710053858745974,
+        "best_faster": 43,
+        "equal": 3,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "episodes": 46,
+      "search_success": 46,
+      "full_success": 46,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 46,
+        "full_mean_velocity_rad_s": 0.6672922624330252,
+        "best_mean_velocity_rad_s": 0.6672922624330252,
+        "best_reduction_percent": 0.0,
+        "best_faster": 0,
+        "equal": 46,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 46,
+        "full_mean_velocity_rad_s": 0.6672922624330252,
+        "best_mean_velocity_rad_s": 0.6672922624330252,
+        "best_reduction_percent": 0.0,
+        "best_faster": 0,
+        "equal": 46,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "episodes": 50,
+      "search_success": 50,
+      "full_success": 30,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 60.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 20,
+      "full_failure_any_clearance_block": 20,
+      "paired_both_accepted": {
+        "episodes": 30,
+        "full_mean_velocity_rad_s": 0.5215313096365478,
+        "best_mean_velocity_rad_s": 0.5184345714877783,
+        "best_reduction_percent": 0.5937779940628376,
+        "best_faster": 30,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 50,
+        "full_mean_velocity_rad_s": 0.5194366172729571,
+        "best_mean_velocity_rad_s": 0.5305445362894119,
+        "best_reduction_percent": -2.1384551352523804,
+        "best_faster": 33,
+        "equal": 0,
+        "best_slower": 17
+      }
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "episodes": 37,
+      "search_success": 37,
+      "full_success": 33,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 89.1891891891892,
+      "full_failure_solver": 4,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 33,
+        "full_mean_velocity_rad_s": 0.688091936367147,
+        "best_mean_velocity_rad_s": 0.6609435540207941,
+        "best_reduction_percent": 3.945458580678286,
+        "best_faster": 33,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 33,
+        "full_mean_velocity_rad_s": 0.688091936367147,
+        "best_mean_velocity_rad_s": 0.6609435540207941,
+        "best_reduction_percent": 3.945458580678286,
+        "best_faster": 33,
+        "equal": 0,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "episodes": 45,
+      "search_success": 45,
+      "full_success": 34,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 75.55555555555556,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 11,
+      "full_failure_any_clearance_block": 11,
+      "paired_both_accepted": {
+        "episodes": 34,
+        "full_mean_velocity_rad_s": 0.694719231499976,
+        "best_mean_velocity_rad_s": 0.6934886414176857,
+        "best_reduction_percent": 0.17713488075367315,
+        "best_faster": 27,
+        "equal": 7,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 45,
+        "full_mean_velocity_rad_s": 0.6945942744360345,
+        "best_mean_velocity_rad_s": 0.6996655040224182,
+        "best_reduction_percent": -0.7300995376763275,
+        "best_faster": 28,
+        "equal": 7,
+        "best_slower": 10
+      }
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "episodes": 49,
+      "search_success": 49,
+      "full_success": 23,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 46.93877551020408,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 26,
+      "full_failure_any_clearance_block": 26,
+      "paired_both_accepted": {
+        "episodes": 23,
+        "full_mean_velocity_rad_s": 0.5665420570299515,
+        "best_mean_velocity_rad_s": 0.5652176695875185,
+        "best_reduction_percent": 0.23376683619500474,
+        "best_faster": 23,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.57882762953481,
+        "best_mean_velocity_rad_s": 0.5935560071161808,
+        "best_reduction_percent": -2.5445187530539353,
+        "best_faster": 26,
+        "equal": 0,
+        "best_slower": 23
+      }
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "episodes": 37,
+      "search_success": 37,
+      "full_success": 37,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 37,
+        "full_mean_velocity_rad_s": 0.5668259165288646,
+        "best_mean_velocity_rad_s": 0.5668259165288646,
+        "best_reduction_percent": 0.0,
+        "best_faster": 0,
+        "equal": 37,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 37,
+        "full_mean_velocity_rad_s": 0.5668259165288646,
+        "best_mean_velocity_rad_s": 0.5668259165288646,
+        "best_reduction_percent": 0.0,
+        "best_faster": 0,
+        "equal": 37,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "episodes": 45,
+      "search_success": 45,
+      "full_success": 20,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 44.44444444444444,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 25,
+      "full_failure_any_clearance_block": 25,
+      "paired_both_accepted": {
+        "episodes": 20,
+        "full_mean_velocity_rad_s": 0.5459237287790631,
+        "best_mean_velocity_rad_s": 0.5449830806936711,
+        "best_reduction_percent": 0.17230393840835476,
+        "best_faster": 20,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 45,
+        "full_mean_velocity_rad_s": 0.5361378178851073,
+        "best_mean_velocity_rad_s": 0.5563936180436276,
+        "best_reduction_percent": -3.7780957587403603,
+        "best_faster": 26,
+        "equal": 0,
+        "best_slower": 19
+      }
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "episodes": 48,
+      "search_success": 48,
+      "full_success": 3,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 6.25,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 45,
+      "full_failure_any_clearance_block": 45,
+      "paired_both_accepted": {
+        "episodes": 3,
+        "full_mean_velocity_rad_s": 0.5732575066745009,
+        "best_mean_velocity_rad_s": 0.5732519775476256,
+        "best_reduction_percent": 0.0009645101566000339,
+        "best_faster": 3,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 48,
+        "full_mean_velocity_rad_s": 0.5703711883851978,
+        "best_mean_velocity_rad_s": 0.696761845340828,
+        "best_reduction_percent": -22.15936911425349,
+        "best_faster": 4,
+        "equal": 0,
+        "best_slower": 44
+      }
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "episodes": 50,
+      "search_success": 50,
+      "full_success": 31,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 62.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 19,
+      "full_failure_any_clearance_block": 19,
+      "paired_both_accepted": {
+        "episodes": 31,
+        "full_mean_velocity_rad_s": 0.548205335771242,
+        "best_mean_velocity_rad_s": 0.5478382924616054,
+        "best_reduction_percent": 0.06695361859624652,
+        "best_faster": 31,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 50,
+        "full_mean_velocity_rad_s": 0.5516344504495299,
+        "best_mean_velocity_rad_s": 0.5803148276622383,
+        "best_reduction_percent": -5.199163538342583,
+        "best_faster": 33,
+        "equal": 0,
+        "best_slower": 17
+      }
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "episodes": 41,
+      "search_success": 41,
+      "full_success": 41,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 41,
+        "full_mean_velocity_rad_s": 0.6716136549107667,
+        "best_mean_velocity_rad_s": 0.6566717463180777,
+        "best_reduction_percent": 2.2247773676778966,
+        "best_faster": 41,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 41,
+        "full_mean_velocity_rad_s": 0.6716136549107667,
+        "best_mean_velocity_rad_s": 0.6566717463180777,
+        "best_reduction_percent": 2.2247773676778966,
+        "best_faster": 41,
+        "equal": 0,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "episodes": 50,
+      "search_success": 50,
+      "full_success": 47,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 94.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 3,
+      "full_failure_any_clearance_block": 3,
+      "paired_both_accepted": {
+        "episodes": 47,
+        "full_mean_velocity_rad_s": 0.421278599147328,
+        "best_mean_velocity_rad_s": 0.4194923939934047,
+        "best_reduction_percent": 0.423996176767251,
+        "best_faster": 47,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 50,
+        "full_mean_velocity_rad_s": 0.42334634125017784,
+        "best_mean_velocity_rad_s": 0.4251258756386392,
+        "best_reduction_percent": -0.4203495377345719,
+        "best_faster": 48,
+        "equal": 0,
+        "best_slower": 2
+      }
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "episodes": 49,
+      "search_success": 49,
+      "full_success": 16,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 32.6530612244898,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 33,
+      "full_failure_any_clearance_block": 33,
+      "paired_both_accepted": {
+        "episodes": 16,
+        "full_mean_velocity_rad_s": 0.43774038632335016,
+        "best_mean_velocity_rad_s": 0.43629831452538664,
+        "best_reduction_percent": 0.329435401214794,
+        "best_faster": 16,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.4409080561791513,
+        "best_mean_velocity_rad_s": 0.4455226483758848,
+        "best_reduction_percent": -1.046610995662659,
+        "best_faster": 36,
+        "equal": 0,
+        "best_slower": 13
+      }
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "episodes": 49,
+      "search_success": 49,
+      "full_success": 49,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.39189196583243746,
+        "best_mean_velocity_rad_s": 0.39126343699516947,
+        "best_reduction_percent": 0.16038319028380807,
+        "best_faster": 48,
+        "equal": 1,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.39189196583243746,
+        "best_mean_velocity_rad_s": 0.39126343699516947,
+        "best_reduction_percent": 0.16038319028380807,
+        "best_faster": 48,
+        "equal": 1,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "episodes": 49,
+      "search_success": 49,
+      "full_success": 49,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.4042223825320824,
+        "best_mean_velocity_rad_s": 0.4039499315695131,
+        "best_reduction_percent": 0.06740125592815564,
+        "best_faster": 49,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.4042223825320824,
+        "best_mean_velocity_rad_s": 0.4039499315695131,
+        "best_reduction_percent": 0.06740125592815564,
+        "best_faster": 49,
+        "equal": 0,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "episodes": 48,
+      "search_success": 48,
+      "full_success": 47,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 97.91666666666667,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 1,
+      "full_failure_any_clearance_block": 1,
+      "paired_both_accepted": {
+        "episodes": 47,
+        "full_mean_velocity_rad_s": 0.37972402017672885,
+        "best_mean_velocity_rad_s": 0.3771025637459226,
+        "best_reduction_percent": 0.690358336980153,
+        "best_faster": 47,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 48,
+        "full_mean_velocity_rad_s": 0.3813160006805952,
+        "best_mean_velocity_rad_s": 0.3787936235756524,
+        "best_reduction_percent": 0.6614925941845372,
+        "best_faster": 47,
+        "equal": 0,
+        "best_slower": 1
+      }
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "episodes": 49,
+      "search_success": 49,
+      "full_success": 49,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.4238213731618771,
+        "best_mean_velocity_rad_s": 0.42298837980424253,
+        "best_reduction_percent": 0.19654349930965698,
+        "best_faster": 48,
+        "equal": 1,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.4238213731618771,
+        "best_mean_velocity_rad_s": 0.42298837980424253,
+        "best_reduction_percent": 0.19654349930965698,
+        "best_faster": 48,
+        "equal": 1,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "episodes": 49,
+      "search_success": 49,
+      "full_success": 8,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 16.3265306122449,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 41,
+      "full_failure_any_clearance_block": 41,
+      "paired_both_accepted": {
+        "episodes": 8,
+        "full_mean_velocity_rad_s": 0.47243273785814166,
+        "best_mean_velocity_rad_s": 0.4664302200986613,
+        "best_reduction_percent": 1.2705549972455001,
+        "best_faster": 8,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.4592071415031548,
+        "best_mean_velocity_rad_s": 0.48516802266537074,
+        "best_reduction_percent": -5.653414073055656,
+        "best_faster": 8,
+        "equal": 0,
+        "best_slower": 41
+      }
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "episodes": 50,
+      "search_success": 50,
+      "full_success": 50,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 50,
+        "full_mean_velocity_rad_s": 0.4416542929745209,
+        "best_mean_velocity_rad_s": 0.4390875888146821,
+        "best_reduction_percent": 0.5811568461278181,
+        "best_faster": 50,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 50,
+        "full_mean_velocity_rad_s": 0.4416542929745209,
+        "best_mean_velocity_rad_s": 0.4390875888146821,
+        "best_reduction_percent": 0.5811568461278181,
+        "best_faster": 50,
+        "equal": 0,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "episodes": 50,
+      "search_success": 50,
+      "full_success": 4,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 8.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 46,
+      "full_failure_any_clearance_block": 46,
+      "paired_both_accepted": {
+        "episodes": 4,
+        "full_mean_velocity_rad_s": 0.4609009943015404,
+        "best_mean_velocity_rad_s": 0.45979598583707876,
+        "best_reduction_percent": 0.23974963780154315,
+        "best_faster": 4,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 50,
+        "full_mean_velocity_rad_s": 0.45040258243205195,
+        "best_mean_velocity_rad_s": 0.4729435281787245,
+        "best_reduction_percent": -5.004621781908428,
+        "best_faster": 4,
+        "equal": 0,
+        "best_slower": 46
+      }
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "episodes": 50,
+      "search_success": 50,
+      "full_success": 50,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 100.0,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 0,
+      "full_failure_any_clearance_block": 0,
+      "paired_both_accepted": {
+        "episodes": 50,
+        "full_mean_velocity_rad_s": 0.39803189426130475,
+        "best_mean_velocity_rad_s": 0.39690222787712065,
+        "best_reduction_percent": 0.2838130311845024,
+        "best_faster": 49,
+        "equal": 1,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 50,
+        "full_mean_velocity_rad_s": 0.39803189426130475,
+        "best_mean_velocity_rad_s": 0.39690222787712065,
+        "best_reduction_percent": 0.2838130311845024,
+        "best_faster": 49,
+        "equal": 1,
+        "best_slower": 0
+      }
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "episodes": 47,
+      "search_success": 47,
+      "full_success": 19,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 40.42553191489362,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 28,
+      "full_failure_any_clearance_block": 28,
+      "paired_both_accepted": {
+        "episodes": 19,
+        "full_mean_velocity_rad_s": 0.6637296273896421,
+        "best_mean_velocity_rad_s": 0.6618590261608978,
+        "best_reduction_percent": 0.2818318109591104,
+        "best_faster": 19,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 47,
+        "full_mean_velocity_rad_s": 0.6822494306669986,
+        "best_mean_velocity_rad_s": 0.7010742921921054,
+        "best_reduction_percent": -2.7592344791995953,
+        "best_faster": 24,
+        "equal": 0,
+        "best_slower": 23
+      }
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "episodes": 47,
+      "search_success": 47,
+      "full_success": 29,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 61.702127659574465,
+      "full_failure_solver": 2,
+      "full_failure_clearance_only": 16,
+      "full_failure_any_clearance_block": 16,
+      "paired_both_accepted": {
+        "episodes": 29,
+        "full_mean_velocity_rad_s": 0.5839879196276845,
+        "best_mean_velocity_rad_s": 0.5823646403286965,
+        "best_reduction_percent": 0.2779645339278394,
+        "best_faster": 29,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 45,
+        "full_mean_velocity_rad_s": 0.5906547406540119,
+        "best_mean_velocity_rad_s": 0.6118730861325007,
+        "best_reduction_percent": -3.592343211364802,
+        "best_faster": 29,
+        "equal": 0,
+        "best_slower": 16
+      }
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "episodes": 47,
+      "search_success": 47,
+      "full_success": 34,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 72.34042553191489,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 13,
+      "full_failure_any_clearance_block": 13,
+      "paired_both_accepted": {
+        "episodes": 34,
+        "full_mean_velocity_rad_s": 0.5138679061843926,
+        "best_mean_velocity_rad_s": 0.5122259653435447,
+        "best_reduction_percent": 0.31952585890015045,
+        "best_faster": 31,
+        "equal": 3,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 47,
+        "full_mean_velocity_rad_s": 0.5174472539808866,
+        "best_mean_velocity_rad_s": 0.5335880030279871,
+        "best_reduction_percent": -3.1193032570807118,
+        "best_faster": 31,
+        "equal": 3,
+        "best_slower": 13
+      }
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "episodes": 45,
+      "search_success": 45,
+      "full_success": 38,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 84.44444444444444,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 7,
+      "full_failure_any_clearance_block": 7,
+      "paired_both_accepted": {
+        "episodes": 38,
+        "full_mean_velocity_rad_s": 0.6581549569296005,
+        "best_mean_velocity_rad_s": 0.6555753771126845,
+        "best_reduction_percent": 0.39194110592892595,
+        "best_faster": 36,
+        "equal": 2,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 45,
+        "full_mean_velocity_rad_s": 0.6548254820955668,
+        "best_mean_velocity_rad_s": 0.6574909856747253,
+        "best_reduction_percent": -0.4070555670235054,
+        "best_faster": 40,
+        "equal": 2,
+        "best_slower": 3
+      }
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "episodes": 34,
+      "search_success": 34,
+      "full_success": 32,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 94.11764705882354,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 2,
+      "full_failure_any_clearance_block": 2,
+      "paired_both_accepted": {
+        "episodes": 32,
+        "full_mean_velocity_rad_s": 0.5846802966971265,
+        "best_mean_velocity_rad_s": 0.5841759952485343,
+        "best_reduction_percent": 0.08625251294443657,
+        "best_faster": 32,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 34,
+        "full_mean_velocity_rad_s": 0.586752003043066,
+        "best_mean_velocity_rad_s": 0.5864847117148418,
+        "best_reduction_percent": 0.04555439552619626,
+        "best_faster": 32,
+        "equal": 0,
+        "best_slower": 2
+      }
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "episodes": 48,
+      "search_success": 48,
+      "full_success": 28,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 58.333333333333336,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 20,
+      "full_failure_any_clearance_block": 20,
+      "paired_both_accepted": {
+        "episodes": 28,
+        "full_mean_velocity_rad_s": 0.6222162527242174,
+        "best_mean_velocity_rad_s": 0.6178368465552403,
+        "best_reduction_percent": 0.7038398868243977,
+        "best_faster": 27,
+        "equal": 1,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 48,
+        "full_mean_velocity_rad_s": 0.6177969769436921,
+        "best_mean_velocity_rad_s": 0.632639539647363,
+        "best_reduction_percent": -2.4024984351815144,
+        "best_faster": 29,
+        "equal": 1,
+        "best_slower": 18
+      }
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "episodes": 47,
+      "search_success": 47,
+      "full_success": 15,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 31.914893617021278,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 32,
+      "full_failure_any_clearance_block": 32,
+      "paired_both_accepted": {
+        "episodes": 15,
+        "full_mean_velocity_rad_s": 0.5911791372988465,
+        "best_mean_velocity_rad_s": 0.5882723146775745,
+        "best_reduction_percent": 0.4916991209388093,
+        "best_faster": 15,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 47,
+        "full_mean_velocity_rad_s": 0.5947283631024466,
+        "best_mean_velocity_rad_s": 0.6138572630997973,
+        "best_reduction_percent": -3.2164095718528185,
+        "best_faster": 28,
+        "equal": 0,
+        "best_slower": 19
+      }
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "episodes": 43,
+      "search_success": 43,
+      "full_success": 31,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 72.09302325581395,
+      "full_failure_solver": 2,
+      "full_failure_clearance_only": 10,
+      "full_failure_any_clearance_block": 10,
+      "paired_both_accepted": {
+        "episodes": 31,
+        "full_mean_velocity_rad_s": 0.5431032858081462,
+        "best_mean_velocity_rad_s": 0.5236289282369752,
+        "best_reduction_percent": 3.585755800057967,
+        "best_faster": 30,
+        "equal": 1,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 41,
+        "full_mean_velocity_rad_s": 0.5422728369552847,
+        "best_mean_velocity_rad_s": 0.5295456337327427,
+        "best_reduction_percent": 2.347011016447341,
+        "best_faster": 33,
+        "equal": 1,
+        "best_slower": 7
+      }
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "episodes": 49,
+      "search_success": 49,
+      "full_success": 29,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 59.183673469387756,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 20,
+      "full_failure_any_clearance_block": 20,
+      "paired_both_accepted": {
+        "episodes": 29,
+        "full_mean_velocity_rad_s": 0.6010835544761918,
+        "best_mean_velocity_rad_s": 0.5987034451801879,
+        "best_reduction_percent": 0.39596979126770054,
+        "best_faster": 28,
+        "equal": 1,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 49,
+        "full_mean_velocity_rad_s": 0.59700907064047,
+        "best_mean_velocity_rad_s": 0.6127803128919539,
+        "best_reduction_percent": -2.6417089835108363,
+        "best_faster": 31,
+        "equal": 1,
+        "best_slower": 17
+      }
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "episodes": 48,
+      "search_success": 48,
+      "full_success": 43,
+      "search_success_rate_percent": 100.0,
+      "full_success_rate_percent": 89.58333333333333,
+      "full_failure_solver": 0,
+      "full_failure_clearance_only": 5,
+      "full_failure_any_clearance_block": 5,
+      "paired_both_accepted": {
+        "episodes": 43,
+        "full_mean_velocity_rad_s": 0.6239542085887098,
+        "best_mean_velocity_rad_s": 0.615978705080093,
+        "best_reduction_percent": 1.2782193627087057,
+        "best_faster": 43,
+        "equal": 0,
+        "best_slower": 0
+      },
+      "paired_kinematic_complete_including_clearance_rejections": {
+        "episodes": 48,
+        "full_mean_velocity_rad_s": 0.6213450479913847,
+        "best_mean_velocity_rad_s": 0.6152086024085807,
+        "best_reduction_percent": 0.9876067416391646,
+        "best_faster": 44,
+        "equal": 0,
+        "best_slower": 4
+      }
+    }
+  ],
+  "excluding_strict_zero_domains": {
+    "episodes": 1768,
+    "search_success": 1768,
+    "full_success": 1155,
+    "search_success_rate_percent": 100.0,
+    "full_success_rate_percent": 65.32805429864253,
+    "full_failure_solver": 33,
+    "full_failure_clearance_only": 580,
+    "full_failure_any_clearance_block": 580,
+    "paired_both_accepted": {
+      "episodes": 1155,
+      "full_mean_velocity_rad_s": 0.5104539939845232,
+      "best_mean_velocity_rad_s": 0.505762464642957,
+      "best_reduction_percent": 0.9190895549557365,
+      "best_faster": 1134,
+      "equal": 21,
+      "best_slower": 0
+    },
+    "paired_kinematic_complete_including_clearance_rejections": {
+      "episodes": 1735,
+      "full_mean_velocity_rad_s": 0.5146438441119189,
+      "best_mean_velocity_rad_s": 0.5262019350056178,
+      "best_reduction_percent": -2.2458426397082185,
+      "best_faster": 1218,
+      "equal": 21,
+      "best_slower": 496
+    }
+  },
+  "excluding_gp_numerical_recovered": {
+    "episodes": 1850,
+    "search_success": 1850,
+    "full_success": 1238,
+    "search_success_rate_percent": 100.0,
+    "full_success_rate_percent": 66.91891891891892,
+    "full_failure_solver": 33,
+    "full_failure_clearance_only": 579,
+    "full_failure_any_clearance_block": 579,
+    "paired_both_accepted": {
+      "episodes": 1238,
+      "full_mean_velocity_rad_s": 0.5179663699803,
+      "best_mean_velocity_rad_s": 0.5135893777432169,
+      "best_reduction_percent": 0.845034058340423,
+      "best_faster": 1134,
+      "equal": 104,
+      "best_slower": 0
+    },
+    "paired_kinematic_complete_including_clearance_rejections": {
+      "episodes": 1817,
+      "full_mean_velocity_rad_s": 0.5195704185876714,
+      "best_mean_velocity_rad_s": 0.5305785358674304,
+      "best_reduction_percent": -2.118695923775257,
+      "best_faster": 1218,
+      "equal": 104,
+      "best_slower": 495
+    }
+  },
+  "strict_zero_domain_count": 83,
+  "excluded": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "demo": "demo_37",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_1",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_20",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_21",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_24",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_37",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_42",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "demo": "demo_14",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "demo": "demo_49",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "demo": "demo_39",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_11",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_17",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_19",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_20",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_21",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_23",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_24",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_25",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_27",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "demo": "demo_45",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "demo": "demo_15",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "demo": "demo_43",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "demo": "demo_27",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "demo": "demo_36",
+      "status": "baseline_unavailable",
+      "exclusion": "Full-max candidate not evaluated: baseline-relative criterion unavailable"
+    }
+  ],
+  "verified_episodes": 1851,
+  "verified_block_pairs": 2275,
+  "audit": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/annotation_independent_final_audit.json",
+  "audit_sha256": "fda5995f1dd43d96b6861d920761115a8b8b882ff98e6493d87975febbbc56bb",
+  "request_sha256": "0f568d2b5b0df2a3f0e7876ee6d06be70a2c9fd15c148cb8a22987e1bc34b417",
+  "source_stats_pairs_sha256": "a6a876dd58168649947a3f783c36114c38e7e306cbb5a22b3a29d896d3de0464",
+  "script_sha256": "cad39636e040a05b633e941f3ffccc995e13d4d5134b9ff056cb740743cb3ccf"
+}

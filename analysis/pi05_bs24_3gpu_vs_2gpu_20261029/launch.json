@@ -1,0 +1,17 @@
+{
+  "common_start_unix": 1793267132.9980955,
+  "groups": [
+    {
+      "num_gpus": 3,
+      "gpu_ids": "0,1,2",
+      "supervisor_pid": 3463244,
+      "run_dir": "/mnt/SharedData/czl/runs/pi05_state_action7_bs24_3gpu_parallel_15min_20261029"
+    },
+    {
+      "num_gpus": 2,
+      "gpu_ids": "3,4",
+      "supervisor_pid": 3463245,
+      "run_dir": "/mnt/SharedData/czl/runs/pi05_state_action7_bs24_2gpu_parallel_15min_20261029"
+    }
+  ]
+}

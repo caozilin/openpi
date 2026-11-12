@@ -1,0 +1,299 @@
+{
+  "complete": true,
+  "completed_at": "2026-11-10T16:22:59.267606+08:00",
+  "training_completion": {
+    "complete": true,
+    "exit_code": 0,
+    "steps": 10000,
+    "global_batch": 72,
+    "per_gpu_batch": 12,
+    "checkpoint_dir": "/mnt/SharedData/czl/checkpoints/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109",
+    "swanlab_enabled": true,
+    "swanlab_mode": "online",
+    "swanlab_log_dir": "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/swanlog"
+  },
+  "actual_config_matches_request": true,
+  "original_repository_unchanged": true,
+  "all_source_overlay_sha_verified": true,
+  "training_processes_exited": true,
+  "training_lock_released": true,
+  "logged_steps": 1000,
+  "train_log_sha256": "1f8d8e0070f0dbff671508082d3b375fa2e64466f7dbf07ed78645df6eacc829",
+  "actual_config_sha256": "c5ac2a81b44ba6179d962e037fcdab8406678d971c7ec43b8b2f10c149851a0f",
+  "uploaded_dataset_sha_rechecked_at_finish": true,
+  "last_metrics": {
+    "batch/action_loss_weight_mean": 1.4208,
+    "batch/reweighted_action_fraction": 0.1403,
+    "grad_norm": 0.7136,
+    "loss": 0.1988,
+    "loss/action": 0.1219,
+    "loss/action_nominal_contribution": 0.1081,
+    "loss/action_reweighted_contribution": 0.0138,
+    "loss/rotation_tolerance": 0.071,
+    "loss/total": 0.1988,
+    "loss_weighted/action": 0.1633,
+    "loss_weighted/rotation_tolerance": 0.0355,
+    "param_norm": 1804.9407
+  },
+  "checkpoint_full_cpu_restore_audit": {
+    "complete": true,
+    "checkpoints": [
+      {
+        "step": 2000,
+        "commit_metadata": {
+          "item_handlers": {
+            "assets": "openpi.training.checkpoints.CallbackHandler",
+            "params": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler",
+            "train_state": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler"
+          },
+          "metrics": {},
+          "performance_metrics": {},
+          "init_timestamp_nsecs": 1794242733586492171,
+          "commit_timestamp_nsecs": 1794242851749481627,
+          "custom_metadata": {}
+        },
+        "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+        "items": {
+          "params": {
+            "array_leaves": 71,
+            "elements": 3403421456,
+            "restored_bytes": 7740757056,
+            "all_finite": true,
+            "values_sha256": "29badf49f0dbfd633ff5a3b04029262692c31f496365b776f8dc99f308585242"
+          },
+          "train_state": {
+            "array_leaves": 105,
+            "elements": 933914147,
+            "restored_bytes": 3735656588,
+            "all_finite": true,
+            "values_sha256": "5823a35c291a8c31ba6d9f16286a8ae3fd9a5f4ee7b4676b75f07f89e6355ccc"
+          }
+        },
+        "projection_shapes": {
+          "params/action_in_proj/kernel/value": [
+            32,
+            1024
+          ],
+          "params/action_out_proj/kernel/value": [
+            1024,
+            32
+          ]
+        },
+        "actual_train_state_step": 2000,
+        "complete": true
+      },
+      {
+        "step": 4000,
+        "commit_metadata": {
+          "item_handlers": {
+            "assets": "openpi.training.checkpoints.CallbackHandler",
+            "params": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler",
+            "train_state": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler"
+          },
+          "metrics": {},
+          "performance_metrics": {},
+          "init_timestamp_nsecs": 1794257260880271218,
+          "commit_timestamp_nsecs": 1794257343092728691,
+          "custom_metadata": {}
+        },
+        "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+        "items": {
+          "params": {
+            "array_leaves": 71,
+            "elements": 3403421456,
+            "restored_bytes": 7740757056,
+            "all_finite": true,
+            "values_sha256": "87c39b323ba7ea513bbeb56fe5d09f4697d723d86049ad8d4687e4b42ccaa26f"
+          },
+          "train_state": {
+            "array_leaves": 105,
+            "elements": 933914147,
+            "restored_bytes": 3735656588,
+            "all_finite": true,
+            "values_sha256": "63e3b3f2a6dacf81b938a61b25d718cc94f3e31fe94c19dbd80819f54496225f"
+          }
+        },
+        "projection_shapes": {
+          "params/action_in_proj/kernel/value": [
+            32,
+            1024
+          ],
+          "params/action_out_proj/kernel/value": [
+            1024,
+            32
+          ]
+        },
+        "actual_train_state_step": 4000,
+        "complete": true
+      },
+      {
+        "step": 6000,
+        "commit_metadata": {
+          "item_handlers": {
+            "assets": "openpi.training.checkpoints.CallbackHandler",
+            "params": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler",
+            "train_state": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler"
+          },
+          "metrics": {},
+          "performance_metrics": {},
+          "init_timestamp_nsecs": 1794270760713155799,
+          "commit_timestamp_nsecs": 1794270795705008988,
+          "custom_metadata": {}
+        },
+        "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+        "items": {
+          "params": {
+            "array_leaves": 71,
+            "elements": 3403421456,
+            "restored_bytes": 7740757056,
+            "all_finite": true,
+            "values_sha256": "787e52e739dd7d9d1bcabcf9d274a9bcabe0500351bc73f599e819ad4d1d6e89"
+          },
+          "train_state": {
+            "array_leaves": 105,
+            "elements": 933914147,
+            "restored_bytes": 3735656588,
+            "all_finite": true,
+            "values_sha256": "1a725307a506c129918ff2d1caebf65e50cbde0582d850d3e9282b27d0a6baef"
+          }
+        },
+        "projection_shapes": {
+          "params/action_in_proj/kernel/value": [
+            32,
+            1024
+          ],
+          "params/action_out_proj/kernel/value": [
+            1024,
+            32
+          ]
+        },
+        "actual_train_state_step": 6000,
+        "complete": true
+      },
+      {
+        "step": 8000,
+        "commit_metadata": {
+          "item_handlers": {
+            "assets": "openpi.training.checkpoints.CallbackHandler",
+            "params": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler",
+            "train_state": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler"
+          },
+          "metrics": {},
+          "performance_metrics": {},
+          "init_timestamp_nsecs": 1794284194308303269,
+          "commit_timestamp_nsecs": 1794284223760477800,
+          "custom_metadata": {}
+        },
+        "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+        "items": {
+          "params": {
+            "array_leaves": 71,
+            "elements": 3403421456,
+            "restored_bytes": 7740757056,
+            "all_finite": true,
+            "values_sha256": "c399c1c5fda43962e2c58fc0c592966068ea993dde2cedb4c934306d6ac5dbae"
+          },
+          "train_state": {
+            "array_leaves": 105,
+            "elements": 933914147,
+            "restored_bytes": 3735656588,
+            "all_finite": true,
+            "values_sha256": "1e6036ef535467167b737bb960fced1d26c5f134d17a78664a38188f82e44d46"
+          }
+        },
+        "projection_shapes": {
+          "params/action_in_proj/kernel/value": [
+            32,
+            1024
+          ],
+          "params/action_out_proj/kernel/value": [
+            1024,
+            32
+          ]
+        },
+        "actual_train_state_step": 8000,
+        "complete": true
+      },
+      {
+        "step": 10000,
+        "commit_metadata": {
+          "item_handlers": {
+            "assets": "openpi.training.checkpoints.CallbackHandler",
+            "params": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler",
+            "train_state": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler"
+          },
+          "metrics": {},
+          "performance_metrics": {},
+          "init_timestamp_nsecs": 1794298205006601954,
+          "commit_timestamp_nsecs": 1794298235833471183,
+          "custom_metadata": {}
+        },
+        "norm_stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+        "items": {
+          "params": {
+            "array_leaves": 71,
+            "elements": 3403421456,
+            "restored_bytes": 7740757056,
+            "all_finite": true,
+            "values_sha256": "32bdc6bc91f99c0ce46cda90e4d99fe5132a1309d7e9a045814ef0a91f0d65d5"
+          },
+          "train_state": {
+            "array_leaves": 105,
+            "elements": 933914147,
+            "restored_bytes": 3735656588,
+            "all_finite": true,
+            "values_sha256": "b3e3b08a4eeb8da9f948154d251234d89a0faa084651fdd0edb99c1add51bc6c"
+          }
+        },
+        "projection_shapes": {
+          "params/action_in_proj/kernel/value": [
+            32,
+            1024
+          ],
+          "params/action_out_proj/kernel/value": [
+            1024,
+            32
+          ]
+        },
+        "actual_train_state_step": 10000,
+        "complete": true
+      }
+    ]
+  },
+  "tolerance_trajectory_action_loss_weight": 4.0,
+  "normalization_dimensions": {
+    "state": 8,
+    "actions": 13
+  },
+  "dataset": {
+    "episodes": 1875,
+    "frames": 312374,
+    "nominal_episodes": 1574,
+    "tolerance_episodes": 301,
+    "all_nominal_actions_unchanged": true,
+    "missing_labels": 0,
+    "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+  },
+  "swanlab": {
+    "metrics_csv_sha256": "ff934fc82800c93d366bf3a83823941f778dbe7699f9559a033490b13b69e8bf",
+    "complete": true,
+    "id": "kl28cdu6bv1mywr8n5wv0",
+    "url": "https://swanlab.cn/@caozilin/openpi/runs/kl28cdu6bv1mywr8n5wv0",
+    "cloud_state": "FINISHED",
+    "cloud_rows": 1000,
+    "keys": [
+      "loss",
+      "loss/action",
+      "loss/rotation_tolerance",
+      "loss_weighted/action",
+      "loss_weighted/rotation_tolerance",
+      "loss/total",
+      "loss/action_nominal_contribution",
+      "loss/action_reweighted_contribution",
+      "batch/action_loss_weight_mean",
+      "batch/reweighted_action_fraction"
+    ],
+    "last_step": 10000,
+    "all_cloud_values_match_local_logs": true
+  }
+}

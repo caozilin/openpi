@@ -1,0 +1,662 @@
+{
+  "status_counts": {
+    "ipopt: Maximum number of iterations exceeded (can be specified by an option).": 36
+  },
+  "phases": {
+    "release": 7,
+    "postgrasp": 26,
+    "grasp": 3
+  },
+  "cases": [
+    {
+      "key": "libero_spatial/01/demo_3",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_01/demo_3/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+      "sha256": "2f7102044756d3aa52084fbdd2568fef6ecdc2adf5ec54cdc5b9d2c9845a695f",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 171,
+          "phase": "release",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.008236053380722197,
+          "rotation_residual": 0.01787694301150685,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_spatial/01/demo_26",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_01/demo_26/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+      "sha256": "001d19951333d416228df68b35dc5254a99806b5ac0bb3b0df64025b8195959b",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 135,
+          "phase": "release",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.004528593243020698,
+          "rotation_residual": 0.024713522055349182,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_spatial/07/demo_13",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_13/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+      "sha256": "36784a06e8acb661cd0a2d927c23fc1a73353f07508823c0ec60e79c31b4ec18",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 133,
+          "phase": "release",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.0032326818834717136,
+          "rotation_residual": 0.01543344273469023,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_spatial/07/demo_48",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_spatial/task_07/demo_48/subtask_00/evaluations/a7fd87a297358c93b8d5d091fb00e22142529909a2fe263271b335eebaa80ad6/trial.json",
+      "sha256": "d37ce51def8d1ac603456bbe7689f4dc9c4be2f04b33079bfb6e95d5c75af847",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 126,
+          "phase": "release",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.0020698492347323016,
+          "rotation_residual": 0.016543665821684768,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_8",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_8/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+      "sha256": "812bcd7f0ba95934b158197ecc5cfb43b942bb5989233448bc608199d963ccff",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 79,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.005086955132535598,
+          "rotation_residual": 0.010266524700469447,
+          "constraint_violation": 0.0013713722157050467
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_26",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_26/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+      "sha256": "dae7ce766c6f23a1ef2ec8860531882bccfedace11349a781dbcf55fc6474fc4",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 95,
+          "phase": "release",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.003953415708568997,
+          "rotation_residual": 0.013364807714200505,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_36",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_36/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+      "sha256": "092574078cf4cd44eec04c6966b5b5a616606f873d1aa8a048b5a730ffcde571",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 89,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.007901099812835266,
+          "rotation_residual": 0.013914941051662475,
+          "constraint_violation": 0.0020721773193822512
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_47",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_goal/task_02/demo_47/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+      "sha256": "0667715d8be3905be9cb5b5478cacde1c0ed067a33e8b1a1e77fb30eb996bb7f",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 85,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.003909060787992802,
+          "rotation_residual": 0.022496388403133435,
+          "constraint_violation": 0.009707008519745375
+        }
+      ]
+    },
+    {
+      "key": "libero_10/06/demo_3",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_06/demo_3/subtask_00/evaluations/f700fc53174950ebdb6561469d9039c594d8492719cb53b16968241bb26f2cc6/trial.json",
+      "sha256": "7b31442f5701d02010c0d3fc631cc5e3db6ebd581e5ad71143a3315ef7c2b83a",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 102,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.005675957572842116,
+          "rotation_residual": 0.0,
+          "constraint_violation": 0.0042410440838341334
+        }
+      ]
+    },
+    {
+      "key": "libero_10/07/demo_4",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_4/subtask_01/evaluations/d6812b2b22162efd2ceb238f6cf5006dac6ee2b810fd9d10dde5fcdbc1d9cd59/trial.json",
+      "sha256": "49e36bbd4f3880194e20d83f66d5e51b2e206f7ce4db629e6d9d4de1cf2ee8fb",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 74,
+          "phase": "grasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.0028264739211505407,
+          "rotation_residual": 0.017205979663969997,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/07/demo_15",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_07/demo_15/subtask_01/evaluations/d6812b2b22162efd2ceb238f6cf5006dac6ee2b810fd9d10dde5fcdbc1d9cd59/trial.json",
+      "sha256": "38ad3f7635d74eb9143f19a557fdcdba19cb58da1146b4fc6f01bff3ce2388c2",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 54,
+          "phase": "grasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.0031576210125333418,
+          "rotation_residual": 0.05753474488949678,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_0",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_0/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "4b0da32e4ecfa5ad8f029b9d6cf6d85a370e32967da254b69e0a7668b4cb3611",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 249,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.004333150141657249,
+          "rotation_residual": 0.010772890253781997,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_2",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_2/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "2b3f143dd98aa7114c84519b3ce0d30c2541e844131d8a4cde078c597a3dcb91",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 157,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.006033966056325113,
+          "rotation_residual": 0.013719782111356426,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_4",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_4/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "52a90de9a5aa79c273479481e1394b9e025be19cd292ce3dca7bb72153c4a31b",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 192,
+          "phase": "release",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.005207459720605767,
+          "rotation_residual": 0.01422602836021913,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_7",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_7/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "9972b1018b72ceca77dccf1f050532b3f745f25dd67946c1322087d18949b0dd",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 134,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.007942224028558972,
+          "rotation_residual": 0.003251031731064197,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_8",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_8/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "5fed1cc2f932b3dd0b028870b8a9dd700a39caf524f791db17a4b34f0c779690",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 150,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.005959414725186282,
+          "rotation_residual": 0.014647095302205962,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_10",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_10/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "bc0f0208715b4ce1cb5ebd821c61cfe1a61d267131684325c1d52e3ad0e49e36",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 163,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.004339907086509581,
+          "rotation_residual": 0.01760250450304752,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_11",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_11/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "d6492b3af37ceaf503cc9675b0f38f2cf1e603c26bf905a3baa8c14beb8e1658",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 149,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.004229611991189541,
+          "rotation_residual": 0.019531046293788157,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_16",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_16/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "49a651d4b596a22a4c23e5e8c907f5b7720d9790fc7d24279df7fd25c895d3ef",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 178,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.004325334640637557,
+          "rotation_residual": 0.024185108010484135,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_17",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_17/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "749a774f0f34267c2a6e471ae0c2573cfd647ca80b3009b6e9b73118a73c3955",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 173,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.006495315497672863,
+          "rotation_residual": 0.015562687951048041,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_18",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_18/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "0445d73038b2ac9f07665eb50b3993bde91a41dc44a2c4bf09939b6dff3d220a",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 155,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.0039883279521437665,
+          "rotation_residual": 0.03573544684918071,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_20",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_20/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "52b9c47ddd53f59bdc78b59889f11b855f5537851197d7faab95cb8def7de28e",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 163,
+          "phase": "release",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.006682234796413722,
+          "rotation_residual": 0.014623412992022605,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_22",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_22/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "b67eeef95f1f752a8329a4cc140129bf73c17f1db8c158a97573c7341d9aaac8",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 146,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.009432255571379486,
+          "rotation_residual": 0.009352928883888195,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_24",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_24/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "2222852e2b8f12dc67f5dd9c8ebca34ac980dcd55350830badfecc27b728d1ee",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 144,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.008311962034797865,
+          "rotation_residual": 0.016196288780360477,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_25",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_25/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "042fffbeaf737ab7bb19321173d40be47ab9afdcd29c37cf51ed386ae94a9784",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 7,
+          "phase": "grasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.002863329042547491,
+          "rotation_residual": 0.003559395334595804,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_28",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_28/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "a1b4080be792cf8788cd195c7f27d4e2e38b07f9c5b189693dd4a82391940e93",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 239,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.004306972286371308,
+          "rotation_residual": 0.014859122876956456,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_29",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_29/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "f7b9473d7ace93eb957c98b297ab79a2d2313e6465eea24c37f1629387400fc7",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 150,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.008349314063505212,
+          "rotation_residual": 0.013477821927144047,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_34",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_34/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "b2e10ec8a12c392d84fef8e77f287467b6f77c205c373706a5632367a060bb45",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 229,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.0046361645627179815,
+          "rotation_residual": 0.024596507259002354,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_37",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_37/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "c1a82eae047b1cdd33bd50ef922c0dc33f89fcb8ea85252266838e780fde0b1a",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 157,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.004738439144377618,
+          "rotation_residual": 0.015611804711049837,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_39",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_39/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "427793d9580f47137655d99797cd9fd472522ec15b4998cf7bcb108bb3793e5c",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 168,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.0038643928750692613,
+          "rotation_residual": 0.014408042383700317,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_40",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_40/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "31ba32170b7c8bdaff9a15d722f7e7c8444550084e47482f899eda9b843880a3",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 223,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.0054419486821055685,
+          "rotation_residual": 0.010596190692038342,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_43",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_43/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "1af5ab8460539dd1470e52ac190ca3bdb18fc3ff9634d5dc09c7c682550928f4",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 207,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.006235331334609656,
+          "rotation_residual": 0.020771231498270794,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_44",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_relative_clearance_eps01_ema85_full1875_20261107/libero_10/task_08/demo_44/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "e454a981fd67d62370f2456960ef79f7a4802a228b5f64149cccddcf3ac03006",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 148,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.003178583667192675,
+          "rotation_residual": 0.017312695858991818,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_goal/02/demo_21",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_goal/task_02/demo_21/subtask_00/evaluations/17caa3b7fc044ec510acd2b138162855a38ee2e33c1f27c2ce62020147bbb80e/trial.json",
+      "sha256": "c9ae6ad459f0c04b7415e66ece7300a7c0e9f0d6d9588eba2c1ee9e83e70ae00",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 71,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.005037412435984434,
+          "rotation_residual": 0.007822068146452678,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/05/demo_15",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_05/demo_15/subtask_00/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "157b052e0c005c26a288efbe913eae89b10a076d78dbc877ddaadf6834c7a394",
+      "reason": "robot_self_collision",
+      "details": [
+        {
+          "frame": 229,
+          "category": "robot_self_collision",
+          "contact_index": 0,
+          "penetration_m": 0.0005722125088339571,
+          "distance_m": -0.0005722125088339571,
+          "geom_a": "robot0_link1_collision",
+          "geom_b": "robot0_link5_collision",
+          "body_a": "robot0_link1",
+          "body_b": "robot0_link5"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/05/demo_43",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_05/demo_43/subtask_00/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "13eaabe4730890af01601060bf30e2cdd84613219645a895e3b347b430a8871e",
+      "reason": "robot_self_collision",
+      "details": [
+        {
+          "frame": 239,
+          "category": "robot_self_collision",
+          "contact_index": 0,
+          "penetration_m": 0.005473235453862352,
+          "distance_m": -0.005473235453862352,
+          "geom_a": "robot0_link2_collision",
+          "geom_b": "robot0_link5_collision",
+          "body_a": "robot0_link2",
+          "body_b": "robot0_link5"
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_27",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_08/demo_27/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "1aa5b1755565066fe86fcfd6b9d0296b18ffe5b3a914a24d042173ae7b5f9c3a",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 172,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.008958468434098699,
+          "rotation_residual": 0.011885780102845616,
+          "constraint_violation": 0.0
+        }
+      ]
+    },
+    {
+      "key": "libero_10/08/demo_36",
+      "path": "/media/czl/sata/franka_my_code/franka_mujoco/analysis_results/libero_missing24_baseline_observation_20261109/libero_10/task_08/demo_36/subtask_01/evaluations/8a3e92fa3e960b888f907149912b7cd1a0811a454612d983e58a27df2ac107d8/trial.json",
+      "sha256": "6c23477c740b5a9e70abe16547f0d4dcf200481ace08ab17ffbf2bd9b62ae3e3",
+      "reason": "optimizer_infeasible",
+      "details": [
+        {
+          "frame": 164,
+          "phase": "postgrasp",
+          "subtask_index": 0,
+          "status": "ipopt: Maximum number of iterations exceeded (can be specified by an option).",
+          "position_residual": 0.006130175593355561,
+          "rotation_residual": 0.025040371761285745,
+          "constraint_violation": 0.0
+        }
+      ]
+    }
+  ]
+}

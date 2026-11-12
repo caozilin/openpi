@@ -1,0 +1,30 @@
+{
+  "complete": true,
+  "scope": "local integration test only; no model inference or benchmark restarted",
+  "native_runtime": "MuJoCo shared servo/default IPOPT",
+  "reference_unchanged_on_all_39_injected_failed_frames": true,
+  "held_joint_target_matches_last_accepted": true,
+  "physics_steps_per_frame": 25,
+  "control_hz": 20,
+  "continuous_failure_limit": 20,
+  "continuous_failure_duration_seconds": 0.9999999999999951,
+  "success_resets_failure_counter": true,
+  "metadata": {
+    "solver_failure_policy": "hold_last_accepted_reference",
+    "max_consecutive_solver_failures": 20,
+    "solver_failure_timeout_seconds": 1.0,
+    "total_solver_failures": 39,
+    "maximum_solver_failure_streak": 20
+  },
+  "verified_at": "2026-11-02T21:43:30.034889+08:00",
+  "unit_tests": "13 passed",
+  "static_check": "ruff passed for helper and tests; both clients compile and --help exit0",
+  "source_sha256": {
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/solver_failure_hold.py": "23a053f11a139b4d6b56b9c6e47efb80aa24d30b3efbf2a392972adb01548c5a",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/solver_failure_hold_test.py": "d12796e4c5e22d4428fbd6f4da79261e0a16a32510cbb3768c6906135fad8a77",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/eval_reconstructed_libero_local.py": "22fbf20db24c725da9b255e660f9a22665806ee848e668c5db392033d1dfe61b",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/eval_reconstructed_libero_tolerance_local.py": "91ecb325f0a1a2357f2e3976b449e657df17203bdd7202512527138880426dfe"
+  },
+  "benchmark_or_inference_started": false,
+  "historical_data_or_frozen_runtime_modified": false
+}

@@ -1,0 +1,736 @@
+[
+  {
+    "observed_at": "2026-11-09T18:46:49.216800+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:08:20  0.5\n  82814    2470 Ss      01:08:20  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S          47:36 rsync\n"
+    },
+    "remote": {
+      "parquets": 541,
+      "parquet_bytes": 8478532782,
+      "free_gib": 128.62981414794922,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:46:46.567678+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:47:50.433188+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:09:21  0.5\n  82814    2470 Ss      01:09:21  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S          48:38 rsync\n"
+    },
+    "remote": {
+      "parquets": 556,
+      "parquet_bytes": 8778156572,
+      "free_gib": 128.36074447631836,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:47:46.568821+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:48:40.279747+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:10:11  0.5\n  82814    2470 Ss      01:10:11  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 D          49:27 rsync\n"
+    },
+    "remote": {
+      "parquets": 574,
+      "parquet_bytes": 9136056621,
+      "free_gib": 128.0110321044922,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:48:16.569504+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:49:27.152038+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:10:58  0.5\n  82814    2470 Ss      01:10:58  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 D          50:14 rsync\n"
+    },
+    "remote": {
+      "parquets": 595,
+      "parquet_bytes": 9529460360,
+      "free_gib": 127.65460586547852,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:49:16.589163+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:50:17.606774+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:11:49  0.5\n  82814    2470 Ss      01:11:49  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 D          51:05 rsync\n"
+    },
+    "remote": {
+      "parquets": 604,
+      "parquet_bytes": 9687782505,
+      "free_gib": 127.50176620483398,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:50:16.590434+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:51:05.306750+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:12:36  0.5\n  82814    2470 Ss      01:12:36  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S          51:52 rsync\n"
+    },
+    "remote": {
+      "parquets": 612,
+      "parquet_bytes": 9827467541,
+      "free_gib": 127.37409973144531,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:50:46.591029+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:52:01.286888+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:13:32  0.5\n  82814    2470 Ss      01:13:32  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S          52:48 rsync\n"
+    },
+    "remote": {
+      "parquets": 626,
+      "parquet_bytes": 10123719771,
+      "free_gib": 127.1032943725586,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:51:46.592395+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:53:02.322653+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:14:33  0.5\n  82814    2470 Ss      01:14:33  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S          53:49 rsync\n"
+    },
+    "remote": {
+      "probe_timeout": true,
+      "terminal_state_proven": false
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:54:35.899885+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:16:07  0.4\n  82814    2470 Ss      01:16:07  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S          55:23 rsync\n"
+    },
+    "remote": {
+      "parquets": 633,
+      "parquet_bytes": 10251413386,
+      "free_gib": 126.97751998901367,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:54:46.596546+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:55:58.750827+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:17:30  0.4\n  82814    2470 Ss      01:17:30  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S          56:46 rsync\n"
+    },
+    "remote": {
+      "parquets": 635,
+      "parquet_bytes": 10286028380,
+      "free_gib": 126.95333480834961,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:55:46.597722+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:57:01.112306+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:18:32  0.4\n  82814    2470 Ss      01:18:32  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S          57:48 rsync\n"
+    },
+    "remote": {
+      "parquets": 641,
+      "parquet_bytes": 10409228419,
+      "free_gib": 126.84029006958008,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:56:46.599027+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:57:59.181978+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:19:30  0.4\n  82814    2470 Ss      01:19:30  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S          58:46 rsync\n"
+    },
+    "remote": {
+      "parquets": 654,
+      "parquet_bytes": 10667648186,
+      "free_gib": 126.58641052246094,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:57:46.600610+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:58:52.768071+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:20:24  0.4\n  82814    2470 Ss      01:20:24  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S          59:40 rsync\n"
+    },
+    "remote": {
+      "parquets": 660,
+      "parquet_bytes": 10794364125,
+      "free_gib": 126.4852294921875,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:58:46.601613+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T18:59:52.582593+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:21:24  0.4\n  82814    2470 Ss      01:21:23  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S       01:00:40 rsync\n"
+    },
+    "remote": {
+      "parquets": 661,
+      "parquet_bytes": 10817056772,
+      "free_gib": 126.44846725463867,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T18:59:46.602550+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T19:00:55.024026+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:22:26  0.4\n  82814    2470 Ss      01:22:26  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S       01:01:42 rsync\n"
+    },
+    "remote": {
+      "parquets": 673,
+      "parquet_bytes": 11086941439,
+      "free_gib": 126.21223449707031,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T19:00:46.603568+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-09T19:01:57.574543+08:00",
+    "local": {
+      "upload": {
+        "stage": "uploading",
+        "files": 1890,
+        "bytes": 38388719043,
+        "manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d"
+      },
+      "upload_process": {
+        "pid": 82812,
+        "matches_this_run": true
+      },
+      "training_dispatch": {
+        "stage": "waiting_for_verified_upload",
+        "upload_stage": "uploading"
+      },
+      "training_dispatch_process": {
+        "pid": 82814,
+        "matches_this_run": true
+      },
+      "process_snapshot": "    PID    PPID STAT     ELAPSED %CPU\n  82812    2470 Ss      01:23:29  0.4\n  82814    2470 Ss      01:23:28  0.0\n",
+      "upload_children": "    PID    PPID STAT     ELAPSED COMMAND\n 120234   82812 S       01:02:45 rsync\n"
+    },
+    "remote": {
+      "parquets": 675,
+      "parquet_bytes": 11129156819,
+      "free_gib": 126.17047500610352,
+      "upload_verification_state": null,
+      "training_state": null,
+      "normalization_completion": null,
+      "finish_training_state": {
+        "stage": "waiting",
+        "training_stage": "waiting_for_training_launch",
+        "at": "2026-11-09T19:01:46.604673+08:00"
+      },
+      "independent_training_audit_state": null,
+      "task_completion": null,
+      "live_owned_processes": [
+        {
+          "role": "finish_training_process",
+          "pid": 3210109,
+          "matches_this_run": true
+        }
+      ]
+    }
+  }
+]

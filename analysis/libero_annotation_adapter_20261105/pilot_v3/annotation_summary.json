@@ -1,0 +1,19 @@
+{
+  "complete": false,
+  "processed": 1,
+  "labeled": 0,
+  "annotation_failed": 1,
+  "adapter_errors": 0,
+  "results": [
+    {
+      "complete": false,
+      "status": "annotation_failed",
+      "source_episode_index": 0,
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "demo": "demo_0",
+      "error": "Nominal zero-tolerance trajectory failed",
+      "failure": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/pilot_v3/libero_spatial/task_00/demo_0/tolerance_annotation_failure.json"
+    }
+  ]
+}

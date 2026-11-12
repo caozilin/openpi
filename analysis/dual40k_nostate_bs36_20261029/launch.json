@@ -1,0 +1,19 @@
+{
+  "common_start_unix": 1793284025.533094,
+  "groups": [
+    {
+      "group": "nominal",
+      "supervisor_pid": 3585478,
+      "run_dir": "/mnt/SharedData/czl/runs/dual40k_nostate_bs36_20261029/nominal"
+    },
+    {
+      "group": "joint",
+      "supervisor_pid": 3585479,
+      "run_dir": "/mnt/SharedData/czl/runs/dual40k_nostate_bs36_20261029/joint"
+    }
+  ],
+  "num_train_steps_per_group": 40000,
+  "num_gpus_per_group": 3,
+  "global_batch_per_group": 36,
+  "from_base": true
+}

@@ -1,0 +1,20 @@
+{
+  "tasks": 40,
+  "semantic_subtasks": 49,
+  "phases": [
+    "APP",
+    "EXEC"
+  ],
+  "editable_numeric_cells": 294,
+  "mask_order": [
+    "xF",
+    "yF",
+    "zF"
+  ],
+  "unit": "degree; positive symmetric half width",
+  "source_sha256": "7be8607bd4020e9ec9ff37912bfb315e116a6c15c3ff79ad7c3435ce854224f6",
+  "source_matches_frozen_request": true,
+  "all_values_match_bitwise_conversion": true,
+  "xlsx": "/media/czl/sata/franka_my_code/openpi/outputs/01a195ea-15f0-71b1-81ca-78023e28fe20/libero40_semantic_tolerances_deg.xlsx",
+  "csv": "/media/czl/sata/franka_my_code/openpi/outputs/01a195ea-15f0-71b1-81ca-78023e28fe20/libero40_semantic_tolerances_deg.csv"
+}

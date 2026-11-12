@@ -1,0 +1,19 @@
+{
+  "complete": true,
+  "run": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110",
+  "request_sha256": "604ae8feda0cb6efd441f0c2ab8a7243ab7e000e8180554c30485ae12457f004",
+  "episodes": 400,
+  "worker_counts": {
+    "0": 67,
+    "1": 67,
+    "2": 67,
+    "3": 67,
+    "4": 66,
+    "5": 66
+  },
+  "source_files": 479,
+  "official_inputs_match_baseline": true,
+  "local_free_gib": 5.002983093261719,
+  "estimated_output_gib": 0.8,
+  "processes_started": false
+}

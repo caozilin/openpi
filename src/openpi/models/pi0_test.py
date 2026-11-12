@@ -94,3 +94,23 @@ def test_tolerance_trajectory_weight_only_scales_physical_action_loss():
     assert float(breakdown["loss_weighted/tolerance"][1, 0]) == pytest.approx(2.0)
     assert float(loss[0, 0]) == pytest.approx(3.0)
     assert float(loss[1, 0]) == pytest.approx(6.0)
+
+
+def test_joint13_four_x_loss_and_logged_contributions_match_jit_gradients():
+    jnp = jax.numpy
+    groups = (("action", 0, 7, 1.0), ("rotation_tolerance", 7, 13, 0.5))
+    weights = jnp.asarray([1.0, 4.0])
+    values = jnp.ones((2, 10, 32))
+    values = values.at[..., 13:].set(1000.0)
+    def objective(x):
+        return _pi0._grouped_action_loss(x ** 2, groups, weights).mean()
+    loss, parts = jax.jit(lambda x: _pi0._grouped_action_loss_with_breakdown(x ** 2, groups, weights))(values)
+    assert float(loss.mean()) == pytest.approx(3.0)
+    assert float(parts['loss/action_nominal_contribution'].mean()) == pytest.approx(0.5)
+    assert float(parts['loss/action_reweighted_contribution'].mean()) == pytest.approx(0.5)
+    assert float(parts['batch/action_loss_weight_mean'].mean()) == pytest.approx(2.5)
+    assert float(parts['batch/reweighted_action_fraction'].mean()) == pytest.approx(0.5)
+    gradients = jax.jit(jax.grad(objective))(values)
+    assert float(gradients[1,0,0] / gradients[0,0,0]) == pytest.approx(4.0)
+    assert float(gradients[1,0,7] / gradients[0,0,7]) == pytest.approx(1.0)
+    assert jnp.all(gradients[...,13:] == 0)

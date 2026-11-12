@@ -1,0 +1,209 @@
+commit bf0556c00318d03b1e1ab23a3b53f3a7ea193d1d
+Author:     czl <1848166725@qq.com>
+AuthorDate: Sat Sep 12 14:58:40 2026 +0800
+Commit:     czl <1848166725@qq.com>
+CommitDate: Sat Sep 12 14:58:40 2026 +0800
+
+    feat: replace joint19 with joint15 tolerance descriptor
+
+diff --git a/src/openpi/policies/franka_mujoco_policy.py b/src/openpi/policies/franka_mujoco_policy.py
+index 9664725..dfc233d 100644
+--- a/src/openpi/policies/franka_mujoco_policy.py
++++ b/src/openpi/policies/franka_mujoco_policy.py
+@@ -6,16 +6,15 @@ import numpy as np
+ from openpi import transforms
+ from openpi.models import model as _model
+ 
+-
+ STATE_DIM = 7
+ ACTION_DIM = 7
+-ROTATION_6D_DIM = 6
++TOLERANCE_FRAME_CODE_DIM = 2
+ ROTATION_TOLERANCE_DIM = 6
+-JOINT_ACTION_DIM = ACTION_DIM + ROTATION_6D_DIM + ROTATION_TOLERANCE_DIM
+-TARGET_ROTATION_SLICE = slice(ACTION_DIM, ACTION_DIM + ROTATION_6D_DIM)
+-ROTATION_TOLERANCE_SLICE = slice(TARGET_ROTATION_SLICE.stop, JOINT_ACTION_DIM)
++JOINT_ACTION_DIM = ACTION_DIM + TOLERANCE_FRAME_CODE_DIM + ROTATION_TOLERANCE_DIM
++TOLERANCE_FRAME_CODE_SLICE = slice(ACTION_DIM, ACTION_DIM + TOLERANCE_FRAME_CODE_DIM)
++ROTATION_TOLERANCE_SLICE = slice(TOLERANCE_FRAME_CODE_SLICE.stop, JOINT_ACTION_DIM)
+ TASK_TOLERANCE_DIMS = {
+-    "stage_target_pose": ROTATION_6D_DIM,
++    "tolerance_frame_code": TOLERANCE_FRAME_CODE_DIM,
+     "rotation_tolerance": ROTATION_TOLERANCE_DIM,
+ }
+ 
+@@ -116,11 +115,14 @@ class FrankaMujocoOutputs(transforms.DataTransformFn):
+         predictions = np.asarray(data["actions"])
+         outputs = {"actions": predictions[:, :ACTION_DIM]}
+         if self.joint_task_tolerance:
+-            if predictions.shape[-1] < JOINT_ACTION_DIM:
+-                raise ValueError(f"Expected at least {JOINT_ACTION_DIM} joint output dimensions, got {predictions.shape}")
++            if predictions.shape[-1] != JOINT_ACTION_DIM:
++                raise ValueError(
++                    f"Expected exactly {JOINT_ACTION_DIM} joint output dimensions, "
++                    f"got {predictions.shape}"
++                )
+             outputs.update(
+                 {
+-                    "stage_target_pose": predictions[:, TARGET_ROTATION_SLICE],
++                    "tolerance_frame_code": predictions[:, TOLERANCE_FRAME_CODE_SLICE],
+                     "rotation_tolerance": predictions[:, ROTATION_TOLERANCE_SLICE],
+                 }
+             )
+diff --git a/src/openpi/training/config.py b/src/openpi/training/config.py
+index ba8066d..bb0654b 100644
+--- a/src/openpi/training/config.py
++++ b/src/openpi/training/config.py
+@@ -384,7 +384,7 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
+     tolerance_trajectory_action_loss_weight: float = 1.0
+     sequence_keys: Sequence[str] = (
+         "actions",
+-        "stage_target_pose",
++        "tolerance_frame_code",
+         "rotation_tolerance",
+     )
+ 
+@@ -404,7 +404,7 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
+         if self.joint_task_tolerance:
+             repack_structure.update(
+                 {
+-                    "stage_target_pose": "stage_target_pose",
++                    "tolerance_frame_code": "tolerance_frame_code",
+                     "rotation_tolerance": "rotation_tolerance",
+                 }
+             )
+@@ -878,9 +878,10 @@ _CONFIGS = [
+         fsdp_devices=1,
+     ),
+     TrainConfig(
+-        name="pi05_franka_mujoco_joint19",
++        name="pi05_franka_mujoco_joint15",
+         model=pi0_config.Pi0Config(
+             pi05=True,
++            action_dim=15,
+             action_horizon=16,
+             discrete_state_input=False,
+             max_token_len=48,
+@@ -888,8 +889,8 @@ _CONFIGS = [
+             action_expert_variant="gemma_300m_lora",
+             action_loss_groups=(
+                 ("action", 0, 7, 1.0),
+-                ("stage_target_pose", 7, 13, 0.5),
+-                ("rotation_tolerance", 13, 19, 0.5),
++                ("tolerance_frame_code", 7, 9, 0.5),
++                ("rotation_tolerance", 9, 15, 0.5),
+             ),
+         ),
+         data=LeRobotFrankaMujocoDataConfig(
+@@ -905,7 +906,10 @@ _CONFIGS = [
+             decay_lr=5e-6,
+         ),
+         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
+-        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
++        weight_loader=weight_loaders.CheckpointWeightLoader(
++            "gs://openpi-assets/checkpoints/pi05_base/params",
++            skip_mismatched_shapes=True,
++        ),
+         freeze_filter=pi0_config.Pi0Config(
+             pi05=True,
+             action_horizon=16,
+@@ -921,9 +925,10 @@ _CONFIGS = [
+         fsdp_devices=1,
+     ),
+     TrainConfig(
+-        name="pi05_franka_mujoco_joint19_state",
++        name="pi05_franka_mujoco_joint15_state",
+         model=pi0_config.Pi0Config(
+             pi05=True,
++            action_dim=15,
+             action_horizon=16,
+             discrete_state_input=True,
+             max_token_len=64,
+@@ -931,15 +936,15 @@ _CONFIGS = [
+             action_expert_variant="gemma_300m_lora",
+             action_loss_groups=(
+                 ("action", 0, 7, 1.0),
+-                ("stage_target_pose", 7, 13, 0.5),
+-                ("rotation_tolerance", 13, 19, 0.5),
++                ("tolerance_frame_code", 7, 9, 0.5),
++                ("rotation_tolerance", 9, 15, 0.5),
+             ),
+         ),
+         data=LeRobotFrankaMujocoDataConfig(
+             repo_id="caozilin/franka_mujoco",
+-            # Reuse the same 7-D state and 19-D action normalization stats as
+-            # the action-only-input joint19 configuration.
+-            assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_joint19"),
++            # Reuse the same 7-D state and 15-D action normalization stats as
++            # the action-only-input joint15 configuration.
++            assets=AssetsConfig(assets_dir="./assets/pi05_franka_mujoco_joint15"),
+             base_config=DataConfig(prompt_from_task=True),
+             joint_task_tolerance=True,
+         ),
+@@ -951,7 +956,10 @@ _CONFIGS = [
+             decay_lr=5e-6,
+         ),
+         optimizer=_optimizer.AdamW(clip_gradient_norm=1.0),
+-        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
++        weight_loader=weight_loaders.CheckpointWeightLoader(
++            "gs://openpi-assets/checkpoints/pi05_base/params",
++            skip_mismatched_shapes=True,
++        ),
+         freeze_filter=pi0_config.Pi0Config(
+             pi05=True,
+             action_horizon=16,
+diff --git a/src/openpi/training/weight_loaders.py b/src/openpi/training/weight_loaders.py
+index 0eee1c6..1d7c8b9 100644
+--- a/src/openpi/training/weight_loaders.py
++++ b/src/openpi/training/weight_loaders.py
+@@ -46,12 +46,18 @@ class CheckpointWeightLoader(WeightLoader):
+     """
+ 
+     params_path: str
++    skip_mismatched_shapes: bool = False
+ 
+     def load(self, params: at.Params) -> at.Params:
+         # We are loading np.ndarray and relying on the training code to properly convert and shard the params.
+         loaded_params = _model.restore_params(download.maybe_download(self.params_path), restore_type=np.ndarray)
+         # Add all missing LoRA weights.
+-        return _merge_params(loaded_params, params, missing_regex=".*lora.*")
++        return _merge_params(
++            loaded_params,
++            params,
++            missing_regex=".*lora.*",
++            use_reference_for_mismatched=self.skip_mismatched_shapes,
++        )
+ 
+ 
+ @dataclasses.dataclass(frozen=True)
+@@ -73,7 +79,13 @@ class PaliGemmaWeightLoader(WeightLoader):
+         return _merge_params(loaded_params, params, missing_regex=".*")
+ 
+ 
+-def _merge_params(loaded_params: at.Params, params: at.Params, *, missing_regex: str) -> at.Params:
++def _merge_params(
++    loaded_params: at.Params,
++    params: at.Params,
++    *,
++    missing_regex: str,
++    use_reference_for_mismatched: bool = False,
++) -> at.Params:
+     """Merges the loaded parameters with the reference parameters.
+ 
+     Args:
+@@ -91,6 +103,15 @@ def _merge_params(loaded_params: at.Params, params: at.Params, *, missing_regex:
+     result = {}
+     for k, v in flat_loaded.items():
+         if k in flat_ref:
++            if use_reference_for_mismatched and np.shape(v) != np.shape(flat_ref[k]):
++                logger.info(
++                    "Initializing %s instead of loading checkpoint shape %s into %s",
++                    k,
++                    np.shape(v),
++                    np.shape(flat_ref[k]),
++                )
++                result[k] = flat_ref[k]
++                continue
+             result[k] = v.astype(flat_ref[k].dtype) if v.dtype != flat_ref[k].dtype else v
+ 
+     flat_loaded.clear()

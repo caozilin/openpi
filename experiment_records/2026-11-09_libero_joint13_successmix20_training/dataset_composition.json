@@ -1,0 +1,47 @@
+{
+  "request_sha256": "92e86f597f84b801299ba80482adf506ea1a989e8b94f7a4cec53619797d8337",
+  "sampling_denominator": "per-task successful tolerance replay pool",
+  "rounding": "nearest integer; exact20% per task before rounding",
+  "replacement_scope": "observations only; original nominal actions7 unchanged",
+  "total_episodes": 1875,
+  "nominal_episodes": 1574,
+  "tolerance_episodes": 301,
+  "total_frames": 312374,
+  "tolerance_frames": 47564,
+  "suite_counts": {
+    "libero_spatial": {
+      "total_episodes": 465,
+      "nominal_episodes": 390,
+      "tolerance_episodes": 75,
+      "total_frames": 56737,
+      "tolerance_frames": 9228,
+      "successful_replay_candidates": 378
+    },
+    "libero_object": {
+      "total_episodes": 493,
+      "nominal_episodes": 408,
+      "tolerance_episodes": 85,
+      "total_frames": 72771,
+      "tolerance_frames": 12664,
+      "successful_replay_candidates": 412
+    },
+    "libero_goal": {
+      "total_episodes": 458,
+      "nominal_episodes": 374,
+      "tolerance_episodes": 84,
+      "total_frames": 56369,
+      "tolerance_frames": 9873,
+      "successful_replay_candidates": 418
+    },
+    "libero_10": {
+      "total_episodes": 459,
+      "nominal_episodes": 402,
+      "tolerance_episodes": 57,
+      "total_frames": 126497,
+      "tolerance_frames": 15799,
+      "successful_replay_candidates": 295
+    }
+  },
+  "scope": "frozen selection and full independent dataset audit passed",
+  "full_dataset_audit_sha256": "b896b31444b2990224680033ddd4926baf25b7c0d194f3f105382c32b9c3c194"
+}

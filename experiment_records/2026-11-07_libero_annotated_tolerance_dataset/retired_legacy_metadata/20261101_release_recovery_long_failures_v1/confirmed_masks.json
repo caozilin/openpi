@@ -1,0 +1,733 @@
+{
+  "schema": "libero40_user_confirmed_semantic_masks.2",
+  "confirmed_at": "2026-10-31",
+  "confirmation": "User: Goal03 drawer opening through bowl approach is PRE010, POST000; Goal05 remains000; all other proposed edits accepted.",
+  "mask_order": [
+    "xF",
+    "yF",
+    "zF"
+  ],
+  "bounds_deg": [
+    30,
+    30,
+    30,
+    30,
+    30,
+    30
+  ],
+  "original_annotation_sha256": "84d383ce65d853a91507a9d56ae28a22d1a6bc4319ed9fa5406944c2e71086c9",
+  "tasks": [
+    {
+      "case": 0,
+      "ordinal": 1,
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 1,
+      "ordinal": 2,
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "ordinal": 3,
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "ordinal": 4,
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 4,
+      "ordinal": 5,
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 5,
+      "ordinal": 6,
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 6,
+      "ordinal": 7,
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 7,
+      "ordinal": 8,
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 8,
+      "ordinal": 9,
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 9,
+      "ordinal": 10,
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 10,
+      "ordinal": 11,
+      "suite": "libero_object",
+      "task_id": 0,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "alphabet soup",
+          "APP": "011",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 11,
+      "ordinal": 12,
+      "suite": "libero_object",
+      "task_id": 1,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "cream cheese",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 12,
+      "ordinal": 13,
+      "suite": "libero_object",
+      "task_id": 2,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "salad dressing",
+          "APP": "011",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 13,
+      "ordinal": 14,
+      "suite": "libero_object",
+      "task_id": 3,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "bbq sauce",
+          "APP": "011",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 14,
+      "ordinal": 15,
+      "suite": "libero_object",
+      "task_id": 4,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "ketchup",
+          "APP": "011",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 15,
+      "ordinal": 16,
+      "suite": "libero_object",
+      "task_id": 5,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "tomato sauce",
+          "APP": "011",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 16,
+      "ordinal": 17,
+      "suite": "libero_object",
+      "task_id": 6,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "butter",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 17,
+      "ordinal": 18,
+      "suite": "libero_object",
+      "task_id": 7,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "milk",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 18,
+      "ordinal": 19,
+      "suite": "libero_object",
+      "task_id": 8,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "chocolate pudding",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 19,
+      "ordinal": 20,
+      "suite": "libero_object",
+      "task_id": 9,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "orange juice",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 20,
+      "ordinal": 21,
+      "suite": "libero_goal",
+      "task_id": 0,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "middle drawer",
+          "APP": "000",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 21,
+      "ordinal": 22,
+      "suite": "libero_goal",
+      "task_id": 1,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 22,
+      "ordinal": 23,
+      "suite": "libero_goal",
+      "task_id": 2,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "wine bottle",
+          "APP": "011",
+          "ENG": "000",
+          "EXEC": "001",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 23,
+      "ordinal": 24,
+      "suite": "libero_goal",
+      "task_id": 3,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "open top drawer, then grasp and place bowl; drawer opening is APP",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 24,
+      "ordinal": 25,
+      "suite": "libero_goal",
+      "task_id": 4,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 25,
+      "ordinal": 26,
+      "suite": "libero_goal",
+      "task_id": 5,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "plate",
+          "APP": "000",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 26,
+      "ordinal": 27,
+      "suite": "libero_goal",
+      "task_id": 6,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "cream cheese",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 27,
+      "ordinal": 28,
+      "suite": "libero_goal",
+      "task_id": 7,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "stove switch",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 28,
+      "ordinal": 29,
+      "suite": "libero_goal",
+      "task_id": 8,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 29,
+      "ordinal": 30,
+      "suite": "libero_goal",
+      "task_id": 9,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "wine bottle",
+          "APP": "011",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 30,
+      "ordinal": 31,
+      "suite": "libero_10",
+      "task_id": 0,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "alphabet soup",
+          "APP": "011",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        },
+        {
+          "index": 1,
+          "label": "tomato sauce",
+          "APP": "011",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 31,
+      "ordinal": 32,
+      "suite": "libero_10",
+      "task_id": 1,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "cream cheese box",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        },
+        {
+          "index": 1,
+          "label": "butter",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 32,
+      "ordinal": 33,
+      "suite": "libero_10",
+      "task_id": 2,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "stove switch",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        },
+        {
+          "index": 1,
+          "label": "moka pot",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 33,
+      "ordinal": 34,
+      "suite": "libero_10",
+      "task_id": 3,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "black bowl",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        },
+        {
+          "index": 1,
+          "label": "bottom drawer",
+          "APP": "000",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 34,
+      "ordinal": 35,
+      "suite": "libero_10",
+      "task_id": 4,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "white mug",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        },
+        {
+          "index": 1,
+          "label": "yellow and white mug",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 35,
+      "ordinal": 36,
+      "suite": "libero_10",
+      "task_id": 5,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "book",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 36,
+      "ordinal": 37,
+      "suite": "libero_10",
+      "task_id": 6,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "white mug",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        },
+        {
+          "index": 1,
+          "label": "chocolate pudding",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 37,
+      "ordinal": 38,
+      "suite": "libero_10",
+      "task_id": 7,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "alphabet soup",
+          "APP": "011",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        },
+        {
+          "index": 1,
+          "label": "cream cheese box",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 38,
+      "ordinal": 39,
+      "suite": "libero_10",
+      "task_id": 8,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "moka pot initially at image right",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        },
+        {
+          "index": 1,
+          "label": "moka pot initially at image left",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        }
+      ]
+    },
+    {
+      "case": 39,
+      "ordinal": 40,
+      "suite": "libero_10",
+      "task_id": 9,
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "yellow and white mug",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        },
+        {
+          "index": 1,
+          "label": "microwave door",
+          "APP": "000",
+          "ENG": "000",
+          "EXEC": "000",
+          "DIS": "000"
+        }
+      ]
+    }
+  ]
+}

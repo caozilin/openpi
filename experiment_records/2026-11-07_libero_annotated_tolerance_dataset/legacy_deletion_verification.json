@@ -1,0 +1,30 @@
+{
+  "complete": true,
+  "roots": [
+    {
+      "retired": true,
+      "all_old_rollout_artifacts_deleted": true,
+      "replacement": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1",
+      "metadata_archive": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-07_libero_annotated_tolerance_dataset/retired_legacy_metadata/20261031_mask30_confirmed_v1",
+      "deleted_files": 4998,
+      "deleted_logical_bytes": 1054242793,
+      "finished_at": "2026-11-07T20:06:22.355297+08:00",
+      "retained": "small confirmed_masks rule file and this deletion receipt only"
+    },
+    {
+      "retired": true,
+      "all_old_rollout_artifacts_deleted": true,
+      "replacement": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261107_annotated_tolerance_v1",
+      "metadata_archive": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-07_libero_annotated_tolerance_dataset/retired_legacy_metadata/20261101_release_recovery_long_failures_v1",
+      "deleted_files": 819,
+      "deleted_logical_bytes": 230089366,
+      "finished_at": "2026-11-07T20:06:23.714924+08:00",
+      "retained": "small confirmed_masks rule file and this deletion receipt only"
+    }
+  ],
+  "legacy_viewer_media_directories_removed": 2276,
+  "legacy_traces_stripped": 2122,
+  "new_dataset_preserved": true,
+  "nominal_and_original_hdf5_preserved": true,
+  "checked_at": "2026-11-07T20:07:59.997020+08:00"
+}

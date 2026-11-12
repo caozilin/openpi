@@ -1,0 +1,465 @@
+{
+  "complete": true,
+  "counts": {
+    "000": {
+      "success": 10,
+      "total": 10
+    },
+    "011": {
+      "success": 2,
+      "total": 10
+    },
+    "001": {
+      "success": 2,
+      "total": 10
+    },
+    "010": {
+      "success": 10,
+      "total": 10
+    }
+  },
+  "additional_axis_rollouts": 20,
+  "original011_exact_reproduction_checks": 2,
+  "all_actions_positions_initial_states_models_optimizer_servo_unchanged": true,
+  "all20_new_videos_decoded": true,
+  "all20_new_videos_20hz_full_length": true,
+  "all_saved_snapshot_hashes_checked": 178,
+  "all_ablation_rollouts_no_solver_rejections": true,
+  "episodes": [
+    {
+      "key": "libero_object/00/demo_2",
+      "close_frame": 46,
+      "baseline_success": true,
+      "tolerance_success": false,
+      "ee_separation_mm": 42.74032645650292,
+      "object_separation_mm": 0.5588905279070919,
+      "ee_rotation_separation_deg": 31.601619513120987,
+      "baseline_attempts": [
+        {
+          "close_frame": 46,
+          "release_frame": 131,
+          "max_lift_mm": 214.21123338401424,
+          "bilateral_contact_frames": 81,
+          "bilateral3_frame": 50
+        }
+      ],
+      "tolerance_attempts": [
+        {
+          "close_frame": 46,
+          "release_frame": 131,
+          "max_lift_mm": 3.897697992527607,
+          "bilateral_contact_frames": 7,
+          "bilateral3_frame": 51
+        }
+      ],
+      "tolerance_first_robot_contact_frame": 41,
+      "baseline_first_robot_contact_frame": 45,
+      "preclose_object_movement_mm": 1.8447774436626543,
+      "000_success": true,
+      "000_rejected": false,
+      "000_max_ik_position_residual_um": 9.114931032172535e-08,
+      "011_success": false,
+      "011_rejected": false,
+      "011_max_ik_position_residual_um": 0.00018176857241591904,
+      "001_success": false,
+      "001_rejected": false,
+      "001_max_ik_position_residual_um": 0.000466128219356321,
+      "010_success": true,
+      "010_rejected": false,
+      "010_max_ik_position_residual_um": 6.702813304393374e-05
+    },
+    {
+      "key": "libero_object/00/demo_4",
+      "close_frame": 49,
+      "baseline_success": true,
+      "tolerance_success": false,
+      "ee_separation_mm": 37.40267291430948,
+      "object_separation_mm": 11.693216554149252,
+      "ee_rotation_separation_deg": 30.327960678517655,
+      "baseline_attempts": [
+        {
+          "close_frame": 49,
+          "release_frame": 133,
+          "max_lift_mm": 257.3534132026388,
+          "bilateral_contact_frames": 79,
+          "bilateral3_frame": 54
+        }
+      ],
+      "tolerance_attempts": [
+        {
+          "close_frame": 49,
+          "release_frame": 133,
+          "max_lift_mm": 15.728694168123385,
+          "bilateral_contact_frames": 2,
+          "bilateral3_frame": null
+        }
+      ],
+      "tolerance_first_robot_contact_frame": 45,
+      "baseline_first_robot_contact_frame": 51,
+      "preclose_object_movement_mm": 11.698268007439562,
+      "000_success": true,
+      "000_rejected": false,
+      "000_max_ik_position_residual_um": 8.676392937445598e-08,
+      "011_success": false,
+      "011_rejected": false,
+      "011_max_ik_position_residual_um": 0.005053446383573856,
+      "001_success": false,
+      "001_rejected": false,
+      "001_max_ik_position_residual_um": 0.002425276673934107,
+      "010_success": true,
+      "010_rejected": false,
+      "010_max_ik_position_residual_um": 0.00533473626385117
+    },
+    {
+      "key": "libero_object/00/demo_5",
+      "close_frame": 48,
+      "baseline_success": true,
+      "tolerance_success": false,
+      "ee_separation_mm": 27.987057991056293,
+      "object_separation_mm": 4.695012292610195,
+      "ee_rotation_separation_deg": 25.304419980321207,
+      "baseline_attempts": [
+        {
+          "close_frame": 48,
+          "release_frame": 130,
+          "max_lift_mm": 241.65278963936657,
+          "bilateral_contact_frames": 78,
+          "bilateral3_frame": 52
+        }
+      ],
+      "tolerance_attempts": [
+        {
+          "close_frame": 48,
+          "release_frame": 130,
+          "max_lift_mm": 8.118462986858823,
+          "bilateral_contact_frames": 5,
+          "bilateral3_frame": 55
+        }
+      ],
+      "tolerance_first_robot_contact_frame": 45,
+      "baseline_first_robot_contact_frame": 49,
+      "preclose_object_movement_mm": 4.698883251056092,
+      "000_success": true,
+      "000_rejected": false,
+      "000_max_ik_position_residual_um": 1.887379141862766e-09,
+      "011_success": false,
+      "011_rejected": false,
+      "011_max_ik_position_residual_um": 0.0026168865963072108,
+      "001_success": false,
+      "001_rejected": false,
+      "001_max_ik_position_residual_um": 0.0023713079277953852,
+      "010_success": true,
+      "010_rejected": false,
+      "010_max_ik_position_residual_um": 0.001200168076032071
+    },
+    {
+      "key": "libero_object/00/demo_10",
+      "close_frame": 57,
+      "baseline_success": true,
+      "tolerance_success": false,
+      "ee_separation_mm": 41.363818384190026,
+      "object_separation_mm": 1.9181682551311405,
+      "ee_rotation_separation_deg": 23.4845539423689,
+      "baseline_attempts": [
+        {
+          "close_frame": 57,
+          "release_frame": 136,
+          "max_lift_mm": 235.08926372819232,
+          "bilateral_contact_frames": 74,
+          "bilateral3_frame": 62
+        }
+      ],
+      "tolerance_attempts": [
+        {
+          "close_frame": 57,
+          "release_frame": 136,
+          "max_lift_mm": 8.24276710962847,
+          "bilateral_contact_frames": 3,
+          "bilateral3_frame": 64
+        }
+      ],
+      "tolerance_first_robot_contact_frame": 53,
+      "baseline_first_robot_contact_frame": 58,
+      "preclose_object_movement_mm": 1.9181184579658208,
+      "000_success": true,
+      "000_rejected": false,
+      "000_max_ik_position_residual_um": 3.0531133177191805e-09,
+      "011_success": false,
+      "011_rejected": false,
+      "011_max_ik_position_residual_um": 0.0019862630984412988,
+      "001_success": false,
+      "001_rejected": false,
+      "001_max_ik_position_residual_um": 0.001595040266533232,
+      "010_success": true,
+      "010_rejected": false,
+      "010_max_ik_position_residual_um": 0.004977718626175687
+    },
+    {
+      "key": "libero_object/00/demo_18",
+      "close_frame": 49,
+      "baseline_success": true,
+      "tolerance_success": false,
+      "ee_separation_mm": 43.025478496864274,
+      "object_separation_mm": 3.6850243268731853,
+      "ee_rotation_separation_deg": 31.020644237867305,
+      "baseline_attempts": [
+        {
+          "close_frame": 49,
+          "release_frame": 134,
+          "max_lift_mm": 239.90164873325304,
+          "bilateral_contact_frames": 78,
+          "bilateral3_frame": 56
+        }
+      ],
+      "tolerance_attempts": [
+        {
+          "close_frame": 49,
+          "release_frame": 134,
+          "max_lift_mm": 0.577176640556891,
+          "bilateral_contact_frames": 4,
+          "bilateral3_frame": 57
+        }
+      ],
+      "tolerance_first_robot_contact_frame": 44,
+      "baseline_first_robot_contact_frame": 48,
+      "preclose_object_movement_mm": 2.0434129154661655,
+      "000_success": true,
+      "000_rejected": false,
+      "000_max_ik_position_residual_um": 2.3869795029440866e-08,
+      "011_success": false,
+      "011_rejected": false,
+      "011_max_ik_position_residual_um": 0.0030289938855732057,
+      "001_success": false,
+      "001_rejected": false,
+      "001_max_ik_position_residual_um": 0.003504114880203968,
+      "010_success": true,
+      "010_rejected": false,
+      "010_max_ik_position_residual_um": 0.0022581650299668965
+    },
+    {
+      "key": "libero_object/00/demo_23",
+      "close_frame": 58,
+      "baseline_success": true,
+      "tolerance_success": true,
+      "ee_separation_mm": 2.6842658495019007,
+      "object_separation_mm": 1.4387833666410108,
+      "ee_rotation_separation_deg": 31.42091170890487,
+      "baseline_attempts": [
+        {
+          "close_frame": 58,
+          "release_frame": 141,
+          "max_lift_mm": 205.85704019636282,
+          "bilateral_contact_frames": 79,
+          "bilateral3_frame": 62
+        }
+      ],
+      "tolerance_attempts": [
+        {
+          "close_frame": 58,
+          "release_frame": 141,
+          "max_lift_mm": 208.06315731993763,
+          "bilateral_contact_frames": 78,
+          "bilateral3_frame": 63
+        }
+      ],
+      "tolerance_first_robot_contact_frame": 57,
+      "baseline_first_robot_contact_frame": 57,
+      "preclose_object_movement_mm": 2.681232629346081,
+      "000_success": true,
+      "000_rejected": false,
+      "000_max_ik_position_residual_um": 7.66053886991358e-09,
+      "011_success": true,
+      "011_rejected": false,
+      "011_max_ik_position_residual_um": 0.0005889937981784499,
+      "001_success": true,
+      "001_rejected": false,
+      "001_max_ik_position_residual_um": 0.0008067432971659017,
+      "010_success": true,
+      "010_rejected": false,
+      "010_max_ik_position_residual_um": 0.001032810947876328
+    },
+    {
+      "key": "libero_object/00/demo_29",
+      "close_frame": 48,
+      "baseline_success": true,
+      "tolerance_success": false,
+      "ee_separation_mm": 2.4994474229047063,
+      "object_separation_mm": 5.800741245627303,
+      "ee_rotation_separation_deg": 23.183242106916524,
+      "baseline_attempts": [
+        {
+          "close_frame": 48,
+          "release_frame": 59,
+          "max_lift_mm": 4.144730962466856,
+          "bilateral_contact_frames": 1,
+          "bilateral3_frame": null
+        },
+        {
+          "close_frame": 78,
+          "release_frame": 157,
+          "max_lift_mm": 232.97822315503225,
+          "bilateral_contact_frames": 75,
+          "bilateral3_frame": 82
+        }
+      ],
+      "tolerance_attempts": [
+        {
+          "close_frame": 48,
+          "release_frame": 59,
+          "max_lift_mm": 3.9205175379123727,
+          "bilateral_contact_frames": 1,
+          "bilateral3_frame": null
+        },
+        {
+          "close_frame": 78,
+          "release_frame": 157,
+          "max_lift_mm": 10.520592307824337,
+          "bilateral_contact_frames": 11,
+          "bilateral3_frame": 81
+        }
+      ],
+      "tolerance_first_robot_contact_frame": 42,
+      "baseline_first_robot_contact_frame": 42,
+      "preclose_object_movement_mm": 6.277017316892901,
+      "000_success": true,
+      "000_rejected": false,
+      "000_max_ik_position_residual_um": 6.439293542825908e-09,
+      "011_success": false,
+      "011_rejected": false,
+      "011_max_ik_position_residual_um": 0.002044271120438257,
+      "001_success": false,
+      "001_rejected": false,
+      "001_max_ik_position_residual_um": 0.001748593714268054,
+      "010_success": true,
+      "010_rejected": false,
+      "010_max_ik_position_residual_um": 0.002565371888876844
+    },
+    {
+      "key": "libero_object/00/demo_30",
+      "close_frame": 52,
+      "baseline_success": true,
+      "tolerance_success": false,
+      "ee_separation_mm": 6.06302205536609,
+      "object_separation_mm": 0.792427799261671,
+      "ee_rotation_separation_deg": 23.846087499366636,
+      "baseline_attempts": [
+        {
+          "close_frame": 52,
+          "release_frame": 137,
+          "max_lift_mm": 232.32281259867983,
+          "bilateral_contact_frames": 79,
+          "bilateral3_frame": 58
+        }
+      ],
+      "tolerance_attempts": [
+        {
+          "close_frame": 52,
+          "release_frame": 137,
+          "max_lift_mm": 2.9903138838560315,
+          "bilateral_contact_frames": 1,
+          "bilateral3_frame": null
+        }
+      ],
+      "tolerance_first_robot_contact_frame": 51,
+      "baseline_first_robot_contact_frame": 54,
+      "preclose_object_movement_mm": 0.786066552124554,
+      "000_success": true,
+      "000_rejected": false,
+      "000_max_ik_position_residual_um": 6.175615574477433e-10,
+      "011_success": false,
+      "011_rejected": false,
+      "011_max_ik_position_residual_um": 0.0013379114482958698,
+      "001_success": false,
+      "001_rejected": false,
+      "001_max_ik_position_residual_um": 0.0003061507436452615,
+      "010_success": true,
+      "010_rejected": false,
+      "010_max_ik_position_residual_um": 0.0013978688762072977
+    },
+    {
+      "key": "libero_object/00/demo_33",
+      "close_frame": 51,
+      "baseline_success": true,
+      "tolerance_success": false,
+      "ee_separation_mm": 32.41109701259893,
+      "object_separation_mm": 11.674458247544544,
+      "ee_rotation_separation_deg": 30.304650647778637,
+      "baseline_attempts": [
+        {
+          "close_frame": 51,
+          "release_frame": 132,
+          "max_lift_mm": 213.43564492070425,
+          "bilateral_contact_frames": 77,
+          "bilateral3_frame": 55
+        }
+      ],
+      "tolerance_attempts": [
+        {
+          "close_frame": 51,
+          "release_frame": 132,
+          "max_lift_mm": 140.03438325073841,
+          "bilateral_contact_frames": 15,
+          "bilateral3_frame": 57
+        }
+      ],
+      "tolerance_first_robot_contact_frame": 46,
+      "baseline_first_robot_contact_frame": 54,
+      "preclose_object_movement_mm": 11.679528892199418,
+      "000_success": true,
+      "000_rejected": false,
+      "000_max_ik_position_residual_um": 5.689893001203927e-10,
+      "011_success": false,
+      "011_rejected": false,
+      "011_max_ik_position_residual_um": 0.002427941681037993,
+      "001_success": false,
+      "001_rejected": false,
+      "001_max_ik_position_residual_um": 0.0011434698188317327,
+      "010_success": true,
+      "010_rejected": false,
+      "010_max_ik_position_residual_um": 0.0030486667287887848
+    },
+    {
+      "key": "libero_object/00/demo_36",
+      "close_frame": 49,
+      "baseline_success": true,
+      "tolerance_success": true,
+      "ee_separation_mm": 7.825392043756015,
+      "object_separation_mm": 0.24133736654672128,
+      "ee_rotation_separation_deg": 31.265147800301236,
+      "baseline_attempts": [
+        {
+          "close_frame": 49,
+          "release_frame": 131,
+          "max_lift_mm": 224.4126684608688,
+          "bilateral_contact_frames": 77,
+          "bilateral3_frame": 54
+        }
+      ],
+      "tolerance_attempts": [
+        {
+          "close_frame": 49,
+          "release_frame": 131,
+          "max_lift_mm": 226.677430512115,
+          "bilateral_contact_frames": 77,
+          "bilateral3_frame": 54
+        }
+      ],
+      "tolerance_first_robot_contact_frame": 46,
+      "baseline_first_robot_contact_frame": 46,
+      "preclose_object_movement_mm": 0.5970036454616081,
+      "000_success": true,
+      "000_rejected": false,
+      "000_max_ik_position_residual_um": 4.3298697960381105e-09,
+      "011_success": true,
+      "011_rejected": false,
+      "011_max_ik_position_residual_um": 0.0009461089273132828,
+      "001_success": true,
+      "001_rejected": false,
+      "001_max_ik_position_residual_um": 0.0007279069014209938,
+      "010_success": true,
+      "010_rejected": false,
+      "010_max_ik_position_residual_um": 0.0006782773787072927
+    }
+  ],
+  "interpretation": "Fixed ten previously reconstructed successful demos. Diagnostic ablation: changing PRE mask only, EXEC111 retained. No claim about unseen seeds or other tasks. State contacts reconstructed geometrically at20Hz; contact forces not inferred."
+}

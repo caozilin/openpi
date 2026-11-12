@@ -1,0 +1,31 @@
+{
+  "complete": true,
+  "at": "2026-11-10T20:23:12.525878+08:00",
+  "selected": 301,
+  "suites": {
+    "libero_spatial": 75,
+    "libero_object": 85,
+    "libero_goal": 84,
+    "libero_10": 57
+  },
+  "selected_episode_indices_exactly_match_actual_conversion_manifest": true,
+  "request_sha256": "92e86f597f84b801299ba80482adf506ea1a989e8b94f7a4cec53619797d8337",
+  "tests": {
+    "python": 6,
+    "node_membership_and_actual301": true,
+    "javascript_syntax": true
+  },
+  "service_started": false,
+  "http_or_browser_started": false,
+  "source_and_published_frontend_identical": true,
+  "source_paths": {
+    "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/viewer/training_selection.json": "1ca9a0e1c25fe19600ccc7337a0b75ead08452df069b287a1786cb9a8813c589",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/viewer/index.html": "637ef6d0fd4520b988be9696a6c89a2f4d0b227435220817bfe8fd196b24926d",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/viewer/assets/full_dataset.js": "67a362347c6209df1dafa25162fad2f5a4672f6ec6f86baee645e3f382846e4c",
+    "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/viewer/assets/training_selection.js": "dcb458ef288439646d8f19ef74e5c9895baea28232f512b4f1adc5e68b74bead",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/export_training_viewer_selection.py": "eb9ef38de3b1440ff42677ce9018a02415f8d941547c64e5e9ae72f544121092",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/mask_viewer/full_dataset.js": "67a362347c6209df1dafa25162fad2f5a4672f6ec6f86baee645e3f382846e4c",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/mask_viewer/training_selection.js": "dcb458ef288439646d8f19ef74e5c9895baea28232f512b4f1adc5e68b74bead"
+  },
+  "scope": "Offline code and data verification; browser rendering not started per user request"
+}

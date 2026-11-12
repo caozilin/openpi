@@ -1,0 +1,51 @@
+{
+  "kind": "transport-only bounded reconnect with identical observation bytes, deterministic noise seed and model metadata; no physics/model/controller change",
+  "reason": "all six clients received server1011 keepalive ping timeout; remote six model workers still alive; client ping-disabled does not disable server keepalive",
+  "frozen_request_sha256": "604ae8feda0cb6efd441f0c2ab8a7243ab7e000e8180554c30485ae12457f004",
+  "preserved_committed_episodes": 66,
+  "preserved_successes": 57,
+  "preserved_failed_episodes": 9,
+  "all_committed_sha256": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/attempts/0003_server_keepalive_ping_timeout/preserved_committed_sha256.json",
+  "archived_uncommitted": [
+    {
+      "original": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_02/seed_0",
+      "archive": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/attempts/0003_server_keepalive_ping_timeout/uncommitted/libero_10/task_02/seed_0",
+      "infrastructure_error": true
+    },
+    {
+      "original": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_06/seed_0",
+      "archive": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/attempts/0003_server_keepalive_ping_timeout/uncommitted/libero_10/task_06/seed_0",
+      "infrastructure_error": true
+    },
+    {
+      "original": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_05/seed_1",
+      "archive": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/attempts/0003_server_keepalive_ping_timeout/uncommitted/libero_10/task_05/seed_1",
+      "infrastructure_error": true
+    },
+    {
+      "original": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_1",
+      "archive": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/attempts/0003_server_keepalive_ping_timeout/uncommitted/libero_10/task_01/seed_1",
+      "infrastructure_error": true
+    },
+    {
+      "original": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_01/seed_0",
+      "archive": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/attempts/0003_server_keepalive_ping_timeout/uncommitted/libero_10/task_01/seed_0",
+      "infrastructure_error": true
+    },
+    {
+      "original": "/media/czl/sata/franka_my_code/openpi/data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110/episodes/libero_10/task_09/seed_1",
+      "archive": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/attempts/0003_server_keepalive_ping_timeout/uncommitted/libero_10/task_09/seed_1",
+      "infrastructure_error": true
+    }
+  ],
+  "historical_infrastructure_errors": 6,
+  "transport_tests_passed": 6,
+  "response_deadline_seconds": 600,
+  "max_transport_retries": 3,
+  "source_sha256": {
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/transport_reconnect.py": "d3ad14bfcee71845aecac81ea04a125fa5ca2b83d3e8a466471c37b3e8e01826",
+    "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-10_libero_joint13_predicted_tolerance_400/run_client.py": "808dcd368e29643e45625ea3d306ae65082d7df8aba5ad3d4b0b4f7fe0eae00b"
+  },
+  "remote_inference_restarted": false,
+  "completed_rollouts_retested": false
+}

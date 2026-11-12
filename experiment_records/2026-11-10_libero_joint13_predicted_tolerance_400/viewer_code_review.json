@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-11-10T16:47:30.796398+08:00",
+  "method": "source inspection only; no HTTP/browser/server process started",
+  "new_run_catalog_auto_discovery": true,
+  "completed_videos_supported": true,
+  "task_and_seed_lists_supported": true,
+  "refresh_interval_seconds": 3,
+  "accepted_rotation_release_supported": true,
+  "predicted_mode_label_fully_adapted": false,
+  "issues": [
+    "live.js falls back to fixed +/-30deg label for new model-predicted mode",
+    "episode API omits predicted_bounds_raw_rad",
+    "release_values.js uses unfiltered clipped bounds_rad or held_reference_bounds_rad, not canonical EMA and contraction recovery effective hard box"
+  ],
+  "source_paths": [
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/serve_mask_annotation_viewer.py",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/serve_benchmark_viewer.py",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/benchmark_viewer/live.js",
+    "/media/czl/sata/franka_my_code/openpi/examples/libero/benchmark_viewer/release_values.js"
+  ],
+  "viewer_started": false,
+  "tests_started": false,
+  "evaluation_untouched": true
+}

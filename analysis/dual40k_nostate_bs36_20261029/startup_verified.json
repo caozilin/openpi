@@ -1,0 +1,52 @@
+{
+  "verified_unix": 1793284315.473626,
+  "groups": {
+    "nominal": {
+      "last_logged_step": 20,
+      "metrics": {
+        "grad_norm": 1.1475,
+        "loss": 0.3008,
+        "loss/action": 0.3008,
+        "loss/total": 0.3008,
+        "loss_weighted/action": 0.3008,
+        "param_norm": 1803.7705
+      },
+      "pid": 3585522,
+      "supervisor_pid": 3585478,
+      "supervisor_parent": 1,
+      "checkpoint_dir": "/mnt/SharedData/czl/checkpoints/pi05_franka_nominal100_action7_nostate_3gpu_bs36_40k/Pi05_nominal100_action7_NoState_LoRA_3gpu_bs36_40k_20261029",
+      "tracking_links": [
+        "https://swanlab.cn/@caozilin/openpi-tasktol",
+        "https://swanlab.cn/@caozilin/openpi-tasktol/runs/xhq6qml1hepi5c3giuq2j"
+      ],
+      "verified_runtime_shapes": true,
+      "verified_state_disabled": true,
+      "verified_base_weights": true
+    },
+    "joint": {
+      "last_logged_step": 20,
+      "metrics": {
+        "grad_norm": 2.8545,
+        "loss": 0.9957,
+        "loss/action": 0.3022,
+        "loss/rotation_tolerance": 0.9679,
+        "loss/total": 0.9957,
+        "loss_weighted/action": 0.5117,
+        "loss_weighted/rotation_tolerance": 0.484,
+        "param_norm": 1803.7705
+      },
+      "pid": 3585519,
+      "supervisor_pid": 3585479,
+      "supervisor_parent": 1,
+      "checkpoint_dir": "/mnt/SharedData/czl/checkpoints/pi05_tasktol_mix20_joint32_nostate_4xloss_3gpu_bs36_40k/TaskTol_mix20_joint13_4xActionLoss_NoState_LoRA_3gpu_bs36_40k_20261029",
+      "tracking_links": [
+        "https://swanlab.cn/@caozilin/openpi-tasktol",
+        "https://swanlab.cn/@caozilin/openpi-tasktol/runs/sph38xasw78dvvq8rq0go"
+      ],
+      "verified_runtime_shapes": true,
+      "verified_state_disabled": true,
+      "verified_base_weights": true
+    }
+  },
+  "gpu_status": "0, 23534 MiB, 100 %\n1, 23534 MiB, 100 %\n2, 23534 MiB, 100 %\n3, 47 MiB, 0 %\n4, 23534 MiB, 100 %\n5, 23789 MiB, 100 %\n6, 23563 MiB, 100 %\n"
+}

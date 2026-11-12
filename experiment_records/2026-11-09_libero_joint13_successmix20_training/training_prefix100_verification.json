@@ -1,0 +1,183 @@
+{
+  "complete": true,
+  "scope": "First100 actual steps only; full10000 and five checkpoints remain pending",
+  "logged_steps": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100
+  ],
+  "all_metrics_finite": true,
+  "all_four_x_identities_verified": true,
+  "all_cloud_values_match_local_logs": true,
+  "metrics": {
+    "10": {
+      "batch/action_loss_weight_mean": 1.4667,
+      "batch/reweighted_action_fraction": 0.1556,
+      "grad_norm": 2.5589,
+      "loss": 1.065,
+      "loss/action": 0.4343,
+      "loss/action_nominal_contribution": 0.3652,
+      "loss/action_reweighted_contribution": 0.069,
+      "loss/rotation_tolerance": 0.8473,
+      "loss/total": 1.065,
+      "loss_weighted/action": 0.6414,
+      "loss_weighted/rotation_tolerance": 0.4236,
+      "param_norm": 1803.7705
+    },
+    "20": {
+      "batch/action_loss_weight_mean": 1.475,
+      "batch/reweighted_action_fraction": 0.1583,
+      "grad_norm": 2.2139,
+      "loss": 1.0865,
+      "loss/action": 0.448,
+      "loss/action_nominal_contribution": 0.38,
+      "loss/action_reweighted_contribution": 0.068,
+      "loss/rotation_tolerance": 0.8692,
+      "loss/total": 1.0865,
+      "loss_weighted/action": 0.6519,
+      "loss_weighted/rotation_tolerance": 0.4346,
+      "param_norm": 1803.7705
+    },
+    "30": {
+      "batch/action_loss_weight_mean": 1.475,
+      "batch/reweighted_action_fraction": 0.1583,
+      "grad_norm": 1.9301,
+      "loss": 1.0342,
+      "loss/action": 0.4268,
+      "loss/action_nominal_contribution": 0.3543,
+      "loss/action_reweighted_contribution": 0.0725,
+      "loss/rotation_tolerance": 0.7798,
+      "loss/total": 1.0342,
+      "loss_weighted/action": 0.6443,
+      "loss_weighted/rotation_tolerance": 0.3899,
+      "param_norm": 1803.7705
+    },
+    "40": {
+      "batch/action_loss_weight_mean": 1.4917,
+      "batch/reweighted_action_fraction": 0.1639,
+      "grad_norm": 1.7868,
+      "loss": 0.9391,
+      "loss/action": 0.3901,
+      "loss/action_nominal_contribution": 0.3281,
+      "loss/action_reweighted_contribution": 0.062,
+      "loss/rotation_tolerance": 0.7262,
+      "loss/total": 0.9391,
+      "loss_weighted/action": 0.576,
+      "loss_weighted/rotation_tolerance": 0.3631,
+      "param_norm": 1803.7705
+    },
+    "50": {
+      "batch/action_loss_weight_mean": 1.4542,
+      "batch/reweighted_action_fraction": 0.1514,
+      "grad_norm": 1.5532,
+      "loss": 0.9195,
+      "loss/action": 0.3805,
+      "loss/action_nominal_contribution": 0.3297,
+      "loss/action_reweighted_contribution": 0.0507,
+      "loss/rotation_tolerance": 0.7736,
+      "loss/total": 0.9195,
+      "loss_weighted/action": 0.5327,
+      "loss_weighted/rotation_tolerance": 0.3868,
+      "param_norm": 1803.7708
+    },
+    "60": {
+      "batch/action_loss_weight_mean": 1.3792,
+      "batch/reweighted_action_fraction": 0.1264,
+      "grad_norm": 1.3437,
+      "loss": 0.8408,
+      "loss/action": 0.3466,
+      "loss/action_nominal_contribution": 0.2978,
+      "loss/action_reweighted_contribution": 0.0488,
+      "loss/rotation_tolerance": 0.6956,
+      "loss/total": 0.8408,
+      "loss_weighted/action": 0.493,
+      "loss_weighted/rotation_tolerance": 0.3478,
+      "param_norm": 1803.7708
+    },
+    "70": {
+      "batch/action_loss_weight_mean": 1.4125,
+      "batch/reweighted_action_fraction": 0.1375,
+      "grad_norm": 1.5604,
+      "loss": 0.805,
+      "loss/action": 0.337,
+      "loss/action_nominal_contribution": 0.2871,
+      "loss/action_reweighted_contribution": 0.0498,
+      "loss/rotation_tolerance": 0.637,
+      "loss/total": 0.805,
+      "loss_weighted/action": 0.4865,
+      "loss_weighted/rotation_tolerance": 0.3185,
+      "param_norm": 1803.7711
+    },
+    "80": {
+      "batch/action_loss_weight_mean": 1.4125,
+      "batch/reweighted_action_fraction": 0.1375,
+      "grad_norm": 1.3416,
+      "loss": 0.761,
+      "loss/action": 0.3297,
+      "loss/action_nominal_contribution": 0.2844,
+      "loss/action_reweighted_contribution": 0.0454,
+      "loss/rotation_tolerance": 0.5904,
+      "loss/total": 0.761,
+      "loss_weighted/action": 0.4658,
+      "loss_weighted/rotation_tolerance": 0.2952,
+      "param_norm": 1803.7714
+    },
+    "90": {
+      "batch/action_loss_weight_mean": 1.475,
+      "batch/reweighted_action_fraction": 0.1583,
+      "grad_norm": 1.3037,
+      "loss": 0.7077,
+      "loss/action": 0.311,
+      "loss/action_nominal_contribution": 0.2664,
+      "loss/action_reweighted_contribution": 0.0446,
+      "loss/rotation_tolerance": 0.5259,
+      "loss/total": 0.7077,
+      "loss_weighted/action": 0.4448,
+      "loss_weighted/rotation_tolerance": 0.263,
+      "param_norm": 1803.7715
+    },
+    "100": {
+      "batch/action_loss_weight_mean": 1.4167,
+      "batch/reweighted_action_fraction": 0.1389,
+      "grad_norm": 1.5626,
+      "loss": 0.6765,
+      "loss/action": 0.31,
+      "loss/action_nominal_contribution": 0.27,
+      "loss/action_reweighted_contribution": 0.0399,
+      "loss/rotation_tolerance": 0.4937,
+      "loss/total": 0.6765,
+      "loss_weighted/action": 0.4297,
+      "loss_weighted/rotation_tolerance": 0.2469,
+      "param_norm": 1803.7721
+    }
+  },
+  "live_processes": [
+    {
+      "pid": 3339995,
+      "state": "S",
+      "start_ticks": 218852143,
+      "command": "/home/czl/openpi/.venv/bin/python -u /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py --run-dir /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109 "
+    },
+    {
+      "pid": 3339998,
+      "state": "S",
+      "start_ticks": 218852163,
+      "command": "/home/czl/openpi/.venv/bin/python -u /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/train_successmix20_joint13_pi05_server.py --run-dir /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109 --stage train "
+    },
+    {
+      "pid": 3339996,
+      "state": "S",
+      "start_ticks": 218852144,
+      "command": "/home/czl/openpi/.venv/bin/python -u /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/finish_successmix20_joint13_training_server.py --run-dir /mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109 "
+    }
+  ],
+  "gpu": "0, 23627, 100\n1, 23617, 100\n2, 23617, 100\n3, 23617, 100\n4, 23617, 100\n5, 309, 0\n6, 23632, 100\n",
+  "observed_at": "2026-11-09T20:57:28.739510+08:00"
+}

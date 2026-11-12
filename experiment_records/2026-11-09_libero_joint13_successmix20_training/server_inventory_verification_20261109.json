@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-11-09T21:25:27.863065+08:00",
+  "host": "100.73.28.99",
+  "user": "czl",
+  "hostname": "server",
+  "gpu": "0, NVIDIA GeForce RTX 3090, GPU-3ef9c4ee-8190-95af-3067-8c7f8cff38f2, 24576, 23627, 100\n1, NVIDIA GeForce RTX 3090, GPU-f787b2d3-9718-6767-41e1-c01b7860c210, 24576, 23617, 100\n2, NVIDIA GeForce RTX 3090, GPU-1568701b-c708-f1ff-00f4-8626ee3d6bc8, 24576, 23617, 100\n3, NVIDIA GeForce RTX 3090, GPU-0b0369c4-2249-1200-74ed-0743cb775dd9, 24576, 23617, 100\n4, NVIDIA GeForce RTX 3090, GPU-8fd763bb-cc69-6c5a-f6ff-13ef2293e179, 24576, 23617, 100\n5, NVIDIA GeForce RTX 3090, GPU-2a06362e-f541-32fc-8ddb-8e636883c3b6, 24576, 309, 0\n6, NVIDIA GeForce RTX 3090, GPU-36d14e99-e57f-c57e-5786-d5a392237bdc, 24576, 23632, 100\n",
+  "compute_apps": "3339998, GPU-3ef9c4ee-8190-95af-3067-8c7f8cff38f2, 23528\n3339998, GPU-f787b2d3-9718-6767-41e1-c01b7860c210, 23526\n3339998, GPU-1568701b-c708-f1ff-00f4-8626ee3d6bc8, 23526\n3339998, GPU-0b0369c4-2249-1200-74ed-0743cb775dd9, 23526\n3339998, GPU-8fd763bb-cc69-6c5a-f6ff-13ef2293e179, 23526\n3460799, GPU-2a06362e-f541-32fc-8ddb-8e636883c3b6, 252\n410219, GPU-36d14e99-e57f-c57e-5786-d5a392237bdc, 7\n3339998, GPU-36d14e99-e57f-c57e-5786-d5a392237bdc, 23526\n",
+  "mount": "SOURCE    FSTYPE TARGET\n/dev/sdc1 ext4   /mnt/SharedData\n",
+  "host_key_fingerprints": {
+    "ed25519": "SHA256:nUDsh1J/rQKcfPDEvBngoLWtFG+gbpoodOgNNyUTsag",
+    "ecdsa": "SHA256:u98xAGvTUFz/CbZUS9QDjvLRPx5DhYnNsdVpAqGDRdU"
+  },
+  "training_state": {
+    "stage": "training",
+    "pid": 3339995,
+    "updated_at": "2026-11-09T20:37:36.251828+08:00",
+    "expected_steps": 10000,
+    "global_batch": 72,
+    "per_gpu_batch": 12
+  },
+  "finish_state": {
+    "stage": "waiting",
+    "training_stage": "training",
+    "at": "2026-11-09T21:25:16.806651+08:00"
+  },
+  "local_public_key_auth_verification": {
+    "public_key_path": "/home/czl/.ssh/id_ed25519.pub",
+    "fingerprint": "SHA256:XDVvzqZGVBnDQYeFEll+jO19XhDaC4YNW8yJzgLgfu0",
+    "tested_without_controlmaster": true,
+    "accepted": false,
+    "exit_code": 255
+  }
+}

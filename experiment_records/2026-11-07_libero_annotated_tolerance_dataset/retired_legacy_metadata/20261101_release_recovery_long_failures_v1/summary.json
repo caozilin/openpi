@@ -1,0 +1,4687 @@
+{
+  "complete": true,
+  "total": 52,
+  "completed": 52,
+  "success": 22,
+  "failed": 30,
+  "rejected": 1,
+  "infrastructure_errors": 0,
+  "cpu_timeout_frames": 0,
+  "tasks": {
+    "0": {
+      "completed": 9,
+      "recovered_success": 2
+    },
+    "1": {
+      "completed": 9,
+      "recovered_success": 9
+    },
+    "2": {
+      "completed": 2,
+      "recovered_success": 0
+    },
+    "3": {
+      "completed": 4,
+      "recovered_success": 3
+    },
+    "4": {
+      "completed": 9,
+      "recovered_success": 4
+    },
+    "5": {
+      "completed": 1,
+      "recovered_success": 0
+    },
+    "6": {
+      "completed": 10,
+      "recovered_success": 0
+    },
+    "7": {
+      "completed": 4,
+      "recovered_success": 3
+    },
+    "8": {
+      "completed": 2,
+      "recovered_success": 0
+    },
+    "9": {
+      "completed": 2,
+      "recovered_success": 1
+    }
+  },
+  "results": [
+    {
+      "key": "libero_10/00/demo_1",
+      "case": 30,
+      "suite": "libero_10",
+      "task_id": 0,
+      "demo": "demo_1",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 335,
+      "executed_frames": 335,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 1.7784326731248592,
+          "p95": 5.548135814211467,
+          "max": 20.831459386109287
+        },
+        "source_rotation_deg": {
+          "mean": 18.176603907964136,
+          "p95": 29.47314260731244,
+          "max": 30.128994661067388
+        },
+        "nominal_position_mm": {
+          "mean": 10.660177860655649,
+          "p95": 18.760478064496166,
+          "max": 33.362479299525056
+        },
+        "nominal_rotation_deg": {
+          "mean": 16.95887902917159,
+          "p95": 29.561663738722103,
+          "max": 30.46454241628986
+        },
+        "solver_wall_ms": {
+          "mean": 4.986084167169575,
+          "p95": 7.753567099996417,
+          "max": 12.4851299999591
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.007847716381052802,
+          "p95": 0.0,
+          "max": 0.5933485965126953
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 179,
+            "cycle": 1,
+            "initial_offset_deg": 7.306586249671626,
+            "planned_frames": 5,
+            "minimum_duration_s": 0.25,
+            "completed": true,
+            "applied_frames": 5,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.25,
+            "over_warning_time": false,
+            "end_frame": 183,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 229,
+            "next_grasp_accepted_residual_deg": 28.908622671877545
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/00/demo_1",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 45.73058524800001
+    },
+    {
+      "key": "libero_10/00/demo_3",
+      "case": 30,
+      "suite": "libero_10",
+      "task_id": 0,
+      "demo": "demo_3",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 270,
+      "executed_frames": 270,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.791110530410152,
+          "p95": 3.4739378840349633,
+          "max": 11.657971922161543
+        },
+        "source_rotation_deg": {
+          "mean": 15.451531056127001,
+          "p95": 28.4510296212042,
+          "max": 28.531785948556337
+        },
+        "nominal_position_mm": {
+          "mean": 10.9764009264519,
+          "p95": 19.574265848188347,
+          "max": 22.17068181465964
+        },
+        "nominal_rotation_deg": {
+          "mean": 12.361576705755015,
+          "p95": 25.69449346024041,
+          "max": 28.600435437108246
+        },
+        "solver_wall_ms": {
+          "mean": 5.251656503708512,
+          "p95": 8.862433000035704,
+          "max": 10.541711000087162
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.04744025187563649,
+          "p95": 0.4783373914910442,
+          "max": 0.6542021398859892
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 139,
+            "cycle": 1,
+            "initial_offset_deg": 27.910900925199673,
+            "planned_frames": 19,
+            "minimum_duration_s": 0.9500000000000001,
+            "completed": true,
+            "applied_frames": 19,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.9500000000000001,
+            "over_warning_time": false,
+            "end_frame": 157,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 199,
+            "next_grasp_accepted_residual_deg": 16.857167309246776
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/00/demo_3",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 42.994839495000065
+    },
+    {
+      "key": "libero_10/00/demo_12",
+      "case": 30,
+      "suite": "libero_10",
+      "task_id": 0,
+      "demo": "demo_12",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 258,
+      "executed_frames": 258,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 11.653802211629403,
+          "p95": 33.12230825755873,
+          "max": 44.62398824744435
+        },
+        "source_rotation_deg": {
+          "mean": 17.600098876400928,
+          "p95": 26.040704818342675,
+          "max": 26.27399697222832
+        },
+        "nominal_position_mm": {
+          "mean": 10.696639650889795,
+          "p95": 18.014205704057584,
+          "max": 22.59183789611875
+        },
+        "nominal_rotation_deg": {
+          "mean": 15.517726845576739,
+          "p95": 25.426231838668127,
+          "max": 25.839542496978726
+        },
+        "solver_wall_ms": {
+          "mean": 5.075587903098766,
+          "p95": 8.890598699986182,
+          "max": 13.177966000057495
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.028433083200377234,
+          "p95": 0.0,
+          "max": 1.0802938310923003
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 141,
+            "cycle": 1,
+            "initial_offset_deg": 17.185267219689468,
+            "planned_frames": 12,
+            "minimum_duration_s": 0.6000000000000001,
+            "completed": true,
+            "applied_frames": 12,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.6000000000000001,
+            "over_warning_time": false,
+            "end_frame": 152,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 188,
+            "next_grasp_accepted_residual_deg": 20.428788764693437
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/00/demo_12",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 42.24590575299999
+    },
+    {
+      "key": "libero_10/00/demo_14",
+      "case": 30,
+      "suite": "libero_10",
+      "task_id": 0,
+      "demo": "demo_14",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 284,
+      "executed_frames": 284,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 1.3676774029494898,
+          "p95": 3.8992254271525146,
+          "max": 15.437251957259724
+        },
+        "source_rotation_deg": {
+          "mean": 15.59873744013466,
+          "p95": 27.34488537397485,
+          "max": 27.81192494035693
+        },
+        "nominal_position_mm": {
+          "mean": 11.388857164264808,
+          "p95": 19.59908004112831,
+          "max": 30.40891261023498
+        },
+        "nominal_rotation_deg": {
+          "mean": 14.12524883365058,
+          "p95": 27.286587418062503,
+          "max": 27.751825362518385
+        },
+        "solver_wall_ms": {
+          "mean": 4.899779186618463,
+          "p95": 8.359409699914975,
+          "max": 12.686518999998952
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.01123486753567499,
+          "p95": 0.12970105848606117,
+          "max": 0.21863066417377347
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 160,
+            "cycle": 1,
+            "initial_offset_deg": 13.243305322925622,
+            "planned_frames": 9,
+            "minimum_duration_s": 0.45,
+            "completed": true,
+            "applied_frames": 9,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.45,
+            "over_warning_time": false,
+            "end_frame": 168,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 212,
+            "next_grasp_accepted_residual_deg": 22.805272971186778
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/00/demo_14",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 42.93746124000006
+    },
+    {
+      "key": "libero_10/00/demo_21",
+      "case": 30,
+      "suite": "libero_10",
+      "task_id": 0,
+      "demo": "demo_21",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 278,
+      "executed_frames": 278,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 5.173481808083849,
+          "p95": 40.68762175962817,
+          "max": 82.51274903885871
+        },
+        "source_rotation_deg": {
+          "mean": 16.687758067738365,
+          "p95": 28.49998879948572,
+          "max": 30.756900515685405
+        },
+        "nominal_position_mm": {
+          "mean": 15.133374989274206,
+          "p95": 50.15765885783881,
+          "max": 109.95669895092243
+        },
+        "nominal_rotation_deg": {
+          "mean": 14.577787561941385,
+          "p95": 29.533528551150784,
+          "max": 30.411013765593783
+        },
+        "solver_wall_ms": {
+          "mean": 5.365679715819922,
+          "p95": 9.062147549974494,
+          "max": 13.028077000058147
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 139,
+            "cycle": 1,
+            "initial_offset_deg": 21.063436323166044,
+            "planned_frames": 15,
+            "minimum_duration_s": 0.75,
+            "completed": true,
+            "applied_frames": 16,
+            "speed_limited_frames": 5,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.8,
+            "over_warning_time": false,
+            "end_frame": 154,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 199,
+            "next_grasp_accepted_residual_deg": 9.302071053821786
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/00/demo_21",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 42.95924301000002
+    },
+    {
+      "key": "libero_10/00/demo_22",
+      "case": 30,
+      "suite": "libero_10",
+      "task_id": 0,
+      "demo": "demo_22",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 277,
+      "executed_frames": 277,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 2.625132767797803,
+          "p95": 16.571865974706263,
+          "max": 28.380607498396373
+        },
+        "source_rotation_deg": {
+          "mean": 16.999156507426914,
+          "p95": 30.13094904976113,
+          "max": 31.71445563505492
+        },
+        "nominal_position_mm": {
+          "mean": 12.011108688606614,
+          "p95": 21.876920514068708,
+          "max": 30.33883345896432
+        },
+        "nominal_rotation_deg": {
+          "mean": 15.925204635651241,
+          "p95": 29.86278473750482,
+          "max": 31.450534580558294
+        },
+        "solver_wall_ms": {
+          "mean": 5.041172541519447,
+          "p95": 8.514002600031745,
+          "max": 16.8780249999827
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.04316277710322321,
+          "p95": 0.4307109647078155,
+          "max": 0.7410106512309789
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 148,
+            "cycle": 1,
+            "initial_offset_deg": 22.495344497487093,
+            "planned_frames": 15,
+            "minimum_duration_s": 0.75,
+            "completed": true,
+            "applied_frames": 16,
+            "speed_limited_frames": 5,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.8,
+            "over_warning_time": false,
+            "end_frame": 163,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 210,
+            "next_grasp_accepted_residual_deg": 24.370769669329547
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/00/demo_22",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 42.718023124999945
+    },
+    {
+      "key": "libero_10/00/demo_39",
+      "case": 30,
+      "suite": "libero_10",
+      "task_id": 0,
+      "demo": "demo_39",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 366,
+      "executed_frames": 366,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 3.8816415013920116,
+          "p95": 27.741647419652843,
+          "max": 65.15694000929858
+        },
+        "source_rotation_deg": {
+          "mean": 17.02539863349461,
+          "p95": 29.977528146138635,
+          "max": 32.09241497873405
+        },
+        "nominal_position_mm": {
+          "mean": 13.048205530248877,
+          "p95": 32.913130928483184,
+          "max": 62.620925481321
+        },
+        "nominal_rotation_deg": {
+          "mean": 14.866168003345809,
+          "p95": 30.156883402071706,
+          "max": 31.99345689932072
+        },
+        "solver_wall_ms": {
+          "mean": 5.083457374320326,
+          "p95": 8.229720499997484,
+          "max": 15.602017000105661
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.04582767983287508,
+          "p95": 0.5118934709659806,
+          "max": 0.7338935508483421
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 167,
+            "cycle": 1,
+            "initial_offset_deg": 9.923413162614331,
+            "planned_frames": 7,
+            "minimum_duration_s": 0.35000000000000003,
+            "completed": true,
+            "applied_frames": 8,
+            "speed_limited_frames": 3,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.4,
+            "over_warning_time": false,
+            "end_frame": 174,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 233,
+            "next_grasp_accepted_residual_deg": 24.8280628242458
+          },
+          {
+            "start_frame": 267,
+            "cycle": 2,
+            "initial_offset_deg": 29.41988844749578,
+            "planned_frames": 20,
+            "minimum_duration_s": 1.0,
+            "completed": true,
+            "applied_frames": 20,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.0,
+            "over_warning_time": false,
+            "end_frame": 286,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 289,
+            "next_grasp_accepted_residual_deg": 0.27417437534742284
+          }
+        ],
+        "complete": 2,
+        "total": 2,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/00/demo_39",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 10.17021833299998
+    },
+    {
+      "key": "libero_10/00/demo_40",
+      "case": 30,
+      "suite": "libero_10",
+      "task_id": 0,
+      "demo": "demo_40",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 264,
+      "executed_frames": 264,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 6.3978138772281685,
+          "p95": 20.063735396573087,
+          "max": 40.51851395779392
+        },
+        "source_rotation_deg": {
+          "mean": 21.2909126883152,
+          "p95": 31.409312324234698,
+          "max": 32.49795500748561
+        },
+        "nominal_position_mm": {
+          "mean": 12.719851906823436,
+          "p95": 26.338371427910026,
+          "max": 58.137367147789085
+        },
+        "nominal_rotation_deg": {
+          "mean": 19.09500145650374,
+          "p95": 31.31920144846484,
+          "max": 32.813210679352
+        },
+        "solver_wall_ms": {
+          "mean": 5.432275780299623,
+          "p95": 9.62935439993089,
+          "max": 45.00173899998572
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 1.5338232179891177e-10,
+          "p95": 0.0,
+          "max": 4.049293295491271e-08
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0719124897273891,
+          "p95": 0.5136380010293243,
+          "max": 2.050219614521338
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 128,
+            "cycle": 1,
+            "initial_offset_deg": 28.67663110629585,
+            "planned_frames": 20,
+            "minimum_duration_s": 1.0,
+            "completed": true,
+            "applied_frames": 20,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.0,
+            "over_warning_time": false,
+            "end_frame": 147,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 191,
+            "next_grasp_accepted_residual_deg": 19.470199817625257
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/00/demo_40",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 9.035839798999973
+    },
+    {
+      "key": "libero_10/00/demo_42",
+      "case": 30,
+      "suite": "libero_10",
+      "task_id": 0,
+      "demo": "demo_42",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 296,
+      "executed_frames": 296,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 2.5265459207267065,
+          "p95": 9.062136903314059,
+          "max": 46.94267254179344
+        },
+        "source_rotation_deg": {
+          "mean": 23.000313641062576,
+          "p95": 38.67411369779894,
+          "max": 42.35803111139894
+        },
+        "nominal_position_mm": {
+          "mean": 13.171217436537876,
+          "p95": 28.140417627534404,
+          "max": 59.82191404015049
+        },
+        "nominal_rotation_deg": {
+          "mean": 21.99079536303687,
+          "p95": 38.773956315476454,
+          "max": 42.81330752081918
+        },
+        "solver_wall_ms": {
+          "mean": 5.608056283780972,
+          "p95": 8.67048925005065,
+          "max": 14.57058699998015
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.011179081034109748,
+          "p95": 0.05799473776626499,
+          "max": 0.4075881847781327
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 141,
+            "cycle": 1,
+            "initial_offset_deg": 24.64685547964718,
+            "planned_frames": 17,
+            "minimum_duration_s": 0.8500000000000001,
+            "completed": true,
+            "applied_frames": 17,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.8500000000000001,
+            "over_warning_time": false,
+            "end_frame": 157,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 211,
+            "next_grasp_accepted_residual_deg": 30.177705424076184
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/00/demo_42",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 10.939417703999993
+    },
+    {
+      "key": "libero_10/01/demo_8",
+      "case": 31,
+      "suite": "libero_10",
+      "task_id": 1,
+      "demo": "demo_8",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 237,
+      "executed_frames": 237,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.43271962910311335,
+          "p95": 1.3156279002515463,
+          "max": 2.843577958017924
+        },
+        "source_rotation_deg": {
+          "mean": 16.133761393251056,
+          "p95": 34.56089294663753,
+          "max": 34.99339916514023
+        },
+        "nominal_position_mm": {
+          "mean": 14.571328956288204,
+          "p95": 21.946031680752203,
+          "max": 27.423929965819404
+        },
+        "nominal_rotation_deg": {
+          "mean": 14.639923837174049,
+          "p95": 34.66393598317365,
+          "max": 34.88848459959417
+        },
+        "solver_wall_ms": {
+          "mean": 4.462343839662828,
+          "p95": 7.033052600013434,
+          "max": 12.376504000030764
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 141,
+            "cycle": 1,
+            "initial_offset_deg": 34.49807364825156,
+            "planned_frames": 23,
+            "minimum_duration_s": 1.1500000000000001,
+            "completed": true,
+            "applied_frames": 23,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.1500000000000001,
+            "over_warning_time": false,
+            "end_frame": 163,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 174,
+            "next_grasp_accepted_residual_deg": 7.760255421110914
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/01/demo_8",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 9.078603587999964
+    },
+    {
+      "key": "libero_10/01/demo_12",
+      "case": 31,
+      "suite": "libero_10",
+      "task_id": 1,
+      "demo": "demo_12",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 256,
+      "executed_frames": 256,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.5782366116579816,
+          "p95": 1.3749400921973554,
+          "max": 4.493557293987191
+        },
+        "source_rotation_deg": {
+          "mean": 14.890548522113948,
+          "p95": 26.583402397402356,
+          "max": 28.471272234033027
+        },
+        "nominal_position_mm": {
+          "mean": 13.770604202839166,
+          "p95": 22.048241230067227,
+          "max": 32.57864424003359
+        },
+        "nominal_rotation_deg": {
+          "mean": 14.144228501286591,
+          "p95": 26.832841537881638,
+          "max": 27.847712152913157
+        },
+        "solver_wall_ms": {
+          "mean": 4.543154332028898,
+          "p95": 7.475115499971707,
+          "max": 9.895574999973178
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 151,
+            "cycle": 1,
+            "initial_offset_deg": 26.325043152006405,
+            "planned_frames": 18,
+            "minimum_duration_s": 0.9,
+            "completed": true,
+            "applied_frames": 19,
+            "speed_limited_frames": 3,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.9500000000000001,
+            "over_warning_time": false,
+            "end_frame": 169,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 187,
+            "next_grasp_accepted_residual_deg": 14.856915130939814
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/01/demo_12",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 9.298272090000069
+    },
+    {
+      "key": "libero_10/01/demo_13",
+      "case": 31,
+      "suite": "libero_10",
+      "task_id": 1,
+      "demo": "demo_13",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 271,
+      "executed_frames": 271,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.47147180130391014,
+          "p95": 0.9478963112972993,
+          "max": 2.692554840185329
+        },
+        "source_rotation_deg": {
+          "mean": 15.249970967416022,
+          "p95": 34.81104788188382,
+          "max": 36.195458922599606
+        },
+        "nominal_position_mm": {
+          "mean": 14.335481393781997,
+          "p95": 21.22553981993624,
+          "max": 32.330494594527266
+        },
+        "nominal_rotation_deg": {
+          "mean": 13.680009007304466,
+          "p95": 34.867387305303986,
+          "max": 36.35234549115716
+        },
+        "solver_wall_ms": {
+          "mean": 4.580889509223507,
+          "p95": 6.683211999984451,
+          "max": 9.393757999987429
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.007740246971483143,
+          "p95": 0.0,
+          "max": 0.3839229367787901
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 145,
+            "cycle": 1,
+            "initial_offset_deg": 34.38612753196446,
+            "planned_frames": 23,
+            "minimum_duration_s": 1.1500000000000001,
+            "completed": true,
+            "applied_frames": 28,
+            "speed_limited_frames": 15,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.4000000000000001,
+            "over_warning_time": false,
+            "end_frame": 172,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 193,
+            "next_grasp_accepted_residual_deg": 7.204191210091564
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/01/demo_13",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 9.415932286000043
+    },
+    {
+      "key": "libero_10/01/demo_19",
+      "case": 31,
+      "suite": "libero_10",
+      "task_id": 1,
+      "demo": "demo_19",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 254,
+      "executed_frames": 254,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.4904478855547008,
+          "p95": 1.245086763731137,
+          "max": 4.89505645474312
+        },
+        "source_rotation_deg": {
+          "mean": 14.603543049245792,
+          "p95": 31.53790185633061,
+          "max": 31.5705611052782
+        },
+        "nominal_position_mm": {
+          "mean": 13.395203157718855,
+          "p95": 22.154115232643854,
+          "max": 31.780820155075663
+        },
+        "nominal_rotation_deg": {
+          "mean": 13.364319421067302,
+          "p95": 31.581359881056052,
+          "max": 31.692331022243877
+        },
+        "solver_wall_ms": {
+          "mean": 4.555425259840337,
+          "p95": 8.441592450054713,
+          "max": 21.50622499993915
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.003247984668587846,
+          "p95": 0.0,
+          "max": 0.20049814064087493
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 148,
+            "cycle": 1,
+            "initial_offset_deg": 31.503478972990976,
+            "planned_frames": 22,
+            "minimum_duration_s": 1.1,
+            "completed": true,
+            "applied_frames": 22,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.1,
+            "over_warning_time": false,
+            "end_frame": 169,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 182,
+            "next_grasp_accepted_residual_deg": 2.9443668671613064
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/01/demo_19",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 8.399801083000057
+    },
+    {
+      "key": "libero_10/01/demo_24",
+      "case": 31,
+      "suite": "libero_10",
+      "task_id": 1,
+      "demo": "demo_24",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 246,
+      "executed_frames": 246,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.5570484488047148,
+          "p95": 1.5068538747931486,
+          "max": 5.910786233724075
+        },
+        "source_rotation_deg": {
+          "mean": 15.324413639943598,
+          "p95": 31.81682516120154,
+          "max": 32.68879982775459
+        },
+        "nominal_position_mm": {
+          "mean": 14.299582927112125,
+          "p95": 22.51380842479058,
+          "max": 40.13572712588478
+        },
+        "nominal_rotation_deg": {
+          "mean": 14.242645373027521,
+          "p95": 31.90774441156413,
+          "max": 32.714975612526615
+        },
+        "solver_wall_ms": {
+          "mean": 4.404977837400639,
+          "p95": 6.759357499959151,
+          "max": 19.64642499990532
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.009479777580892801,
+          "p95": 0.0,
+          "max": 0.2854722931088804
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 147,
+            "cycle": 1,
+            "initial_offset_deg": 31.581237893751922,
+            "planned_frames": 22,
+            "minimum_duration_s": 1.1,
+            "completed": true,
+            "applied_frames": 22,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.1,
+            "over_warning_time": false,
+            "end_frame": 168,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 182,
+            "next_grasp_accepted_residual_deg": 9.436824428028544
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/01/demo_24",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 8.244133745
+    },
+    {
+      "key": "libero_10/01/demo_28",
+      "case": 31,
+      "suite": "libero_10",
+      "task_id": 1,
+      "demo": "demo_28",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 262,
+      "executed_frames": 262,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.7665858034351872,
+          "p95": 2.6859169516510675,
+          "max": 3.770873363354007
+        },
+        "source_rotation_deg": {
+          "mean": 21.330882942163484,
+          "p95": 38.85834681462613,
+          "max": 40.6227152082671
+        },
+        "nominal_position_mm": {
+          "mean": 13.707179392619116,
+          "p95": 23.353135536743647,
+          "max": 29.83147089677656
+        },
+        "nominal_rotation_deg": {
+          "mean": 19.682060928956535,
+          "p95": 38.66687816461365,
+          "max": 40.58952550786664
+        },
+        "solver_wall_ms": {
+          "mean": 4.541999790076122,
+          "p95": 7.810267450042829,
+          "max": 11.926005999953304
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 146,
+            "cycle": 1,
+            "initial_offset_deg": 36.66489187456347,
+            "planned_frames": 25,
+            "minimum_duration_s": 1.25,
+            "completed": true,
+            "applied_frames": 25,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.25,
+            "over_warning_time": false,
+            "end_frame": 170,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 200,
+            "next_grasp_accepted_residual_deg": 21.636833355662986
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/01/demo_28",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 9.022790955999994
+    },
+    {
+      "key": "libero_10/01/demo_37",
+      "case": 31,
+      "suite": "libero_10",
+      "task_id": 1,
+      "demo": "demo_37",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 236,
+      "executed_frames": 236,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 11.969804626671415,
+          "p95": 18.35540255426365,
+          "max": 20.1280481656762
+        },
+        "source_rotation_deg": {
+          "mean": 13.946012310849165,
+          "p95": 34.68788211989046,
+          "max": 35.013931756191866
+        },
+        "nominal_position_mm": {
+          "mean": 16.210115623812573,
+          "p95": 27.641984512011085,
+          "max": 39.838954837850146
+        },
+        "nominal_rotation_deg": {
+          "mean": 12.235589402849444,
+          "p95": 34.15972287925802,
+          "max": 34.55657305845819
+        },
+        "solver_wall_ms": {
+          "mean": 4.438426478816189,
+          "p95": 8.718460999972422,
+          "max": 11.950222999985272
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.001301691741047391,
+          "p95": 0.0,
+          "max": 0.11376827299378338
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 132,
+            "cycle": 1,
+            "initial_offset_deg": 34.26113247341455,
+            "planned_frames": 23,
+            "minimum_duration_s": 1.1500000000000001,
+            "completed": true,
+            "applied_frames": 24,
+            "speed_limited_frames": 2,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.2000000000000002,
+            "over_warning_time": false,
+            "end_frame": 155,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 172,
+            "next_grasp_accepted_residual_deg": 7.832187645574048
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/01/demo_37",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 8.047422128999983
+    },
+    {
+      "key": "libero_10/01/demo_46",
+      "case": 31,
+      "suite": "libero_10",
+      "task_id": 1,
+      "demo": "demo_46",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 241,
+      "executed_frames": 241,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.7299400489590393,
+          "p95": 1.5545700233296766,
+          "max": 13.259364281561682
+        },
+        "source_rotation_deg": {
+          "mean": 13.227946255395551,
+          "p95": 32.033759924842485,
+          "max": 32.12592031931958
+        },
+        "nominal_position_mm": {
+          "mean": 14.760360585814304,
+          "p95": 24.02242776437243,
+          "max": 39.40005866438381
+        },
+        "nominal_rotation_deg": {
+          "mean": 12.011473926857635,
+          "p95": 32.67069751750234,
+          "max": 32.87487133046005
+        },
+        "solver_wall_ms": {
+          "mean": 4.043060543565191,
+          "p95": 6.586061000007248,
+          "max": 7.964932000049885
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.01965995160508005,
+          "p95": 0.0,
+          "max": 0.4984521003650421
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 141,
+            "cycle": 1,
+            "initial_offset_deg": 31.98409262769952,
+            "planned_frames": 22,
+            "minimum_duration_s": 1.1,
+            "completed": true,
+            "applied_frames": 23,
+            "speed_limited_frames": 8,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.1500000000000001,
+            "over_warning_time": false,
+            "end_frame": 163,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 178,
+            "next_grasp_accepted_residual_deg": 5.687147849034933
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/01/demo_46",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 7.8145424560000265
+    },
+    {
+      "key": "libero_10/01/demo_48",
+      "case": 31,
+      "suite": "libero_10",
+      "task_id": 1,
+      "demo": "demo_48",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 257,
+      "executed_frames": 257,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 6.095257214860267,
+          "p95": 9.356434564579377,
+          "max": 16.634277507401574
+        },
+        "source_rotation_deg": {
+          "mean": 16.249307379566773,
+          "p95": 33.25081260845479,
+          "max": 33.39432754390325
+        },
+        "nominal_position_mm": {
+          "mean": 14.427524584751048,
+          "p95": 24.290673250816205,
+          "max": 40.56309999161524
+        },
+        "nominal_rotation_deg": {
+          "mean": 14.99326026840455,
+          "p95": 33.31561556784977,
+          "max": 33.51157908322248
+        },
+        "solver_wall_ms": {
+          "mean": 4.49779922957049,
+          "p95": 6.92617300005622,
+          "max": 41.6302869999754
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0015906068464885275,
+          "p95": 0.0,
+          "max": 0.19070820544803924
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 147,
+            "cycle": 1,
+            "initial_offset_deg": 33.170558827157905,
+            "planned_frames": 23,
+            "minimum_duration_s": 1.1500000000000001,
+            "completed": true,
+            "applied_frames": 24,
+            "speed_limited_frames": 1,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.2000000000000002,
+            "over_warning_time": false,
+            "end_frame": 170,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 181,
+            "next_grasp_accepted_residual_deg": 12.273210312166157
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/01/demo_48",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 7.774314703000073
+    },
+    {
+      "key": "libero_10/02/demo_2",
+      "case": 32,
+      "suite": "libero_10",
+      "task_id": 2,
+      "demo": "demo_2",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 297,
+      "executed_frames": 297,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 3.3630806566263334,
+          "p95": 10.331568537312087,
+          "max": 18.106995958198972
+        },
+        "source_rotation_deg": {
+          "mean": 12.080578325377969,
+          "p95": 17.03862650858712,
+          "max": 18.51492240535627
+        },
+        "nominal_position_mm": {
+          "mean": 10.823118528759915,
+          "p95": 28.313382462030688,
+          "max": 35.69920563758098
+        },
+        "nominal_rotation_deg": {
+          "mean": 12.3103355756396,
+          "p95": 19.162944104756257,
+          "max": 22.15073852563018
+        },
+        "solver_wall_ms": {
+          "mean": 4.05444552188668,
+          "p95": 5.74648260003414,
+          "max": 13.91752099993937
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 122,
+            "cycle": 1,
+            "initial_offset_deg": 14.21940005291732,
+            "planned_frames": 10,
+            "minimum_duration_s": 0.5,
+            "completed": true,
+            "applied_frames": 11,
+            "speed_limited_frames": 1,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.55,
+            "over_warning_time": false,
+            "end_frame": 132,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 197,
+            "next_grasp_accepted_residual_deg": 16.15435975543392
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/02/demo_2",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 7.427733354999987
+    },
+    {
+      "key": "libero_10/02/demo_41",
+      "case": 32,
+      "suite": "libero_10",
+      "task_id": 2,
+      "demo": "demo_41",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 247,
+      "executed_frames": 247,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 5.394691939527781,
+          "p95": 11.626536687728835,
+          "max": 17.100780409431383
+        },
+        "source_rotation_deg": {
+          "mean": 6.906866601737588,
+          "p95": 10.109869725811507,
+          "max": 10.230184490995049
+        },
+        "nominal_position_mm": {
+          "mean": 11.308814062883515,
+          "p95": 20.95675716366238,
+          "max": 23.216703073647718
+        },
+        "nominal_rotation_deg": {
+          "mean": 6.967652670494484,
+          "p95": 10.238163530450441,
+          "max": 10.653455188969966
+        },
+        "solver_wall_ms": {
+          "mean": 4.333690680155713,
+          "p95": 7.234955899991746,
+          "max": 14.415641999903528
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 102,
+            "cycle": 1,
+            "initial_offset_deg": 8.278804984335489,
+            "planned_frames": 6,
+            "minimum_duration_s": 0.30000000000000004,
+            "completed": true,
+            "applied_frames": 6,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.30000000000000004,
+            "over_warning_time": false,
+            "end_frame": 107,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 170,
+            "next_grasp_accepted_residual_deg": 9.839568979720768
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/02/demo_41",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 6.675838316999943
+    },
+    {
+      "key": "libero_10/03/demo_12",
+      "case": 33,
+      "suite": "libero_10",
+      "task_id": 3,
+      "demo": "demo_12",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 228,
+      "executed_frames": 228,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 18.39036963129168,
+          "p95": 153.79235236316725,
+          "max": 170.0278685430151
+        },
+        "source_rotation_deg": {
+          "mean": 4.814168086372606,
+          "p95": 11.478593708477728,
+          "max": 13.58238993952401
+        },
+        "nominal_position_mm": {
+          "mean": 28.345152048275303,
+          "p95": 186.1063116968837,
+          "max": 226.19334531038993
+        },
+        "nominal_rotation_deg": {
+          "mean": 5.327091032722529,
+          "p95": 13.551659300425044,
+          "max": 15.66032882071024
+        },
+        "solver_wall_ms": {
+          "mean": 3.977358864036879,
+          "p95": 5.1866410000400265,
+          "max": 14.458536000006461
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 174,
+            "cycle": 1,
+            "initial_offset_deg": 5.108458311690171,
+            "planned_frames": 4,
+            "minimum_duration_s": 0.2,
+            "completed": true,
+            "applied_frames": 5,
+            "speed_limited_frames": 3,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.25,
+            "over_warning_time": false,
+            "end_frame": 178,
+            "residual_deg": 0.0
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/03/demo_12",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 15.319933372000037
+    },
+    {
+      "key": "libero_10/03/demo_16",
+      "case": 33,
+      "suite": "libero_10",
+      "task_id": 3,
+      "demo": "demo_16",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 229,
+      "executed_frames": 229,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 9.39642277367361,
+          "p95": 17.10307818601912,
+          "max": 20.892298587655837
+        },
+        "source_rotation_deg": {
+          "mean": 3.19711913144335,
+          "p95": 7.4319782850626614,
+          "max": 8.741804557950813
+        },
+        "nominal_position_mm": {
+          "mean": 10.459463868911257,
+          "p95": 16.614047933497137,
+          "max": 24.802861547428133
+        },
+        "nominal_rotation_deg": {
+          "mean": 3.079270505472589,
+          "p95": 6.7020256147098864,
+          "max": 8.171091870601023
+        },
+        "solver_wall_ms": {
+          "mean": 3.885395794765319,
+          "p95": 5.30189120001978,
+          "max": 17.302685000004203
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 172,
+            "cycle": 1,
+            "initial_offset_deg": 2.5180739340806984,
+            "planned_frames": 2,
+            "minimum_duration_s": 0.1,
+            "completed": true,
+            "applied_frames": 2,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.1,
+            "over_warning_time": false,
+            "end_frame": 173,
+            "residual_deg": 0.0
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/03/demo_16",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 15.377402662999998
+    },
+    {
+      "key": "libero_10/03/demo_17",
+      "case": 33,
+      "suite": "libero_10",
+      "task_id": 3,
+      "demo": "demo_17",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 226,
+      "executed_frames": 226,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 4.489311230441908,
+          "p95": 27.386574987681,
+          "max": 50.74650466069334
+        },
+        "source_rotation_deg": {
+          "mean": 4.087409055269981,
+          "p95": 11.10456569601713,
+          "max": 12.765325462776254
+        },
+        "nominal_position_mm": {
+          "mean": 16.836272322169997,
+          "p95": 53.67940896574517,
+          "max": 80.62265861910319
+        },
+        "nominal_rotation_deg": {
+          "mean": 4.773179164539821,
+          "p95": 11.4570373716928,
+          "max": 17.710968531623983
+        },
+        "solver_wall_ms": {
+          "mean": 3.778170929204415,
+          "p95": 4.7628727500068635,
+          "max": 8.665534999977353
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 166,
+            "cycle": 1,
+            "initial_offset_deg": 4.365340905993245,
+            "planned_frames": 3,
+            "minimum_duration_s": 0.15000000000000002,
+            "completed": true,
+            "applied_frames": 3,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.15000000000000002,
+            "over_warning_time": false,
+            "end_frame": 168,
+            "residual_deg": 0.0
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/03/demo_17",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 14.460195440000007
+    },
+    {
+      "key": "libero_10/03/demo_21",
+      "case": 33,
+      "suite": "libero_10",
+      "task_id": 3,
+      "demo": "demo_21",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": true,
+      "planned_frames": 250,
+      "executed_frames": 250,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.3701558055657037,
+          "p95": 2.7285401434816436,
+          "max": 4.9039916617289565
+        },
+        "source_rotation_deg": {
+          "mean": 3.6105853979942797,
+          "p95": 6.462763206527899,
+          "max": 8.049157541983266
+        },
+        "nominal_position_mm": {
+          "mean": 10.53091786422068,
+          "p95": 26.908417355669155,
+          "max": 51.38520804355751
+        },
+        "nominal_rotation_deg": {
+          "mean": 4.117623942192937,
+          "p95": 6.916672248608255,
+          "max": 8.70903921090256
+        },
+        "solver_wall_ms": {
+          "mean": 3.3966626080014066,
+          "p95": 4.593129600067413,
+          "max": 7.179165999900761
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 186,
+            "cycle": 1,
+            "initial_offset_deg": 4.568659202286481,
+            "planned_frames": 4,
+            "minimum_duration_s": 0.2,
+            "completed": true,
+            "applied_frames": 4,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.2,
+            "over_warning_time": false,
+            "end_frame": 189,
+            "residual_deg": 0.0
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/03/demo_21",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 12.960343363999982
+    },
+    {
+      "key": "libero_10/04/demo_4",
+      "case": 34,
+      "suite": "libero_10",
+      "task_id": 4,
+      "demo": "demo_4",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 278,
+      "executed_frames": 278,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 1.1833492139586983,
+          "p95": 3.992931508015642,
+          "max": 6.484880169387015
+        },
+        "source_rotation_deg": {
+          "mean": 9.584162528301722,
+          "p95": 23.634817625060375,
+          "max": 24.542875855115895
+        },
+        "nominal_position_mm": {
+          "mean": 8.986917444957827,
+          "p95": 15.746642162177025,
+          "max": 16.655102231919475
+        },
+        "nominal_rotation_deg": {
+          "mean": 9.467254598621922,
+          "p95": 24.03101126796145,
+          "max": 25.10514274841816
+        },
+        "solver_wall_ms": {
+          "mean": 3.227831615109287,
+          "p95": 5.2618936500323334,
+          "max": 6.379136000077779
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 121,
+            "cycle": 1,
+            "initial_offset_deg": 14.788269680422891,
+            "planned_frames": 10,
+            "minimum_duration_s": 0.5,
+            "completed": true,
+            "applied_frames": 10,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.5,
+            "over_warning_time": false,
+            "end_frame": 130,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 179,
+            "next_grasp_accepted_residual_deg": 5.828970606242617
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/04/demo_4",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 43.60508710199997
+    },
+    {
+      "key": "libero_10/04/demo_5",
+      "case": 34,
+      "suite": "libero_10",
+      "task_id": 4,
+      "demo": "demo_5",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 270,
+      "executed_frames": 270,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 1.7917614707420908,
+          "p95": 9.538887414095786,
+          "max": 27.583017534362263
+        },
+        "source_rotation_deg": {
+          "mean": 9.844311533037425,
+          "p95": 18.268240957878746,
+          "max": 20.58477709842017
+        },
+        "nominal_position_mm": {
+          "mean": 10.680826565406665,
+          "p95": 17.374532229790816,
+          "max": 43.29166130856664
+        },
+        "nominal_rotation_deg": {
+          "mean": 9.74122828276608,
+          "p95": 18.43761004627702,
+          "max": 21.266067791465865
+        },
+        "solver_wall_ms": {
+          "mean": 3.0769207148157167,
+          "p95": 4.245215750057695,
+          "max": 5.729949999931705
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 126,
+            "cycle": 1,
+            "initial_offset_deg": 12.562278403285985,
+            "planned_frames": 9,
+            "minimum_duration_s": 0.45,
+            "completed": true,
+            "applied_frames": 9,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.45,
+            "over_warning_time": false,
+            "end_frame": 134,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 182,
+            "next_grasp_accepted_residual_deg": 14.933244225274715
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/04/demo_5",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.523079811000002
+    },
+    {
+      "key": "libero_10/04/demo_8",
+      "case": 34,
+      "suite": "libero_10",
+      "task_id": 4,
+      "demo": "demo_8",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 264,
+      "executed_frames": 264,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.653092061306993,
+          "p95": 3.0669683727388164,
+          "max": 5.992450485777982
+        },
+        "source_rotation_deg": {
+          "mean": 13.226071456549983,
+          "p95": 25.36946991445228,
+          "max": 27.043658175649377
+        },
+        "nominal_position_mm": {
+          "mean": 9.874318889759982,
+          "p95": 15.929659009628248,
+          "max": 18.03720354900515
+        },
+        "nominal_rotation_deg": {
+          "mean": 13.06793699371152,
+          "p95": 25.646432092095047,
+          "max": 27.267498267605184
+        },
+        "solver_wall_ms": {
+          "mean": 4.828623518940069,
+          "p95": 8.056539450046783,
+          "max": 19.27073800004564
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 117,
+            "cycle": 1,
+            "initial_offset_deg": 14.083225910195116,
+            "planned_frames": 10,
+            "minimum_duration_s": 0.5,
+            "completed": true,
+            "applied_frames": 11,
+            "speed_limited_frames": 1,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.55,
+            "over_warning_time": false,
+            "end_frame": 127,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 174,
+            "next_grasp_accepted_residual_deg": 15.671749089413238
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/04/demo_8",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 19.102885121999975
+    },
+    {
+      "key": "libero_10/04/demo_10",
+      "case": 34,
+      "suite": "libero_10",
+      "task_id": 4,
+      "demo": "demo_10",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 268,
+      "executed_frames": 268,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.6301624550586823,
+          "p95": 3.6767980025601035,
+          "max": 6.3637986329499
+        },
+        "source_rotation_deg": {
+          "mean": 11.183613250834654,
+          "p95": 24.797443950302736,
+          "max": 24.98878302998085
+        },
+        "nominal_position_mm": {
+          "mean": 9.077023838340365,
+          "p95": 15.615577927573558,
+          "max": 16.54065439395146
+        },
+        "nominal_rotation_deg": {
+          "mean": 11.120365283617943,
+          "p95": 25.21213501285471,
+          "max": 25.75099883275905
+        },
+        "solver_wall_ms": {
+          "mean": 3.9919863283554395,
+          "p95": 5.6631178500254,
+          "max": 12.17724699995415
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 139,
+            "cycle": 1,
+            "initial_offset_deg": 12.799951696969721,
+            "planned_frames": 9,
+            "minimum_duration_s": 0.45,
+            "completed": true,
+            "applied_frames": 9,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.45,
+            "over_warning_time": false,
+            "end_frame": 147,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 189,
+            "next_grasp_accepted_residual_deg": 11.945988434477796
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/04/demo_10",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.469419537000022
+    },
+    {
+      "key": "libero_10/04/demo_21",
+      "case": 34,
+      "suite": "libero_10",
+      "task_id": 4,
+      "demo": "demo_21",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 262,
+      "executed_frames": 262,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 1.2317957511330924,
+          "p95": 6.741626274139299,
+          "max": 11.10547094527912
+        },
+        "source_rotation_deg": {
+          "mean": 15.747627071486127,
+          "p95": 27.885367274776552,
+          "max": 28.268159410991046
+        },
+        "nominal_position_mm": {
+          "mean": 9.624858731771306,
+          "p95": 15.975088965336,
+          "max": 16.650746576250327
+        },
+        "nominal_rotation_deg": {
+          "mean": 15.254380214068927,
+          "p95": 27.89851038894615,
+          "max": 28.37089133221606
+        },
+        "solver_wall_ms": {
+          "mean": 4.198881137401557,
+          "p95": 6.137672000016892,
+          "max": 15.549566999993658
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 143,
+            "cycle": 1,
+            "initial_offset_deg": 22.364881765965944,
+            "planned_frames": 15,
+            "minimum_duration_s": 0.75,
+            "completed": true,
+            "applied_frames": 15,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.75,
+            "over_warning_time": false,
+            "end_frame": 157,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 206,
+            "next_grasp_accepted_residual_deg": 7.831830320795883
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/04/demo_21",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.454521887999931
+    },
+    {
+      "key": "libero_10/04/demo_30",
+      "case": 34,
+      "suite": "libero_10",
+      "task_id": 4,
+      "demo": "demo_30",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 246,
+      "executed_frames": 246,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.7476207119512432,
+          "p95": 3.6467514214226933,
+          "max": 4.648262699737529
+        },
+        "source_rotation_deg": {
+          "mean": 12.488452088055455,
+          "p95": 23.693631332894107,
+          "max": 24.02143357956573
+        },
+        "nominal_position_mm": {
+          "mean": 10.550142370375786,
+          "p95": 16.351822276783302,
+          "max": 19.405264325827545
+        },
+        "nominal_rotation_deg": {
+          "mean": 12.305190204381324,
+          "p95": 23.743584208120893,
+          "max": 24.335058779471176
+        },
+        "solver_wall_ms": {
+          "mean": 3.888555609758837,
+          "p95": 5.589525250030647,
+          "max": 9.542972000076588
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 129,
+            "cycle": 1,
+            "initial_offset_deg": 17.926426587167043,
+            "planned_frames": 12,
+            "minimum_duration_s": 0.6000000000000001,
+            "completed": true,
+            "applied_frames": 12,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.6000000000000001,
+            "over_warning_time": false,
+            "end_frame": 140,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 183,
+            "next_grasp_accepted_residual_deg": 14.320302677438889
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/04/demo_30",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.239474936999954
+    },
+    {
+      "key": "libero_10/04/demo_41",
+      "case": 34,
+      "suite": "libero_10",
+      "task_id": 4,
+      "demo": "demo_41",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 238,
+      "executed_frames": 238,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.8105928277218386,
+          "p95": 3.4761588285532348,
+          "max": 6.583768783319858
+        },
+        "source_rotation_deg": {
+          "mean": 11.762239004602602,
+          "p95": 23.43450677576342,
+          "max": 23.7990999841345
+        },
+        "nominal_position_mm": {
+          "mean": 10.693442928374871,
+          "p95": 15.868279357368039,
+          "max": 18.347317257284494
+        },
+        "nominal_rotation_deg": {
+          "mean": 11.64163152080282,
+          "p95": 24.04655145301772,
+          "max": 24.354406386529586
+        },
+        "solver_wall_ms": {
+          "mean": 3.879895420166905,
+          "p95": 5.473819150029156,
+          "max": 22.8668119999611
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 113,
+            "cycle": 1,
+            "initial_offset_deg": 13.709796814545973,
+            "planned_frames": 10,
+            "minimum_duration_s": 0.5,
+            "completed": true,
+            "applied_frames": 10,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.5,
+            "over_warning_time": false,
+            "end_frame": 122,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 170,
+            "next_grasp_accepted_residual_deg": 12.138401913134224
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/04/demo_41",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.261313634999965
+    },
+    {
+      "key": "libero_10/04/demo_43",
+      "case": 34,
+      "suite": "libero_10",
+      "task_id": 4,
+      "demo": "demo_43",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 235,
+      "executed_frames": 235,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 1.5261385216391978,
+          "p95": 4.289777167711033,
+          "max": 11.03542486953456
+        },
+        "source_rotation_deg": {
+          "mean": 11.53819973377547,
+          "p95": 19.00772488514161,
+          "max": 19.356234474837144
+        },
+        "nominal_position_mm": {
+          "mean": 10.982037199060862,
+          "p95": 18.214473973939086,
+          "max": 20.97349128733157
+        },
+        "nominal_rotation_deg": {
+          "mean": 11.095547697681832,
+          "p95": 18.533265280058686,
+          "max": 19.24913925809117
+        },
+        "solver_wall_ms": {
+          "mean": 3.606768536169898,
+          "p95": 4.8981758000763875,
+          "max": 6.269762999977502
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 122,
+            "cycle": 1,
+            "initial_offset_deg": 18.01480756659811,
+            "planned_frames": 13,
+            "minimum_duration_s": 0.65,
+            "completed": true,
+            "applied_frames": 13,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.65,
+            "over_warning_time": false,
+            "end_frame": 134,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 179,
+            "next_grasp_accepted_residual_deg": 19.17049851851062
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/04/demo_43",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 9.509246597000015
+    },
+    {
+      "key": "libero_10/04/demo_49",
+      "case": 34,
+      "suite": "libero_10",
+      "task_id": 4,
+      "demo": "demo_49",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 266,
+      "executed_frames": 266,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 1.8019197533899327,
+          "p95": 10.125406127098591,
+          "max": 13.343469165049537
+        },
+        "source_rotation_deg": {
+          "mean": 11.002749137680176,
+          "p95": 23.00324970174026,
+          "max": 23.35770541966565
+        },
+        "nominal_position_mm": {
+          "mean": 9.621576709809347,
+          "p95": 16.97442023646339,
+          "max": 19.577369267292358
+        },
+        "nominal_rotation_deg": {
+          "mean": 10.926631842290957,
+          "p95": 23.25479595033572,
+          "max": 23.83950823919803
+        },
+        "solver_wall_ms": {
+          "mean": 4.536653109022938,
+          "p95": 8.348151749999033,
+          "max": 18.80261899998459
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 156,
+            "cycle": 1,
+            "initial_offset_deg": 12.420183330512993,
+            "planned_frames": 9,
+            "minimum_duration_s": 0.45,
+            "completed": true,
+            "applied_frames": 10,
+            "speed_limited_frames": 1,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.5,
+            "over_warning_time": false,
+            "end_frame": 165,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 202,
+            "next_grasp_accepted_residual_deg": 13.413048781997787
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/04/demo_49",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 9.895960446999993
+    },
+    {
+      "key": "libero_10/05/demo_16",
+      "case": 35,
+      "suite": "libero_10",
+      "task_id": 5,
+      "demo": "demo_16",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 210,
+      "executed_frames": 210,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 4.468218145014791,
+          "p95": 14.557799318718182,
+          "max": 112.58985614463134
+        },
+        "source_rotation_deg": {
+          "mean": 4.433106124366154,
+          "p95": 9.748755282665327,
+          "max": 21.393197253528445
+        },
+        "nominal_position_mm": {
+          "mean": 12.820431196727249,
+          "p95": 22.94575883649968,
+          "max": 152.21813405329306
+        },
+        "nominal_rotation_deg": {
+          "mean": 4.577528094971978,
+          "p95": 10.261417428529715,
+          "max": 27.651757775293646
+        },
+        "solver_wall_ms": {
+          "mean": 3.654703509524942,
+          "p95": 4.767901449997679,
+          "max": 15.136983000047621
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [],
+        "complete": 0,
+        "total": 0,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/05/demo_16",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.84860963899996
+    },
+    {
+      "key": "libero_10/06/demo_12",
+      "case": 36,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_12",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 277,
+      "executed_frames": 277,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 1.6831725643274051,
+          "p95": 6.938951789493701,
+          "max": 11.522974477306287
+        },
+        "source_rotation_deg": {
+          "mean": 12.327865662739992,
+          "p95": 25.778025692289138,
+          "max": 26.829382854426495
+        },
+        "nominal_position_mm": {
+          "mean": 12.086272906854383,
+          "p95": 29.2490278982971,
+          "max": 61.764927322429514
+        },
+        "nominal_rotation_deg": {
+          "mean": 11.618148193728642,
+          "p95": 25.832525177805195,
+          "max": 26.66052509320484
+        },
+        "solver_wall_ms": {
+          "mean": 4.2986055270740255,
+          "p95": 8.093090599936657,
+          "max": 15.667989000007765
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0022543043351056316,
+          "p95": 0.0,
+          "max": 0.2960840989700447
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 141,
+            "cycle": 1,
+            "initial_offset_deg": 25.699650611600887,
+            "planned_frames": 18,
+            "minimum_duration_s": 0.9,
+            "completed": true,
+            "applied_frames": 19,
+            "speed_limited_frames": 7,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.9500000000000001,
+            "over_warning_time": false,
+            "end_frame": 159,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 193,
+            "next_grasp_accepted_residual_deg": 14.524801094291352
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/06/demo_12",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.86239329099999
+    },
+    {
+      "key": "libero_10/06/demo_19",
+      "case": 36,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_19",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 214,
+      "executed_frames": 214,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.9725336545572869,
+          "p95": 4.312168100507706,
+          "max": 14.008479148670256
+        },
+        "source_rotation_deg": {
+          "mean": 11.865004582225234,
+          "p95": 23.78295244927294,
+          "max": 24.163411622047832
+        },
+        "nominal_position_mm": {
+          "mean": 11.158320390942952,
+          "p95": 18.753278905677647,
+          "max": 36.240013133311614
+        },
+        "nominal_rotation_deg": {
+          "mean": 11.03825481546843,
+          "p95": 22.92476650214847,
+          "max": 23.76325434577202
+        },
+        "solver_wall_ms": {
+          "mean": 4.308036079439759,
+          "p95": 6.648014149993742,
+          "max": 10.915905000047132
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0173481185697883,
+          "p95": 0.0,
+          "max": 0.7138083968753959
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 132,
+            "cycle": 1,
+            "initial_offset_deg": 21.269100960007908,
+            "planned_frames": 15,
+            "minimum_duration_s": 0.75,
+            "completed": true,
+            "applied_frames": 15,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.75,
+            "over_warning_time": false,
+            "end_frame": 146,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 167,
+            "next_grasp_accepted_residual_deg": 2.977822276918078
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/06/demo_19",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 10.920306780000033
+    },
+    {
+      "key": "libero_10/06/demo_24",
+      "case": 36,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_24",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 245,
+      "executed_frames": 245,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 9.977432884039949,
+          "p95": 18.13090875730186,
+          "max": 21.189326257966055
+        },
+        "source_rotation_deg": {
+          "mean": 15.861447521282667,
+          "p95": 26.497167756576488,
+          "max": 26.740361756593124
+        },
+        "nominal_position_mm": {
+          "mean": 11.196354193745293,
+          "p95": 18.460734588057658,
+          "max": 27.360882840911827
+        },
+        "nominal_rotation_deg": {
+          "mean": 14.885124791949426,
+          "p95": 27.533198879893533,
+          "max": 27.644644348209173
+        },
+        "solver_wall_ms": {
+          "mean": 4.185663285713826,
+          "p95": 6.1942989999351985,
+          "max": 11.682022999934816
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 144,
+            "cycle": 1,
+            "initial_offset_deg": 27.10445045021541,
+            "planned_frames": 19,
+            "minimum_duration_s": 0.9500000000000001,
+            "completed": true,
+            "applied_frames": 19,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.9500000000000001,
+            "over_warning_time": false,
+            "end_frame": 162,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 205,
+            "next_grasp_accepted_residual_deg": 26.619462067546543
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/06/demo_24",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.859531036000021
+    },
+    {
+      "key": "libero_10/06/demo_26",
+      "case": 36,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_26",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 245,
+      "executed_frames": 245,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 4.327862078198273,
+          "p95": 18.813436549706996,
+          "max": 42.1923457082904
+        },
+        "source_rotation_deg": {
+          "mean": 13.57726042747648,
+          "p95": 22.685421456432074,
+          "max": 24.257521351972084
+        },
+        "nominal_position_mm": {
+          "mean": 13.057118145363875,
+          "p95": 25.989157705104564,
+          "max": 43.447584135898786
+        },
+        "nominal_rotation_deg": {
+          "mean": 13.705757938833118,
+          "p95": 22.868478824134097,
+          "max": 28.327927449967838
+        },
+        "solver_wall_ms": {
+          "mean": 4.481507183673524,
+          "p95": 6.933126000012635,
+          "max": 17.60654199995315
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 146,
+            "cycle": 1,
+            "initial_offset_deg": 10.048404316607295,
+            "planned_frames": 7,
+            "minimum_duration_s": 0.35000000000000003,
+            "completed": true,
+            "applied_frames": 7,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.35000000000000003,
+            "over_warning_time": false,
+            "end_frame": 152,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 181,
+            "next_grasp_accepted_residual_deg": 22.240488412523977
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/06/demo_26",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.871346765999988
+    },
+    {
+      "key": "libero_10/06/demo_28",
+      "case": 36,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_28",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 253,
+      "executed_frames": 253,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 4.732085174486488,
+          "p95": 33.71314907889053,
+          "max": 42.63248106322649
+        },
+        "source_rotation_deg": {
+          "mean": 11.702361249156603,
+          "p95": 23.556331413368053,
+          "max": 23.679361779438835
+        },
+        "nominal_position_mm": {
+          "mean": 14.419027768161111,
+          "p95": 33.73796217585517,
+          "max": 45.824464649075914
+        },
+        "nominal_rotation_deg": {
+          "mean": 10.481913640383842,
+          "p95": 23.743439494242377,
+          "max": 23.979065817844653
+        },
+        "solver_wall_ms": {
+          "mean": 3.827906288536368,
+          "p95": 6.238863599969591,
+          "max": 7.455164000020886
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.02446579902219398,
+          "p95": 0.0,
+          "max": 0.7765321870259642
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 130,
+            "cycle": 1,
+            "initial_offset_deg": 23.502346401239016,
+            "planned_frames": 16,
+            "minimum_duration_s": 0.8,
+            "completed": true,
+            "applied_frames": 16,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.8,
+            "over_warning_time": false,
+            "end_frame": 145,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 164,
+            "next_grasp_accepted_residual_deg": 7.767776153186592
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/06/demo_28",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.43857828399996
+    },
+    {
+      "key": "libero_10/06/demo_32",
+      "case": 36,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_32",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 231,
+      "executed_frames": 231,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.7785593492383256,
+          "p95": 3.361436969493311,
+          "max": 8.399818953620207
+        },
+        "source_rotation_deg": {
+          "mean": 11.649928654744329,
+          "p95": 22.525517061444837,
+          "max": 22.8250468896967
+        },
+        "nominal_position_mm": {
+          "mean": 10.23127287309319,
+          "p95": 18.869168472842585,
+          "max": 23.045034827949767
+        },
+        "nominal_rotation_deg": {
+          "mean": 11.439485152006187,
+          "p95": 22.072348962414942,
+          "max": 23.31163258070558
+        },
+        "solver_wall_ms": {
+          "mean": 4.081057995664625,
+          "p95": 6.749196500038579,
+          "max": 8.37218499998471
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 138,
+            "cycle": 1,
+            "initial_offset_deg": 13.512528423796917,
+            "planned_frames": 10,
+            "minimum_duration_s": 0.5,
+            "completed": true,
+            "applied_frames": 10,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.5,
+            "over_warning_time": false,
+            "end_frame": 147,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 177,
+            "next_grasp_accepted_residual_deg": 22.07532543482281
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/06/demo_32",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 16.069063395999933
+    },
+    {
+      "key": "libero_10/06/demo_34",
+      "case": 36,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_34",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 291,
+      "executed_frames": 291,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 7.376205917588956,
+          "p95": 14.504622810371849,
+          "max": 15.17880983284933
+        },
+        "source_rotation_deg": {
+          "mean": 15.088153339318433,
+          "p95": 33.38045594050429,
+          "max": 35.07699325753151
+        },
+        "nominal_position_mm": {
+          "mean": 8.156036308869673,
+          "p95": 16.643097382058684,
+          "max": 18.590988007755445
+        },
+        "nominal_rotation_deg": {
+          "mean": 14.235960560224898,
+          "p95": 32.70372149686347,
+          "max": 34.23249629919825
+        },
+        "solver_wall_ms": {
+          "mean": 4.560726257729406,
+          "p95": 8.184602999961044,
+          "max": 17.88012399993022
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.021727460306731068,
+          "p95": 0.2080173814854981,
+          "max": 0.6530413685404947
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 190,
+            "cycle": 1,
+            "initial_offset_deg": 31.767851971784964,
+            "planned_frames": 22,
+            "minimum_duration_s": 1.1,
+            "completed": true,
+            "applied_frames": 23,
+            "speed_limited_frames": 2,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.1500000000000001,
+            "over_warning_time": false,
+            "end_frame": 212,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 240,
+            "next_grasp_accepted_residual_deg": 4.785490135133593
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/06/demo_34",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.439792185999977
+    },
+    {
+      "key": "libero_10/06/demo_43",
+      "case": 36,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_43",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 341,
+      "executed_frames": 341,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 2.2875599884206856,
+          "p95": 5.462872960177615,
+          "max": 17.652000284488803
+        },
+        "source_rotation_deg": {
+          "mean": 11.522486676810564,
+          "p95": 26.26707819267135,
+          "max": 27.469172785995422
+        },
+        "nominal_position_mm": {
+          "mean": 9.591340644221646,
+          "p95": 19.026857229938464,
+          "max": 29.335356085567078
+        },
+        "nominal_rotation_deg": {
+          "mean": 11.073699719899466,
+          "p95": 24.6733404562261,
+          "max": 28.756325201173247
+        },
+        "solver_wall_ms": {
+          "mean": 4.174492395896268,
+          "p95": 7.065763000014158,
+          "max": 26.142767999999705
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 121,
+            "cycle": 1,
+            "initial_offset_deg": 3.533313938191992,
+            "planned_frames": 3,
+            "minimum_duration_s": 0.15000000000000002,
+            "completed": true,
+            "applied_frames": 3,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.15000000000000002,
+            "over_warning_time": false,
+            "end_frame": 123,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 167,
+            "next_grasp_accepted_residual_deg": 27.192734267052227
+          },
+          {
+            "start_frame": 208,
+            "cycle": 2,
+            "initial_offset_deg": 22.156011268495238,
+            "planned_frames": 15,
+            "minimum_duration_s": 0.75,
+            "completed": true,
+            "applied_frames": 17,
+            "speed_limited_frames": 6,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.8500000000000001,
+            "over_warning_time": false,
+            "end_frame": 224,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 284,
+            "next_grasp_accepted_residual_deg": 10.660431006139747
+          }
+        ],
+        "complete": 2,
+        "total": 2,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/06/demo_43",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 12.00522875799993
+    },
+    {
+      "key": "libero_10/06/demo_48",
+      "case": 36,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_48",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 280,
+      "executed_frames": 280,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 3.9599774070643443,
+          "p95": 26.86903072750281,
+          "max": 39.58569690019497
+        },
+        "source_rotation_deg": {
+          "mean": 13.652974065291342,
+          "p95": 28.28280357294341,
+          "max": 28.45226172660596
+        },
+        "nominal_position_mm": {
+          "mean": 12.923193989095521,
+          "p95": 36.574337626864505,
+          "max": 60.71910837641874
+        },
+        "nominal_rotation_deg": {
+          "mean": 12.97861340544363,
+          "p95": 28.420448875062622,
+          "max": 28.88007782854928
+        },
+        "solver_wall_ms": {
+          "mean": 3.7362134071384747,
+          "p95": 5.619874700096261,
+          "max": 7.8696350000200255
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.006976585153725235,
+          "p95": 0.0,
+          "max": 0.4008430802768318
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 141,
+            "cycle": 1,
+            "initial_offset_deg": 28.212680850690752,
+            "planned_frames": 19,
+            "minimum_duration_s": 0.9500000000000001,
+            "completed": true,
+            "applied_frames": 20,
+            "speed_limited_frames": 9,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.0,
+            "over_warning_time": false,
+            "end_frame": 160,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 177,
+            "next_grasp_accepted_residual_deg": 12.452841168637153
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/06/demo_48",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 10.032162991000064
+    },
+    {
+      "key": "libero_10/06/demo_49",
+      "case": 36,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_49",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 207,
+      "executed_frames": 207,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.9819261048731989,
+          "p95": 1.9626463392154778,
+          "max": 4.041044284594533
+        },
+        "source_rotation_deg": {
+          "mean": 15.326759719773573,
+          "p95": 35.575624506846744,
+          "max": 36.11520923411901
+        },
+        "nominal_position_mm": {
+          "mean": 9.371576204356563,
+          "p95": 17.378150490035672,
+          "max": 18.38386430782424
+        },
+        "nominal_rotation_deg": {
+          "mean": 13.627830729636239,
+          "p95": 35.80637196098353,
+          "max": 36.701915049452545
+        },
+        "solver_wall_ms": {
+          "mean": 4.065199951689601,
+          "p95": 7.121550500005467,
+          "max": 10.780786000054832
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.04796862920930644,
+          "p95": 0.5423924054549132,
+          "max": 1.027749439290692
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 125,
+            "cycle": 1,
+            "initial_offset_deg": 35.052355131020896,
+            "planned_frames": 24,
+            "minimum_duration_s": 1.2000000000000002,
+            "completed": true,
+            "applied_frames": 24,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.2000000000000002,
+            "over_warning_time": false,
+            "end_frame": 148,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 153,
+            "next_grasp_accepted_residual_deg": 0.7874505009826254
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/06/demo_49",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 9.295818513999961
+    },
+    {
+      "key": "libero_10/07/demo_15",
+      "case": 37,
+      "suite": "libero_10",
+      "task_id": 7,
+      "demo": "demo_15",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 235,
+      "executed_frames": 235,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 4.190208992375281,
+          "p95": 22.066685200085328,
+          "max": 29.33781907972214
+        },
+        "source_rotation_deg": {
+          "mean": 13.439629962637293,
+          "p95": 27.00349855328562,
+          "max": 27.438300354296757
+        },
+        "nominal_position_mm": {
+          "mean": 13.993396317839156,
+          "p95": 23.982126539566163,
+          "max": 38.432253605644
+        },
+        "nominal_rotation_deg": {
+          "mean": 11.853877308708928,
+          "p95": 27.009778738418696,
+          "max": 27.675577220312668
+        },
+        "solver_wall_ms": {
+          "mean": 6.177371229787628,
+          "p95": 11.385459500002069,
+          "max": 28.708211999969535
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.00493775119869983,
+          "p95": 0.0,
+          "max": 0.2681195669794503
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 111,
+            "cycle": 1,
+            "initial_offset_deg": 23.69694333746668,
+            "planned_frames": 16,
+            "minimum_duration_s": 0.8,
+            "completed": true,
+            "applied_frames": 17,
+            "speed_limited_frames": 2,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.8500000000000001,
+            "over_warning_time": false,
+            "end_frame": 127,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 157,
+            "next_grasp_accepted_residual_deg": 16.169759992998667
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/07/demo_15",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 9.874717214999919
+    },
+    {
+      "key": "libero_10/07/demo_21",
+      "case": 37,
+      "suite": "libero_10",
+      "task_id": 7,
+      "demo": "demo_21",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 280,
+      "executed_frames": 280,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.5241225142831839,
+          "p95": 1.1315831634668274,
+          "max": 3.9783493020914498
+        },
+        "source_rotation_deg": {
+          "mean": 14.0836549548984,
+          "p95": 35.12158151345638,
+          "max": 36.0543244339704
+        },
+        "nominal_position_mm": {
+          "mean": 10.92591447439066,
+          "p95": 20.18506534580575,
+          "max": 24.69910264700638
+        },
+        "nominal_rotation_deg": {
+          "mean": 11.887060390031051,
+          "p95": 35.60237298731884,
+          "max": 36.10880818509792
+        },
+        "solver_wall_ms": {
+          "mean": 6.244481871431162,
+          "p95": 10.629720900067246,
+          "max": 20.906589999981406
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.03717034707194727,
+          "p95": 0.24495613175015118,
+          "max": 1.1656844045759176
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 139,
+            "cycle": 1,
+            "initial_offset_deg": 35.07480888568898,
+            "planned_frames": 24,
+            "minimum_duration_s": 1.2000000000000002,
+            "completed": true,
+            "applied_frames": 24,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.2000000000000002,
+            "over_warning_time": false,
+            "end_frame": 162,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 201,
+            "next_grasp_accepted_residual_deg": 14.34018807783445
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/07/demo_21",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 10.883953915999996
+    },
+    {
+      "key": "libero_10/07/demo_34",
+      "case": 37,
+      "suite": "libero_10",
+      "task_id": 7,
+      "demo": "demo_34",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 264,
+      "executed_frames": 264,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 4.983247533340975,
+          "p95": 25.89080067938179,
+          "max": 52.88960265805871
+        },
+        "source_rotation_deg": {
+          "mean": 16.30941799795995,
+          "p95": 32.30127117530695,
+          "max": 32.4614267474402
+        },
+        "nominal_position_mm": {
+          "mean": 15.075215777443615,
+          "p95": 28.810054396289765,
+          "max": 55.85075275906854
+        },
+        "nominal_rotation_deg": {
+          "mean": 15.14659092166559,
+          "p95": 32.502741458784996,
+          "max": 32.86782447797169
+        },
+        "solver_wall_ms": {
+          "mean": 5.425165185609547,
+          "p95": 9.76219394999589,
+          "max": 15.911673999994491
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 145,
+            "cycle": 1,
+            "initial_offset_deg": 32.30696796284379,
+            "planned_frames": 22,
+            "minimum_duration_s": 1.1,
+            "completed": true,
+            "applied_frames": 23,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 1,
+            "elapsed_s": 1.1500000000000001,
+            "over_warning_time": false,
+            "end_frame": 167,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 197,
+            "next_grasp_accepted_residual_deg": 23.65712993080264
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/07/demo_34",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 10.050807537000082
+    },
+    {
+      "key": "libero_10/07/demo_36",
+      "case": 37,
+      "suite": "libero_10",
+      "task_id": 7,
+      "demo": "demo_36",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 289,
+      "executed_frames": 289,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 0.7766245451738025,
+          "p95": 3.697126783141766,
+          "max": 5.456108219908399
+        },
+        "source_rotation_deg": {
+          "mean": 15.15216924152602,
+          "p95": 37.542607931917544,
+          "max": 38.18681526299011
+        },
+        "nominal_position_mm": {
+          "mean": 11.08549605130978,
+          "p95": 19.8768314277714,
+          "max": 33.040086113473066
+        },
+        "nominal_rotation_deg": {
+          "mean": 12.985710285540671,
+          "p95": 37.43588675604606,
+          "max": 38.14149266686946
+        },
+        "solver_wall_ms": {
+          "mean": 6.039248124568098,
+          "p95": 9.174194599972903,
+          "max": 24.561055999924974
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.004221719029738608,
+          "p95": 0.0,
+          "max": 0.16650300284364894
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 157,
+            "cycle": 1,
+            "initial_offset_deg": 37.08213829524836,
+            "planned_frames": 25,
+            "minimum_duration_s": 1.25,
+            "completed": true,
+            "applied_frames": 25,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.25,
+            "over_warning_time": false,
+            "end_frame": 181,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 217,
+            "next_grasp_accepted_residual_deg": 16.285181764247135
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/07/demo_36",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.703388571999994
+    },
+    {
+      "key": "libero_10/08/demo_2",
+      "case": 38,
+      "suite": "libero_10",
+      "task_id": 8,
+      "demo": "demo_2",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 387,
+      "executed_frames": 387,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 1.306157413516321,
+          "p95": 5.8877713355832295,
+          "max": 20.05866410724912
+        },
+        "source_rotation_deg": {
+          "mean": 13.243118961624138,
+          "p95": 25.6899299367117,
+          "max": 27.68452927178699
+        },
+        "nominal_position_mm": {
+          "mean": 10.141434735430613,
+          "p95": 18.094700934421628,
+          "max": 26.25066228402217
+        },
+        "nominal_rotation_deg": {
+          "mean": 13.176361550392473,
+          "p95": 26.049582751241672,
+          "max": 27.826458697628077
+        },
+        "solver_wall_ms": {
+          "mean": 4.73992034108785,
+          "p95": 7.191781200049262,
+          "max": 17.070301999979165
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 220,
+            "cycle": 1,
+            "initial_offset_deg": 20.97689881800949,
+            "planned_frames": 14,
+            "minimum_duration_s": 0.7000000000000001,
+            "completed": true,
+            "applied_frames": 15,
+            "speed_limited_frames": 5,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.75,
+            "over_warning_time": false,
+            "end_frame": 234,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 298,
+            "next_grasp_accepted_residual_deg": 5.112706674325252
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/08/demo_2",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 11.548644687999968
+    },
+    {
+      "key": "libero_10/08/demo_44",
+      "case": 38,
+      "suite": "libero_10",
+      "task_id": 8,
+      "demo": "demo_44",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": true,
+      "previous_rejected": false,
+      "planned_frames": 340,
+      "executed_frames": 317,
+      "rejected_frame": 317,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 10.520402603030917,
+          "p95": 19.039954274881662,
+          "max": 22.960342025263454
+        },
+        "source_rotation_deg": {
+          "mean": 11.58486908397731,
+          "p95": 25.01169336202011,
+          "max": 25.823503287093512
+        },
+        "nominal_position_mm": {
+          "mean": 11.224185556606136,
+          "p95": 18.955873680226553,
+          "max": 33.24234528165113
+        },
+        "nominal_rotation_deg": {
+          "mean": 10.991451958547934,
+          "p95": 25.14987135869369,
+          "max": 26.42390591460337
+        },
+        "solver_wall_ms": {
+          "mean": 4.737675981128995,
+          "p95": 6.946061350021181,
+          "max": 24.792374000071504
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 172,
+            "cycle": 1,
+            "initial_offset_deg": 18.006911323840974,
+            "planned_frames": 13,
+            "minimum_duration_s": 0.65,
+            "completed": true,
+            "applied_frames": 13,
+            "speed_limited_frames": 0,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 0.65,
+            "over_warning_time": false,
+            "end_frame": 184,
+            "residual_deg": 0.0,
+            "next_grasp_frame": 258,
+            "next_grasp_accepted_residual_deg": 0.5725285382303568
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/08/demo_44",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 10.303288823999992
+    },
+    {
+      "key": "libero_10/09/demo_31",
+      "case": 39,
+      "suite": "libero_10",
+      "task_id": 9,
+      "demo": "demo_31",
+      "success": false,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": false,
+      "planned_frames": 290,
+      "executed_frames": 290,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 3.7304040138062464,
+          "p95": 20.811236331117748,
+          "max": 33.30562774223552
+        },
+        "source_rotation_deg": {
+          "mean": 14.181321141479948,
+          "p95": 22.321892936546845,
+          "max": 23.60926647715258
+        },
+        "nominal_position_mm": {
+          "mean": 13.42392610196362,
+          "p95": 53.06613446365157,
+          "max": 69.22568965324108
+        },
+        "nominal_rotation_deg": {
+          "mean": 14.477197674287348,
+          "p95": 23.490993955487966,
+          "max": 25.235514500566293
+        },
+        "solver_wall_ms": {
+          "mean": 3.677009258622328,
+          "p95": 5.815103050002791,
+          "max": 8.431290999965313
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 204,
+            "cycle": 1,
+            "initial_offset_deg": 20.869034482842416,
+            "planned_frames": 14,
+            "minimum_duration_s": 0.7000000000000001,
+            "completed": true,
+            "applied_frames": 16,
+            "speed_limited_frames": 5,
+            "source_over_speed_frames": 1,
+            "elapsed_s": 0.8,
+            "over_warning_time": false,
+            "end_frame": 219,
+            "residual_deg": 0.0
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/09/demo_31",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 8.595756317999985
+    },
+    {
+      "key": "libero_10/09/demo_41",
+      "case": 39,
+      "suite": "libero_10",
+      "task_id": 9,
+      "demo": "demo_41",
+      "success": true,
+      "previous_success": false,
+      "execution_rejected": false,
+      "previous_rejected": true,
+      "planned_frames": 352,
+      "executed_frames": 352,
+      "rejected_frame": null,
+      "cpu_timeout_frames": [],
+      "tracking": {
+        "source_position_mm": {
+          "mean": 2.6224275569481033,
+          "p95": 15.728766288872704,
+          "max": 36.99540316777713
+        },
+        "source_rotation_deg": {
+          "mean": 16.762785297196597,
+          "p95": 30.084856639984956,
+          "max": 31.48399461139054
+        },
+        "nominal_position_mm": {
+          "mean": 9.637926791811068,
+          "p95": 26.20978578356646,
+          "max": 45.497323645226736
+        },
+        "nominal_rotation_deg": {
+          "mean": 17.15001554786036,
+          "p95": 30.229109765627765,
+          "max": 30.57301559593972
+        },
+        "solver_wall_ms": {
+          "mean": 3.8050771250003637,
+          "p95": 5.882895650017871,
+          "max": 9.047540999972625
+        },
+        "optimized_tolerance_violation_deg": {
+          "mean": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "actual_tolerance_violation_deg": {
+          "mean": 0.005999203055125566,
+          "p95": 0.0,
+          "max": 0.3942498125154039
+        }
+      },
+      "rotation_recovery": {
+        "settings": {
+          "dt_s": 0.05,
+          "correction_speed_deg_s": 45.0,
+          "combined_speed_deg_s": 45.0,
+          "released_aperture_m": 0.07,
+          "completion_threshold_deg": 0.5,
+          "warning_after_s": 2.0
+        },
+        "events": [
+          {
+            "start_frame": 218,
+            "cycle": 1,
+            "initial_offset_deg": 29.991290668753457,
+            "planned_frames": 20,
+            "minimum_duration_s": 1.0,
+            "completed": true,
+            "applied_frames": 21,
+            "speed_limited_frames": 7,
+            "source_over_speed_frames": 0,
+            "elapsed_s": 1.05,
+            "over_warning_time": false,
+            "end_frame": 238,
+            "residual_deg": 0.0
+          }
+        ],
+        "complete": 1,
+        "total": 1,
+        "unfinished_at_end": false
+      },
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_release_recovery_long_failures_v1/episodes/libero_10/09/demo_41",
+      "same_default_optimizer": true,
+      "same_native_servo": true,
+      "same_base_actions": true,
+      "wall_s": 8.962642632999973
+    }
+  ],
+  "source_unchanged": true
+}

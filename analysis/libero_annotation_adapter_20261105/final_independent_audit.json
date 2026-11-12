@@ -1,0 +1,1328 @@
+{
+  "complete": true,
+  "scope": "five small episodes only; no full dataset annotation",
+  "episodes": [
+    {
+      "source": {
+        "episode_index": 0,
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "demo": "demo_0",
+        "frames": 97,
+        "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0",
+        "recording_sha256": "ee6a2f3c430fa43ca158506365fefda29c197ffb925b0c22a08bbf6c012d9cce"
+      },
+      "status": "labeled",
+      "extra": 16,
+      "segments": [
+        {
+          "index": 0,
+          "queries": 28,
+          "qualified": 28,
+          "reasons": {
+            "kinematic_success": 28
+          },
+          "best_velocity_rad_s": 0.5938187054839811,
+          "best_clearance_m": 0.015500858732244494,
+          "clearance_bottlenecks": [
+            {
+              "distance_m": 0.017404675292079345,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500856384209729,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.017461996371515687,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.016160075618694147,
+              "phase": "postgrasp",
+              "frame_index": 79,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500856015057463,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.016150719394152246,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.017707292289540818,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.01539530663387334,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.01839870098471186,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.013741567125231112,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500860157236285,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.01570374380814177,
+              "phase": "postgrasp",
+              "frame_index": 79,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500859686474413,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500856447892676,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500859102858922,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.01550085971920623,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500858732244494,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500858212634139,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015208593527674234,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500857315649208,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500857931672218,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.016087489120710563,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.01594428956836635,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.01550085822331815,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500858507625061,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015500858500695824,
+              "phase": "postgrasp",
+              "frame_index": 78,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.016069754894424196,
+              "phase": "postgrasp",
+              "frame_index": 79,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.018146064570935483,
+              "phase": "postgrasp",
+              "frame_index": 80,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            }
+          ]
+        }
+      ],
+      "prepared_input_sha256": "b1c53a7ea5396ee6b2737bd8facd24d18a741263ac6a1a93430a242382eaed1d",
+      "status_sha256": "d68536e43181df07e71e7b7f144815ea8e8a1b562a70ae0babf708c3ff2b7bdd"
+    },
+    {
+      "source": {
+        "episode_index": 1689,
+        "suite": "libero_10",
+        "task_id": 6,
+        "demo": "demo_0",
+        "frames": 202,
+        "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_10/06/demo_0",
+        "recording_sha256": "8e2850c7199c669dd57fe09f17a0431e16a5231c16101e2dfad4ba8e5f82eda1"
+      },
+      "status": "no_feasible_label",
+      "extra": 2,
+      "segments": [
+        {
+          "index": 0,
+          "queries": 14,
+          "qualified": 0,
+          "reasons": {
+            "robot_table_clearance": 14
+          },
+          "best_velocity_rad_s": null,
+          "best_clearance_m": null,
+          "clearance_bottlenecks": [
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "queries": 14,
+          "qualified": 0,
+          "reasons": {
+            "robot_table_clearance": 14
+          },
+          "best_velocity_rad_s": null,
+          "best_clearance_m": null,
+          "clearance_bottlenecks": [
+            {
+              "distance_m": -0.024290484798861922,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.025141885242076,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.025141885242076,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.024290484798861922,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.02429048466194556,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.025141885232242426,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.025141885242076,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.025141885242076,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.025141885242076,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.025141885242076,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.025141885242076,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.025141885242076,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.02514633738018196,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.025242695116438736,
+              "phase": "pregrasp",
+              "frame_index": 35,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            }
+          ]
+        }
+      ],
+      "prepared_input_sha256": "fc57db5126fe1c56ea546fed874a59b7ed5bcbc5959abcf4fc820d8140a86ab4",
+      "status_sha256": "6ce8a2a352182f05beb726ad6d8947fd7cbb4741cca38295f675e4c10c7f0914"
+    },
+    {
+      "source": {
+        "episode_index": 1734,
+        "suite": "libero_10",
+        "task_id": 7,
+        "demo": "demo_0",
+        "frames": 241,
+        "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_10/07/demo_0",
+        "recording_sha256": "55c6dbd707fc98fc3fe1ccbc6bf10fba4e23237448e2994a118a03537e507397"
+      },
+      "status": "no_feasible_label",
+      "extra": 2,
+      "segments": [
+        {
+          "index": 0,
+          "queries": 16,
+          "qualified": 0,
+          "reasons": {
+            "robot_table_clearance": 16
+          },
+          "best_velocity_rad_s": null,
+          "best_clearance_m": null,
+          "clearance_bottlenecks": [
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.016792494546180037,
+              "phase": "pregrasp",
+              "frame_index": 0,
+              "time_s": 0.0,
+              "robot_body": "robot0_link0",
+              "robot_geom": "robot0_link0_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "queries": 14,
+          "qualified": 0,
+          "reasons": {
+            "robot_table_clearance": 14
+          },
+          "best_velocity_rad_s": null,
+          "best_clearance_m": null,
+          "clearance_bottlenecks": [
+            {
+              "distance_m": -0.0320335115149123,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.03270597175496398,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.03270597175496398,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.0320335115149123,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.03203350616694035,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.032705971560469456,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.03270597175496398,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.03270597175496398,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.03270597175496398,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.03270597175496398,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.03270597175496398,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.03270597175496398,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.032700173621319335,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": -0.032705972389951606,
+              "phase": "grasp",
+              "frame_index": 66,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            }
+          ]
+        }
+      ],
+      "prepared_input_sha256": "cde4875d87b12f060e6735c839854ed020b149b36b2c53296ab07d6325773346",
+      "status_sha256": "204fb26066c95b3e0337b92846879347df03ec3462f370b6cdf591df1965db9e"
+    },
+    {
+      "source": {
+        "episode_index": 1101,
+        "suite": "libero_goal",
+        "task_id": 3,
+        "demo": "demo_0",
+        "frames": 169,
+        "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_goal/03/demo_0",
+        "recording_sha256": "12ab338fb4e3963f94ab43b49f8f464f5df940587c534ae6cf0a9ca85221fc64"
+      },
+      "status": "no_feasible_label",
+      "extra": 2,
+      "segments": [
+        {
+          "index": 0,
+          "queries": 14,
+          "qualified": 0,
+          "reasons": {
+            "robot_table_clearance": 14
+          },
+          "best_velocity_rad_s": null,
+          "best_clearance_m": null,
+          "clearance_bottlenecks": [
+            {
+              "distance_m": 0.0024231558373285504,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.00265674902379498,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.00265674902379498,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.0024231558373285504,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.002423155836722257,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.0014617915389535387,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.00265674902379498,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.00265674902379498,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.00265674902379498,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.00265674902379498,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.00265674902379498,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.00265674902379498,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.0026342218718680144,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.0024231558367295847,
+              "phase": "grasp",
+              "frame_index": 104,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            }
+          ]
+        }
+      ],
+      "prepared_input_sha256": "ce3d9068585dab6d4d3c5fe7e87e6823c1a7255be840e62da43d8787624bfa24",
+      "status_sha256": "2f658cced205d52b1633390d958866a261ba974cea6c8ccf0812ff4a5f75d5ff"
+    },
+    {
+      "source": {
+        "episode_index": 187,
+        "suite": "libero_spatial",
+        "task_id": 4,
+        "demo": "demo_0",
+        "frames": 152,
+        "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/04/demo_0",
+        "recording_sha256": "9dc841e1d5ccb46aacb056b6cb8a22e69a3dcc394c5fb2ef59763380c82e00f7"
+      },
+      "status": "labeled",
+      "extra": 2,
+      "segments": [
+        {
+          "index": 0,
+          "queries": 14,
+          "qualified": 14,
+          "reasons": {
+            "kinematic_success": 14
+          },
+          "best_velocity_rad_s": 0.615055156187759,
+          "best_clearance_m": 0.012902433481455476,
+          "clearance_bottlenecks": [
+            {
+              "distance_m": 0.018252110095193005,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.01219639638751635,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.01770961669111537,
+              "phase": "postgrasp",
+              "frame_index": 123,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.015445902237291587,
+              "phase": "release",
+              "frame_index": 141,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.012196416307952762,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.014631035013434435,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.0180456233469326,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_rightfinger",
+              "robot_geom": "gripper0_finger2_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.012193851810456291,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.012196384712003683,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.013359696291283751,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.013479880832384827,
+              "phase": "release",
+              "frame_index": 141,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.012767526890529624,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.012902433481455476,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            },
+            {
+              "distance_m": 0.013540877722658884,
+              "phase": "release",
+              "frame_index": 142,
+              "time_s": 0.0,
+              "robot_body": "gripper0_leftfinger",
+              "robot_geom": "gripper0_finger1_collision",
+              "table_body": "work_surface",
+              "table_geom": "annotation_tabletop"
+            }
+          ]
+        }
+      ],
+      "prepared_input_sha256": "cf4a10d798bcc80fea5a0c9aff3b94bf38711b2cd22089785eec5491eea9d4fd",
+      "status_sha256": "02b24a4b415b48153c4fe610cbf3b5d78cb8f42ec3d9113f8cc9c310455acba7"
+    }
+  ],
+  "labeled": 2,
+  "no_feasible_label": 3,
+  "verified_raw_trials": 114,
+  "verified_immutable_files": 273,
+  "physics_steps": 0,
+  "task_scene_instantiated": false,
+  "task_objects_loaded": false,
+  "retired_active_files": [
+    "annotate_tolerance.py",
+    "annotate_custom_layouts.py",
+    "tasktol/counterfactual/search.py"
+  ],
+  "active_python_files_checked": 640
+}

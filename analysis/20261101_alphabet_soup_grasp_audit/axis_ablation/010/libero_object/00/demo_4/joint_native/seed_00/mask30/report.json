@@ -1,0 +1,933 @@
+{
+  "seed": 0,
+  "demo": "demo_4",
+  "mode": "mask30",
+  "success": true,
+  "native_goal_at_stop": true,
+  "ever_success": true,
+  "planned_frames": 152,
+  "executed_frames": 152,
+  "execution_rejected": false,
+  "rejected_frame": null,
+  "solver_settings": {
+    "max_iterations": 20,
+    "max_cpu_time_s": 0.095,
+    "tolerance": 1e-07,
+    "acceptable_tolerance": 1e-05,
+    "acceptable_iterations": 3,
+    "print_level": 0,
+    "derivative_test": "none",
+    "derivative_epsilon": 1e-07,
+    "expensive_gradient_refresh_rad": 0.015,
+    "position_tolerance": 1e-05,
+    "rotation_tolerance": 0.0001,
+    "inequality_tolerance": 1e-07
+  },
+  "objective_settings": {
+    "position_weight": 0.0,
+    "rotation_weight": 0.0,
+    "velocity_weight": 0.0,
+    "jerk_weight": 0.0,
+    "squared_delta_q_weight": 1.0,
+    "squared_acceleration_weight": 0.0,
+    "manipulability_weight": 0.0,
+    "self_collision_weight": 0.0,
+    "release_loss_weight": 0.0,
+    "release_loss_offset": 0.0,
+    "release_loss_gain": 0.0,
+    "release_loss_power": 2.0,
+    "ema_release_loss_weight": 10.0,
+    "sigma_min_weight": 0.0,
+    "sigma_min_loss_kind": "negative",
+    "sigma_min_warning_threshold": 1.0,
+    "sigma_min_reciprocal_epsilon": 0.001,
+    "sigma_min_length_scale_m": 1.0,
+    "conditioning": {
+      "enabled": false,
+      "eta_low": 0.05,
+      "eta_high": 0.1,
+      "weight": 0.0,
+      "sigma_epsilon": 1e-12,
+      "finite_difference_relative_step": 1e-05
+    }
+  },
+  "initial_state_sha256": "eeafddfd4e23f510defee03ceb59335dc4c2f0e26de6b16fd0493b62a40d87bf",
+  "model_sha256": "4e546281430ed85a23f2040d5b53f3cac13c8055afb2bb5dcb7fb9e3202caf2e",
+  "initialization_protocol": "validated original reset sampler/RNG + set_init_state; exact physical model hash matched; rollout seed applied after initialization",
+  "actions_sha256": "405734ffe439be69ce8aab647f44358845d43b5437c22ed169f673af2f05361c",
+  "selected_root": null,
+  "native_predicates": [
+    {
+      "predicate": [
+        "in",
+        "alphabet_soup_1",
+        "basket_1_contain_region"
+      ],
+      "satisfied": true
+    }
+  ],
+  "phase_rule": {
+    "frequency_hz": 20,
+    "stable_frames": 3,
+    "motion_threshold_m": 0.0002
+  },
+  "tolerance_protocol": {
+    "masks": {
+      "APP": "010",
+      "ENG": "000",
+      "EXEC": "111",
+      "DIS": "000"
+    },
+    "bounds_deg": [
+      30,
+      30,
+      30,
+      30,
+      30,
+      30
+    ],
+    "strict_phases": [
+      "ENG",
+      "DIS",
+      "outside_subtask"
+    ],
+    "frame": "shared client stage_endpoint",
+    "subtask_rebase": "shared client, on observed cycle change",
+    "semantic_mapping": {
+      "semantics": "Per-demo task identity schedule frozen from the paired baseline; repeated grasps retain object identity. No future states supplied online.",
+      "phase": "Live shared finger classifier,20Hz,3 stable frames; ENG/DIS strict. Session rebase follows live observed cycles.",
+      "subtasks": [
+        {
+          "index": 0,
+          "label": "alphabet soup",
+          "APP": "010",
+          "ENG": "000",
+          "EXEC": "111",
+          "DIS": "000"
+        }
+      ],
+      "regrasp_mapping": [
+        0
+      ]
+    }
+  },
+  "reference_scope": "Saved selected independent physical increments; current-state feedback for online phase and joint execution; no VLA inference; no future states supplied to controller",
+  "tracking": {
+    "source_position_mm": {
+      "mean": 0.5915245616827558,
+      "p95": 1.8620880271771425,
+      "max": 3.684640459136808
+    },
+    "source_rotation_deg": {
+      "mean": 18.9668349828567,
+      "p95": 36.15340515423783,
+      "max": 36.514720015548576
+    },
+    "nominal_position_mm": {
+      "mean": 12.273817655260698,
+      "p95": 18.81950471120602,
+      "max": 19.868845898035133
+    },
+    "nominal_rotation_deg": {
+      "mean": 15.460380546583002,
+      "p95": 36.04588385551323,
+      "max": 36.731176439431856
+    },
+    "solver_wall_ms": {
+      "mean": 5.222050874755568,
+      "p95": 8.473773250807426,
+      "max": 10.755684001196641
+    },
+    "optimized_tolerance_violation_deg": {
+      "mean": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "actual_tolerance_violation_deg": {
+      "mean": 0.04578110498502187,
+      "p95": 0.2652463727021942,
+      "max": 0.3822806020571604
+    }
+  },
+  "effective_mask_counts": {
+    "010": 49,
+    "000": 26,
+    "111": 77
+  },
+  "phase_counts": {
+    "APP": 49,
+    "ENG": 7,
+    "EXEC": 77,
+    "DIS": 3,
+    "outside_subtask": 16
+  },
+  "solver_status_counts": {
+    "0": 138,
+    "1": 14
+  },
+  "cpu_timeout_frames": [],
+  "source_unchanged": true,
+  "variant": "joint_native",
+  "tolerance": "30deg",
+  "shared_joint_servo": {
+    "source_xml": "/media/czl/sata/franka_my_code/franka_mujoco/assets/mujoco_menagerie/franka_emika_panda/panda.xml",
+    "output_units": "radians into position-servo ctrl; robot transport still names this field torques",
+    "native_integrator": 0,
+    "effective_integrator": 0,
+    "source_integrator": 3,
+    "physics_dt_s": 0.002,
+    "interpolation_duration_s": 0.05,
+    "tracker_settings": {
+      "proportional_gain": 0.18,
+      "integral_gain_s": 0.3,
+      "velocity_gain_s": 0.04,
+      "maximum_correction_rad": 0.05235987755982989,
+      "integration_error_limit_rad": 0.06981317007977318,
+      "integral_time_constant_s": 1.0,
+      "stationary_integral_time_constant_s": 0.25,
+      "stationary_velocity_threshold_rad_s": 0.02
+    },
+    "original_actuators": {
+      "actuator_dyntype": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actuator_gaintype": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actuator_biastype": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actuator_dynprm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actuator_gainprm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actuator_biasprm": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actuator_ctrlrange": [
+        [
+          -80.0,
+          80.0
+        ],
+        [
+          -80.0,
+          80.0
+        ],
+        [
+          -80.0,
+          80.0
+        ],
+        [
+          -80.0,
+          80.0
+        ],
+        [
+          -80.0,
+          80.0
+        ],
+        [
+          -12.0,
+          12.0
+        ],
+        [
+          -12.0,
+          12.0
+        ]
+      ],
+      "actuator_ctrllimited": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_forcerange": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "actuator_forcelimited": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "position_servo": {
+      "actuator_dyntype": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actuator_gaintype": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actuator_biastype": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_dynprm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actuator_gainprm": [
+        [
+          4500.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          4500.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          3500.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          3500.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          2000.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          2000.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          2000.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actuator_biasprm": [
+        [
+          0.0,
+          -4500.0,
+          -450.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -4500.0,
+          -450.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -3500.0,
+          -350.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -3500.0,
+          -350.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -2000.0,
+          -200.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -2000.0,
+          -200.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -2000.0,
+          -200.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actuator_ctrlrange": [
+        [
+          -2.8973,
+          2.8973
+        ],
+        [
+          -1.7628,
+          1.7628
+        ],
+        [
+          -2.8973,
+          2.8973
+        ],
+        [
+          -3.0718,
+          -0.0698
+        ],
+        [
+          -2.8973,
+          2.8973
+        ],
+        [
+          -0.0175,
+          3.7525
+        ],
+        [
+          -2.8973,
+          2.8973
+        ]
+      ],
+      "actuator_ctrllimited": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_forcerange": [
+        [
+          -87.0,
+          87.0
+        ],
+        [
+          -87.0,
+          87.0
+        ],
+        [
+          -87.0,
+          87.0
+        ],
+        [
+          -87.0,
+          87.0
+        ],
+        [
+          -12.0,
+          12.0
+        ],
+        [
+          -12.0,
+          12.0
+        ],
+        [
+          -12.0,
+          12.0
+        ]
+      ],
+      "actuator_forcelimited": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "bias_compensation": "qfrc_applied[arm] = qfrc_bias[arm], same as PresetSimulationBackend",
+    "gripper": "unchanged native LIBERO",
+    "nullspace_control": false
+  },
+  "shared_joint_servo_statistics": {
+    "calls": 3800,
+    "tracker_saturated_steps": 0,
+    "ctrl_clipped_steps": 0,
+    "predicted_force_limited_steps": 75,
+    "max_joint_reference_error_rad": 0.05058787928607411,
+    "max_tracker_correction_rad": 0.025851964099801616,
+    "max_servo_force_nm": 87.0
+  }
+}

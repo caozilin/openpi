@@ -1,0 +1,31 @@
+{
+  "status": "prepared_pending_full_batch_completion_and_audit",
+  "production_root": "/media/czl/sata/franka_my_code/franka_mujoco",
+  "files": [
+    {
+      "path": "label_franka_nominal_dsp.py",
+      "before_sha256": "9964c9f86e9bbcf24fa886253bb366dce87c0be6f2bddebf7ea934356537cf0a",
+      "after_sha256": "97aac7736d48f6bb07ed3061fc3e2a39b448fa48a406b0207f250ceb416283ae"
+    },
+    {
+      "path": "tasktol/data/libero_annotation/README.md",
+      "before_sha256": "1db83ac1a9ea12edb0ce9bd420688dc9b06c7f56b13fc6a0a3f7fd678e52b754",
+      "after_sha256": "f34e29148c3fc53579ae0b25558a8d5eaae7757ea767835e744d88ab2b5eaca8"
+    },
+    {
+      "path": "tasktol/data/libero_annotation/source.py",
+      "before_sha256": "ad5735f27a8d1a5bdb822794f45d00560e856ff3099e2558d85ba207c83c3dd6",
+      "after_sha256": "cde0746d039c6f71974dc47909cc5be57d7e29b718c59fe3acfec001ba5eed6f"
+    },
+    {
+      "path": "tasktol/data/trial_io.py",
+      "before_sha256": null,
+      "after_sha256": "6fbe635a2eae4d3e3209ed9c2ec2093635087fb4c5496563c85866eb1aa2d115"
+    },
+    {
+      "path": "tests/test_trial_metadata_reference.py",
+      "before_sha256": null,
+      "after_sha256": "fb7419479d7572cd43763da0ff722e39ec8b7a1243d8ee1f1af772efa82ce744"
+    }
+  ]
+}

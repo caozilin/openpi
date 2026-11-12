@@ -1,0 +1,9 @@
+{
+  "pid": 3334760,
+  "command": [
+    "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/four_x_protocol_update/transition_successmix20_four_x_server.py",
+    "--run-dir",
+    "/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109"
+  ],
+  "started_at": "2026-11-09T20:27:16.760692+08:00"
+}

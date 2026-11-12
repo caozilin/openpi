@@ -28,6 +28,9 @@ class Checkpoint:
     config: str
     # Checkpoint directory (e.g., "checkpoints/pi0_aloha_sim/exp/10000").
     dir: str
+    # Dataset asset id used for checkpoint normalization (e.g. caozilin/my_mix20).
+    # Required when the selected training config leaves its repo_id unspecified.
+    asset_id: str | None = None
 
 
 @dataclasses.dataclass
@@ -48,6 +51,10 @@ class Args:
 
     # Port to serve the policy on.
     port: int = 8000
+    # Bind managed replicas to loopback, including when accessed through SSH.
+    host: str = "0.0.0.0"
+    # Supervisor ownership token; clients reject stale/unrelated services.
+    tasktol_run_id: str | None = None
     # Record the policy's behavior for debugging.
     record: bool = False
 
@@ -89,8 +96,29 @@ def create_policy(args: Args) -> _policy.Policy:
     """Create a policy from the given arguments."""
     match args.policy:
         case Checkpoint():
+            train_config = _config.get_config(args.policy.config)
+            if args.tasktol_run_id is not None and (
+                args.record or not isinstance(train_config.data, _config.LeRobotFrankaMujocoDataConfig)
+            ):
+                raise ValueError("Managed TaskTol serving requires an unrecorded Franka MuJoCo policy")
+            if args.policy.asset_id is not None:
+                if not args.policy.asset_id.strip():
+                    raise ValueError("--policy.asset-id must be non-empty")
+                train_config = dataclasses.replace(
+                    train_config,
+                    data=dataclasses.replace(
+                        train_config.data,
+                        assets=dataclasses.replace(train_config.data.assets, asset_id=args.policy.asset_id),
+                    ),
+                )
+            if (train_config.data.assets.asset_id is None
+                    and train_config.data.repo_id in (None, tyro.MISSING)):
+                raise ValueError(
+                    "This training config requires --policy.asset-id <training dataset repo_id> "
+                    "to load normalization statistics from checkpoint/assets."
+                )
             return _policy_config.create_trained_policy(
-                _config.get_config(args.policy.config), args.policy.dir, default_prompt=args.default_prompt
+                train_config, args.policy.dir, default_prompt=args.default_prompt
             )
         case Default():
             return create_default_policy(args.env, default_prompt=args.default_prompt)
@@ -111,6 +139,19 @@ def main(args: Args) -> None:
         "checkpoint_path": checkpoint.dir,
     })
 
+    train_config = _config.get_config(checkpoint.config)
+    if isinstance(train_config.data, _config.LeRobotFrankaMujocoDataConfig) and not args.record:
+        policy_metadata["tasktol_sampling"] = {
+            "version": 1,
+            "action_horizon": train_config.model.action_horizon,
+            "action_dim": train_config.model.action_dim,
+        }
+    if args.tasktol_run_id is not None:
+        if not isinstance(train_config.data, _config.LeRobotFrankaMujocoDataConfig):
+            raise ValueError("Managed TaskTol serving supports only Franka MuJoCo policies")
+        policy_metadata["tasktol_run_id"] = args.tasktol_run_id
+        policy_metadata["asset_id"] = checkpoint.asset_id or train_config.data.assets.asset_id or train_config.data.repo_id
+
     # Record the policy's behavior.
     if args.record:
         policy = _policy.PolicyRecorder(policy, "policy_records")
@@ -121,7 +162,7 @@ def main(args: Args) -> None:
 
     server = websocket_policy_server.WebsocketPolicyServer(
         policy=policy,
-        host="0.0.0.0",
+        host=args.host,
         port=args.port,
         metadata=policy_metadata,
     )

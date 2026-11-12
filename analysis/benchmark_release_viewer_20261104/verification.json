@@ -1,0 +1,60 @@
+{
+  "complete": true,
+  "reference_components": [
+    "franka_mujoco/tasktol/data/viewer/static/app.js: tolerance bars and fixedXYZ/RPY chart",
+    "franka_mujoco/tasktol/teleop/ui.py: stage-relative optimized release telemetry"
+  ],
+  "semantics": "recorded accepted rotation_release_rad only; rejected candidates separate; not actual tracking error",
+  "http_tests": 13,
+  "node_release_unit_checks": "passed",
+  "browser_console_errors": [],
+  "verified_frames": [
+    {
+      "frame": 0,
+      "phase": "APP",
+      "semantic_mask": "010",
+      "effective_mask": "010",
+      "release_deg": [
+        0.0,
+        0.6696596599301514,
+        0.0
+      ]
+    },
+    {
+      "frame": 4,
+      "phase": "APP",
+      "semantic_mask": "010",
+      "effective_mask": "010",
+      "release_deg": [
+        0.0,
+        3.3547891174941875,
+        0.0
+      ]
+    },
+    {
+      "frame": 30,
+      "phase": "APP",
+      "semantic_mask": "010",
+      "effective_mask": "010",
+      "release_deg": [
+        0.0,
+        5.683527757952324,
+        0.0
+      ]
+    },
+    {
+      "frame": 54,
+      "phase": "EXEC",
+      "semantic_mask": "111",
+      "effective_mask": "111",
+      "release_deg": [
+        -0.7357337575932993,
+        2.7519993618795717,
+        0.3310831646302923
+      ]
+    }
+  ],
+  "browser_values_match": true,
+  "play_pause_seek_verified": true,
+  "chart_visible_and_cursor_aligned": true
+}

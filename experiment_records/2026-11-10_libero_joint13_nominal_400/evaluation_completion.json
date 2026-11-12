@@ -1,0 +1,36 @@
+{
+  "complete": true,
+  "expected_episodes": 400,
+  "completed_episodes": 400,
+  "successes": 368,
+  "infrastructure_errors": 0,
+  "infrastructure_error_files": [],
+  "per_suite": {
+    "libero_spatial": {
+      "episodes": 100,
+      "successes": 96
+    },
+    "libero_object": {
+      "episodes": 100,
+      "successes": 97
+    },
+    "libero_goal": {
+      "episodes": 100,
+      "successes": 88
+    },
+    "libero_10": {
+      "episodes": 100,
+      "successes": 87
+    }
+  },
+  "updated_at": "2026-11-10T19:14:44.843128+08:00",
+  "exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "eval_identity": "libero_joint13_successmix20_step10000_nominal_seed0to9_20261110"
+}

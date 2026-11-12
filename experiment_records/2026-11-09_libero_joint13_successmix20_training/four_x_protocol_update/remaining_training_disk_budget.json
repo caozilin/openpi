@@ -1,0 +1,7 @@
+{
+  "free_bytes": 69377335296,
+  "remaining_required_bytes": 58818332672,
+  "full_arrow_cache_already_built": true,
+  "five_checkpoint_factor": 1.05,
+  "reserve_bytes": 8589934592
+}

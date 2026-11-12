@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>LIBERO Benchmark Studio</title>
+  <link rel="stylesheet" href="/studio.css">
+<link rel="stylesheet" href="/live.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">TT</div>
+        <div><strong>TaskTol</strong><span>LIBERO Benchmark</span></div>
+      </div>
+      <div class="sidebar-heading folder-heading"><span>目录</span></div>
+      <div id="folderList" class="folder-list">
+        <select id="folderSelect" aria-label="Choose a dataset or benchmark run folder"></select>
+        <span id="folderSummary" class="folder-summary">&mdash;</span>
+        <label class="episode-filter" for="toleranceFilter">执行类型
+          <select id="toleranceFilter">
+            <option value="all">全部</option>
+            <option value="nominal">仅无容差</option>
+            <option value="tolerance">仅容差</option>
+          </select>
+        </label>
+      </div>
+      <div class="sidebar-heading dataset-heading">
+        <span>数据与 Rollout</span><button id="refreshButton" class="icon-button" title="刷新">↻</button>
+      </div>
+      <input id="benchmarkSearch" class="benchmark-search" placeholder="搜索任务指令 / suite" aria-label="搜索任务"><div id="datasetList" class="dataset-list"></div>
+      
+      
+      <div class="sidebar-heading episode-heading"><span>SEED</span><span id="episodeCount" class="count-badge">0</span></div><div id="episodeList" class="episode-list"></div><div class="sidebar-foot">本地只读 · 回合记录自动刷新</div>
+    </aside>
+
+    <main class="workspace">
+
+
+      
+<section id="emptyState" class="empty-state">
+        <div class="empty-orbit"><span></span><i></i></div>
+        <h2>正在读取数据集目录</h2>
+        <p>选择左侧 episode 后即可检查双视角视频、末端轨迹与阶段容差。</p>
+      </section>
+
+      <div id="content" class="content hidden">
+        <section class="panel video-panel">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow" id="sceneName">NO DATASET</div>
+          <h1 id="taskName">选择一个数据集</h1>
+          <p id="instructionText">轨迹、容差与视频将在同一时间轴上同步显示</p>
+        </div>
+        <div class="header-stats">
+          <div><span>SEED</span><strong id="seedValue">—</strong></div>
+          <div><span>FRAMES</span><strong id="frameCountValue">—</strong></div>
+          <div><span>RESULT</span><strong id="resultValue">—</strong></div>
+        </div>
+      </header><span id="syncStatus" class="status-chip player-sync">FRAME LOCK</span>
+          <div class="video-grid split-recording">
+            <figure><video id="mainVideo" preload="metadata" muted playsinline></video><figcaption>Agentview · 20 Hz</figcaption></figure>
+            <figure><video id="wristVideo" preload="metadata" muted playsinline></video><figcaption>Eye in hand · 20 Hz</figcaption></figure>
+          </div>
+          <div class="transport">
+            <button id="playButton" class="play-button" aria-label="播放或暂停">▶</button>
+            <div class="time-readout"><strong id="currentTime">00:00.0</strong><span>/</span><span id="durationTime">00:00.0</span></div>
+            <input id="timeline" type="range" min="0" max="1" step="0.001" value="0" aria-label="视频时间轴">
+            <div class="speed-control" aria-label="播放速度">
+              <button data-speed="0.5">0.5×</button><button data-speed="1" class="active">1×</button><button data-speed="2">2×</button>
+            </div>
+            <div class="frame-readout">FRAME <strong id="currentFrame">000</strong></div>
+          </div>
+        </section>
+
+        <section class="panel release-panel" aria-label="实时容差释放">
+          <div class="panel-title-row"><div><span class="section-index">SO(3)</span><h2>实时容差释放</h2></div><span id="releaseFrame" class="release-caption">随视频逐帧同步</span></div>
+          <div class="release-content">
+            <div><p id="releaseContext" class="release-caption"></p><div id="releaseBars" class="tolerance-bars release-bars"></div></div>
+            <div class="release-key"><p>固定XYZ/RPY · Rz·Ry·Rx · deg</p><p>彩色标记：已接受的阶段相对优化释放</p><p>阴影：本帧有效轴可用边界；严格轴可继承已接受偏差</p><p id="releaseStatus"></p></div>
+          </div>
+        </section>
+
+        <section class="analysis-grid">
+          <article class="panel spatial-panel">
+            <div class="panel-title-row">
+              <div><span class="section-index">02</span><h2>末端实际轨迹与名义目标</h2></div>
+              <div class="view-actions"><button id="resetView">重置视角</button><span>拖动旋转 · 滚轮缩放</span></div>
+            </div>
+            <div class="spatial-wrap">
+              <canvas id="spatialCanvas"></canvas>
+              <div class="spatial-legend">
+                <span><i class="dot actual"></i>实际轨迹</span>
+                <span><i class="line nominal"></i>名义目标</span>
+                <span><i class="dot current"></i>当前帧</span>
+                
+              </div>
+              <div id="axisReadout" class="axis-readout"></div>
+            </div>
+          </article>
+
+          <article class="panel inspector-panel">
+            <div class="panel-title-row"><div><span class="section-index">03</span><h2>当前帧</h2></div><span id="phaseBadge" class="phase-badge">—</span></div>
+            <div class="inspector-scroll">
+              <div class="metric-group"><h3>EE actual · base</h3><div id="actualPose" class="vector-grid"></div></div>
+              <div class="metric-group"><h3>Nominal target · base</h3><div id="nominalPose" class="vector-grid"></div></div>
+              <div class="metric-group unused-tolerance"><h3>Stage target · base</h3><div id="stagePose" class="vector-grid"></div></div>
+              <div class="metric-group tolerance-group unused-tolerance"><h3>Tolerance frame · fixed XYZ/RPY (Rz Ry Rx)</h3><div id="tolerancePose" class="vector-grid"></div><div id="toleranceLimits" class="tolerance-bars"></div></div>
+              <div class="metric-group"><h3>Action Δxyz / Δrot / grip</h3><div id="actionVector" class="vector-grid seven"></div></div>
+              <div class="metric-pair"><div><span>Gripper</span><strong id="gripperValue">—</strong></div><div><span>Optimizer</span><strong id="optimizerValue">—</strong></div></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel timeline-panel">
+          <div class="panel-title-row">
+            <div><span class="section-index">04</span><h2>全轨迹时序</h2></div>
+            <div class="timeline-legend"><span class="x">X / Rx</span><span class="y">Y / Ry</span><span class="z">Z / Rz</span><span class="cursor">当前帧</span></div>
+          </div>
+          <div class="chart-grid">
+            <div class="chart-card"><div><strong>末端位置</strong><span>actual + nominal · m</span></div><canvas id="positionChart"></canvas></div>
+            <div class="chart-card"><div><strong>旋转向量</strong><span>actual + stage · rad</span></div><canvas id="rotationChart"></canvas></div>
+            <div class="chart-card wide release-chart"><div><strong>容差释放时序</strong><span>已接受的阶段相对优化释放 XYZ/RPY · 实线 / 有效边界 · 虚线 / 当前帧 · 游标</span></div><canvas id="toleranceChart"></canvas></div>
+            <div class="chart-card wide"><div><strong>关节角</strong><span>q1–q7 · rad</span></div><canvas id="jointChart"></canvas></div>
+            <div class="chart-card wide action-card">
+              <div><strong>VLA / scripted action</strong><span>三个独立坐标系 · 共享时间游标</span></div>
+              <div class="action-chart-grid">
+                <div class="action-subchart"><header><strong>3D 平移</strong><span>ΔX / ΔY / ΔZ · mm</span></header><canvas id="actionTranslationChart"></canvas></div>
+                <div class="action-subchart"><header><strong>3D 旋转</strong><span>ΔRx / ΔRy / ΔRz · deg</span></header><canvas id="actionRotationChart"></canvas></div>
+                <div class="action-subchart"><header><strong>夹爪</strong><span>open −1 / close +1</span></header><canvas id="actionGripperChart"></canvas></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel metadata-panel">
+          <div class="panel-title-row"><div><span class="section-index">05</span><h2>Episode 信息</h2></div></div>
+          <div id="episodeMetadata" class="metadata-grid"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="/studio.js"></script><script src="/live.js"></script><script src="/release_values.js"></script><script src="/release.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+{
+  "run_id": "ucflosn1",
+  "run_name": "franka_mujoco_v2_joint19_lora",
+  "state": "killed",
+  "created_at": "2026-08-24T13:00:37Z",
+  "url": "https://wandb.ai/1848166725-hit/openpi/runs/ucflosn1",
+  "config": {
+    "data": {
+      "assets": {
+        "asset_id": null,
+        "assets_dir": null
+      },
+      "repo_id": "caozilin/franka_mujoco",
+      "base_config": {
+        "repo_id": null,
+        "asset_id": null,
+        "datasets": [],
+        "norm_stats": null,
+        "action_space": null,
+        "rlds_data_dir": null,
+        "data_transforms": {
+          "inputs": [],
+          "outputs": []
+        },
+        "model_transforms": {
+          "inputs": [],
+          "outputs": []
+        },
+        "prompt_from_task": true,
+        "repack_transforms": {
+          "inputs": [],
+          "outputs": []
+        },
+        "use_quantile_norm": false,
+        "action_sequence_keys": [
+          "actions"
+        ],
+        "lerobot_dataset_root": null,
+        "hf_datasets_cache_dir": null,
+        "lerobot_arrow_cache_dir": null
+      },
+      "sequence_keys": [
+        "actions",
+        "stage_target_pose",
+        "rotation_tolerance"
+      ],
+      "joint_task_tolerance": true,
+      "lerobot_dataset_root": null,
+      "hf_datasets_cache_dir": null,
+      "lerobot_arrow_cache_dir": null
+    },
+    "name": "pi05_franka_mujoco_joint19",
+    "seed": 42,
+    "model": {
+      "pi05": true,
+      "dtype": "bfloat16",
+      "action_dim": 32,
+      "max_token_len": 48,
+      "action_horizon": 16,
+      "paligemma_variant": "gemma_2b_lora",
+      "action_loss_groups": [
+        [
+          "action",
+          0,
+          7,
+          1
+        ],
+        [
+          "stage_target_pose",
+          7,
+          13,
+          0.5
+        ],
+        [
+          "rotation_tolerance",
+          13,
+          19,
+          0.5
+        ]
+      ],
+      "discrete_state_input": false,
+      "action_expert_variant": "gemma_300m_lora"
+    },
+    "resume": true,
+    "exp_name": "franka_mujoco_v2_joint19_lora",
+    "ema_decay": null,
+    "optimizer": {
+      "b1": 0.9,
+      "b2": 0.95,
+      "eps": 1e-08,
+      "weight_decay": 1e-10,
+      "clip_gradient_norm": 1
+    },
+    "overwrite": false,
+    "batch_size": 24,
+    "keep_period": 5000,
+    "lr_schedule": {
+      "peak_lr": 5e-05,
+      "decay_lr": 5e-06,
+      "decay_steps": 30000,
+      "warmup_steps": 1000
+    },
+    "num_workers": 2,
+    "fsdp_devices": 1,
+    "log_interval": 100,
+    "project_name": "openpi",
+    "freeze_filter": "All(PathRegex(pattern=re.compile('.*llm.*'), sep='/'), Not(PathRegex(pattern=re.compile('.*lora.*'), sep='/')))",
+    "save_interval": 1000,
+    "wandb_enabled": true,
+    "weight_loader": {
+      "params_path": "gs://openpi-assets/checkpoints/pi05_base/params"
+    },
+    "assets_base_dir": "/root/gpufree-share/openpi-assets",
+    "num_train_steps": 50000,
+    "policy_metadata": null,
+    "checkpoint_base_dir": "/root/gpufree-share/checkpoints",
+    "pytorch_weight_path": null,
+    "pytorch_training_precision": "bfloat16"
+  },
+  "summary": {
+    "_runtime": 91591.26824064,
+    "_step": 30100,
+    "_timestamp": 1787667844.7874048,
+    "_wandb.runtime": 91591,
+    "camera_views": "{'_type': 'images/separated', 'count': 5, 'width': 672, 'format': 'png', 'height': 224, 'filenames': ['media/images/camera_views_0_65a294a25183d8247c1a.png', 'media/images/camera_views_0_61d88a1a3dd0749ebacb.png', 'media/images/camera_views_0_a1b0c201d6b9afdc9c33.png', 'media/images/camera_views_0_c794d4d26926a1299c72.png', 'media/images/camera_views_0_2e715beef2d01ef11a3a.png']}",
+    "grad_norm": 0.3291236162185669,
+    "loss": 0.021073557436466217,
+    "loss/action": 0.011270263232290745,
+    "loss/rotation_tolerance": 0.012592335231602192,
+    "loss/stage_target_pose": 0.007014250382781029,
+    "loss/total": 0.021073557436466217,
+    "loss_weighted/action": 0.011270263232290745,
+    "loss_weighted/rotation_tolerance": 0.006296167615801096,
+    "loss_weighted/stage_target_pose": 0.0035071251913905144,
+    "param_norm": 1806.6949462890625
+  }
+}

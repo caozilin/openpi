@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "baseline_tests_passed": 15,
+  "joint_transform_and_export_tests_passed": 15,
+  "actual_lerobot_reader_smoke": "real_reader_smoke.json",
+  "server_config_construction_passed": true,
+  "remaining_scope": "full_dataset_audit_upload_norm_train_and_final_audit"
+}

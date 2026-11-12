@@ -1,0 +1,177 @@
+--- a/tasktol/counterfactual/runner.py
++++ b/tasktol/counterfactual/runner.py
+@@ -175,6 +175,8 @@
+     # Annotation-only FK observation: table contacts remain task failures but
+     # do not truncate the solve/metric trajectory. Never enabled for physics.
+     kinematic_continue_after_table_contact: bool = False
++    # Zero-reference observation only; failures remain failures. Never a candidate mode.
++    kinematic_baseline_observe_after_failure: bool = False
+     # Coarse nominal candidate screening only. Production replay keeps 1.
+     # Targets still advance at the original rate; only IK/FK observations
+     # are thinned, retaining endpoints and phase/gripper transitions.
+@@ -1128,6 +1130,8 @@
+     zero_tolerance_nominal_reference = not np.any(
+         masks & ((negative_rad > 0.0) | (positive_rad > 0.0))
+     )
++    if spec.kinematic_baseline_observe_after_failure and not zero_tolerance_nominal_reference:
++        raise ValueError("Baseline observation requires strictly zero rotational tolerance")
+     release_state = RotationReleaseState(
+         inherit_stage_offset=not zero_tolerance_nominal_reference,
+         rotation_for_joint=lambda q: controller.kinematics.evaluate(
+@@ -1387,7 +1391,10 @@
+                     diagnostics.effective_constraint_violation
+                 ),
+             })
+-            break
++            if not spec.kinematic_baseline_observe_after_failure:
++                break
++            # Rejected optimizer output must never become a reference.
++            q_next = q.copy()
+         q_next = np.asarray(q_next, dtype=float)
+         if q_next.shape != q.shape or not np.all(np.isfinite(q_next)):
+             hard_failures.append("optimizer_non_finite")
+@@ -1423,7 +1430,8 @@
+         if collision is not None:
+             hard_failures.append(str(collision["category"]))
+             failure_details.append({"frame": frame_index, **collision})
+-            break
++            if not spec.kinematic_baseline_observe_after_failure:
++                break
+ 
+         state = controller.kinematics.evaluate(
+             q, include_manipulability=True, include_link_points=False,
+@@ -1501,6 +1509,9 @@
+     ]
+     evaluation = {
+         "backend": "kinematic_collision_checked",
++        "baseline_observation_only": spec.kinematic_baseline_observe_after_failure,
++        "baseline_rejection_policy": "hold_last_accepted_joints" if spec.kinematic_baseline_observe_after_failure else None,
++        "baseline_observation_complete": bool(spec.kinematic_baseline_observe_after_failure and executed == len(actions)),
+         "zero_tolerance_nominal_reference": bool(zero_tolerance_nominal_reference),
+         "stage_handoff_policy": (
+             "nominal_without_stage_offset" if zero_tolerance_nominal_reference
+@@ -1691,6 +1702,11 @@
+         or np.any(spec.sqp_subtask_stage_rotation_masks)
+     ):
+         raise ValueError("Sparse sampling requires a prepared zero-tolerance nominal kinematic trial")
++    if spec.kinematic_baseline_observe_after_failure and (
++        spec.execution_mode != "kinematic" or not spec.kinematic_record_clearance_samples
++        or not spec.kinematic_continue_after_table_contact or spec.kinematic_sampling_stride != 1
++    ):
++        raise ValueError("Baseline observation requires dense FK-only clearance recording")
+     if spec.kinematic_continue_after_table_contact and (
+         not (spec.execution_mode == "kinematic" or spec.controller_mode == "kinematic")
+         or not spec.kinematic_record_robot_table_clearance
+--- a/tasktol/tolerance/clearance_policy.py
++++ b/tasktol/tolerance/clearance_policy.py
+@@ -25,12 +25,17 @@
+     return distances
+ 
+ 
+-def make_baseline(result, source_frame_indices, *, minimum_m=.005, epsilon_m=DEFAULT_EPSILON_M):
++def make_baseline(result, source_frame_indices, *, minimum_m=.005, epsilon_m=DEFAULT_EPSILON_M, require_feasible=True):
+     if not math.isfinite(minimum_m) or minimum_m < 0 or not math.isfinite(epsilon_m) or epsilon_m < 0:
+         raise ValueError('Clearance cap/epsilon must be finite and nonnegative')
+     evaluation = result['evaluation']
+-    if not (evaluation['trajectory_complete'] and evaluation.get('kinematic_feasible_without_table')):
++    admissible = evaluation['trajectory_complete'] and evaluation.get('kinematic_feasible_without_table')
++    if require_feasible and not admissible:
+         raise BaselineUnavailable('Zero-tolerance replay lacks complete admissible kinematics; no baseline fabricated')
++    if not require_feasible and not (evaluation.get('baseline_observation_only')
++            and evaluation.get('baseline_observation_complete')
++            and evaluation.get('baseline_rejection_policy') == 'hold_last_accepted_joints'):
++        raise BaselineUnavailable('Require complete explicitly marked baseline observation; no samples fabricated')
+     indices = list(source_frame_indices)
+     if not indices or len(set(indices)) != len(indices) or indices != sorted(indices):
+         raise ValueError('Require unique ordered source frame identities')
+--- a/tasktol/data/libero_annotation/dsp.py
++++ b/tasktol/data/libero_annotation/dsp.py
+@@ -1,6 +1,7 @@
+ """LIBERO inputs to the current nominal-dataset DSP search; no new algorithm."""
+ 
+ from pathlib import Path
++from dataclasses import replace
+ from unittest.mock import patch
+ 
+ import mujoco
+@@ -34,6 +35,7 @@
+         raise ValueError("Prepared input predates baseline-relative clearance; prepare a new run")
+     source = document["source"]
+     all_frames = document["frames"]
++    baseline_require_feasible = document.get("baseline_require_feasible", True)
+     for name, expected in provenance["source_code_sha256"].items():
+         if sha(name) != expected:
+             raise ValueError(f"Changed DSP/source backend: {name}")
+@@ -130,7 +132,8 @@
+             # same stored initialization as every candidate. Together these
+             # blocks cover the episode once, before any Bayesian query.
+             baseline_folder = output / "zero_baselines" / f"subtask_{index:02d}"
+-            zero_spec = stage_caps(spec, [0.] * 12, masks)
++            zero_spec = replace(stage_caps(spec, [0.] * 12, masks),
++                kinematic_baseline_observe_after_failure=not baseline_require_feasible)
+             baseline_row, _ = evaluate(baseline_folder, zero_spec, prepared, frames, [0.] * 12,
+                                        digest(dict(identity=identity, role="frozen_zero_baseline")))
+             baseline_path = Path(baseline_row["raw_trial_path"])
+@@ -138,7 +141,8 @@
+             try:
+                 policy = make_baseline(baseline_result, [f["source_frame_index"] for f in frames],
+                                        minimum_m=provenance["clearance_policy"]["minimum_m"],
+-                                       epsilon_m=provenance["clearance_policy"]["epsilon_m"])
++                                       epsilon_m=provenance["clearance_policy"]["epsilon_m"],
++                                       require_feasible=baseline_require_feasible)
+             except BaselineUnavailable as error:
+                 status = dict(complete=True, status="baseline_unavailable", source_episode_index=source["episode_index"],
+                               suite=source["suite"], task_id=source["task_id"], demo=source["demo"],
+@@ -148,6 +152,7 @@
+                 write(output / "annotation_status.json", status)
+                 return status
+             current.update(clearance_m=0., clearance_policy=policy,
++                           reuse_zero_baseline=baseline_require_feasible,
+                            zero_baseline_trial=str(baseline_path), zero_baseline_trial_sha256=sha(baseline_path))
+             baselines.append(dict(subtask_index=index, policy=policy, trial=str(baseline_path), sha256=sha(baseline_path)))
+             work.append((index, frames, prepared, spec, masks, current, identity, folder))
+@@ -167,7 +172,7 @@
+                 # actual zero point without fabricating adaptive observations.
+                 row, _ = evaluate(folder, stage_caps(spec, [0.] * 12, masks), prepared, frames, [0.0] * 12, digest(identity),
+                                   clearance_policy=current["clearance_policy"],
+-                                  zero_result=read(current["zero_baseline_trial"])["result"])
++                                  zero_result=read(current["zero_baseline_trial"])["result"] if baseline_require_feasible else None)
+                 report = dict(
+                     complete=True,
+                     best=row if row["success"] else None,
+--- a/label_franka_nominal_dsp.py
++++ b/label_franka_nominal_dsp.py
+@@ -296,7 +296,7 @@
+             if sha(baseline_path) != settings['zero_baseline_trial_sha256']:
+                 raise ValueError('Frozen zero baseline trial changed')
+             extra_options = dict(clearance_policy=policy,
+-                zero_result=read(baseline_path)['result'] if not any(point) else None)
++                zero_result=read(baseline_path)['result'] if not any(point) and settings.get('reuse_zero_baseline', True) else None)
+         return evaluate(folder, stage_caps(spec, point, masks), prepared, frames, point, identity,
+             settings['clearance_m'], settings.get('clearance_strict', False), **extra_options)
+     if preflight:
+--- a/tasktol/data/libero_annotation/audit.py
++++ b/tasktol/data/libero_annotation/audit.py
+@@ -137,7 +137,12 @@
+                         assert sha(zero_path) == annotation['zero_baseline_trial_sha256']
+                         zero = read(zero_path)['result']
+                         z = zero['evaluation']
+-                        assert z['trajectory_complete'] and z['kinematic_feasible_without_table']
++                        if request.get('baseline_require_feasible', True):
++                            assert z['trajectory_complete'] and z['kinematic_feasible_without_table']
++                        else:
++                            assert z['baseline_observation_only'] and z['baseline_observation_complete']
++                            assert z['baseline_rejection_policy'] == 'hold_last_accepted_joints'
++                            assert not spec['kinematic_baseline_observe_after_failure']
+                         assert not any(read(zero_path)['point'])
+                         base_samples = z['robot_table_clearance']['samples']
+                         samples = e['robot_table_clearance']['samples']
+@@ -159,7 +164,7 @@
+                         assert row['clearance_margin_m'] == g + policy['epsilon_m']
+                         assert row['success'] == (g >= -policy['epsilon_m'])
+                         assert row['minimum_clearance_m'] == clearance
+-                        if not any(point):
++                        if not any(point) and request.get('baseline_require_feasible', True):
+                             assert read(trial)['result'] == zero
+                     else:
+                         assert row['success'] == (clearance >= .005)

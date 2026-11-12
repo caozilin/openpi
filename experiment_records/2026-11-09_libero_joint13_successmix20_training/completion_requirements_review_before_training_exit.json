@@ -1,0 +1,29 @@
+{
+  "verified_at": "2026-11-10T15:58:36.375907+08:00",
+  "complete_training_goal": false,
+  "pretraining_requirements_verified": {
+    "full_dataset": true,
+    "full_label_and_source_audit": true,
+    "all_uploaded_files": true,
+    "actual_reader_and_source_flags": true,
+    "latest_user_mixed_scope": true,
+    "four_x_real_sample_jit_preflight": true,
+    "normalization": true,
+    "request_frozen": true,
+    "upload_receipt_bound": true
+  },
+  "evidence": {
+    "dataset_independent_audit.json": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/dataset_independent_audit.json",
+    "lerobot_upload_verification.json": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/lerobot_upload_verification.json",
+    "training_request.json": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/training_request.json",
+    "normalization_completion.json": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/normalization_completion.json",
+    "four_x_protocol_update/training_preflight_verification.json": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/four_x_protocol_update/training_preflight_verification.json"
+  },
+  "remaining": [
+    "training_actual10000_and_exit0",
+    "five_checkpoint_full_restore",
+    "full_logs_and_cloud_1000_metrics",
+    "all_data_sha_rechecked_at_finish",
+    "final_task_completion_and_documentation"
+  ]
+}

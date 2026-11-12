@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "scope": "Read-only400x4 arithmetic/provenance checks; no certification of unfinished final audit",
+  "groups": 4,
+  "unique_combinations_per_group": 400,
+  "total_results": 1600,
+  "totals_from_paired_rows_match": true,
+  "all_initial_states_equal": true
+}

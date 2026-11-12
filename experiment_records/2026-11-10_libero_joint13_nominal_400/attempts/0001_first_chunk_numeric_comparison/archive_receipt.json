@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-10T18:18:42.312141+08:00",
+  "all_original_local_processes_exited": true,
+  "locks_released": true,
+  "committed": 6,
+  "successes": 6,
+  "infrastructure_errors": 0,
+  "reason": "extra first-output1e-6 comparison failed; not a task failure"
+}

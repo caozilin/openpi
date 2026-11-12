@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-11-09T19:01:57.574543+08:00",
+  "classification": "verified_wait",
+  "completed_this_turn": [
+    "full1875_dataset_independent_audit",
+    "80actual_lerobot_horizon10_checks",
+    "transfer_manifest1890_files_and_real_rsync_launch"
+  ],
+  "local_uploader_pid": 82812,
+  "rsync_pid": 120234,
+  "local_training_dispatch_pid": 82814,
+  "remote_rsync_pids": [
+    3219491,
+    3219492
+  ],
+  "remote_submitted_parquet_at_probe": 675,
+  "remaining": [
+    "complete_upload",
+    "remote_verification",
+    "state8_actions13_normalization",
+    "sixgpu10000steps",
+    "full_checkpoint_and_swanlab_audit"
+  ],
+  "goal_complete": false,
+  "remote_submitted_parquet_bytes": 11129156819,
+  "local_rsync_bytes_written": 256360790,
+  "remote_training_finisher_pid": 3210109,
+  "real_processes_checked": true,
+  "blocking_condition": null,
+  "remote_free_gib": 126.17047500610352,
+  "observer": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/observe_progress.py",
+  "consecutive_actual_probes": 16,
+  "observation_history": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/upload_observations_20261109_1846_1902.json",
+  "transient_observation_timeouts": 1,
+  "upload_failure_proven": false
+}

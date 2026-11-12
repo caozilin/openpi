@@ -1,0 +1,65 @@
+{
+  "local_dataset": "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109",
+  "original_nominal_dataset": "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_full_20261101",
+  "local_request": "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109/replacement_request.json",
+  "selection": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/selection.json",
+  "dataset_composition": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/dataset_composition.json",
+  "conversion_manifest": "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109/conversion_manifest.json",
+  "dataset_audit": {
+    "path": "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109/meta/joint13_independent_audit.json",
+    "status": "complete;1875episodes/312374frames and80actual10-step sequence checks"
+  },
+  "dataset_audit_log": "/media/czl/sata/franka_my_code/openpi/data/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109/independent_audit.log",
+  "local_pipeline_state": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/local_pipeline_state.json",
+  "upload_state": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/upload_state.json",
+  "training_dispatch_state": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/training_dispatch_state.json",
+  "training_request_draft": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/training_request_draft.json",
+  "retired_nominal_conversion_evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/nominal_conversion_retirement.json",
+  "remote_partial_upload_retirement_evidence_copy": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/remote_nominal_partial_upload_deletion_verification.json",
+  "remote_run": "czl@100.73.28.99:/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109",
+  "remote_dataset": "czl@100.73.28.99:/mnt/SharedData/czl/lerobot/caozilin/libero_reconstructed_joint13_successmix20_20261109",
+  "remote_checkpoints": {
+    "path": "czl@100.73.28.99:/mnt/SharedData/czl/checkpoints/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109",
+    "status": "all five checkpoints fully CPU restored and verified"
+  },
+  "remote_final_audit": {
+    "path": "czl@100.73.28.99:/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/training_independent_final_audit.json",
+    "status": "complete"
+  },
+  "swanlab": {
+    "status": "Cloud FINISHED; all1000rows x10metrics verified",
+    "id": "kl28cdu6bv1mywr8n5wv0",
+    "url": "https://swanlab.cn/@caozilin/openpi/runs/kl28cdu6bv1mywr8n5wv0",
+    "evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/final_snapshot/swanlab_cloud_final_audit.json",
+    "first_metric_evidence": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/four_x_protocol_update/first_real_metrics_and_cloud_verification.json"
+  },
+  "transport_preparation": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/exact_transport_preparation.json",
+  "transport_transition": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/transport_transition/plan.json",
+  "upload_supervisor": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/upload_exact_transport.py",
+  "upload_log": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/upload_exact_transport.log",
+  "transport_scope": "same frozen files; CPU reconstruction accepted only when original SHA256 matches",
+  "training_request": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/training_request.json",
+  "training_startup_verification": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/training_startup_verification.json",
+  "remote_launch": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/remote_training_launch.json",
+  "upload_verification": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/lerobot_upload_verification.json",
+  "normalization": {
+    "status": "complete4338batches/exit0/state8/actions13; reused unchanged for loss-only4x update",
+    "remote_receipt": "czl@100.73.28.99:/mnt/SharedData/czl/runs/pi05_libero_joint13_successmix20_lora_6gpu_bs72_10k_20261109/normalization_completion.json",
+    "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42",
+    "local_receipt": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/normalization_completion.json"
+  },
+  "four_x_protocol_update": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/four_x_protocol_update",
+  "current_config_snapshot": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/four_x_startup_snapshot/actual_config.json",
+  "real_training_runtime": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/four_x_startup_snapshot/training_runtime_verified.json",
+  "loss_scale_diagnosis": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/loss_scale_comparison.json",
+  "readme_history": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/README_HISTORY_20261109_2110.md",
+  "handoff_history": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/HANDOFF_HISTORY_20261109_2110.md",
+  "latest_training_observation": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/training_live_verified_latest.json",
+  "local_shutdown_readiness": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/local_shutdown_readiness.json",
+  "long_term_server_document": "/media/czl/sata/franka_my_code/openpi/docs/TRAINING_SERVER.md",
+  "server_documentation_verification": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/server_documentation_verification.json",
+  "server_inventory_verification": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/server_inventory_verification_20261109.json",
+  "final_local_snapshot": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/final_snapshot",
+  "final_evidence_verification": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/final_evidence_download_verification.json",
+  "final_report": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-09_libero_joint13_successmix20_training/RESULTS.md"
+}

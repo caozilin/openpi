@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "tasks": 40,
+  "episodes": 1851,
+  "success": 1503,
+  "source_summary_sha256": "6f9b7d9168dce926dec09e0e73ec3fd4ac0cef1e3ce18dd75e455445733f21b0",
+  "no_new_rollouts": true
+}

@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "tasks": 40,
+  "labeled_demos": 199,
+  "comparable_signed_directions": 292,
+  "recomputed_metrics_match": true,
+  "source_label_and_best_trial_hashes_verified": true,
+  "missing_demo_excluded_not_imputed": true,
+  "all_strict_tasks_retained_with_null_comparison": true,
+  "no_new_optimization_or_rollout": true
+}

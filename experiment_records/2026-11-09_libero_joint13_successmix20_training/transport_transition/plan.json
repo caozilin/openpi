@@ -1,0 +1,55 @@
+{
+  "prepared_at": "2026-11-09T19:20:52.861865+08:00",
+  "reason": "intentional transport optimization after exact-SHA compatibility proof; original upload is alive, not diagnosed failed",
+  "scope": "same frozen1875 dataset, transfer_manifest and training parameters; no new rollout/search/training experiment",
+  "original_uploader_pid": 82812,
+  "original_rsync_pid": 120234,
+  "original_rsync_ssh_pid": 120235,
+  "keep_training_dispatch_pid": 82814,
+  "keep_server_training_finisher_pid": 3210109,
+  "keep_ssh_master": true,
+  "files_already_verified_are_preserved": true,
+  "incomplete_earlier_file_bytes_are_archived": true,
+  "preparation": {
+    "complete": true,
+    "bundle": "/tmp/libero_successmix20_exact_transport_20261109",
+    "files": 2479,
+    "transport_bytes": 240203401,
+    "original_dataset_bytes": 38388719043,
+    "episodes": 1875,
+    "tolerance_videos": 602,
+    "transfer_manifest_sha256": "c83584914ad3eb169dcee7bb489990f562a2db4175d8d2ebd121f1002aca5d8d",
+    "transport_request_sha256": "bcaebae5f311a0aba41c3223319c69e9fbc84f997381a35f88d0baae7d07ac56",
+    "reconstructor_sha256": "1501fdec7479db6ccab9de96ba30aafe060c7f556881959eee9d81e3b91c5dd1",
+    "dataset_modified": false
+  },
+  "three_case_compatibility": {
+    "complete": true,
+    "results": [
+      {
+        "episode_index": 0,
+        "status": "rebuilt_exact_sha",
+        "sha256": "123600e491c1da1948707abcb263817ad28b2563079fb49d26e0af70c487b88f",
+        "frames": 97,
+        "trajectory_is_tolerance": 0
+      },
+      {
+        "episode_index": 2,
+        "status": "rebuilt_exact_sha",
+        "sha256": "98ee06c2071f5e3fb8f8dc0f4c7e9f302e886fc2ec0b20c87bab7b6a07b52008",
+        "frames": 89,
+        "trajectory_is_tolerance": 1
+      },
+      {
+        "episode_index": 1420,
+        "status": "rebuilt_exact_sha",
+        "sha256": "977a0bf05b1d8c8194ede2a91fbe32478268964294c4c8ee5ee92da5bb95f772",
+        "frames": 307,
+        "trajectory_is_tolerance": 1
+      }
+    ],
+    "production_dataset_modified": false,
+    "scope": "three independent compatibility cases; all1875 still require individual frozen SHA acceptance"
+  },
+  "training_code_and_frozen_data_changed": false
+}

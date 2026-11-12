@@ -1,0 +1,28 @@
+{"unix": 1793267153.1127949, "tracking_line": "swanlab: \ud83c\udfe0 View project at https://swanlab.cn/@caozilin/openpi-tasktol"}
+{"unix": 1793267153.113358, "tracking_line": "https://swanlab.cn/@caozilin/openpi-tasktol/runs/akejealj3w6nm4pe5qwho"}
+{"unix": 1793267380.748093, "step": 10, "samples": 240, "metrics": {"grad_norm": 1.425, "loss": 0.3653, "loss/action": 0.3653, "loss/total": 0.3653, "loss_weighted/action": 0.3653, "param_norm": 1803.7705}}
+{"unix": 1793267419.5390418, "step": 20, "samples": 480, "metrics": {"grad_norm": 1.6414, "loss": 0.3925, "loss/action": 0.3925, "loss/total": 0.3925, "loss_weighted/action": 0.3925, "param_norm": 1803.7705}}
+{"unix": 1793267458.856833, "step": 30, "samples": 720, "metrics": {"grad_norm": 1.6493, "loss": 0.3632, "loss/action": 0.3632, "loss/total": 0.3632, "loss_weighted/action": 0.3632, "param_norm": 1803.7705}}
+{"unix": 1793267498.4363635, "step": 40, "samples": 960, "metrics": {"grad_norm": 2.0959, "loss": 0.3204, "loss/action": 0.3204, "loss/total": 0.3204, "loss_weighted/action": 0.3204, "param_norm": 1803.7705}}
+{"unix": 1793267537.9631605, "step": 50, "samples": 1200, "metrics": {"grad_norm": 1.8151, "loss": 0.2849, "loss/action": 0.2849, "loss/total": 0.2849, "loss_weighted/action": 0.2849, "param_norm": 1803.7705}}
+{"unix": 1793267577.3874598, "step": 60, "samples": 1440, "metrics": {"grad_norm": 1.3876, "loss": 0.2605, "loss/action": 0.2605, "loss/total": 0.2605, "loss_weighted/action": 0.2605, "param_norm": 1803.7705}}
+{"unix": 1793267616.8102062, "step": 70, "samples": 1680, "metrics": {"grad_norm": 1.3459, "loss": 0.2661, "loss/action": 0.2661, "loss/total": 0.2661, "loss_weighted/action": 0.2661, "param_norm": 1803.7705}}
+{"unix": 1793267656.2154043, "step": 80, "samples": 1920, "metrics": {"grad_norm": 1.2984, "loss": 0.2608, "loss/action": 0.2608, "loss/total": 0.2608, "loss_weighted/action": 0.2608, "param_norm": 1803.7705}}
+{"unix": 1793267695.553402, "step": 90, "samples": 2160, "metrics": {"grad_norm": 1.4008, "loss": 0.2578, "loss/action": 0.2578, "loss/total": 0.2578, "loss_weighted/action": 0.2578, "param_norm": 1803.7705}}
+{"unix": 1793267735.052847, "step": 100, "samples": 2400, "metrics": {"grad_norm": 1.2345, "loss": 0.2472, "loss/action": 0.2472, "loss/total": 0.2472, "loss_weighted/action": 0.2472, "param_norm": 1803.7705}}
+{"unix": 1793267774.4303398, "step": 110, "samples": 2640, "metrics": {"grad_norm": 1.2755, "loss": 0.2373, "loss/action": 0.2373, "loss/total": 0.2373, "loss_weighted/action": 0.2373, "param_norm": 1803.7708}}
+{"unix": 1793267813.9492416, "step": 120, "samples": 2880, "metrics": {"grad_norm": 1.0292, "loss": 0.2015, "loss/action": 0.2015, "loss/total": 0.2015, "loss_weighted/action": 0.2015, "param_norm": 1803.7708}}
+{"unix": 1793267853.3789296, "step": 130, "samples": 3120, "metrics": {"grad_norm": 1.3723, "loss": 0.2259, "loss/action": 0.2259, "loss/total": 0.2259, "loss_weighted/action": 0.2259, "param_norm": 1803.7708}}
+{"unix": 1793267892.6362762, "step": 140, "samples": 3360, "metrics": {"grad_norm": 1.0617, "loss": 0.2049, "loss/action": 0.2049, "loss/total": 0.2049, "loss_weighted/action": 0.2049, "param_norm": 1803.7708}}
+{"unix": 1793267931.8605843, "step": 150, "samples": 3600, "metrics": {"grad_norm": 1.2971, "loss": 0.2496, "loss/action": 0.2496, "loss/total": 0.2496, "loss_weighted/action": 0.2496, "param_norm": 1803.7708}}
+{"unix": 1793267971.268636, "step": 160, "samples": 3840, "metrics": {"grad_norm": 1.0929, "loss": 0.2107, "loss/action": 0.2107, "loss/total": 0.2107, "loss_weighted/action": 0.2107, "param_norm": 1803.7714}}
+{"unix": 1793268010.5779862, "step": 170, "samples": 4080, "metrics": {"grad_norm": 0.9963, "loss": 0.2046, "loss/action": 0.2046, "loss/total": 0.2046, "loss_weighted/action": 0.2046, "param_norm": 1803.7714}}
+{"unix": 1793268049.9628048, "step": 180, "samples": 4320, "metrics": {"grad_norm": 0.9227, "loss": 0.1849, "loss/action": 0.1849, "loss/total": 0.1849, "loss_weighted/action": 0.1849, "param_norm": 1803.7714}}
+{"unix": 1793268089.3291476, "step": 190, "samples": 4560, "metrics": {"grad_norm": 0.9634, "loss": 0.19, "loss/action": 0.19, "loss/total": 0.19, "loss_weighted/action": 0.19, "param_norm": 1803.7714}}
+{"unix": 1793268128.769435, "step": 200, "samples": 4800, "metrics": {"grad_norm": 1.1674, "loss": 0.2034, "loss/action": 0.2034, "loss/total": 0.2034, "loss_weighted/action": 0.2034, "param_norm": 1803.7715}}
+{"unix": 1793268168.0835948, "step": 210, "samples": 5040, "metrics": {"grad_norm": 0.8348, "loss": 0.1733, "loss/action": 0.1733, "loss/total": 0.1733, "loss_weighted/action": 0.1733, "param_norm": 1803.7715}}
+{"unix": 1793268207.322932, "step": 220, "samples": 5280, "metrics": {"grad_norm": 0.921, "loss": 0.1623, "loss/action": 0.1623, "loss/total": 0.1623, "loss_weighted/action": 0.1623, "param_norm": 1803.7717}}
+{"unix": 1793268246.6937075, "step": 230, "samples": 5520, "metrics": {"grad_norm": 1.0222, "loss": 0.1839, "loss/action": 0.1839, "loss/total": 0.1839, "loss_weighted/action": 0.1839, "param_norm": 1803.7721}}
+{"unix": 1793268285.996479, "step": 240, "samples": 5760, "metrics": {"grad_norm": 1.0675, "loss": 0.1844, "loss/action": 0.1844, "loss/total": 0.1844, "loss_weighted/action": 0.1844, "param_norm": 1803.7723}}
+{"unix": 1793268286.00294, "tracking_line": "swanlab: \ud83c\udfe0 View project at https://swanlab.cn/@caozilin/openpi-tasktol"}
+{"unix": 1793268286.0033255, "tracking_line": "https://swanlab.cn/@caozilin/openpi-tasktol/runs/akejealj3w6nm4pe5qwho"}

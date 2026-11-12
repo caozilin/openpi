@@ -1,0 +1,723 @@
+{
+  "identity_sha256": "e0f77ca5fbf531811bbffe99e47e8a182541ed0e82a28398f48ed1fb7c449f58",
+  "point": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    30.0,
+    30.0,
+    30.0,
+    30.0,
+    30.0,
+    30.0
+  ],
+  "row": {
+    "success": false,
+    "velocity_rad_s": null,
+    "observed_velocity_rad_s": 0.44989419488508703,
+    "trajectory_complete": true,
+    "raw_trajectory_complete": true,
+    "completion_provenance": "explicit_executor_state",
+    "solver_pass": true,
+    "solver_provenance": "complete_kinematic_admissibility_without_table",
+    "other_pass": true,
+    "clearance_pass": false,
+    "minimum_clearance_m": -0.016792494546180037,
+    "censored_clearance_upper_bound_m": null,
+    "reason": "robot_table_clearance",
+    "actual_pre_caps_deg": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "actual_post_caps_deg": [
+      30.0,
+      30.0,
+      30.0,
+      30.0,
+      30.0,
+      30.0
+    ]
+  },
+  "result": {
+    "spec": {
+      "scene": "libero_10",
+      "task": "task_06",
+      "robot_uid": "panda",
+      "seed": 0,
+      "environment_seed": -1,
+      "environment_randomization_probability": 0.0,
+      "workspace_boundary": false,
+      "workspace_boundary_distance_min": 0.9,
+      "workspace_boundary_distance_max": 2.0,
+      "workspace_boundary_map_directory": null,
+      "scene_variant_index": null,
+      "custom_layout_path": null,
+      "trajectory_revision": 0,
+      "stage": "pregrasp",
+      "subtask_index": 0,
+      "axis": "x",
+      "direction": 1,
+      "angle_deg": 0,
+      "maximum_frames": 126,
+      "object_clearance_m": 0.05,
+      "target_rotation_tolerance_deg": 3.0,
+      "pregrasp_rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "postgrasp_rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_mode": "sqp_specific",
+      "execution_mode": "kinematic",
+      "kinematic_check_table_collisions": true,
+      "kinematic_record_robot_table_clearance": true,
+      "kinematic_continue_after_table_contact": true,
+      "kinematic_sampling_stride": 1,
+      "sqp_unbounded_rotation": false,
+      "sqp_symmetric_limits_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sqp_stage_rotation_masks": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "sqp_stage_negative_limits_deg": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          30.0,
+          30.0,
+          30.0
+        ]
+      ],
+      "sqp_stage_positive_limits_deg": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          30.0,
+          30.0,
+          30.0
+        ]
+      ],
+      "sqp_subtask_stage_rotation_masks": [],
+      "sqp_subtask_stage_negative_limits_deg": [],
+      "sqp_subtask_stage_positive_limits_deg": [],
+      "sqp_loss_profile": "delta_q_squared_only",
+      "sqp_loss_weights": [
+        1.0,
+        0.0,
+        10.0
+      ],
+      "sqp_squared_acceleration_weight": 0.0,
+      "sqp_sigma_min_warning_threshold": 1.0,
+      "sqp_sigma_min_reciprocal_epsilon": 0.001,
+      "sqp_conditioning_eta_low": 0.05,
+      "sqp_conditioning_eta_high": 0.1,
+      "sqp_conditioning_sigma_epsilon": 1e-12,
+      "sqp_conditioning_fd_relative_step": 1e-05,
+      "sqp_max_time_s": 0.0,
+      "ipopt_max_iterations": 20,
+      "sqp_diagnose_conditioning_gradient": false,
+      "nominal_plan_selection_enabled": true
+    },
+    "success": true,
+    "task_success": true,
+    "target_reached": true,
+    "termination_reason": "kinematic_success",
+    "target_rotation_error_deg": 30.184052361008845,
+    "nominal_target_rotation_vector_base_rad": [
+      -3.136955271411495,
+      0.05478597532101253,
+      0.10326206083782838
+    ],
+    "counterfactual_target_rotation_vector_base_rad": [
+      -3.1362984220685255,
+      0.07779884437792298,
+      0.10202684640712331
+    ],
+    "tolerance_frame_rotation_vector_base_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "evaluation": {
+      "backend": "kinematic_collision_checked",
+      "sigma_min_normalization": {
+        "version": "velocity_capability_v1",
+        "formula": "sigma_min(Dx^-1 Jg Dq)",
+        "task_reference_velocities": [
+          0.15,
+          0.15,
+          0.15,
+          0.7853981633974483,
+          0.7853981633974483,
+          0.7853981633974483
+        ],
+        "joint_velocity_limits_rad_s": [
+          2.175,
+          2.175,
+          2.175,
+          2.175,
+          2.61,
+          2.61,
+          2.61
+        ],
+        "dimensionless": true,
+        "full_geometric_jacobian": true
+      },
+      "physics_steps": 0,
+      "control_rate_hz": 20,
+      "task_interaction": false,
+      "objects_considered": false,
+      "collision_engine": "mujoco_mj_forward",
+      "collision_scope": [
+        "robot_self",
+        "robot_table"
+      ],
+      "collision_condition": "actual_geometry_contact_distance_m <= 0",
+      "executed_frames": 126,
+      "expected_frames": 126,
+      "planned_frames": 126,
+      "trajectory_complete": true,
+      "planned_subtasks": 1,
+      "pending_subtasks": 0,
+      "max_position_error_m": 3.129374560143452e-09,
+      "max_rotation_error_rad": 0.5268110952939724,
+      "optimizer_feasible": true,
+      "optimizer_statuses": [
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options).",
+        "ipopt: Algorithm terminated successfully at a locally optimal point, satisfying the convergence tolerances (can be specified by options)."
+      ],
+      "hard_failure_reasons": [],
+      "hard_failure_details": [],
+      "sqp_subtask_stage_release_extrema_deg": [
+        {
+          "subtask_index": 0,
+          "pregrasp": {
+            "negative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "postgrasp": {
+            "negative": [
+              0.7608836853921088,
+              0.0,
+              0.9402715665052269
+            ],
+            "positive": [
+              7.039093555748727,
+              29.39819244319446,
+              3.169904416839872
+            ]
+          }
+        }
+      ],
+      "sqp_subtask_stage_release_sample_counts": [
+        {
+          "subtask_index": 0,
+          "pregrasp": 38,
+          "postgrasp": 56
+        }
+      ],
+      "sqp_subtask_stage_rotation_masks": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "declared_subtask_stage_rotation_masks": [
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "sqp_subtask_stage_negative_limits_deg": [
+        [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            30.0,
+            30.0,
+            30.0
+          ]
+        ]
+      ],
+      "sqp_subtask_stage_positive_limits_deg": [
+        [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            30.0,
+            30.0,
+            30.0
+          ]
+        ]
+      ],
+      "sqp_release_measurement": "running positive and negative maxima of optimizer-owned stage-relative release at every source control frame",
+      "trajectory_kinematics": {
+        "samples": 126,
+        "mean_joint_velocity_rad_s": 0.44989419488508703,
+        "mean_joint_acceleration_rad_s2": 2.387802995430923,
+        "mean_joint_jerk_rad_s3": 73.88115751707659,
+        "mean_manipulability": 0.03996582800030873,
+        "total_joint_travel_rad": 2.828735780239505,
+        "minimum_sigma_min_full": 0.15496126785496067,
+        "minimum_sigma_min_velocity_normalized": 0.6848578500399088
+      },
+      "sqp_rotation_release": {
+        "definition": "sum over semantic stages of maximum principal SO(3) rotation angle",
+        "reference": "accepted optimizer rotation relative to transported stage reference",
+        "units": "degree",
+        "sampling_stride": 1,
+        "sample_scope": "complete 10 Hz trajectory",
+        "trajectory_complete": true,
+        "whole_episode_release_deg": 30.184051985197843,
+        "observed_stage_peak_sum_deg": 30.184051985197843,
+        "subtasks": [
+          {
+            "subtask_index": 0,
+            "pregrasp": {
+              "samples": 38,
+              "peak_angle_deg": 1.0259025923795338e-12
+            },
+            "postgrasp": {
+              "samples": 56,
+              "peak_angle_deg": 30.184051985196817
+            },
+            "observed_stage_peak_sum_deg": 30.184051985197843
+          }
+        ]
+      },
+      "table_contact_policy": "record_and_continue_fk_only",
+      "kinematic_feasible_without_table": true,
+      "motion_failure_reasons": [],
+      "table_contact_count": 0,
+      "table_contact_frames": [],
+      "first_table_contact": null,
+      "robot_table_clearance": {
+        "minimum": {
+          "distance_m": -0.016792494546180037,
+          "phase": "pregrasp",
+          "frame_index": 0,
+          "time_s": 0.0,
+          "robot_body": "robot0_link0",
+          "robot_geom": "robot0_link0_collision",
+          "table_body": "work_surface",
+          "table_geom": "annotation_tabletop"
+        },
+        "distribution": {
+          "samples": 126,
+          "minimum_m": -0.016792494546180037,
+          "p01_m": -0.016792494546180037,
+          "p05_m": -0.016792494546180037,
+          "p50_m": -0.016792494546180037
+        },
+        "by_phase": {
+          "pregrasp": {
+            "samples": 38,
+            "minimum_m": -0.016792494546180037,
+            "p01_m": -0.016792494546180037,
+            "p05_m": -0.016792494546180037,
+            "p50_m": -0.016792494546180037
+          },
+          "grasp": {
+            "samples": 15,
+            "minimum_m": -0.016792494546180037,
+            "p01_m": -0.016792494546180037,
+            "p05_m": -0.016792494546180037,
+            "p50_m": -0.016792494546180037
+          },
+          "postgrasp": {
+            "samples": 56,
+            "minimum_m": -0.016792494546180037,
+            "p01_m": -0.016792494546180037,
+            "p05_m": -0.016792494546180037,
+            "p50_m": -0.016792494546180037
+          },
+          "release": {
+            "samples": 17,
+            "minimum_m": -0.016792494546180037,
+            "p01_m": -0.016792494546180037,
+            "p05_m": -0.016792494546180037,
+            "p50_m": -0.016792494546180037
+          }
+        },
+        "robot_geom_count": 13,
+        "table_geom_count": 1,
+        "invalid_pair_queries": 141
+      },
+      "clearance_domain": "solved_joint_positions_20hz_fk; no physics/interpolation"
+    },
+    "domain_randomization": {
+      "physics_steps": 0,
+      "task_scene_instantiated": false,
+      "task_objects_loaded": false,
+      "scene_source": "robot subtree + numeric tabletop height/XY bounds only",
+      "assets": {
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link0.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link0.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link1.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link1.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link2.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link2.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link3.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link3.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link4.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link4.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link5.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link5.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link6.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link6.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link7.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link7.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_3.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_3.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_4.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_4.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_5.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_5.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_6.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_6.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_7.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_7.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_8.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_8.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_9.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_9.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_10.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_10.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_11.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_11.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link1_vis/link1_vis.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link1_vis/link1_vis.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link2_vis/link2_vis.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link2_vis/link2_vis.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_3.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_3.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_3.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_3.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_3.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_3.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_4.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_4.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_5.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_5.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_6.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_6.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_7.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_7.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_8.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_8.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_9.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_9.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_10.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_10.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_11.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_11.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_12.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_12.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_13.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_13.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_14.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_14.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_15.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_15.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_16.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_16.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_0.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_0.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_1.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_1.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_2.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_2.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_3.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_3.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_4.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_4.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_5.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_5.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_6.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_6.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_7.obj": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_7.obj",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/hand.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/hand.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/hand_vis.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/hand_vis.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/finger.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/finger.stl",
+        "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/finger_vis.stl": "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/finger_vis.stl"
+      },
+      "asset_sha256": {
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_15.obj": "f66985ec70db62eec18669848e53c1509ac4e68d6b97a58874fedc180c1cd85c",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_4.obj": "df932880c83025fdef4a8366926679c924adb395c3313aa445c151387c5a12b3",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_1.obj": "ebfed3850a693ac1a1b97a418742ec98355f7008de1e14037cdbdbc75a0d5fb9",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_10.obj": "a846ef010d109e6e66bfd67f995263c4cef5e2e0a56560c3ce6831e0abc8c07b",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_7.obj": "36957666d65f3bee84661c5d8276711b4958aae10c9a5192c0fdfd5a8b7f7770",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_14.obj": "289cbb1e35b09f158dcaf7025d815d76f935e2d5ca956bb03d25c5f10748af51",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_2.obj": "e112cdf4c9071ae6c277ae9c92b165060d02bc8b954da7df24e67aaf11deede0",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_3.obj": "6af51159175526f823c37a59fc22e78ebad90809662d30e154da8cbabf355bd2",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link2.stl": "370f7605a0fae3529db169ded50f52f171024aa792d4d773bc84197301f6a039",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_5.obj": "d91d2892366a36f82f5bfc7e0fe60b360faf5ace94f8ba1ef38b15d6d9c4ffac",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_2.obj": "ebca16efc559c30fa812168764d0b4b353049965bdc6cbbf25708a945948b2b4",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_0.obj": "b2119dee4b4a5e3a5bdac57b7fa04d379da8af502860496946a90c1b904db590",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_1.obj": "05fa8ccb4bc50585862c374a2c1e2a072c6422b6e3088404767d5bb7fc714500",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link6.stl": "20b768e99a0e0440b5754dcca108016434e57937cc356acd9c352ccd3cb27f77",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_11.obj": "ffd2103606b3288c98c3c3f29cccb3e202dc12d92d58225e4fbf5ef023a8c28f",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_2.obj": "931bdb58e44e8b328842708e00ef80c0e8e48f47949804b7c8b10dc8e9d8dbf2",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_10.obj": "b4b1a66f689dededc8c45cc2fc01aa3bdf8f2cf689ee83eb3db0f9400af9883f",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_5.obj": "06d573ce2e042a4ffbf080e79ae1cdc84e3a63e4d1bf72272d81410789bb61d6",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_1.obj": "3c1a7e83814a54522b91dc069e2448b6f0ca10149869fd68713e97e9f1dd5d05",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_4.obj": "606af8cc5fe30b63a2a28c0c78b423c780ca3b73cc88356570a92145941ffde8",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link1.stl": "d24e332dffccf260b91d05dde17c5998bb9559d37da8608a8ee5213d9661f603",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_2.obj": "81e20d3187dcafcc4ce8bca69c74d6ad985491d263939a93b6aac8b478a4cc86",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_6.obj": "4382b6e12dc5dbcc1ca3fdc595dd82e73e1dc4a6b8ceca545bfdd0338ca12d21",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_7.obj": "c61618cad1396e6a134ba8b32ec754fc67bd576d411417142f1a36f4003c7017",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_0.obj": "2d35397b9d9289e3cfaa9de5cf689185b5d3b0bba7b204efffbc8443ea9c615d",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link3.stl": "0a8d638b9349c6c0eefc4e888636ac4838c4b27170f18a51699321118af709c1",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_13.obj": "a476a77077eeec8bdb0db07163dd20f8213e2106c6d88ac554346293434bd479",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_3.obj": "ad289bd24071568198d907b001ae659676637b6c868212ad1d49177a2352bb7b",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_8.obj": "aef37fabd21f209461bdb9ed6873ebc3ded6807bb01ec88cf1a002499ae629d2",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_0.obj": "65417fb042a34286b6aa5fee2e0a7ff60a567f1296738f985b666cd319fb3d7a",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_2.obj": "a7aaca55658be11af36f2388a1c674d6ce09973dd8b9f87c30bf00bb245b55e8",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_0.obj": "591f8533b4020ebbaafc4a4cb62c7e0988f204879dd1cbd30a78c3bc197f380b",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_5.obj": "ae616a8d11339861af3b83d6bf1d0d1038c61984a7ddae5af93ffb96cc32a122",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_3.obj": "53abcab5d93f13797f34450929dfe8c0ddbcd72266130611487d10be23cd736a",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_3.obj": "dd8ab577710fbe454ca463f0d69edf36f717d2868355288a76b77f586a384aa9",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_9.obj": "c1a7246819060a248d61291ae3a9a629f7e11d866090f32729e6e434eda7cefd",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_12.obj": "bc34f87c700531402a64cde7f7f9f25c4f5351ce6ec96f3b078e75a55b70bd42",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/finger.stl": "2d07a740392f3b9b0816f65d64fff9927d3d57c897870fc4b6ff9c56fff3a0c8",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_2.obj": "da959a052900a8d03914b03bf0cd79662a49c2462e1737cc177591be33be5951",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link2_vis/link2_vis.obj": "96c6ea002e2c6474ac1473014e3f0df1f90b7aa2beb5c6182671fda890a3cb74",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_1.obj": "32ca565d7e3923a9b10a536043845d28911756de976f51c84e426aea3cc719ab",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_1.obj": "ac248e0725c1eb29a0dd6490fc8d349dc57c5c3f51f15752266d4cc55753e1ee",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_3.obj": "ba273f526f3b3d4e8489ddd89813f5d109f0e289ca993550c9a06beca5a83416",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link4.stl": "0180ebb5772ec9840cb049750cffb29a9ddc90311752a16ea34757782ef9e48d",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_16.obj": "45af20fc788566fdc76053167264685792f20f22c683dfd0cc382d8c8bbb640a",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_1.obj": "f61bc98778d9e22a422ac2a339603d606b8e6af7727d8629a442cc04419a2789",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_6.obj": "6f8e94925a34c5e0fecae66c11460d7c4ff70dcf448a5da6de14e1badf0e71da",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/hand.stl": "94493e94f30fe940f2c8ca2f155c3bbe67bbff406d3edf5e261670d2f0f6e2ed",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_7.obj": "2777f33115993dec3af8eb6d614af6165ae2836ffd1ea4e41849ed32c5a60326",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/finger_vis.stl": "e49613148a74f1ba9b5793813078e5becf15833e0296073dc1c523508be35ae4",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link5.stl": "dd17e688c7870e722283525879643d53a74c0024d328b0e14b034b54c8b6c31a",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_11.obj": "3f22c57436629d8f1d06650f105a822cb3b85f071f3c268210561abf2812b809",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link7.stl": "92ac6afcf7574c034d3170d8a68e95ac9048ab9d0dd5bbd8311b86e551b9ab1c",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link0.stl": "dfc6d94330de8ddb005b311bfdba9f3b8e1aa7c256b71592ee7ff32cb9a9a5aa",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_6.obj": "d9b40045d90e0202640437e66dc9b02c5c449b9169f97d70099dfc35a88f2eb4",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_0.obj": "e66366f5bdd2a04b75d17abd251019bf59b57f3f74dcfdbefa870c437121b790",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_9.obj": "00b9daacb7c18b0ab071b089515b9e87a8785abafb36cf63355e3b8afdce8022",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_8.obj": "82b9aedf8ff51ebde219529fa366c079311f5528203276cd1eedfcba90574d52",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link1_vis/link1_vis.obj": "912779814d93a7d2c6f0413f6eb5042291b08e11b3dae769019aaa0ddb64e23f",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/hand_vis.stl": "fdeb1a924b8d0f1f997f47d6d8af102c7290a1d5144145efdc39501dc13f0fa1",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_0.obj": "6c4415add409c161a92dc7cccbecf6819a3a92aba3b0cf043cd513b58aa23257",
+        "/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_4.obj": "b72d69f2da72512b48c0c418a7169b023d5bcddb12e894fe97bf8eeee57e5090"
+      },
+      "initial_fk_position_error_m": 1.1102230246251565e-16,
+      "initial_fk_rotation_error_rad": 2.1794938057238465e-07,
+      "table_bodies": [
+        "work_surface"
+      ],
+      "tabletop": {
+        "height_m": 0.4367599999999999,
+        "xy_lower_m": [
+          -0.8241699999999998,
+          -0.8213899999999998
+        ],
+        "xy_upper_m": [
+          0.3387299999999999,
+          0.9006899999999998
+        ],
+        "source": "horizontal top collision boxes in recorded XML; no task scene instantiated"
+      },
+      "robot_xml": "<mujoco model=\"base\">\n  <compiler angle=\"radian\" meshdir=\"meshes/\" autolimits=\"true\" />\n  <option impratio=\"20\" density=\"1.2\" viscosity=\"2e-05\" cone=\"elliptic\" />\n  <size njmax=\"5000\" nconmax=\"5000\" />\n  <default class=\"main\" />\n  <asset>\n    <mesh name=\"robot0_link0\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link0.stl\" />\n    <mesh name=\"robot0_link1\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link1.stl\" />\n    <mesh name=\"robot0_link2\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link2.stl\" />\n    <mesh name=\"robot0_link3\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link3.stl\" />\n    <mesh name=\"robot0_link4\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link4.stl\" />\n    <mesh name=\"robot0_link5\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link5.stl\" />\n    <mesh name=\"robot0_link6\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link6.stl\" />\n    <mesh name=\"robot0_link7\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/meshes/link7.stl\" />\n    <mesh name=\"robot0_link0_vis_0\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_0.obj\" />\n    <mesh name=\"robot0_link0_vis_1\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_1.obj\" />\n    <mesh name=\"robot0_link0_vis_2\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_2.obj\" />\n    <mesh name=\"robot0_link0_vis_3\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_3.obj\" />\n    <mesh name=\"robot0_link0_vis_4\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_4.obj\" />\n    <mesh name=\"robot0_link0_vis_5\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_5.obj\" />\n    <mesh name=\"robot0_link0_vis_6\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_6.obj\" />\n    <mesh name=\"robot0_link0_vis_7\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_7.obj\" />\n    <mesh name=\"robot0_link0_vis_8\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_8.obj\" />\n    <mesh name=\"robot0_link0_vis_9\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_9.obj\" />\n    <mesh name=\"robot0_link0_vis_10\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_10.obj\" />\n    <mesh name=\"robot0_link0_vis_11\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_11.obj\" />\n    <mesh name=\"robot0_link1_vis\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link1_vis/link1_vis.obj\" />\n    <mesh name=\"robot0_link2_vis\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link2_vis/link2_vis.obj\" />\n    <mesh name=\"robot0_link3_vis_0\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_0.obj\" />\n    <mesh name=\"robot0_link3_vis_1\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_1.obj\" />\n    <mesh name=\"robot0_link3_vis_2\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_2.obj\" />\n    <mesh name=\"robot0_link3_vis_3\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_3.obj\" />\n    <mesh name=\"robot0_link4_vis_0\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_0.obj\" />\n    <mesh name=\"robot0_link4_vis_1\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_1.obj\" />\n    <mesh name=\"robot0_link4_vis_2\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_2.obj\" />\n    <mesh name=\"robot0_link4_vis_3\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_3.obj\" />\n    <mesh name=\"robot0_link5_vis_0\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_0.obj\" />\n    <mesh name=\"robot0_link5_vis_1\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_1.obj\" />\n    <mesh name=\"robot0_link5_vis_2\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_2.obj\" />\n    <mesh name=\"robot0_link6_vis_0\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_0.obj\" />\n    <mesh name=\"robot0_link6_vis_1\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_1.obj\" />\n    <mesh name=\"robot0_link6_vis_2\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_2.obj\" />\n    <mesh name=\"robot0_link6_vis_3\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_3.obj\" />\n    <mesh name=\"robot0_link6_vis_4\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_4.obj\" />\n    <mesh name=\"robot0_link6_vis_5\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_5.obj\" />\n    <mesh name=\"robot0_link6_vis_6\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_6.obj\" />\n    <mesh name=\"robot0_link6_vis_7\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_7.obj\" />\n    <mesh name=\"robot0_link6_vis_8\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_8.obj\" />\n    <mesh name=\"robot0_link6_vis_9\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_9.obj\" />\n    <mesh name=\"robot0_link6_vis_10\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_10.obj\" />\n    <mesh name=\"robot0_link6_vis_11\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_11.obj\" />\n    <mesh name=\"robot0_link6_vis_12\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_12.obj\" />\n    <mesh name=\"robot0_link6_vis_13\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_13.obj\" />\n    <mesh name=\"robot0_link6_vis_14\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_14.obj\" />\n    <mesh name=\"robot0_link6_vis_15\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_15.obj\" />\n    <mesh name=\"robot0_link6_vis_16\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_16.obj\" />\n    <mesh name=\"robot0_link7_vis_0\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_0.obj\" />\n    <mesh name=\"robot0_link7_vis_1\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_1.obj\" />\n    <mesh name=\"robot0_link7_vis_2\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_2.obj\" />\n    <mesh name=\"robot0_link7_vis_3\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_3.obj\" />\n    <mesh name=\"robot0_link7_vis_4\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_4.obj\" />\n    <mesh name=\"robot0_link7_vis_5\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_5.obj\" />\n    <mesh name=\"robot0_link7_vis_6\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_6.obj\" />\n    <mesh name=\"robot0_link7_vis_7\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_7.obj\" />\n    <mesh name=\"gripper0_hand\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/hand.stl\" />\n    <mesh name=\"gripper0_hand_vis\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/hand_vis.stl\" />\n    <mesh name=\"gripper0_finger\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/finger.stl\" />\n    <mesh name=\"gripper0_finger_vis\" file=\"/media/czl/sata/franka_my_code/franka_mujoco/experiments/libero_closed_loop/.venv/lib/python3.12/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/finger_vis.stl\" />\n    </asset>\n  <worldbody>\n    <body name=\"robot0_base\" pos=\"-0.51 0 0.42\" gravcomp=\"0\">\n      <inertial pos=\"0 0 0\" mass=\"0\" diaginertia=\"0 0 0\" />\n      <body name=\"robot0_link0\" pos=\"0 0 0\" gravcomp=\"0\">\n        <inertial pos=\"0 0 0.05\" mass=\"4\" diaginertia=\"0.4 0.4 0.4\" />\n        <geom name=\"robot0_g0_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_0\" />\n        <geom name=\"robot0_g1_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_1\" />\n        <geom name=\"robot0_g2_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_2\" />\n        <geom name=\"robot0_g3_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_3\" />\n        <geom name=\"robot0_g4_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_4\" />\n        <geom name=\"robot0_g5_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_5\" />\n        <geom name=\"robot0_g6_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_6\" />\n        <geom name=\"robot0_g7_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_7\" />\n        <geom name=\"robot0_g8_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_8\" />\n        <geom name=\"robot0_g9_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_9\" />\n        <geom name=\"robot0_g10_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_10\" />\n        <geom name=\"robot0_g11_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link0_vis_11\" />\n        <geom name=\"robot0_link0_collision\" type=\"mesh\" rgba=\"0 0.5 0 1\" mesh=\"robot0_link0\" />\n        <body name=\"robot0_link1\" pos=\"0 0 0.333\" gravcomp=\"0\">\n          <inertial pos=\"0 0 -0.07\" mass=\"3\" diaginertia=\"0.3 0.3 0.3\" />\n          <joint name=\"robot0_joint1\" pos=\"0 0 0\" axis=\"0 0 1\" range=\"-2.8973 2.8973\" armature=\"5\" damping=\"0.1\" frictionloss=\"0.1\" />\n          <geom name=\"robot0_g12_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link1_vis\" />\n          <geom name=\"robot0_link1_collision\" type=\"mesh\" rgba=\"0 0.5 0 1\" mesh=\"robot0_link1\" />\n          <body name=\"robot0_link2\" pos=\"0 0 0\" quat=\"0.707107 -0.707107 0 0\" gravcomp=\"0\">\n            <inertial pos=\"0 -0.1 0\" mass=\"3\" diaginertia=\"0.3 0.3 0.3\" />\n            <joint name=\"robot0_joint2\" pos=\"0 0 0\" axis=\"0 0 1\" range=\"-1.7628 1.7628\" armature=\"2.5\" damping=\"0.1\" frictionloss=\"0.1\" />\n            <geom name=\"robot0_g13_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link2_vis\" />\n            <geom name=\"robot0_link2_collision\" type=\"mesh\" rgba=\"0 0.5 0 1\" mesh=\"robot0_link2\" />\n            <body name=\"robot0_link3\" pos=\"0 -0.316 0\" quat=\"0.707107 0.707107 0 0\" gravcomp=\"0\">\n              <inertial pos=\"0.04 0 -0.05\" mass=\"2\" diaginertia=\"0.2 0.2 0.2\" />\n              <joint name=\"robot0_joint3\" pos=\"0 0 0\" axis=\"0 0 1\" range=\"-2.8973 2.8973\" armature=\"1.66667\" damping=\"0.1\" frictionloss=\"0.1\" />\n              <geom name=\"robot0_g14_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link3_vis_0\" />\n              <geom name=\"robot0_g15_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link3_vis_1\" />\n              <geom name=\"robot0_g16_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link3_vis_2\" />\n              <geom name=\"robot0_g17_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link3_vis_3\" />\n              <geom name=\"robot0_link3_collision\" type=\"mesh\" rgba=\"0 0.5 0 1\" mesh=\"robot0_link3\" />\n              <body name=\"robot0_link4\" pos=\"0.0825 0 0\" quat=\"0.707107 0.707107 0 0\" gravcomp=\"0\">\n                <inertial pos=\"-0.04 0.05 0\" mass=\"2\" diaginertia=\"0.2 0.2 0.2\" />\n                <joint name=\"robot0_joint4\" pos=\"0 0 0\" axis=\"0 0 1\" range=\"-3.0718 -0.0698\" armature=\"1.25\" damping=\"0.1\" frictionloss=\"0.1\" />\n                <geom name=\"robot0_g18_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link4_vis_0\" />\n                <geom name=\"robot0_g19_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link4_vis_1\" />\n                <geom name=\"robot0_g20_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link4_vis_2\" />\n                <geom name=\"robot0_g21_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link4_vis_3\" />\n                <geom name=\"robot0_link4_collision\" type=\"mesh\" rgba=\"0 0.5 0 1\" mesh=\"robot0_link4\" />\n                <body name=\"robot0_link5\" pos=\"-0.0825 0.384 0\" quat=\"0.707107 -0.707107 0 0\" gravcomp=\"0\">\n                  <inertial pos=\"0 0 -0.15\" mass=\"2\" diaginertia=\"0.2 0.2 0.2\" />\n                  <joint name=\"robot0_joint5\" pos=\"0 0 0\" axis=\"0 0 1\" range=\"-2.8973 2.8973\" armature=\"1\" damping=\"0.1\" frictionloss=\"0.1\" />\n                  <geom name=\"robot0_g22_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link5_vis_0\" />\n                  <geom name=\"robot0_g23_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link5_vis_1\" />\n                  <geom name=\"robot0_g24_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link5_vis_2\" />\n                  <geom name=\"robot0_link5_collision\" type=\"mesh\" rgba=\"0 0.5 0 1\" mesh=\"robot0_link5\" />\n                  <body name=\"robot0_link6\" pos=\"0 0 0\" quat=\"0.707107 0.707107 0 0\" gravcomp=\"0\">\n                    <inertial pos=\"0.06 0 0\" mass=\"1.5\" diaginertia=\"0.1 0.1 0.1\" />\n                    <joint name=\"robot0_joint6\" pos=\"0 0 0\" axis=\"0 0 1\" range=\"-0.0175 3.7525\" armature=\"0.833333\" damping=\"0.01\" frictionloss=\"0.1\" />\n                    <geom name=\"robot0_g25_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_0\" />\n                    <geom name=\"robot0_g26_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_1\" />\n                    <geom name=\"robot0_g27_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_2\" />\n                    <geom name=\"robot0_g28_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_3\" />\n                    <geom name=\"robot0_g29_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_4\" />\n                    <geom name=\"robot0_g30_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_5\" />\n                    <geom name=\"robot0_g31_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_6\" />\n                    <geom name=\"robot0_g32_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_7\" />\n                    <geom name=\"robot0_g33_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_8\" />\n                    <geom name=\"robot0_g34_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_9\" />\n                    <geom name=\"robot0_g35_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_10\" />\n                    <geom name=\"robot0_g36_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_11\" />\n                    <geom name=\"robot0_g37_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_12\" />\n                    <geom name=\"robot0_g38_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_13\" />\n                    <geom name=\"robot0_g39_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_14\" />\n                    <geom name=\"robot0_g40_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_15\" />\n                    <geom name=\"robot0_g41_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link6_vis_16\" />\n                    <geom name=\"robot0_link6_collision\" type=\"mesh\" rgba=\"0 0.5 0 1\" mesh=\"robot0_link6\" />\n                    <body name=\"robot0_link7\" pos=\"0.088 0 0\" quat=\"0.707107 0.707107 0 0\" gravcomp=\"0\">\n                      <inertial pos=\"0 0 0.08\" mass=\"0.5\" diaginertia=\"0.05 0.05 0.05\" />\n                      <joint name=\"robot0_joint7\" pos=\"0 0 0\" axis=\"0 0 1\" range=\"-2.8973 2.8973\" armature=\"0.714286\" damping=\"0.01\" frictionloss=\"0.1\" />\n                      <geom name=\"robot0_g42_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link7_vis_0\" />\n                      <geom name=\"robot0_g43_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link7_vis_1\" />\n                      <geom name=\"robot0_g44_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link7_vis_2\" />\n                      <geom name=\"robot0_g45_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link7_vis_3\" />\n                      <geom name=\"robot0_g46_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link7_vis_4\" />\n                      <geom name=\"robot0_g47_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link7_vis_5\" />\n                      <geom name=\"robot0_g48_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link7_vis_6\" />\n                      <geom name=\"robot0_g49_vis\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"robot0_link7_vis_7\" />\n                      <geom name=\"robot0_link7_collision\" type=\"mesh\" rgba=\"0 0.5 0 1\" mesh=\"robot0_link7\" />\n                      <body name=\"robot0_right_hand\" pos=\"0 0 0.1065\" quat=\"0.923785 0 0 -0.382911\" gravcomp=\"0\">\n                        <inertial pos=\"0 0 0\" mass=\"0.5\" diaginertia=\"0.05 0.05 0.05\" />\n                        <body name=\"gripper0_right_gripper\" pos=\"0 0 0\" quat=\"0.707107 0 0 -0.707107\" gravcomp=\"0\">\n                          <inertial pos=\"0 0 0.17\" quat=\"0.707107 0.707107 0 0\" mass=\"0.3\" diaginertia=\"0.09 0.07 0.05\" />\n                          <geom name=\"gripper0_hand_visual\" quat=\"0.707107 0 0 0.707107\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" rgba=\"1 1 1 1\" mesh=\"gripper0_hand_vis\" />\n                          <geom name=\"gripper0_hand_collision\" quat=\"0.707107 0 0 0.707107\" type=\"mesh\" rgba=\"0 0 0.5 1\" mesh=\"gripper0_hand\" />\n                          <site name=\"gripper0_ft_frame\" pos=\"0 0 0\" size=\"0.01\" group=\"1\" rgba=\"1 0 0 -1\" />\n                          <body name=\"gripper0_eef\" pos=\"0 0 0.097\" gravcomp=\"0\">\n                            <site name=\"gripper0_grip_site\" pos=\"0 0 0\" size=\"0.01\" group=\"1\" rgba=\"1 0 0 -0.5\" />\n                            <site name=\"gripper0_ee_x\" pos=\"0.1 0 0\" quat=\"0.707105 0 0.707108 0\" size=\"0.005 0.1\" group=\"1\" type=\"cylinder\" rgba=\"1 0 0 0\" />\n                            <site name=\"gripper0_ee_y\" pos=\"0 0.1 0\" quat=\"0.707105 0.707108 0 0\" size=\"0.005 0.1\" group=\"1\" type=\"cylinder\" rgba=\"0 1 0 0\" />\n                            <site name=\"gripper0_ee_z\" pos=\"0 0 0.1\" size=\"0.005 0.1\" group=\"1\" type=\"cylinder\" rgba=\"0 0 1 0\" />\n                            <site name=\"gripper0_grip_site_cylinder\" pos=\"0 0 0\" size=\"0.005 10\" group=\"1\" type=\"cylinder\" rgba=\"0 1 0 -0.3\" />\n                          </body>\n                          <body name=\"gripper0_leftfinger\" pos=\"0 0 0.0524\" quat=\"0.707107 0 0 0.707107\" gravcomp=\"0\">\n                            <inertial pos=\"0 0 0.05\" mass=\"0.1\" diaginertia=\"0.01 0.01 0.005\" />\n                            <joint name=\"gripper0_finger_joint1\" pos=\"0 0 0\" axis=\"0 1 0\" type=\"slide\" range=\"0 0.04\" armature=\"1\" damping=\"100\" frictionloss=\"1\" />\n                            <geom name=\"gripper0_finger1_visual\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" rgba=\"0.499 0.499 0.499 1\" mesh=\"gripper0_finger_vis\" />\n                            <geom name=\"gripper0_finger1_collision\" type=\"mesh\" contype=\"0\" condim=\"4\" rgba=\"0 0 0.5 1\" mesh=\"gripper0_finger\" />\n                            <body name=\"gripper0_finger_joint1_tip\" pos=\"0 0.0085 0.056\" gravcomp=\"0\">\n                              <inertial pos=\"0 0 0\" quat=\"0 0 0 1\" mass=\"0.01\" diaginertia=\"0.01 0.01 0.01\" />\n                              <geom name=\"gripper0_finger1_pad_collision\" size=\"0.008 0.004 0.008\" pos=\"0 -0.005 -0.015\" quat=\"0 0 0 1\" type=\"box\" friction=\"2 0.05 0.0001\" solref=\"0.01 0.5\" rgba=\"0 0 0.5 1\" />\n                            </body>\n                          </body>\n                          <body name=\"gripper0_rightfinger\" pos=\"0 0 0.0524\" quat=\"0.707107 0 0 0.707107\" gravcomp=\"0\">\n                            <inertial pos=\"0 0 0.05\" mass=\"0.1\" diaginertia=\"0.01 0.01 0.005\" />\n                            <joint name=\"gripper0_finger_joint2\" pos=\"0 0 0\" axis=\"0 1 0\" type=\"slide\" range=\"-0.04 0\" armature=\"1\" damping=\"100\" frictionloss=\"1\" />\n                            <geom name=\"gripper0_finger2_visual\" quat=\"0 0 0 1\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" rgba=\"0.499 0.499 0.499 1\" mesh=\"gripper0_finger_vis\" />\n                            <geom name=\"gripper0_finger2_collision\" quat=\"0 0 0 1\" type=\"mesh\" contype=\"0\" condim=\"4\" rgba=\"0 0 0.5 1\" mesh=\"gripper0_finger\" />\n                            <body name=\"gripper0_finger_joint2_tip\" pos=\"0 -0.0085 0.056\" gravcomp=\"0\">\n                              <inertial pos=\"0 0 0\" quat=\"0 0 0 1\" mass=\"0.01\" diaginertia=\"0.01 0.01 0.01\" />\n                              <geom name=\"gripper0_finger2_pad_collision\" size=\"0.008 0.004 0.008\" pos=\"0 0.005 -0.015\" quat=\"0 0 0 1\" type=\"box\" friction=\"2 0.05 0.0001\" solref=\"0.01 0.5\" rgba=\"0 0 0.5 1\" />\n                            </body>\n                          </body>\n                        </body>\n                      </body>\n                    </body>\n                  </body>\n                </body>\n              </body>\n            </body>\n          </body>\n        </body>\n      </body>\n      </body>\n    <body name=\"work_surface\" pos=\"-0.24271999999999996 0.03964999999999996 -0.78162\"><geom name=\"annotation_tabletop\" type=\"box\" size=\"0.5814499999999999 0.8610399999999998 1.21838\" contype=\"1\" conaffinity=\"1\" /></body></worldbody>\n  <actuator>\n    <general name=\"robot0_torq_j1\" joint=\"robot0_joint1\" ctrlrange=\"-80 80\" actdim=\"0\" />\n    <general name=\"robot0_torq_j2\" joint=\"robot0_joint2\" ctrlrange=\"-80 80\" actdim=\"0\" />\n    <general name=\"robot0_torq_j3\" joint=\"robot0_joint3\" ctrlrange=\"-80 80\" actdim=\"0\" />\n    <general name=\"robot0_torq_j4\" joint=\"robot0_joint4\" ctrlrange=\"-80 80\" actdim=\"0\" />\n    <general name=\"robot0_torq_j5\" joint=\"robot0_joint5\" ctrlrange=\"-80 80\" actdim=\"0\" />\n    <general name=\"robot0_torq_j6\" joint=\"robot0_joint6\" ctrlrange=\"-12 12\" actdim=\"0\" />\n    <general name=\"robot0_torq_j7\" joint=\"robot0_joint7\" ctrlrange=\"-12 12\" actdim=\"0\" />\n    <general name=\"gripper0_gripper_finger_joint1\" joint=\"gripper0_finger_joint1\" ctrlrange=\"0 0.04\" forcerange=\"-20 20\" actdim=\"0\" biastype=\"affine\" gainprm=\"1000 0 0 0 0 0 0 0 0 0\" biasprm=\"0 -1000 0 0 0 0 0 0 0 0\" />\n    <general name=\"gripper0_gripper_finger_joint2\" joint=\"gripper0_finger_joint2\" ctrlrange=\"-0.04 0\" forcerange=\"-20 20\" actdim=\"0\" biastype=\"affine\" gainprm=\"1000 0 0 0 0 0 0 0 0 0\" biasprm=\"0 -1000 0 0 0 0 0 0 0 0\" />\n  </actuator>\n  </mujoco>",
+      "execution_mode": "kinematic",
+      "task_interaction": false
+    },
+    "hard_failure_reasons": [],
+    "trajectory_kinematics": {
+      "samples": 126,
+      "mean_joint_velocity_rad_s": 0.44989419488508703,
+      "mean_joint_acceleration_rad_s2": 2.387802995430923,
+      "mean_joint_jerk_rad_s3": 73.88115751707659,
+      "mean_manipulability": 0.03996582800030873,
+      "total_joint_travel_rad": 2.828735780239505,
+      "minimum_sigma_min_full": 0.15496126785496067,
+      "minimum_sigma_min_velocity_normalized": 0.6848578500399088
+    },
+    "dataset_source_frame_count": 0,
+    "counterfactual_cache_version": 83,
+    "sigma_min_normalization": {
+      "version": "velocity_capability_v1",
+      "formula": "sigma_min(Dx^-1 Jg Dq)",
+      "task_reference_velocities": [
+        0.15,
+        0.15,
+        0.15,
+        0.7853981633974483,
+        0.7853981633974483,
+        0.7853981633974483
+      ],
+      "joint_velocity_limits_rad_s": [
+        2.175,
+        2.175,
+        2.175,
+        2.175,
+        2.61,
+        2.61,
+        2.61
+      ],
+      "dimensionless": true,
+      "full_geometric_jacobian": true
+    }
+  },
+  "seconds": 0.604186135999953
+}

@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "id": "kl28cdu6bv1mywr8n5wv0",
+  "state": "RUNNING",
+  "name": "Pi05_libero_joint13_successmix20_NoState_LoRA_6gpu_bs72_10k_20261109",
+  "url": "https://swanlab.cn/@caozilin/openpi/runs/kl28cdu6bv1mywr8n5wv0",
+  "observed_at": "2026-11-09T20:39:36.809711+08:00",
+  "scope": "Cloud experiment exists and is running; does not prove10000 steps or metric sync yet"
+}

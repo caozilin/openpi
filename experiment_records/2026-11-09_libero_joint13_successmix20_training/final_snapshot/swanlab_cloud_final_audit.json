@@ -1,0 +1,22 @@
+{
+  "metrics_csv_sha256": "ff934fc82800c93d366bf3a83823941f778dbe7699f9559a033490b13b69e8bf",
+  "complete": true,
+  "id": "kl28cdu6bv1mywr8n5wv0",
+  "url": "https://swanlab.cn/@caozilin/openpi/runs/kl28cdu6bv1mywr8n5wv0",
+  "cloud_state": "FINISHED",
+  "cloud_rows": 1000,
+  "keys": [
+    "loss",
+    "loss/action",
+    "loss/rotation_tolerance",
+    "loss_weighted/action",
+    "loss_weighted/rotation_tolerance",
+    "loss/total",
+    "loss/action_nominal_contribution",
+    "loss/action_reweighted_contribution",
+    "batch/action_loss_weight_mean",
+    "batch/reweighted_action_fraction"
+  ],
+  "last_step": 10000,
+  "all_cloud_values_match_local_logs": true
+}

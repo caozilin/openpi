@@ -1,0 +1,20 @@
+{
+  "state": "completed_short_run",
+  "launch_unix": 1793265291.0796697,
+  "duration_after_first_progress_seconds": 900,
+  "first_progress_unix": 1793265448.2734258,
+  "last_step": 350,
+  "stop_requested": true,
+  "config": "pi05_franka_mujoco_state_action7_lora_bs24_6gpu",
+  "experiment": "Pi05_nominal100_state_action7_LoRA_6gpu_bs24_15min_20261029",
+  "checkpoint_dir": "/mnt/SharedData/czl/checkpoints/pi05_franka_mujoco_state_action7_lora_bs24_6gpu/Pi05_nominal100_state_action7_LoRA_6gpu_bs24_15min_20261029",
+  "pid": 3371758,
+  "supervisor_pid": 3371746,
+  "postcompile_elapsed_seconds": 902.4701721668243,
+  "stop_reason": "requested_15_minute_training_budget",
+  "stop_unix": 1793266350.743598,
+  "returncode": -2,
+  "finished_unix": 1793266356.243084,
+  "wall_seconds": 1065.163420888828,
+  "finished_shanghai": "2026-10-29T17:32:36.243119+08:00"
+}

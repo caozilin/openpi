@@ -1,0 +1,50 @@
+--- /media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_predicted_libero_local.py
++++ /media/czl/sata/franka_my_code/openpi/examples/libero/eval_joint13_nominal_libero_local.py
+@@ -1,11 +1,11 @@
+-"""Evaluate the audited joint13 model using learned tolerance bounds, six local clients."""
++"""Evaluate the audited joint13 model with tolerance disabled, six local clients."""
+ from pathlib import Path
+ import argparse,collections,datetime,fcntl,hashlib,json,os,signal,subprocess,sys,time,traceback
+ ROOT=Path(__file__).resolve().parents[2]
+-DEFAULT=ROOT/'data/libero_evaluation/pi05_joint13_successmix20_10000_predtol_hold20_40tasks_10seeds_20261110'
++DEFAULT=ROOT/'data/libero_evaluation/pi05_joint13_successmix20_10000_nominal_hold20_40tasks_10seeds_20261110'
+ PYTHON=ROOT.parent/'franka_mujoco/experiments/libero_closed_loop/.venv/bin/python'
+ FROZEN=DEFAULT/'frozen_shared_runtime'
+-IDENTITY='libero_joint13_successmix20_step10000_predtol_seed0to9_20261110'
++IDENTITY='libero_joint13_successmix20_step10000_nominal_seed0to9_20261110'
+ SUITES=['libero_spatial','libero_object','libero_goal','libero_10'];LIMITS=[220,280,300,520]
+ PORTS=list(range(18760,18766))
+ def read(p):return json.loads(p.read_text())
+@@ -21,9 +21,9 @@
+  assert selected==expected and len(request['selected_episodes'])==400
+  assert request['worker_assignments']==assignments() and request['expected_episodes']==400
+  assert request['checkpoint_step']==10000 and request['seeds']==list(range(10))
+- assert request['client_location']=='local' and request['tolerance_enabled']
++ assert request['client_location']=='local' and request['tolerance_enabled'] is False
+  assert request['max_consecutive_solver_failures']==20
+- assert request['tolerance_bounds_policy']=='model_joint13_directional_bounds_with_shared_phase_guard'
++ assert request['tolerance_bounds_policy']=='disabled_model_bounds_diagnostic_only'
+  assert request['success_criterion']=='first_native_success' and request['post_success_steps']==20
+  for path,expected_sha in request['source_sha256'].items():assert sha(Path(path))==expected_sha,path
+  for path,expected_sha in request['preserved_artifact_sha256'].items():assert sha(Path(path))==expected_sha,path
+@@ -43,7 +43,7 @@
+  from examples.libero.tasktol_actions import decode_tasktol_action
+  from examples.libero.solver_failure_hold import SolverFailureHoldSession
+  from examples.libero.success_continuation import SuccessContinuation,validate_request as validate_success_request
+- from examples.libero.predicted_tolerance_policy import PredictedTolerancePolicy,decode_prediction,step_with_prediction,POLICY
++ from examples.libero.nominal_joint13_policy import NominalDiagnosticPolicy as PredictedTolerancePolicy,decode_prediction,step_without_tolerance as step_with_prediction,POLICY
+  from openpi_client import msgpack_numpy
+  import websockets.sync.client
+  class EvaluationClient:
+@@ -124,9 +124,9 @@
+     result={'complete':True,'eval_identity':IDENTITY,'suite':suite,'task_id':task_id,'task_name':task.name,'language':task.language,'seed':seed,'initial_state_index':seed,'initial_state_sha256':hashlib.sha256(np.asarray(initial).tobytes()).hexdigest(),'success':success,'termination':reason,'steps':len(rows),'max_steps':LIMITS[si],'settle_steps':10,'replan_steps':5,'inference_calls':chunk,'inference_wall_seconds':sum(infer_times),'elapsed_seconds':time.monotonic()-started,'controller':'frozen shared MuJoCo joint servo + default IPOPT, confirmed task masks +/-30deg','control_hz':20,'physics_hz':500,'gripper_deadband':.5,'state_input_enabled':False,'server_metadata':metadata,'servo':control.servo_metadata,'servo_statistics':control.servo_statistics,'finished_at':datetime.datetime.now().astimezone().isoformat()}
+     result.update(session.policy_metadata())
+     result.update(continuation.metadata())
+-    result['controller']='shared MuJoCo joint servo + default IPOPT, model predicted directional bounds and causal phase guard'
++    result['controller']='shared MuJoCo joint servo + default IPOPT, tolerance disabled; model bounds recorded only'
+     result.update(tolerance_settings)
+-    result.update(eval_identity=result_identity,tolerance_enabled=True,training_request_sha256=run_request['training_request_sha256'])
++    result.update(eval_identity=result_identity,tolerance_enabled=False,training_request_sha256=run_request['training_request_sha256'])
+     result['tolerance_order']=['rx-','rx+','ry-','ry+','rz-','rz+']
+     dump(result_path,result);print(json.dumps({k:result[k] for k in ['suite','task_id','seed','success','termination','steps']}),flush=True)
+    except Exception:

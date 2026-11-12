@@ -1,0 +1,17 @@
+{
+  "schema_version": "18.0",
+  "training_scene_id": "libero_10",
+  "training_task_id": "task_03",
+  "scene": "libero_10",
+  "task": "task_03",
+  "robot_uid": "panda",
+  "execution_mode": "kinematic",
+  "annotation_count": 1,
+  "annotations": [
+    {
+      "seed": 0,
+      "episode_index": 1565,
+      "path": "demo_1/tolerance_annotation.json"
+    }
+  ]
+}

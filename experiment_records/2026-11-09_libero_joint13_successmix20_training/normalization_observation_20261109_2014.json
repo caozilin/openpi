@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-09T20:14:23.623878+08:00",
+  "classification": "progress_and_verified_wait",
+  "normalization_batches_observed": 2351,
+  "normalization_total_batches": 4338,
+  "normalization_progress_percent": 54.2,
+  "parent_pid": 3312670,
+  "normalization_pid": 3312672,
+  "actual_worker_pids": [
+    3314577,
+    3314638,
+    3314684,
+    3314774,
+    3314836,
+    3314886,
+    3315007,
+    3315073
+  ],
+  "remote_finish_supervisor_pid": 3210109,
+  "all_real_processes_observed": true,
+  "gpu_training_started": false,
+  "historical_observation_issue": "last turn approval service quota prevented a remote observation; retry now succeeded; no task restart",
+  "goal_complete": false
+}

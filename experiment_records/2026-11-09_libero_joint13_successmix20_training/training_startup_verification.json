@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "observed_at": "2026-11-09T20:39:01.023269+08:00",
+  "scope": "4x protocol successfully deployed, normalization completed and reused; actual trainer config and online SwanLab initialized; first metrics pending",
+  "parent": 3339995,
+  "trainer_pid": 3339998,
+  "finisher": 3339996,
+  "request_sha256": "4c9a7fc7d88dc7c1c07df20c7276a264ed6f9df052cca151318370c8a7268fb0",
+  "nominal_action_weight": 1,
+  "tolerance_trajectory_action_weight": 4,
+  "tolerance6_group_weight": 0.5,
+  "swanlab_id": "kl28cdu6bv1mywr8n5wv0",
+  "swanlab_url": "https://swanlab.cn/@caozilin/openpi/runs/kl28cdu6bv1mywr8n5wv0",
+  "normalization": {
+    "complete": true,
+    "inputs_sha256": "8a5fea567a2ed034571f5ab9ddddf78d0a24e63269ae06e726e8ce7ef7b6591c",
+    "stats_path": "/mnt/SharedData/czl/assets/pi05_libero_joint13_successmix20_nostate_6gpu_bs72/caozilin/libero_reconstructed_joint13_successmix20_20261109/norm_stats.json",
+    "stats_sha256": "e26cd8d5baade92e2f081435cb497df85f569439fa1e12e4f93fa7b66d728e42"
+  },
+  "gpu_snapshot": "0, 329, 0\n1, 313, 0\n2, 313, 0\n3, 313, 0\n4, 313, 0\n5, 309, 0\n6, 328, 0\n"
+}

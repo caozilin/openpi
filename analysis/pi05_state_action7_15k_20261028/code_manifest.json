@@ -1,0 +1,7 @@
+{
+  "config_before_sha256": "45cf03d7dc2d769e25311f64d6599be7d9d2d33cd23ff00945301b0bacea14e3",
+  "files": {
+    "src/openpi/training/config.py": "00c1cb73451dffd28c83bcc5d427ef2a5be47aea16827a37ac946d5daf708938",
+    "examples/franka_mujoco/TRAIN_PI05_STATE_ACTION7_ZH.md": "6760688d5cd74b2aac55f058ffc895cd880c22c0a2419154ffa66d4fdf4820bc"
+  }
+}

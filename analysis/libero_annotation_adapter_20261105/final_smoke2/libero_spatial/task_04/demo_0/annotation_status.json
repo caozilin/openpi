@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "status": "labeled",
+  "source_episode_index": 187,
+  "suite": "libero_spatial",
+  "task_id": 4,
+  "demo": "demo_0",
+  "frames": 152,
+  "semantic_subtasks": 1,
+  "extra": 2,
+  "preflight": false,
+  "label_policy": "speed_best_feasible_search_caps_v1",
+  "labels": "/media/czl/sata/franka_my_code/openpi/analysis/libero_annotation_adapter_20261105/final_smoke2/libero_spatial/task_04/demo_0/tolerance_labels.json"
+}

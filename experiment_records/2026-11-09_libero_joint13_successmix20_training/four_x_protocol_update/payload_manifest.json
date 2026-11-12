@@ -1,0 +1,13 @@
+{
+  "sha256": {
+    "src/openpi/policies/libero_joint_policy.py": "234a9885febb4e9e79e1d555957fb6d8a70f5d1f2e64afd5bdaab4774c135389",
+    "src/openpi/training/libero_joint.py": "e2027309b4601440f851454403153859a2d70ffc22de9261c6bc3640b770aa0e",
+    "src/openpi/models/pi0.py": "b0362f10e6b02eef1089e7e1e88a05d2f180c3c76cbd02c805e6c6ad58d2e80c",
+    "examples/libero/train_successmix20_joint13_pi05_server.py": "93c4ef84ed185b7f940b49c96434c9b26b49f2adfd590292fd94d2acb1ddffb8",
+    "examples/libero/audit_successmix20_joint13_training_server.py": "ffeeb6fa4ea99cbc6ff9eba96659671647e95623a25617f6af31c66b482af096",
+    "examples/libero/finish_successmix20_joint13_training_server.py": "f5174d511fce2e173a912b416f4411d9c60e7906c1a364c3d254de14339bc455",
+    "examples/libero/preflight_successmix20_four_x_server.py": "11e781d1d59440af179a0727c752d513ac2e1ad67ba0b0450141d84db79de143"
+  },
+  "user_authorized_change": "4x tolerance trajectory action7 loss; nominal1; rotation_tolerance6 group.5 unchanged; online SwanLab",
+  "created_at": "2026-11-09T20:26:38.059119+08:00"
+}

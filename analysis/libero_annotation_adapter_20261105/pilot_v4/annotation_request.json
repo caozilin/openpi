@@ -1,0 +1,56 @@
+{
+  "scope": "pure offline kinematics; self and table geometry; no physics or policy inference",
+  "planned_episodes": 6,
+  "control_hz": 20,
+  "workers": 2,
+  "sources": [
+    {
+      "episode_index": 0,
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "demo": "demo_0",
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/00/demo_0",
+      "frames": 97
+    },
+    {
+      "episode_index": 187,
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "demo": "demo_0",
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_spatial/04/demo_0",
+      "frames": 152
+    },
+    {
+      "episode_index": 1101,
+      "suite": "libero_goal",
+      "task_id": 3,
+      "demo": "demo_0",
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_goal/03/demo_0",
+      "frames": 169
+    },
+    {
+      "episode_index": 1565,
+      "suite": "libero_10",
+      "task_id": 3,
+      "demo": "demo_1",
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_10/03/demo_1",
+      "frames": 227
+    },
+    {
+      "episode_index": 1689,
+      "suite": "libero_10",
+      "task_id": 6,
+      "demo": "demo_0",
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261101_full_v1/episodes/libero_10/06/demo_0",
+      "frames": 202
+    },
+    {
+      "episode_index": 1734,
+      "suite": "libero_10",
+      "task_id": 7,
+      "demo": "demo_0",
+      "folder": "/media/czl/sata/franka_my_code/openpi/data/libero_tasktol_joint_servo/20261025_success10_v1/episodes/libero_10/07/demo_0",
+      "frames": 241
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "complete": true,
+  "pipeline_pid": 9702,
+  "annotation_pid": 9704,
+  "real_search_pids": [
+    9755,
+    9756,
+    9757,
+    9758,
+    9759,
+    9760
+  ],
+  "prepared_checked": 6,
+  "zero_trials_checked": 6,
+  "cache_version": 85,
+  "all_request_source_hashes_match": true,
+  "zero_physics": true,
+  "epsilon_m": 0.0001,
+  "not_final_audit": true
+}
