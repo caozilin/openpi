@@ -1,3 +1,5 @@
+import dataclasses
+import json
 import logging
 import os
 import pathlib
@@ -5,6 +7,8 @@ from typing import Any
 
 import jax.numpy as jnp
 
+from openpi.models import pi0_config
+from openpi.models import rtc
 import openpi.models.model as _model
 import openpi.policies.policy as _policy
 import openpi.shared.download as download
@@ -44,6 +48,22 @@ def create_trained_policy(
     """
     repack_transforms = repack_transforms or transforms.Group()
     checkpoint_dir = download.maybe_download(str(checkpoint_dir))
+    ttc_path = checkpoint_dir / "assets" / "ttc.json"
+    if ttc_path.exists():
+        ttc_metadata = json.loads(ttc_path.read_text())
+        if ttc_metadata.get("version") != 1 or not isinstance(train_config.model, pi0_config.Pi0Config):
+            raise ValueError("Unsupported TTC checkpoint metadata or model")
+        ttc_values = dict(ttc_metadata["config"])
+        ttc_values["target_delay_probabilities"] = tuple(ttc_values["target_delay_probabilities"])
+        # A checkpoint saved during ordinary warmup has never seen a positive
+        # prefix. Keep serving it as an ordinary policy until TTC updates begin.
+        if ttc_metadata["completed_step"] - 1 <= ttc_values["warmup_fraction"] * ttc_metadata["total_training_steps"]:
+            ttc_values["enabled"] = False
+        train_config = dataclasses.replace(
+            train_config, model=dataclasses.replace(train_config.model, ttc=rtc.TTCConfig(**ttc_values))
+        )
+    elif getattr(getattr(train_config.model, "ttc", None), "enabled", False):
+        raise ValueError("TTC serving requires checkpoint/assets/ttc.json from TTC training")
 
     # Check if this is a PyTorch model by looking for model.safetensors
     weight_path = os.path.join(checkpoint_dir, "model.safetensors")
@@ -54,7 +74,14 @@ def create_trained_policy(
         model = train_config.model.load_pytorch(train_config, weight_path)
         model.paligemma_with_expert.to_bfloat16_for_selected_params("bfloat16")
     else:
-        model = train_config.model.load(_model.restore_params(checkpoint_dir / "params", dtype=jnp.bfloat16))
+        params = _model.restore_params(checkpoint_dir / "params", dtype=jnp.bfloat16)
+        # The server accepts a preset name; recover a training-time CLI architecture override
+        # from the weights, including checkpoints saved with TTC disabled or during warmup.
+        if "tolerance_in_proj" in params or "tolerance_out_proj" in params:
+            if not isinstance(train_config.model, pi0_config.Pi0Config):
+                raise ValueError("Tolerance-token checkpoint requires a TaskTol pi05 preset")
+            train_config = dataclasses.replace(train_config, model=dataclasses.replace(train_config.model, tolerance_tokens=True))
+        model = train_config.model.load(params)
     data_config = train_config.data.create(train_config.assets_dirs, train_config.model)
     if norm_stats is None:
         # We are loading the norm stats from the checkpoint instead of the config assets dir to make sure

@@ -10,6 +10,7 @@ from libero.libero import get_libero_path
 from libero.libero.envs import OffScreenRenderEnv
 import numpy as np
 from openpi_client import image_tools
+from openpi_client import ttc_action_chunk_broker
 from openpi_client import websocket_client_policy as _websocket_client_policy
 import tqdm
 import tyro
@@ -27,6 +28,8 @@ class Args:
     port: int = 8000
     resize_size: int = 224
     replan_steps: int = 5
+    ttc: bool = False
+    ttc_delay_steps: int = 2
 
     #################################################################################################################
     # LIBERO environment-specific parameters
@@ -71,6 +74,8 @@ def eval_libero(args: Args) -> None:
         raise ValueError(f"Unknown task suite: {args.task_suite_name}")
 
     client = _websocket_client_policy.WebsocketClientPolicy(args.host, args.port)
+    if args.ttc:
+        client = ttc_action_chunk_broker.TTCActionChunkBroker(client, args.replan_steps, args.ttc_delay_steps)
 
     # Start evaluation
     total_episodes, total_successes = 0, 0
@@ -92,6 +97,8 @@ def eval_libero(args: Args) -> None:
             # Reset environment
             env.reset()
             action_plan = collections.deque()
+            if args.ttc:
+                client.reset()
 
             # Set initial states
             obs = env.set_init_state(initial_states[episode_idx])
@@ -124,7 +131,7 @@ def eval_libero(args: Args) -> None:
                     # Save preprocessed image for replay video
                     replay_images.append(img)
 
-                    if not action_plan:
+                    if args.ttc or not action_plan:
                         # Finished executing previous action chunk -- compute new chunk
                         # Prepare observations dict
                         element = {
@@ -141,11 +148,14 @@ def eval_libero(args: Args) -> None:
                         }
 
                         # Query model to get action
-                        action_chunk = client.infer(element)["actions"]
-                        assert (
-                            len(action_chunk) >= args.replan_steps
-                        ), f"We want to replan every {args.replan_steps} steps, but policy only predicts {len(action_chunk)} steps."
-                        action_plan.extend(action_chunk[: args.replan_steps])
+                        if args.ttc:
+                            action_plan.append(client.infer(element)["actions"])
+                        else:
+                            action_chunk = client.infer(element)["actions"]
+                            assert (
+                                len(action_chunk) >= args.replan_steps
+                            ), f"We want to replan every {args.replan_steps} steps, but policy only predicts {len(action_chunk)} steps."
+                            action_plan.extend(action_chunk[: args.replan_steps])
 
                     action = action_plan.popleft()
 
@@ -161,6 +171,8 @@ def eval_libero(args: Args) -> None:
                     logging.error(f"Caught exception: {e}")
                     break
 
+            if args.ttc:
+                client.reset()
             task_episodes += 1
             total_episodes += 1
 
@@ -184,6 +196,8 @@ def eval_libero(args: Args) -> None:
 
     logging.info(f"Total success rate: {float(total_successes) / float(total_episodes)}")
     logging.info(f"Total episodes: {total_episodes}")
+    if args.ttc:
+        client.close()
 
 
 def _get_libero_env(task, resolution, seed):

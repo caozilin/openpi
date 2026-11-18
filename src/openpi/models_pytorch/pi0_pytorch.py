@@ -84,6 +84,8 @@ def make_att_2d_masks(pad_masks, att_masks):
 class PI0Pytorch(nn.Module):
     def __init__(self, config):
         super().__init__()
+        if getattr(config, "tolerance_tokens", False):
+            raise ValueError("TaskTol tolerance tokens require the JAX implementation")
         self.config = config
         self.pi05 = config.pi05
 

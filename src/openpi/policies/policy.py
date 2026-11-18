@@ -51,9 +51,22 @@ class Policy(BasePolicy):
         self._input_transform = _transforms.compose(transforms)
         self._output_transform = _transforms.compose(output_transforms)
         self._sample_kwargs = sample_kwargs or {}
-        self._metadata = metadata or {}
+        self._metadata = dict(metadata or {})
         self._is_pytorch_model = is_pytorch
         self._pytorch_device = pytorch_device
+        self._ttc = getattr(model, "ttc", None)
+        if self._ttc is not None and self._ttc.enabled:
+            if is_pytorch:
+                raise ValueError("TTC serving currently supports JAX only")
+            if any(isinstance(transform, _transforms.DeltaActions) for transform in transforms):
+                raise ValueError("TTC client priors require observation-independent action coordinates")
+            self._metadata["ttc"] = {
+                "version": 1,
+                "space": "model_normalized",
+                "action_horizon": model.action_horizon,
+                "max_delay": self._ttc.max_delay,
+                "blocks": dict(getattr(model, "block_dims", {"actions": model.action_dim})),
+            }
 
         if self._is_pytorch_model:
             self._model = self._model.to(pytorch_device)
@@ -68,6 +81,8 @@ class Policy(BasePolicy):
     def infer(self, obs: dict, *, noise: np.ndarray | None = None) -> dict:  # type: ignore[misc]
         # Make a copy since transformations may modify the inputs in place.
         inputs = jax.tree.map(lambda x: x, obs)
+        ttc_request = inputs.pop("_ttc", None)
+        ttc_kwargs = self._ttc_sample_kwargs(ttc_request) if ttc_request is not None else {}
         inputs = self._input_transform(inputs)
         if not self._is_pytorch_model:
             # Make a batch and convert to jax.Array.
@@ -80,6 +95,7 @@ class Policy(BasePolicy):
 
         # Prepare kwargs for sample_actions
         sample_kwargs = dict(self._sample_kwargs)
+        sample_kwargs.update(ttc_kwargs)
         if noise is not None:
             noise = torch.from_numpy(noise).to(self._pytorch_device) if self._is_pytorch_model else jnp.asarray(noise)
 
@@ -99,11 +115,50 @@ class Policy(BasePolicy):
         else:
             outputs = jax.tree.map(lambda x: np.asarray(x[0, ...]), outputs)
 
+        # Split model-space priors before physical unnormalization or output transforms.
+        ttc_blocks = None
+        if ttc_request is not None:
+            ttc_blocks = {}
+            offset = 0
+            for name, width in self._metadata["ttc"]["blocks"].items():
+                ttc_blocks[name] = outputs["actions"][:, offset : offset + width].copy()
+                offset += width
         outputs = self._output_transform(outputs)
+        if ttc_blocks is not None:
+            outputs["ttc"] = {"version": 1, "space": "model_normalized", "blocks": ttc_blocks}
         outputs["policy_timing"] = {
             "infer_ms": model_time * 1000,
         }
         return outputs
+
+    def _ttc_sample_kwargs(self, request: dict) -> dict:
+        protocol = self._metadata.get("ttc", {})
+        if protocol.get("version") != 1 or self._ttc is None or not self._ttc.enabled:
+            raise ValueError("This policy does not support TTC requests")
+        if (not isinstance(request, dict) or request.get("version") != 1
+                or request.get("space") != "model_normalized"):
+            raise ValueError("Invalid TTC request version or coordinate space")
+        delay = request.get("delay")
+        if type(delay) is not int or not 0 <= delay <= self._ttc.max_delay:
+            raise ValueError("TTC delay exceeds the trained range")
+        blocks = request.get("prefixes")
+        expected_blocks = protocol["blocks"]
+        if not isinstance(blocks, dict):
+            raise ValueError("TTC prefixes must be a dictionary of model-space blocks")
+        if not blocks and delay == 0:
+            return {}
+        if set(blocks) != set(expected_blocks):
+            raise ValueError(f"TTC requires exactly these prior blocks: {tuple(expected_blocks)}")
+        horizon = self._model.action_horizon
+        packed = np.zeros((horizon, self._model.action_dim), dtype=np.float32)
+        offset = 0
+        for name, width in expected_blocks.items():
+            values = np.asarray(blocks[name])
+            if values.shape != (horizon, width) or not np.issubdtype(values.dtype, np.floating) or not np.isfinite(values).all():
+                raise ValueError(f"TTC {name} prefix must be finite floating point with shape {(horizon, width)}")
+            packed[:, offset : offset + width] = values
+            offset += width
+        return {"action_prefix": jnp.asarray(packed)[None], "prefix_lengths": jnp.asarray([delay], dtype=jnp.int32)}
 
     @property
     def metadata(self) -> dict[str, Any]:

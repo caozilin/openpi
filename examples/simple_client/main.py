@@ -5,6 +5,7 @@ import pathlib
 import time
 
 import numpy as np
+from openpi_client import ttc_action_chunk_broker
 from openpi_client import websocket_client_policy as _websocket_client_policy
 import polars as pl
 import rich
@@ -35,6 +36,9 @@ class Args:
     api_key: str | None = None
     # Number of steps to run the policy for.
     num_steps: int = 20
+    ttc: bool = False
+    ttc_delay_steps: int = 2
+    replan_steps: int = 5
     # Path to save the timings to a parquet file. (e.g., timing.parquet)
     timing_file: pathlib.Path | None = None
     # Environment to run the policy in.
@@ -128,6 +132,8 @@ def main(args: Args) -> None:
         api_key=args.api_key,
     )
     logger.info(f"Server metadata: {policy.get_server_metadata()}")
+    if args.ttc:
+        policy = ttc_action_chunk_broker.TTCActionChunkBroker(policy, args.replan_steps, args.ttc_delay_steps)
 
     # Send a few observations to make sure the model is loaded.
     for _ in range(2):
@@ -144,6 +150,8 @@ def main(args: Args) -> None:
         for key, value in action.get("policy_timing", {}).items():
             timing_recorder.record(f"policy_{key}", value)
 
+    if args.ttc:
+        policy.close()
     timing_recorder.print_all_stats()
 
     if args.timing_file is not None:

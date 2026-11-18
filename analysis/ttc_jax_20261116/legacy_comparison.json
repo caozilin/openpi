@@ -1,0 +1,20 @@
+[
+  {
+    "dtype": "float32",
+    "parameter_tree_equal": true,
+    "legacy_load_passed": true,
+    "disabled_loss_bitwise_equal": true,
+    "disabled_input_grad_bitwise_equal": true,
+    "disabled_sample_bitwise_equal": true,
+    "ttc_sample_prefix_exact": true
+  },
+  {
+    "dtype": "bfloat16",
+    "parameter_tree_equal": true,
+    "legacy_load_passed": true,
+    "disabled_loss_bitwise_equal": true,
+    "disabled_input_grad_bitwise_equal": true,
+    "disabled_sample_bitwise_equal": true,
+    "ttc_sample_prefix_exact": true
+  }
+]

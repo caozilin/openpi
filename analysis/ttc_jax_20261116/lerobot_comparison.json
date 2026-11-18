@@ -1,0 +1,170 @@
+[
+  {
+    "dtype": "<class 'jax.numpy.float32'>",
+    "action_dim": 7,
+    "delays": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_flow_absolute_difference": 2.384185791015625e-07,
+    "jax_loss": 2.511497974395752,
+    "lerobot_loss": 2.511497735977173,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.float32'>",
+    "action_dim": 7,
+    "delays": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "max_flow_absolute_difference": 1.1920928955078125e-07,
+    "jax_loss": 3.1307106018066406,
+    "lerobot_loss": 3.1307103633880615,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.float32'>",
+    "action_dim": 7,
+    "delays": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "max_flow_absolute_difference": 2.384185791015625e-07,
+    "jax_loss": 3.151566743850708,
+    "lerobot_loss": 3.151566743850708,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.float32'>",
+    "action_dim": 32,
+    "delays": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_flow_absolute_difference": 2.384185791015625e-07,
+    "jax_loss": 2.9736201763153076,
+    "lerobot_loss": 2.973620653152466,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.float32'>",
+    "action_dim": 32,
+    "delays": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "max_flow_absolute_difference": 2.384185791015625e-07,
+    "jax_loss": 3.1086699962615967,
+    "lerobot_loss": 3.108670473098755,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.float32'>",
+    "action_dim": 32,
+    "delays": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "max_flow_absolute_difference": 2.384185791015625e-07,
+    "jax_loss": 3.1044812202453613,
+    "lerobot_loss": 3.1044812202453613,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.bfloat16'>",
+    "action_dim": 7,
+    "delays": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_flow_absolute_difference": 0.0,
+    "jax_loss": 3.3990108966827393,
+    "lerobot_loss": 3.3990108966827393,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.bfloat16'>",
+    "action_dim": 7,
+    "delays": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "max_flow_absolute_difference": 0.0,
+    "jax_loss": 2.6846890449523926,
+    "lerobot_loss": 2.6846885681152344,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.bfloat16'>",
+    "action_dim": 7,
+    "delays": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "max_flow_absolute_difference": 0.0,
+    "jax_loss": 2.3924944400787354,
+    "lerobot_loss": 2.3924944400787354,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.bfloat16'>",
+    "action_dim": 32,
+    "delays": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_flow_absolute_difference": 0.0,
+    "jax_loss": 2.864626884460449,
+    "lerobot_loss": 2.864626884460449,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.bfloat16'>",
+    "action_dim": 32,
+    "delays": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "max_flow_absolute_difference": 0.0,
+    "jax_loss": 2.9915771484375,
+    "lerobot_loss": 2.991576910018921,
+    "passed": true
+  },
+  {
+    "dtype": "<class 'jax.numpy.bfloat16'>",
+    "action_dim": 32,
+    "delays": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "max_flow_absolute_difference": 0.0,
+    "jax_loss": 3.031881332397461,
+    "lerobot_loss": 3.031881332397461,
+    "passed": true
+  }
+]

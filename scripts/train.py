@@ -128,7 +128,12 @@ def train_step(
     def loss_fn(
         model: _model.BaseModel, rng: at.KeyArrayLike, observation: _model.Observation, actions: _model.Actions
     ):
-        chunked_loss, chunked_loss_info = model.compute_loss_with_breakdown(rng, observation, actions, train=True)
+        ttc_kwargs = {}
+        if getattr(getattr(config.model, "ttc", None), "enabled", False):
+            ttc_kwargs = {"training_step": state.step, "total_training_steps": config.num_train_steps}
+        chunked_loss, chunked_loss_info = model.compute_loss_with_breakdown(
+            rng, observation, actions, train=True, **ttc_kwargs
+        )
         loss_info = {name: jnp.mean(value) for name, value in chunked_loss_info.items()}
         return jnp.mean(chunked_loss), loss_info
 
@@ -389,7 +394,15 @@ def main(config: _config.TrainConfig):
             # Keep training and all validation metrics aligned to the same completed step.
             swanlab.log(step_metrics, step=completed_step)
         if save_checkpoint:
-            _checkpoints.save_state(checkpoint_manager, train_state, data_loader, completed_step)
+            ttc_kwargs = {}
+            if getattr(getattr(config.model, "ttc", None), "enabled", False):
+                ttc_kwargs["ttc_metadata"] = {
+                    "version": 1,
+                    "config": dataclasses.asdict(config.model.ttc),
+                    "total_training_steps": config.num_train_steps,
+                    "completed_step": completed_step,
+                }
+            _checkpoints.save_state(checkpoint_manager, train_state, data_loader, completed_step, **ttc_kwargs)
         if completed_step < config.num_train_steps:
             batch = next(data_iter)
 

@@ -1,0 +1,15 @@
+{
+  "status": "local implementation verification complete; no production training or rollout",
+  "summary": "/media/czl/sata/franka_my_code/openpi/experiment_records/2026-11-16_pi05_jax_ttc/README.md",
+  "specification": "/media/czl/sata/franka_my_code/openpi/docs/ttc_jax_design_20261116_zh.md",
+  "raw_verification_directory": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116",
+  "manifest": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/verification_manifest.json",
+  "commands": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/verification_commands.sh",
+  "test_log": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/final_tests_v2.log",
+  "sharding_log": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/sharding_tests.log",
+  "temporary_checkpoint": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40",
+  "production_training_request": "未生成",
+  "production_checkpoint": "未生成",
+  "episodes_trajectories_videos": "未生成",
+  "remote_experiment_artifacts": []
+}

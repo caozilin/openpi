@@ -50,8 +50,11 @@ class CheckpointWeightLoader(WeightLoader):
     def load(self, params: at.Params) -> at.Params:
         # We are loading np.ndarray and relying on the training code to properly convert and shard the params.
         loaded_params = _model.restore_params(download.maybe_download(self.params_path), restore_type=np.ndarray)
-        # Add all missing LoRA weights.
-        return _merge_params(loaded_params, params, missing_regex=".*lora.*")
+        # The base checkpoint predates LoRA and the optional six-dimensional tolerance projections.
+        missing_regex = ".*lora.*"
+        if "tolerance_in_proj" not in loaded_params and "tolerance_out_proj" not in loaded_params:
+            missing_regex += r"|tolerance_(?:in|out)_proj/.*"
+        return _merge_params(loaded_params, params, missing_regex=missing_regex)
 
 
 @dataclasses.dataclass(frozen=True)

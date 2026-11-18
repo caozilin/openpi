@@ -7,6 +7,7 @@ import jax.numpy as jnp
 from typing_extensions import override
 
 from openpi.models import model as _model
+from openpi.models import rtc
 import openpi.models.gemma as _gemma
 from openpi.shared import array_typing as at
 import openpi.shared.nnx_utils as nnx_utils
@@ -36,8 +37,17 @@ class Pi0Config(_model.BaseModelConfig):
     # contribute to the flow-matching loss. This changes supervision only, not
     # model shapes. Names are also used for per-group training metrics.
     action_loss_groups: tuple[tuple[str, int, int, float], ...] | None = None
+    # Use two H-token blocks for joint13 actions and six directional rotation tolerances (JAX pi05).
+    tolerance_tokens: bool = False
+    ttc: rtc.TTCConfig = dataclasses.field(default_factory=rtc.TTCConfig)
 
     def __post_init__(self):
+        if self.tolerance_tokens:
+            layout = {(name, start, end) for name, start, end, _ in self.action_loss_groups or ()}
+            if not self.pi05 or self.action_dim != 32 or layout != {("action", 0, 7), ("rotation_tolerance", 7, 13)}:
+                raise ValueError("Tolerance tokens require JAX pi05 and the 32-D TaskTol action7 + rotation_tolerance6 layout")
+        if self.ttc.enabled and (not self.pi05 or self.ttc.max_delay >= self.action_horizon):
+            raise ValueError("TTC requires pi05=True and max target delay < action_horizon")
         if self.max_token_len is None:
             object.__setattr__(self, "max_token_len", 200 if self.pi05 else 48)
         if self.discrete_state_input is None:
@@ -71,6 +81,10 @@ class Pi0Config(_model.BaseModelConfig):
     def create(self, rng: at.KeyArrayLike) -> "Pi0":
         from openpi.models.pi0 import Pi0
 
+        if self.tolerance_tokens:
+            from openpi.models.tasktol import Pi05ToleranceTokens
+
+            return Pi05ToleranceTokens(self, rngs=nnx.Rngs(rng))
         return Pi0(self, rngs=nnx.Rngs(rng))
 
     @override

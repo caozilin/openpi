@@ -1,0 +1,364 @@
+{
+  "status": "local implementation verification complete; no production training or rollout",
+  "branch": "task_tolerance",
+  "baseline_commit": "eeab65a09286ec430eb8e7f4ff9919f4db369eaa",
+  "versions": {
+    "python": "3.11.14",
+    "jax": "0.5.3",
+    "flax": "0.10.2",
+    "torch": "2.7.1+cu126"
+  },
+  "sources": [
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/src/openpi/models/rtc.py",
+      "sha256": "a300d2e9d64d9354884c96b48fbefc58eec1c6aecb2956a15c6308fa39bac4d8",
+      "bytes": 2859
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/src/openpi/models/pi0_config.py",
+      "sha256": "19aaf91a38b68a1ff5e9ca10ac228ae888f4ae2ff28b592ff96c2f580128e40e",
+      "bytes": 5775
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/src/openpi/models/pi0.py",
+      "sha256": "113498e31fd8c184f4e39af86a736954373ad477a1f6ccfa1eae5985fdec65d8",
+      "bytes": 19106
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/src/openpi/models/gemma.py",
+      "sha256": "7eced2df25961b1c1e12b9de38128ea4b2a64f0d4f78eabd72e9927890d99214",
+      "bytes": 17241
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/scripts/train.py",
+      "sha256": "afe2dd05915ac62df516b385770418ba406eaf96c0f2d35f7e25bc42cca5e72a",
+      "bytes": 17167
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/src/openpi/training/checkpoints.py",
+      "sha256": "cbde03ce1a40b4a2e9ce9931a6d19a98b819119bcaa19566a8192c3c1c3797df",
+      "bytes": 5941
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/src/openpi/policies/policy.py",
+      "sha256": "1313f7fa842db1efbc8faf7b71e89f6c8cea2d2dbe95db571cd5cdbdb8dca8fb",
+      "bytes": 8160
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/src/openpi/policies/policy_config.py",
+      "sha256": "1fa74b64b114bf14f9a88947f8ff2c259f606a0d72793b48f50fe7f939b6e825",
+      "bytes": 5323
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/ttc_action_chunk_broker.py",
+      "sha256": "03dae5fae4eaa5d9c9554cf528c300988b02fb54a1de620f89fa6c5a86b687b9",
+      "bytes": 6135
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/examples/libero/main.py",
+      "sha256": "d4e1acba1188c786a1a90f4b5ab78cf3bb177643e547cb3bcd7f0c3753e3e3dd",
+      "bytes": 9755
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/examples/simple_client/main.py",
+      "sha256": "df90b142c02262bd5ca55a9c56cc8397bb273528c4637cb61819bb84fb2e0d4c",
+      "bytes": 6576
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/docs/ttc_jax_design_20261116_zh.md",
+      "sha256": "60ff05ab5de80853da890587f1928f1a04d2a2adf940eee7a24185a83a78f015",
+      "bytes": 8111
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/docs/remote_inference.md",
+      "sha256": "bb3aca3b5ebddd5ecddcc2a03d7b12e624292991e093db18ae28f97b0e790ad7",
+      "bytes": 4082
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/src/openpi/models/rtc_test.py",
+      "sha256": "23afa24675eab577cd4c1711420490dfec5409478a38b9f117154fb7753dd399",
+      "bytes": 10775
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/scripts/train_ttc_test.py",
+      "sha256": "5bf871d2dbb1203b970905e73b1b8dc41620d2f7c9e6d7b49068bea895d5e0e6",
+      "bytes": 3629
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/src/openpi/policies/policy_ttc_test.py",
+      "sha256": "12c7a4637b9f81cea20570dd7557283cd90a81444c8532ee8eb52f159aba695a",
+      "bytes": 2222
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/src/openpi/serving/ttc_test.py",
+      "sha256": "4407f0c8e946b4588db37978d036797acd199e79d86abc9a75bd01484370648d",
+      "bytes": 2158
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/packages/openpi-client/src/openpi_client/ttc_action_chunk_broker_test.py",
+      "sha256": "d9fc9d2b783d4822ba804a29bd71f340290fdd6d99e68b3449047dc3f30cb1ae",
+      "bytes": 4843
+    }
+  ],
+  "evidence": [
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/baseline_commit.txt",
+      "sha256": "d60e7876a8e668022aa6f630c24f130b586734ecf77720cdf8cc5ddd3882676f",
+      "bytes": 41
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/baseline_gemma.py",
+      "sha256": "7e42ada4ae7e9995f0ef3e33a0c224758323c2015e2d9d72ec15726a8a001d2a",
+      "bytes": 17146
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/baseline_pi0.py",
+      "sha256": "b0362f10e6b02eef1089e7e1e88a05d2f180c3c76cbd02c805e6c6ad58d2e80c",
+      "bytes": 15710
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/client_tests.log",
+      "sha256": "34dc1820488d189b266562816b3c9e2245a1df61359f5523b4ea57d225341fac",
+      "bytes": 99
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/curriculum_audit.json",
+      "sha256": "cea2238378f4defec5b486cf06e0be35b683528c17fb2fa33f2b51839c6f3dd8",
+      "bytes": 1384
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/diff_check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/final_tests.log",
+      "sha256": "df6934ca55bd961785717f3f13e76421512ed7dd6dacf22e3c87f4d5b190c0f4",
+      "bytes": 206
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/final_tests_v2.log",
+      "sha256": "9d409ea7d69851d39fb7af3a698890395891d43f83f73853bf3f8161dd503350",
+      "bytes": 206
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/legacy_comparison.json",
+      "sha256": "67364f5b1d1ac8c908082287aa46710426e4b0f8a71803cdae7886d0fe548752",
+      "bytes": 536
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/legacy_comparison.log",
+      "sha256": "67364f5b1d1ac8c908082287aa46710426e4b0f8a71803cdae7886d0fe548752",
+      "bytes": 536
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/lerobot_common_flow_matching.py",
+      "sha256": "73f3e5525e492286729e42b68b0057167bef1ad4d5a4d76bd44073c3a50ac48a",
+      "bytes": 19484
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/lerobot_comparison.json",
+      "sha256": "ddca9d06ebdec8740a6caba4fa3040664279d548055cc91aa569a717f247005f",
+      "bytes": 3326
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/lerobot_comparison.log",
+      "sha256": "ddca9d06ebdec8740a6caba4fa3040664279d548055cc91aa569a717f247005f",
+      "bytes": 3326
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/lerobot_pi05_modeling_pi05.py",
+      "sha256": "1b025359bac060565862d022d02d7a16411971c71faadc254d6323c2b985ed3b",
+      "bytes": 69628
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/lerobot_reference.txt",
+      "sha256": "5afa490d4033db46602e0511db9fe8ee13094033c3ef307dd6f9c7f74dee3c8d",
+      "bytes": 57
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/lerobot_sources.json",
+      "sha256": "5e55a36db4e6e8e1869434ff7ac42b7f4db54a8aa815b64c11704266b1c02f93",
+      "bytes": 837
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/lint.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/model_pipeline_tests.log",
+      "sha256": "9c2652eb6d7c0985176d8c7cfa5d616afa60fe00ba352a94fb235da2005f2d97",
+      "bytes": 28
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/model_tests.log",
+      "sha256": "2d99ea594e497bbd360aab2bfac26e1dac474fee7ce4d2ff9f74386a668e229c",
+      "bytes": 114
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/pipeline_regression_unsandboxed.log",
+      "sha256": "0289352b55564e136aa53928ae5b143bf9511d0030d8988c778826f473a6801a",
+      "bytes": 113
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/pipeline_retry.log",
+      "sha256": "2a9e1724146c5b0f26e1e2e47208f047912fd0c87d4d25c277889a9b1ec92a7d",
+      "bytes": 6353
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/regression_retry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/regression_tests.log",
+      "sha256": "28cc3d8d81f141940426511ac9e6b909d0bcb36f7492b80a4c3efbf33e10c99c",
+      "bytes": 10527
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/sharding_tests.log",
+      "sha256": "7cc7c21774617b7051072d202d2ab4f06dbc726efcd36bbd73a838c626e40fd9",
+      "bytes": 114
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/verification_commands.sh",
+      "sha256": "02720a112d3de6fe0538f5ee9f7b1723f0fd241bf07d4facb417a2b800929eb7",
+      "bytes": 1068
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/verify_legacy.py",
+      "sha256": "751cd3d50152bebba951ea009b6b24dde5497a8e07d72a2ffb916da3505600fb",
+      "bytes": 3151
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/verify_lerobot.py",
+      "sha256": "01cfd59454a6e4ff3033f15317b3e915497aad13edb423ed285f58424c287983",
+      "bytes": 3125
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/warmup_serving_tests.log",
+      "sha256": "063330d9f777efe72559fd138e0946a2e6722edda9b7a950417f0015acd7a7d9",
+      "bytes": 99
+    },
+    {
+      "path": "/media/czl/sata/franka_my_code/openpi/analysis/ttc_jax_20261116/websocket_tests.log",
+      "sha256": "29bb905025daa9e9e87f3d4bf770a943aaac44588621ca35c3d72ee55e81149f",
+      "bytes": 6089
+    }
+  ],
+  "temporary_checkpoint": {
+    "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40",
+    "persistent": false,
+    "files": [
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/_CHECKPOINT_METADATA",
+        "sha256": "dec2cf617b7c215a5adafaaae74e9f59a00f5eba4482416ef8423fedf514339f",
+        "bytes": 426
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/assets/ttc.json",
+        "sha256": "3d51de73310591a8ce9197470e68eec2e450050be77d2ee27f0112be6390bae4",
+        "bytes": 258
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/params/_METADATA",
+        "sha256": "9596a727e876c84ba837b90f647751b5b2a2ca9b4aa86c38eb260089e583a0b3",
+        "bytes": 358
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/params/_sharding",
+        "sha256": "ba4fb3575670a08d6169e48186615fca7c70bb7fd3c6501a2b7bb678251c7616",
+        "bytes": 201
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/params/array_metadatas/process_0",
+        "sha256": "93ac889c4ca670eba59e5ca8db3f2f0a2da08fcd9367acab5e8016ea1250a531",
+        "bytes": 142
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/params/d/212e412797830d4f399e0c403e0fb482",
+        "sha256": "5b478b0f0bf959c022c21798764c600ad382003a64ddf96a4d582a7520f78956",
+        "bytes": 211
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/params/manifest.ocdbt",
+        "sha256": "ab44d123fd07c0b8bed41e6393428c246f0aab2805deb2b87b8603a1f7449bbb",
+        "bytes": 113
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/params/ocdbt.process_0/d/23451e7983262374d7724bc91fa2d6bb",
+        "sha256": "5b478b0f0bf959c022c21798764c600ad382003a64ddf96a4d582a7520f78956",
+        "bytes": 211
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/params/ocdbt.process_0/d/d4b19cdfc33c9cf36e6efa39a9bded82",
+        "sha256": "253e88e113f6578ec09a3a5d43017e82bc8c6184cc8978020c0c4fdcc6c8ed51",
+        "bytes": 182
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/params/ocdbt.process_0/manifest.ocdbt",
+        "sha256": "4125b5a08bba244e60d3fffa7d9dc3fca2bb1c9011fc1dad5eea60f47bd9d179",
+        "bytes": 166
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/train_state/_METADATA",
+        "sha256": "a70aa03d2d0ac873f6f89148dc97d996e64de089a200967d476d52fb2c625eaf",
+        "bytes": 2349
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/train_state/_sharding",
+        "sha256": "125238fa8a029420cebfef8b3962491cc1bb4bc035efbe7e6bedc5317ad7e5d1",
+        "bytes": 916
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/train_state/array_metadatas/process_0",
+        "sha256": "fc67f585afb6f256e08ecbe07d1ac610a6ad9e13799b94ed9915ee22ec8c2a11",
+        "bytes": 625
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/train_state/d/ee1bb3929ae953790e5f68a01536884c",
+        "sha256": "07e913ba4a4f348b08e10bbe12a74f3ad93946243e15ad7a43fa639bd0385dd9",
+        "bytes": 305
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/train_state/manifest.ocdbt",
+        "sha256": "c39c366f4ad20e9afbed312267535600d394efc7c5bba9f1caa58bf4cbd1bd16",
+        "bytes": 113
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/train_state/ocdbt.process_0/d/0608208cc14664323e8d6be29c461e07",
+        "sha256": "a45cc68c1e22e14100628fbbc62c5480d841ff5fd681a00585325e3a2f69b028",
+        "bytes": 252
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/train_state/ocdbt.process_0/d/364364706a66dc12e536a54b1003f985",
+        "sha256": "07e913ba4a4f348b08e10bbe12a74f3ad93946243e15ad7a43fa639bd0385dd9",
+        "bytes": 305
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/train_state/ocdbt.process_0/d/5a0919816aca032d07b6fba37e3827f7",
+        "sha256": "cbf990bf19d44a4bc6901c3693a93524b23f7d003f8cb50df94b71694f831058",
+        "bytes": 274
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/train_state/ocdbt.process_0/d/8a814c77aecf640ba48551c765a2ce5e",
+        "sha256": "4322e96cd3829e98d2a117a6ec7128cdaa27f5f3a65c63fc53133c63c1413e9b",
+        "bytes": 171
+      },
+      {
+        "path": "/tmp/pytest-of-czl/pytest-14/test_real_train_step_restored_0/checkpoint/40/train_state/ocdbt.process_0/manifest.ocdbt",
+        "sha256": "84aec88861b46549e01831e829179e3729b6e87429d6e7fdc78a47574ad01bc6",
+        "bytes": 237
+      }
+    ]
+  },
+  "checks": {
+    "main_suite": "112 passed, 1 skipped (two-device-only test); final code rerun",
+    "two_cpu_sharding": "1 passed, 27 deselected",
+    "warmup_checkpoint_followup": "11 passed; includes 3 new boundary cases and overlapping serving regressions",
+    "legacy_source": "FP32 and BF16: matching parameter trees/load, bitwise loss/input gradient/sample while disabled; exact TTC sample prefix",
+    "lerobot_pinned_reference": "12 cases passed (2 dtypes x 2 dimensions x 3 delay vectors)",
+    "lint": "All checks passed"
+  }
+}

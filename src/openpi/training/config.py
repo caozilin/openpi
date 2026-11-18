@@ -390,6 +390,8 @@ class LeRobotFrankaMujocoDataConfig(DataConfigFactory):
 
     @override
     def create(self, assets_dirs: pathlib.Path, model_config: _model.BaseModelConfig) -> DataConfig:
+        if getattr(model_config, "tolerance_tokens", False) and not self.joint_task_tolerance:
+            raise ValueError("Tolerance tokens require rotation_tolerance labels from joint_task_tolerance data")
         if self.tolerance_trajectory_action_loss_weight < 0:
             raise ValueError("tolerance_trajectory_action_loss_weight must be non-negative")
         if model_config.action_dim != franka_mujoco_policy.MODEL_ACTION_DIM:

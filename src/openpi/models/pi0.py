@@ -9,6 +9,7 @@ from typing_extensions import override
 
 from openpi.models import model as _model
 from openpi.models import pi0_config
+from openpi.models import rtc
 import openpi.models.gemma as _gemma
 import openpi.models.siglip as _siglip
 from openpi.shared import array_typing as at
@@ -122,6 +123,7 @@ class Pi0(_model.BaseModel):
     def __init__(self, config: pi0_config.Pi0Config, rngs: nnx.Rngs):
         super().__init__(config.action_dim, config.action_horizon, config.max_token_len)
         self.pi05 = config.pi05
+        self.ttc = config.ttc
         self.action_loss_groups = config.action_loss_groups
         paligemma_config = _gemma.get_config(config.paligemma_variant)
         action_expert_config = _gemma.get_config(config.action_expert_variant)
@@ -194,12 +196,13 @@ class Pi0(_model.BaseModel):
 
     @at.typecheck
     def embed_suffix(
-        self, obs: _model.Observation, noisy_actions: _model.Actions, timestep: at.Float[at.Array, " b"]
+        self, obs: _model.Observation, noisy_actions: _model.Actions,
+        timestep: at.Float[at.Array, " b"] | at.Float[at.Array, "b ah"]
     ) -> tuple[
         at.Float[at.Array, "b s emb"],
         at.Bool[at.Array, "b s"],
         at.Bool[at.Array, " s"],
-        at.Float[at.Array, "b emb"] | None,
+        at.Float[at.Array, "b emb"] | at.Float[at.Array, "b ah emb"] | None,
     ]:
         input_mask = []
         ar_mask = []
@@ -214,7 +217,9 @@ class Pi0(_model.BaseModel):
 
         action_tokens = self.action_in_proj(noisy_actions)
         # embed timestep using sine-cosine positional encoding with sensitivity in the range [0, 1]
-        time_emb = posemb_sincos(timestep, self.action_in_proj.out_features, min_period=4e-3, max_period=4.0)
+        time_emb = posemb_sincos(
+            timestep.reshape(-1), self.action_in_proj.out_features, min_period=4e-3, max_period=4.0
+        ).reshape(*timestep.shape, self.action_in_proj.out_features)
         if self.pi05:
             # time MLP (for adaRMS)
             time_emb = self.time_mlp_in(time_emb)
@@ -241,44 +246,82 @@ class Pi0(_model.BaseModel):
         ar_mask = jnp.array(ar_mask)
         return tokens, input_mask, ar_mask, adarms_cond
 
+    def project_suffix(self, suffix_out):
+        return self.action_out_proj(suffix_out[:, -self.action_horizon :])
+
+    def sample_noise(self, key, shape):
+        return jax.random.normal(key, shape)
+
     @override
     def compute_loss(
-        self, rng: at.KeyArrayLike, observation: _model.Observation, actions: _model.Actions, *, train: bool = False
+        self, rng: at.KeyArrayLike, observation: _model.Observation, actions: _model.Actions, *, train: bool = False,
+        training_step: at.Int[at.Array, ""] | int | None = None, total_training_steps: int | None = None
     ) -> at.Float[at.Array, "*b ah"]:
-        loss, _ = self.compute_loss_with_breakdown(rng, observation, actions, train=train)
+        loss, _ = self.compute_loss_with_breakdown(
+            rng, observation, actions, train=train,
+            training_step=training_step, total_training_steps=total_training_steps
+        )
         return loss
 
     def compute_loss_with_breakdown(
-        self, rng: at.KeyArrayLike, observation: _model.Observation, actions: _model.Actions, *, train: bool = False
+        self, rng: at.KeyArrayLike, observation: _model.Observation, actions: _model.Actions, *, train: bool = False,
+        training_step: at.Int[at.Array, ""] | int | None = None, total_training_steps: int | None = None
     ) -> tuple[at.Float[at.Array, "*b ah"], dict[str, at.Array]]:
         preprocess_rng, noise_rng, time_rng = jax.random.split(rng, 3)
         observation = _model.preprocess_observation(preprocess_rng, observation, train=train)
 
         batch_shape = actions.shape[:-2]
-        noise = jax.random.normal(noise_rng, actions.shape)
+        noise = self.sample_noise(noise_rng, actions.shape)
         time = jax.random.beta(time_rng, 1.5, 1, batch_shape) * 0.999 + 0.001
         time_expanded = time[..., None, None]
         x_t = time_expanded * noise + (1 - time_expanded) * actions
         u_t = noise - actions
 
-        # one big forward pass of prefix + suffix at once
-        prefix_tokens, prefix_mask, prefix_ar_mask = self.embed_prefix(observation)
-        suffix_tokens, suffix_mask, suffix_ar_mask, adarms_cond = self.embed_suffix(observation, x_t, time)
-        input_mask = jnp.concatenate([prefix_mask, suffix_mask], axis=1)
-        ar_mask = jnp.concatenate([prefix_ar_mask, suffix_ar_mask], axis=0)
-        attn_mask = make_attn_mask(input_mask, ar_mask)
-        positions = jnp.cumsum(input_mask, axis=1) - 1
-        (prefix_out, suffix_out), _ = self.PaliGemma.llm(
-            [prefix_tokens, suffix_tokens], mask=attn_mask, positions=positions, adarms_cond=[None, adarms_cond]
-        )
-        v_t = self.action_out_proj(suffix_out[:, -self.action_horizon :])
+        def velocity(noisy_actions, model_time):
+            # One forward pass of image/language prefix and action suffix.
+            prefix_tokens, prefix_mask, prefix_ar_mask = self.embed_prefix(observation)
+            suffix_tokens, suffix_mask, suffix_ar_mask, adarms_cond = self.embed_suffix(observation, noisy_actions, model_time)
+            input_mask = jnp.concatenate([prefix_mask, suffix_mask], axis=1)
+            ar_mask = jnp.concatenate([prefix_ar_mask, suffix_ar_mask], axis=0)
+            attn_mask = make_attn_mask(input_mask, ar_mask)
+            positions = jnp.cumsum(input_mask, axis=1) - 1
+            (prefix_out, suffix_out), _ = self.PaliGemma.llm(
+                [prefix_tokens, suffix_tokens], mask=attn_mask, positions=positions, adarms_cond=[None, adarms_cond]
+            )
+            return self.project_suffix(suffix_out)
 
-        squared_error = jnp.square(v_t - u_t)
-        return _grouped_action_loss_with_breakdown(
-            squared_error,
-            self.action_loss_groups,
-            observation.action_loss_weight,
-        )
+        def losses(noisy_actions, model_time):
+            squared_error = jnp.square(velocity(noisy_actions, model_time) - u_t)
+            return _grouped_action_loss_with_breakdown(
+                squared_error, self.action_loss_groups, observation.action_loss_weight
+            )
+
+        if not self.ttc.enabled:
+            return losses(x_t, time)
+        if train and (training_step is None or total_training_steps is None or total_training_steps <= 0):
+            raise ValueError("TTC training requires training_step and positive total_training_steps")
+        # Validation uses the target distribution, independent of curriculum progress.
+        alpha = rtc.curriculum_alpha(training_step, total_training_steps, self.ttc) if train else jnp.asarray(1.0)
+        probabilities = rtc.delay_probabilities(alpha, self.ttc)
+        # Preserve the three existing RNG streams, including during ordinary warmup.
+        delays = rtc.sample_delays(jax.random.fold_in(rng, 731), batch_shape, probabilities)
+        conditioned_x, _, token_time, valid = rtc.flow_inputs(actions, noise, time, delays)
+
+        def conditioned_loss():
+            loss, breakdown = losses(conditioned_x, token_time)
+            return rtc.mask_loss(loss, valid), {
+                name: rtc.mask_loss(value, valid) if name.startswith("loss") else value
+                for name, value in breakdown.items()
+            }
+
+        loss, breakdown = jax.lax.cond(alpha > 0, conditioned_loss, lambda: losses(x_t, time))
+        breakdown.update({
+            "ttc/alpha": alpha,
+            "ttc/delay_mean": jnp.mean(delays.astype(jnp.float32)),
+            **{f"ttc/delay_{d}_fraction": jnp.mean((delays == d).astype(jnp.float32))
+               for d in range(len(self.ttc.target_delay_probabilities))},
+        })
+        return loss, breakdown
 
     @override
     def sample_actions(
@@ -288,14 +331,27 @@ class Pi0(_model.BaseModel):
         *,
         num_steps: int | at.Int[at.Array, ""] = 10,
         noise: at.Float[at.Array, "b ah ad"] | None = None,
+        action_prefix: at.Float[at.Array, "b ah ad"] | None = None,
+        prefix_lengths: at.Int[at.Array, " b"] | None = None,
     ) -> _model.Actions:
+        if (action_prefix is None) != (prefix_lengths is None):
+            raise ValueError("action_prefix and prefix_lengths must be supplied together")
+        if action_prefix is not None and not self.ttc.enabled:
+            raise ValueError("Action-prefix sampling requires a TTC-enabled pi05 checkpoint")
         observation = _model.preprocess_observation(None, observation, train=False)
         # note that we use the convention more common in diffusion literature, where t=1 is noise and t=0 is the target
         # distribution. yes, this is the opposite of the pi0 paper, and I'm sorry.
         dt = -1.0 / num_steps
         batch_size = observation.state.shape[0]
         if noise is None:
-            noise = jax.random.normal(rng, (batch_size, self.action_horizon, self.action_dim))
+            noise = self.sample_noise(rng, (batch_size, self.action_horizon, self.action_dim))
+
+        condition = None
+        if action_prefix is not None:
+            if action_prefix.shape != noise.shape or prefix_lengths.shape != (batch_size,):
+                raise ValueError("TTC prefix must match noise [B,H,D] and lengths [B]")
+            condition = rtc.PrefixCondition(action_prefix, prefix_lengths)
+            noise = condition.clamp(noise)
 
         # first fill KV cache with a forward pass of the prefix
         prefix_tokens, prefix_mask, prefix_ar_mask = self.embed_prefix(observation)
@@ -305,8 +361,12 @@ class Pi0(_model.BaseModel):
 
         def step(carry):
             x_t, time = carry
+            model_time = jnp.broadcast_to(time, batch_size)
+            if condition is not None:
+                model_time = jnp.where(condition.mask(), 0.0, model_time[:, None])
+                x_t = condition.clamp(x_t)
             suffix_tokens, suffix_mask, suffix_ar_mask, adarms_cond = self.embed_suffix(
-                observation, x_t, jnp.broadcast_to(time, batch_size)
+                observation, x_t, model_time
             )
             # `suffix_attn_mask` is shape (b, suffix_len, suffix_len) indicating how the suffix tokens can attend to each
             # other
@@ -333,9 +393,12 @@ class Pi0(_model.BaseModel):
                 adarms_cond=[None, adarms_cond],
             )
             assert prefix_out is None
-            v_t = self.action_out_proj(suffix_out[:, -self.action_horizon :])
+            v_t = self.project_suffix(suffix_out)
 
-            return x_t + dt * v_t, time + dt
+            next_x = x_t + dt * v_t
+            if condition is not None:
+                next_x = condition.clamp(next_x)
+            return next_x, time + dt
 
         def cond(carry):
             x_t, time = carry
